@@ -19,6 +19,7 @@ jobs:
         - name: Ottiene il numero del project
           working-directory: SorgentiDocumentazione
           run: |
+            gh project list
             project_number=$(gh project list --format json | jq '.projects[] | select(.title=="ArtificialQI") | .number')
             echo "$project_number"
             echo "PROJECT_NUMBER=$project_number" >> $GITHUB_ENV
