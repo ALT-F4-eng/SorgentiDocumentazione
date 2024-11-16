@@ -20,13 +20,14 @@ jobs:
           working-directory: SorgentiDocumentazione
           run: |
             project_number=$(gh project list --format json | jq '.projects[] | select(.title=="ArtificialQI") | .number')
+            echo "$project_number"
             echo "PROJECT_NUMBER=$project_number" >> $GITHUB_ENV
             
         - name: Ottiene l'id della issue relativa alla pull request
           working-directory: SorgentiDocumentazione
           run: |
             issue_number=$(echo "${{github.head_ref}}" | grep -E -o -m 1 '[0-9]+')
-            issue_id=$(gh project item-list ${{ env.PROJECT_NUMBER }} --owner @me --format json --jq ".items[] | select(.content.number==$issue_number) | .id")
+            issue_id=$(gh project item-list $PROJECT_NUMBER --format json --jq ".items[] | select(.content.number==$issue_number) | .id")
             echo "$issue_id"
             echo "$issue_number"
             echo "ISSUE_ID=$issue_id" >> $GITHUB_ENV
