@@ -50,7 +50,7 @@ jobs:
             s/%.*//g;
             s/[{}]//g;
           ' "$file" | \
-          aspell --lang=it --add-extra-dicts=$PERSONAL_WORDLIST_IT list >> $TMP_FILE
+          aspell --lang=it --personal="$PERSONAL_WORDLIST_IT" list >> $TMP_FILE
         done
 
         # Controlla le parole non riconosciute in italiano
@@ -58,7 +58,7 @@ jobs:
           echo "Parole non riconosciute trovate in italiano. Controllando in inglese..."
 
           # Controlla le stesse parole in inglese
-          sort -u "$TMP_FILE" | aspell --lang=en --add-extra-dicts=$PERSONAL_WORDLIST_EN list > errors_in_english.txt
+          sort -u "$TMP_FILE" | aspell --lang=en --personal="$PERSONAL_WORDLIST_EN" list > errors_in_english.txt
 
           if [ -s errors_in_english.txt ]; then
             echo "Errors found:"
