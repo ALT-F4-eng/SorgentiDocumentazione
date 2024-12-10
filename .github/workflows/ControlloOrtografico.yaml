@@ -23,10 +23,9 @@ jobs:
 
     - name: Spell Check for LaTeX Files
       run: |
-        # File personalizzati per italiano e inglese
+        # Percorsi file personalizzati
         PERSONAL_WORDLIST_IT=".github/workflows/Dizionari_Latex/personal_wordlist_it.txt"
         PERSONAL_WORDLIST_EN=".github/workflows/Dizionari_Latex/personal_wordlist_en.txt"
-
 
         # Verifica che i file di parole personalizzate esistano
         for wordlist in "$PERSONAL_WORDLIST_IT" "$PERSONAL_WORDLIST_EN"; do
@@ -51,16 +50,15 @@ jobs:
             s/%.*//g;
             s/[{}]//g;
           ' "$file" | \
-          aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list >> $TMP_FILE
+          aspell --lang=it --add-extra-dicts=$PERSONAL_WORDLIST_IT list >> $TMP_FILE
         done
 
         # Controlla le parole non riconosciute in italiano
         if [ -s "$TMP_FILE" ]; then
-          # Salva le parole non riconosciute in italiano nel file
-          sort -u "$TMP_FILE" > unrecognized_words_it.txt
+          echo "Parole non riconosciute trovate in italiano. Controllando in inglese..."
 
-          # Controlla l'ortografia in inglese per le stesse parole
-          sort -u "$TMP_FILE" | aspell --lang=en --personal=$PERSONAL_WORDLIST_EN list > errors_in_english.txt
+          # Controlla le stesse parole in inglese
+          sort -u "$TMP_FILE" | aspell --lang=en --add-extra-dicts=$PERSONAL_WORDLIST_EN list > errors_in_english.txt
 
           if [ -s errors_in_english.txt ]; then
             echo "Errors found:"
