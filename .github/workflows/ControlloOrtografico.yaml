@@ -23,15 +23,17 @@ jobs:
 
     - name: Spell Check for LaTeX Files
       run: |
-        # Percorsi file personalizzati
+        # File personalizzati per italiano e inglese
         PERSONAL_WORDLIST_IT=".github/workflows/Dizionari_Latex/personal_wordlist_it.txt"
         PERSONAL_WORDLIST_EN=".github/workflows/Dizionari_Latex/personal_wordlist_en.txt"
 
         # Verifica che i file di parole personalizzate esistano
-        if [ ! -f "$PERSONAL_WORDLIST_IT" ] || [ ! -f "$PERSONAL_WORDLIST_EN" ]; then
-          echo "Uno o più file di parole personalizzate non trovati!"
-          exit 1
-        fi
+        for wordlist in "$PERSONAL_WORDLIST_IT" "$PERSONAL_WORDLIST_EN"; do
+          if [ ! -f "$wordlist" ]; then
+            echo "File di parole personalizzate non trovato: $wordlist"
+            exit 1
+          fi
+        done
 
         # Crea file temporaneo per le parole non riconosciute
         TMP_FILE=$(mktemp)
@@ -39,29 +41,33 @@ jobs:
         # Processa tutti i file .tex
         for file in $(find . -name "*.tex"); do
           echo "Processing $file..."
+
+          # Rimuovi comandi LaTeX prima di controllare l'ortografia
           sed -E '
-            s/\\[a-zA-Z@]+(\[[^]]*\])?(\{[^}]*\})?//g; # Comandi base
-            s/\\begin\{[^}]*\}//g;                    # Inizio ambienti
-            s/\\end\{[^}]*\}//g;                      # Fine ambienti
-            s/\$[^\$]*\$//g;                          # Equazioni inline
-            s/\$\$[^\$]*\$\$//g;                    # Equazioni display
-            s/%.*//g;                                   # Commenti
-            s/[{}]//g;                                  # Brackets
-          ' "$file" | aspell --lang=it --add-words="$PERSONAL_WORDLIST_IT" list >> $TMP_FILE
+            s/\\[a-zA-Z@]+(\[[^]]*\])?(\{[^}]*\})?//g;
+            s/\$[^\$]*\$//g;
+            s/\$\$[^\$]*\$\$//g;
+            s/%.*//g;
+            s/[{}]//g;
+          ' "$file" | \
+          aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list >> $TMP_FILE
         done
 
         # Controlla le parole non riconosciute in italiano
         if [ -s "$TMP_FILE" ]; then
-          echo "Checking unrecognized words in English..."
-          sort -u "$TMP_FILE" | aspell --lang=en --add-words="$PERSONAL_WORDLIST_EN" list > errors_in_english.txt
+          # Salva le parole non riconosciute in italiano nel file
+          sort -u "$TMP_FILE" > unrecognized_words_it.txt
+
+          # Controlla l'ortografia in inglese per le stesse parole
+          sort -u "$TMP_FILE" | aspell --lang=en --personal=$PERSONAL_WORDLIST_EN list > errors_in_english.txt
 
           if [ -s errors_in_english.txt ]; then
             echo "Errors found:"
             cat errors_in_english.txt
             exit 1
           else
-            echo "No errors found in English. Only unrecognized Italian words."
+            echo "No errors in English. Unrecognized Italian words only."
           fi
         else
-          echo "No errors found in Italian."
+          echo "No unrecognized words found in Italian."
         fi
