@@ -41,7 +41,7 @@ blackbox
 containerizzazione
 curriculare
 d'informazioni
-l’AI
+AI
 L'API
 l'API
 l'RTB
