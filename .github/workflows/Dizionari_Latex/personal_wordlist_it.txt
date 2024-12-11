@@ -36,6 +36,8 @@ VerbaliEsterni
 VerbaliInterni
 Vimar
 issue
+LLM
+Srl
 backend
 blackbox
 containerizzazione

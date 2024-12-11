@@ -29,9 +29,11 @@ github
 gitflow
 gmail
 hidelinks
+hline
 img
 js
 lightsail
+linkcolor
 pdf
 pdfpagemode
 pgvector
@@ -47,3 +49,4 @@ threejs
 urlcolor
 vX
 workflow
+VSCode
