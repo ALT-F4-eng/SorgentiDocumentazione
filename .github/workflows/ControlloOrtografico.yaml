@@ -35,9 +35,12 @@ jobs:
           fi
         done
 
-        # Crea file temporaneo per le parole non riconosciute con il nome del file di origine
+        # Crea file temporaneo per le parole non riconosciute
         TMP_FILE=$(mktemp)
-        TMP_FILE_WITH_ORIGIN=$(mktemp)
+        ERROR_LOG="errors_with_files.txt"
+
+        # Pulisce o crea il file di log
+        > "$ERROR_LOG"
 
         # Processa tutti i file .tex
         for file in $(find . -name "*.tex"); do
@@ -53,28 +56,29 @@ jobs:
           ' "$file" | \
           aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list | \
           while read word; do
-            echo "$file: $word" >> $TMP_FILE_WITH_ORIGIN
+            if [ ! -z "$word" ]; then
+              echo "$word found in $file" >> "$ERROR_LOG"
+            fi
           done
         done
 
-        # Controlla le parole non riconosciute in italiano
-        if [ -s "$TMP_FILE_WITH_ORIGIN" ]; then
-          # Salva le parole non riconosciute in italiano nel file
-          sort -u "$TMP_FILE_WITH_ORIGIN" > unrecognized_words_with_origin.txt
+        # Controlla se ci sono parole non riconosciute in italiano
+        if [ -s "$ERROR_LOG" ]; then
+          echo "Unrecognized words found, checking in English..."
 
           # Controlla l'ortografia in inglese per le stesse parole
-          sort -u "$TMP_FILE_WITH_ORIGIN" | aspell --lang=en --personal=$PERSONAL_WORDLIST_EN list > errors_in_english.txt
+          aspell --lang=en --personal=$PERSONAL_WORDLIST_EN list < "$ERROR_LOG" > errors_in_english.txt
 
-          # Se ci sono errori in inglese, stampali
           if [ -s errors_in_english.txt ]; then
             echo "Errors found in English:"
             cat errors_in_english.txt
-            echo "Unrecognized words with file origin:"
-            cat unrecognized_words_with_origin.txt
+            echo "Words causing the errors (with source files):"
+            cat "$ERROR_LOG"
             exit 1
           else
-            echo "No errors in English. Unrecognized Italian words only:"
-            cat unrecognized_words_with_origin.txt
+            echo "No errors in English. Unrecognized Italian words only."
+            echo "Words not recognized in Italian (with source files):"
+            cat "$ERROR_LOG"
           fi
         else
           echo "No unrecognized words found in Italian."
