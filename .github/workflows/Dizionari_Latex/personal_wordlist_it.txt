@@ -11,14 +11,12 @@ Ergon
 Guirong
 HTMLea
 Igbinedion
-Infromatica
 API
 Lan
 LangChain
 Marko
 NLP
 NestJS
-NestJs
 NomeMilestone
 OpenAI
 Osamwonyi
@@ -43,6 +41,11 @@ blackbox
 containerizzazione
 curriculare
 d'informazioni
+dell’AI
+L'API
+l'API
+l'RTB
+l'issue
 dataset
 AI
 domotici
