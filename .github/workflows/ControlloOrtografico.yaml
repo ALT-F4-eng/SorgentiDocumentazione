@@ -38,6 +38,12 @@ jobs:
         # Crea file temporaneo per le parole non riconosciute
         TMP_FILE=$(mktemp)
 
+        # Crea un file per registrare gli errori
+        ERROR_LOG_IT="errors_it.txt"
+        ERROR_LOG_EN="errors_en.txt"
+        > $ERROR_LOG_IT
+        > $ERROR_LOG_EN
+
         # Processa tutti i file .tex
         for file in $(find . -name "*.tex"); do
           echo "Processing $file..."
@@ -50,20 +56,23 @@ jobs:
             s/%.*//g;
             s/[{}]//g;
           ' "$file" | \
-          aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list >> $TMP_FILE
+          aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list | \
+          while read word; do
+            echo "$word found in $file" >> $ERROR_LOG_IT
+          done
         done
 
         # Controlla le parole non riconosciute in italiano
-        if [ -s "$TMP_FILE" ]; then
-          # Salva le parole non riconosciute in italiano nel file
-          sort -u "$TMP_FILE" > unrecognized_words_it.txt
+        if [ -s "$ERROR_LOG_IT" ]; then
+          # Controlla l'ortografia in inglese per le parole italiane non riconosciute
+          sort -u "$ERROR_LOG_IT" | aspell --lang=en --personal=$PERSONAL_WORDLIST_EN list | \
+          while read word; do
+            echo "$word found in $file" >> $ERROR_LOG_EN
+          done
 
-          # Controlla l'ortografia in inglese per le stesse parole
-          sort -u "$TMP_FILE" | aspell --lang=en --personal=$PERSONAL_WORDLIST_EN list > errors_in_english.txt
-
-          if [ -s errors_in_english.txt ]; then
-            echo "Errors found:"
-            cat errors_in_english.txt
+          if [ -s "$ERROR_LOG_EN" ]; then
+            echo "Errors found in English:"
+            cat $ERROR_LOG_EN
             exit 1
           else
             echo "No errors in English. Unrecognized Italian words only."
