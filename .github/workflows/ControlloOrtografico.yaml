@@ -44,15 +44,13 @@ jobs:
 
           # Rimuovi comandi LaTeX prima di controllare l'ortografia
           sed -E '
-              s/\\[a-zA-Z@]+(\[[^]]*\])?(\{[^}]*\})?//g; # Comandi base
-              s/\\begin\{[^}]*\}//g;                    # Inizio ambienti
-              s/\\end\{[^}]*\}//g;                      # Fine ambienti
-              s/\$[^\$]*\$//g;                          # Equazioni inline
-              s/\$\$[^\$]*\$\$//g;                      # Equazioni display
-              s/%.*//g;                                 # Commenti
-              s/[{}]//g;                                # Brackets
-              s/\b([dlm])'([A-Za-z])/\1\2/g;            # Gestione articoli con apostrofi
-          ' "$file" | aspell --lang=it --add-words="$PERSONAL_WORDLIST_IT" list >> $TMP_FILE
+            s/\\[a-zA-Z@]+(\[[^]]*\])?(\{[^}]*\})?//g;
+            s/\$[^\$]*\$//g;
+            s/\$\$[^\$]*\$\$//g;
+            s/%.*//g;
+            s/[{}]//g;
+          ' "$file" | \
+          aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list >> $TMP_FILE
         done
 
         # Controlla le parole non riconosciute in italiano
