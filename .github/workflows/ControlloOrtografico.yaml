@@ -35,9 +35,8 @@ jobs:
           fi
         done
 
-        # Crea file temporaneo per le parole non riconosciute con il nome del file di origine
+        # Crea file temporaneo per le parole non riconosciute
         TMP_FILE=$(mktemp)
-        TMP_FILE_WITH_ORIGIN=$(mktemp)
 
         # Processa tutti i file .tex
         for file in $(find . -name "*.tex"); do
@@ -51,30 +50,23 @@ jobs:
             s/%.*//g;
             s/[{}]//g;
           ' "$file" | \
-          aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list | \
-          while read word; do
-            echo "$file: $word" >> $TMP_FILE_WITH_ORIGIN
-          done
+          aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list >> $TMP_FILE
         done
 
         # Controlla le parole non riconosciute in italiano
-        if [ -s "$TMP_FILE_WITH_ORIGIN" ]; then
+        if [ -s "$TMP_FILE" ]; then
           # Salva le parole non riconosciute in italiano nel file
-          sort -u "$TMP_FILE_WITH_ORIGIN" > unrecognized_words_with_origin.txt
+          sort -u "$TMP_FILE" > unrecognized_words_it.txt
 
           # Controlla l'ortografia in inglese per le stesse parole
-          sort -u "$TMP_FILE_WITH_ORIGIN" | aspell --lang=en --personal=$PERSONAL_WORDLIST_EN list > errors_in_english.txt
+          sort -u "$TMP_FILE" | aspell --lang=en --personal=$PERSONAL_WORDLIST_EN list > errors_in_english.txt
 
-          # Se ci sono errori in inglese, stampali
           if [ -s errors_in_english.txt ]; then
-            echo "Errors found in English:"
+            echo "Errors found:"
             cat errors_in_english.txt
-            echo "Unrecognized words with file origin:"
-            cat unrecognized_words_with_origin.txt
             exit 1
           else
-            echo "No errors in English. Unrecognized Italian words only:"
-            cat unrecognized_words_with_origin.txt
+            echo "No errors in English. Unrecognized Italian words only."
           fi
         else
           echo "No unrecognized words found in Italian."
