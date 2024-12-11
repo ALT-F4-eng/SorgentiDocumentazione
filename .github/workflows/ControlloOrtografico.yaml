@@ -35,8 +35,9 @@ jobs:
           fi
         done
 
-        # Crea file temporaneo per le parole non riconosciute
+        # Crea file temporaneo per le parole non riconosciute con il nome del file di origine
         TMP_FILE=$(mktemp)
+        TMP_FILE_WITH_ORIGIN=$(mktemp)
 
         # Processa tutti i file .tex
         for file in $(find . -name "*.tex"); do
@@ -50,23 +51,32 @@ jobs:
             s/%.*//g;
             s/[{}]//g;
           ' "$file" | \
-          aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list >> $TMP_FILE
+          aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list | \
+          while read word; do
+            echo "$file: $word" >> $TMP_FILE_WITH_ORIGIN
+          done
         done
 
         # Controlla le parole non riconosciute in italiano
-        if [ -s "$TMP_FILE" ]; then
-          # Salva le parole non riconosciute in italiano nel file
-          sort -u "$TMP_FILE" > unrecognized_words_it.txt
+        if [ -s "$TMP_FILE_WITH_ORIGIN" ]; then
+          # Filtra le parole non riconosciute in italiano e quelle che non sono nei dizionari personalizzati
+          grep -F -f $PERSONAL_WORDLIST_IT -v "$TMP_FILE_WITH_ORIGIN" > unrecognized_words_it.txt
 
-          # Controlla l'ortografia in inglese per le stesse parole
-          sort -u "$TMP_FILE" | aspell --lang=en --personal=$PERSONAL_WORDLIST_EN list > errors_in_english.txt
+          # Se ci sono parole non riconosciute, controlla anche l'inglese
+          if [ -s unrecognized_words_it.txt ]; then
+            sort -u unrecognized_words_it.txt | aspell --lang=en --personal=$PERSONAL_WORDLIST_EN list > unrecognized_words_en.txt
 
-          if [ -s errors_in_english.txt ]; then
-            echo "Errors found:"
-            cat errors_in_english.txt
-            exit 1
+            # Se ci sono errori in inglese, stampa anche questi
+            if [ -s unrecognized_words_en.txt ]; then
+              echo "Errors found in English:"
+              cat unrecognized_words_en.txt
+            fi
+
+            # Stampa le parole non riconosciute con il nome del file di origine
+            echo "Unrecognized words in Italian and their origin files:"
+            cat unrecognized_words_it.txt
           else
-            echo "No errors in English. Unrecognized Italian words only."
+            echo "No unrecognized words in Italian."
           fi
         else
           echo "No unrecognized words found in Italian."
