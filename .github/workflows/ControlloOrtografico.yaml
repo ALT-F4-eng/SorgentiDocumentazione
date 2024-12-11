@@ -50,11 +50,7 @@ jobs:
             s/%.*//g;
             s/[{}]//g;
           ' "$file" | \
-          aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list | \
-          while read word; do
-            # Aggiungi il nome del file accanto alla parola non riconosciuta
-            echo "$word found in $file" >> $TMP_FILE
-          done
+          aspell --lang=it --personal=$PERSONAL_WORDLIST_IT list >> $TMP_FILE
         done
 
         # Controlla le parole non riconosciute in italiano
@@ -66,7 +62,7 @@ jobs:
           sort -u "$TMP_FILE" | aspell --lang=en --personal=$PERSONAL_WORDLIST_EN list > errors_in_english.txt
 
           if [ -s errors_in_english.txt ]; then
-            echo "Errors found in English:"
+            echo "Errors found:"
             cat errors_in_english.txt
             exit 1
           else
