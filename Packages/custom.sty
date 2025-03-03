@@ -3,21 +3,28 @@
 
 \RequirePackage[italian]{babel}
 \RequirePackage{tikz}
-\RequirePackage{xcolor}
 \RequirePackage{graphicx}
 \RequirePackage{hyperref}
 \RequirePackage{imakeidx}
 \RequirePackage{caption}
 \RequirePackage{fancyhdr}
 \RequirePackage{geometry}
-\RequirePackage{tabularx}
 \RequirePackage{listings}
 \RequirePackage{setspace}
 \RequirePackage{dirtree}
-\usepackage{pgf-pie}  
-\usepackage{ifthen}
-
+\RequirePackage{pgf-pie}  
+\RequirePackage{ifthen}
+\RequirePackage{amssymb}
+\RequirePackage{float}
+\RequirePackage{ltablex}
+\RequirePackage{environ}
+\RequirePackage{enumitem} 
+\RequirePackage{makecell}
+\RequirePackage{pgfplots}
+\RequirePackage[table]{xcolor}
+\RequirePackage{etoolbox}
 \ProcessOptions\relax
+
 
 %-----------------------------------DEFINIZIONI DI COMANDI-----------------------------------
 \newcommand{\primapagina}{ \input{TitlePage.tex} }
@@ -32,6 +39,33 @@
    {-3.25ex plus -1ex minus -0.2ex}%
    {1.5ex plus 0.2ex}%
    {\normalfont\footnotesize\bfseries}}
+
+\newcommand{\req}[1]{\textbf{Requisito utente} & \if\relax\detokenize{#1}\relax N/A \else #1 \fi \\ \hline}
+
+\newcommand{\pre}[1]{
+    \textbf{Pre-condizioni} & \if\relax\detokenize{#1}\relax N/A \else\begin{itemize}[noitemsep,topsep=-10pt]#1\end{itemize}\fi \\ \hline
+}
+\newcommand{\post}[1]{
+    \textbf{Post-condizioni} &  \if\relax\detokenize{#1}\relax N/A \else\begin{itemize}[noitemsep,topsep=-10pt]#1\end{itemize}\fi \\ \hline
+}
+
+\newcommand{\actor}[1]{\textbf{Attore principale} & \if\relax\detokenize{#1}\relax N/A \else #1 \fi \\ \hline}
+\newcommand{\subactors}[1]{\textbf{Attori secondari} & \if\relax\detokenize{#1}\relax N/A \else #1 \fi \\ \hline}
+\newcommand{\trigger}[1]{\textbf{Trigger} & #1 \\ \hline}
+\newcommand{\inc}[1]{\textbf{Casi d'uso inclusi} & \if\relax\detokenize{#1}\relax N/A \else #1 \fi \\ \hline}
+\newcommand{\base}[1]{\textbf{Caso d'uso base} & \if\relax\detokenize{#1}\relax N/A \else #1 \fi \\ \hline}
+
+\newcommand{\scenario}[1]{
+    \textbf{Scenario principale} &  \if\relax\detokenize{#1}\relax N/A \else\begin{enumerate}[noitemsep,topsep=-10pt]#1\end{enumerate}\fi \\ \hline
+}
+
+\newcommand{
+    \subscenario}[1]{\textbf{Scenari secondari} &  \if\relax\detokenize{#1}\relax N/A \else\begin{itemize}[noitemsep,topsep=-10pt]#1\end{itemize}\fi \\ \hline
+}
+
+\newcommand{\subreq}[2]{ #1 & #2 \\ \hline }
+\newcommand{\dependency}[1]{ \multicolumn{2}{|p{\textwidth}|}{#1} \\ \hline}
+
 %-------------------------------------------------------------------------------------------
 
 %----------------------------------IMPOSTAZIONI FANCYHDR-------------------------------------
@@ -45,6 +79,10 @@
 \usetikzlibrary{calc}
 %---------------------------------------------------------------------------------------------
 
+%--------------------------------IMPOSTAZIONI PGFPLOTS-------------------------------------------
+\pgfplotsset{compat=1.18}
+%---------------------------------------------------------------------------------------------
+
 %--------------------------------IMPOSTAZIONI HYPERREF---------------------------------------
 \definecolor{fp-blue}{HTML}{2885c8}
 \definecolor{fp-red}{HTML}{ea5f64}
@@ -55,12 +93,13 @@
     linkcolor=fp-red,
     filecolor=magenta,      
     urlcolor=fp-blue,
-    pdfpagemode=FullScreen,
+    pdfpagemode=FullScreen
 }
 %---------------------------------------------------------------------------------------------
 
 %---------------------------------IMPOSTAZIONI TABELLE----------------------------------------
 \newcolumntype{C}{>{\centering\arraybackslash}X}
+\keepXColumns
 %---------------------------------------------------------------------------------------------
 
 %---------------------------------IMPOSTAZIONI SEZIONI----------------------------------------
@@ -79,26 +118,52 @@
 
 
 %-----------------------------------DEFINIZIONI ENVIRONMENT-----------------------------------
-\newenvironment{registromodifiche}
-    {
-        \thispagestyle{plain}
-        \newgeometry{ignoreall, hmargin=20pt}
-        \table[!h]
-            \center
-            \caption*{\textbf{\Large Registro delle Modifiche}}
-            \tabularx{\textwidth}{| c | c | C | C | C |}
+\NewEnviron{registromodifiche}{
+    \thispagestyle{plain}
+    \newgeometry{ignoreall, hmargin=20pt}
+    
+    \begin{center}
+        \textbf{\Large Registro modifiche}
+        \begin{tabularx}{\textwidth}{| c | c | C | C | C |}
+            \hline
+                \textbf{\normalsize{Versione}} & 
+                \textbf{\normalsize{Data}} & 
+                \textbf{\normalsize{Autore/i}} & 
+                \textbf{\normalsize{Verificatore/i}} &
+                \textbf{\normalsize{Descrizione}} \\ 
+            \hline 
+            \BODY
+        \end{tabularx}
+    \end{center}
+    \restoregeometry
+}
+            
+\NewEnviron{usecase}[2]{
+    \begin{tabularx}{\textwidth}{|l | X|}
+            \hline
+            \multicolumn{2}{|c|}{\textbf{#1}: #2}\\
+            \hline
+            \BODY
+    \end{tabularx}
+}
+
+\NewEnviron{swreq}[3][]{
+    \begin{tabularx}{\textwidth}{|l|X|}
+            \hline
+            \rowcolor{lightgray}\multicolumn{2}{|c|}{\textbf{#2}} \\
+            \hline
+            \multicolumn{2}{|p{\textwidth}|}{#3} \\
+            \hline
+            \rowcolor{lightgray}\multicolumn{2}{|c|}{\textbf{Specifica}} \\
+            \hline
+            \textbf{ID} & \textbf{Descrizione} \\
+            \hline
+            \BODY
+            \if\relax\detokenize{#1}\relax\else
+                \rowcolor{lightgray}\multicolumn{2}{|c|}{\textbf{Dipendenze da requisiti facoltativi}} \\
                 \hline
-                    \textbf{\normalsize Versione} & 
-                    \textbf{\normalsize Data} & 
-                    \textbf{\normalsize Autore/i} & 
-                    \textbf{\normalsize Verificatore/i} &
-                    \textbf{\normalsize Descrizione} \\ 
-                \hline \hline
-        }
-        {
-            \endtabularx
-            \endcenter
-            \endtable
-        \restoregeometry
-        }
+                #1
+            \fi
+    \end{tabularx}
+}
 %-------------------------------------------------------------------------------------------  
