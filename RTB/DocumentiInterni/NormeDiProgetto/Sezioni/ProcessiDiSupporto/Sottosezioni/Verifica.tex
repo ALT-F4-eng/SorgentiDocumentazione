@@ -2,7 +2,7 @@
 \label{subsec:proc_verifica}
 Il processo di verifica ha come obiettivo fondamentale l'accertamento che:
 \begin{itemize}
-    \item i \textbf{prodotti di lavoro} generati durante il ciclo di vita del software rispettino i requisiti specificati
+    \item i \textbf{prodotti di lavoro} generati durante il \glossario{ciclo di vita} del software rispettino i requisiti specificati
     \item i \textbf{processi seguiti} siano conformi allo standard, alle linee guida e ai piani definiti
 \end{itemize}
 \subsubsection{Descrizione}
@@ -14,7 +14,6 @@ Le task fondamentali previste dal processo sono:
     \item verifica dei requisiti;
     \item verifica della progettazione;
     \item verifica del codice;
-    \item verifica dell'integrazione;
     \item verifica della documentazione.
 \end{itemize}
 Per garantire l'accertamento della conformità, ogni volta che si apporta una modifica, è necessario sottoporre l'intero contenuto aggiornato a una verifica. 
@@ -42,9 +41,9 @@ la qualità, completezza, coerenza e conformità dei documenti tecnici relativi 
 Durante l'esecuzione della tecnica di walkthrough descritta precedentemente, il verificatore ha lo scopo di 
 assicurarsi che vengano seguiti correttamente gli standard di scrittura e di forma, sia generici che specifici, indicati all'interno
 del \hyperref[subsec:documentazione]{processo di Documentazione}.
-Oltre a ciò, è stata realizzata una GitHub Action che, all'apertura di una pull request, realizza un'analisi grammaticale dei file 
-modificati e coinvolti nella pull request, fornendo successivamente un feedback al gruppo di lavoro.
-La GitHub Action assicura la correttezza grammaticale dei documenti verificati migliorando il processo di verifica, aumentandone l'efficienza 
+Oltre a ciò, è stata realizzata una \glossario{GitHub Action} che, all'apertura di una \glossario{pull request}, realizza un'analisi grammaticale dei file 
+modificati e coinvolti nella \glossario{pull request}, fornendo successivamente un \glossario{feedback} al gruppo di lavoro.
+La \glossario{GitHub Action} assicura la correttezza grammaticale dei documenti verificati migliorando il processo di verifica, aumentandone l'efficienza 
 e riducendo il tempo richiesto per le revisioni manuali, permettendo al verificatore di concentrarsi maggiormente su aspetti 
 di forma e di contenuto.
 \subsubsection{Analisi dinamica}
