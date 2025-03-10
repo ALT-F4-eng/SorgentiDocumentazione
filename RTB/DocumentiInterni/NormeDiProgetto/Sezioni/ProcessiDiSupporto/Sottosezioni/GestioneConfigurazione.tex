@@ -10,7 +10,7 @@ I prodotti del progetto vengono memorizzati in più \glossario{repository}.
 Di seguito vengono elencati i \glossario{repository} utilizzati dal gruppo, le loro caratteristiche e la loro struttura.
 
 \paragraph{SorgentiDocumentazione}
-Questo \glossario{repository} contiene i sorgenti della documentazione scritti usando il \hyperref[par:latex]{linguaggio LaTeX}.
+Questo \glossario{repository} contiene i sorgenti della documentazione scritti usando il \hyperref[par:latex]{linguaggio \glossario{LaTeX}}.
 Il \glossario{repository} segue la struttura indicata in \hyperref[fig:repo_sorgenti_documenti]{Figura \ref{fig:repo_sorgenti_documenti}}.
 \begin{figure}[H]
     \dirtree{%
@@ -57,7 +57,7 @@ La cartella candidatura ha la struttura indicata in \hyperref[fig:repo_sorgenti_
 \end{figure}
 
 \subparagraph{RTB}
-La cartella RTB ha la struttura indicata in \hyperref[fig:repo_sorgenti_documenti_RTB]{Figura \ref{fig:repo_sorgenti_documenti_RTB}}.
+La cartella \glossario{RTB} ha la struttura indicata in \hyperref[fig:repo_sorgenti_documenti_RTB]{Figura \ref{fig:repo_sorgenti_documenti_RTB}}.
 \begin{figure}[H]
     \dirtree{%
         .1 RTB.
@@ -71,13 +71,13 @@ La cartella RTB ha la struttura indicata in \hyperref[fig:repo_sorgenti_document
                 .3 VerbaliEsterni.
                     .4 \texttt{<verbali esterni>}.
     }
-    \caption{Struttura cartella RTB.}
+    \caption{Struttura cartella \glossario{RTB}.}
     \label{fig:repo_sorgenti_documenti_RTB}
 \end{figure}
 
 \subsubsection{Identificazione configuration item}
 \label{subsubsec:identificazione_CI}
-Di seguito vengono elencate le regole usate per nominare i \glossario{configuration item} elencati nella sezione \hyperref[subsubsec:repository]{repository}.
+Di seguito vengono elencate le regole usate per nominare i \glossario{configuration item} elencati nella sezione \hyperref[subsubsec:repository]{\glossario{repository}}.
 I file che non riguardano direttamente il progetto non vengono spiegati ulteriormente. 
 
 \paragraph{Sorgenti documenti}
@@ -213,7 +213,7 @@ Oltre all'utilizzo di un software di controllo di versione il gruppo ha deciso d
 Tale tabella se il \glossario{repository} fosse gestito in modo impeccabile sarebbe una copia dei dati già registrati nella stessa.
 Tuttavia il metodo di lavoro del gruppo è in continua evoluzione quindi possono accadere modifiche distruttive che eliminano le versioni dei \glossario{configuration item} apparteneti alla \glossario{baseline} precedente.
 Il registro delle modifiche è quindi uno strumento a supporto del controllo di configurazione ed è più "attendibile" rispetto alla storia del \glossario{repository} \glossario{Git}.
-I documenti per cui viene usato il registro delle modifiche sono indicati nella sezione \hyperref[subsubsec:identificazione_CI]{Identificazione configuration item}.
+I documenti per cui viene usato il registro delle modifiche sono indicati nella sezione \hyperref[subsubsec:identificazione_CI]{Identificazione \glossario{configuration item}}.
 
 Di seguito viene indicata la struttura del registro delle modifiche:
 \begin{enumerate}
@@ -250,8 +250,8 @@ Una modifica è intesa come un azione che ha lo scopo di modificare lo stato di 
 
 \paragraph{Richieste di modifica}
 Ogni modifica deve essere preceduta da una richiesta di modifica che deve essere discussa e accettata tramite votazione di maggioranza.
-Le richieste di modifica vengono registrate e gestite utilizzando il servizio di issue tracking offerto da \glossario{GitHub}.  
-Le informazioni tecniche riguardanti la gestione delle \glossario{issue} vengono indicate alla sezione \hyperref[subpar:ITS]{Issue Tracking System}.
+Le richieste di modifica vengono registrate e gestite utilizzando il servizio di \glossario{issue tracking} offerto da \glossario{GitHub}.  
+Le informazioni tecniche riguardanti la gestione delle \glossario{issue} vengono indicate alla sezione \hyperref[subpar:ITS]{\glossario{Issue Tracking System}}.
 Una richiesta di modifica deve contenere le seguenti informazioni:
 \begin{itemize}
     \item \textbf{Nome del file da modificare}: indicandone il percorso all'interno del \glossario{repository}.
@@ -403,7 +403,7 @@ Questa operazione deve avvenire seguendo il processo che regola l'implementazion
 Di seguito viene documentata l'attività di approvazione delle versioni dei file che devono essere consolidate in una \glossario{baseline}.
 L'approvazione deve essere eseguita dal Responsabile del gruppo di lavoro e prevede le seguenti operazioni:
 \begin{enumerate}
-    \item Creazione ramo \texttt{release} seguendo le regole indicate nella sezione \hyperref[subpar:strategia_di_branching_documenti]{Strategia di branching}.
+    \item Creazione ramo \texttt{release} seguendo le regole indicate nella sezione \hyperref[subpar:strategia_di_branching_documenti]{\glossario{strategia di branching}}.
     \item Eseguire eventuali modifiche correttive minori.
     
     \textbf{Nota bene}: Aggiungere una nuova riga nel registro delle modifiche indicando i valori per le colonne "Autore/i", "Versione" e "Data".
