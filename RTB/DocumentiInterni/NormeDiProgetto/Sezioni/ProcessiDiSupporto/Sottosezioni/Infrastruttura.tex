@@ -197,10 +197,10 @@ Per rendere i file sorgenti meno complessi è stato deciso di definire un pacche
     \item Le dichiarazioni dei pacchetti usati.
 \end{enumerate}
 Oltre a diminuire la verbosità dei documenti questo metodo permette di centralizzare la gestione dei pacchetti, dei comandi e degli ambienti semplificando la manutenzione.
-I pacchetti usati devono essere installati manualmente usando il processo spiegato nella sezione \hyperref[subpar:TLShell]{TLShell}.
+I pacchetti usati devono essere installati manualmente usando il processo spiegato nella sezione \hyperref[subpar:TLShell]{\glossario{TLShell}}.
 In \hyperref[fig:pacchetto_latex]{Figura \ref{fig:pacchetto_latex}} viene mostrata la struttura del pacchetto \glossario{LaTeX}.
 \textbf{Nota bene}: Il pacchetto per poter essere importato deve essere indicato con il comando \lstinline|\usepackage| e il suo percorso deve essere indicato nella \glossario{variabile di ambiente} TEXINPUTS.
-La spiegazione della configurazione dell'ambiente per l'utilizzo del pacchetto è spiegata nella sezione \hyperref[par:IDE]{Integrated Development Environment IDE}.
+La spiegazione della configurazione dell'ambiente per l'utilizzo del pacchetto è spiegata nella sezione \hyperref[par:IDE]{Integrated Development Environment \glossario{IDE}}.
 \begin{figure}[H]
     \dirtree{%
         .1 Packages.
@@ -320,14 +320,14 @@ Come \glossario{IDE} per la stesura della documentazione viene utilizzato \gloss
 \glossario{Visual Studio Code} dispone di un grande numero di estensioni che lo rendono molto versatile.
 In particolare sono stati scelti dal gruppo le seguenti estensioni:
 \begin{enumerate}
-    \item \textbf{LaTeX Workshop}: \href{https://github.com/James-Yu/latex-workshop/wiki}{https://github.com/James-Yu/latex-workshop/wiki}.
+    \item \textbf{\glossario{LaTeX} Workshop}: \href{https://github.com/James-Yu/latex-workshop/wiki}{https://github.com/James-Yu/latex-workshop/wiki}.
     \item \textbf{LTeX+}: \href{ https://ltex-plus.github.io/ltex-plus}{ https://ltex-plus.github.io/ltex-plus}.
 \end{enumerate}
 
 \subparagraph{LaTeX Workshop}
 Questa estensione permette di integrare la compilazione dei file \glossario{LaTeX} in \glossario{Visual Studio Code}.
-LaTeX Workshop richiede che sia installato TeX Live.
-Dopo aver installato l'estensione è necessario modificare la procedura di compilazione di modo che vengano cercati i pacchetti usati e i file .tex importati nella cartella Packages.
+\glossario{LaTeX} Workshop richiede che sia installato TeX Live.
+Dopo aver installato l'estensione è necessario modificare la procedura di compilazione di modo che vengano cercati i pacchetti usati e i file .tex importati nella cartella \glossario{packages}.
 Per fare ciò è necessario seguire le azioni:
 \begin{enumerate}
     \item Aprire \glossario{Visual Studio Code}.
@@ -348,13 +348,13 @@ Per fare ciò è necessario seguire le azioni:
     \center
     \includegraphics[scale=0.4]{Sezioni/ProcessiDiSupporto/Immagini/texinputs_setup.png}
     \includegraphics[]{Sezioni/ProcessiDiSupporto/Immagini/texinputs_setup_json.jpg}
-    \caption{Modifica impostazioni LaTex Workshop.}
+    \caption{Modifica impostazioni \glossario{LaTeX} Workshop.}
     \label{fig:texinputs}
 \end{figure}
 \textbf{Nota bene}: Per riuscire ad accedere al pacchetto locale è necessario lavorare in \glossario{Visual Studio Code} usando come "workspace folder" la cartella relativa alla \glossario{repository}.
 
 \subparagraph{LTeX+}
-LTeX+ è un'estensione che esegue lo "\glossario{spell checking}" dei documenti .tex per installarla basta cercarla nel marketplace di \glossario{Visual Studio Code}.
+LTeX+ è un'estensione che esegue lo "\glossario{spell checking}" dei documenti .tex per installarla basta cercarla nel \glossario{marketplace} di \glossario{Visual Studio Code}.
 Per eventuali problemi di set up le procedure sono spiegate in modo chiaro e dettagliato al link \href{https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/setting-scopes-files.html}{installazione LTeX+}.
 
 \subsubsection{Gestione della configurazione}
@@ -412,7 +412,7 @@ Il comando \glossario{Git} per generare un commit con commento è:
 \begin{lstlisting}
     git commit -m "<commento>"
 \end{lstlisting}
-Per comprendere meglio i commit leggere sezione \hyperref[subpar:3_aree_git]{3 aree di Git}.
+Per comprendere meglio i commit leggere sezione \hyperref[subpar:3_aree_git]{3 aree di \glossario{Git}}.
 Questo comando utilizza come commit padre il commit foglia del ramo corrente. 
 
 \subparagraph{ramo}
@@ -546,7 +546,7 @@ L'operazione di pull permette aggiornare un \glossario{repository} locale con le
     # nel ramo locale corrente
     git pull origin <nomeRamo>
 \end{lstlisting}
-In realà il comando \lstinline|git pull| è un comando composto che accorpa i comandi:
+In realtà il comando \lstinline|git pull| è un comando composto che accorpa i comandi:
 \begin{enumerate}
     \item \lstinline|git fetch origin <nomeRamo>|: recupera localmente il ramo remoto indicato.
     \item \lstinline|git merge <nomeRamo>|.
@@ -677,7 +677,7 @@ Di seguito vengono indicate l'insieme di operazioni che possono essere eseguite 
         # Ore preventivate
         <ore preventivate>
         \end{lstlisting}
-        Il significato del codice viene indicato nella sezione \hyperref[subpar:markdown]{Markdown}.
+        Il significato del codice viene indicato nella sezione \hyperref[subpar:markdown]{\glossario{Markdown}}.
 
         \item Assegnare una o più etichette.
         \item Assegnare il progetto chiamato \textbf{ArtificalQI}.
@@ -931,34 +931,34 @@ I valori che questa proprietà può assumere sono:
     \item \textbf{Re open}.
     \item \textbf{Done}.
 \end{enumerate}
-Per informazioni dettagliate sullo stato delle richieste di modifica leggere la sezione \hyperref[par:ciclo_vita_richieste_di_modifica]{Ciclo di vita delle richieste di modifica}.
+Per informazioni dettagliate sullo stato delle richieste di modifica leggere la sezione \hyperref[par:ciclo_vita_richieste_di_modifica]{\glossario{ciclo di vita} delle richieste di modifica}.
 
 \subparagraph{Presa in carico di una modifica}
 \label{subpar:presa_carico_modifica}
-Per poter prendere in carico una modifica essa deve appartenere alla rappresentazione \hyperref[item:sprint_backlog]{Sprint backlog}.
+Per poter prendere in carico una modifica essa deve appartenere alla rappresentazione \hyperref[item:sprint_backlog]{\glossario{Sprint backlog}}.
 
 Per prendere in carico l'esecuzione di una modifica è necessario trascinarla dalla colonna di appartenenza alla colonna che indica l'esecuzione della stessa.
 
-In accordo con la sezione \hyperref[par:ciclo_vita_richieste_di_modifica]{Ciclo di vita delle richieste di modifica} le possibili colonne di partenza sono: "To do" e "Re open" mentre l'unica colonna di destinazione possibile è "In progress".
+In accordo con la sezione \hyperref[par:ciclo_vita_richieste_di_modifica]{\glossario{ciclo di vita} delle richieste di modifica} le possibili colonne di partenza sono: "To do" e "Re open" mentre l'unica colonna di destinazione possibile è "In progress".
 
 \subparagraph{Presa in carico di una verifica}
 \label{subpar:presa_carico_verifica}
-Per poter prendere in carico una verifica essa deve appartenere alla rappresentazione \hyperref[item:sprint_backlog]{Sprint backlog}.
+Per poter prendere in carico una verifica essa deve appartenere alla rappresentazione \hyperref[item:sprint_backlog]{\glossario{Sprint backlog}}.
 
 Per prendere in carico una verifica il Verificatore deve trascinarla dalla colonna "To review" alla colonna "In review".
 
 \subparagraph{Richiesta di verifica}
 \label{subpar:github_richiesta_di_verifica}
-Per richiedere la verifica di una modifica è necessario \hyperref[item:creazione_pull_request]{aprire una pull request} avente come:
+Per richiedere la verifica di una modifica è necessario \hyperref[item:creazione_pull_request]{aprire una \glossario{pull request}} avente come:
 \begin{itemize}
-    \item \textbf{Ramo sorgente}: il ramo contenete la modifica da verificare che deve seguire le indicazioni fornite nella sezione \hyperref[subpar:strategia_di_branching_documenti]{Strategia di branching}.
+    \item \textbf{Ramo sorgente}: il ramo contenete la modifica da verificare che deve seguire le indicazioni fornite nella sezione \hyperref[subpar:strategia_di_branching_documenti]{\glossario{strategia di branching}}.
     
     \item \textbf{Ramo destinazione}: il ramo \texttt{develop}.
 \end{itemize}
 
 \subparagraph{Accettazione modifiche}
 \label{subpar:accettazione_modifiche}
-Per accettare le modifiche di cui è stata richiesta la verifica è necessario eseguire il \hyperref[item:approvazione_pull_request]{merge della pull request}.
+Per accettare le modifiche di cui è stata richiesta la verifica è necessario eseguire il \hyperref[item:approvazione_pull_request]{merge della \glossario{pull request}}.
 Ed eliminare il ramo sorgente della \glossario{pull request}.
 
 Per informazioni sulla risoluzione dei conflitti nella \glossario{strategia di branching} scelta dal gruppo leggere la sezione \hyperref[subpar:risoluzione_dei_conflitti]{Risoluzione dei conflitti}.
@@ -966,17 +966,17 @@ Per informazioni sulla risoluzione dei conflitti nella \glossario{strategia di b
 
 \subparagraph{Rifiuto modifiche}
 \label{subpar:rifiuto_modifiche}
-Per rifiutare le modifiche di cui è stata richiesta la verifica è necessario \hyperref[item:chiusura_pull_request]{chiudere la pull request}.
+Per rifiutare le modifiche di cui è stata richiesta la verifica è necessario \hyperref[item:chiusura_pull_request]{chiudere la \glossario{pull request}}.
 
-Il verificatore in questo caso ha l'onere di indicare in un \hyperref[item:commentare_issue]{commento della issue} i miglioramenti da apportare la modifica affinchè venga accettata nella verifica successiva.
+Il verificatore in questo caso ha l'onere di indicare in un \hyperref[item:commentare_issue]{commento della \glossario{issue}} i miglioramenti da apportare la modifica affinchè venga accettata nella verifica successiva.
 
 \subparagraph{Pubblicazione dei documenti}
 La pubblicazione dei documenti avviene al raggiungimento di ogni \glossario{baseline}.
-Questa operazione è automatizzata tramite il meccanismo delle \hyperref[subsubsec:github_action]{GitHub action}.
+Questa operazione è automatizzata tramite il meccanismo delle \hyperref[subsubsec:github_action]{\glossario{GitHub action}}.
 In particolare i documenti vengono pubblicati seguendo la stessa struttura del \glossario{repository} contenente i sorgenti.
 
 \subparagraph{Distribuzione dei documenti}
-La distribuzione dei documenti avviene tramite un sito web reso accessibile tramite il servizio di hosting offerto da \glossario{GitHub}.
+La distribuzione dei documenti avviene tramite un sito web reso accessibile tramite il servizio di hosting (da \glossario{host}) offerto da \glossario{GitHub}.
 Il sito segue la struttura indicata in \hyperref[fig:sito_docs]{Figura \ref{fig:sito_docs}}.
 
 \begin{figure}[!h]
@@ -1018,9 +1018,9 @@ Un job è composto dai seguenti elementi fondanti:
 
 \begin{itemize}
     \item \textbf{env}: una o più variabili d'ambiente accessibili all'interno del job stesso.
-    runner: l'identificativo del runner(\glossario{container}) hostato da \glossario{GitHub} che deve eseguire il job.
+    runner: l'identificativo del runner(\glossario{container}) hostato (da \glossario{host}) da \glossario{GitHub} che deve eseguire il job.
     \glossario{GitHub} offre diversi \glossario{container} che variano nella versione/tipo di \glossario{OS} utilizzato.
-    Di seguito viene indicato un link che contiene la lista dei runner hostati da \glossario{GitHub} \href{https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners}{runners}. 
+    Di seguito viene indicato un link che contiene la lista dei runner hostati (da \glossario{host}) da \glossario{GitHub} \href{https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners}{runners}. 
     \item \textbf{steps}: insieme di compiti atomici che formano il job e vengono eseguiti  sequenzialmente sul runner.
 \end{itemize}
 
@@ -1028,7 +1028,7 @@ Un job è composto dai seguenti elementi fondanti:
 Ogni step è identificato da \glossario{GitHub} tramite un nome.
 Uno step è composto dai seguenti componenti presenti in modo mutuamente esclusivo:
 \begin{itemize}
-    \item \textbf{action}: nome di una \glossario{GitHub Action} appartenente al marketplace.
+    \item \textbf{action}: nome di una \glossario{GitHub Action} appartenente al \glossario{marketplace}.
     Il \glossario{GitHub Action marketplace} si trova al link \href{https://github.com/marketplace?type=actions}{actions}.
     
     \item \textbf{comandi}: uno o più comandi che vengono eseguiti nel runner.
@@ -1109,7 +1109,7 @@ Per definire una variabile a livello di \glossario{repository} è necessario seg
     \item Selezionare la voce "Secrets and variables" nel menù laterale.
     \item Selezionare la sottovoce "Actions" del menù a tendina.
     \item Selezionare la scheda "Variables".
-    \item Cliccare il bottone "New repository variable" 
+    \item Cliccare il bottone "New \glossario{repository} variable" 
     \item Indicare Nome e Valore della variabile.
     \item Cliccare il pulsante "Add variable".
 \end{enumerate}
@@ -1140,7 +1140,7 @@ Per definire un secret a livello di \glossario{repository} è necessario seguire
     \item Selezionare la voce "Secrets and variables" nel menù laterale.
     \item Selezionare la sottovoce "Actions" del menù a tendina.
     \item Selezionare la scheda "Secrets".
-    \item Cliccare il bottone "New repository secret" 
+    \item Cliccare il bottone "New \glossario{repository} secret" 
     \item Indicare Nome e Valore del secret.
     \item Cliccare il pulsante "Add secret".
 \end{enumerate}
