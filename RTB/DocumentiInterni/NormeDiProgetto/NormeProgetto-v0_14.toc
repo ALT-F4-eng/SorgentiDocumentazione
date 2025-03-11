@@ -1,0 +1,198 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Processi primari}{8}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Processo di acquisizione}{8}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Iniziazione}{9}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Studio di fattibilità}{9}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Selezione del capitolato}{9}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Preparazione della candidatura}{9}{subsubsection.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.5}Accettazione della candidatura}{9}{subsubsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.2}Processo di fornitura}{9}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Pianificazione}{10}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Esecuzione e controllo}{10}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Revisione e valutazione}{10}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Consegna e completamento}{10}{subsubsection.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.5}Contatti con la Proponente dell’azienda}{11}{subsubsection.1.2.5}%
+\contentsline {subsubsection}{\numberline {1.2.6}Documentazione fornita}{11}{subsubsection.1.2.6}%
+\contentsline {paragraph}{\numberline {1.2.6.1}Piano di progetto}{11}{paragraph.1.2.6.1}%
+\contentsline {paragraph}{\numberline {1.2.6.2}Analisi dei requisiti}{12}{paragraph.1.2.6.2}%
+\contentsline {paragraph}{\numberline {1.2.6.3}Piano di Qualifica}{12}{paragraph.1.2.6.3}%
+\contentsline {paragraph}{\numberline {1.2.6.4}Glossario}{13}{paragraph.1.2.6.4}%
+\contentsline {paragraph}{\numberline {1.2.6.5}Lettera di presentazione}{13}{paragraph.1.2.6.5}%
+\contentsline {subsection}{\numberline {1.3}Processo di sviluppo}{13}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Analisi dei requisiti}{14}{subsubsection.1.3.1}%
+\contentsline {paragraph}{\numberline {1.3.1.1}Requisiti}{14}{paragraph.1.3.1.1}%
+\contentsline {paragraph}{\numberline {1.3.1.2}Casi d'uso}{14}{paragraph.1.3.1.2}%
+\contentsline {subparagraph}{\numberline {1.3.1.2.1}Descrizione}{15}{subparagraph.1.3.1.2.1}%
+\contentsline {subparagraph}{\numberline {1.3.1.2.2}Diagrammi dei casi d'uso}{17}{subparagraph.1.3.1.2.2}%
+\contentsline {paragraph}{\numberline {1.3.1.3}Fonti per l'Individuazione dei Casi d'Uso}{21}{paragraph.1.3.1.3}%
+\contentsline {subparagraph}{\numberline {1.3.1.3.1}Individuazione dei casi d'uso}{21}{subparagraph.1.3.1.3.1}%
+\contentsline {paragraph}{\numberline {1.3.1.4}Requisiti Software}{23}{paragraph.1.3.1.4}%
+\contentsline {section}{\numberline {2}Processi di supporto}{24}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Documentazione}{24}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Standard di formato}{24}{subsubsection.2.1.1}%
+\contentsline {paragraph}{\numberline {2.1.1.1}Standard di scrittura}{24}{paragraph.2.1.1.1}%
+\contentsline {paragraph}{\numberline {2.1.1.2}Standard di forma}{24}{paragraph.2.1.1.2}%
+\contentsline {subparagraph}{\numberline {2.1.1.2.1}Intestazione}{24}{subparagraph.2.1.1.2.1}%
+\contentsline {subparagraph}{\numberline {2.1.1.2.2}Prima pagina}{25}{subparagraph.2.1.1.2.2}%
+\contentsline {subparagraph}{\numberline {2.1.1.2.3}Seconda pagina}{25}{subparagraph.2.1.1.2.3}%
+\contentsline {subparagraph}{\numberline {2.1.1.2.4}Terza pagina}{25}{subparagraph.2.1.1.2.4}%
+\contentsline {subsubsection}{\numberline {2.1.2}Macro categorie di documenti}{25}{subsubsection.2.1.2}%
+\contentsline {paragraph}{\numberline {2.1.2.1}Documenti interni}{25}{paragraph.2.1.2.1}%
+\contentsline {paragraph}{\numberline {2.1.2.2}Documenti esterni}{25}{paragraph.2.1.2.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Piano di documentazione}{26}{subsubsection.2.1.3}%
+\contentsline {paragraph}{\numberline {2.1.3.1}Verbali interni}{26}{paragraph.2.1.3.1}%
+\contentsline {subparagraph}{\numberline {2.1.3.1.1}Scopo}{26}{subparagraph.2.1.3.1.1}%
+\contentsline {subparagraph}{\numberline {2.1.3.1.2}Autore}{26}{subparagraph.2.1.3.1.2}%
+\contentsline {subparagraph}{\numberline {2.1.3.1.3}Input}{26}{subparagraph.2.1.3.1.3}%
+\contentsline {subparagraph}{\numberline {2.1.3.1.4}Struttura}{26}{subparagraph.2.1.3.1.4}%
+\contentsline {subparagraph}{\numberline {2.1.3.1.5}Standard di scrittura specifici}{27}{subparagraph.2.1.3.1.5}%
+\contentsline {paragraph}{\numberline {2.1.3.2}Verbali esterni}{27}{paragraph.2.1.3.2}%
+\contentsline {subparagraph}{\numberline {2.1.3.2.1}Scopo}{27}{subparagraph.2.1.3.2.1}%
+\contentsline {subparagraph}{\numberline {2.1.3.2.2}Autore}{27}{subparagraph.2.1.3.2.2}%
+\contentsline {subparagraph}{\numberline {2.1.3.2.3}Input}{27}{subparagraph.2.1.3.2.3}%
+\contentsline {subparagraph}{\numberline {2.1.3.2.4}Struttura}{27}{subparagraph.2.1.3.2.4}%
+\contentsline {subparagraph}{\numberline {2.1.3.2.5}Standard di scrittura specifici}{28}{subparagraph.2.1.3.2.5}%
+\contentsline {paragraph}{\numberline {2.1.3.3}Analisi dei requisiti}{28}{paragraph.2.1.3.3}%
+\contentsline {subparagraph}{\numberline {2.1.3.3.1}Scopo}{28}{subparagraph.2.1.3.3.1}%
+\contentsline {subparagraph}{\numberline {2.1.3.3.2}Autore}{28}{subparagraph.2.1.3.3.2}%
+\contentsline {subparagraph}{\numberline {2.1.3.3.3}Input}{28}{subparagraph.2.1.3.3.3}%
+\contentsline {subparagraph}{\numberline {2.1.3.3.4}Struttura}{28}{subparagraph.2.1.3.3.4}%
+\contentsline {paragraph}{\numberline {2.1.3.4}Norme di progetto}{29}{paragraph.2.1.3.4}%
+\contentsline {subparagraph}{\numberline {2.1.3.4.1}Autore}{29}{subparagraph.2.1.3.4.1}%
+\contentsline {subparagraph}{\numberline {2.1.3.4.2}Input}{29}{subparagraph.2.1.3.4.2}%
+\contentsline {subparagraph}{\numberline {2.1.3.4.3}Struttura}{29}{subparagraph.2.1.3.4.3}%
+\contentsline {paragraph}{\numberline {2.1.3.5}Piano di progetto}{29}{paragraph.2.1.3.5}%
+\contentsline {subparagraph}{\numberline {2.1.3.5.1}Autore}{29}{subparagraph.2.1.3.5.1}%
+\contentsline {subparagraph}{\numberline {2.1.3.5.2}Input}{29}{subparagraph.2.1.3.5.2}%
+\contentsline {subparagraph}{\numberline {2.1.3.5.3}Struttura}{30}{subparagraph.2.1.3.5.3}%
+\contentsline {subsection}{\numberline {2.2}Gestione della configurazione}{31}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Repository}{31}{subsubsection.2.2.1}%
+\contentsline {paragraph}{\numberline {2.2.1.1}SorgentiDocumentazione}{31}{paragraph.2.2.1.1}%
+\contentsline {subparagraph}{\numberline {2.2.1.1.1}Candidatura}{32}{subparagraph.2.2.1.1.1}%
+\contentsline {subparagraph}{\numberline {2.2.1.1.2}RTB}{33}{subparagraph.2.2.1.1.2}%
+\contentsline {subsubsection}{\numberline {2.2.2}Identificazione configuration item}{33}{subsubsection.2.2.2}%
+\contentsline {paragraph}{\numberline {2.2.2.1}Sorgenti documenti}{34}{paragraph.2.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.3}Controllo di versione}{34}{subsubsection.2.2.3}%
+\contentsline {paragraph}{\numberline {2.2.3.1}Software di controllo di versione}{34}{paragraph.2.2.3.1}%
+\contentsline {subparagraph}{\numberline {2.2.3.1.1}Strategia di branching}{35}{subparagraph.2.2.3.1.1}%
+\contentsline {subparagraph}{\numberline {2.2.3.1.2}Risoluzione dei conflitti}{36}{subparagraph.2.2.3.1.2}%
+\contentsline {paragraph}{\numberline {2.2.3.2}Registro delle modifiche}{37}{paragraph.2.2.3.2}%
+\contentsline {paragraph}{\numberline {2.2.3.3}Versione}{38}{paragraph.2.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Gestione delle modifiche}{38}{subsubsection.2.2.4}%
+\contentsline {paragraph}{\numberline {2.2.4.1}Richieste di modifica}{38}{paragraph.2.2.4.1}%
+\contentsline {subparagraph}{\numberline {2.2.4.1.1}Descrizione modifica}{39}{subparagraph.2.2.4.1.1}%
+\contentsline {paragraph}{\numberline {2.2.4.2}Ciclo di vita delle richieste di modifica}{39}{paragraph.2.2.4.2}%
+\contentsline {paragraph}{\numberline {2.2.4.3}Stati}{39}{paragraph.2.2.4.3}%
+\contentsline {paragraph}{\numberline {2.2.4.4}Cambiamenti di stato}{40}{paragraph.2.2.4.4}%
+\contentsline {paragraph}{\numberline {2.2.4.5}Fasi}{41}{paragraph.2.2.4.5}%
+\contentsline {subparagraph}{\numberline {2.2.4.5.1}Implementazione modifica}{41}{subparagraph.2.2.4.5.1}%
+\contentsline {subparagraph}{\numberline {2.2.4.5.2}Verifica modifica}{42}{subparagraph.2.2.4.5.2}%
+\contentsline {subparagraph}{\numberline {2.2.4.5.3}Miglioramento modifica}{42}{subparagraph.2.2.4.5.3}%
+\contentsline {subsubsection}{\numberline {2.2.5}Approvazione}{43}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Distribuzione dei documenti}{43}{subsubsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.3}Accertamento della Qualità}{43}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Attività}{44}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Standard di riferimento per la qualità di prodotto del software}{44}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Notazione Metriche di Qualità}{45}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Descrizione Metriche di Qualità}{45}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.5}Elenco delle Metriche di Qualità}{46}{subsubsection.2.3.5}%
+\contentsline {paragraph}{\numberline {2.3.5.1}Metriche di processo}{46}{paragraph.2.3.5.1}%
+\contentsline {paragraph}{\numberline {2.3.5.2}Metriche di prodotto}{48}{paragraph.2.3.5.2}%
+\contentsline {subsection}{\numberline {2.4}Processo di Verifica}{49}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Descrizione}{49}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Analisi statica}{50}{subsubsection.2.4.2}%
+\contentsline {paragraph}{\numberline {2.4.2.1}Walkthrough}{50}{paragraph.2.4.2.1}%
+\contentsline {paragraph}{\numberline {2.4.2.2}verifica della documentazione}{51}{paragraph.2.4.2.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Analisi dinamica}{51}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}Processo di infrastruttura}{52}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Documentazione}{52}{subsubsection.2.5.1}%
+\contentsline {paragraph}{\numberline {2.5.1.1}Linguaggio}{52}{paragraph.2.5.1.1}%
+\contentsline {paragraph}{\numberline {2.5.1.2}Distribuzione TeX}{52}{paragraph.2.5.1.2}%
+\contentsline {subparagraph}{\numberline {2.5.1.2.1}TLShell}{52}{subparagraph.2.5.1.2.1}%
+\contentsline {paragraph}{\numberline {2.5.1.3}Comandi di base}{53}{paragraph.2.5.1.3}%
+\contentsline {subparagraph}{\numberline {2.5.1.3.1}Tabelle}{53}{subparagraph.2.5.1.3.1}%
+\contentsline {subparagraph}{\numberline {2.5.1.3.2}Link}{54}{subparagraph.2.5.1.3.2}%
+\contentsline {subparagraph}{\numberline {2.5.1.3.3}Listati di codice}{55}{subparagraph.2.5.1.3.3}%
+\contentsline {subparagraph}{\numberline {2.5.1.3.4}Figure}{55}{subparagraph.2.5.1.3.4}%
+\contentsline {subparagraph}{\numberline {2.5.1.3.5}Inclusione file}{55}{subparagraph.2.5.1.3.5}%
+\contentsline {subparagraph}{\numberline {2.5.1.3.6}Grafici}{56}{subparagraph.2.5.1.3.6}%
+\contentsline {paragraph}{\numberline {2.5.1.4}Pacchetto LaTeX}{57}{paragraph.2.5.1.4}%
+\contentsline {subparagraph}{\numberline {2.5.1.4.1}Comandi personalizzati}{57}{subparagraph.2.5.1.4.1}%
+\contentsline {subparagraph}{\numberline {2.5.1.4.2}Ambienti personalizzati}{58}{subparagraph.2.5.1.4.2}%
+\contentsline {paragraph}{\numberline {2.5.1.5}Struttura di base documenti}{59}{paragraph.2.5.1.5}%
+\contentsline {subparagraph}{\numberline {2.5.1.5.1}Gestione documenti "lunghi"}{59}{subparagraph.2.5.1.5.1}%
+\contentsline {paragraph}{\numberline {2.5.1.6}Integrated Development Environment IDE}{60}{paragraph.2.5.1.6}%
+\contentsline {subparagraph}{\numberline {2.5.1.6.1}LaTeX Workshop}{60}{subparagraph.2.5.1.6.1}%
+\contentsline {subparagraph}{\numberline {2.5.1.6.2}LTeX+}{61}{subparagraph.2.5.1.6.2}%
+\contentsline {subsubsection}{\numberline {2.5.2}Gestione della configurazione}{62}{subsubsection.2.5.2}%
+\contentsline {paragraph}{\numberline {2.5.2.1}Git}{62}{paragraph.2.5.2.1}%
+\contentsline {subparagraph}{\numberline {2.5.2.1.1}repository}{62}{subparagraph.2.5.2.1.1}%
+\contentsline {subparagraph}{\numberline {2.5.2.1.2}commit}{63}{subparagraph.2.5.2.1.2}%
+\contentsline {subparagraph}{\numberline {2.5.2.1.3}ramo}{63}{subparagraph.2.5.2.1.3}%
+\contentsline {subparagraph}{\numberline {2.5.2.1.4}3 aree di Git}{64}{subparagraph.2.5.2.1.4}%
+\contentsline {subparagraph}{\numberline {2.5.2.1.5}push}{65}{subparagraph.2.5.2.1.5}%
+\contentsline {subparagraph}{\numberline {2.5.2.1.6}pull}{66}{subparagraph.2.5.2.1.6}%
+\contentsline {subparagraph}{\numberline {2.5.2.1.7}merge}{66}{subparagraph.2.5.2.1.7}%
+\contentsline {paragraph}{\numberline {2.5.2.2}GitHub}{67}{paragraph.2.5.2.2}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.1}GitHub organization}{67}{subparagraph.2.5.2.2.1}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.2}Gestione dei rami}{67}{subparagraph.2.5.2.2.2}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.3}Issue}{68}{subparagraph.2.5.2.2.3}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.4}Markdow}{70}{subparagraph.2.5.2.2.4}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.5}Etichette}{71}{subparagraph.2.5.2.2.5}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.6}pull request}{71}{subparagraph.2.5.2.2.6}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.7}Project}{73}{subparagraph.2.5.2.2.7}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.8}Proprietà personalizzate}{74}{subparagraph.2.5.2.2.8}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.9}Stato}{75}{subparagraph.2.5.2.2.9}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.10}Presa in carico di una modifica}{75}{subparagraph.2.5.2.2.10}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.11}Presa in carico di una verifica}{75}{subparagraph.2.5.2.2.11}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.12}Richiesta di verifica}{75}{subparagraph.2.5.2.2.12}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.13}Accettazione modifiche}{76}{subparagraph.2.5.2.2.13}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.14}Rifiuto modifiche}{76}{subparagraph.2.5.2.2.14}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.15}Pubblicazione dei documenti}{76}{subparagraph.2.5.2.2.15}%
+\contentsline {subparagraph}{\numberline {2.5.2.2.16}Distribuzione dei documenti}{76}{subparagraph.2.5.2.2.16}%
+\contentsline {subsubsection}{\numberline {2.5.3}Github action}{76}{subsubsection.2.5.3}%
+\contentsline {paragraph}{\numberline {2.5.3.1}Teoria}{77}{paragraph.2.5.3.1}%
+\contentsline {subparagraph}{\numberline {2.5.3.1.1}Workflow}{77}{subparagraph.2.5.3.1.1}%
+\contentsline {subparagraph}{\numberline {2.5.3.1.2}Jobs}{77}{subparagraph.2.5.3.1.2}%
+\contentsline {subparagraph}{\numberline {2.5.3.1.3}Step}{77}{subparagraph.2.5.3.1.3}%
+\contentsline {paragraph}{\numberline {2.5.3.2}Pratica}{78}{paragraph.2.5.3.2}%
+\contentsline {subparagraph}{\numberline {2.5.3.2.1}Definizione workflow}{78}{subparagraph.2.5.3.2.1}%
+\contentsline {subparagraph}{\numberline {2.5.3.2.2}Definizione job}{78}{subparagraph.2.5.3.2.2}%
+\contentsline {subparagraph}{\numberline {2.5.3.2.3}Definizione step}{78}{subparagraph.2.5.3.2.3}%
+\contentsline {paragraph}{\numberline {2.5.3.3}Variabili GitHub}{79}{paragraph.2.5.3.3}%
+\contentsline {subparagraph}{\numberline {2.5.3.3.1}Definizione}{79}{subparagraph.2.5.3.3.1}%
+\contentsline {subparagraph}{\numberline {2.5.3.3.2}Gestione}{80}{subparagraph.2.5.3.3.2}%
+\contentsline {paragraph}{\numberline {2.5.3.4}Secrets GitHub}{80}{paragraph.2.5.3.4}%
+\contentsline {subparagraph}{\numberline {2.5.3.4.1}Definizione}{80}{subparagraph.2.5.3.4.1}%
+\contentsline {subparagraph}{\numberline {2.5.3.4.2}Gestione}{81}{subparagraph.2.5.3.4.2}%
+\contentsline {paragraph}{\numberline {2.5.3.5}Pubblicazione dei documenti}{81}{paragraph.2.5.3.5}%
+\contentsline {paragraph}{\numberline {2.5.3.6}Correzione grammaticale dei documenti}{82}{paragraph.2.5.3.6}%
+\contentsline {paragraph}{\numberline {2.5.3.7}Calcolo delle ore di lavoro}{82}{paragraph.2.5.3.7}%
+\contentsline {subsubsection}{\numberline {2.5.4}Gestione}{82}{subsubsection.2.5.4}%
+\contentsline {paragraph}{\numberline {2.5.4.1}Canali di comunicazione}{82}{paragraph.2.5.4.1}%
+\contentsline {subparagraph}{\numberline {2.5.4.1.1}Canali di comunicazione interni}{82}{subparagraph.2.5.4.1.1}%
+\contentsline {subparagraph}{\numberline {2.5.4.1.2}Canali di comunicazione esterni}{83}{subparagraph.2.5.4.1.2}%
+\contentsline {subsubsection}{\numberline {2.5.5}Sviluppo}{83}{subsubsection.2.5.5}%
+\contentsline {paragraph}{\numberline {2.5.5.1}StarUML}{83}{paragraph.2.5.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.6}Dashboard excel}{83}{subsubsection.2.5.6}%
+\contentsline {paragraph}{\numberline {2.5.6.1}Dashboard excel per il calcolo delle ore}{83}{paragraph.2.5.6.1}%
+\contentsline {subsection}{\numberline {2.6}Gestione di progetto}{84}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}SCRUM}{84}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Ruoli}{84}{subsubsection.2.6.2}%
+\contentsline {paragraph}{\numberline {2.6.2.1}Responsabile}{84}{paragraph.2.6.2.1}%
+\contentsline {paragraph}{\numberline {2.6.2.2}Amministratore}{85}{paragraph.2.6.2.2}%
+\contentsline {paragraph}{\numberline {2.6.2.3}Analista}{85}{paragraph.2.6.2.3}%
+\contentsline {paragraph}{\numberline {2.6.2.4}Progettista}{85}{paragraph.2.6.2.4}%
+\contentsline {paragraph}{\numberline {2.6.2.5}Programmatore}{85}{paragraph.2.6.2.5}%
+\contentsline {paragraph}{\numberline {2.6.2.6}Verificatore}{85}{paragraph.2.6.2.6}%
+\contentsline {paragraph}{\numberline {2.6.2.7}Rotazione dei ruoli}{85}{paragraph.2.6.2.7}%
+\contentsline {subsubsection}{\numberline {2.6.3}Artefatti}{85}{subsubsection.2.6.3}%
+\contentsline {paragraph}{\numberline {2.6.3.1}Product backlog}{86}{paragraph.2.6.3.1}%
+\contentsline {paragraph}{\numberline {2.6.3.2}Sprint backlog}{86}{paragraph.2.6.3.2}%
+\contentsline {subsubsection}{\numberline {2.6.4}Cerimonie}{86}{subsubsection.2.6.4}%
+\contentsline {paragraph}{\numberline {2.6.4.1}Retrospettiva}{86}{paragraph.2.6.4.1}%
+\contentsline {paragraph}{\numberline {2.6.4.2}Revisione}{86}{paragraph.2.6.4.2}%
+\contentsline {paragraph}{\numberline {2.6.4.3}Pianificazione}{87}{paragraph.2.6.4.3}%
+\contentsline {paragraph}{\numberline {2.6.4.4}Controllo}{88}{paragraph.2.6.4.4}%
+\contentsline {subsection}{\numberline {2.7}Gestione dei rischi}{89}{subsection.2.7}%
