@@ -66,6 +66,16 @@
 \newcommand{\subreq}[2]{ #1 & #2 \\ \hline }
 \newcommand{\dependency}[1]{ \multicolumn{2}{|p{\textwidth}|}{#1} \\ \hline}
 
+\newcommand{\nfreq}[2]{
+    \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        \rowcolor{lightgray}\multicolumn{2}{|c|}{\textbf{#1}} \\
+        \hline
+        \multicolumn{2}{|p{\textwidth}|}{#2} \\
+        \hline
+    \end{tabularx}
+}
+
 %-------------------------------------------------------------------------------------------
 
 %----------------------------------IMPOSTAZIONI FANCYHDR-------------------------------------
@@ -147,7 +157,7 @@
     \end{tabularx}
 }
 
-\NewEnviron{swreq}[3][]{
+\NewEnviron{freq}[3][]{
     \begin{tabularx}{\textwidth}{|l|X|}
             \hline
             \rowcolor{lightgray}\multicolumn{2}{|c|}{\textbf{#2}} \\
@@ -164,6 +174,7 @@
                 \hline
                 #1
             \fi
+            \hline
     \end{tabularx}
 }
 %-------------------------------------------------------------------------------------------  

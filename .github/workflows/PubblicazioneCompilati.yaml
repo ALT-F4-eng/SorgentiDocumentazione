@@ -1,5 +1,4 @@
 name: Pubblicazione dei documenti LaTeX compilati
-
 on:
     push: 
         branches:
@@ -8,77 +7,89 @@ on:
           - '**/*.tex'
     
 jobs:
-    pubblicazione_compilati:
-      env: 
-        DIRS_TO_IGNORE: ${{vars.DIRS_TO_IGNORE}}
-        DIRS_TO_DEL: ${{vars.DIRS_TO_DEL}}
-          
-      runs-on: ubuntu-latest
-      steps:
-        - name: Clona la repository dei documenti sorgenti
-          uses: actions/checkout@v4
-          with:
-            path: src
-
-        - name: Clona la repository dei documenti compilati
-          uses: actions/checkout@v4
-          with:
-            repository: ALT-F4-eng/Documentazione
-            path: dst
-            token: ${{ secrets.PAT_ALT_F4 }}
+  pubblicazione_compilati:
+    env: 
+      # ELEM_TO_MAINTAIN: contiene i nomi dei file compilati separati da spazio che non devono essere sovrascritti dalla pubblicazione perchè firmati dal proponente
+      # ELEM_TO_DEL: contiene i nomi dei file sorgente separati da spazio che non devono essere pubblicati 
+      # SRC: nome directory di destinazione della clonazione del repo dei file sorgenti
+      # CMP: nome directory di destinazione della clonazione del repo dei file compilati
+      ELEM_TO_MAINTAIN: ${{vars.ELEM_TO_MAINTAIN}}
+      ELEM_TO_DEL: ${{vars.ELEM_TO_DEL}}
+      SRC: "src"
+      CMP: "cmp"
         
-        - name: Seleziona i documenti da compilare
-          id: setup_tex
-          run: |
-                echo "TEX_PATH<<EOF" >> $GITHUB_OUTPUT
-                echo "$(find -type f -name "*.tex" | grep -v $(echo ${DIRS_TO_IGNORE} ${DIRS_TO_DEL}| sed 's/ /\\|/g'))" >> $GITHUB_OUTPUT
-                echo "EOF" >> $GITHUB_OUTPUT
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clona repo documenti sorgente
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.SRC }}
+
+      - name: Clona repo documenti compilati
+        uses: actions/checkout@v4
+        with:
+          repository: ALT-F4-eng/Documentazione
+          path: ${{ env.CMP }}
+          token: ${{ secrets.PAT_ALT_F4 }}
+
+      # Definisce due regex che mettono in OR rispettivamente i file sorgenti da eliminare dopo la compilazione e i file compilati da non aggiornare 
+      - name: Definizione regex 
+        id: regex
+        run: |
+          echo "REGEX_TO_DEL=$(echo "$ELEM_TO_DEL" | sed 's/ /\\|/g')" >> $GITHUB_OUTPUT 
+          echo "REGEX_TO_MAINTAIN=$(echo "$ELEM_TO_MAINTAIN" | sed 's/ /\\|/g')" >> $GITHUB_OUTPUT 
+          
+      # Seleziona i documenti contenuti nella repo dei documenti sorgente che devono essere aggioranti nella repo dei documenti pubblicati
+      - name: Selezione documenti sorgente per compilazione
+        id: select_files
+        run: |
+          TO_COMPILE=$(find $SRC -type f -name "*.tex" \
+          | grep -v "${{ steps.regex.outputs.REGEX_TO_DEL }}" \
+          | grep -v "${{ steps.regex.outputs.REGEX_TO_MAINTAIN }}")
+          
+          echo "TEX_FILES<<EOF" >> $GITHUB_OUTPUT
+          echo $TO_COMPILE >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      # Compila i documenti contenuti nella repo dei documenti sorgente che devono essere aggiornati nella repo dei documenti pubblicati  
+      - name: Compilazione
+        uses: xu-cheng/latex-action@v3
+        with:
+          work_in_root_file_dir: true
+          root_file: |
+            ${{ steps.select_files.outputs.TEX_FILES }}
+        env:
+          TEXINPUTS: "/home/runner/work/SorgentiDocumentazione/SorgentiDocumentazione/${{env.SRC}}/Packages:"
+
+      # Elimina i file indicati nella variabile ELEM_TO_DEL e quelli generati dalla compilazione 
+      - name: Pulizia dopo la compilazione
+        run: |
+          rm -rf $( find $SRC -type d -not -path '*/.*' | grep "${{steps.regex.outputs.REGEX_TO_DEL}}")
+          find $SRC -type f -not -path '*/*.pdf' -delete
+
+      # Elimina i documenti contenuti nella repo documenti compilati che devono essere aggiornati 
+      - name: Pulizia repo documenti compilati 
+        run:  rm $(find $CMP -type f -path '*/*.pdf' | grep -v "${{steps.regex.outputs.REGEX_TO_MAINTAIN}}")
+
+      # Copia i file compilati che devono essere aggiornati nella repo documenti pubblicati
+      - name: Aggiornamento repo documenti compilati
+        run: |
+          FILES_TO_COPY=$(find $SRC -type f -not -path '*/.*')
+          
+          for FILE in $FILES_TO_COPY; do
               
-        - name: Compila i documenti
-          uses: xu-cheng/latex-action@v3
-          with:
-            work_in_root_file_dir: true
-            root_file: |
-                ${{ steps.setup_tex.outputs.TEX_PATH }}
-          env:
-            TEXINPUTS: "/home/runner/work/SorgentiDocumentazione/SorgentiDocumentazione/src/Packages:"
-  
-        - name: Rimuove file inutili in src
-          run: |
-              cd src
-              rm -rf $DIRS_TO_DEL
-              find * -type f ! -name "*.pdf" -delete
-              for dir in */; do
-                files_child=$(ls -A "$dir")
-                files_n=$(echo "$files_child" | wc -l)
-
-                if [ $files_n -eq 1 ]; then
-                        mv "$dir/$files_child" "$dir/../"
-                        rmdir $dir
-                fi
-              done
-              cd ..
-            
-        - name: Copia le cartelle da ignorare
-          run: |
-              i=0
-              for d in $DIRS_TO_IGNORE; do
-                dest_dirs=$(find ./dst -type d -name "*${d}")
-                src_dirs=($(find ./src -type d -name "*${d}"))
-                for dest_dir in $dest_dirs; do
-                    cp -rf $dest_dir "${src_dirs[$i]}/.."
-                    i=$((i + 1)) 
-                done
-              done
+              FILE_DST=$(echo $FILE | sed "s/$SRC/$CMP/g")
+              
+              if [ ! -e $(dirname $FILE_DST) ]; then
+                  mkdir $(dirname $FILE_DST)
+              fi
           
-        - name: Copia i documenti nella repo di destinazione
-          run: |
-              rm -rf $(ls -d dst/* | grep -v 'Js\|Assets\|Style\|README.md\|index.html')
-              cp -r src/* dst/
-        
-        - name: Commit dei documenti compilati
-          uses: EndBug/add-and-commit@v9
-          with:
-            committer_email: altf4.eng@gmail.com
-            committer_name: altf4
-            cwd: dst
+              cp $FILE $FILE_DST
+          done
+      
+      - name: Commit repo documenti compilati
+        uses: EndBug/add-and-commit@v9
+        with:
+          committer_email: altf4.eng@gmail.com
+          committer_name: altf4
+          cwd: ${{ env.CMP }}
