@@ -213,7 +213,7 @@ Oltre all'utilizzo di un software di controllo di versione il gruppo ha deciso d
 Tale tabella se il \glossario{repository} fosse gestito in modo impeccabile sarebbe una copia dei dati già registrati nella stessa.
 Tuttavia il metodo di lavoro del gruppo è in continua evoluzione quindi possono accadere modifiche distruttive che eliminano le versioni dei \glossario{configuration item} apparteneti alla \glossario{baseline} precedente.
 Il registro delle modifiche è quindi uno strumento a supporto del controllo di configurazione ed è più "attendibile" rispetto alla storia del \glossario{repository} \glossario{Git}.
-I documenti per cui viene usato il registro delle modifiche sono indicati nella sezione \hyperref[subsubsec:identificazione_CI]{Identificazione \glossario{configuration item}}.
+I documenti per i quali viene usato il registro delle modifiche sono indicati nella sezione \hyperref[subsubsec:identificazione_CI]{Identificazione \glossario{configuration item}}.
 
 Di seguito viene indicata la struttura del registro delle modifiche:
 \begin{enumerate}
@@ -285,7 +285,7 @@ In particolare gli stati di una richiesta di modifica sono:
 \begin{enumerate}
     \item \textbf{To do}: la richiesta di modifica è stata approvata dal gruppo, registrata in \glossario{GitHub} e appartiene ai compiti che portano al raggiungimento di una prossima \glossario{baseline}.
     \item \textbf{In progress}: la richiesta di modifica è stata presa in carico da un membro del gruppo.
-    \item \textbf{To review}: la modifica è stata implementata dal membro del gruppo che la presa in carico.
+    \item \textbf{To review}: la modifica è stata implementata dal membro del gruppo che l'ha presa in carico.
     Prima di contribuire alla prossima \glossario{baseline} deve essere verificata.
     \item \textbf{In review}: un Verificatore sta procedendo a eseguire la verifica della modifica.
     \item \textbf{Re open}: la modifica non è stata accettata dal Verificatore e deve quindi essere migliorata.
@@ -315,7 +315,7 @@ I cambiamenti di stato di una richiesta di modifica durante il suo \glossario{ci
     
     Avviene in automatico nel caso in cui la verifica della modifica abbia esito positivo.
     
-    \item \textbf{Presa in carcio del migliroamento della modifica}(\textbf{Re open} \textrightarrow\ \textbf{In progress})
+    \item \textbf{Presa in carico del miglioramento della modifica}(\textbf{Re open} \textrightarrow\ \textbf{In progress})
     
     Avviene manualmente seguendo la procedura a carico del modificatore indicata alla sezione \hyperref[subpar:presa_carico_modifica]{Presa in carico di una modifica}.
 \end{enumerate}

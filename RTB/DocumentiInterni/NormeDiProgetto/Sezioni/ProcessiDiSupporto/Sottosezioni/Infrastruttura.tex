@@ -93,7 +93,7 @@ Link a elementi interni alla pagina:
 \end{lstlisting}
 Dove:
 \begin{itemize}
-    \item Convezione standard per nominare le \glossario{label}: \texttt{tipoElemento:nome}.
+    \item Convenzione standard per nominare le \glossario{label}: \texttt{tipoElemento:nome}.
     Dove i possibili tipi di elemento sono: paragraph(par), subparagraph(subpar), section(sec), subsection(subsec) e figure(fig).
 \end{itemize}
 \noindent Link a elementi esterni alla pagina:
@@ -327,7 +327,7 @@ In particolare sono stati scelti dal gruppo le seguenti estensioni:
 \subparagraph{LaTeX Workshop}
 Questa estensione permette di integrare la compilazione dei file \glossario{LaTeX} in \glossario{Visual Studio Code}.
 \glossario{LaTeX} Workshop richiede che sia installato TeX Live.
-Dopo aver installato l'estensione è necessario modificare la procedura di compilazione di modo che vengano cercati i pacchetti usati e i file .tex importati nella cartella \glossario{packages}.
+Dopo aver installato l'estensione è necessario modificare la procedura di compilazione in modo che vengano cercati i pacchetti usati e i file .tex importati nella cartella \glossario{packages}.
 Per fare ciò è necessario seguire le azioni:
 \begin{enumerate}
     \item Aprire \glossario{Visual Studio Code}.
@@ -354,7 +354,7 @@ Per fare ciò è necessario seguire le azioni:
 \textbf{Nota bene}: Per riuscire ad accedere al pacchetto locale è necessario lavorare in \glossario{Visual Studio Code} usando come "workspace folder" la cartella relativa alla \glossario{repository}.
 
 \subparagraph{LTeX+}
-LTeX+ è un'estensione che esegue lo "\glossario{spell checking}" dei documenti .tex per installarla basta cercarla nel \glossario{marketplace} di \glossario{Visual Studio Code}.
+LTeX+ è un'estensione che esegue lo "\glossario{spell checking}" dei documenti .tex, per installarla basta cercarla nel \glossario{marketplace} di \glossario{Visual Studio Code}.
 Per eventuali problemi di set up le procedure sono spiegate in modo chiaro e dettagliato al link \href{https://ltex-plus.github.io/ltex-plus/vscode-ltex-plus/setting-scopes-files.html}{installazione LTeX+}.
 
 \subsubsection{Gestione della configurazione}
@@ -390,8 +390,8 @@ Per creare un \glossario{repository} è possibile eseguire uno dei seguenti coma
 \end{lstlisting}
 Dove:
 \begin{enumerate}
-    \item Il primo comando permette di copiare la \glossario{repository} remota nella \glossario{current working directory} proprio \glossario{file system}.
-    \item Il secondo comando permette di creare una \glossario{repository} nella \glossario{current working directory} nel proprio \glossario{file system}.
+    \item Il primo comando permette di copiare la \glossario{repository} remota nella \glossario{current working directory} del proprio \glossario{file system}.
+    \item Il secondo comando permette di creare una \glossario{repository} nella \glossario{current working directory} del proprio \glossario{file system}.
 \end{enumerate}
 
 \subparagraph{commit}
@@ -465,13 +465,13 @@ Per ottenere una lista dei rami dei \glossario{repository} locale e remoto è ne
     \item \textbf{Commit HEAD}: rappresenta il ramo corrente.
     Per gestire il ramo corrente esistono i seguenti comandi:
     \begin{lstlisting}
-    # modifica etichetta ramo correte usando il
-    # commit indicato le modifiche vengono 
+    # modifica etichetta ramo corrente usando il
+    # commit indicato, le modifiche vengono 
     # eliminate dal file system
     git reset --hard <hashCommit>
 
-    # modifica etichetta ramo correte usando il
-    # commit indicato le modifiche tornano 
+    # modifica etichetta ramo corrente usando il
+    # commit indicato, le modifiche tornano 
     # nell'area di staging 
     git reset --soft <hashCommit>
 
@@ -525,7 +525,7 @@ Le declinazioni del comando di \glossario{Git} che permette di eseguire un push 
     # indicato nel ramo remoto indicato
     git push <ramoSorgente> origin <ramoDestinazione>
 \end{lstlisting}   
-Dove \texttt{origin} è il nome di default del riferimento al \glossario{repository} remoto e può essere gestiti usando i comandi:
+Dove \texttt{origin} è il nome di default del riferimento al \glossario{repository} remoto e può essere gestito usando i comandi:
 \begin{lstlisting}
     # aggiunge nuovo riferimento remoto
     git remote add <nome> <URL>
@@ -539,7 +539,7 @@ Dove \texttt{origin} è il nome di default del riferimento al \glossario{reposit
 
 \subparagraph{pull}
 \label{subpar:pull}
-L'operazione di pull permette aggiornare un \glossario{repository} locale con le modifiche registrate al \glossario{repository} remoto a cui è associato.
+L'operazione di pull permette di aggiornare un \glossario{repository} locale con le modifiche registrate al \glossario{repository} remoto a cui è associato.
 \glossario{Git} per eseguire un operazione di pull mette a dispozione il seguente comando:
 \begin{lstlisting}
     # esegue il pull del ramo remoto indicato
@@ -563,7 +563,7 @@ In una fusione possono accadere le seguenti situazioni:
 
     \item Non esistono conflitti.
 
-    \item Il commit HEAD del ramo di destinazione è in dietro rispetto ai commit HEAD dei rami sorgente.
+    \item Il commit HEAD del ramo di destinazione è indietro rispetto ai commit HEAD dei rami sorgente.
     In questo caso avviene un \textbf{\glossario{fast-forward}} e \glossario{Git} risolve il merge in automatico spostando l'etichetta del ramo di destinazione.
 \end{enumerate}
 Nei primi due casi \glossario{Git} ci guiderà nell'assemblaggio di un nuovo commit HEAD per il ramo di destinazione chiamato \textbf{merge commit}.
@@ -579,7 +579,7 @@ Nel caso in cui esista un conflitto \glossario{Git} richiede la risoluzione manu
 In questa situazione il comando \lstinline|git diff| ci mostra i conflitti.
 Per uscire dallo stato di \texttt{MERGING} eliminando l'operazione di merge è possibile eseguire il comando \lstinline|git merge --abort|.
 
-Una volta sistemato il conflitto si rientra nel caso in cui non esistano conflitti.
+Una volta sistemato il conflitto si rientra nel caso in cui non esistono conflitti.
 In questo caso è necessario eseguire il \textbf{merge commit} che avrà come commit padre i  commit HEAD del ramo di destinazione e del 
 ramo sorgente.
 
@@ -588,7 +588,7 @@ ramo sorgente.
 Attorno alle funzionalità offerte da \glossario{Git} implementa nuove funzionalità e servizi a supporto dello sviluppo di progetti.
 
 \subparagraph{GitHub organization}
-\glossario{GitHub} offre degli account particolari chiamati \textbf{organization account} che permettono definire più \glossario{repository} pubblici a cui uno stesso gruppo di lavoro ha accesso.
+\glossario{GitHub} offre degli account particolari chiamati \textbf{organization account} che permettono di definire più \glossario{repository} pubblici a cui uno stesso gruppo di lavoro ha accesso.
 Il gruppo ha deciso di utilizzare un account di questo tipo dato che è pensato per la realizzazione di progetti.
 L'account del gruppo si trova al link \href{https://github.com/ALT-F4-eng/}{https://github.com/ALT-F4-eng/}.
 
@@ -596,6 +596,7 @@ Nell'account sono state definite le seguenti \glossario{repository} pubbliche:
 \begin{enumerate}
     \item \href{https://github.com/ALT-F4-eng/SorgentiDocumentazione}{SorgentiDocumentazione}: contiene la documentazione scritta in \glossario{LaTeX}.
     \item \href{https://github.com/ALT-F4-eng/Documentazione}{Documentazione}: contiene i documenti \glossario{pdf} e il sito web per la loro pubblicazione.
+    \item \href{https://github.com/ALT-F4-eng/PoC}{PoC}: contiene i file di codice sviluppati per la creazione del \glossario{Proof of Concept}.
 \end{enumerate}
 
 \subparagraph{Gestione dei rami}
@@ -714,6 +715,7 @@ Di seguito vengono indicate l'insieme di operazioni che possono essere eseguite 
 
     \item \textbf{Commentare un \glossario{issue}}
     \label{item:commentare_issue}
+    
     Per aggiungere un commento a una \glossario{issue} è necessario eseguire i seguenti passi a partire dalla pagina web del \glossario{repository}:
     \begin{enumerate}
         \item Selezionare finestra "Issues".
@@ -765,8 +767,8 @@ Gli elementi di base utili per l'utilizzo di questo linguaggio sono:
 \subparagraph{Etichette}
 Di seguito viene fornita una lista delle etichette relative al \glossario{repository} SorgentiDocumentazione:
 \begin{enumerate}
-    \item \textbf{bug}: riguarda la sistemazione di un documento.
-    \item \textbf{enhancement}: riguarda l'implementazioni di automazioni della gestione e organizzazione di progetto.
+    \item \textbf{bug}: riguarda la correzione di un documento.
+    \item \textbf{enhancement}: riguarda l'implementazione di automazioni della gestione e organizzazione di progetto.
     \item \textbf{requirement}: riguardano il documento di analisi dei requisiti.
     \item \textbf{documentation}: riguardano gli altri documenti.
 \end{enumerate}
@@ -881,7 +883,7 @@ Il gruppo ha deciso di utilizzare tre rappresentazioni del progetto:
 
 \subparagraph{Proprietà personalizzate}
 \label{subpar:proprietà_personalizzate}
-Le proprietà personalizzate anche chiamate \glossario{issue} possono essere gestiste a partire dalla pagina di progetto.
+Le proprietà personalizzate possono essere gestiste a partire dalla pagina di progetto.
 Per accedere alle proprietà personalizzate è necessario eseguire i seguenti passi:
 \begin{enumerate}
     \item Spostarsi sulla pagina di progetto.
@@ -968,7 +970,7 @@ Per informazioni sulla risoluzione dei conflitti nella \glossario{strategia di b
 \label{subpar:rifiuto_modifiche}
 Per rifiutare le modifiche di cui è stata richiesta la verifica è necessario \hyperref[item:chiusura_pull_request]{chiudere la \glossario{pull request}}.
 
-Il verificatore in questo caso ha l'onere di indicare in un \hyperref[item:commentare_issue]{commento della \glossario{issue}} i miglioramenti da apportare la modifica affinchè venga accettata nella verifica successiva.
+Il verificatore in questo caso ha l'onere di indicare in un \hyperref[item:commentare_issue]{commento della \glossario{issue}} i miglioramenti da apportare alla modifica affinchè venga accettata nella verifica successiva.
 
 \subparagraph{Pubblicazione dei documenti}
 La pubblicazione dei documenti avviene al raggiungimento di ogni \glossario{baseline}.
@@ -996,7 +998,7 @@ Il sito segue la struttura indicata in \hyperref[fig:sito_docs]{Figura \ref{fig:
 
 \subsubsection{Github action}
 \label{subsubsec:github_action}
-Le \glossario{GitHub Action} sono un meccanismo messo a disposizione da \glossario{GitHub} che permette di automatizzare dei compiti dei diversi processi di sviluppo.
+Le \glossario{GitHub Action} sono un meccanismo messo a disposizione da \glossario{GitHub} che permette di automatizzare alcuni compiti dei diversi processi di sviluppo.
 L'automazione avviene indicando un flusso di lavoro che viene eseguito da \glossario{GitHub} alla necessità su un \glossario{container}.
 
 \paragraph{Teoria}
@@ -1018,9 +1020,9 @@ Un job è composto dai seguenti elementi fondanti:
 
 \begin{itemize}
     \item \textbf{env}: una o più variabili d'ambiente accessibili all'interno del job stesso.
-    runner: l'identificativo del runner(\glossario{container}) hostato (da \glossario{host}) da \glossario{GitHub} che deve eseguire il job.
+    \item \textbf{runner}: l'identificativo del runner(\glossario{container}) hostato (da \glossario{host}) da \glossario{GitHub} che deve eseguire il job.
     \glossario{GitHub} offre diversi \glossario{container} che variano nella versione/tipo di \glossario{OS} utilizzato.
-    Di seguito viene indicato un link che contiene la lista dei runner hostati (da \glossario{host}) da \glossario{GitHub} \href{https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners}{runners}. 
+    Di seguito viene indicato un link che contiene la lista dei runner hostati (da \glossario{host}) da \glossario{GitHub}: \href{https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners}{runners}. 
     \item \textbf{steps}: insieme di compiti atomici che formano il job e vengono eseguiti  sequenzialmente sul runner.
 \end{itemize}
 
@@ -1165,8 +1167,8 @@ La pubblicazione utilizza un \glossario{workflow} definito nel file \texttt{Publ
 Questo \glossario{workflow} viene eseguito ogni volta che avviene la pubblicazione di un commit nel ramo \texttt{main} che contiene la modifica di un file \texttt{.tex}.
 Il \glossario{workflow} utilizza due variabili definite a livello di \glossario{repository}:
 \begin{enumerate}
-    \item \texttt{DIRS\_TO\_DEL}: contiene i nomi(non percorsi) delle cartelle da eliminare e non compilare separati da spazio.
-    \item \texttt{DIRS\_TO\_IGNORE}: contiene i nomi(non percorsi) delle cartelle da non compilare e da rimuovere con le omonime cartelle della \glossario{repository} del sito separati da spazio.
+    \item \texttt{DIRS\_TO\_DEL}: contiene i nomi(non percorsi) delle cartelle da eliminare e non compilare, separati da spazio.
+    \item \texttt{DIRS\_TO\_IGNORE}: contiene i nomi(non percorsi) delle cartelle da non compilare e da rimuovere con le omonime cartelle della \glossario{repository} del sito, separati da spazio.
 \end{enumerate}
 Notare che quindi una modifica alla struttura delle cartelle del progetto può richiedere:
 \begin{enumerate}
@@ -1200,7 +1202,7 @@ I canali di coumunicazione si dividono in canali interni usati per le riunioni d
 La comunicazione tra membri del gruppo avviene utilizzando le seguenti tecnologie:
 \begin{enumerate}
     \item \textbf{Telegram (comunicazione asincrona)}: applicazione di messaggistica che permette comunicazione rapide di interesse generale e di contenuto breve.
-    Usato per segnalare al responsabile, tramite chat individuali, rischi che si sono verificati o eventuali problemi accorsi.
+    Usato per segnalare al responsabile, tramite chat individuali, rischi che si sono verificati o eventuali problemi occorsi.
 
     \item \textbf{Discord (comunicazione sincrona)}: utilizzata per effettuare chiamate di gruppo sia formali che informali.
 \end{enumerate}
