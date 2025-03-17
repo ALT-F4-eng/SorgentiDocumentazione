@@ -2,25 +2,25 @@
 
 \begin{tikzpicture}
     \begin{axis}[
-        width=12cm, height=8cm,
+        width=15cm, height=10cm,
         ymin=0, ymax=12000,
-        xmin=0, xmax=6,
-        xtick={1, 2, 3, 4, 5},
-        xticklabels={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5},
+        xmin=0, xmax=8,
+        xtick={0, 1, 2, 3, 4, 5, 6, 7, 8},
+        xticklabels={ PP, S1, S2, S3, S4, S5, S6, S7, S8},
         xlabel={},
         ylabel={},
         grid=major,
         scaled ticks=false,
         legend style={at={(0.5,1.1)}, anchor=south, legend columns=-1},
     ]
-    \addplot[color=blue] coordinates {(1, 1125) (2, 1687.5) (3, 2250) (4, 2800) (5, 3937.5)};
+    \addplot[color=blue] coordinates {(0, 213.75) (1, 663.75) (2, 1237.5) (3, 1800) (4, 2216.25) (5, 3701.25) (6, 3746.25) (7, 3915) (8, 4083.75) };
     \addlegendentry{PV}
-    \addplot[color=green] coordinates {(1, 675) (2, 1125) (3, 1687.5) (4, 2250) (5, 2362.5)};
+    \addplot[color=green] coordinates {(0, 213.75) (1, 450) (2, 753.75) (3, 933.75) (4, 1462.5) (5, 2238.75) (6, 2283.75) (7, 3150) (8, 4083.75) };
     \addlegendentry{EV}
-    \addplot[orange, thick] coordinates {(1, 11250) (5, 11250)};
+    \addplot[orange, thick] coordinates {(0, 11250) (8, 11250)};
     \addlegendentry{BAC}
     \end{axis}
 \end{tikzpicture}
 \subsubsection{RTB}
-Come visibile dal grafico l'Earned Value è sempre inferiore rispetto al Planned Value, indicando una pianificazione 
+Come visibile dal grafico l'\glossario{Earned Value} è sempre inferiore rispetto al \glossario{Planned Value}, indicando una pianificazione 
 mal riuscita da parte del gruppo.
