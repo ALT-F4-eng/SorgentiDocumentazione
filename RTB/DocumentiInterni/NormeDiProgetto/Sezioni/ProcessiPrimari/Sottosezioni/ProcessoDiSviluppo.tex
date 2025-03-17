@@ -31,7 +31,7 @@ I requisiti vengono categorizzati in:
 \paragraph{Casi d'uso}
 \label{par:casi_uso}
 I casi d'uso forniscono una descrizione dettagliata delle funzionalità del sistema dal punto di vista degli utenti, delineando come il sistema risponda a specifiche azioni o scenari. 
-In particolare un caso d'uso rappresenta un uso completo del sistema dalla prospettiva dell'utente.
+In particolare, un caso d'uso rappresenta un uso completo del sistema dalla prospettiva dell'utente.
 I casi d'uso vengono rappresentati tramite una combinazione di descrizione e diagramma \glossario{UML}.
 Durante la definizione di un caso d'uso possono emergere nuove informazioni che richiedono una modifica dei casi d'uso definiti in precedenza.
 La definizione dei casi d'uso non è quindi lineare.
@@ -42,13 +42,11 @@ Ogni descrizione di caso d'uso deve includere:
 \begin{enumerate}
     \item \textbf{Identificativo}.
     
-    \texttt{UC-<ID caso principale>.<ID sotto caso>}. 
+    \texttt{UC-<ID use case>}. 
     
     Dove:
     \begin{enumerate}
-        \item \texttt{<ID caso principale>}: identificativo numerico del caso d'uso principale (numero crescente).
-
-        \item \texttt{<ID sotto caso>}: identificativo numerico del sotto caso d'uso (presente solo se si tratta di un sotto caso d'uso).
+        \item \texttt{<ID use case>}: identificativo numerico del caso d'uso (numero crescente).
     \end{enumerate}
 
     \item \textbf{Requisito utente}.
@@ -61,14 +59,14 @@ Ogni descrizione di caso d'uso deve includere:
 
     \item \textbf{Post-condizioni}.
     
-    Stato finale del sistema dopo un esecuzione normale(priva di errori) del caso d'uso.
+    Stato finale del sistema dopo un esecuzione normale (priva di errori) del caso d'uso.
 
     \item \textbf{Attori}.
-    Un attore è un entità esterna(\underline{umana o meno}) al sistema che interagisce con il sistema per iniziare o per contribuire al compimento dell'esecuzione di un caso d'uso.  
+    Un attore è un entità esterna (\underline{umana o meno}) al sistema che interagisce con il software per iniziare o per contribuire al compimento dell'esecuzione di un caso d'uso.  
     Gli attori si dividono in:
     \begin{enumerate}
         \item  \textbf{Attori primari}: attori principali che partecipano al caso d'uso, solitamente contengono gli attori che iniziano l'interazione e/o sono i destinatari delle informazioni in output del caso d'uso.
-        \item \textbf{Attore secondario}: altri attori coinvolti che non sono protagonisti nell'esecuzione del caso d'uso(es. Sistemi esterni).
+        \item \textbf{Attore secondario}: altri attori coinvolti che non sono protagonisti nell'esecuzione del caso d'uso (es. Sistemi esterni).
     \end{enumerate}
 
     \item \textbf{Trigger}.
@@ -145,7 +143,7 @@ Ogni diagramma è composto da:
     \end{figure}
     
     \item \textbf{Attori}: rappresentano soggetti che interagiscono con il sistema software. Gli attori possono essere persone, altri applicativi o dispositivi che utilizzano le funzionalità del sistema.
-    Un attore viene rappresentato nei diagrammi usando una delle due notazioni mostrate in \hyperref[fig:attori_uml]{Figura \ref{fig:attori_uml}} posta al di fuori del sistema.
+    Un attore viene rappresentato nei diagrammi usando una delle due notazioni mostrate in \hyperref[fig:attori_uml]{Figura \ref{fig:attori_uml}} e viene posta al di fuori del sistema.
     \begin{figure}[H]
         \centering
         \includegraphics{Sezioni/ProcessiPrimari/Immagini/attori_caso_uso.pdf}
@@ -220,7 +218,7 @@ Ogni diagramma è composto da:
 
 \paragraph{Fonti per l'Individuazione dei Casi d'Uso}
 L'individuazione dei casi d'uso si basa principalmente sul \glossario{capitolato} fornito, che rappresenta una fonte essenziale per comprendere le caratteristiche generali del software da realizzare. 
-Il \glossario{capitolato}, descrive le funzionalità principali e gli obiettivi del sistema, specificando alcuni requisiti chiave. 
+Il \glossario{capitolato} descrive le funzionalità principali e gli obiettivi del sistema, specificando alcuni requisiti chiave. 
 
 Tuttavia, non tutti gli aspetti operativi sono dettagliati nel documento, il che rende necessaria un'integrazione attraverso deduzioni basate su necessità logiche e conoscenze pregresse. 
 Il \glossario{capitolato} guida l'identificazione delle macro interazioni, consentendo di delineare i casi d'uso principali e il contesto generale in cui il sistema opererà. 
@@ -244,7 +242,7 @@ L'identificazione dei casi d'uso avviene attraverso i seguenti passaggi:
 
     \item \textbf{Raffinamento attori}: Una coppia di attori può essere in una particolare relazione chiamata generalizzazione.
     In questa relazione l'attore "più generale" può eseguire un insieme di interazioni con il sistema che sono un sotto insieme delle interazioni che può eseguire l'attore "più specializzato".
-    In altre parole l'attore "più specializzato" può eseguire tutte le interazioni che può eseguire l'attore "più generico" più eventuali ulteriori interazioni.
+    In altre parole l'attore "più specializzato" può eseguire tutte le interazioni che può eseguire l'attore "più generale" ed ulteriori interazioni.
     In questo passaggio è importante scoprire queste relazioni tra gli attori.
 
     \item \textbf{Analisi degli obiettivi degli attori}: Una volta identificati gli attori e le relazioni tra essi, vengono analizzati i loro obiettivi in relazione al sistema. 
