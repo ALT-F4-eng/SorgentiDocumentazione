@@ -2,26 +2,25 @@
 
 \begin{tikzpicture}
     \begin{axis}[
-        width=12cm, height=8cm,
-        ymin=11000, ymax=12000,
-        xmin=0, xmax=6,
-        xtick={1, 2, 3, 4, 5},
-        xticklabels={Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5},
+        width=15cm, height=10cm,
+        ymin=11000, ymax=13500,
+        xmin=0, xmax=8,
+        xtick={0, 1, 2, 3, 4, 5, 6, 7, 8},
+        xticklabels={ PP, S1, S2, S3, S4, S5, S6, S7, S8},
         xlabel={},
         ylabel={},
         grid=major,
         scaled ticks=false,
         legend style={at={(0.5,1.1)}, anchor=south, legend columns=-1},
     ]
-    \addplot[color=blue] coordinates {(1, 11636) (2, 11602) (3, 11634.5) (4, 11870) (5, 11790)};
+    \addplot[color=blue] coordinates {(0, 11576) (1, 11890) (2, 12002) (3, 12417) (4, 12686) (5, 12047) (6, 12622) (7, 12018) (8, 11933) };
     \addlegendentry{EAC}
-    \addplot[orange, thick] coordinates {(1, 11250) (5, 11250)};
+    \addplot[orange, thick] coordinates {(0, 11250) (8, 11250)};
     \addlegendentry{BAC}
-    \addplot[red, thick] coordinates {(1, 11812.5) (5, 11812.5)};
+    \addplot[red, thick] coordinates {(0, 11812.5) (8, 11812.5)};
     \addlegendentry{Valore Ammissibile}
     \end{axis}
 \end{tikzpicture}
 \subsubsection{RTB}
-Il grafico mostra che l'\glossario{Estimated at Completion}, a eccezione dello \glossario{sprint} 4, rimane all'interno del valore ammissibile, indicando una gestione efficiente dei costi di progetto. 
-Questo significa che eventuali deviazioni nei costi sostenuti e nel valore guadagnato durante gli \glossario{sprint}
-sono state compensate nel corso del progetto, mantenendo il controllo sulla spesa complessiva
+Il grafico mostra che l'\glossario{Estimated at Completion} non risulta mai all'interno del valore ammissibile, indicando una gestione poco efficiente dei costi di progetto. 
+Questo significa che il costo stimato alla fine del progetto è sempre superiore al costo preventivato. Ciò indica che c'è necessità di un'analisi più approfondita dei costi e delle attività svolte per evitare ulteriori aumenti e per rientrare all'interno dei costi preventivati inizialmente.
