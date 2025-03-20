@@ -2,17 +2,17 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.18]{Sezioni/UseCase/Immagini/SalvataggioDataset}
+    \includegraphics[scale=0.37]{Sezioni/UseCase/Immagini/SalvataggioDataset.png}
     \caption{Diagramma salvataggio dataset.}
 \end{figure}
 
-\begin{usecase}{UC-11}{Salva dataset visualizzato}
+\begin{usecase}{UC-9}{Salva dataset visualizzato}
     \label{uc:UC-11}    
     
     \req{\hyperref[ru:RUO-3]{RUO-3}} 
 
     \pre{
-        \item L'utente sta visualizzando il dataset da salvare \hyperref[uc:UC-1]{UC-1}
+        \item L'utente sta visualizzando una pagina del dataset da salvare \hyperref[uc:UC-1]{UC-1}
         \item Il dataset visualizzato non è vuoto
         \item Il dataset visualizzato non possiede una versione salvata o possiede una versione salvata non aggiornata
     }
@@ -67,13 +67,9 @@
     }
     
     \subscenario{
-        \item[1.1] Il dataset non è mai stato salvato:
+        \item [1.1] Errore interno durante la creazione:
         \begin{itemize}
-            \item  \hyperref[uc:UC-13]{UC-13}
-        \end{itemize}
-        \item [1.2] Il dataset è già stato salvato in precedenza:
-        \begin{itemize}
-            \item \hyperref[uc:UC-14]{UC-14}
+            \item \hyperref[uc:UC-16]{UC-16}
         \end{itemize}
     }
 \end{usecase}
@@ -99,9 +95,8 @@
 
     \inc{\hyperref[uc:UC-17]{UC-17}}
 
-    \base{}
+    \base{\hyperref[uc:UC-12]{UC-12}}
 
-    
     \scenario{
         \item Viene richiesta l'assegnazione di un nome per il nuovo dataset seguendo \hyperref[uc:UC-17]{UC-17}
         \item L'utente conferma la creazione di un nuovo dataset
@@ -109,13 +104,9 @@
     }
 
     \subscenario{
-        \item [2.1] L'utente annulla la creazione:
+        \item [1.1] L'utente annulla la creazione:
         \begin{itemize}
             \item Il sistema interrompe l'operazione
-        \end{itemize}
-        \item [3.1] Errore interno durante la creazione:
-        \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
         \end{itemize}
     }
 
@@ -142,7 +133,7 @@
 
     \inc{}
 
-    \base{}
+    \base{\hyperref[uc:UC-12]{UC-12}}
 
     \scenario{
         \item Il sistema verifica la presenza di test associati alla versione del dataset da aggiornare
@@ -151,56 +142,29 @@
     }
 
     \subscenario{
-        \item[1.1] Il dataset da aggiornare è stato utilizzato per l'esecuzione di uno o più test:
+        \item[1.1] Il dataset da aggiornare è associato all'esecuzione di uno o più test:
         \begin{itemize}
-            \item \hyperref[uc:UC-15]{UC-15}
+            \item Il sistema chiede all'utente se vuole annullare l'operazione
+            \item L'utente conferma l'annullamento
+            \item Il sistema interrompe l'operazione
         \end{itemize}
-        \item[2.1] Avviene un errore durante l'aggiornamento:
+        \item[2.1] Il dataset da aggiornare è associato all'esecuzione di uno o più test:
         \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
+            \item Il sistema chiede all'utente se copiare il dataset e aggiornare la copia
+            \item L'utente conferma la copia
+            \item Il sistema copia il dataset e aggiorna la copia
+            \item Il sistema avvisa l'utente del corretto aggiornamento
         \end{itemize}
-    }
-
-\end{usecase}
-
-\begin{usecase}{UC-15}{Aggiorna dataset mantenendo versione precedente}
-    \label{uc:UC-15}
-    
-    \req{} 
-
-    \pre{
-        \item Il dataset da aggiornare è stato usato in uno o più test 
-    }
-
-    \post{
-        \item I test restano consistenti
-    }
-    
-    \actor{Utente}
-
-    \subactors{}
-
-    \trigger{Il sistema durante l'aggiornamento di un dataset verifica la presenza di uno o più test a esso associati}
-    
-    \inc{}
-
-    \base{}
-
-    \scenario{
-        \item Il sistema mantiene la versione attuale del dataset salvato
-        \item Il sistema aggiorna la versione salvata
-    }
-
-    \subscenario{
-        \item[2.1] Il sistema riscontra un errore durante l'aggiornamento:
+        \item[3.1] Il dataset da aggiornare è associato all'esecuzione di uno o più test:
         \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
+            \item Il sistema chiede all'utente se vuole eliminare i test associati
+            \item L'utente conferma l'eliminazione
+            \item Il sistema elimina i test associati e aggiorna il dataset
+            \item Il sistema avvisa l'utente del corretto aggiornamento e della corretta eliminazione
         \end{itemize}
     }
 
 \end{usecase}
-
-
 
 \begin{usecase}{UC-16}{Visualizza errore di persistenza}
     \label{uc:UC-16}
