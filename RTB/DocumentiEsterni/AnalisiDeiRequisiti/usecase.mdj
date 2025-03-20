@@ -15961,9 +15961,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 842,
-											"top": 193.5,
+											"top": 200,
 											"width": 204,
-											"height": 39,
+											"height": 26,
 											"text": "UC-32 Visualizza errore il dataset visualizzato è incompleto",
 											"wordWrap": true
 										},
@@ -16000,9 +16000,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 837,
-									"top": 186.5,
+									"top": 193,
 									"width": 214,
-									"height": 51,
+									"height": 38,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU4aKoKWxe0kI="
 									},
@@ -19708,7 +19708,7 @@
 											"top": 232,
 											"width": 343,
 											"height": 13,
-											"text": "Il dataset caricato contiene modifiche non salvate",
+											"text": "Il dataset attuale contiene modifiche non salvate",
 											"horizontalAlignment": 0
 										}
 									],
@@ -20220,7 +20220,7 @@
 											"top": 474,
 											"width": 318,
 											"height": 13,
-											"text": "Il dataset caricato contiene modifiche non salvate",
+											"text": "Il dataset attuale contiene modifiche non salvate",
 											"horizontalAlignment": 0
 										}
 									],
@@ -20588,7 +20588,7 @@
 											"top": 320,
 											"width": 168,
 											"height": 26,
-											"text": "UC-30 Sovrascrivi dataset caricato",
+											"text": "UC-30 Sovrascrivi dataset attuale",
 											"wordWrap": true
 										},
 										{
@@ -20984,7 +20984,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGU4arhKJHQ73s="
 							},
-							"name": "Il dataset caricato contiene modifiche non salvate"
+							"name": "Il dataset attuale contiene modifiche non salvate"
 						}
 					]
 				},
@@ -21017,7 +21017,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGU4bU+NdDMQCM="
 							},
-							"name": "Il dataset caricato contiene modifiche non salvate"
+							"name": "Il dataset attuale contiene modifiche non salvate"
 						}
 					]
 				},
@@ -21027,7 +21027,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGU4Tbli1Kf1k8="
 					},
-					"name": "UC-30 Sovrascrivi dataset caricato"
+					"name": "UC-30 Sovrascrivi dataset attuale"
 				},
 				{
 					"_type": "UMLUseCase",
@@ -22428,9 +22428,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 337.887451171875,
-											"top": 430.5,
+											"top": 437,
 											"width": 244,
-											"height": 26,
+											"height": 13,
 											"text": "UC-17 Nomina entità gestita dal sistema",
 											"wordWrap": true
 										},
@@ -22467,9 +22467,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 332.887451171875,
-									"top": 423.5,
+									"top": 430,
 									"width": 254,
-									"height": 38,
+									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGVFCcZrdFW0qI="
 									},
@@ -23013,7 +23013,7 @@
 									"parentStyle": true,
 									"left": 651.5,
 									"top": 189,
-									"width": 207.9326171875,
+									"width": 207,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGVOPG/p2RfrJA="
@@ -25097,9 +25097,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 393.887451171875,
-											"top": 574.5,
+											"top": 581,
 											"width": 244,
-											"height": 26,
+											"height": 13,
 											"text": "UC-17 Nomina entità gestita dal sistema",
 											"wordWrap": true
 										},
@@ -25136,9 +25136,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 388.887451171875,
-									"top": 567.5,
+									"top": 574,
 									"width": 254,
-									"height": 38,
+									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGVFCdbCtVSEgY="
 									},
@@ -26179,9 +26179,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 430.5,
-											"top": 190.5,
+											"top": 197,
 											"width": 227,
-											"height": 26,
+											"height": 13,
 											"text": "UC-40 Ricerca dei test salvati per nome",
 											"wordWrap": true
 										},
@@ -26218,9 +26218,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 425.5,
-									"top": 183.5,
+									"top": 190,
 									"width": 237,
-									"height": 38,
+									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGU9ZW3j2oK1Bw="
 									},
@@ -29849,9 +29849,9 @@
 											"font": "Arial;13;1",
 											"parentStyle": true,
 											"left": 673.887451171875,
-											"top": 302.5,
+											"top": 309,
 											"width": 244,
-											"height": 26,
+											"height": 13,
 											"text": "UC-17 Nomina entità gestita dal sistema",
 											"wordWrap": true
 										},
@@ -29888,9 +29888,9 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 668.887451171875,
-									"top": 295.5,
+									"top": 302,
 									"width": 254,
-									"height": 38,
+									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGVFFjMGseEKhw="
 									},
