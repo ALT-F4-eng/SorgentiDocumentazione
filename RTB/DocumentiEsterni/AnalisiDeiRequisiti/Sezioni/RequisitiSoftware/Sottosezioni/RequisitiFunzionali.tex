@@ -265,13 +265,13 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare la lista degli LLM salvati per permetterne la selezione in fase di test}
     \label{rf:RFF-1}%
     
-    \subreq{RFF-1.01}{}{Il sistema deve visualizzare gli LLM salvati attraverso una lista scorrevole}
+    \subreq{RFF-1.01}{\hyperref[uc:UC-52]{UC-52}}{Il sistema deve visualizzare gli LLM salvati attraverso una lista scorrevole}
     
-    \subreq{RFF-1.02}{}{Ogni LLM salvato deve essere mostrato indicandone il nome e la data di ultima modifica}
+    \subreq{RFF-1.02}{\hyperref[uc:UC-52]{UC-52}, \hyperref[uc:UC-53]{UC-53}}{Ogni LLM salvato deve essere mostrato indicandone il nome e la data di ultima modifica}
     
-    \subreq{RFF-1.03}{}{Il sistema deve permettere la selezione di uno degli LLM salvati}
+    \subreq{RFF-1.03}{\hyperref[uc:UC-53]{UC-53}}{Il sistema deve permettere la selezione di uno degli LLM salvati}
 
-    \subreq{RFF-1.04}{}{Se il sistema riscontra un errore interno durante l'ottenimento delle informazioni sugli LLM salvati deve visualizzare un messaggio di errore}
+    \subreq{RFF-1.04}{\hyperref[uc:UC-3]{UC-3}, \hyperref[uc:UC-53]{UC-53}}{Se il sistema riscontra un errore interno durante l'ottenimento delle informazioni sugli LLM salvati deve visualizzare un messaggio di errore}
 
 \end{freq}
 
@@ -280,19 +280,19 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare la lista degli LLM salvati}
     \label{rf:RFF-2}%
     
-    \subreq{RFF-2.01}{}{Il sistema deve visualizzare gli LLM salvati attraverso una lista scorrevole indicando per ognuno il nome e la data di ultima modifica}
+    \subreq{RFF-2.01}{\hyperref[uc:UC-52]{UC-52}, \hyperref[uc:UC-53]{UC-53}}{Il sistema deve visualizzare gli LLM salvati attraverso una lista scorrevole indicando per ognuno il nome e la data di ultima modifica}
     
-    \subreq{RFF-2.02}{}{Per ogni LLM salvato deve visualizzare un bottone per permetterne la visualizzazione \hyperref[rf:RFF-3]{RFF-3}}
+    \subreq{RFF-2.02}{\hyperref[uc:UC-53]{UC-53}}{Per ogni LLM salvato deve visualizzare un bottone per permetterne la visualizzazione \hyperref[rf:RFF-3]{RFF-3}}
     
-    \subreq{RFF-2.03}{}{Per ogni LLM salvato il sistema deve visualizzare un bottone per l'eliminazione}
+    \subreq{RFF-2.03}{\hyperref[uc:UC-54]{UC-54}}{Per ogni LLM salvato il sistema deve visualizzare un bottone per l'eliminazione}
 
-    \subreq{RFF-2.04}{}{Se l'utente richiede l'eliminazione di un LLM associato a uno o più test salvati, il sistema deve notificare che tali test verranno eliminati}
+    \subreq{RFF-2.04}{\hyperref[uc:UC-40]{UC-40}, \hyperref[uc:UC-54]{UC-54}, \hyperref[uc:UC-55]{UC-55}}{Se l'utente richiede l'eliminazione di un LLM associato a uno o più test salvati, il sistema deve notificare che tali test verranno eliminati}
 
-    \subreq{RFF-2.05}{}{Se l'utente richiede l'eliminazione di un LLM il sistema deve richiedere la conferma}
+    \subreq{RFF-2.05}{\hyperref[uc:UC-54]{UC-54}}{Se l'utente richiede l'eliminazione di un LLM il sistema deve richiedere la conferma}
     
-    \subreq{RFF-2.06}{}{Il sistema deve visualizzare un bottone per l'aggiunta di un nuovo LLM \hyperref[rf:RFF-5]{RFF-5}}
+    \subreq{RFF-2.06}{\hyperref[uc:UC-46]{UC-46}}{Il sistema deve visualizzare un bottone per l'aggiunta di un nuovo LLM \hyperref[rf:RFF-5]{RFF-5}}
 
-    \subreq{RFF-2.07}{}{Se il sistema riscontra un errore interno durante l'ottenimento delle informazioni sugli LLM salvati deve visualizzare un messaggio di errore}
+    \subreq{RFF-2.07}{\hyperref[uc:UC-3]{UC-3}, \hyperref[uc:UC-53]{UC-53}}{Se il sistema riscontra un errore interno durante l'ottenimento delle informazioni sugli LLM salvati deve visualizzare un messaggio di errore}
 
 \end{freq}
 
@@ -301,21 +301,21 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare un LLM salvato}
     \label{rf:RFF-3}%
     
-    \subreq{RFF-3.01}{}{Il sistema deve visualizzare il nome dell'LLM}
+    \subreq{RFF-3.01}{\hyperref[uc:UC-53]{UC-53}}{Il sistema deve visualizzare il nome dell'LLM}
     
-    \subreq{RFF-3.02}{}{Il sistema deve visualizzare la data dell'ultima modifica}
+    \subreq{RFF-3.02}{\hyperref[uc:UC-53]{UC-53}}{Il sistema deve visualizzare la data dell'ultima modifica}
     
-    \subreq{RFF-3.03}{}{Il sistema deve visualizzare l'URL usato per l'esecuzione delle chiamate HTTP all'API dell'LLM}
+    \subreq{RFF-3.03}{\hyperref[uc:UC-47]{UC-47}, \hyperref[uc:UC-53]{UC-53}}{Il sistema deve visualizzare l'URL usato per l'esecuzione delle chiamate HTTP all'API dell'LLM}
     
-    \subreq{RFF-3.04}{}{Il sistema deve visualizzare le coppie chiave-valore per la costruzione dell'header delle chiamate}
+    \subreq{RFF-3.04}{\hyperref[uc:UC-47]{UC-47}}{Il sistema deve visualizzare le coppie chiave-valore per la costruzione dell'header delle chiamate}
     
-    \subreq{RFF-3.05}{}{Il sistema deve visualizzare le coppie chiave-valore per la costruzione del body delle chiamate}
+    \subreq{RFF-3.05}{\hyperref[uc:UC-47]{UC-47}}{Il sistema deve visualizzare le coppie chiave-valore per la costruzione del body delle chiamate}
     
-    \subreq{RFF-3.06}{}{Il sistema deve visualizzare la chiave da utilizzare per specificare la domanda da porre all'LLM nel body delle richieste HTTP}
+    \subreq{RFF-3.06}{\hyperref[uc:UC-47]{UC-47}}{Il sistema deve visualizzare la chiave da utilizzare per specificare la domanda da porre all'LLM nel body delle richieste HTTP}
     
-    \subreq{RFF-3.07}{}{Il sistema deve visualizzare la chiave da utilizzare per estrarre la risposta data dall'LLM contenuta nelle risposte HTTP}
+    \subreq{RFF-3.07}{\hyperref[uc:UC-47]{UC-47}}{Il sistema deve visualizzare la chiave da utilizzare per estrarre la risposta data dall'LLM contenuta nelle risposte HTTP}
     
-    \subreq{RFF-3.08}{}{Il sistema deve visualizzare un bottone per la modifica dell'LLM visualizzato \hyperref[rf:RFF-4]{RFF-4}}
+    \subreq{RFF-3.08}{\hyperref[uc:UC-50]{UC-50}, \hyperref[uc:UC-51]{UC-51}, \hyperref[uc:UC-53]{UC-53}}{Il sistema deve visualizzare un bottone per la modifica dell'LLM visualizzato \hyperref[rf:RFF-4]{RFF-4}}
 
 \end{freq}
 
@@ -344,6 +344,7 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
 
     \subreq{RFF-4.10}{\hyperref[uc:UC-51]{UC-51}}{Il sistema deve visualizzare un bottone che permetta di annullare le modifiche sull'LLM}
 
+
     \subreq{RFF-4.11}{\hyperref[uc:UC-48]{UC-48}}{Se si cerca di salvare un URL con formato non valido il sistema deve mostrare un messaggio di errore}
 
     \subreq{RFF-4.12}{\hyperref[uc:UC-49]{UC-49}}{Se si cerca di salvare una coppia chiave-valore non valida, il sistema deve mostrare un messaggio di errore}
@@ -371,13 +372,13 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
 
     \subreq{RFF-5.07}{\hyperref[uc:UC-46]{UC-46}}{Il sistema deve visualizzare un bottone che permetta di salvare il nuovo LLM}
 
-    \subreq{RFF-5.08}{}{Il sistema deve visualizzare un bottone che permetta di annullare la creazione del nuovo LLM}
+    \subreq{RFF-5.08}{\hyperref[uc:UC-46]{UC-46}}{Il sistema deve visualizzare un bottone che permetta di annullare la creazione del nuovo LLM}
 
-    \subreq{RFF-5.09}{}{Se si cerca di salvare un URL con formato non valido il sistema deve mostrare un messaggio di errore}
+    \subreq{RFF-5.09}{\hyperref[uc:UC-48]{UC-48}}{Se si cerca di salvare un URL con formato non valido il sistema deve mostrare un messaggio di errore}
 
-    \subreq{RFF-5.10}{}{Se si cerca di salvare una coppia chiave-valore non valida, il sistema deve mostrare un messaggio di errore}
+    \subreq{RFF-5.10}{\hyperref[uc:UC-49]{UC-49}}{Se si cerca di salvare una coppia chiave-valore non valida, il sistema deve mostrare un messaggio di errore}
 
-    \subreq{RFF-5.11}{}{Se avviene un errore durante la creazione dell'LLM il sistema deve visualizzare un messaggio di errore}
+    \subreq{RFF-5.11}{\hyperref[uc:UC-13]{UC-13}}{Se avviene un errore durante la creazione dell'LLM il sistema deve visualizzare un messaggio di errore}
 
 \end{freq}
 
@@ -386,11 +387,11 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare i test salvati}
     \label{rf:RFF-6}%
     
-    \subreq{RFF-6.01}{}{Il sistema deve visualizzare i test salvati sotto forma di una lista \hyperref[rf:RFF-7]{RFF-7}}
+    \subreq{RFF-6.01}{\hyperref[uc:UC-36]{UC-36}}{Il sistema deve visualizzare i test salvati sotto forma di una lista \hyperref[rf:RFF-7]{RFF-7}}
 
-    \subreq{RFF-6.02}{}{Se non esistono test salvati il sistema deve visualizzare un messaggio che lo indica}
+    \subreq{RFF-6.02}{\hyperref[uc:UC-36]{UC-36}}{Se non esistono test salvati il sistema deve visualizzare un messaggio che lo indica}
 
-    \subreq{RFF-6.03}{}{Il sistema, se esistono test salvati, deve visualizzare una barra di ricerca che specifichi all'utente le informazioni necessarie per l'esecuzione della ricerca stessa}
+    \subreq{RFF-6.03}{\hyperref[uc:UC-37]{UC-37}}{Il sistema, se esistono test salvati, deve visualizzare una barra di ricerca che specifichi all'utente le informazioni necessarie per l'esecuzione della ricerca stessa}
 
 \end{freq}
 
@@ -402,9 +403,9 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare un test salvato}
     \label{rf:RFF-7}%
     
-    \subreq{RFF-7.01}{}{Il sistema deve visualizzare il nome del test salvato}
+    \subreq{RFF-7.01}{\hyperref[uc:UC-36]{UC-36}}{Il sistema deve visualizzare il nome del test salvato}
     
-    \subreq{RFF-7.02}{}{Il sistema deve visualizzare il nome del dataset su cui è stato eseguito il test}
+    \subreq{RFF-7.02}{\hyperref[uc:UC-36]{UC-36}}{Il sistema deve visualizzare il nome del dataset su cui è stato eseguito il test}
     
     \subreq{RFF-7.03}{}{Il sistema deve visualizzare la data in cui il test è stato eseguito}
     
@@ -425,13 +426,13 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare gli elementi necessari ad assegnare un nome ad un test salvato}
     \label{rf:RFF-8}%
     
-    \subreq{RFF-8.01}{}{Il sistema deve visualizzare un elemento di input che permetta la specifica del nome}
+    \subreq{RFF-8.01}{UC-41}{Il sistema deve visualizzare un elemento di input che permetta la specifica del nome}
     
-    \subreq{RFF-8.02}{}{Il sistema deve visualizzare un bottone per la conferma della denominazione}
+    \subreq{RFF-8.02}{UC-41}{Il sistema deve visualizzare un bottone per la conferma della denominazione}
     
-    \subreq{RFF-8.03}{}{Il sistema deve visualizzare un bottone per l'annullamento della denominazione}
+    \subreq{RFF-8.03}{UC-41}{Il sistema deve visualizzare un bottone per l'annullamento della denominazione}
 
-    \subreq{RFF-8.04}{}{Se si cerca di utilizzare un nome non valido il sistema deve visualizzare un messaggio di errore}
+    \subreq{RFF-8.04}{UC-15, UC-16}{Se si cerca di utilizzare un nome non valido il sistema deve visualizzare un messaggio di errore}
 
 \end{freq}
 
@@ -475,9 +476,9 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
 
     \subreq{RFF-11.02}{}{Il sistema deve visualizzare un diagramma di dispersione che rappresenti i singoli risultati confrontati nella pagina \hyperref[rf:RFO-13]{RFO-13}}
 
-    \subreq{RFF-11.03}{}{Se il sistema verifica che è stata richiesta una pagina non valida visualizza un messaggio di errore}
+    \subreq{RFF-11.03}{\hyperref[uc:UC-2]{UC-2}}{Se il sistema verifica che è stata richiesta una pagina non valida visualizza un messaggio di errore}
         
-    \subreq{RFF-11.04}{}{Se il sistema riscontra un errore durante l'ottenimento degli elementi appartenenti alla pagina, deve visualizzare un messaggio di errore}
+    \subreq{RFF-11.04}{\hyperref[uc:UC-3]{UC-3}}{Se il sistema riscontra un errore durante l'ottenimento degli elementi appartenenti alla pagina, deve visualizzare un messaggio di errore}
 
 \end{freq}
 
@@ -551,17 +552,17 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
 {RFO-15}{Il sistema deve poter gestire un elemento del dataset caricato}
     \label{rf:RFO-15}%
     
-    \subreq{RFO-15.01}{}{Il sistema deve poter verificare che l'elemento sia valido ovvero non contenga domanda e risposta entrambe vuote o composte da soli spazi}
+    \subreq{RFO-15.01}{\hyperref[uc:UC-8]{UC-8}}{Il sistema deve poter verificare che l'elemento sia valido ovvero non contenga domanda e risposta entrambe vuote o composte da soli spazi}
     
-    \subreq{RFO-15.02}{}{Il sistema deve poter verificare che un elemento sia completo ovvero contenga domanda e risposta entrambe non vuote e non composte da soli spazi}
+    \subreq{RFO-15.02}{\hyperref[uc:UC-8]{UC-8}}{Il sistema deve poter verificare che un elemento sia completo ovvero contenga domanda e risposta entrambe non vuote e non composte da soli spazi}
 
-    \subreq{RFO-15.03}{}{Il sistema deve poter ottenere la domanda di un elemento}
+    \subreq{RFO-15.03}{\hyperref[uc:UC-1]{UC-1}}{Il sistema deve poter ottenere la domanda di un elemento}
 
-    \subreq{RFO-15.04}{}{Il sistema deve poter ottenere la risposta di un elemento}
+    \subreq{RFO-15.04}{\hyperref[uc:UC-1]{UC-1}}{Il sistema deve poter ottenere la risposta di un elemento}
     
-    \subreq{RFO-15.05}{}{Il sistema deve poter modificare la risposta di un elemento}
+    \subreq{RFO-15.05}{\hyperref[uc:UC-7]{UC-7}}{Il sistema deve poter modificare la risposta di un elemento}
 
-    \subreq{RFO-15.06}{}{Il sistema deve poter modificare la domanda di un elemento}
+    \subreq{RFO-15.06}{\hyperref[uc:UC-7]{UC-7}}{Il sistema deve poter modificare la domanda di un elemento}
 
 \end{freq}
 
@@ -572,19 +573,19 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
 {RFO-16}{Il sistema deve poter gestire l'insieme di dataset salvati}
     \label{rf:RFO-16}%
 
-    \subreq{RFO-16.01}{}{Il sistema deve poter salvare un nuovo dataset}
+    \subreq{RFO-16.01}{\hyperref[uc:UC-9]{UC-9}, \hyperref[uc:UC-10]{UC-10}}{Il sistema deve poter salvare un nuovo dataset}
 
-    \subreq{RFO-16.02}{}{Il sistema deve poter aggiornare un dataset salvato senza perdere le sue versioni precedenti}
+    \subreq{RFO-16.02}{\hyperref[uc:UC-12]{UC-12}}{Il sistema deve poter aggiornare un dataset salvato senza perdere le sue versioni precedenti}
 
-    \subreq{RFO-16.03}{}{Il sistema deve poter eliminare un dataset salvato}
+    \subreq{RFO-16.03}{\hyperref[uc:UC-22]{UC-22}}{Il sistema deve poter eliminare un dataset salvato}
 
-    \subreq{RFO-16.04}{}{Il sistema deve poter modificare un dataset salvato \hyperref[rf:RFO-17]{RFO-17}}
+    \subreq{RFO-16.04}{\hyperref[uc:UC-22]{UC-22}, \hyperref[uc:UC-24]{UC-24}}{Il sistema deve poter modificare un dataset salvato \hyperref[rf:RFO-17]{RFO-17}}
 
-    \subreq{RFO-16.05}{}{Il sistema deve poter ottenere i dataset salvati}
+    \subreq{RFO-16.05}{\hyperref[uc:UC-19]{UC-19}}{Il sistema deve poter ottenere i dataset salvati}
 
-    \subreq{RFO-16.06}{}{Il sistema deve poter determinare se esistono dataset salvati}
+    \subreq{RFO-16.06}{\hyperref[uc:UC-19]{UC-19}}{Il sistema deve poter determinare se esistono dataset salvati}
 
-    \subreq{RFO-16.07}{}{Il sistema deve poter selezionare un sottoinsieme dei dataset salvati che contengono una data stringa nel proprio nome}
+    \subreq{RFO-16.07}{\hyperref[uc:UC-20]{UC-20}}{Il sistema deve poter selezionare un sottoinsieme dei dataset salvati che contengono una data stringa nel proprio nome}
 
 \end{freq}
 
@@ -592,15 +593,15 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {RFO-17}{Il sistema deve poter gestire un dataset salvato}
     \label{rf:RFO-17}%
     
-    \subreq{RFO-17.01}{}{Il sistema deve poter ottenere il nome del dataset}
+    \subreq{RFO-17.01}{\hyperref[uc:UC-1]{UC-1}}{Il sistema deve poter ottenere il nome del dataset}
     
-    \subreq{RFO-17.02}{}{Il sistema deve poter determinare la data dell'ultimo aggiornamento del dataset}
+    \subreq{RFO-17.02}{\hyperref[uc:UC-1]{UC-1}}{Il sistema deve poter determinare la data dell'ultimo aggiornamento del dataset}
 
-    \subreq{RFO-17.03}{}{Il sistema deve poter rinominare un dataset}
+    \subreq{RFO-17.03}{\hyperref[uc:UC-24]{UC-24}}{Il sistema deve poter rinominare un dataset}
 
-    \subreq{RFO-17.04}{}{Il sistema deve poter determinare se un nome di dataset è valido, ovvero se non è già associato a un altro dataset e non è vuoto o composto da soli spazi}
+    \subreq{RFO-17.04}{\hyperref[uc:UC-15]{UC-15}, \hyperref[uc:UC-16]{UC-16}}{Il sistema deve poter determinare se un nome di dataset è valido, ovvero se non è già associato a un altro dataset e non è vuoto o composto da soli spazi}
     
-    \subreq{RFO-17.05}{}{Il sistema deve poter caricare un dataset salvato eventualmente sovrascrivendo il dataset attualmente caricato}
+    \subreq{RFO-17.05}{\hyperref[uc:UC-27]{UC-27}}{Il sistema deve poter caricare un dataset salvato eventualmente sovrascrivendo il dataset attualmente caricato}
 
 \end{freq}
 
@@ -612,40 +613,40 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {RFO-18}{Il sistema deve poter gestire il test caricato}
     \label{rf:RFO-18}%
     
-    \subreq{RFO-18.01}{}{Il sistema deve poter determinare la versione del dataset su cui è stato eseguito il test caricato}
+    \subreq{RFO-18.01}{\hyperref[uc:UC-31]{UC-31}}{Il sistema deve poter determinare la versione del dataset su cui è stato eseguito il test caricato}
 
-    \subreq{RFO-18.02}{}{Il sistema deve poter determinare il nome del dataset su cui è stato eseguito il test caricato}
+    \subreq{RFO-18.02}{\hyperref[uc:UC-31]{UC-31}}{Il sistema deve poter determinare il nome del dataset su cui è stato eseguito il test caricato}
 
-    \subreq{RFO-18.03}{}{Il sistema deve poter calcolare il numero della pagina massima dei risultati del test caricato}
+    \subreq{RFO-18.03}{\hyperref[uc:UC-32]{UC-32}}{Il sistema deve poter calcolare il numero della pagina massima dei risultati del test caricato}
 
-    \subreq{RFO-18.04}{}{Il sistema, data una pagina, deve poter determinare se appartiene al range di pagine valide dei risultati del test caricato}  
+    \subreq{RFO-18.04}{\hyperref[uc:UC-2]{UC-2}}{Il sistema, data una pagina, deve poter determinare se appartiene al range di pagine valide dei risultati del test caricato}  
 
-    \subreq{RFO-18.05}{}{Il sistema deve poter risalire all'ultima pagina di risultati richiesta}    
+    \subreq{RFO-18.05}{\hyperref[uc:UC-32]{UC-32}}{Il sistema deve poter risalire all'ultima pagina di risultati richiesta}    
 
-    \subreq{RFO-18.06}{}{Il sistema deve poter determinare e ottenere i singoli risultati del test caricato che appartengono a una data pagina}
+    \subreq{RFO-18.06}{\hyperref[uc:UC-32]{UC-32}}{Il sistema deve poter determinare e ottenere i singoli risultati del test caricato che appartengono a una data pagina}
 
-    \subreq{RFO-18.07}{}{Il sistema deve poter ottenere le statistiche del test caricato \hyperref[rf:RFO-19]{RFO-19}}    
+    \subreq{RFO-18.07}{\hyperref[uc:UC-31]{UC-31}}{Il sistema deve poter ottenere le statistiche del test caricato \hyperref[rf:RFO-19]{RFO-19}}    
 \end{freq}
 
 \begin{freq}
     {RFO-19}{Il sistema deve poter eseguire il test sul dataset caricato}
     \label{rf:RFO-19}%
     
-    \subreq{RFO-19.01}{}{Dato un LLM da testare il sistema deve poterci comunicare usando le informazioni a esso associate per ottenere le risposte alle domande contenute nel dataset caricato}
+    \subreq{RFO-19.01}{\hyperref[uc:UC-28]{UC-28}}{Dato un LLM da testare il sistema deve poterci comunicare usando le informazioni a esso associate per ottenere le risposte alle domande contenute nel dataset caricato}
     
-    \subreq{RFO-19.02}{}{Il sistema, per ogni risposta ottenuta dall'LLM da testare, deve calcolare il grado similarità con la risposta attesa e rappresentarlo come un valore nell'intervallo $[0,1]$}
+    \subreq{RFO-19.02}{\hyperref[uc:UC-28]{UC-28}}{Il sistema, per ogni risposta ottenuta dall'LLM da testare, deve calcolare il grado similarità con la risposta attesa e rappresentarlo come un valore nell'intervallo $[0,1]$}
     
-    \subreq{RFO-19.03}{}{Il sistema, per ogni risposta ottenuta, deve richiedere all'oracolo la correttezza della stessa}
+    \subreq{RFO-19.03}{\hyperref[uc:UC-28]{UC-28}}{Il sistema, per ogni risposta ottenuta, deve richiedere all'oracolo la correttezza della stessa}
     
-    \subreq{RFO-19.04}{}{Il sistema deve calcolare la media dei gradi di similarità dei risultati}
+    \subreq{RFO-19.04}{\hyperref[uc:UC-28]{UC-28}}{Il sistema deve calcolare la media dei gradi di similarità dei risultati}
     
-    \subreq{RFO-19.05}{}{Il sistema deve calcolare la deviazione standard dei gradi di similarità dei risultati}
+    \subreq{RFO-19.05}{\hyperref[uc:UC-28]{UC-28}}{Il sistema deve calcolare la deviazione standard dei gradi di similarità dei risultati}
     
-    \subreq{RFO-19.06}{}{Il sistema deve calcolare il numero di risultati che appartiene a ognuno dei seguenti range di similarità: 
+    \subreq{RFO-19.06}{\hyperref[uc:UC-28]{UC-28}}{Il sistema deve calcolare il numero di risultati che appartiene a ognuno dei seguenti range di similarità: 
     
     $[0, 0.2], [0.2, 0.4], [0.4, 0.6], [0.6, 0.8], [0.8, 1]$}
 
-    \subreq{RFO-19.07}{}{Il sistema deve calcolare la percentuale di risposte corrette rispetto al totale}
+    \subreq{RFO-19.07}{\hyperref[uc:UC-28]{UC-28}}{Il sistema deve calcolare la percentuale di risposte corrette rispetto al totale}
 
 \end{freq}
 
@@ -655,17 +656,17 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {RFF-14}{Il sistema dovrebbe poter gestire un insieme di test salvati}
     \label{rf:RFF-14}%
     
-    \subreq{RFF-14.01}{}{Il sistema deve poter salvare un test}
+    \subreq{RFF-14.01}{\hyperref[uc:UC-35]{UC-35}}{Il sistema deve poter salvare un test}
     
-    \subreq{RFF-14.02}{}{Il sistema deve poter ottenere i test salvati}
+    \subreq{RFF-14.02}{\hyperref[uc:UC-36]{UC-36}}{Il sistema deve poter ottenere i test salvati}
     
-    \subreq{RFF-14.03}{}{Il sistema deve poter eliminare un test salvato}
+    \subreq{RFF-14.03}{\hyperref[uc:UC-40]{UC-40}}{Il sistema deve poter eliminare un test salvato}
 
-    \subreq{RFF-14.04}{}{Il sistema deve poter modificare un test salvato \hyperref[rf:RFF-15]{RFF-15}}
+    \subreq{RFF-14.04}{\hyperref[uc:UC-40]{UC-40}, \hyperref[uc:UC-41]{UC-41}}{Il sistema deve poter modificare un test salvato \hyperref[rf:RFF-15]{RFF-15}}
 
-    \subreq{RFF-14.05}{}{Il sistema deve poter caricare un test salvato eventualmente sovrascrivendo il test attualmente caricato}
+    \subreq{RFF-14.05}{\hyperref[uc:UC-38]{UC-38}, \hyperref[uc:UC-39]{UC-39}}{Il sistema deve poter caricare un test salvato eventualmente sovrascrivendo il test attualmente caricato}
 
-    \subreq{RFF-14.06}{}{Il sistema deve poter determinare se esistono test salvati}
+    \subreq{RFF-14.06}{\hyperref[uc:UC-36]{UC-36}}{Il sistema deve poter determinare se esistono test salvati}
 
 \end{freq}
 
