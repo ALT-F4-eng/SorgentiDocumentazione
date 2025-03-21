@@ -265,13 +265,13 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare la lista degli LLM salvati per permetterne la selezione in fase di test}
     \label{rf:RFF-1}%
     
-    \subreq{RFF-1.01}{}{Il sistema deve visualizzare gli LLM salvati attraverso una lista scorrevole}
+    \subreq{RFF-1.01}{\hyperref[uc:UC-52]{UC-52}}{Il sistema deve visualizzare gli LLM salvati attraverso una lista scorrevole}
     
-    \subreq{RFF-1.02}{}{Ogni LLM salvato deve essere mostrato indicandone il nome e la data di ultima modifica}
+    \subreq{RFF-1.02}{\hyperref[uc:UC-52]{UC-52}, \hyperref[uc:UC-53]{UC-53}}{Ogni LLM salvato deve essere mostrato indicandone il nome e la data di ultima modifica}
     
-    \subreq{RFF-1.03}{}{Il sistema deve permettere la selezione di uno degli LLM salvati}
+    \subreq{RFF-1.03}{\hyperref[uc:UC-53]{UC-53}}{Il sistema deve permettere la selezione di uno degli LLM salvati}
 
-    \subreq{RFF-1.04}{}{Se il sistema riscontra un errore interno durante l'ottenimento delle informazioni sugli LLM salvati deve visualizzare un messaggio di errore}
+    \subreq{RFF-1.04}{\hyperref[uc:UC-3]{UC-3}, \hyperref[uc:UC-53]{UC-53}}{Se il sistema riscontra un errore interno durante l'ottenimento delle informazioni sugli LLM salvati deve visualizzare un messaggio di errore}
 
 \end{freq}
 
@@ -280,19 +280,19 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare la lista degli LLM salvati}
     \label{rf:RFF-2}%
     
-    \subreq{RFF-2.01}{}{Il sistema deve visualizzare gli LLM salvati attraverso una lista scorrevole indicando per ognuno il nome e la data di ultima modifica}
+    \subreq{RFF-2.01}{\hyperref[uc:UC-52]{UC-52}, \hyperref[uc:UC-53]{UC-53}}{Il sistema deve visualizzare gli LLM salvati attraverso una lista scorrevole indicando per ognuno il nome e la data di ultima modifica}
     
-    \subreq{RFF-2.02}{}{Per ogni LLM salvato deve visualizzare un bottone per permetterne la visualizzazione \hyperref[rf:RFF-3]{RFF-3}}
+    \subreq{RFF-2.02}{\hyperref[uc:UC-53]{UC-53}}{Per ogni LLM salvato deve visualizzare un bottone per permetterne la visualizzazione \hyperref[rf:RFF-3]{RFF-3}}
     
-    \subreq{RFF-2.03}{}{Per ogni LLM salvato il sistema deve visualizzare un bottone per l'eliminazione}
+    \subreq{RFF-2.03}{\hyperref[uc:UC-54]{UC-54}}{Per ogni LLM salvato il sistema deve visualizzare un bottone per l'eliminazione}
 
-    \subreq{RFF-2.04}{}{Se l'utente richiede l'eliminazione di un LLM associato a uno o più test salvati, il sistema deve notificare che tali test verranno eliminati}
+    \subreq{RFF-2.04}{\hyperref[uc:UC-40]{UC-40}, \hyperref[uc:UC-54]{UC-54}, \hyperref[uc:UC-55]{UC-55}}{Se l'utente richiede l'eliminazione di un LLM associato a uno o più test salvati, il sistema deve notificare che tali test verranno eliminati}
 
-    \subreq{RFF-2.05}{}{Se l'utente richiede l'eliminazione di un LLM il sistema deve richiedere la conferma}
+    \subreq{RFF-2.05}{\hyperref[uc:UC-54]{UC-54}}{Se l'utente richiede l'eliminazione di un LLM il sistema deve richiedere la conferma}
     
-    \subreq{RFF-2.06}{}{Il sistema deve visualizzare un bottone per l'aggiunta di un nuovo LLM \hyperref[rf:RFF-5]{RFF-5}}
+    \subreq{RFF-2.06}{\hyperref[uc:UC-46]{UC-46}}{Il sistema deve visualizzare un bottone per l'aggiunta di un nuovo LLM \hyperref[rf:RFF-5]{RFF-5}}
 
-    \subreq{RFF-2.07}{}{Se il sistema riscontra un errore interno durante l'ottenimento delle informazioni sugli LLM salvati deve visualizzare un messaggio di errore}
+    \subreq{RFF-2.07}{\hyperref[uc:UC-3]{UC-3}, \hyperref[uc:UC-53]{UC-53}}{Se il sistema riscontra un errore interno durante l'ottenimento delle informazioni sugli LLM salvati deve visualizzare un messaggio di errore}
 
 \end{freq}
 
@@ -301,21 +301,21 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare un LLM salvato}
     \label{rf:RFF-3}%
     
-    \subreq{RFF-3.01}{}{Il sistema deve visualizzare il nome dell'LLM}
+    \subreq{RFF-3.01}{\hyperref[uc:UC-53]{UC-53}}{Il sistema deve visualizzare il nome dell'LLM}
     
-    \subreq{RFF-3.02}{}{Il sistema deve visualizzare la data dell'ultima modifica}
+    \subreq{RFF-3.02}{\hyperref[uc:UC-53]{UC-53}}{Il sistema deve visualizzare la data dell'ultima modifica}
     
-    \subreq{RFF-3.03}{}{Il sistema deve visualizzare l'URL usato per l'esecuzione delle chiamate HTTP all'API dell'LLM}
+    \subreq{RFF-3.03}{\hyperref[uc:UC-47]{UC-47}, \hyperref[uc:UC-53]{UC-53}}{Il sistema deve visualizzare l'URL usato per l'esecuzione delle chiamate HTTP all'API dell'LLM}
     
-    \subreq{RFF-3.04}{}{Il sistema deve visualizzare le coppie chiave-valore per la costruzione dell'header delle chiamate}
+    \subreq{RFF-3.04}{\hyperref[uc:UC-47]{UC-47}}{Il sistema deve visualizzare le coppie chiave-valore per la costruzione dell'header delle chiamate}
     
-    \subreq{RFF-3.05}{}{Il sistema deve visualizzare le coppie chiave-valore per la costruzione del body delle chiamate}
+    \subreq{RFF-3.05}{\hyperref[uc:UC-47]{UC-47}}{Il sistema deve visualizzare le coppie chiave-valore per la costruzione del body delle chiamate}
     
-    \subreq{RFF-3.06}{}{Il sistema deve visualizzare la chiave da utilizzare per specificare la domanda da porre all'LLM nel body delle richieste HTTP}
+    \subreq{RFF-3.06}{\hyperref[uc:UC-47]{UC-47}}{Il sistema deve visualizzare la chiave da utilizzare per specificare la domanda da porre all'LLM nel body delle richieste HTTP}
     
-    \subreq{RFF-3.07}{}{Il sistema deve visualizzare la chiave da utilizzare per estrarre la risposta data dall'LLM contenuta nelle risposte HTTP}
+    \subreq{RFF-3.07}{\hyperref[uc:UC-47]{UC-47}}{Il sistema deve visualizzare la chiave da utilizzare per estrarre la risposta data dall'LLM contenuta nelle risposte HTTP}
     
-    \subreq{RFF-3.08}{}{Il sistema deve visualizzare un bottone per la modifica dell'LLM visualizzato \hyperref[rf:RFF-4]{RFF-4}}
+    \subreq{RFF-3.08}{\hyperref[uc:UC-50]{UC-50}, \hyperref[uc:UC-51]{UC-51}, \hyperref[uc:UC-53]{UC-53}}{Il sistema deve visualizzare un bottone per la modifica dell'LLM visualizzato \hyperref[rf:RFF-4]{RFF-4}}
 
 \end{freq}
 
@@ -324,31 +324,31 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare gli elementi necessari alla modifica di un LLM}
     \label{rf:RFF-4}%
     
-    \subreq{RFF-4.01}{}{Il sistema deve visualizzare un elemento di input che permetta la modifica del nome}
+    \subreq{RFF-4.01}{\hyperref[uc:UC-50]{UC-50}}{Il sistema deve visualizzare un elemento di input che permetta la modifica del nome}
     
-    \subreq{RFF-4.02}{}{Il sistema deve visualizzare un elemento di input che permetta la modifica dell'URL}
+    \subreq{RFF-4.02}{\hyperref[uc:UC-51]{UC-51}}{Il sistema deve visualizzare un elemento di input che permetta la modifica dell'URL}
     
-    \subreq{RFF-4.03}{}{Il sistema deve visualizzare un elemento di input che permetta la modifica della chiave associata alla domanda da porre all'LLM}
+    \subreq{RFF-4.03}{\hyperref[uc:UC-7]{UC-7}}{Il sistema deve visualizzare un elemento di input che permetta la modifica della chiave associata alla domanda da porre all'LLM}
     
-    \subreq{RFF-4.04}{}{Il sistema deve visualizzare un elemento di input che permetta la modifica della chiave associata alla risposta da ottenere dall'LLM}
+    \subreq{RFF-4.04}{\hyperref[uc:UC-7]{UC-7}}{Il sistema deve visualizzare un elemento di input che permetta la modifica della chiave associata alla risposta da ottenere dall'LLM}
     
-    \subreq{RFF-4.05}{}{Il sistema deve visualizzare due elementi di input che permettano la modifica di ogni coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM}
+    \subreq{RFF-4.05}{\hyperref[uc:UC-51]{UC-51}, \hyperref[uc:UC-7]{UC-7}}{Il sistema deve visualizzare due elementi di input che permettano la modifica di ogni coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM}
     
-    \subreq{RFF-4.06}{}{Il sistema deve visualizzare un bottone che permetta l'inserimento di una coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM}
+    \subreq{RFF-4.06}{\hyperref[uc:UC-51]{UC-51}, \hyperref[uc:UC-6]{UC-6}}{Il sistema deve visualizzare un bottone che permetta l'inserimento di una coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM}
     
-    \subreq{RFF-4.07}{}{Il sistema deve visualizzare due elementi di input che permettano la modifica di ogni coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM}
+    \subreq{RFF-4.07}{\hyperref[uc:UC-51]{UC-51}, \hyperref[uc:UC-7]{UC-7}}{Il sistema deve visualizzare due elementi di input che permettano la modifica di ogni coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM}
     
-    \subreq{RFF-4.08}{}{Il sistema deve visualizzare un bottone che permetta l'inserimento di una coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM}
+    \subreq{RFF-4.08}{\hyperref[uc:UC-51]{UC-51}, \hyperref[uc:UC-6]{UC-6}}{Il sistema deve visualizzare un bottone che permetta l'inserimento di una coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM}
 
-    \subreq{RFF-4.09}{}{Il sistema deve visualizzare un bottone che permetta di salvare le modifiche sull'LLM}
+    \subreq{RFF-4.09}{\hyperref[uc:UC-50]{UC-50}, \hyperref[uc:UC-51]{UC-51}}{Il sistema deve visualizzare un bottone che permetta di salvare le modifiche sull'LLM}
 
-    \subreq{RFF-4.10}{}{Il sistema deve visualizzare un bottone che permetta di annullare le modifiche sull'LLM}
+    \subreq{RFF-4.10}{\hyperref[uc:UC-50]{UC-50}, \hyperref[uc:UC-51]{UC-51}}{Il sistema deve visualizzare un bottone che permetta di annullare le modifiche sull'LLM}
 
-    \subreq{RFF-4.11}{}{Se si cerca di salvare un URL con formato non valido il sistema deve mostrare un messaggio di errore}
+    \subreq{RFF-4.11}{\hyperref[uc:UC-48]{UC-48}}{Se si cerca di salvare un URL con formato non valido il sistema deve mostrare un messaggio di errore}
 
-    \subreq{RFF-4.12}{}{Se si cerca di salvare una coppia chiave-valore non valida, il sistema deve mostrare un messaggio di errore}
+    \subreq{RFF-4.12}{\hyperref[uc:UC-49]{UC-49}}{Se si cerca di salvare una coppia chiave-valore non valida, il sistema deve mostrare un messaggio di errore}
 
-    \subreq{RFF-4.13}{}{Se avviene un errore durante la modifica dell'LLM il sistema deve visualizzare un messaggio di errore}
+    \subreq{RFF-4.13}{\hyperref[uc:UC-13]{UC-13}}{Se avviene un errore durante la modifica dell'LLM il sistema deve visualizzare un messaggio di errore}
 
 \end{freq}
 
@@ -357,27 +357,27 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare gli elementi necessari per la creazione di un nuovo LLM}
     \label{rf:RFF-5}%
     
-    \subreq{RFF-5.01}{}{Il sistema deve visualizzare un elemento di input che permetta di specificare il nome}
+    \subreq{RFF-5.01}{\hyperref[uc:UC-50]{UC-50}}{Il sistema deve visualizzare un elemento di input che permetta di specificare il nome}
     
-    \subreq{RFF-5.02}{}{Il sistema deve visualizzare un elemento di input che permetta di specificare l'URL}
+    \subreq{RFF-5.02}{\hyperref[uc:UC-51]{UC-51}}{Il sistema deve visualizzare un elemento di input che permetta di specificare l'URL}
     
-    \subreq{RFF-5.03}{}{Il sistema deve visualizzare un elemento di input che permetta di specificare la chiave associata alla domanda da porre all'LLM}
+    \subreq{RFF-5.03}{\hyperref[uc:UC-6]{UC-6}}{Il sistema deve visualizzare un elemento di input che permetta di specificare la chiave associata alla domanda da porre all'LLM}
     
-    \subreq{RFF-5.04}{}{Il sistema deve visualizzare un elemento di input che permetta di specificare la chiave associata alla risposta da ottenere dall'LLM}
+    \subreq{RFF-5.04}{\hyperref[uc:UC-6]{UC-6}}{Il sistema deve visualizzare un elemento di input che permetta di specificare la chiave associata alla risposta da ottenere dall'LLM}
     
-    \subreq{RFF-5.05}{}{Il sistema deve visualizzare un bottone che permetta l'inserimento di una coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM}
+    \subreq{RFF-5.05}{\hyperref[uc:UC-6]{UC-6}}{Il sistema deve visualizzare un bottone che permetta l'inserimento di una coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM}
     
-    \subreq{RFF-5.06}{}{Il sistema deve visualizzare un bottone che permetta l'inserimento di una coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM}
+    \subreq{RFF-5.06}{\hyperref[uc:UC-6]{UC-6}}{Il sistema deve visualizzare un bottone che permetta l'inserimento di una coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM}
 
-    \subreq{RFF-5.07}{}{Il sistema deve visualizzare un bottone che permetta di salvare il nuovo LLM}
+    \subreq{RFF-5.07}{\hyperref[uc:UC-46]{UC-46}}{Il sistema deve visualizzare un bottone che permetta di salvare il nuovo LLM}
 
-    \subreq{RFF-5.08}{}{Il sistema deve visualizzare un bottone che permetta di annullare la creazione del nuovo LLM}
+    \subreq{RFF-5.08}{\hyperref[uc:UC-46]{UC-46}}{Il sistema deve visualizzare un bottone che permetta di annullare la creazione del nuovo LLM}
 
-    \subreq{RFF-5.09}{}{Se si cerca di salvare un URL con formato non valido il sistema deve mostrare un messaggio di errore}
+    \subreq{RFF-5.09}{\hyperref[uc:UC-48]{UC-48}}{Se si cerca di salvare un URL con formato non valido il sistema deve mostrare un messaggio di errore}
 
-    \subreq{RFF-5.10}{}{Se si cerca di salvare una coppia chiave-valore non valida, il sistema deve mostrare un messaggio di errore}
+    \subreq{RFF-5.10}{\hyperref[uc:UC-49]{UC-49}}{Se si cerca di salvare una coppia chiave-valore non valida, il sistema deve mostrare un messaggio di errore}
 
-    \subreq{RFF-5.11}{}{Se avviene un errore durante la creazione dell'LLM il sistema deve visualizzare un messaggio di errore}
+    \subreq{RFF-5.11}{\hyperref[uc:UC-13]{UC-13}}{Se avviene un errore durante la creazione dell'LLM il sistema deve visualizzare un messaggio di errore}
 
 \end{freq}
 
@@ -386,11 +386,11 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare i test salvati}
     \label{rf:RFF-6}%
     
-    \subreq{RFF-6.01}{}{Il sistema deve visualizzare i test salvati sotto forma di una lista \hyperref[rf:RFF-7]{RFF-7}}
+    \subreq{RFF-6.01}{\hyperref[uc:UC-36]{UC-36}}{Il sistema deve visualizzare i test salvati sotto forma di una lista \hyperref[rf:RFF-7]{RFF-7}}
 
-    \subreq{RFF-6.02}{}{Se non esistono test salvati il sistema deve visualizzare un messaggio che lo indica}
+    \subreq{RFF-6.02}{\hyperref[uc:UC-36]{UC-36}}{Se non esistono test salvati il sistema deve visualizzare un messaggio che lo indica}
 
-    \subreq{RFF-6.03}{}{Il sistema, se esistono test salvati, deve visualizzare una barra di ricerca che specifichi all'utente le informazioni necessarie per l'esecuzione della ricerca stessa}
+    \subreq{RFF-6.03}{\hyperref[uc:UC-37]{UC-37}}{Il sistema, se esistono test salvati, deve visualizzare una barra di ricerca che specifichi all'utente le informazioni necessarie per l'esecuzione della ricerca stessa}
 
 \end{freq}
 
@@ -402,9 +402,9 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     {Il sistema dovrebbe poter visualizzare un test salvato}
     \label{rf:RFF-7}%
     
-    \subreq{RFF-7.01}{}{Il sistema deve visualizzare il nome del test salvato}
+    \subreq{RFF-7.01}{\hyperref[uc:UC-36]{UC-36}}{Il sistema deve visualizzare il nome del test salvato}
     
-    \subreq{RFF-7.02}{}{Il sistema deve visualizzare il nome del dataset su cui è stato eseguito il test}
+    \subreq{RFF-7.02}{\hyperref[uc:UC-31]{UC-31}}{Il sistema deve visualizzare il nome del dataset su cui è stato eseguito il test}
     
     \subreq{RFF-7.03}{}{Il sistema deve visualizzare la data in cui il test è stato eseguito}
     
