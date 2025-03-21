@@ -2,12 +2,12 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.25]{Sezioni/UseCase/Immagini/VisualizzazioneTestSalvati}
+    \includegraphics[scale=0.47]{Sezioni/UseCase/Immagini/VisualizzazioneTestSalvati}
     \caption{Diagramma per la visualizzazione di test salvati.}
 \end{figure}
 
-\begin{usecase}{UC-39}{Visualizza test salvati}
-    \label{uc:UC-39}
+\begin{usecase}{UC-36}{Visualizza test salvati}
+    \label{uc:UC-36}
     
     \req{\hyperref[ru:RUF-1]{RUF-1}}
     
@@ -48,8 +48,8 @@
 
 \end{usecase}
 
-\begin{usecase}{UC-40}{Ricerca dei test salvati per nome}
-    \label{uc:UC-40}
+\begin{usecase}{UC-37}{Ricerca dei test salvati per nome}
+    \label{uc:UC-37}
     
     \req{\hyperref[ru:RUF-2]{RUF-2}}
     
@@ -69,7 +69,7 @@
     
     \trigger{L'utente vuole visualizzare i test salvati}
     
-    \inc{\hyperref[uc:UC-39]{UC-39}}
+    \inc{\hyperref[uc:UC-36]{UC-36}}
     
     \base{}
     
@@ -77,14 +77,14 @@
         \item L'utente indica le parole chiave da usare nella ricerca
         \item L'utente richiede l'esecuzione della ricerca
         \item Il sistema restringe i test salvati all'insieme di test che contengono nel proprio nome le parole chiave
-        \item L'insieme di test ristretto viene visualizzato seguendo \hyperref[uc:UC-39]{UC-39}
+        \item L'insieme di test ristretto viene visualizzato seguendo \hyperref[uc:UC-36]{UC-36}
     }
     
     \subscenario{}
 \end{usecase}
 
-\begin{usecase}{UC-41}{Carica test salvato}
-    \label{uc:UC-41}
+\begin{usecase}{UC-38}{Carica test salvato}
+    \label{uc:UC-38}
     
     \req{\hyperref[ru:RUF-3]{RUF-3}}
     
@@ -117,7 +117,7 @@
     \subscenario{
         \item[2.1] Esiste un test attualmente caricato che non è stato salvato:
         \begin{itemize}
-            \item \hyperref[uc:UC-42]{UC-42}
+            \item \hyperref[uc:UC-39]{UC-39}
         \end{itemize}
         \item[2.2] Avviene un errore interno durante l'ottenimento del test indicato:
         \begin{itemize}
@@ -126,8 +126,8 @@
     }
 \end{usecase}
 
-\begin{usecase}{UC-42}{Sovrascrivi test attualmente caricato}
-    \label{uc:UC-42}
+\begin{usecase}{UC-39}{Sovrascrivi test attualmente caricato}
+    \label{uc:UC-39}
     
     \req{}
     

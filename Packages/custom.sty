@@ -63,15 +63,15 @@
     \subscenario}[1]{\textbf{Scenari secondari} &  \if\relax\detokenize{#1}\relax N/A \else\begin{itemize}[noitemsep,topsep=-10pt]#1\end{itemize}\fi \\ \hline
 }
 
-\newcommand{\subreq}[2]{ #1 & #2 \\ \hline }
-\newcommand{\dependency}[1]{ \multicolumn{2}{|p{\textwidth}|}{#1} \\ \hline}
+\newcommand{\subreq}[3]{ #1 & #3 & #2\\ \hline }
+\newcommand{\dependency}[1]{ \multicolumn{3}{|p{\textwidth}|}{#1} \\ \hline}
 
-\newcommand{\nfreq}[2]{
-    \begin{tabularx}{\textwidth}{|l|X|}
+\newcommand{\nfreq}[3]{
+    \begin{tabularx}{\textwidth}{|l|X|C|}
         \hline
-        \rowcolor{lightgray}\multicolumn{2}{|c|}{\textbf{#1}} \\
+        \rowcolor{lightgray}\multicolumn{2}{|c|}{\textbf{#1}} & \textbf{Fonte}  \\
         \hline
-        \multicolumn{2}{|p{\textwidth}|}{#2} \\
+        \multicolumn{2}{|p{0.75\textwidth}|}{#2} & #3 \\
         \hline
     \end{tabularx}
 }
@@ -158,19 +158,19 @@
 }
 
 \NewEnviron{freq}[3][]{
-    \begin{tabularx}{\textwidth}{|l|X|}
+    \begin{tabularx}{\textwidth}{|l|X|l|}
             \hline
-            \rowcolor{lightgray}\multicolumn{2}{|c|}{\textbf{#2}} \\
+            \rowcolor{lightgray}\multicolumn{3}{|c|}{\textbf{#2}} \\
             \hline
-            \multicolumn{2}{|p{\textwidth}|}{#3} \\
+            \multicolumn{3}{|p{\textwidth}|}{#3} \\
             \hline
-            \rowcolor{lightgray}\multicolumn{2}{|c|}{\textbf{Specifica}} \\
+            \rowcolor{lightgray}\multicolumn{3}{|c|}{\textbf{Specifica}} \\
             \hline
-            \textbf{ID} & \textbf{Descrizione} \\
+            \textbf{ID} & \textbf{Descrizione} & \textbf{Fonte}\\
             \hline
             \BODY
             \if\relax\detokenize{#1}\relax\else
-                \rowcolor{lightgray}\multicolumn{2}{|c|}{\textbf{Dipendenze da requisiti facoltativi}} \\
+                \rowcolor{lightgray}\multicolumn{3}{|c|}{\textbf{Dipendenze da requisiti facoltativi}} \\
                 \hline
                 #1
             \fi

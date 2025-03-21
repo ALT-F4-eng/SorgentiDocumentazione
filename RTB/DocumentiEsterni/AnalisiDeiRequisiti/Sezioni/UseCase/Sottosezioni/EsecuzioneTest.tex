@@ -2,17 +2,17 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.2]{Sezioni/UseCase/Immagini/EsecuzioneTest.png}
+    \includegraphics[scale=0.45]{Sezioni/UseCase/Immagini/EsecuzioneTest.png}
     \caption{Diagramma esecuzione test.}
 \end{figure}
 
-\begin{usecase}{UC-31}{Esegui test usando il dataset visualizzato}
-    \label{uc:UC-31}
+\begin{usecase}{UC-28}{Esegui test usando il dataset visualizzato}
+    \label{uc:UC-28}
     
     \req{\hyperref[ru:RUO-7]{RUO-7}} 
 
     \pre{
-        \item L'utente sta visualizzando il dataset da utilizzare per il test \hyperref[uc:UC-1]{UC-1}
+        \item L'utente sta visualizzando una pagina del dataset da utilizzare per il test \hyperref[uc:UC-1]{UC-1}
         \item Il dataset visualizzato non è vuoto
     }
 
@@ -42,21 +42,21 @@
     \subscenario{
         \item[1.1] Il dataset visualizzato contiene almeno un elemento incompleto ovvero con domanda o risposta vuote:
         \begin{itemize}
-            \item \hyperref[uc:UC-32]{UC-32}
+            \item \hyperref[uc:UC-29]{UC-29}
         \end{itemize}
         \item[2.1] Il sistema riscontra un errore di comunicazione con l'LLM sotto test:
         \begin{itemize}
-            \item \hyperref[uc:UC-33]{UC-33}
+            \item \hyperref[uc:UC-30]{UC-30}
         \end{itemize}
         \item[3.1] Il sistema riscontra un errore di comunicazione con l'oracolo:
         \begin{itemize}
-            \item \hyperref[uc:UC-33]{UC-33}
+            \item \hyperref[uc:UC-30]{UC-30}
         \end{itemize}
     }
 \end{usecase}
 
-\begin{usecase}{UC-32}{Visualizza errore dataset visualizzato è incompelto}
-    \label{uc:UC-32}
+\begin{usecase}{UC-29}{Visualizza errore dataset visualizzato è incompleto}
+    \label{uc:UC-29}
     
     \req{} 
 
@@ -83,8 +83,8 @@
     \subscenario{}
 \end{usecase}
 
-\begin{usecase}{UC-33}{Visualizza errore di comunicazione con sistema esterno}
-    \label{uc:UC-33}
+\begin{usecase}{UC-30}{Visualizza errore di comunicazione con sistema esterno}
+    \label{uc:UC-30}
     
     \req{} 
 
@@ -111,8 +111,8 @@
     \subscenario{}
 \end{usecase}
 
-\begin{usecase}{UC-34}{Visualizza i risultati del test caricato}
-    \label{uc:UC-34}
+\begin{usecase}{UC-31}{Visualizza i risultati del test caricato}
+    \label{uc:UC-31}
     
     \req{\hyperref[ru:RUO-8]{RUO-8}} 
 
@@ -128,14 +128,14 @@
 
     \trigger{L'utente vuole visualizzare i risultati del test caricato}
 
-    \inc{\hyperref[uc:UC-35]{UC-35}}
+    \inc{\hyperref[uc:UC-32]{UC-32}}
 
     \base{}
 
     \scenario{
         \item L'utente richiede la visualizzazione dei risultati del test caricato
         \item Viene visualizzata una \glossario{dashboard} contenente le statistiche sui risultati del test
-        \item Viene visualizzata la prima pagina dei risultati del test seguendo \hyperref[uc:UC-35]{UC-35}
+        \item Viene visualizzata la prima pagina dei risultati del test seguendo \hyperref[uc:UC-32]{UC-32}
     }
 
     \subscenario{
@@ -147,8 +147,8 @@
 \end{usecase}
 
 
-\begin{usecase}{UC-35}{Visualizza pagina di risultati del test caricato}
-    \label{uc:UC-35}
+\begin{usecase}{UC-32}{Visualizza pagina di risultati del test caricato}
+    \label{uc:UC-32}
     
     \req{} 
 
@@ -183,8 +183,8 @@
 \end{usecase}
 
 
-\begin{usecase}{UC-36}{Cambia pagina di risultati visualizzata}
-    \label{uc:UC-36}
+\begin{usecase}{UC-33}{Cambia pagina di risultati visualizzata}
+    \label{uc:UC-33}
     
     \req{} 
 
@@ -202,20 +202,20 @@
 
     \trigger{L'utente vuole visualizzare una pagina dei risultati del test caricato}
 
-    \inc{\hyperref[uc:UC-35]{UC-35}}
+    \inc{\hyperref[uc:UC-32]{UC-32}}
 
     \base{}
 
     \scenario{
         \item L'utente richiede la visualizzazione di una pagina di risultati del test
         \item Il sistema verifica che la pagina esista
-        \item Il sistema visualizza la pagina richiesta seguendo \hyperref[uc:UC-35]{UC-35}
+        \item Il sistema visualizza la pagina richiesta seguendo \hyperref[uc:UC-32]{UC-32}
     }
 
     \subscenario{
         \item[2.1] La pagina richiesta è invalida ovvero minore di uno o maggiore della pagina massima:
         \begin{itemize}
-            \item \hyperref[uc:UC-5]{UC-5}
+            \item \hyperref[uc:UC-1]{UC-1}
         \end{itemize}
     }
 \end{usecase}

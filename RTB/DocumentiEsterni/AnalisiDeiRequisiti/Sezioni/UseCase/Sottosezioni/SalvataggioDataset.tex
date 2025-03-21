@@ -2,17 +2,25 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.18]{Sezioni/UseCase/Immagini/SalvataggioDataset}
+    \includegraphics[scale=0.43]{Sezioni/UseCase/Immagini/SalvataggioDataset.png}
     \caption{Diagramma salvataggio dataset.}
 \end{figure}
 
-\begin{usecase}{UC-11}{Salva dataset visualizzato}
-    \label{uc:UC-11}    
+\begin{figure}[H]
+    \label{fig:aggiornamento_dataset}
+    \centering
+    \includegraphics[scale=0.43]{Sezioni/UseCase/Immagini/AggiornamentoDataset_attivita.png}
+    \caption{Diagramma aggiornamento dataset.}
+\end{figure}
+
+
+\begin{usecase}{UC-9}{Salva dataset visualizzato}
+    \label{uc:UC-9}    
     
     \req{\hyperref[ru:RUO-3]{RUO-3}} 
 
     \pre{
-        \item L'utente sta visualizzando il dataset da salvare \hyperref[uc:UC-1]{UC-1}
+        \item L'utente sta visualizzando una pagina del dataset da salvare \hyperref[uc:UC-1]{UC-1}
         \item Il dataset visualizzato non è vuoto
         \item Il dataset visualizzato non possiede una versione salvata o possiede una versione salvata non aggiornata
     }
@@ -27,20 +35,20 @@
 
     \trigger{L'utente vuole salvare il dataset visualizzato}
     
-    \inc{\hyperref[uc:UC-12]{UC-12}}
+    \inc{\hyperref[uc:UC-10]{UC-10}}
 
     \base{}
 
     \scenario{
         \item L'utente richiede il salvataggio del dataset visualizzato
-        \item Il sistema esegue il salvataggio seguendo \hyperref[uc:UC-12]{UC-12}
+        \item Il sistema esegue il salvataggio seguendo \hyperref[uc:UC-10]{UC-10}
     }
 
     \subscenario{}
 \end{usecase}
 
-\begin{usecase}{UC-12}{Salva un dataset}
-    \label{uc:UC-12}
+\begin{usecase}{UC-10}{Salva un dataset}
+    \label{uc:UC-10}
     
     \req{}
 
@@ -67,19 +75,15 @@
     }
     
     \subscenario{
-        \item[1.1] Il dataset non è mai stato salvato:
+        \item [1.1] Errore interno durante la creazione:
         \begin{itemize}
-            \item  \hyperref[uc:UC-13]{UC-13}
-        \end{itemize}
-        \item [2.2] Il dataset è già stato salvato in precedenza:
-        \begin{itemize}
-            \item \hyperref[uc:UC-14]{UC-14}
+            \item \hyperref[uc:UC-13]{UC-13}
         \end{itemize}
     }
 \end{usecase}
 
-\begin{usecase}{UC-13}{Creazione nuovo dataset nel sistema}
-    \label{uc:UC-13}
+\begin{usecase}{UC-11}{Creazione nuovo dataset nel sistema}
+    \label{uc:UC-11}
     
     \req{} 
 
@@ -97,32 +101,27 @@
 
     \trigger{Il sistema deve salvare un nuovo dataset}
 
-    \inc{\hyperref[uc:UC-17]{UC-17}}
+    \inc{\hyperref[uc:UC-14]{UC-14}}
 
-    \base{}
+    \base{\hyperref[uc:UC-10]{UC-10}}
 
-    
     \scenario{
-        \item Viene richiesta l'assegnazione di un nome per il nuovo dataset seguendo \hyperref[uc:UC-17]{UC-17}
+        \item Viene richiesta l'assegnazione di un nome per il nuovo dataset seguendo \hyperref[uc:UC-14]{UC-14}
         \item L'utente conferma la creazione di un nuovo dataset
         \item Il sistema salva il dataset
     }
 
     \subscenario{
-        \item [2.1] L'utente annulla la creazione:
+        \item [1.1] L'utente annulla la creazione:
         \begin{itemize}
             \item Il sistema interrompe l'operazione
-        \end{itemize}
-        \item [3.1] Errore interno durante la creazione:
-        \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
         \end{itemize}
     }
 
 \end{usecase}
 
-\begin{usecase}{UC-14}{Aggiorna dataset presente nel sistema}
-    \label{uc:UC-14}
+\begin{usecase}{UC-12}{Aggiorna dataset presente nel sistema}
+    \label{uc:UC-12}
     
     \req{} 
 
@@ -142,68 +141,19 @@
 
     \inc{}
 
-    \base{}
+    \base{\hyperref[uc:UC-10]{UC-10}}
 
     \scenario{
         \item Il sistema verifica la presenza di test associati alla versione del dataset da aggiornare
-        \item Il sistema aggiorna la versione salvata
-        \item L'utente viene avvisato del corretto aggiornamento
+        \item Il sistema aggiorna la versione salvata seguendo \hyperref[fig:aggiornamento_dataset]{Aggiornamento dataset}
     }
 
-    \subscenario{
-        \item[1.1] Il dataset da aggiornare è stato utilizzato per l'esecuzione di uno o più test:
-        \begin{itemize}
-            \item \hyperref[uc:UC-15]{UC-15}
-        \end{itemize}
-        \item[2.1] Avviene un errore durante l'aggiornamento:
-        \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
-        \end{itemize}
-    }
+    \subscenario{}
 
 \end{usecase}
 
-\begin{usecase}{UC-15}{Aggiorna dataset mantenendo versione precedente}
-    \label{uc:UC-15}
-    
-    \req{} 
-
-    \pre{
-        \item Il dataset da aggiornare è stato usato in uno o più test 
-    }
-
-    \post{
-        \item I test restano consistenti
-    }
-    
-    \actor{Utente}
-
-    \subactors{}
-
-    \trigger{Il sistema durante l'aggiornamento di un dataset verifica la presenza di uno o più test a esso associati}
-    
-    \inc{}
-
-    \base{}
-
-    \scenario{
-        \item Il sistema mantiene la versione attuale del dataset salvato
-        \item Il sistema aggiorna la versione salvata
-    }
-
-    \subscenario{
-        \item[2.1] Il sistema riscontra un errore durante l'aggiornamento:
-        \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
-        \end{itemize}
-    }
-
-\end{usecase}
-
-
-
-\begin{usecase}{UC-16}{Visualizza errore di persistenza}
-    \label{uc:UC-16}
+\begin{usecase}{UC-13}{Visualizza errore di persistenza}
+    \label{uc:UC-13}
     
     \req{} 
 
@@ -234,8 +184,8 @@
 \end{usecase}
 
 
-\begin{usecase}{UC-17}{Nomina entità gestita dal sistema}
-    \label{uc:UC-17}
+\begin{usecase}{UC-14}{Nomina entità gestita dal sistema}
+    \label{uc:UC-14}
     
     \req{} 
 
@@ -253,7 +203,7 @@
 
     \trigger{L'utente deve assegnare un nome a un entità gestita dal sistema}
     
-    \inc{\hyperref[uc:UC-1]{UC-1}}
+    \inc{}
 
     \base{}
 
@@ -266,19 +216,19 @@
     \subscenario{
         \item[2.1] Il nome è vuoto:
         \begin{itemize}
-            \item \hyperref[uc:UC-18]{UC-18}
+            \item \hyperref[uc:UC-15]{UC-15}
         \end{itemize}
         \item[3.1] Il nome esiste già:
         \begin{itemize}
-            \item \hyperref[uc:UC-19]{UC-19}
+            \item \hyperref[uc:UC-16]{UC-16}
         \end{itemize}
 
     }
 
 \end{usecase}
 
-\begin{usecase}{UC-18}{Visualizza errore nome vuoto}
-    \label{uc:UC-18}
+\begin{usecase}{UC-15}{Visualizza errore nome vuoto}
+    \label{uc:UC-15}
     
     \req{} 
 
@@ -308,8 +258,8 @@
 
 \end{usecase}
 
-\begin{usecase}{UC-19}{Visualizza errore nome esistente}
-    \label{uc:UC-19}
+\begin{usecase}{UC-16}{Visualizza errore nome esistente}
+    \label{uc:UC-16}
     
     \req{} 
 
@@ -339,13 +289,13 @@
 
 \end{usecase}
 
-\begin{usecase}{UC-20}{Salva dataset da file JSON}
-    \label{uc:UC-20}
+\begin{usecase}{UC-17}{Salva dataset da file JSON}
+    \label{uc:UC-17}
     
     \req{\hyperref[ru:RUF-4]{RUF-4}} 
 
     \pre{
-        \item L'utente sta visualizzando i dataset salvati \hyperref[uc:UC-21]{UC-21}
+        \item L'utente sta visualizzando i dataset salvati \hyperref[uc:UC-18]{UC-18}
     }
 
     \post{
@@ -358,7 +308,7 @@
 
     \trigger{L'utente vuole salvare un nuovo dataset a partire da un file JSON}
 
-    \inc{\hyperref[uc:UC-13]{UC-13}}
+    \inc{\hyperref[uc:UC-11]{UC-11}}
 
     \base{}
 
@@ -366,20 +316,20 @@
         \item L'utente richiede il salvataggio di un nuovo dataset a partire da un file JSON
         \item L'utente seleziona il file JSON
         \item Il sistema verifica la validità del file caricato
-        \item Il sistema salva un nuovo dataset usando il file JSON caricato seguendo \hyperref[uc:UC-13]{UC-13}
+        \item Il sistema salva un nuovo dataset usando il file JSON caricato seguendo \hyperref[uc:UC-11]{UC-11}
     }
 
     \subscenario{
         \item[2.1] Il file caricato non rispetta il formato atteso:
         \begin{itemize}
-            \item \hyperref[uc:UC-21]{UC-21}
+            \item \hyperref[uc:UC-18]{UC-18}
         \end{itemize}
     }
 
 \end{usecase}
 
-\begin{usecase}{UC-21}{Visualizza errore formato file invalido}
-    \label{uc:UC-21}
+\begin{usecase}{UC-18}{Visualizza errore formato file invalido}
+    \label{uc:UC-18}
     
     \req{}
 

@@ -2,12 +2,12 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.23]{Sezioni/UseCase/Immagini/CambioDatasetCaricato.png}
+    \includegraphics[scale=0.53]{Sezioni/UseCase/Immagini/CambioDatasetCaricato.png}
     \caption{Diagramma cambio dataset caricato.}
 \end{figure}
 
-\begin{usecase}{UC-28}{Crea nuovo dataset temporaneo}
-    \label{uc:UC-28}
+\begin{usecase}{UC-25}{Crea nuovo dataset temporaneo}
+    \label{uc:UC-25}
     
     \req{\hyperref[ru:RUO-3]{RUO-3}} 
 
@@ -38,13 +38,13 @@
     \subscenario{
         \item[2.1] Il dataset caricato contiene modifiche non salvate:
         \begin{itemize}
-            \item \hyperref[uc:UC-30]{UC-30}
+            \item \hyperref[uc:UC-27]{UC-27}
         \end{itemize}
     }
 \end{usecase}
 
-\begin{usecase}{UC-29}{Carica un dataset salvato}
-    \label{uc:UC-29}
+\begin{usecase}{UC-26}{Carica un dataset salvato}
+    \label{uc:UC-26}
     
     \req{\hyperref[ru:RUO-6]{RUO-6}} 
 
@@ -75,45 +75,46 @@
     \subscenario{
         \item[2.1] Il dataset caricato contiene modifiche non salvate:
         \begin{itemize}
-            \item \hyperref[uc:UC-30]{UC-30}
+            \item \hyperref[uc:UC-27]{UC-27}
         \end{itemize}
     }
 \end{usecase}
 
-\begin{usecase}{UC-30}{Sovrascrivi dataset caricato}
-    \label{uc:UC-30}
+\begin{usecase}{UC-27}{Sovrascrivi dataset non salvato}
+    \label{uc:UC-27}
     
     \req{} 
 
     \pre{
-        \item Esiste un dataset caricato con modifiche non salvate
+        \item Esiste un dataset con modifiche non salvate
     }
 
     \post{
-        \item Il dataset caricato viene sovrascritto e le modifiche non salvate vengono perse
+        \item Il dataset attuale viene sovrascritto dal dataset caricato e le modifiche non salvate vengono perse
     }
     
     \actor{Utente}
 
     \subactors{}
 
-    \trigger{Il dataset caricato contiene delle modifiche non salvate e il sistema deve caricarne un altro}
+    \trigger{Il dataset attuale contiene delle modifiche non salvate e il sistema deve caricarne un altro}
 
     \inc{}
 
     \base{}
 
     \scenario{
+        \item L'utente richiede di sostituire il dataset attuale che presenta modifiche non salvate
         \item Il sistema richiede all'utente la conferma della sovrascrittura
         \item L'utente conferma la sovrascrittura
-        \item Il sistema sovrascrive il dataset caricato
+        \item Il sistema sovrascrive il dataset attuale con il dataset caricato e le modifiche non salvate vengono perse
     }
 
     \subscenario{
         \item[2.1] L'utente annulla la sovrascrittura:
         \begin{itemize}
             \item Il sistema interrompe l'operazione di caricamento
-            \item Il dataset caricato resta invariato
+            \item Il dataset attuale resta invariato
         \end{itemize}
     }
 \end{usecase}

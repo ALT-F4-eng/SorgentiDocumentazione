@@ -1,17 +1,17 @@
 \subsection{Aggiungi nuovo LLM}
 
 \begin{figure}[H]
-    \includegraphics[scale=0.23]{Sezioni/UseCase/Immagini/AggiungiLLM.png}
+    \includegraphics[scale=0.45]{Sezioni/UseCase/Immagini/AggiungiLLM.png}
     \caption{Diagramma aggiungi nuovo LLM.}
 \end{figure}
 
-\begin{usecase}{UC-49}{Aggiungi LLM} 
-    \label{uc:UC-49}
+\begin{usecase}{UC-46}{Aggiungi LLM} 
+    \label{uc:UC-46}
     
     \req{\hyperref[ru:RUF-6]{RUF-6}} 
 
     \pre{ 
-        \item L'utente sta visualizzando gli LLM salvati \hyperref[uc:UC-55]{UC-55}
+        \item L'utente sta visualizzando gli LLM salvati \hyperref[uc:UC-52]{UC-52}
     } 
     
     \post{
@@ -22,16 +22,16 @@
 
     \trigger{L'utente vuole aggiungere un nuovo LLM} 
 
-    \inc{\hyperref[uc:UC-17]{UC-17}, \hyperref[uc:UC-50]{UC-50}}
+    \inc{\hyperref[uc:UC-14]{UC-14}, \hyperref[uc:UC-47]{UC-47}}
 
     \base{} 
 
     \scenario{ 
         \item L'utente richiede di aggiungere un nuovo LLM 
                     
-        \item  L'utente specifica la configurazione necessaria per realizzare le chiamate HTTP verso l'LLM seguendo \hyperref[uc:UC-50]{UC-50}
+        \item  L'utente specifica la configurazione necessaria per realizzare le chiamate HTTP verso l'LLM seguendo \hyperref[uc:UC-47]{UC-47}
              
-        \item Viene richiesta l'assegnazione di un nome per il nuovo LLM seguendo \hyperref[uc:UC-17]{UC-17}
+        \item Viene richiesta l'assegnazione di un nome per il nuovo LLM seguendo \hyperref[uc:UC-14]{UC-14}
 
         \item Il sistema salva il nuovo LLM 
     } 
@@ -39,13 +39,13 @@
     \subscenario{ 
         \item[4.1] Errore durante il salvataggio dell'LLM:
         \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
+            \item \hyperref[uc:UC-13]{UC-13}
         \end{itemize}
     } 
   \end{usecase}
   
-  \begin{usecase}{UC-50}{Specifica configurazione richieste HTTP} 
-    \label{uc:UC-50}
+  \begin{usecase}{UC-47}{Specifica configurazione richieste HTTP} 
+    \label{uc:UC-47}
 
     \req{} 
     
@@ -82,21 +82,21 @@
     \subscenario{ 
         \item[1.1] Formato dell'URL inserito invalido:
         \begin{itemize}
-            \item \hyperref[uc:UC-51]{UC-51}
+            \item \hyperref[uc:UC-48]{UC-48}
         \end{itemize}
         \item[2.1] L'utente specifica una coppia chiave-valore invalida:
         \begin{itemize}
-            \item \hyperref[uc:UC-52]{UC-52}
+            \item \hyperref[uc:UC-49]{UC-49}
         \end{itemize}
         \item[3.1] L'utente specifica una coppia chiave-valore invalida:
         \begin{itemize}
-            \item \hyperref[uc:UC-52]{UC-52}
+            \item \hyperref[uc:UC-49]{UC-49}
         \end{itemize}
     } 
 \end{usecase}
 
-\begin{usecase}{UC-51}{Visualizza errore URL invalido} 
-    \label{uc:UC-51}
+\begin{usecase}{UC-48}{Visualizza errore URL invalido} 
+    \label{uc:UC-48}
 
     \req{} 
 
@@ -125,8 +125,8 @@
     \subscenario{} 
 \end{usecase}
 
-\begin{usecase}{UC-52}{Visualizza errore coppia chiave-valore invalida} 
-    \label{uc:UC-52}
+\begin{usecase}{UC-49}{Visualizza errore coppia chiave-valore invalida} 
+    \label{uc:UC-49}
 
     \req{} 
 

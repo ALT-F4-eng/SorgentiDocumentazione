@@ -2,17 +2,17 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.2]{Sezioni/UseCase/Immagini/ModificaDatasetSalvato.png}
+    \includegraphics[scale=0.47]{Sezioni/UseCase/Immagini/ModificaDatasetSalvato.png}
     \caption{Diagramma modifica dataset salvati.}
 \end{figure}
 
-\begin{usecase}{UC-24}{Copia dataset salvato}
-    \label{uc:UC-24}
+\begin{usecase}{UC-21}{Copia dataset salvato}
+    \label{uc:UC-21}
     
     \req{\hyperref[ru:RUO-3]{RUO-3}} 
 
     \pre{
-        \item L'utente sta visualizzando i dataset salvati \hyperref[uc:UC-22]{UC-22}
+        \item L'utente sta visualizzando i dataset salvati \hyperref[uc:UC-19]{UC-19}
     }
 
     \post{
@@ -38,14 +38,14 @@
     \subscenario{
         \item[2.1] Avviene un errore interno al sistema durante la creazione della copia:
         \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
+            \item \hyperref[uc:UC-13]{UC-13}
         \end{itemize}
     }
 \end{usecase}
 
 
-\begin{usecase}{UC-25}{Elimina dataset salvato}
-    \label{uc:UC-25}
+\begin{usecase}{UC-22}{Elimina dataset salvato}
+    \label{uc:UC-22}
     
     \req{\hyperref[ru:RUO-3]{RUO-3}} 
 
@@ -78,7 +78,7 @@
     \subscenario{
         \item[2.1] Il dataset da eliminare è stato usato nella sua versione attuale o nelle precedenti in uno o più test salvati:
         \begin{itemize}
-            \item \hyperref[uc:UC-26]{UC-26}
+            \item \hyperref[uc:UC-23]{UC-23}
         \end{itemize}
         \item[4.1] L'utente annulla l'operazione di eliminazione:
         \begin{itemize}
@@ -88,13 +88,13 @@
         \end{itemize} 
         \item[5.1] Avviene un errore interno al sistema durante l'eliminazione:
         \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
+            \item \hyperref[uc:UC-13]{UC-13}
         \end{itemize}
     }
 \end{usecase}
 
-\begin{usecase}{UC-26}{Elimina dataset salvato associato a dei test}
-    \label{uc:UC-26}
+\begin{usecase}{UC-23}{Elimina dataset salvato associato a dei test}
+    \label{uc:UC-23}
     
     \req{} 
 
@@ -132,22 +132,22 @@
         \end{itemize} 
         \item[3.1] Avviene un errore interno al sistema durante l'eliminazione del dataset:
         \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
+            \item \hyperref[uc:UC-13]{UC-13}
         \end{itemize}
         \item[4.1] Avviene un errore interno al sistema durante l'eliminazione dei test associati:
         \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
+            \item \hyperref[uc:UC-13]{UC-13}
         \end{itemize}
     }
 \end{usecase}
 
-\begin{usecase}{UC-27}{Rinomina dataset salvato}
-    \label{uc:UC-27}
+\begin{usecase}{UC-24}{Rinomina dataset salvato}
+    \label{uc:UC-24}
     
     \req{\hyperref[ru:RUO-3]{RUO-3}} 
 
     \pre{
-        \item L'utente sta visualizzando i dataset salvati \hyperref[uc:UC-22]{UC-22}
+        \item L'utente sta visualizzando i dataset salvati \hyperref[uc:UC-19]{UC-19}
     }
 
     \post{
@@ -160,13 +160,13 @@
 
     \trigger{L'utente vuole rinominare un dataset salvato}
 
-    \inc{\hyperref[uc:UC-17]{UC-17}}
+    \inc{\hyperref[uc:UC-14]{UC-14}}
 
     \base{}
 
     \scenario{
         \item L'utente richiede di rinominare un dataset salvato
-        \item Il sistema ottiene il nuovo nome seguendo \hyperref[uc:UC-17]{UC-17}
+        \item Il sistema ottiene il nuovo nome seguendo \hyperref[uc:UC-14]{UC-14}
         \item L'utente conferma la rinominazione
         \item Il sistema rinomina il dataset salvato
     }
@@ -179,7 +179,7 @@
         
         \item[4.1] Avviene un errore interno al sistema durante la rinominazione:
         \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
+            \item \hyperref[uc:UC-13]{UC-13}
         \end{itemize}
         
     }
