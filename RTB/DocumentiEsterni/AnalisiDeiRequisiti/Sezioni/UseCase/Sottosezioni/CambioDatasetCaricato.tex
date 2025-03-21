@@ -80,7 +80,7 @@
     }
 \end{usecase}
 
-\begin{usecase}{UC-27}{Sovrascrivi dataset caricato}
+\begin{usecase}{UC-27}{Sovrascrivi dataset non salvato}
     \label{uc:UC-27}
     
     \req{} 
@@ -104,9 +104,10 @@
     \base{}
 
     \scenario{
+        \item L'utente richiede di sostituire il dataset attuale che presenta modifiche non salvate
         \item Il sistema richiede all'utente la conferma della sovrascrittura
         \item L'utente conferma la sovrascrittura
-        \item Il sistema sovrascrive il dataset attuale con il dataset caricato 
+        \item Il sistema sovrascrive il dataset attuale con il dataset caricato e le modifiche non salvate vengono perse
     }
 
     \subscenario{

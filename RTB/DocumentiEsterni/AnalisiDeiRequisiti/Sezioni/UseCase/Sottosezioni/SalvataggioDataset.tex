@@ -6,6 +6,14 @@
     \caption{Diagramma salvataggio dataset.}
 \end{figure}
 
+\begin{figure}[H]
+    \label{fig:aggiornamento_dataset}
+    \centering
+    \includegraphics[scale=0.43]{Sezioni/UseCase/Immagini/AggiornamentoDataset_attivita.png}
+    \caption{Diagramma aggiornamento dataset.}
+\end{figure}
+
+
 \begin{usecase}{UC-9}{Salva dataset visualizzato}
     \label{uc:UC-9}    
     
@@ -137,32 +145,10 @@
 
     \scenario{
         \item Il sistema verifica la presenza di test associati alla versione del dataset da aggiornare
-        \item Il sistema aggiorna la versione salvata
-        \item L'utente viene avvisato del corretto aggiornamento
+        \item Il sistema aggiorna la versione salvata seguendo \hyperref[fig:aggiornamento_dataset]{Aggiornamento dataset}
     }
 
-    \subscenario{
-        \item[1.1] Il dataset da aggiornare è associato all'esecuzione di uno o più test:
-        \begin{itemize}
-            \item Il sistema chiede all'utente se vuole annullare l'operazione
-            \item L'utente conferma l'annullamento
-            \item Il sistema interrompe l'operazione
-        \end{itemize}
-        \item[2.1] Il dataset da aggiornare è associato all'esecuzione di uno o più test:
-        \begin{itemize}
-            \item Il sistema chiede all'utente se copiare il dataset e aggiornare la copia \hyperref[uc:UC-21]{UC-21}
-            \item L'utente conferma la copia
-            \item Il sistema copia il dataset e aggiorna la copia
-            \item Il sistema avvisa l'utente del corretto aggiornamento
-        \end{itemize}
-        \item[3.1] Il dataset da aggiornare è associato all'esecuzione di uno o più test:
-        \begin{itemize}
-            \item Il sistema chiede all'utente se vuole eliminare i test associati \hyperref[uc:UC-40]{UC-40}
-            \item L'utente conferma l'eliminazione
-            \item Il sistema elimina i test associati e aggiorna il dataset 
-            \item Il sistema avvisa l'utente del corretto aggiornamento e della corretta eliminazione
-        \end{itemize}
-    }
+    \subscenario{}
 
 \end{usecase}
 
