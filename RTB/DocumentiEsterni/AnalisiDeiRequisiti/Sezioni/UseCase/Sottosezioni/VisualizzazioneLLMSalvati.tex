@@ -6,8 +6,8 @@
     \caption{Diagramma modifica dataset salvati.}
 \end{figure}
 
-\begin{usecase}{UC-55}{Visualizza LLM salvati}
-    \label{uc:UC-55}
+\begin{usecase}{UC-52}{Visualizza LLM salvati}
+    \label{uc:UC-52}
     
     \req{\hyperref[ru:RUF-6]{RUF-6}} 
 
@@ -44,14 +44,14 @@
     }
 \end{usecase}
 
-\begin{usecase}{UC-56}{Visualizza LLM salvato}
-    \label{uc:UC-56}
+\begin{usecase}{UC-53}{Visualizza LLM salvato}
+    \label{uc:UC-53}
     
     \req{\hyperref[ru:RUF-6]{RUF-6}} 
 
     \pre{
         \item L'LLM da visualizzare esiste
-        \item L'utente sta visualizzando gli LLM salvati \hyperref[uc:UC-55]{UC-55}
+        \item L'utente sta visualizzando gli LLM salvati \hyperref[uc:UC-52]{UC-52}
     }
 
     \post{
@@ -80,14 +80,14 @@
     }
 \end{usecase}
 
-\begin{usecase}{UC-57}{Elimina un LLM salvato}
-    \label{uc:UC-57}
+\begin{usecase}{UC-54}{Elimina un LLM salvato}
+    \label{uc:UC-54}
     
     \req{\hyperref[ru:RUF-6]{RUF-6}} 
 
     \pre{
         \item L'LLM da eliminare esiste
-        \item L'utente sta visualizzando gli LLM salvati \hyperref[uc:UC-55]{UC-55}
+        \item L'utente sta visualizzando gli LLM salvati \hyperref[uc:UC-52]{UC-52}
     }
 
     \post{
@@ -113,7 +113,7 @@
     \subscenario{
         \item[2.1] L'LLM da eliminare è associato a uno o più test salvati:
         \begin{itemize}
-            \item \hyperref[uc:UC-58]{UC-58}
+            \item \hyperref[uc:UC-55]{UC-55}
         \end{itemize}
         \item[3.1] L'utente annulla l'eliminazione:
         \begin{itemize}
@@ -121,13 +121,13 @@
         \end{itemize}
         \item[4.1] Avviene un errore interno al sistema durante l'eliminazione dell'LLM:
         \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
+            \item \hyperref[uc:UC-13]{UC-13}
         \end{itemize}
     }
 \end{usecase}
 
-\begin{usecase}{UC-58}{Elimina LLM salvato associato a dei test}
-    \label{uc:UC-58}
+\begin{usecase}{UC-55}{Elimina LLM salvato associato a dei test}
+    \label{uc:UC-55}
     
     \req{} 
 
@@ -162,11 +162,11 @@
         \end{itemize} 
         \item[3.1] Avviene un errore interno al sistema durante l'eliminazione dell'LLM:
         \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
+            \item \hyperref[uc:UC-13]{UC-13}
         \end{itemize}
         \item[4.1] Avviene un errore interno al sistema durante l'eliminazione dei test associati:
         \begin{itemize}
-            \item \hyperref[uc:UC-16]{UC-16}
+            \item \hyperref[uc:UC-13]{UC-13}
         \end{itemize}
     }
 \end{usecase}
