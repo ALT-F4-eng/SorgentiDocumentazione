@@ -22,6 +22,13 @@ Ogni attività deve avere:
 \end{itemize}
 Al termine della pianficazione il responsabile e l'amministratore avranno il compito di aprire una \glossario{issue} sul progetto di \glossario{GitHub} per ogni attività pianificata.
 
+\paragraph{Strumenti}
+Qui vengono elencati gli strumenti usati, che vengono poi approfonditi nella sezione \hyperref[sec:strumenti]{Strumenti}.
+\begin{itemize}
+    \item GitHub;
+    \item Git.
+\end{itemize}
+
 \subsubsection{Esecuzione e controllo}
 L'attività di esecuzione e controllo comprende l'attuazione delle attività pianificate e il monitoraggio del loro andamento. 
 Durante questa fase, il responsabile di progetto coordina il lavoro del team, verificando che le attività vengano svolte secondo i tempi e gli standard definiti. 
@@ -29,10 +36,23 @@ Il controllo continuo permette di identificare eventuali deviazioni dal piano, a
 Il responsabile avrà il compito di documentare i problemi riscontrati durante lo svolgimento delle attività, le strategie di mitigazione applicate per risolverli e dovrà eventualmente
 apportare modifiche alla pianificazione se necessario.
 
+\paragraph{Strumenti}
+Qui vengono elencati gli strumenti usati, che vengono poi approfonditi nella sezione \hyperref[sec:strumenti]{Strumenti}.
+\begin{itemize}
+    \item Google Sheets.
+\end{itemize}
+
 \subsubsection{Valutazione e approvazione}
 Terminata ogni attività sarà compito del verificatore esaminare modifiche o aggiunte ad un prodotto e nel caso chiudere la relativa \glossario{pull request} per integrare nell'ambiente condiviso il lavoro realizzato.
 Nel caso in cui le modifiche vengano rifiutate, il verificatore è tenuto a indicare nella descrizione della \glossario{pull request} le modifiche da apportare e le motivazioni del rifiuto.
 Sarà infine compito del responsabile realizzare l'approvazione finale dei prodotti realizzati, con conseguente \textit{release}, assicurando il raggiungimento degli obiettivi di qualità prefissati.
+
+\paragraph{Strumenti}
+Qui vengono elencati gli strumenti usati, che vengono poi approfonditi nella sezione \hyperref[sec:strumenti]{Strumenti}.
+\begin{itemize}
+    \item GitHub;
+    \item Git.
+\end{itemize}
 
 \subsubsection{Ruoli}
 \label{subsubsec:ruoli}
@@ -78,7 +98,11 @@ La gestione dei rischi è curata dal responsabile di progetto e viene effettuata
 Questo processo contribuisce inoltre alla redazione dell'analisi dei rischi, riportata nel documento \textit{Piano di Progetto}, garantendo un monitoraggio costante e un miglioramento continuo delle strategie di mitigazione.
 
 \paragraph{Notazione dei rischi}
-Ogni rischio verrà indicato con la sigla \texttt{R[Tipo][Numero]}, dove:
+Ogni rischio verrà indicato con la sigla
+\begin{lstlisting}
+        R[Tipo][Numero]
+\end{lstlisting}
+Dove:
 \begin{itemize}
     \item \textbf{R}: indica la parola "rischio";
     \item \textbf{Tipo}: indica la tipologia del rischio che può essere:
