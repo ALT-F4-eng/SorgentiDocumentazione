@@ -11,69 +11,77 @@ Di seguito vengono elencati i \glossario{repository} utilizzati dal gruppo, le l
 
 \paragraph{SorgentiDocumentazione}
 Questo \glossario{repository} contiene i sorgenti della documentazione scritti usando il \hyperref[par:latex]{linguaggio \glossario{LaTeX}}.
-Il \glossario{repository} segue la struttura indicata in \hyperref[fig:repo_sorgenti_documenti]{Figura \ref{fig:repo_sorgenti_documenti}}.
-\begin{figure}[H]
-    \dirtree{%
-        .1 SorgentiDocumentazione.
-            .2 .github.
-                .3 DizionariLatex.
-                    .4 \texttt{<dizionari>}.
-                .3 workflows.
-                    .4 \texttt{<file workflows>}.
-            .2 Candidatura.
-            .2 RTB.
-            .2 Packages.
-            .2 Immagini.
-            .2 \texttt{README.md}.
-            .2 \texttt{.gitignore}.
-    }
-    \caption{Struttura \glossario{repository} SorgentiDocumentazione.}
-    \label{fig:repo_sorgenti_documenti}
-\end{figure}
+Il \glossario{repository} contiene le seguenti cartelle e file:
+
 Dove:
 \begin{enumerate}
-    \item \texttt{Candidatura}, \texttt{RTB} e \texttt{Packages} sono delle cartelle il cui contenuto viene spiegato nelle successive sezioni.
-    \item \texttt{<file workflows>} sono dei file che definiscono le automazioni associate al \glossario{repository} e vengono denominati usando la sintassi \glossario{Pascal case}.
+    \item \texttt{Candidatura}, \texttt{RTB} e \texttt{PB} sono delle cartelle il cui contenuto viene spiegato nelle successive sezioni.
+    \item \texttt{Workflows} sono dei file che definiscono le automazioni associate al \glossario{repository} e vengono denominati usando la sintassi \glossario{Pascal case}.
     \item \texttt{Immagini} è una cartella che contiene il logo del gruppo.
+    \item \texttt{Packages} è una cartella che contiene file di impostazioni \glossario{Latex}.
     \item \texttt{README.md} è un file che contiene la descrizione del \glossario{repository} e del gruppo.
     \item \texttt{.gitignore} è un file speciale che contiene una lista di file che il sistema di versionamento deve ignorare.
 \end{enumerate}
 
 \subparagraph{Candidatura}
-La cartella candidatura ha la struttura indicata in \hyperref[fig:repo_sorgenti_documenti_candidatura]{Figura \ref{fig:repo_sorgenti_documenti_candidatura}}.
-\begin{figure}[H]
-    \dirtree{%
-        .1 Candidatura.
-            .2 VerbaliEsterni.
-                .3 \texttt{<verbali esterni esplicativi>}.
-            .2 VerbaliInterni.
-                .3 \texttt{<verbali interni>}.
-            .2 \texttt{<lettera di candidatura>}.
-            .2 \texttt{<preventivo dei costi assunzione impegni>}.
-            .2 \texttt{<valutazione capitolati>}.
-    }
-    \caption{Struttura cartella Candidatura.}
-    \label{fig:repo_sorgenti_documenti_candidatura}
-\end{figure}
+La cartella candidatura contiene le seguenti cartelle e file:
+
+\begin{enumerate}
+    \item \texttt{VerbaliEsterni} è una cartella che contiene tutti i verbali esterni del periodo di candidatura.
+    \item \texttt{VerbaliInterni} è una cartella che contiene tutti i verbali interni del periodo di candidatura.
+    \item \texttt{LetteraDiCandidatura.tex} 
+    \item \texttt{PreventivoCostiAssunzioneImpegni.tex} 
+    \item \texttt{ValutazioneCapitolati.tex} 
+\end{enumerate}
 
 \subparagraph{RTB}
-La cartella \glossario{RTB} ha la struttura indicata in \hyperref[fig:repo_sorgenti_documenti_RTB]{Figura \ref{fig:repo_sorgenti_documenti_RTB}}.
-\begin{figure}[H]
-    \dirtree{%
-        .1 RTB.
-            .2 DocumentiInterni.
-                .3 \texttt{<norme di progetto>}.
-                .3 VerbaliInterni.
-                .4 \texttt{<verbali interni>}.
-            .2 DocumentiEsterni.
-                .3 \texttt{<piano di progetto>}.
-                .3 \texttt{<analisi dei requisiti>}.
-                .3 VerbaliEsterni.
-                    .4 \texttt{<verbali esterni>}.
-    }
-    \caption{Struttura cartella \glossario{RTB}.}
-    \label{fig:repo_sorgenti_documenti_RTB}
-\end{figure}
+La cartella \glossario{RTB} contiene le seguenti cartelle e file:
+
+\begin{enumerate}
+    \item \texttt{DocumentiEsterni} è una cartella che contiene tutti i verbali esterni del periodo \glossario{RTB}, 
+    documento AnalisiDeiRequisiti, documento PianoDiProgetto e il documento PianoDiQualifica.
+    \item \texttt{DocumentiInterni} è una cartella che contiene tutti i verbali interni del periodo \glossario{RTB}, 
+    documento Glossario e il documento NormeDiProgetto.
+    \item \texttt{LetteraDiPresentazione} è una cartella che contiene la lettera di presentazione per la prima e per la seconda
+    parte del \glossario{RTB}
+\end{enumerate}
+
+\subparagraph{PB}
+La cartella \glossario{PB} contiene le seguenti cartelle e file:
+
+\begin{enumerate}
+    \item \texttt{DocumentiEsterni} è una cartella che contiene tutti i verbali esterni del periodo \glossario{PB}, 
+    documento AnalisiDeiRequisiti, documento PianoDiProgetto, documento PianoDiQualifica, documento SpecificaTecnica e 
+    il documento ManualeUtente.
+    \item \texttt{DocumentiInterni} è una cartella che contiene tutti i verbali interni del periodo \glossario{PB}, 
+    documento Glossario e il documento NormeDiProgetto.
+\end{enumerate}
+
+\paragraph{Documentazione}
+Questo \glossario{repository} contiene i PDF dei sorgenti della documentazione scritti usando il \hyperref[par:latex]{linguaggio \glossario{LaTeX}} e i file necessari per presentare 
+i PDF attraverso un sito web.
+Il \glossario{repository} contiene le seguenti cartelle e file:
+
+\begin{enumerate}
+    \item \texttt{Assets} è una cartella che contiene tutte le immagini e le icone che servono al sito web.
+    \item \texttt{Candidatura} è una cartella che contiene tutti i PDF dei file \glossario{Latex} presenti nella cartella 
+    Candidatura presente in SorgentiDocumentazione.
+    \item \texttt{Js} è una cartella che contiene tutti i file javascript che servono al sito web.
+    \item \texttt{RTB} è una cartella che contiene tutti i PDF dei file \glossario{Latex} presenti nella cartella 
+    RTB presente in SorgentiDocumentazione.
+    \item \texttt{Style} è una cartella che contiene tutti i file css che servono al sito web.
+    \item \texttt{README.md} è un file che contiene la descrizione del \glossario{repository} e del gruppo.
+    \item \texttt{index.html} è un file html che corrisponde alla prima pagina del sito web per la presentazione dei PDF.
+\end{enumerate}
+
+\paragraph{PoC}
+Questo \glossario{repository} contiene i file sorgenti del \glossario{Proof of Concept}.
+Il \glossario{repository} contiene le seguenti cartelle e file:
+
+\begin{enumerate}
+    \item \texttt{backend} è una cartella che contiene tutti file che compongono la parte backend del \glossario{PoC}
+    \item \texttt{front-end} è una cartella che contiene tutti i file che compongono la parte backend del \glossario{PoC}
+\end{enumerate}
 
 \subsubsection{Identificazione configuration item}
 \label{subsubsec:identificazione_CI}
@@ -116,7 +124,6 @@ I file che non riguardano direttamente il progetto non vengono spiegati ulterior
     \item Il nome della proponente segue la sintassi \glossario{Pascal case}.
     \item Le versioni seguono lo schema indicato alla sezione \hyperref[par:versione_documenti]{Versione dei documenti}.
 \end{itemize}
-Il motivo dell'utilizzo di data e proponente all'interno dei nomi di alcune tipologie di documenti è che permettono un ordinamento sensato degli stessi.
 
 \subsubsection{Controllo di versione}
 Di seguito vengono riportati i metodi usati dal gruppo per tenere traccia delle versioni dei file contenuti nei \glossario{repository}.
@@ -209,10 +216,7 @@ Utilizzando \glossario{Gitflow} i conflitti possono presentarsi nelle seguenti f
 
 \paragraph{Registro delle modifiche}
 \label{par:registro_delle_modifiche}
-Oltre all'utilizzo di un software di controllo di versione il gruppo ha deciso di dotare alcuni documenti di una tabella chiamata registro delle modifiche.
-Tale tabella se il \glossario{repository} fosse gestito in modo impeccabile sarebbe una copia dei dati già registrati nella stessa.
-Tuttavia il metodo di lavoro del gruppo è in continua evoluzione quindi possono accadere modifiche distruttive che eliminano le versioni dei \glossario{configuration item} apparteneti alla \glossario{baseline} precedente.
-Il registro delle modifiche è quindi uno strumento a supporto del controllo di configurazione ed è più "attendibile" rispetto alla storia del \glossario{repository} \glossario{Git}.
+Il gruppo ha deciso di dotare alcuni documenti di una tabella chiamata registro delle modifiche.
 I documenti per i quali viene usato il registro delle modifiche sono indicati nella sezione \hyperref[subsubsec:identificazione_CI]{Identificazione \glossario{configuration item}}.
 
 Di seguito viene indicata la struttura del registro delle modifiche:
@@ -241,7 +245,6 @@ Dove:
     \item \texttt{Y}: intero positivo che indica la versione minor del documento.
     La versione minor indica il numero di modifiche effettuate al documento a seguito dell'ultima versione major.
 \end{enumerate}
-Uno schema di versionamento a due valori risulta più semplice dato che si concentra solo sulle modifiche significative in termini di contenuto dei documenti.
 
 \textbf{Nota bene}: per evitare ambiguità con le estensioni dei documenti il gruppo ha deciso di rappresentare la versione nei nomi dei documenti usando la notazione \texttt{vX\_Y}.
 
@@ -249,7 +252,6 @@ Uno schema di versionamento a due valori risulta più semplice dato che si conce
 Una modifica è intesa come un azione che ha lo scopo di modificare lo stato di uno o più file appartenenti all'ultima \glossario{baseline} raggiunta in un \glossario{repository}. 
 
 \paragraph{Richieste di modifica}
-Ogni modifica deve essere preceduta da una richiesta di modifica che deve essere discussa e accettata tramite votazione di maggioranza.
 Le richieste di modifica vengono registrate e gestite utilizzando il servizio di \glossario{issue tracking} offerto da \glossario{GitHub}.  
 Le informazioni tecniche riguardanti la gestione delle \glossario{issue} vengono indicate alla sezione \hyperref[subpar:ITS]{\glossario{Issue Tracking System}}.
 Una richiesta di modifica deve contenere le seguenti informazioni:
@@ -387,8 +389,7 @@ Per eseguire il miglioramento di una modifica è necessario eseguire i seguenti 
 
 \item \hyperref[subpar:pull]{Pull} branch \texttt{feature}(vedere \hyperref[item:rami_feature]{rami feature}).
 
-\item Modificare il documento assicurandosi di soddisfare la \glossario{check list} e le informazioni aggiuntive date dal verificatore che ha rifiutato la modifica.
-Questa operazione deve avvenire seguendo il processo che regola l'implementazione della tipologia di \glossario{configuration item}.
+\item Modificare il documento.
 
 \textbf{Nota bene}: Per alcuni documenti è necessario aggiungere all'ultima riga del \hyperref[par:registro_delle_modifiche]{registro delle modifiche} le informazioni per la colonna "Autore/i". 
 
