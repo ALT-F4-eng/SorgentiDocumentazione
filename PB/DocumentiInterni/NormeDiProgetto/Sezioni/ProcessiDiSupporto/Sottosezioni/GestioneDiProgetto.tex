@@ -1,0 +1,121 @@
+\subsection{Gestione di progetto}
+\label{subsec:gestione_progetto}
+
+\subsubsection{Descrizione}
+Il processo di gestione racchiude tutte le attività svolte dal responsabile di progetto per il coordinamento del lavoro di tutti i membri del gruppo.
+Le attività principali che vengono svolte sono:
+\begin{itemize}
+    \item Pianificazione;
+    \item Esecuzione e controllo;
+    \item Valutazione e approvazione.
+\end{itemize}
+
+\subsubsection{Pianificazione}
+L'attività di pianificazione consiste nella definizione e organizzazione delle attività da svolgere durante il progetto. 
+Il responsabile di progetto stabilisce le tempistiche, le risorse e le responsabilità.
+Ogni attività deve avere:
+\begin{itemize}
+    \item Stima delle ore necessarie per il suo completamento;
+    \item Data stimata per il completamento;
+    \item Membro incaricato di svolgere l'attività;
+    \item Verificatore incaricato di valutarne il risultato.
+\end{itemize}
+Al termine della pianficazione il responsabile e l'amministratore avranno il compito di aprire una \glossario{issue} sul progetto di \glossario{GitHub} per ogni attività pianificata.
+
+\subsubsection{Esecuzione e controllo}
+L'attività di esecuzione e controllo comprende l'attuazione delle attività pianificate e il monitoraggio del loro andamento. 
+Durante questa fase, il responsabile di progetto coordina il lavoro del team, verificando che le attività vengano svolte secondo i tempi e gli standard definiti. 
+Il controllo continuo permette di identificare eventuali deviazioni dal piano, adottando misure correttive per garantire il raggiungimento degli obiettivi prefissati.
+Il responsabile avrà il compito di documentare i problemi riscontrati durante lo svolgimento delle attività, le strategie di mitigazione applicate per risolverli e dovrà eventualmente
+apportare modifiche alla pianificazione se necessario.
+
+\subsubsection{Valutazione e approvazione}
+Terminata ogni attività sarà compito del verificatore esaminare modifiche o aggiunte ad un prodotto e nel caso chiudere la relativa \glossario{pull request} per integrare nell'ambiente condiviso il lavoro realizzato.
+Nel caso in cui le modifiche vengano rifiutate, il verificatore è tenuto a indicare nella descrizione della \glossario{pull request} le modifiche da apportare e le motivazioni del rifiuto.
+Sarà infine compito del responsabile realizzare l'approvazione finale dei prodotti realizzati, con conseguente \textit{release}, assicurando il raggiungimento degli obiettivi di qualità prefissati.
+
+\subsubsection{Ruoli}
+\label{subsubsec:ruoli}
+Di seguito vengono elencate le definizioni dei ruoli previsti per il progetto didattico e la regola di rotazione.
+
+\paragraph{Responsabile}
+Il responsabile del progetto è incaricato di coordinare le attività del gruppo di lavoro, pianificare e monitorare i progressi, e gestire efficacemente le risorse disponibili. 
+In sintesi, egli si assicura che il progetto venga portato a termine nei tempi stabiliti e in conformità con le risorse assegnate.
+Ha inoltre il compito di effettuare la redazione del documento \textit{Piano di Progetto} effettuando la stesura del preventivo e del consuntivo per ogni \glossario{sprint}.
+
+\paragraph{Amministratore}
+L'amministratore ha il compito di effettuare la configurazione e la manutenzione dell'ambiente condiviso.
+E' incaricato della stesura del documento \textit{Norme di Processo}, del calcolo delle metriche di qualità indicate all'interno del documento \textit{Piano di Qualifica} e deve svolgere tutte le attività
+descritte nel processo di \hyperref[subsec:gestione_della_configurazione]{Gestione della configurazione}.
+
+\paragraph{Analista}
+L'analista è responsabile dell'analisi delle funzionalità del software, definendo i requisiti e i casi d'uso pertinenti.
+Ha il compito di effettuare la stesura del documento \textit{Analisi dei Requisiti}.
+
+\paragraph{Progettista}
+Il progettista è responsabile della definizione dell'architettura del software, identificando le componenti e le relazioni tra di esse, sulla base dei requisiti stabiliti dall'analista. 
+La sua attività culmina con la stesura del documento \textit{Specifica Tecnica}
+
+\paragraph{Programmatore}
+Il programmatore si occupa di scrivere il codice sorgente del software e dei test necessari alla sua verifica, implementando l'architettura elaborata dal progettista.
+
+\paragraph{Verificatore}
+Il verificatore di progetto ha il compito di garantire che il software prodotto e la documentazione associata siano conformi alle normative e alle specifiche definite e rispettino gli standard di qualità prefissati.
+
+\paragraph{Rotazione dei ruoli}
+Per aumentare la produttività il gruppo ha deciso di non preassegnare i ruoli ad ogni membro durante lo \glossario{sprint}, ad eccezione di:
+\begin{itemize}
+    \item Responsabile: sarà incaricato un membro unico che varierà ad ogni \glossario{sprint};
+    \item Verificatore: incaricato di effettuare la verifica di tutti i prodotti realizzati o modificati con conseguente accettazione o rifiuto della \glossario{pull request} associata.
+\end{itemize}  
+Ogni richiesta di modifica pianificata durante lo \glossario{sprint} specificherà il ruolo per il quale è competenza svolgerla.
+Di conseguenza, il membro che si auto-assegnerà la relativa \glossario{issue} assumerà il ruolo a essa associato per il tempo necessario al suo compimento.
+Così facendo è possibile massimizzare l'efficienza del gruppo, infatti ogni membro ha la possibilità di ottimizzare il tempo a disposizione realizzando le richieste di modifica libere.
+
+\subsubsection{Gestione dei rischi}
+
+La gestione dei rischi è curata dal responsabile di progetto e viene effettuata al termine di ogni \glossario{sprint}, con la registrazione dei rischi riscontrati all'interno del consuntivo di periodo. 
+Questo processo contribuisce inoltre alla redazione dell'analisi dei rischi, riportata nel documento \textit{Piano di Progetto}, garantendo un monitoraggio costante e un miglioramento continuo delle strategie di mitigazione.
+
+\paragraph{Notazione dei rischi}
+Ogni rischio verrà indicato con la sigla \texttt{R[Tipo][Numero]}, dove:
+\begin{itemize}
+    \item \textbf{R}: indica la parola "rischio";
+    \item \textbf{Tipo}: indica la tipologia del rischio che può essere:
+    \begin{itemize}
+        \item \textbf{O}: rischio organizzativo;
+        \item \textbf{T}: rischio tecnologico.
+    \end{itemize} 
+    \item \textbf{Numero}: numero progressivo che identifica univocamente un rischio per ogni tipologia.
+\end{itemize}
+
+\paragraph{Didascalia dei rischi}
+I rischi individuati verranno descritti nel seguente modo:
+\begin{itemize}
+    \item \textbf{descrizione}: descrizione del rischio.
+    \item \textbf{pericolosità}: può essere bassa, media o alta e indica l'impatto che avrebbe sul progetto il suo verificarsi.
+    \item \textbf{probabilità}: può essere bassa, media o alta e indica la probabilità del rischio di verificarsi.
+    \item \textbf{prevenzione}: indica la metodologia utilizzata per identificare il rischio.
+    \item \textbf{mitigazione}: azioni da intraprendere quando si verifica il rischio.   
+\end{itemize}
+
+\subsubsection{Canali di comunicazione}
+I canali di coumunicazione si dividono in canali interni usati per le riunioni del gruppo e canali esterni usati per le riunioni tra il gruppo e il proponente.
+
+\paragraph{Canali di comunicazione interni}
+\label{subpar:canali_interni}
+La comunicazione tra membri del gruppo avviene utilizzando le seguenti tecnologie:
+\begin{enumerate}
+    \item \textbf{Telegram (comunicazione asincrona)}: applicazione di messaggistica che permette comunicazioni rapide di interesse generale e di contenuto breve.
+
+    \item \textbf{Discord (comunicazione sincrona)}: utilizzata per effettuare chiamate di gruppo sia formali che informali.
+    Permette la creazione di diversi canali di testo per argomenti specifici e di diversi canali vocali per permettere anche una comunicazione interna tra membri del gruppo. 
+\end{enumerate}
+
+\paragraph{Canali di comunicazione esterni}
+La comunicazione tra i membri del gruppo e l'azienda proponente avviene tramite i seguenti canali di comunicazione:
+\begin{enumerate}
+    \item \textbf{Gmail (comunicazione asincrona)}: verrà utilizzato principalmente per la condivisione di file/documenti e per organizzare chiamate sincrone tra gruppo ed azienda proponente.
+
+    \item \textbf{Google Meet (comunicazione sincrona)}: utilizzata per effettuare videochiamate per il contatto diretto con l'azienda proponente, durante le quali verranno discussi eventuali dubbi dei membri del gruppo o verrà presentato il lavoro svolto per ricevere un \glossario{feedback}.
+\end{enumerate}
