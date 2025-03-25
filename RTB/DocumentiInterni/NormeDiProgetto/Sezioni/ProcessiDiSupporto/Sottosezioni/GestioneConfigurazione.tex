@@ -22,6 +22,7 @@ Il \glossario{repository} segue la struttura indicata in \hyperref[fig:repo_sorg
                     .4 \texttt{<file workflows>}.
             .2 Candidatura.
             .2 RTB.
+            .2 PB.
             .2 Packages.
             .2 Immagini.
             .2 \texttt{README.md}.
@@ -32,7 +33,7 @@ Il \glossario{repository} segue la struttura indicata in \hyperref[fig:repo_sorg
 \end{figure}
 Dove:
 \begin{enumerate}
-    \item \texttt{Candidatura}, \texttt{RTB} e \texttt{Packages} sono delle cartelle il cui contenuto viene spiegato nelle successive sezioni.
+    \item \texttt{Candidatura}, \texttt{RTB}, \texttt{PB} e \texttt{Packages} sono delle cartelle il cui contenuto viene spiegato nelle successive sezioni.
     \item \texttt{<file workflows>} sono dei file che definiscono le automazioni associate al \glossario{repository} e vengono denominati usando la sintassi \glossario{Pascal case}.
     \item \texttt{Immagini} è una cartella che contiene il logo del gruppo.
     \item \texttt{README.md} è un file che contiene la descrizione del \glossario{repository} e del gruppo.
@@ -116,7 +117,6 @@ I file che non riguardano direttamente il progetto non vengono spiegati ulterior
     \item Il nome della proponente segue la sintassi \glossario{Pascal case}.
     \item Le versioni seguono lo schema indicato alla sezione \hyperref[par:versione_documenti]{Versione dei documenti}.
 \end{itemize}
-Il motivo dell'utilizzo di data e proponente all'interno dei nomi di alcune tipologie di documenti è che permettono un ordinamento sensato degli stessi.
 
 \subsubsection{Controllo di versione}
 Di seguito vengono riportati i metodi usati dal gruppo per tenere traccia delle versioni dei file contenuti nei \glossario{repository}.
@@ -209,10 +209,7 @@ Utilizzando \glossario{Gitflow} i conflitti possono presentarsi nelle seguenti f
 
 \paragraph{Registro delle modifiche}
 \label{par:registro_delle_modifiche}
-Oltre all'utilizzo di un software di controllo di versione il gruppo ha deciso di dotare alcuni documenti di una tabella chiamata registro delle modifiche.
-Tale tabella se il \glossario{repository} fosse gestito in modo impeccabile sarebbe una copia dei dati già registrati nella stessa.
-Tuttavia il metodo di lavoro del gruppo è in continua evoluzione quindi possono accadere modifiche distruttive che eliminano le versioni dei \glossario{configuration item} apparteneti alla \glossario{baseline} precedente.
-Il registro delle modifiche è quindi uno strumento a supporto del controllo di configurazione ed è più "attendibile" rispetto alla storia del \glossario{repository} \glossario{Git}.
+Il gruppo ha deciso di dotare alcuni documenti di una tabella chiamata registro delle modifiche.
 I documenti per i quali viene usato il registro delle modifiche sono indicati nella sezione \hyperref[subsubsec:identificazione_CI]{Identificazione \glossario{configuration item}}.
 
 Di seguito viene indicata la struttura del registro delle modifiche:
@@ -241,7 +238,6 @@ Dove:
     \item \texttt{Y}: intero positivo che indica la versione minor del documento.
     La versione minor indica il numero di modifiche effettuate al documento a seguito dell'ultima versione major.
 \end{enumerate}
-Uno schema di versionamento a due valori risulta più semplice dato che si concentra solo sulle modifiche significative in termini di contenuto dei documenti.
 
 \textbf{Nota bene}: per evitare ambiguità con le estensioni dei documenti il gruppo ha deciso di rappresentare la versione nei nomi dei documenti usando la notazione \texttt{vX\_Y}.
 
@@ -249,7 +245,6 @@ Uno schema di versionamento a due valori risulta più semplice dato che si conce
 Una modifica è intesa come un azione che ha lo scopo di modificare lo stato di uno o più file appartenenti all'ultima \glossario{baseline} raggiunta in un \glossario{repository}. 
 
 \paragraph{Richieste di modifica}
-Ogni modifica deve essere preceduta da una richiesta di modifica che deve essere discussa e accettata tramite votazione di maggioranza.
 Le richieste di modifica vengono registrate e gestite utilizzando il servizio di \glossario{issue tracking} offerto da \glossario{GitHub}.  
 Le informazioni tecniche riguardanti la gestione delle \glossario{issue} vengono indicate alla sezione \hyperref[subpar:ITS]{\glossario{Issue Tracking System}}.
 Una richiesta di modifica deve contenere le seguenti informazioni:
@@ -387,8 +382,7 @@ Per eseguire il miglioramento di una modifica è necessario eseguire i seguenti 
 
 \item \hyperref[subpar:pull]{Pull} branch \texttt{feature}(vedere \hyperref[item:rami_feature]{rami feature}).
 
-\item Modificare il documento assicurandosi di soddisfare la \glossario{check list} e le informazioni aggiuntive date dal verificatore che ha rifiutato la modifica.
-Questa operazione deve avvenire seguendo il processo che regola l'implementazione della tipologia di \glossario{configuration item}.
+\item Modificare il documento.
 
 \textbf{Nota bene}: Per alcuni documenti è necessario aggiungere all'ultima riga del \hyperref[par:registro_delle_modifiche]{registro delle modifiche} le informazioni per la colonna "Autore/i". 
 
