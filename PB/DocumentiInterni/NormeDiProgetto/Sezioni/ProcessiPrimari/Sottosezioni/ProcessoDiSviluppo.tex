@@ -275,3 +275,83 @@ Presentano una struttura del tipo:
     
     \end{swreq}
 \end{lstlisting}
+
+
+\subsection{Codifica}
+
+L'attività di codifica ha l’obiettivo di stabilire un insieme di linee guida e standard per la scrittura del codice, in modo da garantire elevati standard qualitativi, la manutenibilità del software e la coerenza tra le differenti componenti del progetto. La codifica rappresenta il momento in cui i requisiti funzionali e tecnici vengono tradotti in implementazioni concrete, chiare e affidabili, ponendo le basi per un sistema robusto e scalabile.
+
+\subsubsection{Stile Codifica Comune}
+Al fine di assicurare la uniformità e la leggibilità del codice, si rende indispensabile l’adozione di convenzioni condivise che disciplinino l’indentazione, la formattazione e l’utilizzo dei commenti. In particolare, si raccomanda:
+\begin{itemize}
+    \item L’utilizzo di standard di indentazione e formattazione coerenti, che favoriscano la leggibilità e la comprensione del codice da parte di tutto il team di sviluppo.
+    \item L’impiego di commenti esplicativi e di documentazione inline, finalizzati a descrivere il funzionamento delle porzioni di codice e a facilitare la futura manutenzione.
+    \item L’adozione di convenzioni di naming rigorose per variabili, funzioni e classi, in modo da ridurre il rischio di ambiguità e garantire una corretta interpretazione del codice.
+\end{itemize}
+
+\subsubsection{Struttura Backend}
+Il componente backend del progetto è sviluppato prevalentemente in Python, avvalendosi del framework Flask per la gestione della logica di business e per l’esposizione di API RESTful. La struttura organizzativa del backend è concepita in modo modulare e prevede:
+\begin{itemize}
+    \item Un’organizzazione modulare del codice, che prevede la suddivisione in sottocartelle in base alle funzionalità implementate.
+    \item Le classi dedicate a intercettare e gestire le chiamate HTTP vengono collocate nella cartella \texttt{backend/view}, al fine di separare le responsabilità legate all’interfaccia utente e al routing.
+    \item Le classi che si occupano delle operazioni sui dati e dell’interazione con il database sono contenute in \texttt{backend/model}, garantendo una chiara separazione dei livelli di accesso ai dati.
+    \item Le classi responsabili della comunicazione e del coordinamento tra i modelli e le view risiedono in \texttt{backend/controller}, facilitando l’implementazione del pattern MVC (Model-View-Controller) e migliorando la manutenibilità del codice.
+\end{itemize}
+
+\subsubsection{Codifica Python}
+Nel contesto della codifica in Python, si applicano le best practices indicate dal PEP8, garantendo la massima chiarezza e coerenza del codice. In particolare, si raccomanda:
+\begin{itemize}
+    \item L’utilizzo di una nomenclatura chiara e coerente per variabili, funzioni e classi, al fine di facilitare la comprensione e la manutenzione del codice.
+    \item Una strutturazione modulare del codice, che agevoli il riutilizzo delle componenti e la futura estensione delle funzionalità.
+    \item Il posizionamento degli statement \texttt{import} all'inizio di ogni file, per garantire una visibilità immediata delle dipendenze e facilitare la gestione del codice.
+\end{itemize}
+
+\subsubsection{Struttura Frontend}
+Il modulo frontend è realizzato mediante l’utilizzo del framework Angular, integrando le tecnologie HTML, CSS e TypeScript per la creazione di interfacce utente interattive e responsive. La struttura del frontend prevede:
+\begin{itemize}
+    \item L’organizzazione in componenti modulari, che consente una gestione isolata e autonoma delle varie funzionalità dell’interfaccia.
+    \item Una netta separazione tra la logica applicativa, i template HTML e gli stili CSS, in modo da garantire la chiarezza del codice e facilitare il lavoro in team.
+    \item La predisposizione di cartelle dedicate per la gestione degli asset, dei componenti, dei servizi e dei moduli, in conformità con le best practices del framework.
+    \item Il posizionamento dei componenti all’interno della struttura \texttt{src/app/...}, in linea con la convenzione standard di Angular.
+\end{itemize}
+
+\subsubsection{Codifica Componenti \texttt{.ts}}
+Le componenti sviluppate nei file con estensione \texttt{.ts} (TypeScript) devono attenersi a linee guida specifiche che ne garantiscano il corretto funzionamento e la facile manutenzione:
+\begin{itemize}
+    \item L’utilizzo di classi per definire la logica dei componenti, che permette di sfruttare le potenzialità della programmazione orientata agli oggetti.
+    \item Una chiara separazione tra la logica di business e il markup HTML, assicurando che il codice sia modulare e facilmente testabile.
+    \item L’adozione dei pattern standard di Angular, che facilitano la gestione dello stato dell’applicazione e la comunicazione tra i vari componenti.
+\end{itemize}
+
+\subsubsection{Codifica TypeScript}
+Per quanto concerne il codice scritto in TypeScript, si raccomanda di:
+\begin{itemize}
+    \item Utilizzare la tipizzazione statica per ridurre al minimo la possibilità di errori in fase di compilazione e per garantire una maggiore robustezza del codice.
+    \item Seguire le best practices della programmazione orientata agli oggetti o di quella funzionale, a seconda del contesto applicativo, in modo da scrivere codice chiaro, efficiente e facilmente estendibile.
+    \item Adottare strumenti di linting e testing, che permettano di individuare tempestivamente eventuali anomalie e di mantenere elevati standard qualitativi.
+\end{itemize}
+
+\subsubsection{Codifica CSS}
+La scrittura del codice CSS è regolata da linee guida volte a garantire una gestione chiara e modulare degli stili:
+\begin{itemize}
+    \item Si raccomanda l’adozione di metodologie di naming (ad es. BEM) per facilitare l’organizzazione e la manutenzione dei fogli di stile.
+    \item È consigliabile la separazione dei file CSS in base alle componenti o alle sezioni della pagina, distinguendo tra stili specifici e quelli relativi al layout generale.
+    \item Gli stili devono essere ottimizzati per garantire la compatibilità cross-browser e un design responsive, in modo da assicurare un’esperienza utente coerente su diversi dispositivi.
+\end{itemize}
+
+\subsubsection{Codifica HTML}
+Il codice HTML deve essere redatto nel rispetto degli standard internazionali e delle buone pratiche di sviluppo:
+\begin{itemize}
+    \item Si raccomanda l’utilizzo di tag semanticamente corretti, al fine di migliorare l’accessibilità e l’ottimizzazione per i motori di ricerca.
+    \item La struttura del documento HTML deve essere ordinata e ben organizzata, facilitando la manutenzione e l’integrazione con altri framework e librerie.
+    \item È imprescindibile adottare le specifiche W3C, garantendo così la validità del markup e la compatibilità con i browser moderni.
+\end{itemize}
+
+\subsubsection{Codifica SQL}
+Per quanto concerne la gestione del database, il codice SQL deve essere sviluppato seguendo rigorose linee guida per garantire la sicurezza, l’efficienza e l’integrità dei dati:
+\begin{itemize}
+    \item Si devono utilizzare query ottimizzate e parametrizzate, al fine di prevenire attacchi di tipo SQL injection e garantire elevate prestazioni.
+    \item È opportuno organizzare le query in moduli o stored procedure, facilitando così la manutenzione e la gestione delle operazioni sul database.
+    \item Devono essere implementati controlli e validazioni che assicurino l’integrità e la coerenza dei dati in tutte le operazioni di lettura e scrittura.
+    \item Per tabelle potenzialmente molto voluminosi, si raccomanda l’adozione di tecniche di denormalizzazione laddove appropriato, per ottimizzare le prestazioni delle query.
+\end{itemize}
