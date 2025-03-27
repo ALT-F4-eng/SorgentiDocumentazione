@@ -239,3 +239,96 @@ Qui vengono elencati gli strumenti usati, che vengono poi approfonditi nella sez
     \item LaTeX;
     \item StarUML.
 \end{itemize}
+
+\subsubsection{Testing del codice}
+\label{subsubsec:testing_codice}
+Il testing è una fase fondamentale del processo di sviluppo, volta a garantire la qualità e l'affidabilità del software, realizzata in parallelo all'attività di codifica.
+Consiste nell'esecuzione di verifiche sistematiche per individuare errori, incongruenze e difformità rispetto ai requisiti. 
+All'interno del progetto, il testing viene integrato nel flusso di sviluppo e include test automatizzati e manuali per assicurare la conformità del prodotto agli standard definiti.
+Le categorie di testing eseguite precedentemente all'accettazione del software sono:
+\begin{itemize}
+    \item \textbf{Test di unità};
+    \item \textbf{Test di integrazione};
+    \item \textbf{Test di sistema};
+\end{itemize}
+
+\paragraph{Test di unità}
+​I test di unità sono una pratica fondamentale nello sviluppo del software che prevede la verifica isolata delle singole componenti di un programma, come funzioni, metodi o classi. 
+L'obiettivo principale è assicurarsi che ciascuna unità funzioni correttamente secondo le specifiche previste, facilitando l'individuazione precoce di eventuali errori o malfunzionamenti.
+I test di unità vengono ideati durante la fase di progettazione di dettaglio per poi essere sviluppati in parallelo all'attività di codifica.
+Per semplificare l'esecuzione dei test di unità vengono utilizzati i seguenti strumenti:
+\begin{itemize}
+    \item \textbf{Mock object}: oggetti configurabili che imitano il comportamento delle dipendenze reali (come Database o API), consentendo di verificare chiamate ai metodi e risposte attese;
+    \item \textbf{Stub}: oggetti che restituiscono risposte predefinite per simulare il comportamento di dipendenze senza eseguire alcuna logica, usati per evitare chiamate reali a servizi esterni;
+    \item \textbf{Driver}: moduli che simulano il comportamento di componenti chiamanti non ancora sviluppati.
+\end{itemize}
+Esistono tre tipi di tecniche di \textit{unit testing}:
+\begin{itemize}
+    \item \textbf{Black box testing}: questa tecnica di test viene utilizzata per coprire i test di unità relativi all'input, all'interfaccia utente e alle parti di output, senza considerare la struttura interna del codice;
+    \item \textbf{White box testing}: questa tecnica verifica il comportamento funzionale del sistema fornendo input e controllando l'output, includendo l'analisi della struttura interna, del design e del codice dei moduli;
+    \item \textbf{Grey box testing}: questa tecnica viene utilizzata per eseguire i casi di test, i metodi e le funzioni di test pertinenti, analizzando le prestazioni del codice nei moduli.
+\end{itemize}
+I test di unità vengono eseguiti in maniera automatizzata per garantire che ogni singola componente del software funzioni correttamente in modo isolato.
+Questo viene fatto attraverso l'utilizzo di strumenti di automazione e framwork specifici per i linguaggi di programmazione adottati durante lo sviluppo.
+
+\paragraph{Test di integrazione}
+I test di integrazione, o  sono una fase del processo di testing in cui si verificano le interazioni tra diverse unità o moduli del software, per assicurarsi che funzionino correttamente quando combinati. 
+A differenza dei test di unità, che si concentrano su singole componenti isolando il loro comportamento, i test di integrazione verificano che i moduli collaborino come previsto, scambiandosi dati e interagendo senza problemi.
+Questi test vengono definiti durante la progettazione ad alto livello e hanno lo scopo di rilevare difetti nell'architettura del software o una scarsa qualità dei test di unità.
+Esistono due principali approcci all'\textit{integration testing}:
+\begin{itemize}
+    \item \textbf{Bottom-up}: in questo approccio, si parte testando i moduli di basso livello e si lavora verso l'alto, verificando prima i componenti più piccoli e fondamentali.
+    In questo caso, si utilizzano \textit{driver} per simulare i moduli superiori non ancora implementati.
+    Questo approccio è utile quando si vuole testare la stabilità delle basi del sistema prima di testare l'integrazione delle funzionalità più complesse;
+    \item \textbf{Top-down}: in questo approccio, i test iniziano con i moduli di alto livello, quelli più vicini alla parte utente o alla logica di business del sistema.
+    Le parti inferiori del sistema (come le dipendenze esterne o i moduli di basso livello) vengono simulate tramite \textit{stub}.
+    Questo approccio è utile quando si vuole verificarel'integrazione delle funzionalità principali, prima di testare i dettagli più specifici.
+\end{itemize}
+
+\paragraph{Test di sistema}
+I test di sistema sono una fase fondamentale del processo di testing in cui si verifica l'intero sistema software nel suo complesso, come una "black box".
+Vengono eseguiti al completamento dei test di unità e di integrazione e hanno lo scopo di esaminare il software nel suo insieme, testando tutte le funzionalità e le interazioni tra i componenti per garantire che l'intero sistema funzioni come previsto.
+Questi test includono la verifica dei requisiti funzionali e non funzionali del sistema definiti nel documento di \textit{Analisi dei Requisiti}, come la correttezza delle operazioni, le prestazioni e l'usabilità.
+I test di sistema possono essere eseguiti in ambienti che simulano il contesto di produzione, assicurando che il sistema possa gestire il carico, le condizioni reali e che tutte le parti siano ben integrate.
+
+\paragraph{Notazione dei test}
+I test vengono indicati all'interno del documento \textit{Piano di Qualifica} e sono identificati così:
+\begin{lstlisting}
+    T.<Tipo>.<Numero>
+\end{lstlisting} 
+Dove:
+\begin{itemize}
+    \item \textbf{T}: indica la parola "test";
+    \item \textbf{Tipo}: indica la tipologia del test, che può essere:
+    \begin{itemize}
+        \item \textbf{U}: test di unità;
+        \item \textbf{I}: test di integrazione;
+        \item \textbf{S}: test di sistema;
+        \item \textbf{A}: test di accettazione.
+    \end{itemize}
+    \item \textbf{Numero}: numero progressivo che identifica univocamente un test per ogni tipologia.
+\end{itemize}
+
+\paragraph{Stato dei test}
+Ogni test indicato all'interno del \textit{Piano di Qualifica} è corredato dallo stato aggiornato alla sua ultima esecuzione, lo stato può essere:
+\begin{itemize}
+    \item \textbf{S}: test eseguito con successo;
+    \item \textbf{F}: test fallito.
+\end{itemize}
+
+\paragraph{Linee guida per lo sviluppo dei test}
+\begin{itemize}
+    \item Testare una sola unità alla volta: ogni test dovrebbe concentrarsi su una singola funzionalità o unità di codice;
+    \item Separare i test dal codice di produzione;
+    \item Ogni test deve essere indipendente dagli altri, se un test fallisce non deve influenzare gli altri test;
+    \item I test, a meno di modifica, devono produrre gli stessi risultati ad ogni loro esecuzione;
+    \item Testare limiti, casi estremi e casi di errore.
+\end{itemize}
+
+\paragraph{Strumenti}
+Gli strumenti elencati qui in seguito sono approfonditi nella sezione \hyperref[sec:strumenti]{Strumenti}:
+\begin{itemize}
+    \item Visual Studio Code;
+    \item GitHub.
+\end{itemize}
+
