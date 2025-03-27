@@ -95,25 +95,29 @@ I file che non riguardano direttamente il progetto non vengono spiegati ulterior
         \hline
         \textbf{Nome} & \textbf{Identificativo} & \textbf{Registro modifiche} \\
         \hline 
-        verbali interni & \texttt{<data>-<versione>} & sì \\
+        Verbali interni & \texttt{<data>-<versione>} & sì \\
         \hline
-        verbali esterni & \texttt{<data>-<versione>} & sì\\
+        Verbali esterni & \texttt{<data>-<versione>} & sì\\
         \hline
-        verbali esterni esplicativi & \texttt{<data>-<proponente>-<versione>} & sì\\
+        Verbali esterni esplicativi & \texttt{<data>-<proponente>-<versione>} & sì\\
         \hline
-        lettera di candidatura & \texttt{LetteraDiCandidatura} & no\\
+        Lettera di candidatura & \texttt{LetteraDiCandidatura} & no\\
         \hline
-        valutazione dei capitolati & \texttt{ValutazioneDeiCapitolati-<versione>} & sì\\
+        Valutazione dei capitolati & \texttt{ValutazioneDeiCapitolati-<versione>} & sì\\
         \hline
-        preventivo dei costi e assunzione impegni & \texttt{CostiImpegni-<versione>} & sì\\
+        Preventivo dei costi e assunzione impegni & \texttt{CostiImpegni-<versione>} & sì\\
         \hline
-        piano di progetto & \texttt{PianoDiProgetto-<versione>} & sì\\
+        Piano di progetto & \texttt{PianoDiProgetto-<versione>} & sì\\
         \hline
-        norme di progetto & \texttt{NormeDiProgetto-<versione>} & sì\\
+        Norme di progetto & \texttt{NormeDiProgetto-<versione>} & sì\\
         \hline
         Piano di qualifica & \texttt{PianoDiQualifica-<versione>} & sì\\
         \hline
-        analisi dei requisiti & \texttt{AnalisiDeiRequisiti-<versione>} & sì\\
+        Analisi dei requisiti & \texttt{AnalisiDeiRequisiti-<versione>} & sì\\
+        \hline
+        Specifica tecnica & \texttt{SpecificaTecnica-<versione>} & sì\\
+        \hline
+        Manuale utente & \texttt{ManualeUtente-<versione>} & sì\\
         \hline
     \end{tabular}}
     \caption{\glossario{Configuration item} del \glossario{repository} SorgentiDocumentazione.}
@@ -129,16 +133,175 @@ I file che non riguardano direttamente il progetto non vengono spiegati ulterior
 Di seguito vengono riportati i metodi usati dal gruppo per tenere traccia delle versioni dei file contenuti nei \glossario{repository}.
 
 \paragraph{Software di controllo di versione}
-Il gruppo ha deciso di utilizzare \glossario{Git} come software per il controllo di versione.
-I motivi di questa scelta sono:
+A supporto del processo di gestione della configurazione il gruppo ha scelto l'utilizzo di due strumenti:
 \begin{enumerate}
-    \item \glossario{Git} è abbastanza conosciuto dai membri del gruppo.
-    \item \glossario{Git} è molto usato e quindi una conoscenza approfondita dello stesso è molto utile.
+    \item \glossario{Git}: \href{https://git-scm.com/doc}{https://git-scm.com/doc}.
+    \item \glossario{GitHub}: \href{https://docs.github.com/en}{https://docs.github.com/en}.
 \end{enumerate}
-Di seguito vengono fornite delle informazioni teoriche sulle scelte fatte dal gruppo sulla gestione del \glossario{repository}.
-La separazione netta tra concetti teorici e pratici pur essendo "fastidiosa" per il lettore permette la modularità degli strumenti usati.
 
-\subparagraph{Strategia di branching}
+\subparagraph{Git}
+\glossario{Git} è un Distributed Version Control System \glossario{DVCS}  utilizzabile tramite interfaccia a linea di comando.
+I \glossario{DVCS} hanno la caratteristica di permettere ai membri del gruppo di lavoro di mantenere una propria copia locale del \glossario{repository} e della sua storia.
+Una volta modificata la copia locale del \glossario{repository} è necessario registrare le modifche nella copia centralizzata del \glossario{repository}.
+Le operazioni e gli elementi di base comuni a tutti i \glossario{DVCS}: \textbf{\glossario{repository}}, \textbf{ramo}, \textbf{push}, \textbf{pull}, \textbf{conflitto} e \textbf{commit}.
+Nelle sezioni successive viene mostrato come \glossario{Git} implementa questi concetti e altri concetti caratteristici.
+
+\subparagraph{GitHub}
+\glossario{GitHub} permette la memorizzazione e la gestione di \glossario{repository} \glossario{Git}.
+Attorno alle funzionalità offerte da \glossario{Git} implementa nuove funzionalità e servizi a supporto dello sviluppo di progetti.
+
+\paragraph{Issue}
+\label{subpar:ITS}
+\glossario{GitHub} fornisce un \glossario{ITS} ovvero un sistema che permette di registrare e gestire le richieste di modifica.
+Le richieste di modifica sono rappresentate tramite il concetto di \textbf{\glossario{issue}}.
+Un \glossario{issue} è composta dai seguenti elementi:
+\begin{enumerate}
+    \item \textbf{Titolo}: nome della richiesta di modifica.
+   
+    \item \textbf{Id}: numero univoco che identifica la richiesta di modifica all'interno del sistema.
+   
+    \item \textbf{Stato}: indica lo stato attuale della richiesta di modifica tra gli stati che essa può attraversare durante il suo \glossario{ciclo di vita}.
+   
+    \item \textbf{Etichetta}: rappresenta in modo schematico la tipologia di richiesta di modifica.
+   
+    \item \textbf{Assegnatario}: indica il membro del gruppo di lavoro che sta implementando la richiesta di modifica.
+   
+    \item \textbf{\glossario{Milestone}}: indica la \glossario{milestone} a cui la richiesta di modifica appartiene.
+   
+    \item \textbf{Commenti}: lista di commenti che specificano con più precisione la richiesta di modifica.
+\end{enumerate}
+
+\subparagraph{Etichette}
+Di seguito viene fornita una lista delle etichette relative al \glossario{repository} SorgentiDocumentazione:
+\begin{enumerate}
+    \item \textbf{bug}: riguarda la correzione di un documento.
+    \item \textbf{enhancement}: riguarda l'implementazione di automazioni della gestione e organizzazione di progetto.
+    \item \textbf{requirement}: riguardano il documento di analisi dei requisiti.
+    \item \textbf{documentation}: riguardano gli altri documenti.
+\end{enumerate}
+
+\subparagraph{Stato}
+\label{subpar:github_stato}
+Lo stato di una \glossario{issue} è una proprietà personalizzata che corrisponde allo stato della richiesta di modifica che la \glossario{issue} rappresenta.
+I valori che questa proprietà può assumere sono:
+\begin{enumerate}
+    \item \textbf{To do}.
+    \item \textbf{In progress}.
+    \item \textbf{To review}.
+    \item \textbf{In review}.
+    \item \textbf{Re open}.
+    \item \textbf{Done}.
+\end{enumerate}
+Per informazioni dettagliate sullo stato delle richieste di modifica leggere la sezione \hyperref[par:ciclo_vita_richieste_di_modifica]{\glossario{ciclo di vita} delle richieste di modifica}.
+
+\subparagraph{Richieste di modifica}
+Le richieste di modifica vengono registrate e gestite utilizzando il servizio di \glossario{issue tracking} offerto da \glossario{GitHub}.  
+Le informazioni tecniche riguardanti la gestione delle \glossario{issue} vengono indicate alla sezione \hyperref[subpar:ITS]{\glossario{Issue Tracking System}}.
+Una richiesta di modifica deve contenere le seguenti informazioni:
+\begin{itemize}
+    \item \textbf{Nome del file da modificare}: indicandone il percorso all'interno del \glossario{repository}.
+    \item \textbf{Data della richiesta}.
+    \item \textbf{Tempo stimato per implementare il cambiamento}: indicata nel piano di progetto nella pianificazione dello \glossario{sprint} attuale.
+    \item \textbf{Tipo di modifica}.
+    \item \textbf{Descrizione della modifica da fare}.
+    \item \textbf{Stato}: indica lo stato della richiesta al momento e permette al gruppo di capire cosa fare.
+\end{itemize}
+
+
+\subparagraph{Descrizione modifica}
+La descrizione di una modifica deve essere rappresentata tramite un \glossario{check list} contenente i compiti da svolgere per implementare la modifica.
+Questo permette:
+\begin{enumerate}
+    \item [a.] A chi implementa la modifica di avere una linea guida su cosa fare anche dopo tanto tempo rispetto alla discussione della modifica nel gruppo.
+    \item [b.] A chi verifica la modifica di sapere che cosa doveva essere fatto.
+\end{enumerate}
+
+\subparagraph{Presa in carico di una modifica}
+\label{subpar:presa_carico_modifica}
+Per poter prendere in carico una modifica essa deve appartenere alla rappresentazione \hyperref[item:sprint_backlog]{\glossario{Sprint backlog}}.
+Per prendere in carico l'esecuzione di una modifica è necessario trascinarla dalla colonna di appartenenza alla colonna che indica l'esecuzione della stessa.
+In accordo con la sezione \hyperref[par:ciclo_vita_richieste_di_modifica]{\glossario{ciclo di vita} delle richieste di modifica} le possibili colonne di partenza sono: "To do" e "Re open" mentre l'unica colonna di destinazione possibile è "In progress".
+
+
+
+\subparagraph{Ciclo di vita delle richieste di modifica}
+\label{par:ciclo_vita_richieste_di_modifica}
+Gli stati che una richiesta di modifica attraversa durante il suo \glossario{ciclo di vita} sono riassunti nel diagramma in \hyperref[fig:ciclo_di_vita_modifiche_documenti]{Figura \ref{fig:ciclo_di_vita_modifiche_documenti}}.
+\begin{figure}[h!]
+    \center
+    \includegraphics[scale=0.6]{Sezioni/ProcessiDiSupporto/Immagini/lifecycle_modifica.pdf}
+    \caption{\glossario{Ciclo di vita} di una richiesta di modifica}
+    \label{fig:ciclo_di_vita_modifiche_documenti}
+\end{figure}
+
+
+\subparagraph{Stati}\label{par:stati}
+In particolare gli stati di una richiesta di modifica sono:
+\begin{enumerate}
+    \item \textbf{To do}: la richiesta di modifica è stata approvata dal gruppo, registrata in \glossario{GitHub} e appartiene ai compiti che portano al raggiungimento di una prossima \glossario{baseline}.
+    \item \textbf{In progress}: la richiesta di modifica è stata presa in carico da un membro del gruppo.
+    \item \textbf{To review}: la modifica è stata implementata dal membro del gruppo che l'ha presa in carico.
+    Prima di contribuire alla prossima \glossario{baseline} deve essere verificata.
+    \item \textbf{In review}: un Verificatore sta procedendo a eseguire la verifica della modifica.
+    \item \textbf{Re open}: la modifica non è stata accettata dal Verificatore e deve quindi essere migliorata.
+    \item \textbf{Done}: la modifica è stata accettata dal Verificatore e quindi è stata integrata nella prossima \glossario{baseline}.
+\end{enumerate}
+
+
+\subparagraph{Cambiamenti di stato}
+I cambiamenti di stato di una richiesta di modifica durante il suo \glossario{ciclo di vita} sono:
+\begin{enumerate}
+    \item \textbf{Presa in carico della richiesta di modifica}(\textbf{To do} \textrightarrow\ \textbf{In progress})
+    Avviene manualmente seguendo la procedura a carico del modificatore indicata alla sezione \hyperref[subpar:presa_carico_modifica]{Presa in carico di una modifica}.
+    \item \textbf{Richiesta di verifica}(\textbf{In progress} \textrightarrow\ \textbf{To review})
+    Avviene manualmente seguendo la procedura a carico del modificatore indicata alla sezione \hyperref[subpar:github_richiesta_di_verifica]{Richiesta di verifica}.
+    \item \textbf{Presa in carico della verifica}(\textbf{To review} \textrightarrow\ \textbf{In review})
+    Avviene manualmente seguendo la procedura indicata alla sezione \hyperref[subpar:presa_carico_verifica]{Presa in carico di una verifica}.
+    \item  \textbf{Rifiuto modifica}(\textbf{In review} \textrightarrow\ \textbf{Re open})
+    Avviene in automatico nel caso in cui la verifica della modifica abbia esito negativo.
+    \item \textbf{Accettazione modifica}(\textbf{In review} \textrightarrow\ \textbf{Done})
+    Avviene in automatico nel caso in cui la verifica della modifica abbia esito positivo.
+    \item \textbf{Presa in carico del miglioramento della modifica}(\textbf{Re open} \textrightarrow\ \textbf{In progress})
+    Avviene manualmente seguendo la procedura a carico del modificatore indicata alla sezione \hyperref[subpar:presa_carico_modifica]{Presa in carico di una modifica}.
+\end{enumerate}
+
+
+\subparagraph{Fasi}
+Le fasi del \glossario{ciclo di vita} di una modifica sono:
+\begin{enumerate}
+    \item \textbf{Implementazione modifica}: comprende gli stati "To do", "In progress", "To review" e le transizioni tra gli stessi.
+    \item \textbf{Verifica modifica}: comprende gli stati "To review", "In review", "Done", "Re open" e le transizioni tra gli stessi.
+    \item \textbf{Miglioramento modifica}: comprende gli stati "Re open", "In progress", "To review" e le transizioni tra gli stessi.
+\end{enumerate}
+
+
+\paragraph{Richiesta di verifica}
+\label{subpar:github_richiesta_di_verifica}
+Per richiedere la verifica di una modifica è necessario \hyperref[item:creazione_pull_request]{aprire una \glossario{pull request}} avente come:
+\begin{itemize}
+    \item \textbf{Ramo sorgente}: il ramo contenete la modifica da verificare che deve seguire le indicazioni fornite nella sezione \hyperref[subpar:strategia_di_branching_documenti]{\glossario{strategia di branching}}.
+    \item \textbf{Ramo destinazione}: il ramo \texttt{develop}.
+\end{itemize}
+
+\subparagraph{Presa in carico di una verifica}
+\label{subpar:presa_carico_verifica}
+Per poter prendere in carico una verifica essa deve appartenere alla rappresentazione \hyperref[item:sprint_backlog]{\glossario{Sprint backlog}}.
+Per prendere in carico una verifica il Verificatore deve trascinarla dalla colonna "To review" alla colonna "In review".
+
+
+\subparagraph{Accettazione modifiche}
+\label{subpar:accettazione_modifiche}
+Per accettare le modifiche di cui è stata richiesta la verifica è necessario eseguire il \hyperref[item:approvazione_pull_request]{merge della \glossario{pull request}}.
+Ed eliminare il ramo sorgente della \glossario{pull request}.
+Per informazioni sulla risoluzione dei conflitti nella \glossario{strategia di branching} scelta dal gruppo leggere la sezione \hyperref[subpar:risoluzione_dei_conflitti]{Risoluzione dei conflitti}.
+
+\subparagraph{Rifiuto modifiche}
+\label{subpar:rifiuto_modifiche}
+Per rifiutare le modifiche di cui è stata richiesta la verifica è necessario \hyperref[item:chiusura_pull_request]{chiudere la \glossario{pull request}}.
+Il verificatore in questo caso ha l'onere di indicare in un \hyperref[item:commentare_issue]{commento della \glossario{issue}} i miglioramenti da apportare alla modifica affinchè venga accettata nella verifica successiva.
+
+
+\paragraph{Strategia di branching}
 \label{subpar:strategia_di_branching_documenti}
 Come \glossario{strategia di branching} il gruppo ha scelto l'utilizzo di \glossario{Gitflow} dato che permette di massimizzare il lavoro parallelo riducendo la complessità di risoluzione dei conflitti.
 In \hyperref[fig:gitflow]{Figura \ref{fig:gitflow}} viene mostrato un esempio di utilizzo della \glossario{strategia di branching} \glossario{Gitflow}.
@@ -190,7 +353,7 @@ Il gruppo ha deciso di utilizzare la seguente convenzione per la denominazione d
 Così facendo si ottiene un collegamento immediato tra ramo di \texttt{release} e la \glossario{milestone} che raggiunge.
 \end{enumerate}
 
-\subparagraph{Risoluzione dei conflitti}
+\paragraph{Risoluzione dei conflitti}
 \label{subpar:risoluzione_dei_conflitti}
 Utilizzando \glossario{Gitflow} i conflitti possono presentarsi nelle seguenti fusioni(merge) di rami(indicate come "partenza \textrightarrow\ destinazione"):
 \begin{enumerate}
@@ -248,159 +411,8 @@ Dove:
 
 \textbf{Nota bene}: per evitare ambiguità con le estensioni dei documenti il gruppo ha deciso di rappresentare la versione nei nomi dei documenti usando la notazione \texttt{vX\_Y}.
 
-\subsubsection{Gestione delle modifiche}
-Una modifica è intesa come un azione che ha lo scopo di modificare lo stato di uno o più file appartenenti all'ultima \glossario{baseline} raggiunta in un \glossario{repository}. 
 
-\paragraph{Richieste di modifica}
-Le richieste di modifica vengono registrate e gestite utilizzando il servizio di \glossario{issue tracking} offerto da \glossario{GitHub}.  
-Le informazioni tecniche riguardanti la gestione delle \glossario{issue} vengono indicate alla sezione \hyperref[subpar:ITS]{\glossario{Issue Tracking System}}.
-Una richiesta di modifica deve contenere le seguenti informazioni:
-\begin{itemize}
-    \item \textbf{Nome del file da modificare}: indicandone il percorso all'interno del \glossario{repository}.
-    \item \textbf{Data della richiesta}.
-    \item \textbf{Tempo stimato per implementare il cambiamento}: indicata nel piano di progetto nella pianificazione dello \glossario{sprint} attuale.
-    \item \textbf{Tipo di modifica}.
-    \item \textbf{Descrizione della modifica da fare}.
-    \item \textbf{Stato}: indica lo stato della richiesta al momento e permette al gruppo di capire cosa fare.
-\end{itemize}
-
-\subparagraph{Descrizione modifica}
-La descrizione di una modifica deve essere rappresentata tramite un \glossario{check list} contenente i compiti da svolgere per implementare la modifica.
-Questo permette:
-\begin{enumerate}
-    \item [a.] A chi implementa la modifica di avere una linea guida su cosa fare anche dopo tanto tempo rispetto alla discussione della modifica nel gruppo.
-    \item [b.] A chi verifica la modifica di sapere che cosa doveva essere fatto.
-\end{enumerate} 
-
-\paragraph{Ciclo di vita delle richieste di modifica}
-\label{par:ciclo_vita_richieste_di_modifica}
-Gli stati che una richiesta di modifica attraversa durante il suo \glossario{ciclo di vita} sono riassunti nel diagramma in \hyperref[fig:ciclo_di_vita_modifiche_documenti]{Figura \ref{fig:ciclo_di_vita_modifiche_documenti}}.
-\begin{figure}[h!]
-    \center
-    \includegraphics[scale=0.6]{Sezioni/ProcessiDiSupporto/Immagini/lifecycle_modifica.pdf}
-    \caption{\glossario{Ciclo di vita} di una richiesta di modifica}
-    \label{fig:ciclo_di_vita_modifiche_documenti}
-\end{figure}
-
-\paragraph{Stati}\label{par:stati}
-In particolare gli stati di una richiesta di modifica sono:
-\begin{enumerate}
-    \item \textbf{To do}: la richiesta di modifica è stata approvata dal gruppo, registrata in \glossario{GitHub} e appartiene ai compiti che portano al raggiungimento di una prossima \glossario{baseline}.
-    \item \textbf{In progress}: la richiesta di modifica è stata presa in carico da un membro del gruppo.
-    \item \textbf{To review}: la modifica è stata implementata dal membro del gruppo che l'ha presa in carico.
-    Prima di contribuire alla prossima \glossario{baseline} deve essere verificata.
-    \item \textbf{In review}: un Verificatore sta procedendo a eseguire la verifica della modifica.
-    \item \textbf{Re open}: la modifica non è stata accettata dal Verificatore e deve quindi essere migliorata.
-    \item \textbf{Done}: la modifica è stata accettata dal Verificatore e quindi è stata integrata nella prossima \glossario{baseline}. 
-\end{enumerate}
-
-\paragraph{Cambiamenti di stato}
-I cambiamenti di stato di una richiesta di modifica durante il suo \glossario{ciclo di vita} sono:
-\begin{enumerate}
-    \item \textbf{Presa in carico della richiesta di modifica}(\textbf{To do} \textrightarrow\ \textbf{In progress})
-    
-    Avviene manualmente seguendo la procedura a carico del modificatore indicata alla sezione \hyperref[subpar:presa_carico_modifica]{Presa in carico di una modifica}.
-    
-    \item \textbf{Richiesta di verifica}(\textbf{In progress} \textrightarrow\ \textbf{To review})
-    
-    Avviene manualmente seguendo la procedura a carico del modificatore indicata alla sezione \hyperref[subpar:github_richiesta_di_verifica]{Richiesta di verifica}.
-    
-    \item \textbf{Presa in carico della verifica}(\textbf{To review} \textrightarrow\ \textbf{In review})
-    
-    Avviene manualmente seguendo la procedura indicata alla sezione \hyperref[subpar:presa_carico_verifica]{Presa in carico di una verifica}.
-    
-    \item  \textbf{Rifiuto modifica}(\textbf{In review} \textrightarrow\ \textbf{Re open})
-    
-    Avviene in automatico nel caso in cui la verifica della modifica abbia esito negativo.
-    
-    \item \textbf{Accettazione modifica}(\textbf{In review} \textrightarrow\ \textbf{Done})
-    
-    Avviene in automatico nel caso in cui la verifica della modifica abbia esito positivo.
-    
-    \item \textbf{Presa in carico del miglioramento della modifica}(\textbf{Re open} \textrightarrow\ \textbf{In progress})
-    
-    Avviene manualmente seguendo la procedura a carico del modificatore indicata alla sezione \hyperref[subpar:presa_carico_modifica]{Presa in carico di una modifica}.
-\end{enumerate}
-
-\paragraph{Fasi}
-Le fasi del \glossario{ciclo di vita} di una modifica sono:
-\begin{enumerate}
-    \item \textbf{Implementazione modifica}: comprende gli stati "To do", "In progress", "To review" e le transizioni tra gli stessi.
-
-    \item \textbf{Verifica modifica}: comprende gli stati "To review", "In review", "Done", "Re open" e le transizioni tra gli stessi.
-    
-  
-    \item \textbf{Miglioramento modifica}: comprende gli stati "Re open", "In progress", "To review" e le transizioni tra gli stessi. 
-  
-\end{enumerate}
-
-\subparagraph{Implementazione modifica}
-Per implementare una modifica è necessario eseguire i seguenti passi:
-\begin{enumerate}
-\item \hyperref[subpar:presa_carico_modifica]{Presa in carico della modifica}.
-
-\item \hyperref[subpar:pull]{Pull ramo} \texttt{develop}.
-
-\item \hyperref[subpar:branch]{Creazione ramo} \texttt{feature}(vedere \hyperref[item:rami_feature]{rami feature}).
-
-\item Colmare la necessità della richiesta di cambiamento assicurandosi di soddisfare la \glossario{check list}.
-Questa operazione deve avvenire seguendo il processo che regola l'implementazione della tipologia di file da modificare.
-
-\textbf{Nota bene}: Per alcuni documenti è necessario aggiungere al \hyperref[par:registro_delle_modifiche]{registro delle modifiche} una nuova riga contenente le informazioni per le colonne "Autore/i" e "Descrizione". 
-
-\item \hyperref[subpar:commit]{Commit} delle modifiche nel ramo \texttt{feature}.
-
-\item \hyperref[subpar:push]{Push ramo} \texttt{feature}.
-
-\item \hyperref[subpar:github_richiesta_di_verifica]{Richiesta di verifica} aggiungendo nel primo commento della
- \glossario{pull request} i seguenti campi:
- \begin{enumerate}
-    \item closes \#\textless ID della \glossario{issue} che richiede la verifica\textgreater
-    \item Tempo impiegato: \textless numero delle ore effettive usate per svolgere la \glossario{issue}\textgreater
- \end{enumerate}
-
-\end{enumerate}
-
-\subparagraph{Verifica modifica}
-Per verificare un cambiamento è necessario eseguire i seguenti passi:
-\begin{enumerate}
-    \item \hyperref[subpar:presa_carico_verifica]{Presa in carico della verifica}.
-    
-    \item \hyperref[subpar:pull]{Pull} ramo \texttt{feature}(vedere \hyperref[item:rami_feature]{rami feature}).
-    
-    \item Verificare i cambiamenti seguendo le regole indicate nella sezione \hyperref[subsec:proc_verifica]{Verifica}.
-    
-    \textbf{Nota bene}: Nel caso di rifiuto per alcuni documenti è necessario aggiornare l'ultima riga del \hyperref[par:registro_delle_modifiche]{Registro delle modifiche} specificando la colonna "Verificatore/i".
-
-    Nel caso di accettazione oltre a fare ciò è necessario specificare la colonna "Versione" e aggiornare la versione mostrata nel documento(leggere sezione \hyperref[par:struttura_di_base_documenti]{Struttura di base dei documenti}).
-
-    \item \hyperref[subpar:commit]{Commit} delle modifiche sul ramo \texttt{feature}.
-    
-    \item \hyperref[subpar:push]{Push} del ramo \texttt{feature}.
-
-    \item \hyperref[subpar:accettazione_modifiche]{Accettazione} o \hyperref[subpar:rifiuto_modifiche]{rifiuto} delle modifiche.
-\end{enumerate}
-
-\subparagraph{Miglioramento modifica}
-  
-Per eseguire il miglioramento di una modifica è necessario eseguire i seguenti passi:
-\begin{enumerate}
-\item \hyperref[subpar:presa_carico_modifica]{Presa in carico del miglioramento}.
-
-\item \hyperref[subpar:pull]{Pull} branch \texttt{feature}(vedere \hyperref[item:rami_feature]{rami feature}).
-
-\item Modificare il documento.
-
-\textbf{Nota bene}: Per alcuni documenti è necessario aggiungere all'ultima riga del \hyperref[par:registro_delle_modifiche]{registro delle modifiche} le informazioni per la colonna "Autore/i". 
-
-\item \hyperref[subpar:commit]{Commit} delle modifiche nel ramo \texttt{feature}.
-
-\item \hyperref[subpar:push]{Push} ramo \texttt{feature}.
-
-\item \hyperref[subpar:github_richiesta_di_verifica]{Richiesta di verifica}.
-\end{enumerate}
-
-\subsubsection{Approvazione}
+\paragraph{Approvazione}
 Di seguito viene documentata l'attività di approvazione delle versioni dei file che devono essere consolidate in una \glossario{baseline}.
 L'approvazione deve essere eseguita dal Responsabile del gruppo di lavoro e prevede le seguenti operazioni:
 \begin{enumerate}
@@ -415,7 +427,14 @@ L'approvazione deve essere eseguita dal Responsabile del gruppo di lavoro e prev
     \item \hyperref[subpar:push]{push} dei rami \texttt{main} e \texttt{develop}.
 \end{enumerate}
 
-\subsubsection{Distribuzione dei documenti}
+\paragraph{Pubblicazione dei documenti}
+La pubblicazione dei documenti avviene al raggiungimento di ogni \glossario{baseline}.
+Questa operazione è automatizzata tramite il meccanismo delle \hyperref[subsubsec:github_action]{\glossario{GitHub action}}.
+In particolare i documenti vengono pubblicati seguendo la stessa struttura del \glossario{repository} contenente i sorgenti.
+
+
+\paragraph{Distribuzione dei documenti}
 La distribuzione dei documenti avviene mediante l'utilizzo di un sito web disponibile al link \href{https://alt-f4-eng.github.io/Documentazione/}{https://alt-f4-eng.github.io/Documentazione/}.
 I documenti distribuiti vengono aggiornati ogni volta che viene modificata la \glossario{baseline} ovvero ogni volta che viene modificato il ramo \texttt{main}.
 L'aggiornamento dei documenti segue la procedura indicata alla sezione \hyperref[par:pubblicazione_documenti]{Pubblicazione dei documenti}
+
