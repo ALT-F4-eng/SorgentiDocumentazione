@@ -1,440 +1,258 @@
 \subsection{Gestione della configurazione}
 \label{subsec:gestione_della_configurazione}
-Il processo di gestione della configurazione si occupa di applicare procedure amministrative e tecniche durante tutto il \glossario{ciclo di vita} del software. 
-In particolare identifica e definisce gli elementi software di un sistema per tenere traccia: delle modifiche, dello stato e dei rilasci dei file.
-Inoltre garantisce la completezza, la coerenza e la correttezza degli elementi che compongono il prodotto software.
+Il processo di gestione della configurazione ha il compito di identificare e definire le pratiche e gli strumenti necessari per tenere traccia: delle modifiche, dello stato e dei rilasci dei componenti del sistema.
 
 \subsubsection{Repository}
 \label{subsubsec:repository}
-I prodotti del progetto vengono memorizzati in più \glossario{repository}.
-Di seguito vengono elencati i \glossario{repository} utilizzati dal gruppo, le loro caratteristiche e la loro struttura.
+I prodotti del progetto vengono nelle seguenti repository:
+\begin{enumerate}
+    \item \textbf{SorgentiDocumentazione}: \href{https://github.com/ALT-F4-eng/SorgentiDocumentazione}{https://github.com/ALT-F4-eng/SorgentiDocumentazione};
+    \item \textbf{Documentazione}: \href{https://github.com/ALT-F4-eng/Documentazione}{https://github.com/ALT-F4-eng/Documentazione};
+    \item \textbf{PoC}: \href{https://github.com/ALT-F4-eng/PoC}{https://github.com/ALT-F4-eng/PoC}.
+\end{enumerate}
+Di seguito vengono approfondito lo scopo e la struttura di tali repository.
 
 \paragraph{SorgentiDocumentazione}
-Questo \glossario{repository} contiene i sorgenti della documentazione scritti usando il \hyperref[par:latex]{linguaggio \glossario{LaTeX}}.
-Il \glossario{repository} contiene le seguenti cartelle e file:
-
-Dove:
+Questo \glossario{repository} contiene i sorgenti della documentazione scritti usando il linguaggio \glossario{LaTeX}.
+In particolare contiene le seguenti cartelle e file:
 \begin{enumerate}
-    \item \texttt{Candidatura}, \texttt{RTB} e \texttt{PB} sono delle cartelle il cui contenuto viene spiegato nelle successive sezioni.
-    \item \texttt{Workflows} sono dei file che definiscono le automazioni associate al \glossario{repository} e vengono denominati usando la sintassi \glossario{Pascal case}.
-    \item \texttt{Immagini} è una cartella che contiene il logo del gruppo.
-    \item \texttt{Packages} è una cartella che contiene file di impostazioni \glossario{Latex}.
-    \item \texttt{README.md} è un file che contiene la descrizione del \glossario{repository} e del gruppo.
-    \item \texttt{.gitignore} è un file speciale che contiene una lista di file che il sistema di versionamento deve ignorare.
-\end{enumerate}
-
-\subparagraph{Candidatura}
-La cartella candidatura contiene le seguenti cartelle e file:
-
-\begin{enumerate}
-    \item \texttt{VerbaliEsterni} è una cartella che contiene tutti i verbali esterni del periodo di candidatura.
-    \item \texttt{VerbaliInterni} è una cartella che contiene tutti i verbali interni del periodo di candidatura.
-    \item \texttt{LetteraDiCandidatura.tex} 
-    \item \texttt{PreventivoCostiAssunzioneImpegni.tex} 
-    \item \texttt{ValutazioneCapitolati.tex} 
-\end{enumerate}
-
-\subparagraph{RTB}
-La cartella \glossario{RTB} contiene le seguenti cartelle e file:
-
-\begin{enumerate}
-    \item \texttt{DocumentiEsterni} è una cartella che contiene tutti i verbali esterni del periodo \glossario{RTB}, 
-    documento AnalisiDeiRequisiti, documento PianoDiProgetto e il documento PianoDiQualifica.
-    \item \texttt{DocumentiInterni} è una cartella che contiene tutti i verbali interni del periodo \glossario{RTB}, 
-    documento Glossario e il documento NormeDiProgetto.
-    \item \texttt{LetteraDiPresentazione} è una cartella che contiene la lettera di presentazione per la prima e per la seconda
-    parte del \glossario{RTB}
-\end{enumerate}
-
-\subparagraph{PB}
-La cartella \glossario{PB} contiene le seguenti cartelle e file:
-
-\begin{enumerate}
-    \item \texttt{DocumentiEsterni} è una cartella che contiene tutti i verbali esterni del periodo \glossario{PB}, 
-    documento AnalisiDeiRequisiti, documento PianoDiProgetto, documento PianoDiQualifica, documento SpecificaTecnica e 
-    il documento ManualeUtente.
-    \item \texttt{DocumentiInterni} è una cartella che contiene tutti i verbali interni del periodo \glossario{PB}, 
-    documento Glossario e il documento NormeDiProgetto.
+    \item \textbf{Candidatura}, \textbf{RTB} e \textbf{PB}: cartelle che contengono le i documenti sorgenti definiti durante le relative fasi del progetto;
+    
+    \item \textbf{Workflows}: file che definiscono le automazioni associate al \glossario{repository} e vengono denominati usando la sintassi \glossario{Pascal case};
+    
+    \item \textbf{Immagini}: cartella che contiene il logo del gruppo;
+    
+    \item \textbf{Packages}: cartella che contiene la definizione del pacchetto \glossario{Latex} personalizzato utilizzato dal gruppo;
+    
+    \item \textbf{README.md}: file che contiene la descrizione del \glossario{repository} e del gruppo;
+    
+    \item \textbf{.gitignore}: file speciale che contiene una lista di file che il sistema di versionamento deve ignorare.
 \end{enumerate}
 
 \paragraph{Documentazione}
-Questo \glossario{repository} contiene i PDF dei sorgenti della documentazione scritti usando il \hyperref[par:latex]{linguaggio \glossario{LaTeX}} e i file necessari per presentare 
-i PDF attraverso un sito web.
+Questo \glossario{repository} contiene i file PDF prodotti dalla compilazione dei sorgenti della documentazione e i file necessari per presentarli tramite il sito web del gruppo.
 Il \glossario{repository} contiene le seguenti cartelle e file:
-
 \begin{enumerate}
-    \item \texttt{Assets} è una cartella che contiene tutte le immagini e le icone che servono al sito web.
-    \item \texttt{Candidatura} è una cartella che contiene tutti i PDF dei file \glossario{Latex} presenti nella cartella 
-    Candidatura presente in SorgentiDocumentazione.
-    \item \texttt{Js} è una cartella che contiene tutti i file javascript che servono al sito web.
-    \item \texttt{RTB} è una cartella che contiene tutti i PDF dei file \glossario{Latex} presenti nella cartella 
-    RTB presente in SorgentiDocumentazione.
-    \item \texttt{Style} è una cartella che contiene tutti i file css che servono al sito web.
-    \item \texttt{README.md} è un file che contiene la descrizione del \glossario{repository} e del gruppo.
-    \item \texttt{index.html} è un file html che corrisponde alla prima pagina del sito web per la presentazione dei PDF.
+    \item \textbf{Assets}: cartella che contiene tutte le immagini e le icone usate nel sito web;
+    
+    \item \textbf{Candidatura}, \textbf{RTB} e \textbf{PB}: cartelle che contengono i PDF dei file sorgente presenti nella relative cartelle del repository SorgentiDocumentazione;
+
+    \item \textbf{Js}: cartella che contiene tutti i file JavaScript usati dal sito web;
+
+    \item \textbf{Style}: cartella che contiene tutti i file CSS usati dal sito web;
+    
+    \item \textbf{README.md}: file che contiene la descrizione del \glossario{repository} e del gruppo;
+    
+    \item \textbf{index.html}: file html che corrisponde alla home page del sito web.
 \end{enumerate}
 
 \paragraph{PoC}
 Questo \glossario{repository} contiene i file sorgenti del \glossario{Proof of Concept}.
 Il \glossario{repository} contiene le seguenti cartelle e file:
-
 \begin{enumerate}
-    \item \texttt{backend} è una cartella che contiene tutti file che compongono la parte backend del \glossario{PoC}
-    \item \texttt{front-end} è una cartella che contiene tutti i file che compongono la parte backend del \glossario{PoC}
-\end{enumerate}
-
-\subsubsection{Identificazione configuration item}
-\label{subsubsec:identificazione_CI}
-Di seguito vengono elencate le regole usate per nominare i \glossario{configuration item} elencati nella sezione \hyperref[subsubsec:repository]{\glossario{repository}}.
-I file che non riguardano direttamente il progetto non vengono spiegati ulteriormente. 
-
-\paragraph{Sorgenti documenti}
-\begin{table}[H]
-    \resizebox{\textwidth}{!}{
-    \begin{tabular}{| c | c | c |}
-        \hline
-        \textbf{Nome} & \textbf{Identificativo} & \textbf{Registro modifiche} \\
-        \hline 
-        Verbali interni & \texttt{<data>-<versione>} & sì \\
-        \hline
-        Verbali esterni & \texttt{<data>-<versione>} & sì\\
-        \hline
-        Verbali esterni esplicativi & \texttt{<data>-<proponente>-<versione>} & sì\\
-        \hline
-        Lettera di candidatura & \texttt{LetteraDiCandidatura} & no\\
-        \hline
-        Valutazione dei capitolati & \texttt{ValutazioneDeiCapitolati-<versione>} & sì\\
-        \hline
-        Preventivo dei costi e assunzione impegni & \texttt{CostiImpegni-<versione>} & sì\\
-        \hline
-        Piano di progetto & \texttt{PianoDiProgetto-<versione>} & sì\\
-        \hline
-        Norme di progetto & \texttt{NormeDiProgetto-<versione>} & sì\\
-        \hline
-        Piano di qualifica & \texttt{PianoDiQualifica-<versione>} & sì\\
-        \hline
-        Analisi dei requisiti & \texttt{AnalisiDeiRequisiti-<versione>} & sì\\
-        \hline
-        Specifica tecnica & \texttt{SpecificaTecnica-<versione>} & sì\\
-        \hline
-        Manuale utente & \texttt{ManualeUtente-<versione>} & sì\\
-        \hline
-    \end{tabular}}
-    \caption{\glossario{Configuration item} del \glossario{repository} SorgentiDocumentazione.}
-\end{table}
-\noindent Dove:
-\begin{itemize}
-    \item Le date seguono lo schema \texttt{aaaa\_mm\_gg}.
-    \item Il nome della proponente segue la sintassi \glossario{Pascal case}.
-    \item Le versioni seguono lo schema indicato alla sezione \hyperref[par:versione_documenti]{Versione dei documenti}.
-\end{itemize}
-
-\subsubsection{Controllo di versione}
-Di seguito vengono riportati i metodi usati dal gruppo per tenere traccia delle versioni dei file contenuti nei \glossario{repository}.
-
-\paragraph{Software di controllo di versione}
-A supporto del processo di gestione della configurazione il gruppo ha scelto l'utilizzo di due strumenti:
-\begin{enumerate}
-    \item \glossario{Git}: \href{https://git-scm.com/doc}{https://git-scm.com/doc}.
-    \item \glossario{GitHub}: \href{https://docs.github.com/en}{https://docs.github.com/en}.
-\end{enumerate}
-
-\subparagraph{Git}
-\glossario{Git} è un Distributed Version Control System \glossario{DVCS}  utilizzabile tramite interfaccia a linea di comando.
-I \glossario{DVCS} hanno la caratteristica di permettere ai membri del gruppo di lavoro di mantenere una propria copia locale del \glossario{repository} e della sua storia.
-Una volta modificata la copia locale del \glossario{repository} è necessario registrare le modifche nella copia centralizzata del \glossario{repository}.
-Le operazioni e gli elementi di base comuni a tutti i \glossario{DVCS}: \textbf{\glossario{repository}}, \textbf{ramo}, \textbf{push}, \textbf{pull}, \textbf{conflitto} e \textbf{commit}.
-Nelle sezioni successive viene mostrato come \glossario{Git} implementa questi concetti e altri concetti caratteristici.
-
-\subparagraph{GitHub}
-\glossario{GitHub} permette la memorizzazione e la gestione di \glossario{repository} \glossario{Git}.
-Attorno alle funzionalità offerte da \glossario{Git} implementa nuove funzionalità e servizi a supporto dello sviluppo di progetti.
-
-\paragraph{Issue}
-\label{subpar:ITS}
-\glossario{GitHub} fornisce un \glossario{ITS} ovvero un sistema che permette di registrare e gestire le richieste di modifica.
-Le richieste di modifica sono rappresentate tramite il concetto di \textbf{\glossario{issue}}.
-Un \glossario{issue} è composta dai seguenti elementi:
-\begin{enumerate}
-    \item \textbf{Titolo}: nome della richiesta di modifica.
-   
-    \item \textbf{Id}: numero univoco che identifica la richiesta di modifica all'interno del sistema.
-   
-    \item \textbf{Stato}: indica lo stato attuale della richiesta di modifica tra gli stati che essa può attraversare durante il suo \glossario{ciclo di vita}.
-   
-    \item \textbf{Etichetta}: rappresenta in modo schematico la tipologia di richiesta di modifica.
-   
-    \item \textbf{Assegnatario}: indica il membro del gruppo di lavoro che sta implementando la richiesta di modifica.
-   
-    \item \textbf{\glossario{Milestone}}: indica la \glossario{milestone} a cui la richiesta di modifica appartiene.
-   
-    \item \textbf{Commenti}: lista di commenti che specificano con più precisione la richiesta di modifica.
-\end{enumerate}
-
-\subparagraph{Etichette}
-Di seguito viene fornita una lista delle etichette relative al \glossario{repository} SorgentiDocumentazione:
-\begin{enumerate}
-    \item \textbf{bug}: riguarda la correzione di un documento.
-    \item \textbf{enhancement}: riguarda l'implementazione di automazioni della gestione e organizzazione di progetto.
-    \item \textbf{requirement}: riguardano il documento di analisi dei requisiti.
-    \item \textbf{documentation}: riguardano gli altri documenti.
-\end{enumerate}
-
-\subparagraph{Stato}
-\label{subpar:github_stato}
-Lo stato di una \glossario{issue} è una proprietà personalizzata che corrisponde allo stato della richiesta di modifica che la \glossario{issue} rappresenta.
-I valori che questa proprietà può assumere sono:
-\begin{enumerate}
-    \item \textbf{To do}.
-    \item \textbf{In progress}.
-    \item \textbf{To review}.
-    \item \textbf{In review}.
-    \item \textbf{Re open}.
-    \item \textbf{Done}.
-\end{enumerate}
-Per informazioni dettagliate sullo stato delle richieste di modifica leggere la sezione \hyperref[par:ciclo_vita_richieste_di_modifica]{\glossario{ciclo di vita} delle richieste di modifica}.
-
-\subparagraph{Richieste di modifica}
-Le richieste di modifica vengono registrate e gestite utilizzando il servizio di \glossario{issue tracking} offerto da \glossario{GitHub}.  
-Le informazioni tecniche riguardanti la gestione delle \glossario{issue} vengono indicate alla sezione \hyperref[subpar:ITS]{\glossario{Issue Tracking System}}.
-Una richiesta di modifica deve contenere le seguenti informazioni:
-\begin{itemize}
-    \item \textbf{Nome del file da modificare}: indicandone il percorso all'interno del \glossario{repository}.
-    \item \textbf{Data della richiesta}.
-    \item \textbf{Tempo stimato per implementare il cambiamento}: indicata nel piano di progetto nella pianificazione dello \glossario{sprint} attuale.
-    \item \textbf{Tipo di modifica}.
-    \item \textbf{Descrizione della modifica da fare}.
-    \item \textbf{Stato}: indica lo stato della richiesta al momento e permette al gruppo di capire cosa fare.
-\end{itemize}
-
-
-\subparagraph{Descrizione modifica}
-La descrizione di una modifica deve essere rappresentata tramite un \glossario{check list} contenente i compiti da svolgere per implementare la modifica.
-Questo permette:
-\begin{enumerate}
-    \item [a.] A chi implementa la modifica di avere una linea guida su cosa fare anche dopo tanto tempo rispetto alla discussione della modifica nel gruppo.
-    \item [b.] A chi verifica la modifica di sapere che cosa doveva essere fatto.
-\end{enumerate}
-
-\subparagraph{Presa in carico di una modifica}
-\label{subpar:presa_carico_modifica}
-Per poter prendere in carico una modifica essa deve appartenere alla rappresentazione \hyperref[item:sprint_backlog]{\glossario{Sprint backlog}}.
-Per prendere in carico l'esecuzione di una modifica è necessario trascinarla dalla colonna di appartenenza alla colonna che indica l'esecuzione della stessa.
-In accordo con la sezione \hyperref[par:ciclo_vita_richieste_di_modifica]{\glossario{ciclo di vita} delle richieste di modifica} le possibili colonne di partenza sono: "To do" e "Re open" mentre l'unica colonna di destinazione possibile è "In progress".
-
-
-
-\subparagraph{Ciclo di vita delle richieste di modifica}
-\label{par:ciclo_vita_richieste_di_modifica}
-Gli stati che una richiesta di modifica attraversa durante il suo \glossario{ciclo di vita} sono riassunti nel diagramma in \hyperref[fig:ciclo_di_vita_modifiche_documenti]{Figura \ref{fig:ciclo_di_vita_modifiche_documenti}}.
-\begin{figure}[h!]
-    \center
-    \includegraphics[scale=0.6]{Sezioni/ProcessiDiSupporto/Immagini/lifecycle_modifica.pdf}
-    \caption{\glossario{Ciclo di vita} di una richiesta di modifica}
-    \label{fig:ciclo_di_vita_modifiche_documenti}
-\end{figure}
-
-
-\subparagraph{Stati}\label{par:stati}
-In particolare gli stati di una richiesta di modifica sono:
-\begin{enumerate}
-    \item \textbf{To do}: la richiesta di modifica è stata approvata dal gruppo, registrata in \glossario{GitHub} e appartiene ai compiti che portano al raggiungimento di una prossima \glossario{baseline}.
-    \item \textbf{In progress}: la richiesta di modifica è stata presa in carico da un membro del gruppo.
-    \item \textbf{To review}: la modifica è stata implementata dal membro del gruppo che l'ha presa in carico.
-    Prima di contribuire alla prossima \glossario{baseline} deve essere verificata.
-    \item \textbf{In review}: un Verificatore sta procedendo a eseguire la verifica della modifica.
-    \item \textbf{Re open}: la modifica non è stata accettata dal Verificatore e deve quindi essere migliorata.
-    \item \textbf{Done}: la modifica è stata accettata dal Verificatore e quindi è stata integrata nella prossima \glossario{baseline}.
-\end{enumerate}
-
-
-\subparagraph{Cambiamenti di stato}
-I cambiamenti di stato di una richiesta di modifica durante il suo \glossario{ciclo di vita} sono:
-\begin{enumerate}
-    \item \textbf{Presa in carico della richiesta di modifica}(\textbf{To do} \textrightarrow\ \textbf{In progress})
-    Avviene manualmente seguendo la procedura a carico del modificatore indicata alla sezione \hyperref[subpar:presa_carico_modifica]{Presa in carico di una modifica}.
-    \item \textbf{Richiesta di verifica}(\textbf{In progress} \textrightarrow\ \textbf{To review})
-    Avviene manualmente seguendo la procedura a carico del modificatore indicata alla sezione \hyperref[subpar:github_richiesta_di_verifica]{Richiesta di verifica}.
-    \item \textbf{Presa in carico della verifica}(\textbf{To review} \textrightarrow\ \textbf{In review})
-    Avviene manualmente seguendo la procedura indicata alla sezione \hyperref[subpar:presa_carico_verifica]{Presa in carico di una verifica}.
-    \item  \textbf{Rifiuto modifica}(\textbf{In review} \textrightarrow\ \textbf{Re open})
-    Avviene in automatico nel caso in cui la verifica della modifica abbia esito negativo.
-    \item \textbf{Accettazione modifica}(\textbf{In review} \textrightarrow\ \textbf{Done})
-    Avviene in automatico nel caso in cui la verifica della modifica abbia esito positivo.
-    \item \textbf{Presa in carico del miglioramento della modifica}(\textbf{Re open} \textrightarrow\ \textbf{In progress})
-    Avviene manualmente seguendo la procedura a carico del modificatore indicata alla sezione \hyperref[subpar:presa_carico_modifica]{Presa in carico di una modifica}.
-\end{enumerate}
-
-
-\subparagraph{Fasi}
-Le fasi del \glossario{ciclo di vita} di una modifica sono:
-\begin{enumerate}
-    \item \textbf{Implementazione modifica}: comprende gli stati "To do", "In progress", "To review" e le transizioni tra gli stessi.
-    \item \textbf{Verifica modifica}: comprende gli stati "To review", "In review", "Done", "Re open" e le transizioni tra gli stessi.
-    \item \textbf{Miglioramento modifica}: comprende gli stati "Re open", "In progress", "To review" e le transizioni tra gli stessi.
-\end{enumerate}
-
-
-\paragraph{Richiesta di verifica}
-\label{subpar:github_richiesta_di_verifica}
-Per richiedere la verifica di una modifica è necessario \hyperref[item:creazione_pull_request]{aprire una \glossario{pull request}} avente come:
-\begin{itemize}
-    \item \textbf{Ramo sorgente}: il ramo contenete la modifica da verificare che deve seguire le indicazioni fornite nella sezione \hyperref[subpar:strategia_di_branching_documenti]{\glossario{strategia di branching}}.
-    \item \textbf{Ramo destinazione}: il ramo \texttt{develop}.
-\end{itemize}
-
-\subparagraph{Presa in carico di una verifica}
-\label{subpar:presa_carico_verifica}
-Per poter prendere in carico una verifica essa deve appartenere alla rappresentazione \hyperref[item:sprint_backlog]{\glossario{Sprint backlog}}.
-Per prendere in carico una verifica il Verificatore deve trascinarla dalla colonna "To review" alla colonna "In review".
-
-
-\subparagraph{Accettazione modifiche}
-\label{subpar:accettazione_modifiche}
-Per accettare le modifiche di cui è stata richiesta la verifica è necessario eseguire il \hyperref[item:approvazione_pull_request]{merge della \glossario{pull request}}.
-Ed eliminare il ramo sorgente della \glossario{pull request}.
-Per informazioni sulla risoluzione dei conflitti nella \glossario{strategia di branching} scelta dal gruppo leggere la sezione \hyperref[subpar:risoluzione_dei_conflitti]{Risoluzione dei conflitti}.
-
-\subparagraph{Rifiuto modifiche}
-\label{subpar:rifiuto_modifiche}
-Per rifiutare le modifiche di cui è stata richiesta la verifica è necessario \hyperref[item:chiusura_pull_request]{chiudere la \glossario{pull request}}.
-Il verificatore in questo caso ha l'onere di indicare in un \hyperref[item:commentare_issue]{commento della \glossario{issue}} i miglioramenti da apportare alla modifica affinchè venga accettata nella verifica successiva.
-
-
-\paragraph{Strategia di branching}
-\label{subpar:strategia_di_branching_documenti}
-Come \glossario{strategia di branching} il gruppo ha scelto l'utilizzo di \glossario{Gitflow} dato che permette di massimizzare il lavoro parallelo riducendo la complessità di risoluzione dei conflitti.
-In \hyperref[fig:gitflow]{Figura \ref{fig:gitflow}} viene mostrato un esempio di utilizzo della \glossario{strategia di branching} \glossario{Gitflow}.
-\begin{figure}[H]
-    \includegraphics[scale=0.65]{Sezioni/ProcessiDiSupporto/Immagini/gitflow.pdf}
-    \caption{\glossario{Gitflow} in azione(i cerchi sono commit e le linee i collegamenti tra essi)}
-    \label{fig:gitflow}
-\end{figure}
-Di seguito vengono descritti i rami utilizzati da \glossario{Gitflow} e le convenzioni usate dal gruppo.
-\begin{enumerate}
-
-\item \textbf{main}
-
-Il ramo \texttt{main} contiene la \glossario{codeline} principale ovvero le versioni dei file che compongono l'ultima \glossario{baseline} raggiunta.
-Questo ramo è un ramo "stabile" nel senso che persiste nel \glossario{repository} lungo tutta la sua vita.
-
-\item \textbf{develop}
-
-Il ramo \texttt{develop} contiene la \glossario{codeline} secondaria ovvero i cambiamenti verificati che si sommeranno formando la prossima \glossario{baseline}.
-Anche questo ramo è un ramo "stabile" e viene creato a partire dal ramo \texttt{main}.
-
-\item \textbf{feature}
-\label{item:rami_feature}
-I rami \texttt{feature} vengono usati dai membri del gruppo per implementare le modifiche.
-Sono dei rami "provvisori" nel senso che esistono finché il loro contenuto non viene verificato.
-I rami \texttt{feature} vengono creati a partire dal ramo \texttt{develop} e confluiscono in esso quando il loro contenuto passa con successo la verifica.
-Il gruppo ha deciso di utilizzare la seguente convenzione per la denominazione di questi rami:
-\begin{lstlisting}
-    feature/#<idRichiestaDiModifica>
-\end{lstlisting}
-Così facendo si ottiene un collegamento immediato tra ramo di \texttt{feature} e richiesta di modifica.
-
-\item \textbf{hotfix}
-
-I rami \texttt{hotfix} vengono usati per eseguire modifiche rapide e di dimensioni ridotte.
-Queste modifiche non influenzano quindi le versioni dei documenti.
-Questi rami sono "provvisori" nel senso che vengono eliminati dopo che le loro modifiche sono state allineate ai rami \texttt{main} e \texttt{develop}.
-
-
-\item \textbf{release}
-
-I rami \texttt{release} vengono usati dal Responsabile del gruppo per approvare il contenuto del ramo \texttt{develop} consolidandolo in una \glossario{baseline} nella \glossario{codeline} principale.
-Sono dei rami "provvisori" nel senso che esistono finché il loro contenuto non viene approvato.
-I rami \texttt{release} vengono creati a partire dal ramo \texttt{develop} e confluiscono nei rami \texttt{main} e \texttt{develop}.
-Il gruppo ha deciso di utilizzare la seguente convenzione per la denominazione di questi rami:
-\begin{lstlisting}
-    feature/nomeMilestone
-\end{lstlisting}
-Così facendo si ottiene un collegamento immediato tra ramo di \texttt{release} e la \glossario{milestone} che raggiunge.
-\end{enumerate}
-
-\paragraph{Risoluzione dei conflitti}
-\label{subpar:risoluzione_dei_conflitti}
-Utilizzando \glossario{Gitflow} i conflitti possono presentarsi nelle seguenti fusioni(merge) di rami(indicate come "partenza \textrightarrow\ destinazione"):
-\begin{enumerate}
-    \item \textbf{release} \textrightarrow\ \textbf{main}
+    \item \textbf{back-end}: cartella che contiene tutti file sorgente che compongono la parte back-end del \glossario{PoC};
     
-    I conflitti si presentano quando nel ramo di \texttt{release} esistono modifiche su uno o più file presenti nel ramo \texttt{main}.
-    In questo caso il contenuto del ramo \texttt{release} ha la precedenza dato che è più aggiornato.
-    
-    \item \textbf{hotfix} \textrightarrow\ \textbf{develop}
-    
-    I conflitti si presentano quando la correzione rapida eseguita nel ramo \texttt{hotfix} riguarda uno o più file che nel mentre sono stati modificati nel ramo \texttt{develop}.
-    In questo caso è importante che le correzioni del ramo \texttt{hotfix} persistano nel ramo \texttt{develop} dopo la fusione.
-    Il ramo \texttt{hotfix} ha quindi la precedenza.   
-
-
-    \item \textbf{feature} \textrightarrow\ \textbf{develop}
-   
-    I conflitti possono presentarsi se due membri del gruppo lavorano sullo stesso documento allo stesso tempo.
-    In questo caso entrambe le modifiche verificate devono raggiungere il ramo \texttt{develop}.
-    Bisogna però porre attenzione a mantenere il corretto ordine del \hyperref[par:registro_delle_modifiche]{Registro delle modifiche}.
+    \item \textbf{front-end}: cartella che contiene tutti i file sorgente che compongono la parte front-end del \glossario{PoC}.
 \end{enumerate}
 
-
-\paragraph{Registro delle modifiche}
-\label{par:registro_delle_modifiche}
-Il gruppo ha deciso di dotare alcuni documenti di una tabella chiamata registro delle modifiche.
-I documenti per i quali viene usato il registro delle modifiche sono indicati nella sezione \hyperref[subsubsec:identificazione_CI]{Identificazione \glossario{configuration item}}.
-
-Di seguito viene indicata la struttura del registro delle modifiche:
-\begin{enumerate}
-    \item \textbf{Versione}: versione del documento dopo la verifica della modifica.
-    \item \textbf{Data}: data in cui è avvenuta la modifica.
-    \item \textbf{Autore/i}: nome e cognome dei componenti del gruppo che hanno eseguito le modifiche.
-    \item \textbf{Verificatore/i}: nome e cognome dei verificatori.
-    \item \textbf{Descrizione}: breve descrizione delle modifiche indicando un link alle sezioni modificate.
-    
-    La descrizione permette ai membri del team di capire velocemente la necessità di allinearsi a nuove informazioni. 
-\end{enumerate} 
-\textbf{Nota bene}: Le righe del registro delle modifiche sono ordinate per versione decrescente.
-
-\paragraph{Versione}
-\label{par:versione_documenti}
-Le versioni dei documenti vengono indicate seguendo lo schema di versionamento:
+\subsubsection{Schema di versionamento}
+Il gruppo ha deciso di utilizzare il seguente schema di versionamento per indicare le versioni dei componenti del sistema:
 \begin{lstlisting}
     vX.Y
 \end{lstlisting}
 Dove:
 \begin{enumerate}
-    \item \texttt{X}: intero positivo che indica la versione major del documento.
-    La versione major indica a quante volte il documento ha raggiunto uno stato ritenuto come "stabile" dal gruppo.
+    \item \texttt{X}: intero positivo che indica la versione major del componente.
+    La versione major indica a quante volte il componente ha raggiunto uno stato ritenuto come "stabile" dal gruppo;
 
     \item \texttt{Y}: intero positivo che indica la versione minor del documento.
-    La versione minor indica il numero di modifiche effettuate al documento a seguito dell'ultima versione major.
+    La versione minor indica il numero di modifiche effettuate all'elemento a partire dall'ultima versione major.
 \end{enumerate}
 
-\textbf{Nota bene}: per evitare ambiguità con le estensioni dei documenti il gruppo ha deciso di rappresentare la versione nei nomi dei documenti usando la notazione \texttt{vX\_Y}.
-
-
-\paragraph{Approvazione}
-Di seguito viene documentata l'attività di approvazione delle versioni dei file che devono essere consolidate in una \glossario{baseline}.
-L'approvazione deve essere eseguita dal Responsabile del gruppo di lavoro e prevede le seguenti operazioni:
+\subsubsection{Strategia di branching}
+\label{subsub:branching}
+Come \glossario{strategia di branching} il gruppo ha scelto l'utilizzo di \glossario{Gitflow} dato che permette di massimizzare il lavoro parallelo riducendo la complessità di risoluzione dei conflitti.
+Di seguito vengono descritti i rami utilizzati da \glossario{Gitflow} e le convenzioni usate dal gruppo per la loro denominazione.
 \begin{enumerate}
-    \item Creazione ramo \texttt{release} seguendo le regole indicate nella sezione \hyperref[subpar:strategia_di_branching_documenti]{\glossario{strategia di branching}}.
-    \item Eseguire eventuali modifiche correttive minori.
-    
-    \textbf{Nota bene}: Aggiungere una nuova riga nel registro delle modifiche indicando i valori per le colonne "Autore/i", "Versione" e "Data".
-    Inoltre usare il valore "Approvazione modifiche" per la colonna "Descrizione".
 
-    \item \hyperref[subpar:commit]{Commit} delle modifiche.
-    \item \hyperref[subpar:merge]{Merge} del ramo \texttt{release} nel ramo \texttt{main} e nel ramo \texttt{develop} seguendo le regole indicate alla sezione \hyperref[subpar:risoluzione_dei_conflitti]{Risoluzione dei conflitti}.
-    \item \hyperref[subpar:push]{push} dei rami \texttt{main} e \texttt{develop}.
+    \item \textbf{main}: contiene la \glossario{codeline} principale ovvero le versioni dei file che compongono l'ultima \glossario{baseline} raggiunta.
+    Questo ramo è un ramo "stabile" nel senso che persiste nel \glossario{repository} lungo tutta la sua vita;
+
+    \item \textbf{develop}: contiene la \glossario{codeline} secondaria ovvero i cambiamenti verificati che si sommeranno formando la prossima \glossario{baseline}.
+    Anche questo ramo è un ramo "stabile" e viene creato a partire dal ramo main;
+
+    \item \textbf{feature}: vengono usati dai membri del gruppo per implementare le modifiche.
+    Sono dei rami "provvisori" nel senso che esistono finché il loro contenuto non viene verificato.
+    I rami feature vengono creati a partire dal ramo develop e confluiscono in esso quando il loro contenuto passa con successo la verifica.
+    Il gruppo ha deciso di utilizzare la seguente convenzione per la denominazione di questi rami:
+    \begin{lstlisting}
+        feature/#<id issue>
+    \end{lstlisting}
+    Così facendo si ottiene un collegamento immediato tra ramo di feature e richiesta di modifica;
+
+    \item \textbf{hotfix}: usati per eseguire modifiche rapide e di dimensioni ridotte.
+    Queste modifiche non influenzano quindi le versioni dei componenti del sistema.
+    Questi rami sono "provvisori" nel senso che vengono eliminati dopo che le loro modifiche sono state allineate ai rami main e develop;
+
+
+    \item \textbf{release}: usati dal Responsabile del gruppo per approvare il contenuto del ramo develop consolidandolo in una \glossario{baseline} nella \glossario{codeline} principale.
+    Sono dei rami "provvisori" nel senso che esistono finché il loro contenuto non viene approvato.
+    I rami release vengono creati a partire dal ramo develop e confluiscono nei rami main e develop.
+    Il gruppo ha deciso di utilizzare la seguente convenzione per la denominazione di questi rami:
+    \begin{lstlisting}
+        release/<nome milestone>
+    \end{lstlisting}
+    Così facendo si ottiene un collegamento immediato tra ramo di release e la \glossario{milestone} che raggiunge.
+\end{enumerate}
+I comandi base necessari per applicare questa strategia di branching sono:
+\begin{lstlisting}    
+    // eseguire commit con messaggio
+    git commit -m "<messaggio>" 
+
+    // fusione ramo corrente con ramo indicato
+    git merge <ramo>
+
+    // gestione staging area
+    git add <lista file>
+    git rm <lista file>
+
+    // importa modifiche da repository remoto
+    git push origin <ramo>
+
+    // pubblica modifiche sul repository remoto
+    git pull origin <ramo>
+\end{lstlisting}
+
+\subsubsection{Gestione delle richieste di modifica}
+Il gruppo per gestire le richieste di modifica ha deciso di utilizzare le funzionalità offerte da \glossario{GitHub}.
+
+\paragraph{Issue}
+\glossario{GitHub} fornisce un \glossario{ITS} ovvero un sistema che permette di registrare e gestire le richieste di modifica.
+Le richieste di modifica sono rappresentate tramite il concetto di issue.
+Un \glossario{issue} è composta dai seguenti elementi:
+\begin{enumerate}
+    \item \textbf{Titolo}: nome della richiesta di modifica;
+   
+    \item \textbf{Id}: identifica univocamente la richiesta di modifica;
+   
+    \item \textbf{Stato}: stato attuale della richiesta di modifica tra gli stati che essa può attraversare durante il suo \glossario{ciclo di vita};
+   
+    \item \textbf{Etichetta}: tipologia di richiesta di modifica;
+   
+    \item \textbf{Assegnatario}: membro del gruppo di lavoro che ha la responsabilità di implementare la richiesta di modifica;
+    
+    \item \textbf{Verificatore}: membro del gruppo di lavoro responsabile per la verifica dell'implementazione della richiesta di modifica;
+   
+    \item \textbf{Milestone}: \glossario{milestone} a cui la richiesta di modifica appartiene;
+   
+    \item \textbf{Descrizione}: specifica con più precisione la richiesta di modifica.
 \end{enumerate}
 
-\paragraph{Pubblicazione dei documenti}
-La pubblicazione dei documenti avviene al raggiungimento di ogni \glossario{baseline}.
-Questa operazione è automatizzata tramite il meccanismo delle \hyperref[subsubsec:github_action]{\glossario{GitHub action}}.
-In particolare i documenti vengono pubblicati seguendo la stessa struttura del \glossario{repository} contenente i sorgenti.
+\subparagraph{Etichette}
+Di seguito viene fornita una lista delle etichette utilizzate dal gruppo:
+\begin{enumerate}
+    \item \textbf{bug}: riguarda la correzione di un documento o di un errore presente nel codice;
+    
+    \item \textbf{enhancement}: riguarda l'implementazione di automazioni della gestione e organizzazione di progetto o il miglioramento del codice;
+    
+    \item \textbf{requirement}: riguardano il documento di analisi dei requisiti;
+    
+    \item \textbf{feature}: riguarda l'implementazione di una nuova funzionalità;
+
+    \item \textbf{documentation}: riguardano lo sviluppo di altri documenti.
+\end{enumerate}
+
+\subparagraph{Stato}
+Lo stato di una \glossario{issue} è una proprietà personalizzata che corrisponde allo stato della richiesta di modifica che la \glossario{issue} rappresenta.
+I valori che questa proprietà può assumere sono:
+\begin{enumerate}
+    \item \textbf{To do}: il membro del team che ha la responsabilità di implementare la richiesta di modifica deve ancora iniziare a lavorarci;
+    
+    \item \textbf{In progress}: il membro del team che ha la responsabilità di implementare la richiesta di modifica ci sta lavorando;
+    
+    \item \textbf{To review}: il verificatore designato deve ancora iniziare la verifica dell'implementazione;
+    
+    \item \textbf{In review}: il verificatore designato sta verificando l'implementazione;
+    
+    \item \textbf{Re open}: il verificatore designato ha ritenuto l'implementazione non all'altezza delle aspettative.
+    L'implementazione deve quindi essere migliorata dal membro del team responsabile;
+    
+    \item \textbf{Done}: il verificatore ha accettato l'implementazione.
+\end{enumerate}
+
+
+\paragraph{Ciclo di vita delle issue}
+Gli stati che una issue attraversa durante il suo \glossario{ciclo di vita} sono riassunti nel diagramma in \hyperref[fig:ciclo_di_vita]{Figura \ref{fig:ciclo_di_vita}}.
+\begin{figure}[H]
+    \center
+    \includegraphics[scale=0.25]{Sezioni/ProcessiDiSupporto/Immagini/cicloDiVita.png}
+    \caption{Ciclo di vita di una issue}
+    \label{fig:ciclo_di_vita}
+\end{figure}
+Per visualizzare l'andamento delle issue definite il gruppo ha deciso di utilizzare una board di progetto che organizza le issue definite in colonne basandosi sul loro stato.
+Un membro che ha svolto un compito che fa "avanzare" una issue nel suo ciclo di vita deve quindi interagire con la board.
+Alcune di queste interazioni sono state automatizzate.
+Di seguito vengono elenecate le azioni che permettono la modifica dello stato di una issue. 
+
+\subparagraph{Richiesta di verifica}
+Per richiedere la verifica di una modifica è necessario aprire una \glossario{pull request} dove:
+\begin{itemize}
+    \item \textbf{Ramo sorgente}: contiene la modifica da verificare.
+    \item \textbf{Ramo destinazione}: il ramo develop.
+\end{itemize}
+
+\subparagraph{Presa in carico di una verifica}
+Per poter prendere in carico una verifica essa deve essere nello stato To Review e quindi risiedere nella relativa colonna della board.
+Per prendere in carico una verifica il Verificatore deve trascinare la issue dalla colonna To Review alla colonna In Review.
+
+
+\subparagraph{Accettazione modifiche}
+Per accettare le modifiche di cui è stata richiesta la verifica il Verificatore deve accettare la \glossario{pull request} e integrare le modifiche nel ramo delevop.
+Dopo aver accettato le modifiche il Verificatore deve eliminare il ramo che le conteneva.
+
+\subparagraph{Rifiuto modifiche}
+Per rifiutare le modifiche di cui è stata richiesta la verifica il Verificatore deve chiudere la relativa \glossario{pull request}.
+Il verificatore in questo caso ha l'onere di indicare in un commento della \glossario{issue} i miglioramenti da apportare alla modifica affinchè venga accettata nella verifica successiva.
+
+
+\paragraph{Registro delle modifiche}
+Il gruppo ha deciso di dotare alcuni documenti di una tabella chiamata registro delle modifiche.
+Questo permette di avere una storia delle versioni coerente anche nel caso in cui avvengano errori nella gestione del repository.
+Di seguito viene indicata la struttura del registro delle modifiche:
+\begin{enumerate}
+    \item \textbf{Versione}: versione del documento dopo la verifica della modifica;
+    \item \textbf{Data}: data in cui è avvenuta la modifica;
+    \item \textbf{Autore/i}: nome e cognome dei componenti del gruppo che hanno eseguito le modifiche;
+    \item \textbf{Verificatore/i}: nome e cognome dei verificatori (aggiornato solo dopo seguito l'accettazione della modifica);
+    \item \textbf{Descrizione}: lista di link alle sezioni modificate.
+    La descrizione permette ai membri del team di capire velocemente la necessità di allinearsi a nuove informazioni. 
+\end{enumerate} 
+\textbf{Nota bene}: Le righe del registro delle modifiche sono ordinate per versione decrescente.
+
+
+
+\subsubsection{Rilascio}
+Di seguito viene documentata l'attività di rilascio dei file che devono essere consolidati in una \glossario{baseline}.
+Il rilascio deve essere eseguito dal Responsabile del team e prevede le seguenti operazioni:
+\begin{enumerate}
+
+    \item Creazione ramo release seguendo le regole indicate nella sezione \hyperref[subsub:branching]{Strategia di branching};
+    
+    \item Eseguire eventuali modifiche correttive minori che non riguardano il contenuto;
+
+    \item Registrare le modifiche nel repository locale seguendo le regole indicate nella sezione  \hyperref[subsub:branching]{Strategia di branching};
+    
+    \item Associare un tag che identifica la baseline raggiunta;
+    
+    \item Registrare le modifiche nel repository remoto.
+\end{enumerate}
+
+\paragraph{Compilazione dei documenti sorgente}
+La compilazione dei documenti avviene in modo automatico a ogni rilascio eseguito nella repository SorgentiDocumentazione.
+Il meccanismo usato per automatizzare la compilazione è quello delle \glossario{GitHub action}.
 
 
 \paragraph{Distribuzione dei documenti}
-La distribuzione dei documenti avviene mediante l'utilizzo di un sito web disponibile al link \href{https://alt-f4-eng.github.io/Documentazione/}{https://alt-f4-eng.github.io/Documentazione/}.
-I documenti distribuiti vengono aggiornati ogni volta che viene modificata la \glossario{baseline} ovvero ogni volta che viene modificato il ramo \texttt{main}.
-L'aggiornamento dei documenti segue la procedura indicata alla sezione \hyperref[par:pubblicazione_documenti]{Pubblicazione dei documenti}
+La distribuzione dei documenti avviene mediante l'utilizzo di un sito web vetrina disponibile al link \href{https://alt-f4-eng.github.io/Documentazione/}{https://alt-f4-eng.github.io/Documentazione/}.
+Il contenuto del sito viene aggiornato in automatico e quindi rispecchia l'ultima compilazione automatica eseguita. 
 
