@@ -65,47 +65,30 @@ I casi d'uso vengono rappresentati tramite una combinazione di descrizione e dia
 Nella \hyperref[tab:template_casi_uso]{Tabella \ref{tab:template_casi_uso}} viene mostrato il template per la descrizione dei casi d'uso.
 Ogni descrizione di caso d'uso deve includere:
 \begin{enumerate}
-    \item \textbf{Identificativo}
-    
-    Indicato usando lo schema \texttt{UC-<ID>}; 
-
+    \item \textbf{Identificativo}: indicato usando lo schema \texttt{UC-<ID>}.
     Dove:
     \begin{enumerate}
         \item \texttt{<ID>}: identificativo numerico del caso d'uso (numero crescente).
     \end{enumerate}
 
-    \item \textbf{Requisito utente}
-    
-    Requisito utente a cui fa riferimento il diagramma;
+    \item \textbf{Requisito utente}: requisito utente a cui fa riferimento il diagramma;
 
-    \item \textbf{Pre-condizioni}
-    
-    Stato iniziale del sistema o vincoli necessari per l'attivazione del caso d'uso;
+    \item \textbf{Pre-condizioni}: stato iniziale del sistema o vincoli necessari per l'attivazione del caso d'uso;
 
-    \item \textbf{Post-condizioni}
-    
-    Stato finale del sistema dopo un esecuzione normale (priva di errori) del caso d'uso;
+    \item \textbf{Post-condizioni}: stato finale del sistema dopo un esecuzione normale (priva di errori) del caso d'uso;
 
-    \item \textbf{Attori}
-    
-    Un attore è un entità esterna (\underline{umana o meno}) al sistema che interagisce con il software per iniziare o per contribuire al compimento dell'esecuzione di un caso d'uso.  
+    \item \textbf{Attori}: entità esterna (\underline{umana o meno}) al sistema che interagisce con il software per iniziare o per contribuire al compimento dell'esecuzione di un caso d'uso.  
     Gli attori si dividono in:
     \begin{enumerate}
         \item  \textbf{Attori primari}: attori principali che partecipano al caso d'uso, solitamente contengono gli attori che iniziano l'interazione e/o sono i destinatari delle informazioni in output del caso d'uso;
         \item \textbf{Attore secondario}: altri attori coinvolti che non sono protagonisti nell'esecuzione del caso d'uso e non sono sotto il controllo diretto del sistema.
     \end{enumerate}
 
-    \item \textbf{Trigger}
-    
-    Evento eseguito da un attore che attiva il caso d'uso;
+    \item \textbf{Trigger}: evento eseguito da un attore che attiva il caso d'uso;
 
-    \item \textbf{Scenario principale}
+    \item \textbf{Scenario principale}: sequenza di step che vengono portati a termine in un esecuzione normale del caso d'uso;
     
-    La sequenza di step importanti che vengono portati a termine in un esecuzione normale del caso d'uso;
-    
-    \item \textbf{Scenari alternativi}
-
-    Eventuali deviazioni o eccezioni rispetto allo scenario principale.
+    \item \textbf{Scenari alternativi}: deviazioni o eccezioni rispetto allo scenario principale.
 \end{enumerate}
 
 \begin{usecase}{\texttt{<identificativo caso d'uso>}}{\texttt{<descrizione caso d'uso>}}
@@ -233,7 +216,7 @@ Ogni diagramma è composto da:
     \item \textbf{Sottocasi d'uso}: i sottocasi d'uso rappresentano scenari specifici e dettagliati che si sviluppano all'interno di un caso d'uso principale. La loro funzione è di descrivere in modo approfondito le diverse situazioni o varianti operative che possono verificarsi nel contesto del caso d'uso generale.
 \end{itemize}
 
-\paragraph{Strumenti}
+\subsubsection{Strumenti}
 Qui vengono elencati gli strumenti usati, che vengono poi approfonditi nella sezione \hyperref[sec:strumenti]{Strumenti}.
 \begin{itemize}
     \item LaTeX;
