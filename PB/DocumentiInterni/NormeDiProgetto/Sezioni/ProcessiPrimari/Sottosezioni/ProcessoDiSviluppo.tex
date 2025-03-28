@@ -233,6 +233,113 @@ Ogni diagramma è composto da:
     \item \textbf{Sottocasi d'uso}: i sottocasi d'uso rappresentano scenari specifici e dettagliati che si sviluppano all'interno di un caso d'uso principale. La loro funzione è di descrivere in modo approfondito le diverse situazioni o varianti operative che possono verificarsi nel contesto del caso d'uso generale.
 \end{itemize}
 
+\subsubsection{Progettazione}
+\label{subsubsection:progettazione}
+La progettazione è l'attività che definisce l'architettura del sistema software, fatta a seguito dell'attività di analisi, che descrive come il sistema soddisferà i requisiti definiti nel documento di \textit{Analisi dei Requisiti}.
+L'attività di progettazione viene eseguita dal ruolo del progettista, tramite l'uso di pattern architetturali e di design, che permettono di definire la struttura e le relazioni tra le componenti del sistema.
+Una buona progettazione deve garantire che l'architettura del sistema soddisfi i seguenti aspetti:
+\begin{itemize}
+    \item \textbf{Affidabilità}: deve garantire che il sistema funzioni nel modo previsto quando viene usato in condizioni previste;
+    \item \textbf{Basso accoppiamento}: i moduli devono essere il meno possibile dipendenti tra loro;
+    \item \textbf{Flessibilità}: deve avere la capacità di adattarsi a cambiamenti futuri;
+    \item \textbf{Sufficienza}: l'architettura deve soddisfare tutti i requisiti definiti nell'analisi;
+    \item \textbf{Efficienza}: garantisce un utilizzo efficiente delle risorse;
+    \item \textbf{Incapsulamento}: i dettagli di implementazione di un modulo devono essere nascosti agli altri moduli;
+    \item \textbf{Semplicità}: evita l'introduzione di elementi superflui;
+    \item \textbf{Riusabilità}: deve essere possibile riutilizzare le parti dell'architettura in altri contesti;
+    \item \textbf{Modularità}: suddivisione dell'architettura in moduli, in modo che le modifiche a uno di essi non influenzino gli altri;
+    \item \textbf{Robustezza}: deve poter gestire situazioni di errore e di eccezione;
+    \item \textbf{Coesione}: se esistono elementi che collaborano tra loro, devono essere raggruppati in un unico componente.
+\end{itemize}
+
+\paragraph{Fasi della progettazione}
+La progettazione si suddivide in due fasi:
+\begin{enumerate}
+    \item \hyperref[subpar:progettazione_logica]{Progettazione logica};
+    \item \hyperref[subpar:progettazione_dettaglio]{Progettazione di dettaglio}.
+\end{enumerate}
+
+\subparagraph{Progettazione logica}
+\label{subpar:progettazione_logica}
+La progettazione logica comprende la prima parte della progettazione del sistema, durante questa viene definita l'architettura del prodotto software.
+Viene definita la struttura generale del sistema, i moduli principali e le relazioni tra di essi.
+Per garantire la coerenza e la consistenza dell'architettura, il team andrà a usare stili architetturali che forniscono una soluzione progettuale di alto livello, guidando le scelte strutturali del sistema. 
+Questo approccio assicura il soddisfacimento dei requisiti funzionali e non funzionali, come prestazioni, scalabilità e sicurezza, contribuendo alla manutenibilità e all'evoluzione del sistema nel tempo.
+La fase di progettazione logica si suddivide in:
+\begin{itemize}
+    \item Individuazione delle componenti principali del sistema;
+    \item Definizione delle interfacce e delle relazioni tra le componenti;
+    \item Definizione delle strutture dati necessarie;
+    \item Prima stesura del documento \textit{Manuale Utente};
+    \item Stesura dei test di integrazione;
+    \item Revisione delle soluzioni e dei pattern architetturali adottati.
+\end{itemize}
+
+\subparagraph{Istruzioni per la progettazione logica del front-end}
+Per la progettazione logica delle componenti del front-end sono necessari:
+\begin{itemize}
+    \item \textbf{Descrizione}: descrizione delle funzionalità del componente;
+    \item \textbf{Sotto componenti}: lista delle sotto componenti e loro funzione;
+    \item \textbf{Tracciamento dei requisiti}: lista dei requisiti che vengono soddisfatti dalla componente.
+\end{itemize}
+
+\subparagraph{Istruzioni per la progettazione logica del back-end}
+Per la progettazione logica delle componenti del back-end sono necessari:
+\begin{itemize}
+    \item \textbf{Descrizione}: descrizione delle funzionalità del componente;
+    \item \textbf{Dettagli della route}: ;
+    \item \textbf{Esecuzione}: descrizione dell'esecuzione della componente e dei suoi possibili output;
+    \item \textbf{Tracciamento dei requisiti}: lista dei requisiti che vengono soddisfatti dalla componente.
+\end{itemize}
+
+\subparagraph{Progettazione di dettaglio}
+\label{subpar:progettazione_dettaglio}
+La progettazione di dettaglio è la seconda parte della progettazione del sistema, durante questa viene definita la struttura interna delle singole componenti individuate nella progettazione logica.
+Ciò deve essere fatto prima della codifica del software, in modo da avere una visione chiara di come implementare le funzionalità richieste.
+L'architettura deve essere tale da consentire a un singolo programmatore di poter codificare una singola unità architetturale.
+Dunque ogni componente viene suddiviso in parti più piccole, le unità che a loro volta sono composte da moduli.
+Lo scopo principale della progettazione di dettaglio è quello di organizzare la codifica del software, documentando le scelte di progettazione e collegando i requisiti a ogni singola unità.
+Il sistema non deve essere pero scomposto in unità troppo piccole, in quanto ciò potrebbe portare difficoltà nella coordinazione del lavoro del gruppo.
+La fase di progettazione di dettaglio si suddivide in:
+\begin{itemize}
+    \item Descrizione dettagliata delle singole componenti, delle sue unità e dei moduli;
+    \item Espansione e aggiornamento del documento \textit{Manuale Utente};
+    \item Espansione e aggiornamento dei test di integrazione;
+    \item Definizione dei test di unità;
+\end{itemize} 
+
+\subparagraph{Istruzioni per la progettazione di dettaglio del front-end}
+Per la progettazione di dettaglio delle componenti del front-end sono necessari:
+\begin{itemize}
+    \item \textbf{Proprietà}: lista delle proprietà in input alla componente;
+    \item \textbf{Eventi}: lista degli eventi in output dalla componente;
+    \item \textbf{Aspetti principali}: lista degli aspetti principali della componente.
+\end{itemize}
+
+\subparagraph{Istruzioni per la progettazione di dettaglio del back-end}
+Per la progettazione di dettaglio delle componenti del back-end sono necessari:
+\begin{itemize}
+    \item \textbf{Descrizione}: descrizione dettagliata della classe;
+    \item \textbf{Diagramma della classe}: diagramma UML della classe;
+    \item \textbf{Attributi}: lista (facoltativa) degli attributi della classe;
+    \item \textbf{Operazioni}: lista (facoltativa) delle operazioni della classe;
+    \item \textbf{Metodi}: lista (facoltativa) dei metodi della classe;
+    \item \textbf{Implementazioni}: lista (facoltativa) delle interfacce implementate dalla classe.
+    \item \textbf{Dipendenze}: lista (facoltativa) delle dipendenze della classe
+    \item \textbf{Estensioni}: lista (facoltativa) delle estensioni della classe;
+\end{itemize}
+
+\paragraph{Specifica Tecnica}
+Diventa quindi essenziale documentare tramite il documento di \textit{Specifica Tecnica} l'intera fase di progettazione in modo chiaro e dettagliato, poiché sarà il punto di riferimento per la fase di codifica e di testing del software.
+Il documento di \textit{Specifica Tecnica} va a trattare i seguenti argomenti:
+\begin{itemize}
+    \item \textbf{Tecnologie utilizzate}: descrizione delle tecnologie, dei framework e delle librerie utilizzate per lo sviluppo del software, motivando le scelte fatte;
+    \item \textbf{Architettura generale}: descrizione dell'architettura generale del sistema e del \glossario{repository};
+    \item \textbf{Progettazione logica}: descrizione delle funzionalità del sistema nel loro complesso, definendone le componenti principali ma non i dettagli;
+    \item \textbf{Progettazione di dettaglio}: descrizione dettagliata e tecnica dell'implementazione dei moduli;
+\end{itemize}
+
+
 \paragraph{Strumenti}
 Qui vengono elencati gli strumenti usati, che vengono poi approfonditi nella sezione \hyperref[sec:strumenti]{Strumenti}.
 \begin{itemize}
