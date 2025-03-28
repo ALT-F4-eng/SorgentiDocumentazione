@@ -1,22 +1,77 @@
 \subsection{Documentazione}
 \label{subsec:documentazione}
 Il processo di documentazione ha lo scopo di registrare le informazioni prodotte da un processo primario garantendo la produzione di documenti coerenti e di qualità.
+Il processo consiste nelle seguenti attività:
+\begin{itemize}
+    \item Implementazione del processo;
+    \item Progettazione e sviluppo;
+    \item Rilascio.
+\end{itemize}
+
+\subsubsection{Implementazione del processo}
+\label{subsubsec:implementazione_processo}
+Questa attività stabilisce la tipologia di informazioni contenute in ciascun documento.
+\begin{itemize}
+    \item Titolo;
+    \item Scopo;
+    \item Descrizione;
+    \item Responsabilità per redazione, contribuzione, verifica e approvazione;
+    \item Pianificazione per versioni provvisorie e finali.
+\end{itemize}
+\subsubsection{Progettazione e sviluppo}
+Questa attività prevede la progettazione e la redazione di ciascun documento, garantendo il rispetto degli standard definiti per formato e contenuto, che verranno successivamente verificati dal responsabile del controllo.
+
+\subsubsection{Rilascio}
+Questa attività inizia con l'approvazione finale del documento da parte del responsabile in carica e, nel caso di verbali destinati all'uso esterno, anche da parte del Proponente. Successivamente, il documento viene pubblicato nell'apposito repository della Documentazione.
+
+\subsubsection{Categorie di documenti}
+Di seguito vengono elencate le due macro categorie di documenti. 
+
+\paragraph{Documenti interni}
+Servono al team di lavoro.
+Sono:
+\begin{itemize}
+    \item Verbali interni;
+    \item Norme di progetto;
+    \item Glossario.
+\end{itemize}
+
+\paragraph{Documenti esterni}
+Servono al team di lavoro e alla proponente.
+Sono:
+\begin{itemize}
+    \item Piano di progetto;
+    \item Verbali esterni;
+    \item Analisi dei requisiti;
+    \item Piano di qualifica;
+    \item Specifica Tecnica;
+    \item Manuale Utente.
+\end{itemize}
+
+\subsubsection{Ciclo di vita}
+Il \glossario{ciclo di vita} di un documento è composto dai seguenti eventi:
+\begin{itemize}
+    \item Viene individuato il documento o la sua parte da produrre seguendo \hyperref[subsubsec:implementazione_processo]{Implementazione del processo}; 
+    \item Il redattore elabora una versione del documento conforme alle specifiche e ai metodi definiti in queste norme;
+    \item Il documento viene sottoposto a verifica. Se il verificatore riscontra la presenza di errori che non riguardano il contenuto li risolve.
+    Altrimenti indica al redattore le modifiche contenutistiche da eseguire e il documento ritorna alla fase precedente;
+    \item Dopo un esito positivo della verifica, se il documento è completo e deve essere rilasciato, viene sottoposto all'approvazione finale del responsabile di progetto che come nella fase precedente può richiedere la correzione del contenuto ai redattori.
+\end{itemize}
 
 \subsubsection{Standard di formato}
 I seguenti standard di formato sono validi per tutte le tipologie di documenti.
-Questi standard devono sottostare agli standard specifici per ogni tipologia di documento indicata nel piano di documentazione.
-Gli standard più specifici possono sovrascrivere i seguenti o specializzarli (es. data).
+Questi standard devono sottostare agli standard specifici per ogni tipologia di documento indicata nel \hyperref[subsubsec:piano_documentazione]{Piano di documentazione}.
+Gli standard più specifici possono quindi sovrascrivere o specializzare i seguenti standard.
 
 \paragraph{Standard di scrittura}
 \begin{itemize}
-    \item Le tabelle e le immagini devono preferibilmente comparire nella posizione in cui sono specificate all'interno del codice sorgente.
-    \item Le tabelle e le immagini devono essere identificate da una \glossario{label} che deve essere usata ogni qual volta sia necessario farvi riferimento.
-    \item Le tabelle e le immagini devono essere accompagnate da una \glossario{caption} che ne riassume il contenuto.
-    \item Si devono utilizzare frasi non più lunghe di tre righe.
-    \item I termini che appartengono al glossario devono essere indicati con una G a pedice e in corsivo.
+    \item Le tabelle e le immagini devono preferibilmente comparire nella posizione in cui sono specificate all'interno del codice sorgente;
+    \item Le tabelle e le immagini devono essere identificate da una \glossario{label} che deve essere usata ogni qual volta sia necessario farvi riferimento;
+    \item Le tabelle e le immagini devono essere accompagnate da una \glossario{caption} che ne riassume il contenuto;
+    \item Si devono utilizzare frasi non più lunghe di tre righe;
+    \item I termini che appartengono al glossario devono essere indicati con una G a pedice e in corsivo;
     \item Si devono usare dei link per fare riferimento a elementi del documento.
 \end{itemize}
-Per informazioni pratiche sui punti sopra indicati leggere la sezione \hyperref[par:comandi_di_base]{Comandi di base}.
 
 \paragraph{Standard di forma}
 
@@ -30,10 +85,10 @@ Dove la versione rispetta le regole indicate alla sezione \hyperref[par:versione
 \subparagraph{Prima pagina}
 La prima pagina deve contenere le seguenti informazioni:
 \begin{itemize}
-    \item Nome documento.     
-    \item Nome gruppo.
-    \item Data. 
-    \item Versione.
+    \item Nome documento;     
+    \item Nome gruppo;
+    \item Data; 
+    \item Versione;
     \item Logo del gruppo.
 \end{itemize}
 
@@ -44,29 +99,9 @@ Il contenuto e la gestione del registro è indicato alla sezione \hyperref[par:r
 \subparagraph{Terza pagina}
 La terza pagina deve contenere l'indice.
 
-\subsubsection{Macro categorie di documenti}
-Di seguito vengono elencate le due macro categorie di documenti. 
-
-\paragraph{Documenti interni}
-Servono al team di lavoro.
-Sono:
-\begin{itemize}
-    \item Verbali interni.
-    \item Norme di progetto.
-\end{itemize}
-
-\paragraph{Documenti esterni}
-Servono al team di lavoro e alla proponente.
-Sono:
-\begin{itemize}
-    \item Piano di progetto.
-    \item Verbali esterni.
-    \item Analisi dei requisiti.
-    \item Piano di qualifica.
-\end{itemize}
-
 \subsubsection{Piano di documentazione}
-Di seguito viene riportato il piano di documentazione in cui si definiscono le tipologie di documenti che verranno prodotti durante il \glossario{ciclo di vita} del prodotto e le loro caratteristiche.
+\label{subsubsec:piano_documentazione}
+Di seguito viene riportato il piano di documentazione in cui vengono descritte le tipologie di documenti che verranno prodotti durante il \glossario{ciclo di vita} del prodotto e le loro caratteristiche.
 
 \paragraph{Verbali interni}
 
@@ -83,30 +118,24 @@ Gli input per la stesura di questi documenti derivano direttamente dalla riunion
 \subparagraph{Struttura}
 I verbali interni sono composti dalle seguenti sezioni e sottosezioni:
 \begin{enumerate}
-    \item \textbf{Registro presenze}.
-    
-    Contiene le seguenti informazioni:
+    \item \textbf{Registro presenze}: contiene le seguenti informazioni.
     \begin{enumerate}
-        \item Data.
-        \item Ora inizio.
-        \item Ora fine.
-        \item Piattaforma usata.
-        \item Tabella che attesta la presenza dei membri del team.
-        Intestazioni: Componente e Presenza.
+        \item Data;
+        \item Ora inizio;
+        \item Ora fine;
+        \item Piattaforma usata;
+        \item Tabella che attesta la presenza dei membri del team
+        (intestazioni: Componente e Presenza).
     \end{enumerate}
-    \item \textbf{Verbale}.
+    \item \textbf{Verbale}: contiene le seguenti informazioni.
     \begin{enumerate}
-        \item \textbf{Argomenti trattati}
-        
-        Contiene un riassunto dei temi trattati durante la riunione.
-        Indica anche eventuali perplessità o difficoltà da introdurre nel diario di bordo.
-        \item \textbf{Decisioni prese}.
-        Contiene un riassunto delle decisioni prese durante la riunione indicando anche una giustificazione.
+        \item \textbf{Ordine del giorno}: decisioni da prendere o azioni da intraprendere;
+        \item \textbf{Argomenti trattati}: riassunto dei temi trattati durante la riunione.
+        Indica anche eventuali perplessità o difficoltà da introdurre nel diario di bordo;
+        \item \textbf{Decisioni prese}: riassunto delle decisioni prese durante la riunione indicando anche una giustificazione.
     \end{enumerate}
 
-    \item \textbf{To Do}.
-    
-    Indica una lista delle cose da fare nel prossimo \glossario{sprint} collegandole alle informazioni di gestione della configurazione.
+    \item \textbf{To do/In progress}: contiene una tabella le cui righe elencano: numero di \glossario{issue}, breve descrizione, incaricato e data di scadenza per i compiti definiti nella riunione.
 \end{enumerate}
 
 \subparagraph{Standard di scrittura specifici}
@@ -118,40 +147,36 @@ I verbali interni sono composti dalle seguenti sezioni e sottosezioni:
 
 \subparagraph{Scopo}
 I verbali esterni sono documenti che hanno lo scopo di registrare la conoscenza del team sulle necessità della proponente a seguito di una riunione esterna.
-Permettono quindi la conferma di una conoscenza comune(team e proponente) sulle necessità che il prodotto colma.
+Permettono quindi la conferma di una conoscenza comune tra team e proponente sulle necessità che il prodotto colma.
 Funzionano quindi da garanzia al team sul fatto che la sua direzione sia corretta.
 
 \subparagraph{Autore}
 L'autore dei verbali esterni deve essere il Responsabile.
 
 \subparagraph{Input}
-Gli input per la stesura di questi documenti derivano direttamente dalla riunione esterna che deve essere concordata in anticipo con la proponente.
+Gli input per la stesura di questi documenti derivano direttamente dalla riunione esterna.
 
 \subparagraph{Struttura}
 I verbali esterni sono composti dalle seguenti sezioni e sottosezioni:
 \begin{enumerate}
-    \item \textbf{Registro presenze}.
-    
-    Contiene le seguenti informazioni:
+    \item \textbf{Registro presenze}: contiene le seguenti informazioni.
     \begin{enumerate}
-        \item Data.
-        \item Ora inizio.
-        \item Ora fine.
-        \item Piattaforma.
-        \item Tabella che attesta la presenza dei membri del team.
-        Intestazioni: Componente e Presenza.
-        \item Tabella che attesta i rappresentati della proponente che hanno partecipato alla riunione.
-        Intestazioni: Componente e Presenza.
+        \item Data;
+        \item Ora inizio;
+        \item Ora fine;
+        \item Piattaforma;
+        \item Tabella che attesta la presenza dei membri del team (intestazioni: Componente e Presenza);
+        \item Tabella che attesta i rappresentati della proponente che hanno partecipato alla riunione (intestazioni: Componente e Presenza).
     \end{enumerate}
-    A fondo pagina viene lasciato spazio per permettere al proponente di firmare il verbale esterno.
-
-    \item \textbf{Domande}.
+    \item \textbf{Ordine del giorno}: contiene l'elenco dei dubbi/decisioni da prendere o azioni da intraprendere;
     
-    Lista delle domande esposte dal team.
-
-    \item \textbf{Conclusioni}.
+    \item \textbf{Domande}: contiene la lista delle domande esposte dal team;
     
-    Lista delle conclusioni che il team ha tratto dalle risposte date dai rappresentati della proponente.
+    \item \textbf{Conclusioni}: contiene la lista delle conclusioni che il team ha tratto dalle risposte date dai rappresentati della proponente;
+
+    \item \textbf{To do/In progress(opzionale)}: contiene una tabella le cui righe elencano: numero di \glossario{issue}, breve descrizione, incaricato e data di scadenza per gli eventuali compiti definiti nella riunione.
+
+    \item \textbf{Firma proponente}
 \end{enumerate}
 
 \subparagraph{Standard di scrittura specifici}
@@ -167,51 +192,41 @@ Questo documento ha lo scopo di racchiudere i \glossario{requisiti utente} e i \
 \subparagraph{Autore}
 Gli autori di questo documento sono gli Analisti.
 
-\subparagraph{Input}
+\subparagraph{Input}    
 Gli input per la stesura del documento di analisi dei requisiti derivano dall'attività di analisi dei requisiti.
 
 \subparagraph{Struttura}
 La struttura del documento di analisi dei requisiti è composta dalle seguenti sezioni:
 \begin{enumerate}
-    \item \textbf{Descrizione prodotto}.
-    
-    Ha lo scopo di descrivere il sistema a un alto livello di astrazione.
+    \item \textbf{Descrizione prodotto}: descrizione del sistema a un alto livello di astrazione.
     Questa sezione è composta dalle seguenti sottosezioni:
     \begin{enumerate}
-        \item \textbf{Obiettivi prodotto}.
+        \item \textbf{Obiettivi prodotto}: descrive il bisogno che ha portato alla stesura del \glossario{capitolato} e come il prodotto le soddisfa;
         
-        Descrive il bisogno che ha portato alla stesura del \glossario{capitolato} e come il prodotto le soddisfa.
-        
-        \item \textbf{Funzioni prodotto}.
+        \item \textbf{Funzioni prodotto}: descrive le funzioni principali del prodotto;
 
-        Descrive le funzioni principali del prodotto.
-
-        \item \textbf{Caratteristiche utente}.
-        
-        Descrive gli utenti che useranno il sistema e le loro caratteristiche.
+        \item \textbf{Caratteristiche utente}: descrive gli utenti che useranno il sistema e le loro caratteristiche;
     \end{enumerate}
+    \item \textbf{Requisiti utente}: elenca i requisiti utente;
 
-    \item \textbf{\glossario{Use case}}.
+    \item \textbf{Use case}: mostra gli use case definiti nell'analisi che porta ai \glossario{requisiti software};
     
-    Descrive i \glossario{requisiti utente} e l'analisi che porta ai \glossario{requisiti software}.
-    
-    \item \textbf{\glossario{Requisiti funzionali} di qualità e di vincolo}.
-    
-    Elenca i \glossario{requisiti funzionali} e non.
-    
+    \item \textbf{Requisiti funzionali di qualità e di vincolo}: elenca i \glossario{requisiti funzionali} e non.
 \end{enumerate}
 
 \paragraph{Norme di progetto}
-Il presente documento ha lo scopo indicato nell'introduzione.
+
+\subparagraph{Scopo}
+Lo scopo del presente documento è indicato nell'introduzione.
 
 \subparagraph{Autore} 
 L'autore di questo documento è l'Amministratore.
 
 \subparagraph{Input}
-Gli input per la stesura del documento delle norme di progetto derivano dal processo di gestione.
+Gli input per la stesura del documento delle norme di progetto derivano dalle decisioni prese dal team durante gli incontri interni.
 
 \subparagraph{Struttura}
-Deve esistere una sezione per ogni categoria di processo e una sottosezione per ogni processo indicato nello standard \glossario{IEEE 12207:1996} usato dal team.
+Deve esistere una sezione per ogni categoria di processo e una sottosezione per ogni processo indicato nello standard \glossario{IEEE 12207:1996} usato come guida dal team.
 
 \paragraph{Piano di progetto}
 Il documento piano di progetto contiene le informazioni che permettono la gestione di progetto da parte del Responsabile.
@@ -226,64 +241,126 @@ Gli input per la stesura del documento delle norme di progetto derivano dal proc
 \label{subsec:struttura_piano}
 La struttura del documento Piano di Progetto è composta dalle seguenti sezioni:
 \begin{enumerate}
-    \item \textbf{Analisi dei rischi}.
-    
-    Contiene l'output dell'attività di analisi dei rischi.
+    \item \textbf{Analisi dei rischi}: contiene l'output dell'attività di analisi dei rischi;
 
-    \item \textbf{Stima dei costi}.
+    \item \textbf{Stima dei costi}: contiene la stima delle ore che il gruppo ritiene di consumare e i costi che derivano dalle stesse;
     
-    Contiene la stima delle ore che il gruppo ritiene di consumare e i costi che derivano dalle stesse. 
-    
-    \item \textbf{Milestone principali}.
-    
-    Definisce le \glossario{milestone} principali che devono essere sottoposte alla validazione del proponente e/o del \glossario{committente}.
+    \item \textbf{Milestone principali}: definisce le \glossario{milestone} principali, che devono essere sottoposte alla validazione del proponente e/o del \glossario{committente}.
     Per ogni \glossario{milestone} vengono indicate:
     \begin{itemize}
-        \item Data di consegna.
-        \item \glossario{Baseline}.
+        \item Data di consegna;
+        \item \glossario{Baseline};
         \item Risorse preventivate.
     \end{itemize}
     
-    \item \textbf{Primo periodo}. \label{par:primo_periodo}
-    
-    Indica l'insieme di risorse utilizzate nel primo periodo di progetto durante il quale la pianificazione era ancora confusionaria.
-    
+    \item \textbf{Primo periodo}: indica l'insieme di risorse utilizzate nel primo periodo di progetto durante il quale la pianificazione era ancora confusionaria.
     Viene quindi mostrato lo stato delle risorse col termine del primo periodo nelle sottosezioni:
     \begin{enumerate}
-        \item \textbf{Consuntivo}.
-        
-        Tabella composta dalle colonne: "Ruolo", "Ore consumate".
+        \item \textbf{Consuntivo}: contiene il consuntivo orario per il primo periodo;
 
-        \item \textbf{Aggiornamento rimaste}.
-        
-        Tabella composta dalle colonne: "Ruolo", "Ore rimaste".
+        \item \textbf{Aggiornamento rimaste}: contiene la disponibilità oraria a seguito del primo periodo.
     \end{enumerate}
     
-    \item \textbf{\glossario{Sprint}} \label{par:sprint}
-    
-    Per ogni \glossario{sprint} contiene una sottosezione chiamata \texttt{sprint n} che a sua volta contiene le seguenti sottosezioni:
+    \item \textbf{Sprint}: per ogni \glossario{sprint} contiene una sottosezione chiamata \texttt{sprint n} che a sua volta contiene le seguenti sottosezioni.
     \begin{enumerate}
-        \item \textbf{Obbiettivi}.
-        
-        Descrizione degli obbiettivi dello \glossario{sprint} tramite una lista puntata contenente la descrizione di essi e le \glossario{issue} assegnate a ogni obbiettivo.
-        \item \textbf{Pianificazione}.
-        
-        Tabella composta dalle colonne: "Identificativo richiesta di modifica", "Ore preventivate" e "Ruolo".
+        \item \textbf{Obbiettivi}: descrizione degli obbiettivi dello \glossario{sprint} tramite una lista puntata contenente la descrizione di essi e le \glossario{issue} assegnate a ogni obbiettivo;
 
-        \item \textbf{Consuntivo}.
-        
-        Tabella composta dalle colonne: "Identificativo richiesta di modifica", "Ruolo", "Ore sviluppo", "Ore verifica" e "Stato".
-        Dove "Stato" viene indicato seguendo la convenzione \hyperref[par:stati]{Stati delle richieste di modifica}.
-        
-        \item \textbf{Retrospettiva}.
-        
-        Descrizione dei problemi e dei rischi verificati durante lo \glossario{sprint}.
+        \item \textbf{Preventivo}: contiene il preventivo orario e il preventivo economico per lo \glossario{sprint};
 
-        \item \textbf{Aggiornamento risorse rimaste}.
+
+        \item \textbf{Consuntivo}: contiene il consuntivo orario e il consuntivo economico per lo sprint;
         
-        Aggiornamento delle risorse restanti in seguito allo \glossario{sprint} tramite la tabella:
-        "Ruolo", "Ore rimanenti".
-        
+        \item \textbf{Retrospettiva}: contiene la valutazione dello \glossario{sprint} appena concluso, l'elenco e la discussione dei problemi riscontrati e i possibili miglioramenti;
+
+        \item \textbf{Aggiornamento risorse rimaste}: contiene l'aggiornamento delle risorse restanti in seguito allo \glossario{sprint};
+
+
+        \item \textbf{Aggiornamento piano}: contiene le informazioni su eventuali modifiche al piano di progetto.
+        In particolare indica le parti cambiate e le motivazioni dei cambiamenti; 
+
+        \item \textbf{Aggiornamento rischi}
     \end{enumerate}
 
 \end{enumerate}
+
+\paragraph{Glossario}
+
+\subparagraph{Scopo}
+Questo documento ha lo scopo di fornire una definizione condivisa degli acronimi e dei termini tecnici usati nei documenti.
+
+\subparagraph{Autore} 
+L'autore di questo documento è l'Amministratore.
+
+\subparagraph{Input}
+Gli input per la stesura del documento del Glossario derivano direttamente dalla fase di stesura dei documenti.
+
+\subparagraph{Struttura}
+Il documento è organizzato come un dizionario in cui i termini vengono indicati raggruppati per iniziale e ordinati in ordine lessicografico.
+
+
+\paragraph{Specifica Tecnica}
+
+\subparagraph{Scopo}
+Questo documento ha lo scopo di descrivere le tecnologie utilizzate nel progetto e i risultati ottenuti dall'attività di progettazione.
+
+\subparagraph{Autore} 
+L'autore di questo documento è il Progettista.
+
+\subparagraph{Input}
+Gli input per la stesura del documento della Specifica Tecnica derivano soprattutto dall'attività di progettazione.
+
+\subparagraph{Struttura}
+\label{subsec:struttura_specifica}
+La struttura del documento Specifica Tecnica è composta dalle seguenti sezioni:
+\begin{enumerate}
+    \item \textbf{Introduzione}: indica lo scopo del documento e i riferimenti. 
+
+    \item \textbf{Tecnologie utilizzate}: descrive le tecnologie utilizzate per l'implementazione del sistema e perché sono state scelte;
+
+    \item \textbf{Architettura}: descrive l'architettura che verrà utilizzata per il sistema;
+
+    \item \textbf{Progettazione ad alto livello}: descrive la divisione del sistema in componenti (o moduli) specificando le loro interfacce;
+
+    \item \textbf{Progettazione di dettaglio}: divide i componenti in classi utilizzando lo strumento dei diagrammi delle classi e ne fornisce una specifica.
+    Descrive la progettazione della base dati utilizzando lo strumento dei diagrammi Entity-Relationship;
+
+    \item \textbf{Design pattern usati}: elenca i design pattern utilizzati nella progettazione di dettaglio.
+
+\end{enumerate}
+
+
+\paragraph{Manuale Utente}
+
+\subparagraph{Scopo}
+Questo documento ha lo scopo di spiegare agli utenti come installare, avviare e utilizzare il sistema prodotto.
+
+\subparagraph{Autore} 
+L'autore di questo documento è il Progettista.
+
+\subparagraph{Input}
+Gli input per la stesura del documento Manuale Utente derivano dall'analisi del sistema prodotto.
+
+\subparagraph{Struttura}
+Il manuale utente è diviso nelle seguenti sezioni:
+\begin{itemize}
+    \item \textbf{Introduzione}: breve descrizione dello scopo del documento e dei riferimenti usati per la stesura;
+
+    \item \textbf{Requisiti minimi per l'uso}: specifica i requisiti minimi necessari per l'utilizzo del software;
+
+    \item \textbf{Installazione}: guida l'utente nell'installazione del software;
+
+    \item \textbf{Avvio}: spiega come avviare il software;
+
+    \item \textbf{Utilizzo}: spiega all'utente come utilizzare il software, con esempi pratici e illustrazioni;
+\end{itemize}
+
+
+\subsubsection{Strumenti}
+Gli strumenti elencati in seguito sono approfonditi nella sezione Strumenti
+\begin{itemize}
+    \item \glossario{Git};
+    \item \glossario{GitHub};
+    \item \glossario{Visual Studio Code};
+    \item \glossario{LaTex};
+    \item \glossario{Google Docs}.
+\end{itemize}
