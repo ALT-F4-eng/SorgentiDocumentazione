@@ -295,7 +295,7 @@ Il componente backend del progetto è sviluppato prevalentemente in Python, avva
     \item Un’organizzazione modulare del codice, che prevede la suddivisione in sottocartelle in base alle funzionalità implementate.
     \item Le classi dedicate a intercettare e gestire le chiamate HTTP vengono collocate nella cartella \texttt{backend/view}, al fine di separare le responsabilità legate all’interfaccia utente e al routing.
     \item Le classi che si occupano delle operazioni sui dati e dell’interazione con il database sono contenute in \texttt{backend/model}, garantendo una chiara separazione dei livelli di accesso ai dati.
-    \item Le classi responsabili della comunicazione e del coordinamento tra i modelli e le view risiedono in \texttt{backend/controller}, facilitando l’implementazione del pattern MVC (Model-View-Controller) e migliorando la manutenibilità del codice.
+    \item Le classi responsabili della comunicazione e del coordinamento tra i modelli e le view devono essere adibite con metodi di conversione dei tipi, al fine di ridurre la dipendenza tra oggetti secondo l'architettura esagonale.
 \end{itemize}
 
 \subsubsection{Codifica Python}
@@ -328,13 +328,13 @@ Per quanto concerne il codice scritto in TypeScript, si raccomanda di:
 \begin{itemize}
     \item Utilizzare la tipizzazione statica per ridurre al minimo la possibilità di errori in fase di compilazione e per garantire una maggiore robustezza del codice.
     \item Seguire le best practices della programmazione orientata agli oggetti o di quella funzionale, a seconda del contesto applicativo, in modo da scrivere codice chiaro, efficiente e facilmente estendibile.
-    \item Adottare strumenti di linting e testing, che permettano di individuare tempestivamente eventuali anomalie e di mantenere elevati standard qualitativi.
+    \item Adottare attività di linting (fase di analisi dello stile del codice) e testing, che permettano di individuare tempestivamente eventuali anomalie e di mantenere elevati standard qualitativi.
 \end{itemize}
 
 \subsubsection{Codifica CSS}
 La scrittura del codice CSS è regolata da linee guida volte a garantire una gestione chiara e modulare degli stili:
 \begin{itemize}
-    \item Si raccomanda l’adozione di metodologie di naming (ad es. BEM) per facilitare l’organizzazione e la manutenzione dei fogli di stile.
+    \item Si raccomanda l’adozione di metodologie di naming (ad es. a secondo del tipo se blocco, elemento o variante) per facilitare l’organizzazione e la manutenzione dei fogli di stile.
     \item È consigliabile la separazione dei file CSS in base alle componenti o alle sezioni della pagina, distinguendo tra stili specifici e quelli relativi al layout generale.
     \item Gli stili devono essere ottimizzati per garantire la compatibilità cross-browser e un design responsive, in modo da assicurare un’esperienza utente coerente su diversi dispositivi.
 \end{itemize}
@@ -344,7 +344,7 @@ Il codice HTML deve essere redatto nel rispetto degli standard internazionali e 
 \begin{itemize}
     \item Si raccomanda l’utilizzo di tag semanticamente corretti, al fine di migliorare l’accessibilità e l’ottimizzazione per i motori di ricerca.
     \item La struttura del documento HTML deve essere ordinata e ben organizzata, facilitando la manutenzione e l’integrazione con altri framework e librerie.
-    \item È imprescindibile adottare le specifiche W3C, garantendo così la validità del markup e la compatibilità con i browser moderni.
+    \item Adottare le specifiche W3C, garantendo così la validità del markup e la compatibilità con i browser moderni.
 \end{itemize}
 
 \subsubsection{Codifica SQL}
