@@ -1,0 +1,96 @@
+
+\subsection{Test di sistema}
+(Da RFF-14 fino a RFF-20) (FYI:il tracciamento c'è sul docs, ma qua non lo metto per adesso, dato che ID non sono ancora giuste)
+\begin{tabularx}{\textwidth}{|c|X|c|}
+    \hline
+    \textbf{ID} & \textbf{Descrizione} & \textbf{Stato}\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che l’utente possa salvare un test & S\\
+    \hline
+    \label{ts:ts} T.S. & 
+    Verificare che l’utente possa visualizzare la lista dei test salvati, in particolare per ogni test deve visualizzare:
+    \begin{itemize}
+        \item Il nome del test
+        \item Il nome del dataset utilizzato
+        \item La data di esecuzione del test
+    \end{itemize} 
+    E nel caso se non ci fosse presente nessun test salvato l’utente verrà notificato dal sistema
+    & S\\
+    \hline
+    \label{ts:ts} T.S. & 
+    Verificare che l’utente possa modificare un test salvato, deve poter quindi:  
+    \begin{itemize}
+        \item Rinominare un test salvato
+        \item eliminare un test salvato
+    \end{itemize} 
+    & S\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che l’utente possa caricare un test salvato & S\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che il sistema possa individuare che il nome di un test salvato inserito dall’utente è invalido & S\\
+    \hline
+    \label{ts:ts} T.S. & 
+    Verificare che l'utente possa visualizzare i risultati del test, deve poter visualizzare quindi: 
+    \begin{itemize}
+        \item i risultati da uno specificato numero di pagina che vi appartengono
+        \item il numero di pagina massima dei risultati
+    \end{itemize} 
+    & S\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che il sistema possa individuare che il numero di pagina inserita dall’utente è invalida & S\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che l’utente possa visualizzare la lista degli LLM salvati, e nel caso se non ci fosse presente nessun LLM salvato l’utente verrà notificato dal sistema & S\\
+    \hline
+    \label{ts:ts} T.S. & 
+    Verificare che l’utente possa modificare un LLM salvato, deve poter quindi: 
+    \begin{itemize}
+        \item Eliminare un LLM salvato
+        \item Rinominare un LLM salvato
+    \end{itemize} 
+    & S\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che l’utente possa salvare un nuovo LLM & S\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che il sistema possa determinare che il nome di un LLM salvato inserito dall’utente è invalido & S\\
+    \hline
+    \label{ts:ts} T.S. & 
+    Verificare che l’utente possa visualizzare in dettaglio un LLM salvato, quindi deve poter visualizzare: 
+    \begin{itemize}
+        \item il nome dell LLM
+        \item la data di ultima modifica agli LLM
+        \item l’URL associato
+        \item Le chiavi associate
+    \end{itemize} 
+    & S\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che il sistema possa individuare che un URL inserito dall’utente è invalido & S\\
+    \hline
+    \label{ts:ts} T.S. & 
+    Verificare che l’utente possa modificare un LLM salvato, quindi deve poter modificare:
+    \begin{itemize}
+        \item il nome dell LLM
+        \item l’URL associato
+        \item Le chiavi associate
+    \end{itemize} 
+    & S\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che il sistema possa determinare che le chiavi associate inserite dall’utente sono invalide & S\\
+    \hline
+    \label{ts:ts} T.S. & 
+    Verificare che l’utente possa gestire gli insiemi di coppie chiave-valore associate alla creazione delle richieste HTTP verso l’LLM, in particolare deve poter: 
+    \begin{itemize}
+        \item Visualizzare le coppie chiave-valore
+        \item Aggiungere una coppia chiave-valore
+        \item Modificare una coppia chiave-valore
+    \end{itemize} 
+    & S\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che il sistema possa determinare che una coppia-valore inserita dall’utente è invalido & S\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che il sistema possa possa determinare che il file JSON selezionato dall’utente è invalido & S\\
+    \hline
+    \label{ts:ts} T.S. & Verificare che il sistema possa determinare quali test salvati possono essere confrontati con il test caricato & S\\
+    \hline
+\end{tabularx}
+
+
