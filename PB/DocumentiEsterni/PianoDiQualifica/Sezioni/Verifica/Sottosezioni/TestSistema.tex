@@ -1,0 +1,118 @@
+\subsection{Test di sistema}
+\label{subsec:test_sistema}
+
+\begin{tabularx}{\textwidth}{|c|X|c|}
+    \hline
+    \textbf{ID} & \textbf{Descrizione} & \textbf{Stato}\\
+    \hline
+    \label{ts:ts17} TS.17 & Verificare che l'utente possa visualizzare nome e data dell'ultimo aggiornamento del dataset caricato & \\
+    \hline
+    \label{ts:ts18} TS.18 & Verificare che l'utente possa rinonimare un dataset &  \\
+    \hline
+    \label{ts:ts19} TS.19 & Verificare che l'utente visualizzi un messaggio di errore se il nome per il dataset inserito non è valido, cioè se è: %17.04 
+                            \begin{itemize}
+                                \item vuoto;
+                                \item composto da soli spazi;
+                                \item già utilizzato per un altro dataset.
+                            \end{itemize}  
+                            & \\ 
+    \hline
+    \label{ts:ts20} TS.20 & Verificare che l'utente possa caricare un dataset sovrascrivendo il dataset attualmente caricato & \\
+    \hline
+    \label{ts:ts21} TS.21 & Verificare che il sistema, caricato un test, gli associ correttamente nome e versione del dataset utilizzato & \\ 
+    \hline
+    \label{ts:ts22} TS.22 & Verificare che il sistema gestisca correttamente la paginazione dei risultati del test caricato & \\ 
+    \hline
+    \label{ts:ts23} TS.23 & Verificare che l'utente visualizzi correttamente i risultati del test, l'utente deve visualizzare:
+                            \begin{itemize}
+                                \item i risultati del test per ogni domanda del dataset testato, quindi la risposta ottenuta e il grado di similarità;
+                                \item la media e la deviazione standard dei risultati del test;
+                                \item i risultati del test raggruppati nei seguenti range: [0, 0.2], [0.2, 0.4], [0.4, 0.6], [0.6, 0.8], [0.8, 1];
+                                \item la percentuale di risposte corrette ottenute durante il test.
+                            \end{itemize}  & \\ 
+    \hline
+    \label{ts:ts24} TS.24 & Verificare che l'utente possa visualizzare una lista scorrevole di tutti gli LLM possibili per il testing & \\ 
+    \hline
+    \label{ts:ts25} TS.25 & Verificare che l'utente possa visualizzare per ogni LLM salvato:
+                            \begin{itemize}
+                            \item nome e data di ultimo aggiornamento;
+                            \item elementi di configurazione per la chiamata HTTP all'LLM.
+                            \end{itemize} & \\ 
+    \hline
+    \label{ts:ts26} TS.26 & Verificare che l'utente possa selezionare l'LLM da testare prima di iniziare il test & \\ %RFF-1.03
+    \hline
+    \label{ts:ts27} TS.27 & Verificare che l'utente visualizzi un messaggio di errore nel caso ci siano stati problemi nell'ottenimento delle informazioni degli LLM & \\ %RFF-1.04
+    \hline
+    \label{ts:ts28} TS.28 & Verificare che l'utente possa eliminare un LLM salvato & \\ %RFF-2.03
+    \hline
+    \label{ts:ts29} TS.29 & Verificare che l'utente, prima dell'eliminazione dell'LLM salvato, visualizzi:
+                            \begin{itemize}
+                                \item elenco dei test realizzati sull'LLM che verranno eliminati di conseguenza;
+                                \item richiesta di conferma dell'eliminazione.
+                            \end{itemize} & \\ %RFF-2.04 2.05
+    \hline
+    \label{ts:ts30} TS.30 & Verificare che l'utente possa modificare un LLM salvato e quindi possa:
+                            \begin{itemize}
+                                \item rinonimare l'LLM;
+                                \item modificare elementi di configurazione per la chiamata HTTP all'LLM;
+                                \item aggiungere elementi di configurazione per la chiamata HTTP all'LLM. 
+                            \end{itemize} & \\ %RFF-3.08 RFF4.01 <->4.10
+    \hline
+    \label{ts:ts31} TS.31 & Verificare che l'utente possa aggiungere un nuovo LLM testabile inserendo:
+                            \begin{itemize}
+                                \item nome del nuovo LLM;
+                                \item elementi di configurazione per la chiamata HTTP all'LLM.
+                            \end{itemize} & \\ %RFF-2.06 5.01 <->5.08
+    \hline
+    \label{ts:ts32} TS.32 & Verificare che l'utente visualizzi un messaggio di errore nel caso gli elementi 
+    di configurazione per la chiamata HTTP all'LLM siano in un formato non valido & \\ %RFF-4.11 <->4.13 5.09 <->5.11
+\hline
+\end{tabularx}
+
+
+\subsubsection{Tracciamento test di sistema}
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{| l | c |}
+    \hline
+        \textbf{ID} & 
+        \textbf{Requisito}\\
+    \hline
+        TS.17 & RFO-17.02 RFO-17.01 \\
+    \hline
+        TS.18 & RFO-17.03 \\
+    \hline
+        TS.19 & RFO-17.04 \\
+    \hline
+        TS.20 & RFO-17.05 \\
+    \hline
+        TS.21 & RFO-18.01, RFO-18.02 \\
+    \hline
+        TS.22 & RFO-18.03, RFO-18.04, RFO-18.05, RFO-18.06 \\
+    \hline
+        TS.23 & RFO-19.01, RFO-19.02, RFO-19.03, RFO-19.04, RFO-19.05, RFO-19.06, RFO-19.07\\
+    \hline
+        TS.24 & RFF-1.01\\
+    \hline
+        TS.25 & RFF-1.02, RFF-2.01, RFF-2.02, RFF-3.01, RFF-3.02, RFF-3.03, RFF-3.04, RFF-3.05, RFF-3.06, RFF-3.07\\
+    \hline
+        TS.26 & RFF-1.03\\
+    \hline
+        TS.27 & RFF-1.04\\
+    \hline
+        TS.28 & RFF-2.03\\
+    \hline 
+        TS.29 & RFF-2.04, RFF-2.05\\
+    \hline 
+        TS.30 & RFF-3.08, RFF-4.01, RFF-4.02, RFF-4.03, RFF-4.04, RFF-4.05, RFF-4.06, RFF-4.07, RFF-4.08, RFF-4.09, RFF-4.10\\
+    \hline 
+        TS.31 & RFF-2.06, RFF-5.01, RFF-5.02, RFF-5.03, RFF-5.04, RFF-5.05, RFF-5.06, RFF-5.07, RFF-5.08\\
+    \hline
+        TS.32 & RFF-4.11, RFF-4.12, RFF-4.13, RFF-5.09, RFF-5.10, RFF-5.11\\
+    \hline
+\end{tabular}}
+\caption{Tracciamento test di sistema}
+\label{tab:tracciamento_test_sistema} 
+\end{table}
