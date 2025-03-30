@@ -86,23 +86,23 @@ Le date per lo sviluppo dell'\glossario{RTB} sono state:
 \end{itemize}
 Le ore per ruolo utilizzate rispetto al totale e le considerazioni sono indicate nella seguente lista:
 \begin{itemize}
-    \item Responsabile: sono state utilizzate il 46\% delle ore.
-    Quindi preventivo per il ruolo è stato ecceduto per una soglia accettabile;
+    \item Responsabile: sono state utilizzate il 46\% delle ore totali del ruolo.
+    Quindi il preventivo per il ruolo è stato ecceduto di una soglia accettabile;
 
-    \item Amministratore: sono state utilizzate il 59\% delle ore.
+    \item Amministratore: sono state utilizzate il 59\% delle ore totali del ruolo.
     Quindi il preventivo per il ruolo è risultato corretto;
     
     
-    \item Analista: sono state utilizzate il 95\% delle ore per questo ruolo, quindi il preventivo è risultato troppo stretto.
+    \item Analista: sono state utilizzate il 95\% delle ore totali del ruolo, quindi il preventivo è risultato troppo stretto.
     Dato che l'analisi dei requisiti è stata eseguita in modo approfondito le ore rimaste per questo ruolo verranno riassegnate;
 
-    \item Progettista: sono state utilizzate il 0\% delle ore per questo ruolo, infatti come previsto il gruppo ha sviluppato il \glossario{PoC} come un artefatto usa e getta;
+    \item Progettista: sono state utilizzate il 0\% delle ore totali del ruolo, infatti come previsto il gruppo ha sviluppato il \glossario{PoC} come un artefatto usa e getta;
     
-    \item Programmatore: sono state utilizzate il 20\% delle ore per questo ruolo.
+    \item Programmatore: sono state utilizzate il 20\% delle ore totali del ruolo.
     In particolare il gruppo ha notato che le ore preventivate per il ruolo di Programmatore per l'intero progetto sono eccessive e quindi verranno riassegnate;
     
-    \item Verificatore: sono state utilizzate il 40\% delle ore per questo ruolo.
-    Dal consuntivo per questo ruolo il gruppo ha 
+    \item Verificatore: sono state utilizzate il 40\% delle ore totali del ruolo.
+    Dal consuntivo il gruppo ha dedotto che per questo ruolo le ore preventivate fino al termine del progetto non fossero sufficienti. Perciò una buona parte delle ore riassegnate andranno a questo ruolo.
 \end{itemize}
 Nella \hyperref[tab:consuntivo_RTB]{Tabella \ref{tab:consuntivo_RTB}} viene riportato il consuntivo delle ore e dei costi per ruolo sostenuti fino all'\glossario{RTB}:
 \begin{table}[H]
@@ -116,7 +116,7 @@ Nella \hyperref[tab:consuntivo_RTB]{Tabella \ref{tab:consuntivo_RTB}} viene ripo
             \textbf{Costo totale} \\
         \hline
         \hline
-            Responsabile & 20.5 & 30€ & 615€ \\
+            Responsabile & 20.25 & 30€ & 607.5€ \\
         \hline
             Amministratore & 32 & 20€ & 640€ \\
         \hline 
@@ -128,13 +128,14 @@ Nella \hyperref[tab:consuntivo_RTB]{Tabella \ref{tab:consuntivo_RTB}} viene ripo
         \hline 
             Verificatore & 59.75 & 15€ & 896.25€ \\
         \hline 
-            \textbf{Totale} & \textbf{217.75} & \textbf{N/A} & \textbf{4478.75€} \\ 
+            \textbf{Totale} & \textbf{217.5} & \textbf{N/A} & \textbf{4471.25€} \\ 
         \hline  
     \end{tabular}}
     \caption{Consuntivo RTB.}
     \label{tab:consuntivo_RTB} 
 \end{table}
-In \hyperref[fig:preventivo_consuntivo]{Figura \ref{fig:preventivo_consuntivo}} viene riportato un diagramma a blocchi che mostra il confronto tra ore preventivate e ore utilizzate per ogni ruolo:
+Il gruppo ha quindi sforato il budget pianificato fino al \glossario{RTB} di una soglia non eccessiva pari a \textbf{206.25€}.
+Viene poi riportato in \hyperref[fig:preventivo_consuntivo]{Figura \ref{fig:preventivo_consuntivo}} un diagramma a blocchi che mostra il confronto tra ore preventivate e ore utilizzate per ogni ruolo:
 \begin{figure}[H]
     \centering
     \resizebox{\textwidth}{!}{
@@ -154,7 +155,7 @@ In \hyperref[fig:preventivo_consuntivo]{Figura \ref{fig:preventivo_consuntivo}} 
         ]
 
             \addplot coordinates {(Amministratore,32) (Responsabile,20) (Analista,70) (Progettista, 0) (Programmatore, 40) (Verificatore, 45)};
-            \addplot coordinates {(Amministratore,32) (Responsabile,20.5) (Analista,74) (Progettista, 0) (Programmatore, 31) (Verificatore, 59.75)};
+            \addplot coordinates {(Amministratore,32) (Responsabile,20.25) (Analista,74.5) (Progettista, 0) (Programmatore, 31) (Verificatore, 59.75)};
 
             \legend{Preventivo, Consuntivo}
 
@@ -163,15 +164,22 @@ In \hyperref[fig:preventivo_consuntivo]{Figura \ref{fig:preventivo_consuntivo}} 
     \caption{Grafico di confronto tra preventivo e consuntivo RTB.}
     \label{fig:preventivo_consuntivo}
 \end{figure}
-Il gruppo ha quindi sforato il budget pianificato di una soglia non eccessiva pari a 213.75€.
 
 \subsection{PB: Product Baseline}
 \label{sec:PB}
 Si tratta della seconda revisione, realizzata per valutare il sistema prodotto e le scelte progettuali fatte.
-Questa revisione prevede la partecipazione 
 Raggiunta la data stabilita dal gruppo per la \glossario{PB} dovranno essere realizzati i seguenti prodotti:
 \begin{itemize}
+    \item Lettere di presentazione;
+    \item Norme di Progetto;
+    \item Piano di Qualifica;
+    \item Piano di Progetto;
+    \item Analisi dei Requisiti;
+    \item Verbali interni;
+    \item Verbali esterni;
+    \item Glossario;
     \item Specifica Tecnica;
+    \item Manuale Utente;
     \item \glossario{MVP}.
 \end{itemize}
 
@@ -179,7 +187,7 @@ Raggiunta la data stabilita dal gruppo per la \glossario{PB} dovranno essere rea
 Il gruppo considera le seguenti date per lo sviluppo dell'\glossario{PB}:
 \begin{itemize}
     \item Data di inizio: 24 Marzo 2025;
-    \item Data di fine: 30 Maggio 2025.
+    \item Data di fine: \textbf{30 Maggio 2025}.
 \end{itemize}
 A seguito del consuntivo dell'\glossario{RTB} il gruppo ha definito la ridistribuzione delle ore per ruolo rimaste mostrate in \hyperref[tab:stima_costi_PB]{Tabella \ref{tab:stima_costi_PB}}:
 \begin{table}[H]
@@ -203,12 +211,12 @@ A seguito del consuntivo dell'\glossario{RTB} il gruppo ha definito la ridistrib
         \hline 
             Programmatore & 90 & 15€ & 1350€ \\
         \hline 
-            Verificatore & 105 & 15€ & 1575€ \\
+            Verificatore & 109.75 & 15€ & 1646.25€ \\
         \hline 
-            \textbf{Totale} & \textbf{217.75} & \textbf{N/A} & \textbf{6702.5€} \\ 
+            \textbf{Totale} & \textbf{350.5} & \textbf{N/A} & \textbf{6773.75€} \\ 
         \hline  
     \end{tabular}}
-    \caption{Ripartizione ore e costi fino PB.}
+    \caption{Ripartizione ore e costi fino al PB.}
     \label{tab:stima_costi_PB} 
 \end{table}
-Il costo preventivato fino al \glossario{PB} risulta quindi essere pari a 11181.25€ lasciando uno scarto di 68.75€.
+Considerando il costo già speso, il costo preventivato fino al \glossario{PB} risulta quindi essere pari a \textbf{11245€} lasciando uno scarto di 5€.
