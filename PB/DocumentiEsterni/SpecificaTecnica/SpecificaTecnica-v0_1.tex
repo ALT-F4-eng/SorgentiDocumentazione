@@ -1,0 +1,29 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{custom}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Impostare la compatibilità con la versione installata
+
+
+%--------------------VARIABILI--------------------
+\def\lastversion{v0.1}
+\def\title{Specifica Tecnica}
+\def\date{27 Marzo 2025}
+%------------------------------------------------
+
+\begin{document}
+
+\primapagina
+
+\begin{registromodifiche}
+        v0.1 & 27 Marzo 2025  & Francesco Savio & Guirong Lan & Sezioni \hyperref[sec:introduzione_st]{Introduzione}\\
+    \hline
+\end{registromodifiche}
+
+ \tableofcontents
+
+\newpage
+
+\input{Sezioni/Introduzione/Introduzione.tex}
+
+
+\end{document}
