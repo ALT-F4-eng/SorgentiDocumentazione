@@ -45,14 +45,41 @@ vengono indicate le \glossario{metriche} di riferimento, se disponibili.
     \hline
         M.PR.PRM & \makecell{Percentuale requisiti \\ obbligatori soddisfatti} & $100\%$ & $100\%$ \\
     \hline
-        M.PR.PRO & \makecell{Percentuale requisiti \\ opzionali soddisfatti} & $\geq 0\%$ & $100\%$ \\
-    \hline    
+        M.PR.PRO & \makecell{Percentuale requisiti \\ opzionali soddisfatti} & $\geq 0\%$ & $100\%$ \\   
+    \hline
+        M.PR.CC & Code Coverage & $\geq 70\%$ & $\geq 80\%$ \\
+    \hline
+        M.PR.BC & Branch Coverage & $\geq 70\%$ & $\geq 80\%$ \\
+    \hline
+        M.PR.COC & Complessità ciclomatica & $\leq 10$ & $\leq 5$ \\
+    \hline
+        M.PR.LCPM & \makecell{Numero di linee medie \\ di codice per metodo} & $\leq 50$ & $\leq 25$ \\
+    \hline
 \end{tabular}
 \caption{Metriche per processo di Sviluppo}
 \label{tab:metriche_sviluppo} 
 \end{table}
 
 \subsubsection{Processi di supporto}
+
+\paragraph{Verifica}
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{| l | l | l | l |}
+    \hline
+        \textbf{Identificativo} & 
+        \textbf{Nome} &
+        \textbf{Valore ammissibile} &
+        \textbf{Valore ottimo}\\
+    \hline
+        M.PR.PTS & Percentuale test superati & $\geq 80\%$ & $100\%$ \\
+    \hline
+\end{tabular}}
+\caption{Metriche per processo di Verifica}
+\label{tab:metriche_verifica} 
+\end{table}
+
 \paragraph{Documentazione}
 \begin{table}[H]
     \centering
@@ -83,6 +110,12 @@ vengono indicate le \glossario{metriche} di riferimento, se disponibili.
         \textbf{Valore ottimo}\\
     \hline
         M.PC.MS & Metriche Soddisfatte & $\geq 75\%$ & $100\%$ \\
+    \hline
+        M.PR.TR & Tempo di risposta & $\leq 4$ secondi a domanda & $\leq 3$ secondi a domanda \\
+    \hline
+        M.PR.BS & Browser supportati & $\geq 80\%$ & $100\%$ \\
+    \hline
+        M.PR.GE & Gestione degli errori & $\geq 70\%$ & $100\%$ \\
     \hline
 \end{tabular}}
 \caption{Metriche per processo di Accertamento della Qualità}
