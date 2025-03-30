@@ -1,13 +1,13 @@
 
 \subsection{Test di sistema}
-(Da RFF-14 fino a RFF-20) (FYI:il tracciamento c'è sul docs, ma qua non lo metto per adesso, dato che ID non sono ancora giuste)
+(Da RFF-14 fino a RFF-20)
 \begin{tabularx}{\textwidth}{|c|X|c|}
     \hline
     \textbf{ID} & \textbf{Descrizione} & \textbf{Stato}\\
     \hline
-    \label{ts:ts} T.S. & Verificare che l’utente possa salvare un test & S\\
+    \label{ts:ts1} T.S.1 & Verificare che l’utente possa salvare un test & S\\
     \hline
-    \label{ts:ts} T.S. & 
+    \label{ts:ts2} T.S.2 & 
     Verificare che l’utente possa visualizzare la lista dei test salvati, in particolare per ogni test deve visualizzare:
     \begin{itemize}
         \item Il nome del test
@@ -17,7 +17,7 @@
     E nel caso se non ci fosse presente nessun test salvato l’utente verrà notificato dal sistema
     & S\\
     \hline
-    \label{ts:ts} T.S. & 
+    \label{ts:ts3} T.S.3 & 
     Verificare che l’utente possa modificare un test salvato, deve poter quindi:  
     \begin{itemize}
         \item Rinominare un test salvato
@@ -25,11 +25,11 @@
     \end{itemize} 
     & S\\
     \hline
-    \label{ts:ts} T.S. & Verificare che l’utente possa caricare un test salvato & S\\
+    \label{ts:ts4} T.S.4 & Verificare che l’utente possa caricare un test salvato & S\\
     \hline
-    \label{ts:ts} T.S. & Verificare che il sistema possa individuare che il nome di un test salvato inserito dall’utente è invalido & S\\
+    \label{ts:ts5} T.S.5 & Verificare che il sistema possa individuare che il nome di un test salvato inserito dall’utente è invalido & S\\
     \hline
-    \label{ts:ts} T.S. & 
+    \label{ts:ts6} T.S.6 & 
     Verificare che l'utente possa visualizzare i risultati del test, deve poter visualizzare quindi: 
     \begin{itemize}
         \item i risultati da uno specificato numero di pagina che vi appartengono
@@ -37,11 +37,11 @@
     \end{itemize} 
     & S\\
     \hline
-    \label{ts:ts} T.S. & Verificare che il sistema possa individuare che il numero di pagina inserita dall’utente è invalida & S\\
+    \label{ts:ts7} T.S.7 & Verificare che il sistema possa individuare che il numero di pagina inserita dall’utente è invalida & S\\
     \hline
-    \label{ts:ts} T.S. & Verificare che l’utente possa visualizzare la lista degli LLM salvati, e nel caso se non ci fosse presente nessun LLM salvato l’utente verrà notificato dal sistema & S\\
+    \label{ts:ts8} T.S.8 & Verificare che l’utente possa visualizzare la lista degli LLM salvati, e nel caso se non ci fosse presente nessun LLM salvato l’utente verrà notificato dal sistema & S\\
     \hline
-    \label{ts:ts} T.S. & 
+    \label{ts:ts9} T.S.9 & 
     Verificare che l’utente possa modificare un LLM salvato, deve poter quindi: 
     \begin{itemize}
         \item Eliminare un LLM salvato
@@ -49,11 +49,11 @@
     \end{itemize} 
     & S\\
     \hline
-    \label{ts:ts} T.S. & Verificare che l’utente possa salvare un nuovo LLM & S\\
+    \label{ts:ts10} T.S.10 & Verificare che l’utente possa salvare un nuovo LLM & S\\
     \hline
-    \label{ts:ts} T.S. & Verificare che il sistema possa determinare che il nome di un LLM salvato inserito dall’utente è invalido & S\\
+    \label{ts:ts11} T.S.11 & Verificare che il sistema possa determinare che il nome di un LLM salvato inserito dall’utente è invalido & S\\
     \hline
-    \label{ts:ts} T.S. & 
+    \label{ts:ts12} T.S.12 & 
     Verificare che l’utente possa visualizzare in dettaglio un LLM salvato, quindi deve poter visualizzare: 
     \begin{itemize}
         \item il nome dell LLM
@@ -63,9 +63,9 @@
     \end{itemize} 
     & S\\
     \hline
-    \label{ts:ts} T.S. & Verificare che il sistema possa individuare che un URL inserito dall’utente è invalido & S\\
+    \label{ts:ts13} T.S.13 & Verificare che il sistema possa individuare che un URL inserito dall’utente è invalido & S\\
     \hline
-    \label{ts:ts} T.S. & 
+    \label{ts:ts14} T.S.14 & 
     Verificare che l’utente possa modificare un LLM salvato, quindi deve poter modificare:
     \begin{itemize}
         \item il nome dell LLM
@@ -74,9 +74,9 @@
     \end{itemize} 
     & S\\
     \hline
-    \label{ts:ts} T.S. & Verificare che il sistema possa determinare che le chiavi associate inserite dall’utente sono invalide & S\\
+    \label{ts:ts15} T.S.15 & Verificare che il sistema possa determinare che le chiavi associate inserite dall’utente sono invalide & S\\
     \hline
-    \label{ts:ts} T.S. & 
+    \label{ts:ts16} T.S.16 & 
     Verificare che l’utente possa gestire gli insiemi di coppie chiave-valore associate alla creazione delle richieste HTTP verso l’LLM, in particolare deve poter: 
     \begin{itemize}
         \item Visualizzare le coppie chiave-valore
@@ -85,12 +85,59 @@
     \end{itemize} 
     & S\\
     \hline
-    \label{ts:ts} T.S. & Verificare che il sistema possa determinare che una coppia-valore inserita dall’utente è invalido & S\\
+    \label{ts:ts17} T.S.17 & Verificare che il sistema possa determinare che una coppia-valore inserita dall’utente è invalido & S\\
     \hline
-    \label{ts:ts} T.S. & Verificare che il sistema possa possa determinare che il file JSON selezionato dall’utente è invalido & S\\
+    \label{ts:ts18} T.S.18 & Verificare che il sistema possa possa determinare che il file JSON selezionato dall’utente è invalido & S\\
     \hline
-    \label{ts:ts} T.S. & Verificare che il sistema possa determinare quali test salvati possono essere confrontati con il test caricato & S\\
+    \label{ts:ts19} T.S.19 & Verificare che il sistema possa determinare quali test salvati possono essere confrontati con il test caricato & S\\
     \hline
 \end{tabularx}
+
+\subsection{Tracciamento dei test di sistema}
+
+\begin{tabularx}{\textwidth}{|c|X|}
+    \hline
+    \textbf{ID} & \textbf{Requisito}\\
+    \hline
+    \label{ts:ts1} T.S.1 & RFF-14.01\\
+    \hline
+    \label{ts:ts2} T.S.2 & RFF-14.02,RFF-14.06,RFF-15.01,RFF-15.02,RFF-15.03\\
+    \hline
+    \label{ts:ts3} T.S.3 & RFF-14.03,RFF-14.04,RFF-15.04\\
+    \hline
+    \label{ts:ts4} T.S.4 & RFF-14.05\\
+    \hline
+    \label{ts:ts5} T.S.5 & RFF-15.05\\
+    \hline
+    \label{ts:ts6} T.S.6 & RFF-15.06, RFF-15.07\\
+    \hline
+    \label{ts:ts7} T.S.7 & RFF-15.08\\
+    \hline
+    \label{ts:ts8} T.S.8 & RFF-16.01,RFF-16.05\\
+    \hline
+    \label{ts:ts9} T.S.9 & RFF-16.02,RFF-16.03, RFF-17.01\\
+    \hline
+    \label{ts:ts10} T.S.10 & RFF-16.04\\
+    \hline
+    \label{ts:ts11} T.S.11 & RFF-17.02\\
+    \hline
+    \label{ts:ts12} T.S.12 & RFF-17.01,RFF-17.03,RFF-17.04,RFF-17.06\\
+    \hline
+    \label{ts:ts13} T.S.13 & RFF-17.05\\
+    \hline
+    \label{ts:ts14} T.S.14 & RFF-17.01,RFF-17.04,RFF-17.06,RFF-18.01\\
+    \hline
+    \label{ts:ts15} T.S.15 & RFF-17.07\\
+    \hline
+    \label{ts:ts16} T.S.16 & RFF-17.08,RFF-18.01,RFF-18.02,RFF-18.03\\
+    \hline
+    \label{ts:ts17} T.S.17 & RFF-18.04\\
+    \hline
+    \label{ts:ts18} T.S.18 & RFF-19.01,RFF-19.02\\
+    \hline
+    \label{ts:ts19} T.S.19 & RFF-20.01,RFF-20.02\\
+    \hline
+\end{tabularx}
+
 
 
