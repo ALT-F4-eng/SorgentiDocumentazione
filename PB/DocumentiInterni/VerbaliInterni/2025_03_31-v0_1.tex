@@ -1,0 +1,149 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{custom}
+
+
+%--------------------VARIABILI--------------------
+\def\lastversion{v0.1}
+\def\title{Verbale interno}
+\def\date{31 Marzo 2025}
+%------------------------------------------------
+
+\begin{document}
+
+\primapagina
+
+
+\begin{registromodifiche}
+        \lastversion & 1 Aprile 2025 & Marko Peric & & Stesura verbale interno \\
+        \hline 
+\end{registromodifiche}
+
+\tableofcontents
+
+\newpage
+
+\section{Registro presenze}
+\begin{itemize}
+    \item[] \textbf{Data}: 31 Marzo 2025
+    \item[] \textbf{Ora inizio}:  14:00
+    \item[] \textbf{Ora fine}: 16:00
+    \item[] \textbf{Piattaforma}: Discord	
+\end{itemize}
+
+\begin{table}[H]
+\centering
+{\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{| X | X |}
+    \hline
+        \textbf{\large Componente} & 
+        \textbf{\large Presenza} \\ 
+    \hline 
+    \hline
+        Eghosa Matteo Igbinedion Osamwonyi&
+        Presente \\
+    \hline 
+        Guirong Lan&
+        Presente \\
+    \hline 
+        Enrico Bianchi&
+        Presente \\
+    \hline 
+        Francesco Savio&
+        Presente \\
+    \hline 
+        Marko Peric&
+        Presente \\
+    \hline 
+        Pedro Leoni&
+        Presente \\
+    \hline 
+
+\end{tabularx}}
+\end{table}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Ordine del giorno}
+\begin{itemize}
+    \item Valutazione dei cambiamenti apportati alla gestione del lavoro con il nuovo \glossario{sprint};
+    \item Pianificazione delle attività da eseguire durante lo \glossario{sprint};
+    \item Discussione su come suddividere il lavoro di progettazione e di verifica in maniera equa tra i membri.
+\end{itemize}
+
+\subsection{Decisioni prese}
+\begin{itemize}
+    \item Poiché nello \glossario{sprint} 9, precedente, il membro a cui era stato assegnato il ruolo del responsabile era stato sovraccaricato di lavoro, si è dunque deciso di non assegnare questo ruolo a un singolo membro, ma a tre membri del gruppo.
+    \item Per raggiungere le 22.5 ore preventivate per il lavoro di progettazione in ogni \glossario{sprint}, si è deciso di pianificare le \glossario{issue} in maniera tale da raggiungere la soglia ed è anche stata superata leggermente.
+    \item Si è deciso di preassegnare anche i verificatori per tutte le \glossario{issue} pianificate durante lo sprint e non solo i membri che se ne occupano.
+    \item La decisione presa precedentemente di temporizzare le richieste e di effettuare stand up meeting a intervalli di 2 giorni è stata trovata molto utile dal gruppo.
+    \item I macrotemi della progettazione sono stati suddivisi in \glossario{issue} padre e suddivisi in \glossario{issue} minori, rendendo più semplice la pianificazione delle attività in maniera atomica.
+\end{itemize}
+
+\section{To Do/In progress}
+\begin{tabularx}{\textwidth}{|c|C|C|C|}
+    \hline
+        \textbf{Issue} & \textbf{Descrizione} & \textbf{Incaricato} & \textbf{Scadenza}\\
+    \hline
+        \#299 & Studio e stesura della tecnologia Flask nella Specifica Tecnica & Enrico Bianchi &  1 Aprile 2025\\
+    \hline
+        \#320 & Stesura dei test di accettazione nel Piano di Qualifica & Enrico Bianchi &  2 Aprile 2025 \\
+    \hline
+        \#325 & Aggiornamento del Piano di Qualifica con il termine dello sprint 9 & Marko Peric & 1 Aprile 2025 \\
+    \hline
+        \#326 & Aggiornamento della sezione Analisi dei rischi nel Piano di Progetto & Marko Peric & 1 Aprile 2025 \\
+    \hline
+        \#327 & Aggiornamento del Piano di Progetto con il termine dello sprint 9 e l'inizio dello sprint 10 & Marko Peric & 1 Aprile 2025 \\
+    \hline
+        \#328 & Correzione del Glossario & Pedro Leoni & 2 Aprile 2025\\
+    \hline
+        \#329 & Studio e stesura della tecnologia Python nella Specifica Tecnica & Guirong Lan & 1 Aprile 2025 \\
+    \hline
+        \#330 & Stesura della progettazione ad alto livello  del front end riguardante il componente principale nella Specifica Tecnica & Eghosa Matteo Igbinedion Osamwonyi & 3 Aprile 2025 \\
+    \hline
+        \#331 & Stesura della progettazione ad alto livello  del front end riguardante i dataset nella Specifica Tecnica & Pedro Leoni & 4 Aprile 2025 \\
+    \hline
+        \#332 & Stesura della progettazione ad alto livello  del front end riguardante i test nella Specifica Tecnica & Francesco Savio & 3 Aprile 2025\\
+    \hline 
+        \#333 & Stesura della progettazione ad alto livello  del front end riguardante gli LLM nella Specifica Tecnica & Eghosa Matteo Igbinedion Osamwonyi & 4 Aprile 2025\\
+    \hline
+        \#334 & Studio e stesura della tecnologia SQLAlchemy nella Specifica Tecnica & Eghosa Matteo Igbinedion Osamwonyi & 1 Aprile 2025\\
+    \hline
+        \#335 & Studio e stesura della tecnologia pytest nella Specifica Tecnica & Enrico Bianchi & 1 Aprile 2025\\
+    \hline
+        \#336 & Studio e stesura della tecnologia pydantic nella Specifica Tecnica & Eghosa Matteo Igbinedion Osamwonyi & 1 Aprile 2025 \\
+    \hline
+        \#337 & Studio e stesura della tecnologia pytorch nella Specifica Tecnica & Eghosa Matteo Igbinedion Osamwonyi & 1 Aprile 2025 \\
+    \hline
+        \#338 & Studio e stesura della tecnologia black nella Specifica Tecnica & Guirong Lan & 1 Aprile 2025\\
+    \hline
+        \#339 & Studio e stesura della tecnologia DI framework nella Specifica Tecnica & Guirong Lan & 1 Aprile 2025 \\
+    \hline
+        \#340 & Studio e stesura della tecnologia Angular nella Specifica Tecnica & Pedro Leoni & 1 Aprile 2025 \\
+    \hline
+        \#341 & Studio e stesura della tecnologia TypeScript nella Specifica Tecnica & Francesco Savio & 1 Aprile 2025 \\
+    \hline
+        \#342 & Studio e stesura della tecnologia Jest nella Specifica Tecnica & Enrico Bianchi & 1 Aprile 2025 \\
+    \hline
+        \#343 & Studio e stesura della tecnologia Chart.js nella Specifica Tecnica & Pedro Leoni & 1 Aprile 2025 \\
+    \hline
+        \#344 & Studio e stesura della tecnologia Docker nella Specifica Tecnica & Pedro Leoni & 1 Aprile 2025 \\
+    \hline
+        \#345 & Studio e stesura della tecnologia Hugging Face nella Specifica Tecnica & Francesco Savio & 1 Aprile 2025 \\
+    \hline
+        \#346 & Studio e stesura della tecnologia PostgreSQL nella Specifica Tecnica & Francesco Savio & 1 Aprile 2025 \\
+    \hline
+        \#347 & Stesura dell'architettura del sistema nella Specifica Tecnica & Pedro Leoni & 3 Aprile 2025 \\
+    \hline
+        \#348 & Stesura dell'architettura del frontend nella Specifica Tecnica & Enrico Bianchi & 4 Aprile 2025 \\
+    \hline
+        \#349 & Stesura dell'architettura del backend nella Specifica Tecnica & Guirong Lan & 3 Aprile 2025 \\
+    \hline
+        \#350 & Stesura del verbale interno & Marko Peric & 1 Aprile 2025\\
+    \hline
+
+ \end{tabularx}
+
+\end{document}
