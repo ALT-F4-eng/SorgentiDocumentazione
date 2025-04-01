@@ -24,6 +24,22 @@ dell'utente finale.
     \hline
         M.PR.CO & Correttezza Ortografica & $0$ & $0$ \\
     \hline
+        M.PR.CC & Code Coverage & $\geq 70\%$ & $\geq 80\%$ \\
+    \hline
+        M.PR.BC & Branch Coverage & $\geq 70\%$ & $\geq 80\%$ \\
+    \hline
+        M.PR.COC & Complessità ciclomatica & $\leq 10$ & $\leq 5$ \\
+    \hline
+        M.PR.TR & Tempo di risposta & $\leq 4$ secondi a domanda & $\leq 3$ secondi a domanda \\
+    \hline
+        M.PR.BS & Browser supportati & $\geq 80\%$ & $100\%$ \\
+    \hline
+        M.PR.LCPM & Numero di linee medie di codice per metodo & $\leq 50$ & $\leq 25$ \\
+    \hline
+        M.PR.PTS & Percentuale test superati & $\geq 80\%$ & $100\%$ \\
+    \hline
+        M.PR.GE & Gestione degli errori & $\geq 70\%$ & $100\%$ \\
+    \hline
     \end{tabular}}
     \caption{Metriche di prodotto}
     \label{tab:metriche_prodotto} 
@@ -40,17 +56,17 @@ come indicato nel processo di Accertamento della Qualità nelle Norme di Progett
         \textbf{Descrizione} &
         \textbf{Metriche associate}\\
     \hline
-        Funzionalità & Capacità del software di fornire funzioni adatte a rispettare i requisiti sviluppati nel documento Analisi dei Requisiti & M.PR.PRM, M.PR.PRO \\
+        Funzionalità & Capacità del software di fornire funzioni adatte a rispettare i requisiti sviluppati nel documento Analisi dei Requisiti & M.PR.PRM, M.PR.PRO, M.PR.PTS \\
     \hline
-        Affidabilità & Capacità del software di mantenere uno specificato livello di prestazioni in presenza di errori o malfunzionamenti & \\
+        Affidabilità & Capacità del software di mantenere uno specificato livello di prestazioni in presenza di errori o malfunzionamenti & M.PR.GE\\
     \hline
-        Efficienza & Capacità del software di fornire appropriate prestazioni in relazione alle risorse usate & \\
+        Efficienza & Capacità del software di fornire appropriate prestazioni in relazione alle risorse usate & M.PR.TR\\
     \hline
         Usabilità & Capacità del software di facilitare il reperimento delle informazioni dall'utente in modo che siano propriamente comprese & M.PR.CO \\
     \hline
-        Manutenibilità & Facilità nella modifica del software per l'aggiunta di nuove funzionalità & \\
+        Manutenibilità & Facilità nella modifica del software per l'aggiunta di nuove funzionalità & M.PR.CC, M.PR.BC, M.PR.COC, M.PR.LCPM\\
     \hline
-        Portabilità & Capacità del software di essere adattato a differenti ambienti operativi & \\
+        Portabilità & Capacità del software di essere adattato a differenti ambienti operativi & M.PR.BS\\
     \hline
     \end{tabularx}
     \caption{Caratteristiche di prodotto}

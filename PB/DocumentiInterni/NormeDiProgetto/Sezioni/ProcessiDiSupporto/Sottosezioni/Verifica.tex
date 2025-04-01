@@ -5,6 +5,7 @@ Il processo di verifica ha come obiettivo fondamentale l'accertamento che:
     \item i \textbf{prodotti di lavoro} generati durante il \glossario{ciclo di vita} del software rispettino i requisiti specificati
     \item i \textbf{processi seguiti} siano conformi allo standard, alle linee guida e ai piani definiti
 \end{itemize}
+
 \subsubsection{Descrizione}
 Questo processo consiste nel fornire prove oggettive che i risultati di una specifica fase dello sviluppo software rispettino tutti i requisiti previsti. 
 Si basa sull’analisi e revisione del contenuto per valutare la coerenza, la completezza e la correttezza dei risultati. Nel caso di codice, include anche il testing per assicurarsi che i risultati siano conformi alle aspettative definite.
@@ -19,7 +20,8 @@ Le task fondamentali previste dal processo sono:
 Per garantire l'accertamento della conformità, ogni volta che si apporta una modifica, è necessario sottoporre l'intero contenuto aggiornato a una verifica. 
 L'incremento della versione del prodotto aggiornato avviene esclusivamente se la modifica viene verificata e la verifica ha esito positivo.
 Il processo di verifica viene svolto dai membri incaricati come verificatori (che si segneranno all'interno del registro delle modifiche del documento). 
-i quali non possono essere la stessa persona a cui è stata assegnata la realizzazione del prodotto da verificare.
+I quali non possono essere la stessa persona a cui è stata assegnata la realizzazione del prodotto da verificare.
+
 \subsubsection{Analisi statica}
 L'\glossario{analisi statica} è un approccio alla verifica che non richiede l'esecuzione del codice dell'oggetto di verifica per individuare i difetti del prodotto software 
 e accertarne la sua completezza e coerenza.
@@ -35,7 +37,8 @@ Le fasi che vengono svolte durante questa tecnica di \glossario{analisi statica}
     \item \textbf{discussione}: al termine della lettura, nel caso vengano rilevati problemi, il verificatore comunica con gli autori e propone eventuali suggerimenti, con l'obiettivo di correggere i difetti;
     \item \textbf{correzione e repeat}: una volta terminata la discussione e rilevati i difetti, gli autori sono pregati di correggere tali difetti seguendo le indicazioni discusse. Successivamente, si passa di nuovo al passo 2.
 \end{itemize}
-\paragraph{verifica della documentazione}
+
+\paragraph{Verifica della documentazione}
 La verifica della documentazione, composta solamente da \glossario{analisi statica} dei documenti realizzati e/o modificati, ha lo scopo di verificare
 la qualità, completezza, coerenza e conformità dei documenti tecnici relativi al prodotto software da realizzare.
 Durante l'esecuzione della tecnica di \glossario{Walkthrough} descritta precedentemente, il verificatore ha lo scopo di 
@@ -46,8 +49,9 @@ modificati e coinvolti nella \glossario{pull request}, fornendo successivamente 
 La \glossario{GitHub Action} assicura la correttezza grammaticale dei documenti verificati migliorando il processo di verifica, aumentandone l'efficienza 
 e riducendo il tempo richiesto per le revisioni manuali, permettendo al verificatore di concentrarsi maggiormente su aspetti 
 di forma e di contenuto.
+
 \subsubsection{Analisi dinamica}
-L'\glossario{analisi dinamica} è un approccio all'analisi di sitemi informatici e prodotti software che si concentra sull'osservazione e verifica
+L'\glossario{analisi dinamica} è un approccio all'analisi di sistemi informatici e prodotti software che si concentra sull'osservazione e verifica
 del loro comportamento durante l'esecuzione.
 Quest'ultima è ampiamente impiegata per individuare errori a runtime, ottimizzare l'efficienza e testare la robustezza contro scenari imprevisti.
 Grazie alla sua capacità di fornire dati concreti e rilevanti, rappresenta un elemento fondamentale nel processo di sviluppo e manutenzione di applicazioni e sistemi complessi.
@@ -62,6 +66,17 @@ I principali tipi di test che vengono utilizzati per l'\glossario{analisi dinami
     \item \textbf{test di sistema}: Analizzano il comportamento dell'intero sistema per verificare che soddisfi i requisiti specificati. 
     Considerano il software come un unico blocco, includendo interazioni con l'ambiente e altre applicazioni.
 \end{itemize}
-All'interno del \hyperref[subsection:processo_sviluppo]{processo di Sviluppo}, nello specifico nella sezione di testing, vi è una descrizione 
+All'interno del \hyperref[subsection:processo_sviluppo]{processo di Sviluppo}, nello specifico nella sezione di \hyperref[subsubsec:testing_codice]{testing di codice}, vi è una descrizione 
 più approfondita delle varie tipologie di test adottate durante lo sviluppo del prodotto software, ogni test utilizzato verrà poi 
 codificato e indicato all'interno del documento "Piano di Qualifica".
+
+\subsubsection{Strumenti}
+Gli strumenti elencati in seguito sono approfonditi nella sezione \hyperref[sec:strumenti]{Strumenti}:
+\begin{itemize}
+    \item \glossario{Visual Studio Code}.
+    \item \glossario{GitHub}.
+    \item \glossario{Git}.
+    \item \glossario{LaTex}.
+    \item Discord
+    \item Telegram
+\end{itemize}
