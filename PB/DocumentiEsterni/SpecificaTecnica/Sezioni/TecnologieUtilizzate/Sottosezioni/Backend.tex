@@ -1,0 +1,16 @@
+\subsection{Backend}
+\label{subsec:backend}
+
+\subsubsection{Pytest}
+Pytest è un framework di testing per Python progettato per essere semplice, potente e scalabile, ideale per il testing di unità e integrazione. \\
+\textbf{Motivazioni:}
+\begin{itemize}
+    \item \textbf{Semplicità e sintassi intuitiva}: Pytest permette di scrivere test con una sintassi chiara e concisa, senza la necessità di classi o metodi speciali;
+    \item \textbf{Riconoscimento automatico dei test}: Pytest rileva automaticamente i file e le funzioni di test, senza bisogno di registrarle manualmente (ad esempio, un test viene riconosciuto semplicemente se inizia con test\_);
+    \item \textbf{Fixture e Dependency Injection}: Pytest permette di definire fixture per la configurazione e il teardown degli ambienti di test, rendendo i test più puliti e modulari;
+    \item \textbf{Parametrizzazione dei test}: Pytest consente di eseguire lo stesso test con input diversi, evitando duplicazione di codice;
+    \item \textbf{Report dettagliati}: Pytest fornisce messaggi di errore dettagliati, fornendo tracebacks e assert introspection, e supporta strumenti di debugging come \textit{pytest --trace};
+    \item \textbf{Ampio ecosistema di plugin}: Esistono numerosi plugin ufficiali e di terze parti che estendono le sue funzionalità per soddisfare esigenze specifiche (ad esempio, plugin di supporto per il mocking);
+    \item \textbf{Integrazione con strumenti per CI e calcolo del coverage}: Pytest si integra perfettamente con strumenti di Continuous Integration (CI) (come GitHub Actions), per automatizzare l'esecuzione dei test in fase di build.
+    Inoltre, grazie alla sua compatibilità con il plugin \textit{pytest-cov} (per il calcolo della copertura), è possibile monitorare e analizzare automaticamente la copertura del codice durante i processi di CI.
+\end{itemize} 
