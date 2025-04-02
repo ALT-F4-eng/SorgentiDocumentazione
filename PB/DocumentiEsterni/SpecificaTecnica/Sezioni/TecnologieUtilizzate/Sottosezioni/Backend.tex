@@ -1,0 +1,122 @@
+
+\subsection{Backend}
+\label{subsec:Backend}
+
+\subsubsection{Python}
+\label{subsubsec:Python}
+\glossario{Python} è un linguaggio di programmazione ad alto livello ed è considerato il riferimento principale per l'intelligenza artificiale e il machine learning.\\  
+
+\textbf{Motivazioni:}  
+
+\begin{enumerate}
+    \item \textbf{LLM}: è il linguaggio più utilizzato per interagire con modelli di linguaggio di grandi dimensioni.
+    \item \textbf{Librerie}: dispone di una vasta gamma di librerie e moduli di terze parti che semplificano lo sviluppo di applicazioni.
+    \item \textbf{Orientato agli oggetti}: supporta la programmazione orientata agli oggetti, consentendo di organizzare il codice in modo modulare e aderente ai principi \glossario{SOLID}.
+    \item \textbf{Dinamicamente tipizzato}: offre flessibilità e rapidità di sviluppo, permettendo di assegnare variabili senza dichiararne esplicitamente il tipo.
+    \item \textbf{Gestione eccezioni}: permette di intercettare e gestire errori in fase di esecuzione, migliorando la robustezza del codice.
+    \item \textbf{Comunità}: una vasta comunità di sviluppatori garantisce supporto continuo, aggiornamenti e soluzioni ai problemi più comuni.
+\end{enumerate}
+
+\subsubsection{Flask}
+\label{subsubsec:Flask}
+Flask è un micro-framework per la creazione di API e applicazioni web in Python.\\
+
+\textbf{Motivazioni:}
+
+\begin{enumerate}
+    \item \textbf{Leggerezza e semplicità}: Flask è un framework minimalista che fornisce solo gli strumenti essenziali per lo sviluppo web, lasciando agli sviluppatori la libertà di scegliere librerie e strumenti aggiuntivi;
+    \item \textbf{Flessibilità}: Non impone una struttura rigida, permettendo di organizzare il codice in modo personalizzato e adattandolo alle necessità del progetto;
+    \item \textbf{Modularità}: Flask permette di organizzare il codice in Blueprints, facilitando la suddivisione di un'app in moduli più gestibili e scalabili;
+    \item \textbf{Ecosistema esteso}: Grazie alla sua popolarità, esiste un vasto ecosistema di estensioni disponibili per aggiungere funzionalità come autenticazione, gestione del database e gestione delle sessioni;
+    \item \textbf{Facilità di apprendimento}: La curva di apprendimento è molto bassa, rendendolo ideale per sviluppatori alle prime armi con lo sviluppo web in Python;
+    \item \textbf{Compatibilità}: Può essere facilmente integrato con ORM come SQLAlchemy;
+    \item \textbf{Testabilità}: Flask include strumenti per il testing delle API, semplificando il testing del codice;
+    \item \textbf{Controllo completo}: A differenza di framework più strutturati come Django, Flask offre agli sviluppatori un controllo totale su routing, gestione delle richieste e configurazione del progetto.
+\end{enumerate}
+
+\subsubsection{SQLAlchemy}
+\label{subsubsec:sqlalchemy}
+
+SQLAlchemy è una libreria open source che fornisce un toolkit SQL e un Object Relational Mapper (ORM) per Python, facilitando la gestione e l'interazione con i database in maniera flessibile e performante. 
+La sua architettura consente di operare sia a livello di query SQL dirette sia tramite l'astrazione offerta dall'ORM, rendendola adatta a diverse esigenze applicative.\\
+
+\textbf{Motivazioni:}
+\begin{enumerate}
+    \item \textbf{Flessibilità:} SQLAlchemy permette di alternare facilmente tra l'uso diretto del linguaggio SQL e l'approccio ORM, offrendo agli sviluppatori la libertà di scegliere il livello di astrazione più adatto al progetto.
+    \item \textbf{Compatibilità:} Supporta una vasta gamma di database relazionali, come PostgreSQL, MySQL, SQLite e altri, garantendo interoperabilità e facilità di migrazione.
+    \item \textbf{Prestazioni:} Grazie a funzionalità avanzate come il lazy loading e il caching, SQLAlchemy ottimizza le operazioni di accesso e manipolazione dei dati, migliorando le prestazioni complessive dell'applicazione.
+    \item \textbf{Integrazione:} Si integra agevolmente con altri framework e librerie Python, facilitando lo sviluppo di applicazioni web e di sistemi complessi.
+    \item \textbf{Comunità attiva:} Una vasta comunità di sviluppatori e una documentazione dettagliata assicurano supporto continuo e aggiornamenti costanti, rendendo SQLAlchemy una scelta affidabile anche per progetti di lunga durata.
+\end{enumerate}
+
+\subsubsection{Pytest}
+\label{subsubsec:pytest}
+Pytest è un framework di testing per Python progettato per essere semplice, potente e scalabile, ideale per il testing di unità e integrazione.\\
+
+\textbf{Motivazioni:}
+\begin{enumerate}
+    \item \textbf{Semplicità e sintassi intuitiva}: Pytest permette di scrivere test con una sintassi chiara e concisa, senza la necessità di classi o metodi speciali;
+    \item \textbf{Riconoscimento automatico dei test}: Pytest rileva automaticamente i file e le funzioni di test, senza bisogno di registrarle manualmente (ad esempio, un test viene riconosciuto semplicemente se inizia con test\_);
+    \item \textbf{Fixture e Dependency Injection}: Pytest permette di definire fixture per la configurazione e il teardown degli ambienti di test, rendendo i test più puliti e modulari;
+    \item \textbf{Parametrizzazione dei test}: Pytest consente di eseguire lo stesso test con input diversi, evitando duplicazione di codice;
+    \item \textbf{Report dettagliati}: Pytest fornisce messaggi di errore dettagliati, fornendo tracebacks e assert introspection, e supporta strumenti di debugging come \textit{pytest --trace};
+    \item \textbf{Ampio ecosistema di plugin}: Esistono numerosi plugin ufficiali e di terze parti che estendono le sue funzionalità per soddisfare esigenze specifiche (ad esempio, plugin di supporto per il mocking);
+    \item \textbf{Integrazione con strumenti per CI e calcolo del coverage}: Pytest si integra perfettamente con strumenti di Continuous Integration (CI) (come GitHub Actions), per automatizzare l'esecuzione dei test in fase di build.
+    Inoltre, grazie alla sua compatibilità con il plugin \textit{pytest-cov} (per il calcolo della copertura), è possibile monitorare e analizzare automaticamente la copertura del codice durante i processi di CI.
+\end{enumerate} 
+
+\subsubsection{Pydentic}
+\label{subsubsec:pydentic}
+
+Pydentic è una libreria Python dedicata alla validazione dei dati. Permette di definire modelli di dati sfruttando le annotazioni di tipo, assicurando che i dati in ingresso rispettino i formati e i tipi attesi. 
+Questa tecnologia risulta particolarmente utile per la creazione di API e applicazioni robuste, semplificando il controllo e la gestione della correttezza dei dati.\\
+
+\textbf{Motivazioni:}
+\begin{enumerate}
+    \item \textbf{Validazione automatica:} Pydentic consente una validazione rigorosa e automatica dei dati in ingresso, assicurando che ogni campo rispetti il formato e il tipo previsto.
+    \item \textbf{Compatibilità con type hints:} L'utilizzo nativo delle annotazioni di tipo migliora la leggibilità del codice e facilita l'individuazione di errori in fase di sviluppo.
+    \item \textbf{Integrazione fluida:} Si integra facilmente con altri framework e librerie, come Flask, rendendo la gestione dei dati nelle API semplice e diretta.
+    \item \textbf{Prestazioni ottimizzate:} Nonostante offra funzionalità avanzate, Pydentic è progettato per garantire elevate prestazioni, contribuendo a mantenere l'efficienza complessiva dell'applicazione.
+    \item \textbf{Facilità d'uso e documentazione:} La sua interfaccia intuitiva e la documentazione completa permettono una rapida adozione e una facile manutenzione nel tempo.
+\end{enumerate}
+
+
+\subsubsection{Pytorch}
+\label{subsubsec:pytorch}
+
+Pytorch è una libreria open source per il machine learning e il deep learning, sviluppata per offrire flessibilità e prestazioni elevate nello sviluppo di modelli neurali.\\
+
+\textbf{Motivazioni:}
+\begin{enumerate}
+    \item \textbf{Prestazioni:} Grazie all'integrazione con CUDA, Pytorch sfrutta appieno le potenzialità delle GPU, accelerando l'addestramento e l'inferenza dei modelli su dataset di grandi dimensioni.
+    \item \textbf{Orientato alla ricerca:} La sua natura dinamica e l'interfaccia intuitiva lo rendono ideale per la sperimentazione e l'innovazione, permettendo agli sviluppatori di iterare rapidamente sulle proprie idee.
+    \item \textbf{Ampio ecosistema:} Pytorch si integra facilmente con altre librerie scientifiche e di machine learning, offrendo un ambiente completo per la realizzazione di soluzioni avanzate.
+    \item \textbf{Comunità attiva:} Una vasta comunità di ricercatori e sviluppatori contribuisce continuamente con nuovi modelli, strumenti e documentazione, favorendo lo sviluppo collaborativo e l'aggiornamento costante.
+    \item \textbf{Modernità:} Con aggiornamenti regolari e il supporto per le ultime tecnologie, Pytorch si adatta rapidamente alle evoluzioni del campo dell'intelligenza artificiale, rimanendo all'avanguardia.
+\end{enumerate}
+
+
+
+\subsubsection{Black}
+\label{subsubsec:Black}
+\glossario{Black} è un formatter di codice \glossario{Python}, progettato per garantire uno stile di codifica uniforme e migliorare la leggibilità del codice.\\  
+
+\textbf{Motivazioni:}  
+
+\begin{enumerate}
+    \item \textbf{Uniformità e Manutenibilità}: viene applicato uno stile unico a tutto il codice, indipendentemente da chi lo scrive. Questo rende il codice più leggibile e manutenibile, senza differenze di formattazione tra i file.
+    \item \textbf{Standardizzazione nei Team}: vengono eliminate le differenze tra le scritture di diversi programmatori, fornendo uno standard nello sviluppo.
+    \item \textbf{Efficacia}: non è necessario perdere tempo a discutere su spaziature o virgolette, rendendo il processo di sviluppo più efficiente.
+\end{enumerate}
+
+\subsubsection{Dependency Injector}
+\label{subsubsec:Dependency Injector}
+\glossario{Dependency Injector}  è una libreria \glossario{Python} che implementa il pattern \glossario{Dependency Injection}, gestendo centralmente le dipendenze tra le classi.\\  
+
+\textbf{Motivazioni:}  
+
+\begin{enumerate}
+    \item \textbf{Gestione flessibile delle dipendenze}: supporta una varietà di provider (Factory, Singleton, ecc.), che permette di costruire e configurare le dipendenze in modo versatile e adattabile alle esigenze specifiche del progetto.
+    \item \textbf{Test e ambienti dinamici}: la possibilità di sovrascrivere i provider al volo è particolarmente utile per i test, consentendo di sostituire facilmente le dipendenze con versioni fittizie in ambienti di sviluppo o test.
+    \item \textbf{Integrazione con framework popolari}: Supporta l'iniezione automatica delle dipendenze in funzioni e metodi, facilitando l'integrazione con framework web. Questo approccio migliora la modularità e semplifica la gestione delle dipendenze anche in applicazioni complesse.
+\end{enumerate}
