@@ -227,7 +227,7 @@ L'elenco delle \glossario{metriche} di qualità da adottare per il progetto è d
     \item \textbf{Caratteristiche}: Funzionalità
     \item \textbf{Formula}:  
     \begin{equation}
-        \frac{ROs}{ROT} \times 100
+        \frac{ROS}{ROT} \times 100
     \end{equation}
     Dove:
     \begin{itemize}
@@ -244,19 +244,127 @@ L'elenco delle \glossario{metriche} di qualità da adottare per il progetto è d
     \item \textbf{Formula}: N° errori ortografici rilevati
 \end{itemize}
 
-   
-% altre metriche di prodotto riguardanti codice sorgente che dovranno essere inserite
+\textbf{Code Coverage}
+\begin{itemize}
+    \item \textbf{Notazione}: M.PR.CC
+    \item \textbf{Descrizione}: misura la percentuale di codice sorgente che è stata eseguita durante i test;
+    \item \textbf{Caratteristiche}: Manutenibilità
+    \item \textbf{Formula}: 
+    \begin{equation}
+        \frac{L_{test}}{L_{tot}} \times 100
+    \end{equation}
+    Dove:
+    \begin{itemize}
+        \item $L_{test}$: numero di linee di codice testate
+        \item $L_{tot}$: numero totale di linee di codice  
+    \end{itemize}
+\end{itemize}
 
-%\textbf{Parametri Per Metodo (M.PR.PPM):} Numero medio di parametri passati ai metodi. Un numero elevato di parametri può indicare che un metodo è troppo complesso o che potrebbe essere suddiviso in metodi più piccoli.
-% \textbf{Campi Per Classe (M.PR.CPC):} Numero medio di campi (variabili di istanza) per classe. Un numero elevato di campi dati può indicare che una classe sta facendo troppo e che potrebbe essere suddivisa in classi più piccole.
-%  \textbf{Linee di Codice Per Metodo (M.PR.LCPM):} Numero medio di linee di codice per metodo. Metodi troppo lunghi possono essere difficili da leggere, capire e mantenere.
-% \textbf{Complessità Ciclomatica (M.PR.CCM):} La complessità ciclomatica rappresenta la complessità di un programma sulla base del numero di percorsi lineari indipendenti attraverso il codice sorgente. Un valore elevato indica un codice più complesso e potenzialmente più difficile da mantenere
- % \textbf{Tempo di Apprendimento (M.PR.TA):} Indica il tempo massimo richiesto da parte di un utente generico per apprendere l’utilizzo del prodotto.
- %  \textbf{Tempo di Risposta (M.PR.TR):} Indica il tempo massimo di risposta del sistema sotto carico rilevato.
- % \textbf{Code Coverage (M.PC.CC):} La Code Coverage indica quale percentuale del codice sorgente è stata eseguita durante i test. Serve per capire quanto del codice è stato verificato dai test automatizzati.
-  %  \textbf{Branch Coverage (M.PC.BC):} La Branch Coverage indica quale percentuale dei rami decisionali (percorsi derivanti da istruzioni condizionali come if, for, while) del codice è stata eseguita durante i test.
-   %\textbf{Failure Density (M.PC.FD):} La Failure Density indica il numero di difetti trovati in un software o in una parte di esso durante il ciclo di sviluppo rispetto alla dimensione del software stesso.
-  % \textbf{Passed Test Case Percentage (M.PC.PTCP):} La Passed Test Case Percentage indica la percentuale di test che sono stati eseguiti con successo su una base di test.
-%
+\textbf{Branch Coverage}
+\begin{itemize}
+    \item \textbf{Notazione}: M.PR.BC
+    \item \textbf{Descrizione}: Misura la percentuale di rami del codice (istruzioni di tipo condizionale come \textit{if, else, switch, ecc.}) che sono stati testati.
+    \item \textbf{Caratteristiche}: Manutenibilità
+    \item \textbf{Formula}: 
+    \begin{equation}
+        \frac{R_{test}}{R_{tot}} \times 100
+    \end{equation}
+    Dove:
+    \begin{itemize}
+        \item $R_{test}$: numero di rami eseguiti durante i test
+        \item $R_{tot}$: numero totale di rami nel codice 
+    \end{itemize}
+\end{itemize}
+
+\textbf{Complessità ciclomatica}
+\begin{itemize}
+    \item \textbf{Notazione}: M.PR.COC
+    \item \textbf{Descrizione}: Indica la complessità del codice, calcolata sulla base del numero di percorsi indipendenti in una esecuzione con singolo ingresso e singola uscita
+    \item \textbf{Caratteristiche}: Manutenibilità
+    \item \textbf{Formula}: 
+    \begin{equation}
+        E - N + 2P
+    \end{equation}
+    Dove:
+    \begin{itemize}
+        \item $E$: numero di archi nel grafico di flusso di controllo
+        \item $N$: numero di nodi nel grafico di flusso di controllo
+        \item $P$: numero delle componenti connesse da ogni arco
+    \end{itemize}
+\end{itemize}
+
+\textbf{Tempo di risposta}
+\begin{itemize}  
+    \item \textbf{Notazione}: M.PR.TR
+    \item \textbf{Descrizione}:  Il tempo impiegato dal sistema per rispondere a una richiesta.
+    \item \textbf{Caratteristiche}: Efficienza
+    \item \textbf{Formula}: tempo che intercorre tra la richiesta dell'esecuzione di un test su un dataset e l'ottenimento dei risultati
+\end{itemize}
+
+\textbf{Browser supportati}
+\begin{itemize}  
+    \item \textbf{Notazione}: M.PR.BS
+    \item \textbf{Descrizione}:  percentuale di browser su cui l'applicazione risulta utilizzabile
+    \item \textbf{Caratteristiche}: Portabilità
+    \item \textbf{Formula}: 
+    \begin{equation}
+        \frac{B_s}{B_t} \times 100
+    \end{equation}
+    Dove:
+    \begin{itemize}
+        \item $B_s$: numero di Browser supportati dall'applicazione
+        \item $B_t$: numero totale di Browser
+    \end{itemize}
+\end{itemize}
+
+\textbf{Numero di linee medie di codice per metodo}
+\begin{itemize}  
+    \item \textbf{Notazione}: M.PR.LCPM
+    \item \textbf{Descrizione}:  lunghezza media in termine di linee di codice per metodi o funzioni di una classe
+    \item \textbf{Caratteristiche}: Manutenibilità
+    \item \textbf{Formula}: calcolato tramite uno script in \textit{Python}
+\end{itemize}
+
+\textbf{Percentuale di test superati}
+\begin{itemize}  
+    \item \textbf{Notazione}: M.PR.PTS
+    \item \textbf{Descrizione}:  percentuale di test che hanno terminato con successo durante l'esecuzione
+    \item \textbf{Caratteristiche}: Funzionalità
+    \item \textbf{Formula}: 
+    \begin{equation}
+        \frac{T_s}{T_t} \times 100
+    \end{equation}
+    Dove:
+    \begin{itemize}
+        \item $T_s$: numero di test terminati con successo
+        \item $T_t$: numero totale di test
+    \end{itemize}
+\end{itemize}
+
+\textbf{Gestione degli errori}
+\begin{itemize}  
+    \item \textbf{Notazione}: M.PR.GE
+    \item \textbf{Descrizione}:  percentuale di errori gestiti correttamente dall'applicazione
+    \item \textbf{Caratteristiche}: Affidabilità
+    \item \textbf{Formula}: 
+    \begin{equation}
+        \frac{E_g}{E_t} \times 100
+    \end{equation}
+    Dove:
+    \begin{itemize}
+        \item $E_g$: numero di errori gestiti correttamente 
+        \item $E_t$: numero totale di errori previsti
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Strumenti}
+Qui vengono elencati gli strumenti usati, che vengono poi approfonditi nella sezione \hyperref[sec:strumenti]{Strumenti}.
+
+\begin{itemize}
+    \item \glossario{LaTeX};
+    \item \glossario{Github};
+    \item \glossario{Git};
+\end{itemize}
+
 
 
