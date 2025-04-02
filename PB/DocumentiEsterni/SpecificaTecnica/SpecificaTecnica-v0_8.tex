@@ -1,0 +1,44 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{custom}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Impostare la compatibilità con la versione installata
+
+
+%--------------------VARIABILI--------------------
+\def\lastversion{v0.8}
+\def\title{Specifica Tecnica}
+\def\date{2 Aprile 2025}
+%------------------------------------------------
+
+\begin{document}
+
+\primapagina
+
+\begin{registromodifiche}
+        \lastversion & 01 Aprile 2025 & Guirong Lan & Francesco Savio & Sezione \hyperref[subsubsec:Black]{Black}\\
+    \hline 
+        v0.7& 01 Aprile 2025 & Eghosa Matteo Igbinedion Osamwonyi & Francesco Savio & Sezione \hyperref[subsubsec:pytorch]{Pytorch}\\
+    \hline
+        v.06 & 01 Aprile 2025 & Eghosa Matteo Igbinedion Osamwonyi & Francesco Savio & Sezione \hyperref[subsubsec:pydentic]{Pydentic}\\
+    \hline
+        v0.5 & 01 Aprile 2025 & Enrico Bianchi & Francesco Savio & Sezione \hyperref[subsubsec:pytest]{Pytest}\\
+    \hline
+        v0.4 & 01 Aprile 2025 & Eghosa Matteo Igbinedion Osamwonyi & Francesco Savio & Sezione \hyperref[subsubsec:sqlalchemy]{SQLAlchemy}\\
+    \hline
+        v0.3 & 01 Aprile 2025 & Enrico Bianchi & Francesco Savio & Sezione \hyperref[subsubsec:Flask]{Flask} \\
+    \hline  
+        v0.2 & 01 Aprile 2025  & Guirong Lan  & Francesco Savio & Sezione \hyperref[subsubsec:Python]{Python}\\
+    \hline
+        v0.1 & 27 Marzo 2025  & Francesco Savio & Guirong Lan & Sezioni \hyperref[sec:introduzione_st]{Introduzione}\\
+    \hline
+\end{registromodifiche}
+
+ \tableofcontents
+
+\newpage
+
+\input{Sezioni/Introduzione/Introduzione.tex}
+
+\input{Sezioni/TecnologieUtilizzate/TecnologieUtilizzate.tex}
+
+\end{document}
