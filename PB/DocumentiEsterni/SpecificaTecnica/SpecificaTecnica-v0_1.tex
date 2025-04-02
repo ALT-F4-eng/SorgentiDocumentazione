@@ -1,13 +1,14 @@
 \documentclass[a4paper, 12pt]{article}
+\usepackage{dirtree}
 \usepackage{custom}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18} % Impostare la compatibilità con la versione installata
 
 
 %--------------------VARIABILI--------------------
-\def\lastversion{v0.1}
+\def\lastversion{v0.2}
 \def\title{Specifica Tecnica}
-\def\date{27 Marzo 2025}
+\def\date{2 Aprile 2025}
 %------------------------------------------------
 
 \begin{document}
@@ -15,6 +16,8 @@
 \primapagina
 
 \begin{registromodifiche}
+        \lastversion & 2 Aprile 2025 & Enrico Bianchi & & Stesura sezione \hyperref[subsec:architettura_frontend]{architettura del Front-end}\\
+    \hline
         v0.1 & 27 Marzo 2025  & Francesco Savio & Guirong Lan & Sezioni \hyperref[sec:introduzione_st]{Introduzione}\\
     \hline
 \end{registromodifiche}
@@ -24,6 +27,6 @@
 \newpage
 
 \input{Sezioni/Introduzione/Introduzione.tex}
-
+\input{Sezioni/Architettura/Architettura.tex}
 
 \end{document}

@@ -1,0 +1,121 @@
+\subsection{Front-end}
+\label{subsec:architettura_frontend}
+\glossario{Angular} adotta il pattern architetturale Model-View-ViewModel (MVVM), un pattern architetturale che separa le responsabilità dell'interfaccia utente (UI) dalla logica di business di un'applicazione.
+In \glossario{Angular}, l'MVVM è implementato attraverso i componenti, che fungono da ViewModel, gestendo il legame tra il Model (i dati e la logica dell'applicazione) e la View (l'interfaccia utente).
+Grazie al data binding bidirezionale, \glossario{Angular} sincronizza automaticamente i cambiamenti tra il Model e la View, semplificando l'interazione tra i livelli dell'applicazione.
+Il pattern architetturale MVVM è formato dai seguenti tre layer:
+\begin{itemize}
+    \item \textbf{Model}: Si riferisce ai dati dell'applicazione e alla logica di business, come la validazione dei dati o l'elaborazione delle operazioni. 
+    Il Model non è a conoscenza dei livelli View o ViewModel, il che lo rende indipendente dalla presentazione. 
+    In un'architettura MVVM, il Model rappresenta generalmente i dati che l'applicazione elabora e visualizza.
+    In \glossario{Angular}, il Model è generalmente costituito da classi TypeScript che definiscono la struttura e il comportamento dei dati dell'applicazione. 
+    Queste classi possono includere proprietà, metodi e regole di validazione;
+    \item \textbf{View}: È responsabile della struttura, del layout e dell'aspetto dell'interfaccia utente. 
+    La View riceve le interazioni dell'utente e le passa al ViewModel tramite data binding. 
+    Non contiene logica di business, ma si collega al ViewModel, che fornisce i dati e le operazioni necessari per visualizzare e interagire con le informazioni.
+    La View in \glossario{Angular} è rappresentata dai template di \glossario{Angular}, che sono file HTML arricchiti con direttive e binding, questi template definiscono come i dati vengono presentati all'utente e come vengono catturati gli input dell'utente.
+    Quando i dati del Model cambiano a seguito dell'elaborazione della logica di business, la View si aggiorna automaticamente grazie al data binding bidirezionale con il ViewModel;
+    \item \textbf{ViewModel}: Il ViewModel funge da livello intermedio tra la View e il Model.
+    Il ViewModel rappresenta lo stato dei dati presenti nel Model e gestisce la comunicazione bidirezionale tra il Model e la View attraverso la tecnica del data binding.
+    Inoltre, il ViewModel può contenere logica legata all'elaborazione e alla validazione dei dati, consentendo operazioni più complesse, come il filtraggio, l'ordinamento o il raggruppamento dei dati, senza dover intervenire sul livello della View o del Model.
+    In \glossario{Angular}, il ViewModel è spesso rappresentato dai Component e dalle relative classi TypeScript. 
+    In \glossario{Angular} i Component contengono l'\textit{application logic}, espongono proprietà e metodi utilizzati nei template per il data binding e comunicano con il Model attraverso i servizi (indicati con il decoratore \textit{@Injectable}). 
+\end{itemize}
+
+I concetti fondamentali implementati da \glossario{Angular} sono:
+\begin{itemize}
+    \item \textbf{Data Binding}: \glossario{Angular} utilizza un avanzato sistema di data binding che consente una sincronizzazione automatica tra il Model (dati dell'applicazione) e la View (interfaccia utente).
+    Il data binding può avvenire in una o due direzioni, con il two-way data binding i dati rimangono sincronizzati tra Model e View, garantendo un aggiornamento dinamico dell'interfaccia utente;
+    \item \textbf{Modularità}:  \glossario{Angular} è basato su un'architettura modulare, in cui un'applicazione è suddivisa in moduli (\textit{NgModules}).
+    Ogni modulo può contenere componenti, servizi e altre funzionalità, permettendo una suddivisione chiara e organizzata del codice, facilitando lo sviluppo e il riutilizzo delle componenti;
+    \item \textbf{Component-based architecture}:  \glossario{Angular} segue un'architettura basata sui componenti, in cui l'interfaccia utente è costruita attraverso componenti riutilizzabili e indipendenti.
+    Ogni componente gestisce la propria logica e il proprio template, migliorando la manutenibilità e la scalabilità dell'applicazione;
+    \item \textbf{Directive e template engine}: \glossario{Angular} estende l'HTML con directive personalizzate che permettono di manipolare il DOM in modo dinamico.
+    Esistono directive strutturali per il controllo del flusso della UI e directive attributo per la modifica degli elementi HTML;
+    \item \textbf{RxJS e programmazione reattiva}: \glossario{Angular} utilizza RxJS (Reactive Extensions for \glossario{Javascript}) per gestire lo stato e la comunicazione tra componenti in modo asincrono e reattivo.
+    Questo permette di gestire flussi di dati come eventi utente, richieste HTTP e aggiornamenti dello stato attraverso Observable e operatori reattivi.
+\end{itemize}
+Il codice sviluppato per il front-end verrà organizzato nel seguente modo:
+\iffalse
+    frontend/
+    │── src/
+        ├── app/
+        │   ├── core/                     # Moduli e servizi condivisi (singleton)
+        │   │   ├── services/             # Servizi globali (es. autenticazione, API)
+        │   │   │   ├── auth.service.ts
+        │   │   │   ├── http.service.ts
+        │   │   ├── interceptors/         # Interceptor per HTTP (es. JWT, logging)
+        │   │   │   ├── auth.interceptor.ts
+        │   │   ├── guards/               # Route guards (es. autenticazione)
+        │   │   │   ├── auth.guard.ts
+        │   │   ├── core.module.ts        # Modulo Core (singleton)
+        │   ├── shared/                   # Moduli, componenti e pipe riutilizzabili
+        │   │   ├── components/           # Componenti condivisi (es. pulsanti, modali)
+        │   │   │   ├── navbar/           # Esempio di un componente riutilizzabile
+        │   │   │   │   ├── navbar.component.ts
+        │   │   │   │   ├── navbar.component.html
+        │   │   ├── directives/           # Direttive personalizzate (es. autofocus)
+        │   │   ├── pipes/                # Pipe personalizzate (es. formattazione date)
+        │   │   ├── shared.module.ts      # Modulo Shared (componenti riutilizzabili)
+        │   ├── features/                 # Moduli feature-based
+        │   │   ├── users/                # Feature: gestione utenti
+        │   │   │   ├── models/           # Modelli dati (User.ts, Role.ts)
+        │   │   │   ├── services/         # Servizi specifici della feature
+        │   │   │   ├── components/       # Componenti della feature
+        │   │   │   ├── pages/            # Pagine della feature (es. lista utenti)
+        │   │   │   ├── users.module.ts   # Modulo utenti
+        │   ├── layout/                   # Layout generali (header, sidebar)
+        │   ├── app.component.ts          # Root component
+        │   ├── app.module.ts             # Root module
+        ├── assets/                       # File statici (es. immagini, JSON)
+        ├── environments/                 # Configurazioni per env (dev, prod)
+        ├── main.ts                        # Bootstrap Angular
+        ├── styles.scss                    # Stili globali
+\fi
+\dirtree{%
+.1 frontend/.
+.2 src/.
+.3 app/.
+.4 core/.
+.5 services/.
+.5 models/.
+.5 interceptors/.
+.4 shared/.
+.5 components/.
+.5 directives/.
+.5 pipes/.
+.4 features/.
+.5 feature1/.
+.6 components/.
+.6 pages/.
+.4 layout/.
+.2 assets/.
+.2 environments/.
+}
+Di seguito è riportata una breve descrizione delle cartelle principali:
+\begin{itemize}
+    \item \textbf{src}: contiene il codice sorgente;
+    \item \textbf{assets}: contiene i file statici, come immagini o font;
+    \item \textbf{environments}: contiene file di configurazione per ambienti diversi (sviluppo e produzione).
+\end{itemize}
+La cartella \textit{src} contiene il codice sorgente dell'applicazione all'interno della sottocartella \textit{app}, \textit{app} è suddivisa in:
+\begin{itemize}
+    \item \textbf{core}: contiene modelli e logica di business all'interno delle sottocartelle:
+    \begin{itemize}
+        \item \textbf{models}: interfacce e classi che rappresentano i dati e le entità principali dell'applicazione;
+        \item \textbf{services}: gestiscono la logica di business e le chiamate API;
+        \item \textbf{interceptors}: modificano le chiamate HTTP (ad esempio per aggiungere autenticazione o logging) e intercettano errori API per gestirli in modo centralizzato.
+    \end{itemize}
+    \item \textbf{shared}: contiene moduli, componenti e pipe riutilizzabili, all'interno delle sottocartelle:
+    \begin{itemize}
+        \item \textbf{components}: componenti condivise (es. pulsanti);
+        \item \textbf{directives}: direttive personalizzate;
+        \item \textbf{pipes}: pipe personalizzate per formattazione dati.
+    \end{itemize} 
+    \item \textbf{features}: moduli feature-base, ogni feature ha una cartella dedicata organizzata in:
+    \begin{itemize}
+        \item \textbf{components}: contiene i componenti specifici della feature, che possono essere combinati per formare una pagina;
+        \item \textbf{pages}: contiene le pagine principali della feature, ogni pagina è un componente a sé stante e funge da ViewModel nel pattern MVVM.
+    \end{itemize}
+    \item \textbf{layout}: contiene componenti per il layout dell'app (es. navbar, sidebar, footer).
+\end{itemize}
