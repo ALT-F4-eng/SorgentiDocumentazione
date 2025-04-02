@@ -1,26 +1,29 @@
 \subsection{M.PC.SV - Schedule Variance e M.PC.CV - Cost Variance}
+\label{sec:SV&CV}
 
 \begin{tikzpicture}
     \begin{axis}[
         width=15cm, height=10cm,
         ymin=-200, ymax=30,
-        xmin=0, xmax=8,
-        xtick={0, 1, 2, 3, 4, 5, 6, 7, 8},
-        xticklabels={ PP, S1, S2, S3, S4, S5, S6, S7, S8},
+        xmin=0, xmax=17,
+        xtick={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17},
+        xticklabels={PP, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17},
         xlabel={},
         ylabel={},
         grid=major,
         scaled ticks=false,
         legend style={at={(0.5,1.1)}, anchor=south, legend columns=-1},
     ]
-    \addplot[color=blue] coordinates {(0, 0) (1, -47.5) (2, -64) (3, -92) (4, -51) (5, -65) (6, -64) (7, -24) (8, 0)};
+    \addplot[color=blue, thick,dashed] coordinates {(0, 0) (1, -47.5) (2, -64) (3, -92) (4, -51) (5, -65) (6, -64) (7, -24) (8, 0) (9, 0)};
     \addlegendentry{SV}
-    \addplot[color=green] coordinates {(0, -147) (1, -140) (2, -98) (3, -123) (4, -97) (5, -35) (6, -49) (7, -14) (8, -9)};
+    \addplot[color=green] coordinates {(0, -147) (1, -140) (2, -98) (3, -123) (4, -97) (5, -35) (6, -49) (7, -14) (8, -9) (9, -5)};
     \addlegendentry{CV}
-    \addplot[red, thick] coordinates {(0, -15) (8, -15)};
+    \addplot[red, thick] coordinates {(0, -15) (17, -15)};
     \addlegendentry{Valore ammissibile}
-    \addplot[orange, thick] coordinates {(0, 0) (8, 0)};
+    \addplot[orange] coordinates {(0, 0) (17, 0)};
     \addlegendentry{Valore ottimo}
+    \addplot[red, thick, dashed] coordinates {(8, -200) (8, 30)};
+    \addlegendentry{Termine RTB}
     \end{axis}
 \end{tikzpicture}
 \subsubsection{RTB}
@@ -32,3 +35,7 @@ Tuttavia, queste attività non sono state completate nei tempi previsti, determi
 La \glossario{Cost Variance} (CV), pur rimanendo negativa, mostra un miglioramento progressivo. Questo accade perché le ore di lavoro dedicate ad attività non completate durante uno sprint comportano un incremento del costo reale (\glossario{Actual Cost} - AC) senza un corrispondente incremento di EV.
 Tuttavia, quando queste attività vengono completate negli sprint successivi entro il tempo preventivato, la CV migliora. 
 Questo si verifica perché l'EV aumenta notevolmente, mentre l'AC cresce solo marginalmente per il completamento delle attività.
+
+\paragraph{Sprint 9}
+La \glossario{Schedule Variance} (SV) è di 0, il che significa che il lavoro completato è esattamente in linea con la pianificazione attuale.
+La \glossario{Cost Variance} (CV) è di -5, il che indica che il costo reale è leggermente superiore al valore pianificato.
