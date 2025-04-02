@@ -1,0 +1,55 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{custom}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Impostare la compatibilità con la versione installata
+
+
+%--------------------VARIABILI--------------------
+\def\lastversion{v1.6}
+\def\title{Piano di qualifica}
+\def\date{2 Aprile 2025}
+%------------------------------------------------
+
+\begin{document}
+
+\primapagina
+
+\begin{registromodifiche}
+        \lastversion & 29 Marzo 2025 & Guirong Lan & Francesco Savio & Aggiunti \hyperref[subsec:test_sistema]{test di sistema} \\
+    \hline 
+        v1.5 & 29 Marzo 2025 & Eghosa Matteo Igbinedion Osamwonyi & Francesco Savio & Aggiunti \hyperref[subsec:test_sistema]{test di sistema} \\
+    \hline 
+        v1.4 & 29 Marzo 2025 & Enrico Bianchi & Francesco Savio & Aggiunti \hyperref[subsec:test_sistema]{test di sistema} \\
+    \hline 
+        v1.3 & 28 Marzo 2025 & Francesco Savio & Guirong Lan & Aggiunti \hyperref[subsec:test_sistema]{test di sistema}\\
+    \hline    
+        v1.2 & 28 Marzo 2025 & Marko Peric & Guirong Lan & Aggiunti \hyperref[subsec:test_sistema]{test di sistema}\\
+    \hline    
+        v1.1 & 27 Marzo 2025 & Enrico Bianchi & Guirong Lan & Aggiornamento \hyperref[subsec:obiettivi_prodotto]{metriche di qualità di prodotto}\\
+    \hline
+        v1.0 & 17 Marzo 2025 &  & Enrico Bianchi & Release\\
+    \hline
+        v0.4 & 15 Marzo 2025 & Francesco Savio, Marko Peric & Enrico Bianchi & Aggiornamento \hyperref[sec:cruscotti_qualità]{cruscotti di valutazione della qualità}\\
+    \hline
+        v0.3 & 19 Febbraio 2025 & Enrico Bianchi & Francesco Savio & Aggiornamento \hyperref[sec:cruscotti_qualità]{cruscotti di valutazione della qualità}\\
+    \hline
+        v0.2 & 7 gennaio 2025 & Enrico Bianchi & Marko Peric & aggiunte tabelle delle metriche nelle sezioni \hyperref[subsec:obiettivi_processo]{Qualità di processo}, \hyperref[subsec:obiettivi_prodotto]{Qualità di prodotto}, aggiunta sezione \hyperref[subsec:processi_metriche]{Metriche per processo} \\
+    \hline
+        v0.1 & 23 dicembre 2024  & Enrico Bianchi & Marko Peric & Sezioni \hyperref[sec:introduzione_pq]{Introduzione documento}, \hyperref[sec:obiettivi_qualità]{Introduzione obiettivi di qualità}\\
+    \hline
+\end{registromodifiche}
+
+ \tableofcontents
+
+\newpage
+
+\input{Sezioni/Introduzione/Introduzione.tex}
+
+\input{Sezioni/ObiettiviQualità/ObiettiviQualità.tex}
+
+\input{Sezioni/CruscottoValutazioneQualità/CruscottoQualità.tex}
+
+\input{Sezioni/Verifica/Verifica.tex}
+
+
+\end{document}
