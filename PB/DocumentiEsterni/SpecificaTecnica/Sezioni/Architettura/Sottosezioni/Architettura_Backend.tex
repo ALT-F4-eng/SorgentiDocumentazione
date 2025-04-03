@@ -54,7 +54,22 @@ Grazie all’uso degli adapter, l’architettura esagonale facilita l’integraz
 \noindent
 L'organizzazione del back-end è strutturata in conformità ai principi dell’architettura esagonale, con l’obiettivo di facilitare la traduzione della progettazione in codice e garantire una chiara separazione delle responsabilità. La suddivisione del codice segue una struttura ben definita, articolata nelle seguenti cartelle:
 
-\dirtree{
+\iffalse
+    backend/
+    │── core/
+    │   ├── port/
+    │   │   ├── incoming/             # Gestione delle richieste in entrata
+    │   │   ├── outcoming/            # Gestione delle risposte in uscita
+    │   ├── adapter/
+    │   │   ├── incoming/             # Adapter per le richieste in entrata
+    │   │   ├── outcoming/            # Adapter per le risposte in uscita
+    │   │   │   ├── sql_alchemy/     # Adapter SQLAlchemy
+    │   ├── components/               # Componenti generali del backend
+    │   ├── models/                   # Modelli di dati
+    │   ├── routes/                   # Definizione delle rotte
+    │   ├── tools/                    # Strumenti generali per il backend
+\fi
+\dirtree{%
 .1 backend/.
 .2 core/.
 .2 port/.
@@ -63,7 +78,7 @@ L'organizzazione del back-end è strutturata in conformità ai principi dell’a
 .2 adapter/.
 .3 incoming/.
 .3 outcoming/.
-.4 sql_alchemy/.
+.4 sql-alchemy/.
 .2 components/.
 .2 models/.
 .2 routes/.
