@@ -1,0 +1,209 @@
+\section{Progettazione Ad Alto Livello}
+\label{sec:ProgettazioneAdAltoLivello}
+
+\subsection{Front-end}
+\subsubsection{HomePage}
+\paragraph{Descrizione}
+HomePage è il componente che guida all'utilizzatore nelle altre pagine web.
+\paragraph{SottoComponenti}
+HomePage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+    \item \textbf{MenuComponent}: componente condiviso dalle pagine principali(cioè TestListPage, DatasetListPage e se stesso) permette di accedere alle pagine di TestListPage e di DatasetListPage oltre a se stesso.
+    \begin{itemize}
+        \item \textbf{LogoComponent}: logo del team di sviluppo.
+    \end{itemize}
+    
+    \item \textbf{ContentComponent}: componente che descrive le informazioni riguardanti al progetto di sviluppo e al team di sviluppo.
+    \item \textbf{FootterComponent}: componente che contiene le informazioni riguardanti al copyright.
+\end{itemize}
+\subsubsection{DataseListPage}
+\paragraph{Descrizione}
+DataSetPage è il componete che mostra le informazioni riguardanti i dataset salvati all'interno del Database. Espone le seguenti funzionalità:
+\begin{itemize}
+    \item selezione/carica di un dataset salvato.
+    \item modifica/rinomina di un dataset salvato.
+    \item eliminazione di un dataset salvato.
+    \item Duplicazione/copia di un dataset salvato.
+    \item ricerca di un dataset salvato.
+    \item creazione di un dataset temporaneo.
+    \item Scorrimento della lista di dataset salvato.
+    \item Visualizza nome dei dataset e informazioni sulla data dell'ultima modifica dei dataset.
+\end{itemize}
+\paragraph{SottoComponenti}
+DataSetPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+    \item \textbf{CreaDatasetBtn}: pulsante per la creazione di un dataset temporaneo.
+    \item \textbf{UploadBtn}: pulsante per caricare i file locale in formato JSON tramite una finestra, .
+    \item \textbf{SearchDatasetBar}: la barra di ricerca per cercare i dataset.
+    
+    \item \textbf{DatasetListView}: mostra tutte le dataset sia salvate che temporaneo sotto forma di una lista scorrevole.
+    \begin{itemize}
+        \item \textbf{DatasetNameBtn}: pulsante che mostra il nome del dataset e per caricare il dataset selezionato.
+        \item \textbf{DatasetModificaBtn}: pulsante per modificare il nome del dataset selezionato.
+        \item \textbf{DatasetEliminaBtn}: pulsante per eliminare il dataset selezionato.
+        \item \textbf{DatasetCopiaBtn}: pulsante per duplicare il dataset selezionato.
+        \item \textbf{DatasetInfoText}: viene visualizzato la data della l'ultima modifica del dataset.
+    \end{itemize}
+\end{itemize}
+\paragraph{Tracciamento dei requisiti}
+\begin{tabularx}{\textwidth}{|c|c|}
+    \hline
+    \textbf{ID} & \textbf{componente} \\
+    \hline
+    RFO-1.12 & CreaDatasetBtn\\
+    \hline
+    RFO-6.01 & DatasetNameBtn\\
+    \hline
+    RFO-6.02 & DatasetModificaBtn\\
+    \hline
+    RFO-6.03 & DatasetModificaBtn\\
+    \hline
+    RFO-6.04 & DatasetModificaBtn\\
+    \hline
+    RFO-6.04 & DatasetModificaBtn\\
+    \hline
+    RFO-7.01 & DatasetListView\\
+    \hline
+    RFO-7.02 & CreaDatasetBtn\\
+    \hline
+    RFO-7.03 & DatasetListView\\
+    \hline
+    RFO-7.04 & SearchDatasetBar\\
+    \hline
+    RFO-8.01 & DatasetNameBtn\\
+    \hline
+    RF0-8.02 & DatasetInfoText\\
+    \hline
+    RFO-8.03 & DatasetModificaBtn\\
+    \hline
+    RF0-8.04 & DatasetCopiaBtn\\
+    \hline
+    RF0-8.05 & DatasetEliminaBtn\\
+    \hline
+    RF0-8.06 & DatasetEliminaBtn\\
+    \hline
+    RF0-8.07 & DatasetNameBtn\\
+    \hline
+    RF0-8.09 & DatasetListView\\
+    \hline
+    RFF-13.01 & UploadBtn\\
+    \hline
+    RFF-13.02 & UploadBtn\\
+    \hline
+    RFF-13.03 & UploadBtn\\
+    \hline
+    RFF-13.04 & UploadBtn\\
+    \hline
+\end{tabularx}
+
+\subsubsection{DataSetPageLoaded}
+\paragraph{Descrizione}
+DataSetPageLoaded è il componente che permette di visualizzare le coppie di domande-risposte del dataset selezionato tramite NameBtn.Espone le seguenti funzionalità:
+\begin{itemize}
+    \item Scorrimento della lista delle domande e risposte attese.
+    \item Paginazione della lista delle domande e risposte attese.
+    \item Modifica delle domande e risposte attese.
+    \item Eliminazione di una coppia di domande e risposte attese.
+    \item Ricerca delle domande e risposte tramite parole chiave.
+    \item Aggiungere una coppia di domanda e risposta attesa.
+    \item Eseguire un test con un LLM.
+    \item Visualizza nome dei dataset e informazioni sulla data dell'ultima modifica dei dataset.
+\end{itemize}
+\paragraph{SottoComponenti}
+DataSetPageLoaded è composto dai seguenti sotto-componenti:
+\begin{itemize}
+        \item \textbf{ReturnBtn}: pulsante che permette di ritornare nella pagina del DataSetPage.
+        \item \textbf{DatasetNameText}: mostra nome del dataset selezionato.
+        \item \textbf{SearchInfoBar}: la barra di ricerca per le domande e le risposte
+        \item \textbf{SaveDatasetBtn}: il pulsante che permette di salvare/aggiornare il dataset all'interno della Database.
+        \item \textbf{QAListView}: mostra tutte le coppie di domande e risposte sotto forma della lista scorrevole e della paginazione.
+        \begin{itemize}
+            \item \textbf{QAModificaBtn}: il pulsante che permette di modificare la coppia di domanda e risposta
+            \item \textbf{QAEliminaBtn}: il pulsante che permette di eliminare la coppia di domande e risposta.
+        \end{itemize}
+
+        \item \textbf{Form}: il form che permette all'utente di inserire informazioni nei campi della domanda e la risposta. 
+        \begin{itemize}
+            \item \textbf{CreateQABtn}: il pulsante che permette di aggiungere la coppia di domanda e risposta all'interno del dataset selezionato.
+        \end{itemize}
+
+        \item \textbf{TestBtn}:il pulsante che permette di eseguire un test con un LLM poi l'utente verrà portata nella pagina adatta.
+        \begin{itemize}
+            \item \textbf{QAIncompleteLink}: una pop-up che contiene tutte le domande e risposte incomplete sotto forma di un lista scorrevole coi link, viene mostrato solo in caso che ci sia presente di almeno una coppia incompleta.
+            \item \textbf{ConfigLLMBtn}:una pulsante che mostra una pop-up che contiene una lista della di LLM disponibile.(parte di matteo)
+        \end{itemize}
+
+    \end{itemize}
+\paragraph{Tracciamento dei requisiti}
+\begin{tabularx}{\textwidth}{|c|c|}
+    \hline
+    \textbf{ID} & \textbf{componente} \\
+    \hline
+        RF0-1.01 & DatasetNameText\\
+    \hline
+        RF0-1.02 & DatasetNameText\\
+    \hline
+        RF0-1.03 & QAListView\\
+    \hline
+        RF0-1.04 & QAListView\\
+    \hline
+        RF0-1.05 & QAListView\\
+    \hline
+        RF0-1.06 & SearchInfoBar\\
+    \hline
+        RF0-1.07 & CreateQABtn\\
+    \hline
+        RF0-1.08 & TestBtn\\
+    \hline
+        RF0-1.09 & QAIncompleteLink\\
+    \hline
+        RF0-1.10 & TestBtn\\
+    \hline
+        RF0-1.11 & SaveDatasetBtn\\
+    \hline
+        RF0-1.13 & SaveDatasetBtn\\
+    \hline
+        RFF-1.01 & ConfigLLMBtn\\ %parte di matteo eghosa
+    \hline
+        RF0-2.01 & QAListView\\
+    \hline
+        RF0-2.02 & QAListView\\
+    \hline
+        RF0-2.03 & QAListView\\
+    \hline
+        RF0-3.01 & QAListView\\
+    \hline
+        RF0-3.02 & QAListView\\
+    \hline
+        RF0-3.03 & QAListView\\
+    \hline
+        RF0-3.04 & QAModificaBtn\\
+    \hline
+        RF0-3.05 & QAEliminaBtn\\
+    \hline
+        RF0-3.06 & QAEliminaBtn\\
+    \hline
+        RF0-4.01 & QAListView\\
+    \hline
+        RF0-4.02 & QAListView\\
+    \hline
+        RF0-4.03 & QAModificaBtn\\
+    \hline
+        RF0-4.04 & QAModificaBtn\\
+    \hline
+        RF0-4.05 & QAModificaBtn\\
+    \hline
+        RF0-5.01 & QAIncompleteLink\\
+    \hline
+        RF0-5.02 & QAIncompleteLink\\
+    \hline
+        RF0-5.03 & QAIncompleteLink\\
+    \hline
+        RF0-8.08 & ReturnBtn\\
+    \hline
+\end{tabularx}
+\subsubsection{TestListPage}
+\paragraph{Descrizione}
+
+\paragraph{SottoComponenti}
+\paragraph{Tracciamento dei requisiti}
