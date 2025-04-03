@@ -2,6 +2,7 @@
 \label{sec:ProgettazioneAdAltoLivello}
 
 \subsection{Front-end}
+\label{sec:Front-end}
 \subsubsection{HomePage}
 \paragraph{Descrizione}
 HomePage è il componente che guida all'utilizzatore nelle altre pagine web.
@@ -16,9 +17,11 @@ HomePage è composto dai seguenti sotto-componenti:
     \item \textbf{ContentComponent}: componente che descrive le informazioni riguardanti al progetto di sviluppo e al team di sviluppo.
     \item \textbf{FootterComponent}: componente che contiene le informazioni riguardanti al copyright.
 \end{itemize}
+
 \subsubsection{DataseListPage}
+\label{sec:DataseListPage}
 \paragraph{Descrizione}
-DataSetPage è il componete che mostra le informazioni riguardanti i dataset salvati all'interno del Database. Espone le seguenti funzionalità:
+DataSetPage è il componete che mostra le informazioni riguardanti tutti dataset salvati e temporaneo. Espone le seguenti funzionalità:
 \begin{itemize}
     \item selezione/carica di un dataset salvato.
     \item modifica/rinomina di un dataset salvato.
@@ -35,68 +38,69 @@ DataSetPage è composto dai seguenti sotto-componenti:
     \item \textbf{CreaDatasetBtn}: pulsante per la creazione di un dataset temporaneo.
     \item \textbf{UploadBtn}: pulsante per caricare i file locale in formato JSON tramite una finestra, .
     \item \textbf{SearchDatasetBar}: la barra di ricerca per cercare i dataset.
-    
     \item \textbf{DatasetListView}: mostra tutte le dataset sia salvate che temporaneo sotto forma di una lista scorrevole.
     \begin{itemize}
         \item \textbf{DatasetNameBtn}: pulsante che mostra il nome del dataset e per caricare il dataset selezionato.
-        \item \textbf{DatasetModificaBtn}: pulsante per modificare il nome del dataset selezionato.
-        \item \textbf{DatasetEliminaBtn}: pulsante per eliminare il dataset selezionato.
+        \item \textbf{DatasetChangeBtn}: pulsante per modificare il nome del dataset selezionato.
+        \item \textbf{DatasetDeleteBtn}: pulsante per eliminare il dataset selezionato.
         \item \textbf{DatasetCopiaBtn}: pulsante per duplicare il dataset selezionato.
         \item \textbf{DatasetInfoText}: viene visualizzato la data della l'ultima modifica del dataset.
     \end{itemize}
 \end{itemize}
-\paragraph{Tracciamento dei requisiti}
+
+\paragraph{Tracciamento dei requisiti per DataseListPage}
 \begin{tabularx}{\textwidth}{|c|c|}
     \hline
     \textbf{ID} & \textbf{componente} \\
     \hline
-    RFO-1.12 & CreaDatasetBtn\\
+        RFO-1.12 & CreaDatasetBtn\\
     \hline
-    RFO-6.01 & DatasetNameBtn\\
+        RFO-6.01 & DatasetNameBtn\\
     \hline
-    RFO-6.02 & DatasetModificaBtn\\
+        RFO-6.02 & DatasetChangeBtn\\
     \hline
-    RFO-6.03 & DatasetModificaBtn\\
+        RFO-6.03 & DatasetChangeBtn\\
     \hline
-    RFO-6.04 & DatasetModificaBtn\\
+        RFO-6.04 & DatasetChangeBtn\\
     \hline
-    RFO-6.04 & DatasetModificaBtn\\
+        RFO-6.04 & DatasetChangeBtn\\
     \hline
-    RFO-7.01 & DatasetListView\\
+        RFO-7.01 & DatasetListView\\
     \hline
-    RFO-7.02 & CreaDatasetBtn\\
+        RFO-7.02 & CreaDatasetBtn\\
     \hline
-    RFO-7.03 & DatasetListView\\
+        RFO-7.03 & DatasetListView\\
     \hline
-    RFO-7.04 & SearchDatasetBar\\
+        RFO-7.04 & SearchDatasetBar\\
     \hline
-    RFO-8.01 & DatasetNameBtn\\
+        RFO-8.01 & DatasetNameBtn\\
     \hline
-    RF0-8.02 & DatasetInfoText\\
+        RF0-8.02 & DatasetInfoText\\
     \hline
-    RFO-8.03 & DatasetModificaBtn\\
+        RFO-8.03 & DatasetChangeBtn\\
     \hline
-    RF0-8.04 & DatasetCopiaBtn\\
+        RF0-8.04 & DatasetCopiaBtn\\
     \hline
-    RF0-8.05 & DatasetEliminaBtn\\
+        RF0-8.05 & DatasetDeleteBtn\\
     \hline
-    RF0-8.06 & DatasetEliminaBtn\\
+        RF0-8.06 & DatasetDeleteBtn\\
     \hline
-    RF0-8.07 & DatasetNameBtn\\
+        RF0-8.07 & DatasetNameBtn\\
     \hline
-    RF0-8.09 & DatasetListView\\
+        RF0-8.09 & DatasetListView\\
     \hline
-    RFF-13.01 & UploadBtn\\
+        RFF-13.01 & UploadBtn\\
     \hline
-    RFF-13.02 & UploadBtn\\
+        RFF-13.02 & UploadBtn\\
     \hline
-    RFF-13.03 & UploadBtn\\
+        RFF-13.03 & UploadBtn\\
     \hline
-    RFF-13.04 & UploadBtn\\
+        RFF-13.04 & UploadBtn\\
     \hline
 \end{tabularx}
 
 \subsubsection{DataSetPageLoaded}
+\label{sec:DataSetPageLoaded}
 \paragraph{Descrizione}
 DataSetPageLoaded è il componente che permette di visualizzare le coppie di domande-risposte del dataset selezionato tramite NameBtn.Espone le seguenti funzionalità:
 \begin{itemize}
@@ -119,7 +123,7 @@ DataSetPageLoaded è composto dai seguenti sotto-componenti:
         \item \textbf{QAListView}: mostra tutte le coppie di domande e risposte sotto forma della lista scorrevole e della paginazione.
         \begin{itemize}
             \item \textbf{QAModificaBtn}: il pulsante che permette di modificare la coppia di domanda e risposta
-            \item \textbf{QAEliminaBtn}: il pulsante che permette di eliminare la coppia di domande e risposta.
+            \item \textbf{QADeleteBtn}: il pulsante che permette di eliminare la coppia di domande e risposta.
         \end{itemize}
 
         \item \textbf{Form}: il form che permette all'utente di inserire informazioni nei campi della domanda e la risposta. 
@@ -134,7 +138,8 @@ DataSetPageLoaded è composto dai seguenti sotto-componenti:
         \end{itemize}
 
     \end{itemize}
-\paragraph{Tracciamento dei requisiti}
+
+\paragraph{Tracciamento dei requisiti per DataSetPageLoaded}
 \begin{tabularx}{\textwidth}{|c|c|}
     \hline
     \textbf{ID} & \textbf{componente} \\
@@ -179,9 +184,9 @@ DataSetPageLoaded è composto dai seguenti sotto-componenti:
     \hline
         RF0-3.04 & QAModificaBtn\\
     \hline
-        RF0-3.05 & QAEliminaBtn\\
+        RF0-3.05 & QADeleteBtn\\
     \hline
-        RF0-3.06 & QAEliminaBtn\\
+        RF0-3.06 & QADeleteBtn\\
     \hline
         RF0-4.01 & QAListView\\
     \hline
@@ -202,8 +207,121 @@ DataSetPageLoaded è composto dai seguenti sotto-componenti:
         RF0-8.08 & ReturnBtn\\
     \hline
 \end{tabularx}
+
 \subsubsection{TestListPage}
+\label{sec:TestListPage}
 \paragraph{Descrizione}
+TestListPage è il componete che mostra le informazioni riguardanti tutti test salvati. Espone le seguenti funzionalità:
+\begin{itemize}
+    \item Scorrimento dei test salvati.
+    \item Eliminazione dei test salvati.
+    \item Ricerca dei test salvati tramite parole chiave.
+    \item Caricare un test salvato.
+    \item Confronto tra due test salvati.
+    \item Visualizzare la data di esecuzione dei test.
+\end{itemize}
 
 \paragraph{SottoComponenti}
-\paragraph{Tracciamento dei requisiti}
+TestListPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+    \item \textbf{SearchTestBar}: la barra di ricerca per cercare i test.
+    \item \textbf{TestListView}: mostra tutti i test salvati sotto forma di una lista scorrevole.
+    \begin{itemize}
+        \item \textbf{TestNameBtn}: pulsante che mostra il nome del test e per caricare.
+        \item \textbf{TestDeletBtn}: pulsante per eliminare il test selezionato.
+        \item \textbf{TestCompareBtn}: pulsante per comparare due test selezionato.
+        \item \textbf{TestInfoText}: viene visualizzato la data di esecuzione del test e LLM utilizzato.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Tracciamento dei requisiti per TestListPage}
+\begin{tabularx}{\textwidth}{|c|c|}
+    \hline
+    \textbf{ID} & \textbf{componente} \\
+    \hline
+        RF0-9.01 & TestInfoText\\
+    \hline
+        RF0-9.06 & TestNameBtn\\
+    \hline
+        RFF-9.01 & TestNameBtn,TestInfoText\\
+    \hline
+\end{tabularx}
+
+\subsubsection{TestPageLoaded}
+\label{sec:TestPageLoaded}
+\paragraph{Descrizione}
+TestPageLoaded è il componete che mostra tutte le informazioni relativi al test selezionato ed eseguito. Espone le seguenti funzionalità:
+\begin{itemize}
+    \item Selezione di un test per confrontare con quello attuale.
+    \item Visualizzazione del nome di test.
+    \item Visualizzazione di un diagramma di dispersione.
+    \item Visualizzazione dell'indice riassuntivo.
+    \item Visualizzazione del diagramma di dispersione.
+    \item Visualizzazione delle domande e risposte attese e ricevute.
+\end{itemize}
+\paragraph{SottoComponenti}
+TestPageLoaded è composto dai seguenti sotto-componenti:
+\begin{itemize}
+    \item \textbf{NameLabel}: l'etichetta che mostra il nome del dataset.
+    \item \textbf{SelectBtn}: il pulsante che mostra tutti i test salvate e che permette di selezionare un test tra di loro.
+    \item \textbf{Summary}: l'indice riassuntivo.
+    \item \textbf{Diagram}: visualizzazione del diagramma di dispersione.
+    \item \textbf{QATestListView}: mostra tutte domande, risposte attese e risposte ricevuto dal LLM sotto forma della lista scorrevole e della paginazione.
+\end{itemize}
+
+\paragraph{Tracciamento dei requisiti per TestPageLoaded}
+\begin{tabularx}{\textwidth}{|c|c|}
+    \hline
+    \textbf{ID} & \textbf{componente} \\
+    \hline
+        RFF-9.02 & SelectBtn \\
+    \hline
+        RFF-9.03 & QATestListView \\
+    \hline
+        RFF-9.04 & QATestListView \\
+    \hline
+        RFF-9.05 & QATestListView \\
+    \hline
+        RFF-9.06 & NameLabel \\
+    \hline
+        RFF-10.01 & Summary \\
+    \hline
+        RFF-10.02 & Summary \\
+    \hline
+        RFF-10.03 & Summary \\
+    \hline
+        RFF-10.04 & Summary \\
+    \hline
+        RFF-10.05 & Summary \\
+    \hline
+        RFF-10.06 & Summary \\
+    \hline
+        RFF-11.01 & Diagram \\
+    \hline
+        RFF-11.02 & QATestListView \\
+    \hline
+        RFF-11.03 & QATestListView \\
+    \hline
+        RFF-11.04 & QATestListView \\
+    \hline
+        RFF-12.01 & QATestListView \\
+    \hline
+        RFF-12.02 & QATestListView \\
+    \hline
+        RFF-12.03 & QATestListView \\
+    \hline
+        RFF-12.04 & Diagram \\
+    \hline
+        RFF-12.05 & QATestListView \\
+    \hline
+        RFF-13.01 & Diagram \\
+    \hline
+        RFF-13.02 & Diagram \\
+    \hline
+        RFF-13.03 & Diagram \\
+    \hline
+        RFF-13.04 & Diagram \\
+    \hline
+        RFF-13.05 & Diagram \\
+    \hline
+\end{tabularx}
