@@ -1,0 +1,23 @@
+\subsection{Introduzione}
+\label{subsec:introduzione}
+
+Il sistema ArtificialQI è basato sull'architettura client-server.
+In questa architettura il carico di lavoro viene suddiviso tra due componenti:
+\begin{enumerate}
+    \item \textbf{client}: interfaccia con cui gli utenti interagiscono con il sistema per richiedere risorse e/o servizi;
+    \item \textbf{server}: applicazione che riceve ed elabora le richieste eseguite dal client e fornisce le risposte corrette. 
+\end{enumerate}
+Il gruppo ha quindi deciso di sviluppare due componenti separati:
+\begin{enumerate}
+    \item \textbf{front-end}: componente client del sistema, è un interfaccia grafica sviluppata utilizzando il framework Angular;  
+    \item \textbf{back-end}: componente server del sistema che utilizza Python come linguaggio e Flask come framework, implementa la logica di business e la logica di persistenza.
+\end{enumerate}
+La comunicazione tra front-end e back-end avviene tramite una API.
+L'API verrà implementata seguendo i principi indicati nello stile architetturale REST (Representational State Transfer), utilizzando il protocollo di comunicazione HTTP e il formato di rappresentazione delle risorse JSON.
+Una caratteristica delle REST API è quella di essere stateless, il che significa che la componente server non deve memorizzare le interazioni passate per poter rispondere a una richiesta del client. 
+Questo permette di ridurre il carico sul server e migliora la scalabilità.
+La persistenza delle risorse viene implementata utilizzando un database relazionale gestito utilizzando PostgreSQL come DBMS.
+
+\subsubsection{Integrazione dei componenti}
+Il gruppo ha deciso di utilizzare un container Docker per ognuno dei due componenti sopra citati.
+Per gestire e permettere la comunicazione tra i due container menzionati, il gruppo ha deciso di utilizzare Docker Compose.  
