@@ -1,0 +1,71 @@
+\subsubsection{LLMPage}
+\label{sec:LLMPage}
+\paragraph{Descrizione}
+LLMPage è la pagina che si occupa di rendere visibile le opzioni e informazioni necessarie creazione e modifica di un LLM.
+\paragraph{SottoComponenti}
+LLMPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+        \item \textbf{LLMComponent}: Il componente con dichiarati i metodi e parametri necessari alla creazione di una LLMPage tra i quali:
+        \begin{itemize}
+            \item \textbf{mode}: Parametro settato in fase di routing, da informazioni sull chiamata HTTP che ha chiamato il componente consentendo comportamenti specifici a seconda della chiamata; ciò consente ad un componente di poter gestire leggere variazioni di comportamento conservando la stessa logica di fondo. Tale parametro consente la differenziazione tra la funzione di modifica di un LLM e quella di aggiunta di un LLM.
+            \item \textbf{fields}: Parametro che memorizza tutti le opzioni impostate durante la sessione in corso sulla pagina. 
+            \item \textbf{modifyName()}: Metodo che salva in fields il vecchio e nuovo valore impostato per il campo nome.
+            \item \textbf{modifyURL()}: Metodo che salva in fields il nuovo valore impostato per il campo URL.
+            \item \textbf{modifyKeyQ()}: Metodo che salva in fields il nuovo valore impostato per il campo chiave-domanda.
+            \item \textbf{modifyKeyA()}: Metodo che salva in fields il nuovo valore impostato per il campo chiave-risposta.
+            \item \textbf{modifyKeyValueH()}: Metodo che salva in fields il nuovo valore impostato per il campo chiave-header.
+            \item \textbf{modifyKeyValueB()}: Metodo che salva in fields il nuovo valore impostato per il campo chiave-body.
+            \item \textbf{save()}: Metodo che va eseguire il salvataggio delle opzioni memorizzare in fields chiamando FieldReqComponent.
+            \item \textbf{reset()}: Metodo che setta fields al valore di default.
+        \end{itemize}   
+        \item \textbf{FieldReqComponent}: Componente dotato del metodo sendReq() che eredita da SenderReqComponent, tale componente funge da wrapper per la chiamata HTTP di salvataggio per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMComponent. E' presente il riferimento in LLMComponent.
+    \end{itemize}
+
+    \paragraph{Tracciamento dei requisiti per LLMPage}
+    \begin{tabularx}{\textwidth}{|c|c|}
+        \hline
+        \textbf{ID} & \textbf{componente} \\
+        \hline
+            RFF-3.01 & LLMComponent \\
+        \hline
+            RFF-3.02 & LLMComponent \\
+        \hline
+            RFF-3.03 & LLMComponent \\
+        \hline
+            RFF-3.04 & LLMComponent \\
+        \hline
+            RFF-3.05 & LLMComponent \\
+        \hline
+            RFF-3.06 & LLMComponent \\
+        \hline
+            RFF-3.07 & LLMComponent \\
+        \hline
+            RFF-3.08 & LLMComponent \\
+        \hline
+            RFF-4.01 & LLMComponent \\
+        \hline
+            RFF-4.02 & LLMComponent \\
+        \hline
+            RFF-4.03 & LLMComponent \\
+        \hline
+            RFF-4.04 & LLMComponent \\
+        \hline
+            RFF-4.05 & LLMComponent \\
+        \hline
+            RFF-4.06 & LLMComponent \\
+        \hline
+            RFF-4.07 & LLMComponent \\
+        \hline
+            RFF-4.08 & LLMComponent \\
+        \hline
+            RFF-4.09 & LLMComponent \\
+        \hline
+            RFF-4.10 & LLMComponent \\
+        \hline
+            RFF-4.11 & MessageHandlerComponent \\
+        \hline
+            RFF-4.12 & MessageHandlerComponent \\
+        \hline
+            RFF-4.13 & MessageHandlerComponent \\
+        \hline
+    \end{tabularx}
