@@ -15,7 +15,9 @@ LLMListPage è composto dai seguenti sotto-componenti:
         \item Salvataggio un LLM. 
         \item Gestione per la conferma di azioni che comporteranno modifiche significative.
     \end{itemize}   
+    \item \textbf{LLMShowListComponent}: Componente che si occupa di mostrare la lista degli LLM salvati.
     \item \textbf{SenderReqComponent}: Componente che si occupa dell'esecuzione di chiamate HTTP.
+    \item \textbf{LLMsReqComponent}: Componente che eredita da SenderReqComponent, tale componente funge da wrapper per la chiamata HTTP di visualizzazione degli LLM salvati per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListComponent. E' presente il riferimento in LLMListComponent.
     \item \textbf{SelectReqComponent}: Componente che eredita da SenderReqComponent, tale componente funge da wrapper per la chiamata HTTP di selezione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListComponent. E' presente il riferimento in LLMListComponent.
     \item \textbf{DeleteReqComponent}: Componente che eredita da SenderReqComponent, tale componente funge da wrapper per la chiamata HTTP di eliminazione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListComponent. E' presente il riferimento in LLMListComponent.
     \item \textbf{DialogComponent}: Il componente che consente la visualizzazione della finestra di dialog.
@@ -31,19 +33,19 @@ LLMListPage è composto dai seguenti sotto-componenti:
     \hline
     \textbf{ID} & \textbf{componente} \\
     \hline
-        RFF-1.01 & LLMListComponent\\
+        RFF-1.01 & LLMsReqComponent\\
     \hline
-        RFF-1.02 & LLMListComponent\\
+        RFF-1.02 & LLMsReqComponent\\
     \hline
-        RFF-1.03 & SelectReqComponent\\
+        RFF-1.03 & LLMShowListComponent\\
     \hline
         RFF-1.04 & MessageHandlerComponent\\
     \hline
-        RFF-2.01 & LLMListComponent\\
+        RFF-2.01 & LLMsReqComponent\\
     \hline
-        RFF-2.02 & LLMListComponent\\
+        RFF-2.02 & LLMShowListComponent\\
     \hline
-        RFF-2.03 & LLMListComponent\\
+        RFF-2.03 & LLMShowListComponent\\
     \hline
         RFF-2.04 & DialogComponent\\
     \hline
