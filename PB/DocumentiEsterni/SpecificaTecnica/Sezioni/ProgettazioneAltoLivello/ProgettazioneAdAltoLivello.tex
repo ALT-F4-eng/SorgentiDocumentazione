@@ -1,0 +1,167 @@
+\section{Progettazione Ad Alto Livello}
+\label{sec:ProgettazioneAdAltoLivello}
+
+\subsection{Front-end}
+\label{sec:Front-end}
+\subsubsection{StandardPage}
+\label{sec:StandardPage}
+\paragraph{Descrizione}
+La StandardPage è la pagina che funge da struttura del layout che ogni pagina riceve come parametro con il nome del componente BasePageComponent.
+\paragraph{SottoComponenti}
+StandardPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+    \item \textbf{BasePageComponent}: Il componente con dichiarati i metodi e parametri necessari alla creazione di una StandardPage tra i quali:
+    \begin{itemize}
+        \item \textbf{setHeader()}: Metodo che va a chiamare i componenti dediti alla costruzione dell'header.
+        \item \textbf{setFooter()}: Metodo che va a chiamare i componenti dediti alla costruzione dell'footer.
+        \item \textbf{setMessages()}: Metodo che va a chiamare i componenti dediti alla costruzione di messaggi di sistema tra qui possibili messaggi a comparsa, pop-up e messaggi d'errore standardizzabili.
+        \item \textbf{setLoadingStatus()}: Metodo che va a chiamare i componenti dediti al feedback del caricamento a livello grafico, ogni pagina dunque sarà capace di avviare un caricamento.
+    \end{itemize}
+    \item \textbf{ObserverComponent}: Componente dotato del metodo sovracscrivibile Update().
+    \item \textbf{SubjectComponent}: Componente dotato del metodo sovracscrivibile Subscribe().
+    \item \textbf{NavigationLinksComponent}: Componente dotato del metodo Update() che eredita da ObserverComponent, tale componente si occupa di aggiornare i link presenti sull header a seconda della pagina richiesta.
+    \item \textbf{HeaderComponent}: Componente dotato del metodo Subscribe() che eredita da SubjectComponent, tale componente riceve le modifiche richieste dal NavigationLinksComponent per aggiornare l'header.
+    \item \textbf{FooterComponent}: Componente che instanzia il footer sul ngOnInit().
+    \item \textbf{LoadingComponent}: Il componente con dichiarati i metodi necessari all'avvio del caricamento grafico:
+    \begin{itemize}
+        \item \textbf{loadingStatus}: Metodo booleano che indica la presenza o meno del caricamento.
+        \item \textbf{ngOnInit()}: Metodo che si occupa si settare il parametro loadingStatus a False.
+        \item \textbf{setStatus()}: Metodo che imposta il valore del parametro loadingStatus.
+    \end{itemize}
+    \item \textbf{MessageHandlerComponent}: Componente dotato del metodo Update() che eredita da ObserverComponent, tale componente si occupa di creare il tipo e contenuto del messaggio.
+    \item \textbf{MessageComponent}: Componente dotato del metodo Subscribe() che eredita da SubjectComponent, tale componente riceve le impostazioni del messaggio richieste dal MessageHandlerComponent per aggiornare l'apparizione del messaggio.
+\end{itemize}
+
+
+\subsubsection{LLMListPage}
+\label{sec:LLMListPage}
+\paragraph{Descrizione}
+LLMListPage è la pagina che si occupa di mostrare la lista degli LLM salvati.
+\paragraph{SottoComponenti}
+LLMListPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+    \item \textbf{LLMListComponent}: Il componente con dichiarati i metodi e parametri necessari alla creazione di una LLMListPage tra i quali:
+    \begin{itemize}
+        \item \textbf{mode}: Parametro settato in fase di routing, da informazioni sull chiamata HTTP che ha chiamato il componente consentendo comportamenti specifici a seconda della chiamata; ciò consente ad un componente di poter gestire leggere variazioni di comportamento conservando la stessa logica di fondo. Tale parametro consente la differenziazione tra la funzione di visualizzare gli LLM e quella di visualizzare gli LLM in fase di test.
+        \item \textbf{showAll()}: Metodo che va a chiamare e mostrare la lista di tutti gli LLM salvati.
+        \item \textbf{select()}: Consente il reindirizzamento alla pagina dedita all'avvio del test con le informazione sul LLM selezionato.
+        \item \textbf{delete()}: Consente di eliminare LLM salvato.
+        \item \textbf{addLLM()}: Consente di salvare un LLM. 
+        \item \textbf{onDialogResult()}: Metodo per gestire la conferma di azioni che comporteranno modifiche significative.
+    \end{itemize}   
+    \item \textbf{SenderReqComponent}: Componente che rende sovrascrivibile il metodo sendReq() dedito all'esecuzione di chiamate HTTP.
+    \item \textbf{SelectReqComponent}: Componente dotato del metodo sendReq() che eredita da SenderReqComponent, tale componente funge da wrapper per la chiamata HTTP di selezione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListComponent. E' presente il riferimento in LLMListComponent.
+    \item \textbf{DeleteReqComponent}: Componente dotato del metodo sendReq() che eredita da SenderReqComponent, tale componente funge da wrapper per la chiamata HTTP di eliminazione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListComponent. E' presente il riferimento in LLMListComponent.
+    \item \textbf{DialogComponent}: Il componente con dichiarati i metodi necessari alla visualizzazione della finestra di dialog:
+    \begin{itemize}
+        \item \textbf{dialogStatus}: Metodo booleano che indica la presenza o meno della finestra di dialog.
+        \item \textbf{ngOnInit()}: Metodo che si occupa si settare il parametro dialogStatus a False.
+        \item \textbf{setStatus()}: Metodo che imposta il valore del parametro dialogStatus.
+    \end{itemize}
+    \item \textbf{CommandComponent}: Componente che rende sovrascrivibile il metodo execute() dedito all'esecuzione di azioni specifiche.
+    \item \textbf{ContinueEventComponent}: Componente dotato del metodo action() che inoltra la richiesta con DeleteReqComponent.
+    \item \textbf{CancelEventComponent}: Componente dotato del metodo action() che interrompe l'azione principale.
+    \item \textbf{EventsHandlerConfirmationComponent}: Componente dotato del metodo execute() che eredita da CommandComponent, tale componente esegue l'azione del ContinueEventComponent.
+    \item \textbf{EventsHandlerAnnullationComponent}: Componente dotato del metodo execute() che eredita da CommandComponent, tale componente esegue l'azione del CancelEventComponent.
+\end{itemize}
+
+\paragraph{Tracciamento dei requisiti per LLMListPage}
+\begin{tabularx}{\textwidth}{|c|c|}
+    \hline
+    \textbf{ID} & \textbf{componente} \\
+    \hline
+        RFF-1.01 & LLMListComponent\\
+    \hline
+        RFF-1.02 & LLMListComponent\\
+    \hline
+        RFF-1.03 & SelectReqComponent\\
+    \hline
+        RFF-1.04 & MessageHandlerComponent\\
+    \hline
+        RFF-2.01 & LLMListComponent\\
+    \hline
+        RFF-2.02 & LLMListComponent\\
+    \hline
+        RFF-2.03 & LLMListComponent\\
+    \hline
+        RFF-2.04 & DialogComponent\\
+    \hline
+        RFF-2.05 & DialogComponent\\
+    \hline
+        RFF-2.06 & LLMListComponent\\
+    \hline
+        RFF-2.07 & MessageHandlerComponent\\
+    \hline
+\end{tabularx}
+
+\subsubsection{LLMPage}
+\label{sec:LLMPage}
+\paragraph{Descrizione}
+LLMPage è la pagina che si occupa di rendere visibile le opzioni e informazioni necessarie creazione e modifica di un LLM.
+\paragraph{SottoComponenti}
+LLMPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+        \item \textbf{LLMComponent}: Il componente con dichiarati i metodi e parametri necessari alla creazione di una LLMPage tra i quali:
+        \begin{itemize}
+            \item \textbf{mode}: Parametro settato in fase di routing, da informazioni sull chiamata HTTP che ha chiamato il componente consentendo comportamenti specifici a seconda della chiamata; ciò consente ad un componente di poter gestire leggere variazioni di comportamento conservando la stessa logica di fondo. Tale parametro consente la differenziazione tra la funzione di modifica di un LLM e quella di aggiunta di un LLM.
+            \item \textbf{fields}: Parametro che memorizza tutti le opzioni impostate durante la sessione in corso sulla pagina. 
+            \item \textbf{modifyName()}: Metodo che salva in fields il vecchio e nuovo valore impostato per il campo nome.
+            \item \textbf{modifyURL()}: Metodo che salva in fields il nuovo valore impostato per il campo URL.
+            \item \textbf{modifyKeyQ()}: Metodo che salva in fields il nuovo valore impostato per il campo chiave-domanda.
+            \item \textbf{modifyKeyA()}: Metodo che salva in fields il nuovo valore impostato per il campo chiave-risposta.
+            \item \textbf{modifyKeyValueH()}: Metodo che salva in fields il nuovo valore impostato per il campo chiave-header.
+            \item \textbf{modifyKeyValueB()}: Metodo che salva in fields il nuovo valore impostato per il campo chiave-body.
+            \item \textbf{save()}: Metodo che va eseguire il salvataggio delle opzioni memorizzare in fields chiamando FieldReqComponent.
+            \item \textbf{reset()}: Metodo che setta fields al valore di default.
+        \end{itemize}   
+        \item \textbf{FieldReqComponent}: Componente dotato del metodo sendReq() che eredita da SenderReqComponent, tale componente funge da wrapper per la chiamata HTTP di salvataggio per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMComponent. E' presente il riferimento in LLMComponent.
+    \end{itemize}
+
+    \paragraph{Tracciamento dei requisiti per LLMPage}
+    \begin{tabularx}{\textwidth}{|c|c|}
+        \hline
+        \textbf{ID} & \textbf{componente} \\
+        \hline
+            RFF-3.01 & LLMComponent \\
+        \hline
+            RFF-3.02 & LLMComponent \\
+        \hline
+            RFF-3.03 & LLMComponent \\
+        \hline
+            RFF-3.04 & LLMComponent \\
+        \hline
+            RFF-3.05 & LLMComponent \\
+        \hline
+            RFF-3.06 & LLMComponent \\
+        \hline
+            RFF-3.07 & LLMComponent \\
+        \hline
+            RFF-3.08 & LLMComponent \\
+        \hline
+            RFF-4.01 & LLMComponent \\
+        \hline
+            RFF-4.02 & LLMComponent \\
+        \hline
+            RFF-4.03 & LLMComponent \\
+        \hline
+            RFF-4.04 & LLMComponent \\
+        \hline
+            RFF-4.05 & LLMComponent \\
+        \hline
+            RFF-4.06 & LLMComponent \\
+        \hline
+            RFF-4.07 & LLMComponent \\
+        \hline
+            RFF-4.08 & LLMComponent \\
+        \hline
+            RFF-4.09 & LLMComponent \\
+        \hline
+            RFF-4.10 & LLMComponent \\
+        \hline
+            RFF-4.11 & MessageHandlerComponent \\
+        \hline
+            RFF-4.12 & MessageHandlerComponent \\
+        \hline
+            RFF-4.13 & MessageHandlerComponent \\
+        \hline
+    \end{tabularx}
