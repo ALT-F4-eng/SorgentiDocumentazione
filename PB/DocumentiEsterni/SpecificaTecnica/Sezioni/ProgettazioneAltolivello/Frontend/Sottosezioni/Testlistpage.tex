@@ -1,0 +1,37 @@
+\subsubsection{TestListPage}
+\label{sec:TestListPage}
+\paragraph{Descrizione}
+TestListPage è il componete che mostra le informazioni riguardanti i test salvati. Presenta le seguenti funzionalità:
+\begin{itemize}
+    \item Eliminazione di un test salvato;
+    \item Ricerca dei test salvati tramite parole chiave;
+    \item Caricamento di un test salvato;
+    \item Confronto tra due test salvati;
+    \item Visualizzazione delle informazioni relative al test salvato.
+\end{itemize}
+
+\paragraph{SottoComponenti}
+TestListPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+    \item \textbf{SearchTestBar}: barra di ricerca per i test effettuati;
+    \item \textbf{TestListView}: lista scorrevole che mostra tutti i test salvati:
+    \begin{itemize}
+        \item \textbf{TestSelectBtn}: pulsante per selezionare un test presente nella lista;
+        \item \textbf{TestDeletBtn}: pulsante per eliminare il test selezionato;
+        \item \textbf{TestCompareBtn}: pulsante per confrontare un test con un altro test salvato;
+        \item \textbf{TestInfoText}: pulsante per visualizzare le informazioni relative al test selezionato (es. data di esecuzione, LLM usato).
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Tracciamento dei requisiti}
+\begin{tabularx}{\textwidth}{|c|c|}
+    \hline
+    \textbf{ID} & \textbf{Componente} \\
+    \hline
+        RF0-9.01 & TestInfoText\\
+    \hline
+        RF0-9.06 & TestSelectBtn\\
+    \hline
+        RFF-9.01 & TestSelectBtn, TestInfoText\\
+    \hline
+\end{tabularx}

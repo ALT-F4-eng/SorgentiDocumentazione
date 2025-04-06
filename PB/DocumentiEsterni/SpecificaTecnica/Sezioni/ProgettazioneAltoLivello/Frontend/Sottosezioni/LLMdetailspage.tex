@@ -1,0 +1,43 @@
+\subsubsection{LLMDetailsPage}
+\label{sec:LLMDetailsPage}
+\paragraph{Descrizione}
+LLMDetailsPage è la pagina che si occupa di rendere visibile le opzioni e informazioni relative ad un LLM.
+\paragraph{SottoComponenti}
+LLMDetailsPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+        \item \textbf{LLMDetailsComponent}: Il componente che consente l'acquisizione delle informazioni sull' LLM.
+        \begin{itemize}
+            \item Visualizzazione del nome dell'LLM.
+            \item Visualizzazione della data dell'ultima modifica.
+            \item Visualizzazione del URL dell'LLM.
+            \item Visualizzazione del nome dell'LLM.
+            \item Visualizzazione delle coppie chiave-valore per la costruzione dell'header.
+            \item Visualizzazione delle coppie chiave-valore per la costruzione del body.
+            \item Visualizzazione della chiave relativa alla domanda da porre all'LLM.
+            \item Visualizzazione della chiave relativa alla risposta data dall'LLM.
+        \end{itemize} 
+        \item \textbf{DetailsReqComponent}: Componente che eredita da SenderReqComponent, tale componente funge da wrapper per la chiamata HTTP di acquisizione dei dettagli per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMDetailsComponent.
+    \end{itemize}
+
+    \paragraph{Tracciamento dei requisiti per LLMDetailsPage}
+    \begin{tabularx}{\textwidth}{|c|c|}
+        \hline
+        \textbf{ID} & \textbf{componente} \\
+        \hline
+            RFF-3.01 & LLMComponent \\
+        \hline
+            RFF-3.02 & LLMComponent \\
+        \hline
+            RFF-3.03 & LLMComponent \\
+        \hline
+            RFF-3.04 & LLMComponent \\
+        \hline
+            RFF-3.05 & LLMComponent \\
+        \hline
+            RFF-3.06 & LLMComponent \\
+        \hline
+            RFF-3.07 & LLMComponent \\
+        \hline
+            RFF-3.08 & LLMComponent \\
+        \hline
+    \end{tabularx}
