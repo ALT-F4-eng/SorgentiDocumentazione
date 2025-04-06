@@ -17,15 +17,10 @@ LLMListPage è composto dai seguenti sotto-componenti:
     \end{itemize}   
     \item \textbf{LLMShowListComponent}: Componente che si occupa di mostrare la lista degli LLM salvati.
     \item \textbf{SenderReqComponent}: Componente che si occupa dell'esecuzione di chiamate HTTP.
-    \item \textbf{LLMsReqComponent}: Componente che eredita da SenderReqComponent, tale componente funge da wrapper per la chiamata HTTP di visualizzazione degli LLM salvati per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListComponent. E' presente il riferimento in LLMListComponent.
-    \item \textbf{SelectReqComponent}: Componente che eredita da SenderReqComponent, tale componente funge da wrapper per la chiamata HTTP di selezione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListComponent. E' presente il riferimento in LLMListComponent.
-    \item \textbf{DeleteReqComponent}: Componente che eredita da SenderReqComponent, tale componente funge da wrapper per la chiamata HTTP di eliminazione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListComponent. E' presente il riferimento in LLMListComponent.
+    \item \textbf{LLMsReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di visualizzazione degli LLM salvati per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListComponent. E' presente il riferimento in LLMListComponent.
+    \item \textbf{SelectReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di selezione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListComponent. E' presente il riferimento in LLMListComponent.
+    \item \textbf{DeleteReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di eliminazione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListComponent. E' presente il riferimento in LLMListComponent.
     \item \textbf{DialogComponent}: Il componente che consente la visualizzazione della finestra di dialog.
-    \item \textbf{CommandComponent}: Componente dotato dei metodi necessari al pattern Command.
-    \item \textbf{ContinueEventComponent}: Componente dotato dei metodi necessari al pattern Command che inoltra la richiesta con DeleteReqComponent.
-    \item \textbf{CancelEventComponent}: Componente dotato dei metodi necessari al pattern Command che interrompe l'azione principale.
-    \item \textbf{EventsHandlerConfirmationComponent}: Componente che eredita da CommandComponent, tale componente esegue l'azione del ContinueEventComponent.
-    \item \textbf{EventsHandlerAnnullationComponent}: Componente che eredita da CommandComponent, tale componente esegue l'azione del CancelEventComponent.
 \end{itemize}
 
 \paragraph{Tracciamento dei requisiti per LLMListPage}

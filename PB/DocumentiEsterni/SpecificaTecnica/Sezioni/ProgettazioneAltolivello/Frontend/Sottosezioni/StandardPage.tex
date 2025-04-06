@@ -12,12 +12,10 @@ StandardPage è composto dai seguenti sotto-componenti:
         \item Creazione di un messaggio di sistema.
         \item Avvio di un caricamento grafico.
     \end{itemize}  
-    \item \textbf{ObserverComponent}: Componente dotato dei metodi necessari al pattern Observer.
-    \item \textbf{SubjectComponent}: Componente dotato dei metodi necessari al pattern Observer.
-    \item \textbf{NavigationLinksComponent}: Componente che eredita da ObserverComponent, tale componente si occupa di aggiornare i link presenti sull header a seconda della pagina richiesta.
-    \item \textbf{HeaderComponent}: Componente che eredita da SubjectComponent, tale componente riceve le modifiche richieste dal NavigationLinksComponent per aggiornare l'header.
+    \item \textbf{NavigationLinksComponent}: Tale componente si occupa di aggiornare i link presenti sull header a seconda della pagina richiesta.
+    \item \textbf{HeaderComponent}: Tale componente riceve le modifiche richieste dal NavigationLinksComponent per aggiornare l'header.
     \item \textbf{FooterComponent}: Componente che instanzia il footer.
     \item \textbf{LoadingComponent}: Il componente che si occupa dell'avvio del caricamento grafico:
-    \item \textbf{MessageHandlerComponent}: Componente che eredita da ObserverComponent, tale componente si occupa di creare il tipo e contenuto del messaggio.
-    \item \textbf{MessageComponent}: Componente che eredita da SubjectComponent, tale componente riceve le impostazioni del messaggio richieste dal MessageHandlerComponent per aggiornare l'apparizione del messaggio.
+    \item \textbf{MessageHandlerComponent}: Tale componente si occupa di creare il tipo e contenuto del messaggio.
+    \item \textbf{MessageComponent}: Tale componente riceve le impostazioni del messaggio richieste dal MessageHandlerComponent per aggiornare l'apparizione del messaggio.
 \end{itemize}
