@@ -1,0 +1,74 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{custom}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Impostare la compatibilità con la versione installata
+
+
+%--------------------VARIABILI--------------------
+\def\lastversion{v0.20}
+\def\title{Specifica Tecnica}
+\def\date{6 Aprile 2025}
+%------------------------------------------------
+
+\begin{document}
+
+\primapagina
+
+\begin{registromodifiche}
+    \lastversion & 6 Aprile 2025 & Eghosa Matteo Igbinedion Osamwonyi & & Stesura sezioni \hyperref[sec:LLMListPage]{LLMListPage}, \hyperref[sec:LLMPage]{LLMPage}\\
+    \hline
+        v0.19 & 5 Aprile 2025 & Eghosa Matteo Igbinedion Osamwonyi & Marko Peric & Stesura sezione \hyperref[sec:StandardPage]{StandardPage}\\
+    \hline
+        v0.18 & 4 Aprile 2025 & Guirong Lan, Pedro Leoni & Marko Peric & Aggiunta sezione \hyperref[sec:ProgettazioneAltolivello]{Progettazione ad alto livello del front-end}\\
+    \hline
+        v0.17 & 3 Aprile 2025 & Guirong Lan & Francesco Savio & Stesura sezione \hyperref[subsec:architettura_backend]{Architettura del Back-end}\\
+    \hline
+        v0.17 & 3 Aprile 2025 & Guirong Lan & Francesco Savio & Stesura sezione \hyperref[subsec:architettura_backend]{Architettura del Back-end}\\
+    \hline
+        v0.16 & 3 Aprile 2025 & Enrico Bianchi & Marko Peric & Stesura sezione \hyperref[subsec:architettura_frontend]{Architettura del Front-end}\\
+    \hline
+        v0.15 & 3 Aprile 2025 & Pedro Leoni & Marko Peric & Sezione \hyperref[subsec:introduzione]{Introduzione all'architettura}\\
+    \hline
+        v0.14 & 2 Aprile 2025 & Francesco Savio & Guirong Lan & Sezioni \hyperref[subsubsec:typescript]{TypeScript}, \hyperref[subsubsec:postgresql]{PostgreSQL}, \hyperref[subsubsec:huggingface]{Hugging Face}\\
+    \hline
+        v0.13 & 1 Aprile 2025 & Pedro Leoni & Francesco Savio & Sezione \hyperref[subsubsec:docker]{Docker}\\
+    \hline
+        v0.12 & 1 Aprile 2025 & Pedro Leoni & Francesco Savio & Sezione \hyperref[subsubsec:chart]{Chart.js}\\
+    \hline
+        v0.11 & 1 Aprile 2025 & Enrico Bianchi & Francesco Savio & Sezione \hyperref[subsubsec:jest]{Jest}\\
+    \hline
+        v0.10 & 1 Aprile 2025 & Pedro Leoni & Francesco Savio & Sezione \hyperref[subsubsec:angular]{Angular}\\
+    \hline 
+        v0.9 & 1 Aprile 2025 & Guirong Lan & Francesco Savio & Sezione \hyperref[subsubsec:Dependency Injector]{Dependency Injector}\\
+    \hline
+        v0.8 & 1 Aprile 2025 & Guirong Lan & Francesco Savio & Sezione \hyperref[subsubsec:Black]{Black}\\
+    \hline 
+        v0.7 & 1 Aprile 2025 & Eghosa Matteo Igbinedion Osamwonyi & Francesco Savio & Sezione \hyperref[subsubsec:pytorch]{Pytorch}\\
+    \hline
+        v.06 & 1 Aprile 2025 & Eghosa Matteo Igbinedion Osamwonyi & Francesco Savio & Sezione \hyperref[subsubsec:pydentic]{Pydentic}\\
+    \hline
+        v0.5 & 1 Aprile 2025 & Enrico Bianchi & Francesco Savio & Sezione \hyperref[subsubsec:pytest]{Pytest}\\
+    \hline
+        v0.4 & 1 Aprile 2025 & Eghosa Matteo Igbinedion Osamwonyi & Francesco Savio & Sezione \hyperref[subsubsec:sqlalchemy]{SQLAlchemy}\\
+    \hline
+        v0.3 & 1 Aprile 2025 & Enrico Bianchi & Francesco Savio & Sezione \hyperref[subsubsec:Flask]{Flask} \\
+    \hline  
+        v0.2 & 1 Aprile 2025  & Guirong Lan  & Francesco Savio & Sezione \hyperref[subsubsec:Python]{Python}\\
+    \hline
+        v0.1 & 27 Marzo 2025  & Francesco Savio & Guirong Lan & Sezioni \hyperref[sec:introduzione_st]{Introduzione}\\
+    \hline
+\end{registromodifiche}
+
+ \tableofcontents
+
+\newpage
+
+\input{Sezioni/Introduzione/Introduzione.tex}
+
+\input{Sezioni/TecnologieUtilizzate/TecnologieUtilizzate.tex}
+
+\input{Sezioni/Architettura/Architettura.tex}
+
+\input{Sezioni/ProgettazioneAltolivello/ProgettazioneAltolivello.tex}
+
+\end{document}
