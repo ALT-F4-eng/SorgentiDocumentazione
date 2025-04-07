@@ -59,7 +59,10 @@ La funzione \texttt{delete\_LLM} elimina l'LLM salvato.
     \item \textbf{Response Model}: LLMDto;
     \item \textbf{Nome}: deleteLLM;
     \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_Sservice(LLMService)}: dipendenza risolta tramite Depends (get\_LLM\_service).
-    \item \textbf{Parametri}:\\ \textbf{- id(int)}: ID dell'LLM di cui recuperare le informazioni.
+    \item \textbf{Parametri}:    
+    \begin{itemize}
+        \item \textbf{- id(int)}: ID dell'LLM di cui recuperare le informazioni.
+    \end{itemize}
 \end{itemize}
 
 \paragraph{Implementazione}
@@ -83,7 +86,15 @@ La funzione \texttt{write\_LLM} salva o modifica un LLM.
     \item \textbf{Response Model}: LLMDto;
     \item \textbf{Nome}: writeLLM;
     \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_Sservice(LLMService)}: dipendenza risolta tramite Depends (get\_LLM\_service).
-    \item \textbf{Parametri}:\\ \textbf{- id(int)}: ID dell'LLM di cui recuperare le informazioni.
+    \item \textbf{Parametri}:
+    \begin{itemize}
+        \item \textbf{- nome(str)}: nome dell'LLM.
+        \item \textbf{- url(str)}: url dell'LLM.
+        \item \textbf{- ka(str)}: chiave associata alla risposta dell'LLM.
+        \item \textbf{- kq(str)}: chiave associata alla domanda dell'LLM.
+        \item \textbf{- jh(dict)}: json di risposta alla creazione dell'header delle richieste HTTP verso l'LLM.
+        \item \textbf{- jb(dict)}:json di risposta alla creazione del body delle richieste HTTP verso l'LLM.
+    \end{itemize}
 \end{itemize}
 
 \paragraph{Implementazione}
