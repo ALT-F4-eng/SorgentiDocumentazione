@@ -1,25 +1,24 @@
 \subsubsection{LLMDetailsPage}
 \label{sec:LLMDetailsPage}
 \paragraph{Descrizione}
-LLMDetailsPage è la pagina che si occupa di rendere visibile le opzioni e informazioni relative ad un LLM.
+LLMDetailsPage è il componente che si occupa di rendere visibile le opzioni e informazioni relative ad un LLM con le seguenti funzionalità:
+\begin{itemize}
+    \item Visualizzazione del nome dell'LLM.
+    \item Visualizzazione della data dell'ultima modifica.
+    \item Visualizzazione del URL dell'LLM.
+    \item Visualizzazione del nome dell'LLM.
+    \item Visualizzazione delle coppie chiave-valore per la costruzione dell'header.
+    \item Visualizzazione delle coppie chiave-valore per la costruzione del body.
+    \item Visualizzazione della chiave relativa alla domanda da porre all'LLM.
+    \item Visualizzazione della chiave relativa alla risposta data dall'LLM.
+\end{itemize} 
 \paragraph{SottoComponenti}
 LLMDetailsPage è composto dai seguenti sotto-componenti:
 \begin{itemize}
-        \item \textbf{LLMDetailsComponent}: Il componente che consente l'acquisizione delle informazioni sull' LLM.
-        \begin{itemize}
-            \item Visualizzazione del nome dell'LLM.
-            \item Visualizzazione della data dell'ultima modifica.
-            \item Visualizzazione del URL dell'LLM.
-            \item Visualizzazione del nome dell'LLM.
-            \item Visualizzazione delle coppie chiave-valore per la costruzione dell'header.
-            \item Visualizzazione delle coppie chiave-valore per la costruzione del body.
-            \item Visualizzazione della chiave relativa alla domanda da porre all'LLM.
-            \item Visualizzazione della chiave relativa alla risposta data dall'LLM.
-        \end{itemize} 
         \item \textbf{DetailsReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di acquisizione dei dettagli per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMDetailsComponent.
     \end{itemize}
 
-    \paragraph{Tracciamento dei requisiti per LLMDetailsPage}
+\paragraph{Tracciamento dei requisiti per LLMDetailsPage}
     \begin{tabularx}{\textwidth}{|c|c|}
         \hline
         \textbf{ID} & \textbf{componente} \\

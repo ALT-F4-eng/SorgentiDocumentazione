@@ -1,20 +1,14 @@
 \subsubsection{StandardPage}
 \label{sec:StandardPage}
 \paragraph{Descrizione}
-La StandardPage è la pagina che funge da struttura del layout che ogni pagina riceve come parametro con il nome del componente BasePageComponent.
+La StandardPage è il componente che funge da struttura del layout che ogni pagina con le seguenti funzionalità:
+\begin{itemize}
+    \item Creazione di un messaggio di sistema.
+    \item Avvio di un caricamento grafico.
+\end{itemize}  
 \paragraph{SottoComponenti}
 StandardPage è composto dai seguenti sotto-componenti:
 \begin{itemize}
-    \item \textbf{BasePageComponent}: Il componente che consente la creazione di una StandardPage con le seguenti funzionalità:
-    \begin{itemize}
-        \item Creazione dell'header.
-        \item Creazione del footer.
-        \item Creazione di un messaggio di sistema.
-        \item Avvio di un caricamento grafico.
-    \end{itemize}  
-    \item \textbf{NavigationLinksComponent}: Tale componente si occupa di aggiornare i link presenti sull header a seconda della pagina richiesta.
-    \item \textbf{HeaderComponent}: Tale componente riceve le modifiche richieste dal NavigationLinksComponent per aggiornare l'header.
-    \item \textbf{FooterComponent}: Componente che instanzia il footer.
     \item \textbf{LoadingComponent}: Il componente che si occupa dell'avvio del caricamento grafico:
     \item \textbf{MessageComponent}: Tale componente gestisce l'apparizione di messaggi di sistema.
 \end{itemize}
