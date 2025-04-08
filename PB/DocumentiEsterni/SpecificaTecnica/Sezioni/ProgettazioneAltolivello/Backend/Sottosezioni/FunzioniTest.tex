@@ -1,0 +1,40 @@
+\subsection{Funzioni Test}
+\label{subsec:TestRequests}
+
+\subsubsection{run\_test}  
+\label{subsubsec:run_test}
+
+\paragraph{Descrizione}  
+La funzione \textbf{run\_test} utilizza le domande del dataset per valutare il modello LLM selezionato, restituendo i risultati e le relative statistiche in formato strutturato.
+
+
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP Method}: POST
+    \item \textbf{Endpoint}: \texttt{/test}
+    \item \textbf{Blueprint}: \texttt{api}
+    \item \textbf{Response Format}: JSON
+    \item \textbf{Nome funzione}: \texttt{run\_test}
+    \item \textbf{Decoratori usati}: \texttt{@api.route}
+\end{itemize}
+
+\paragraph{Parametri di input}
+\begin{itemize}
+    \item \textbf{dataset$\backslash$questions}: la lista di domande da utilizzare per il test;
+\end{itemize}
+
+\paragraph{Struttura della risposta}
+La risposta è un oggetto JSON composto da:
+\begin{itemize}
+    \item \textbf{generated\_answers}: le risposte generate dal modello;
+    \item \textbf{scores}: punteggi assegnati in base al confronto con le risposte corrette;
+    \item \textbf{metrics}: eventuali statistiche riassuntive (media, deviazione standard, ecc.).
+\end{itemize}
+
+\paragraph{Funzionamento}
+\begin{itemize}
+    \item Verifica la presenza dei dati nella richiesta e li valida;
+    \item Esegue la funzione di valutazione passando le domande al modello LLM selezionato;
+    \item Confronta le risposte generate con quelle corrette e calcola i punteggi;
+    \item Restituisce un oggetto JSON contenente le risposte del modello, le valutazioni e i dati statistici.
+\end{itemize}
