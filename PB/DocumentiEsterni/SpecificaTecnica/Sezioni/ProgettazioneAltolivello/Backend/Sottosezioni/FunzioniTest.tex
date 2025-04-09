@@ -13,14 +13,13 @@ La funzione \textbf{run\_test} utilizza le domande del dataset per valutare il m
     \item \textbf{HTTP Method}: POST
     \item \textbf{Endpoint}: \texttt{/test}
     \item \textbf{Response Format}: TestResponseDto
-    \item \textbf{Nome funzione}: \texttt{run\_test}
     \item \textbf{Dependency Injection}: \texttt{dataset\_service (DatasetService)} risolto tramite il container delle dipendenze (\texttt{Container.api.dataset\_service}). 
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
 
 \paragraph{Parametri di input}
 \begin{itemize}
-    \item \textbf{dataset$\backslash$questions (list)}: la lista di domande da utilizzare per il test;
+    \item \textbf{questions (list)}: la lista di domande da utilizzare per il test;
     \item \textbf{url (str)}: URL del modello LLM da utilizzare per la valutazione;
 \end{itemize}
 
@@ -43,7 +42,6 @@ La funzione \textbf{get\_test\_results} consente di recuperare i risultati di un
     \item \textbf{HTTP Method}: GET
     \item \textbf{Endpoint}: \texttt{/test}
     \item \textbf{Response Format}: TestResponseDto
-    \item \textbf{Nome funzione}: \texttt{get\_test\_results}
     \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -72,7 +70,6 @@ La funzione \textbf{save\_test\_results} salva i risultati del test in un file J
     \item \textbf{HTTP Method}: POST
     \item \textbf{Endpoint}: \texttt{/test}
     \item \textbf{Response Format}: TestResponseDto
-    \item \textbf{Nome funzione}: \texttt{save\_test\_results}
     \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -103,7 +100,6 @@ La funzione \textbf{compare\_test\_results} consente di confrontare i risultati 
     \item \textbf{HTTP Method}: POST
     \item \textbf{Endpoint}: \texttt{/test}
     \item \textbf{Response Format}: TestResponseDto
-    \item \textbf{Nome funzione}: \texttt{compare\_test\_results}
     \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -133,7 +129,6 @@ La funzione \textbf{rename\_test\_results} consente di rinominare un file di ris
     \item \textbf{HTTP Method}: POST
     \item \textbf{Endpoint}: \texttt{/test}
     \item \textbf{Response Format}: TestResponseDto
-    \item \textbf{Nome funzione}: \texttt{rename\_test\_results}
     \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -162,7 +157,6 @@ La funzione \textbf{delete\_test\_results} consente di eliminare i risultati di 
     \item \textbf{HTTP Method}: DELETE
     \item \textbf{Endpoint}: \texttt{/test}
     \item \textbf{Response Format}: TestResponseDto
-    \item \textbf{Nome funzione}: \texttt{delete\_test\_results}
     \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -189,7 +183,6 @@ La funzione \textbf{get\_tests\_list} restituisce un elenco dei test relativi a 
     \item \textbf{HTTP Method}: GET
     \item \textbf{Endpoint}: \texttt{/test}
     \item \textbf{Response Format}: TestResponseDto
-    \item \textbf{Nome funzione}: \texttt{get\_tests\_list}
     \item \textbf{Dependency Injection}: \texttt{dataset\_service (DatasetService)} risolto tramite il container delle dipendenze (\texttt{Container.api.dataset\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -211,7 +204,7 @@ La funzione \textbf{get\_tests\_list} restituisce un elenco dei test relativi a 
     \hline
     \textbf{ID} & \textbf{Funzione} \\
     \hline
-        RF0-1.08 & run\_test\\
+        RFO-1.08 & run\_test\\
     \hline
         RFO-14.03 & run\_test\\
     \hline
