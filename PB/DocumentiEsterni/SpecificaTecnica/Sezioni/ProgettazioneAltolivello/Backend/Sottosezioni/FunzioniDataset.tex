@@ -1,0 +1,343 @@
+\label{subsubsec:funzioni_dataset}
+\subsubsection{get\_all\_datasets}
+\paragraph{Descrizione}
+La funzione \texttt{get\_all\_datasets} permette di recuperare tutti i dataset salvati nel sistema e restituisce una risposta strutturata.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: GET;
+    \item \textbf{Endpoint}: /datasets;
+    \item \textbf{Tags}: [Dataset];
+    \item \textbf{Response Model}: \texttt{DatasetsListResponseDTO};
+    \item \textbf{Nome}: \texttt{getAllDatasets};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+    \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio.
+    \end{itemize}
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Effettua una chiamata al servizio di gestione dei dataset per recuperare l'elenco completo dei dataset salvati;
+    \item Restituisce un oggetto \texttt{DatasetsListResponseDTO} con lo stato della risposta e, in caso di successo, la lista dei dataset.
+\end{itemize}
+
+\subsubsection{get\_dataset}
+\paragraph{Descrizione}
+La funzione \texttt{get\_dataset} permette di recuperare i metadati e le coppie domanda-risposta di un dataset salvato tramite un identificatore (ID) fornito. Il dataset è restituito come una risposta strutturata.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: GET;
+    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater;
+    \item \textbf{Tags}: [Dataset];
+    \item \textbf{Response Model}: \texttt{DatasetResponseDTO};
+    \item \textbf{Nome}: \texttt{getsavedDataset};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+        \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+    \end{itemize}
+    \item \textbf{Parametri}:
+    \begin{itemize}
+        \item \textbf{dataset\_id (int)}: ID del dataset da recuperare.
+    \end{itemize}
+    \item \textbf{Query Parameters}:
+    \begin{itemize}
+        \item \textbf{page (int: default 1)}: numero della pagina;
+    \end{itemize}
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Effettua una chiamata al servizio di gestione dei dataset per recuperare i dettagli del dataset salvato specificato;
+    \item Restituisce un oggetto \texttt{DatasetResponseDTO} con lo stato della risposta e, in caso di successo, i dati richiesti.
+\end{itemize}
+
+\subsubsection{create\_dataset}
+\paragraph{Descrizione}
+La funzione \texttt{create\_dataset} permette di creare un nuovo dataset nel sistema.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: POST;
+    \item \textbf{Endpoint}: /datasets/create;
+    \item \textbf{Tags}: [Dataset];
+    \item \textbf{Response Model}: \texttt{DatasetResponseDTO};
+    \item \textbf{Nome}: \texttt{createDataset};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+    \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio.
+    \end{itemize}
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Effettua una chiamata al servizio di gestione dei dataset per creare un nuovo dataset;
+    \item Restituisce un oggetto \texttt{DatasetResponseDTO} con lo stato della risposta e, in caso di successo, il dataset appena creato.
+\end{itemize}
+
+\subsubsection{update\_dataset}
+\paragraph{Descrizione}
+La funzione \texttt{update\_dataset} permette di salvare le modifiche apportate a un dataset esistente o appena creato.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: PUT;
+    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater/update;
+    \item \textbf{Tags}: [Dataset];
+    \item \textbf{Response Model}: \texttt{DatasetResponseDTO};
+    \item \textbf{Nome}: \texttt{updateDataset};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+        \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+    \end{itemize}
+    \item \textbf{Parametri}:
+    \begin{itemize}
+        \item \textbf{dataset\_id (int)}: ID del dataset da aggiornare.
+    \end{itemize}
+    \item \textbf{Query Parameters}:
+    \begin{itemize}
+        \item \textbf{page (int: default 1)}: numero della pagina;
+    \end{itemize}
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Effettua una chiamata al servizio di gestione dei dataset per aggiornare il dataset;
+    \item Restituisce il risultato della richiesta e, in caso di successo, il dataset aggiornato, in formato \texttt{DatasetResponseDTO}.
+\end{itemize}
+
+\subsubsection{delete\_dataset}
+\paragraph{Descrizione}
+La funzione \texttt{delete\_dataset} permette di eliminare un dataset.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: DELETE;
+    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater/delete;
+    \item \textbf{Tags}: [Dataset];
+    \item \textbf{Response Model}: \texttt{ResponseDTO};
+    \item \textbf{Nome}: \texttt{deleteDataset};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+        \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+    \end{itemize}
+    \item \textbf{Parametri}:
+    \begin{itemize}
+        \item \textbf{dataset\_id (int)}: ID del dataset da eliminare.
+    \end{itemize}
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Effettua una chiamata al servizio di gestione dei dataset per eliminare il dataset specificato;
+    \item Restituisce il risultato dell'operazione in formato \texttt{ResponseDTO}.
+\end{itemize}
+
+\subsubsection{get\_datasets\_by\_name}
+\paragraph{Descrizione}
+La funzione \texttt{get\_datasets\_by\_name} permette di ottenere tutti i dataset che contengono una determinata stringa nel nome.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: GET;
+    \item \textbf{Endpoint}: /datasets/search;
+    \item \textbf{Tags}: [Dataset];
+    \item \textbf{Response Model}: \texttt{DatasetsListResponseDTO};
+    \item \textbf{Nome}: \texttt{searchDatasets};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+        \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+    \end{itemize}
+    \item \textbf{Query Parameters}:
+    \begin{itemize}
+        \item \textbf{name (str)}: stringa da usare per la ricerca dei dataset per nome.
+    \end{itemize}
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Effettua una chiamata al servizio di gestione dei dataset per ricercare i dataset che contengono la stringa indicata da \texttt{name} nel nome;
+    \item Restituisce un oggetto \texttt{DatasetsListResponseDTO} con lo stato della risposta e, in caso di successo, la lista dei dataset.
+\end{itemize}
+
+\subsubsection{create\_dataset\_from\_json}
+\paragraph{Descrizione}
+La funzione \texttt{create\_dataset\_from\_json} permette di creare un dataset da un file JSON fornito per la configurazione.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: POST;
+    \item \textbf{Endpoint}: /datasets/upload;
+    \item \textbf{Tags}: [Dataset];
+    \item \textbf{Response Model}: \texttt{DatasetResponseDTO};
+    \item \textbf{Nome}: \texttt{createDatasetFromJson};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+        \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+    \end{itemize}
+    \item \textbf{Parametri}:
+    \begin{itemize}
+        \item \textbf{file}: file JSON di configurazione per la creazione del dataset.
+    \end{itemize}
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Verifica la presenza del file e legge il contenuto, se possibile;
+    \item Effettua una chiamata al servizio di gestione dei dataset per creare un dataset a partire da un file JSON di configurazione;
+    \item Restituisce un oggetto \texttt{DatasetResponseDTO} con lo stato della risposta e, in caso di successo, il dataset creato.
+\end{itemize}
+
+\subsubsection{create\_qa\_pair}
+La funzione \texttt{create\_qa\_pair} permette di creare una nuova coppia domanda e risposta per il dataset caricato.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: POST;
+    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater/qa\_pair/create;
+    \item \textbf{Tags}: [QA];
+    \item \textbf{Response Model}: \texttt{QAPairResponseDTO};
+    \item \textbf{Nome}: \texttt{createQAPair};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+        \item \textbf{qa\_service (QAPairService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{QAPairService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+    \end{itemize}
+    \item \textbf{Parametri}:
+    \begin{itemize}
+        \item \textbf{dataset\_id (int)}: ID del dataset a cui appartiene la coppia domanda e risposta.
+        \item \textbf{qa\_pair\_id (int)}: ID della coppia domanda e risposta da aggiornare.
+    \end{itemize}
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Effettua una chiamata al servizio di gestione delle coppie domanda e risposta per crearne una nuova;
+    \item Restituisce un oggetto \texttt{QAPairResponseDTO} con lo stato della risposta e, in caso di successo, la nuova coppia domanda e risposta creata.
+\end{itemize}
+
+\subsubsection{update\_qa\_pair}
+La funzione \texttt{update\_qa\_pair} permette di salvare le modifiche apportare a una coppia domanda e risposta esistente.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: PUT;
+    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater/qa\_pair/\textless qa\_pair\_id\textgreater/update;
+    \item \textbf{Tags}: [QA];
+    \item \textbf{Response Model}: \texttt{QAPairResponseDTO};
+    \item \textbf{Nome}: \texttt{updateQAPair};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+        \item \textbf{qa\_service (QAPairService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{QAPairService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+    \end{itemize}
+    \item \textbf{Parametri}:
+    \begin{itemize}
+        \item \textbf{dataset\_id (int)}: ID del dataset a cui appartiene la coppia domanda e risposta.
+        \item \textbf{qa\_pair\_id (int)}: ID della coppia domanda e risposta da aggiornare.
+    \end{itemize}
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Effettua una chiamata al servizio di gestione delle coppie domanda e risposta per aggiornare una coppia domanda e risposta;
+    \item Restituisce un oggetto \texttt{QAPairResponseDTO} con lo stato della risposta e, in caso di successo, la coppia domanda e risposta aggiornata.
+\end{itemize}
+
+\subsubsection{delete\_qa\_pair}
+La funzione \texttt{delete\_qa\_pair} permette di eliminare una coppia domanda e risposta esistente.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: DELETE;
+    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater/qa\_pair/\textless qa\_pair\_id\textgreater/delete;
+    \item \textbf{Tags}: [QA];
+    \item \textbf{Response Model}: \texttt{ResponseDTO};
+    \item \textbf{Nome}: \texttt{deleteQAPair};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+        \item \textbf{qa\_service (QAPairService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{QAPairService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+    \end{itemize}
+    \item \textbf{Parametri}:
+    \begin{itemize}
+        \item \textbf{dataset\_id (int)}: ID del dataset a cui appartiene la coppia domanda e risposta.
+        \item \textbf{qa\_pair\_id (int)}: ID della coppia domanda e risposta da eliminare.
+    \end{itemize}
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Effettua una chiamata al servizio di gestione delle coppie domanda e risposta per eliminare una coppia domanda e risposta;
+    \item Restituisce il risultato dell'operazione in formato \texttt{ResponseDTO}.
+\end{itemize}
+
+\subsubsection{get\_qa\_pair\_by\_string}
+La funzione \texttt{get\_qa\_pair\_by\_string} permette di permette di ottenere tutte le coppie domanda e risposta in cui la domanda o la risposta contengono una determinata stringa.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: GET;
+    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater/qa\_pair/search;
+    \item \textbf{Tags}: [QA];
+    \item \textbf{Response Model}: \texttt{QAPairsListResponseDTO};
+    \item \textbf{Nome}: \texttt{searchQAPairs};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+        \item \textbf{qa\_service (QAPairService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{QAPairService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+    \end{itemize}
+    \item \textbf{Parametri}:
+    \begin{itemize}
+        \item \textbf{dataset\_id (int)}: ID del dataset a cui appartiene la coppia domanda e risposta.
+    \end{itemize}
+    \item \textbf{Query Parameters}:
+    \begin{itemize}
+        \item \textbf{string (str)}: stringa da usare per la ricerca delle coppie domanda e risposta.
+    \end{itemize}
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Effettua una chiamata al servizio di gestione delle coppie domanda e risposta per ricercare le coppie che contengono la stringa indicata da \texttt{string} nella domanda o nella risposta;
+    \item Restituisce un oggetto \texttt{QAPairsListResponseDTO} con lo stato della risposta e, in caso di successo, la lista delle coppie domanda e risposta.
+\end{itemize}
+
+\paragraph{Tracciamento dei requisiti}
+\begin{tabularx}{\textwidth}{|c|c|}
+    \hline
+    \textbf{ID} & \textbf{Funzione} \\
+    \hline
+    RFO-14.01 & \texttt{get\_dataset}\\
+    \hline
+    RFO-14.05 & \texttt{create\_qa\_pair}\\
+    \hline
+    RFO-14.07 & \texttt{delete\_qa\_pair}\\
+    \hline
+    RFO-14.08 & \texttt{update\_qa\_pair}\\
+    \hline
+    RFO-14.12 & \texttt{get\_dataset}\\
+    \hline
+    RFO-14.14 & \texttt{get\_qa\_pair\_by\_string}\\
+    \hline
+    RFO-15.05 & \texttt{update\_qa\_pair}\\
+    \hline
+    RFO-15.06 & \texttt{update\_qa\_pair}\\
+    \hline
+    RFO-16.01 & \texttt{update\_dataset}\\
+    \hline
+    RFO-16.02 & \texttt{update\_dataset}\\
+    \hline
+    RFO-16.03 & \texttt{delete\_dataset}\\
+    \hline
+    RFO-16.04 & \texttt{update\_dataset}\\
+    \hline
+    RFO-16.05 & \texttt{get\_all\_datasets}\\
+    \hline
+    RFO-16.07 & \texttt{get\_datasets\_by\_name}\\
+    \hline
+    RFO-17.01 & \texttt{get\_dataset}\\
+    \hline
+    RFO-17.02 & \texttt{get\_dataset}\\
+    \hline
+    RFO-17.03 & \texttt{update\_dataset}\\
+    \hline
+    RFO-17.05 & \texttt{get\_dataset}\\
+    \hline
+    RFF-19.01 & \texttt{create\_dataset\_from\_json}\\
+    \hline
+    RFF-19.02 & \texttt{create\_dataset\_from\_json}\\
+    \hline
+\end{tabularx}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
