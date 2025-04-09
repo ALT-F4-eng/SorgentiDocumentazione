@@ -1,0 +1,51 @@
+\subsubsection{LLMListPage} 
+\label{sec:LLMListPage}
+\paragraph{Descrizione}
+LLMListPage è il componente che si occupa di mostrare la lista degli LLM salvati con le seguenti funzionalità:
+\begin{itemize}
+    \item comportamento modulabile in fase di routing a seconda della chiamata HTTP, consentendo comportamenti specifici a seconda della chiamata; ciò consente ad un componente di poter gestire leggere variazioni di comportamento conservando la stessa logica di fondo. Tale parametro consente la differenziazione tra la funzione di visualizzare gli LLM e quella di visualizzare gli LLM in fase di test.
+    \item Mostrare la lista di tutti gli LLM salvati.
+    \item Reindirizzamento alla pagina dedita all'avvio del test con le informazione sul LLM selezionato.
+    \item Eliminazione LLM salvato.
+    \item Salvataggio un LLM. 
+    \item Gestione per la conferma di azioni che comporteranno modifiche significative.
+\end{itemize} 
+\paragraph{SottoComponenti}
+LLMListPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+    \item \textbf{LLMShowListComponent}: Componente che si occupa di mostrare la lista degli LLM salvati.
+    \item \textbf{SenderReqComponent}: Componente che si occupa dell'esecuzione di chiamate HTTP.
+    \item \textbf{LLMsReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di visualizzazione degli LLM salvati per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListPage.
+    \item \textbf{SelectReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di selezione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListPage.
+    \item \textbf{DeleteReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di eliminazione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListPage.
+    \item \textbf{DialogComponent}: Il componente che consente la visualizzazione della finestra di dialog.
+\end{itemize}
+
+\paragraph{Tracciamento dei requisiti per LLMListPage}
+\begin{tabularx}{\textwidth}{|c|c|}
+    \hline
+    \textbf{ID} & \textbf{componente} \\
+    \hline
+        RFF-1.01 & LLMsReqComponent\\
+    \hline
+        RFF-1.02 & LLMsReqComponent\\
+    \hline
+        RFF-1.03 & LLMShowListComponent\\
+    \hline
+        RFF-1.04 & MessageComponent\\
+    \hline
+        RFF-2.01 & LLMsReqComponent\\
+    \hline
+        RFF-2.02 & LLMShowListComponent\\
+    \hline
+        RFF-2.03 & LLMShowListComponent\\
+    \hline
+        RFF-2.04 & DialogComponent\\
+    \hline
+        RFF-2.05 & DialogComponent\\
+    \hline
+        RFF-2.06 & LLMListPage\\
+    \hline
+        RFF-2.07 & MessageComponent\\
+    \hline
+\end{tabularx}
