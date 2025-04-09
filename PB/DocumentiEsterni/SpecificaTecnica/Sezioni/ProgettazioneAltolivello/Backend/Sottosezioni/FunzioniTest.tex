@@ -2,7 +2,7 @@
 \label{subsec:TestRequests}
 
 \subsubsection{run\_test}  
-\label{subsubsec:run_test}
+\label{subsubsec:runtest}
 
 \paragraph{Descrizione}  
 La funzione \textbf{run\_test} utilizza le domande del dataset per valutare il modello LLM selezionato, restituendo i risultati e le relative statistiche in formato strutturato.
@@ -12,23 +12,16 @@ La funzione \textbf{run\_test} utilizza le domande del dataset per valutare il m
 \begin{itemize}
     \item \textbf{HTTP Method}: POST
     \item \textbf{Endpoint}: \texttt{/test}
-    \item \textbf{Blueprint}: \texttt{api}
-    \item \textbf{Response Format}: JSON
+    \item \textbf{Response Format}: TestResponseDto
     \item \textbf{Nome funzione}: \texttt{run\_test}
+    \item \textbf{Dependency Injection}: \texttt{dataset\_service (DatasetService)} risolto tramite il container delle dipendenze (\texttt{Container.api.dataset\_service}). 
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
 
 \paragraph{Parametri di input}
 \begin{itemize}
-    \item \textbf{dataset$\backslash$questions}: la lista di domande da utilizzare per il test;
-\end{itemize}
-
-\paragraph{Struttura della risposta}
-La risposta è un oggetto JSON composto da:
-\begin{itemize}
-    \item \textbf{generated\_answers}: le risposte generate dal modello;
-    \item \textbf{scores}: punteggi assegnati in base al confronto con le risposte corrette;
-    \item \textbf{metrics}: eventuali statistiche riassuntive (media, deviazione standard, ecc.).
+    \item \textbf{dataset$\backslash$questions (list)}: la lista di domande da utilizzare per il test;
+    \item \textbf{url (str)}: URL del modello LLM da utilizzare per la valutazione;
 \end{itemize}
 
 \paragraph{Funzionamento}
@@ -36,5 +29,284 @@ La risposta è un oggetto JSON composto da:
     \item Verifica la presenza dei dati nella richiesta e li valida;
     \item Esegue la funzione di valutazione passando le domande al modello LLM selezionato;
     \item Confronta le risposte generate con quelle corrette e calcola i punteggi;
-    \item Restituisce un oggetto JSON contenente le risposte del modello, le valutazioni e i dati statistici.
+    \item Restituisce un oggetto TestResponseDto contenente le risposte del modello, le valutazioni e i dati statistici.
 \end{itemize}
+
+\subsubsection{get\_test\_results}
+\label{subsubsec:gettestresults}
+
+\paragraph{Descrizione}
+La funzione \textbf{get\_test\_results} consente di recuperare i risultati di un test precedentemente eseguito, fornendo un riepilogo delle valutazioni e dei punteggi.
+
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP Method}: GET
+    \item \textbf{Endpoint}: \texttt{/test}
+    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Nome funzione}: \texttt{get\_test\_results}
+    \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
+    \item \textbf{Decoratori usati}: \texttt{@api.route}
+\end{itemize}
+
+\paragraph{Parametri di input}
+\begin{itemize}
+    \item \textbf{dataset (str)}: nome del dataset di cui si vuole recuperare il test coi risultati;
+    \item \textbf{testname (str)}: nome del test di cui si vogliono recuperare i risultati;
+\end{itemize}
+
+\paragraph{Funzionamento}
+\begin{itemize}
+    \item Verifica la presenza del dataset e del test specificato;
+    \item Recupera i risultati del test associati al dataset;
+    \item Restituisce un oggetto \texttt{TestResponseDto} contenente i dettagli dei risultati, inclusi i punteggi e le valutazioni;
+\end{itemize}
+
+\subsubsection{save\_test\_results}
+\label{subsubsec:savetestresults}
+
+\paragraph{Descrizione}
+La funzione \textbf{save\_test\_results} salva i risultati del test in un file JSON, consentendo di mantenere traccia delle valutazioni e dei punteggi ottenuti.
+
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP Method}: POST
+    \item \textbf{Endpoint}: \texttt{/test}
+    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Nome funzione}: \texttt{save\_test\_results}
+    \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
+    \item \textbf{Decoratori usati}: \texttt{@api.route}
+\end{itemize}
+
+\paragraph{Parametri di input}
+\begin{itemize}
+    \item \textbf{results}: oggetto contenente i risultati del test da salvare;
+    \item \textbf{filename (str)} (opzionale): nome del file da assegnare al salvataggio.
+\end{itemize}
+
+\paragraph{Funzionamento}
+\begin{itemize}
+    \item Verifica la presenza dei dati nella richiesta e ne valida il formato;
+    \item Converte i risultati del test in formato JSON;
+    \item Salva i dati in un file, utilizzando il nome fornito o un nome generato automaticamente;
+    \item Restituisce un oggetto \texttt{SaveResponseDto} contenente l'esito del salvataggio e il percorso del file creato;
+    \item Se il file esiste già, viene chiesta conferma all'utente per la sovrascrittura.
+\end{itemize}
+
+\subsubsection{compare\_test\_results}
+\label{subsubsec:comparetestresults}
+
+\paragraph{Descrizione}
+La funzione \textbf{compare\_test\_results} consente di confrontare i risultati di due test eseguiti, evidenziando le differenze e le somiglianze tra di essi.
+
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP Method}: POST
+    \item \textbf{Endpoint}: \texttt{/test}
+    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Nome funzione}: \texttt{compare\_test\_results}
+    \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
+    \item \textbf{Decoratori usati}: \texttt{@api.route}
+\end{itemize}
+
+\paragraph{Parametri di input}
+\begin{itemize}
+    \item \textbf{testname (str)}: nome del primo test da confrontare;
+    \item \textbf{testname (str)}: nome del secondo test da confrontare;
+\end{itemize}
+
+\paragraph{Funzionamento}
+\begin{itemize}
+    \item Verifica la presenza dei test specificati;
+    \item Recupera i risultati di entrambi i test;
+    \item Confronta i risultati e genera un report delle differenze e somiglianze;
+    \item Restituisce un oggetto \texttt{TestResponseDto} contenente i dettagli del confronto, inclusi i punteggi e le valutazioni;
+\end{itemize}
+
+\subsubsection{rename\_test\_results}
+\label{subsubsec:renametestresults}
+
+\paragraph{Descrizione}
+La funzione \textbf{rename\_test\_results} consente di rinominare un file di risultati di test effettuato.
+
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP Method}: POST
+    \item \textbf{Endpoint}: \texttt{/test}
+    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Nome funzione}: \texttt{rename\_test\_results}
+    \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
+    \item \textbf{Decoratori usati}: \texttt{@api.route}
+\end{itemize}
+
+\paragraph{Parametri di input}
+\begin{itemize}
+    \item \textbf{filename (str)}: nome del file dei risultati da rinominare;
+    \item \textbf{new\_filename (str)}: nuovo nome da assegnare al file;
+\end{itemize}
+
+\paragraph{Funzionamento}
+\begin{itemize}
+    \item Verifica la presenza del file specificato;
+    \item Se il file esiste, lo rinomina e restituisce l'esito dell'operazione;
+    \item Se il nuovo nome esiste già, viene chiesto un nuovo nome all'utente.
+\end{itemize}
+
+\subsubsection{delete\_test\_results}
+\label{subsubsec:deletetestresults}
+
+\paragraph{Descrizione}
+La funzione \textbf{delete\_test\_results} consente di eliminare i risultati di un test precedentemente salvati.
+
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP Method}: DELETE
+    \item \textbf{Endpoint}: \texttt{/test}
+    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Nome funzione}: \texttt{delete\_test\_results}
+    \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
+    \item \textbf{Decoratori usati}: \texttt{@api.route}
+\end{itemize}
+
+\paragraph{Parametri di input}
+\begin{itemize}
+    \item \textbf{filename (str)}: nome del file dei risultati da eliminare;
+\end{itemize}
+
+\paragraph{Funzionamento}
+\begin{itemize}
+    \item Verifica la presenza del file specificato;
+    \item Se il file esiste, lo elimina e restituisce l'esito dell'operazione;
+\end{itemize}
+
+\subsubsection{get\_tests\_list}
+\label{subsubsec:gettestslist}
+
+\paragraph{Descrizione}
+La funzione \textbf{get\_tests\_list} restituisce un elenco dei test relativi a un dataset, consentendo di visualizzare i risultati precedentemente salvati.
+
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP Method}: GET
+    \item \textbf{Endpoint}: \texttt{/test}
+    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Nome funzione}: \texttt{get\_tests\_list}
+    \item \textbf{Dependency Injection}: \texttt{dataset\_service (DatasetService)} risolto tramite il container delle dipendenze (\texttt{Container.api.dataset\_service}).
+    \item \textbf{Decoratori usati}: \texttt{@api.route}
+\end{itemize}
+
+\paragraph{Parametri di input}
+\begin{itemize}
+    \item \textbf{dataset (str)}: nome del dataset contenente i test da visualizzare;
+\end{itemize}
+
+\paragraph{Funzionamento}
+\begin{itemize}
+    \item Verifica la presenza del dataset specificato;
+    \item Recupera l'elenco dei test associati al dataset;
+    \item Restituisce un oggetto \texttt{TestListResponseDto} contenente i dettagli dei test disponibili, inclusi i punteggi e le valutazioni;
+\end{itemize}
+
+\paragraph{Tracciamento dei requisiti}
+\begin{tabularx}{\textwidth}{|c|c|}
+    \hline
+    \textbf{ID} & \textbf{Funzione} \\
+    \hline
+        RF0-1.08 & run\_test\\
+    \hline
+        RFO-14.03 & run\_test\\
+    \hline
+        RFO-19.01 & run\_test\\
+    \hline
+        RFO-19.02 & run\_test\\
+    \hline
+        RFO-19.03 & run\_test\\
+    \hline
+        RFO-19.04 & run\_test\\
+    \hline
+        RFO-19.05 & run\_test\\
+    \hline
+        RFO-19.06 & run\_test\\
+    \hline
+        RFO-19.07 & run\_test\\
+    \hline
+        RFF-2.04 & delete\_test\_results\\
+    \hline
+        RFF-7.04 & delete\_test\_results\\
+    \hline
+        RFF-7.05 & delete\_test\_results\\
+    \hline
+        RFF-14.03 & delete\_test\_results\\
+    \hline
+        RFF-14.04 & delete\_test\_results\\
+    \hline
+        RFF-14.01 & save\_test\_results\\
+    \hline
+        RFF-6.01 & get\_tests\_list\\
+    \hline
+        RFF-6.02 & get\_tests\_list\\
+    \hline
+        RFF-7.01 & get\_tests\_list\\
+    \hline
+        RFF-7.02 & get\_tests\_list\\
+    \hline
+        RFF-7.03 & get\_tests\_list\\
+    \hline
+        RFF-14.02 & get\_tests\_list\\
+    \hline
+        RFF-14.06 & get\_tests\_list\\
+    \hline
+        RFF-15.01 & get\_tests\_list\\
+    \hline
+        RFF-15.02 & get\_tests\_list\\
+    \hline
+        RFF-15.03 & get\_tests\_list\\
+    \hline
+        RFO-9.01 & get\_test\_results\\
+    \hline
+        RFO-9.02 & get\_test\_results\\
+    \hline
+        RFO-9.06 & get\_test\_results\\
+    \hline
+        RFO-10.01 & get\_test\_results\\
+    \hline
+        RFO-10.02 & get\_test\_results\\
+    \hline
+        RFO-10.03 & get\_test\_results\\
+    \hline
+        RFO-10.04 & get\_test\_results\\
+    \hline
+        RFO-10.05 & get\_test\_results\\
+    \hline
+        RFO-18.01 & get\_test\_results\\
+    \hline
+        RFO-18.02 & get\_test\_results\\
+    \hline
+        RFO-18.07 & get\_test\_results\\
+    \hline
+        RFF-15.07 & get\_test\_results\\
+    \hline
+        RFF-7.06 & rename\_test\_results\\
+    \hline
+        RFF-8.01 & rename\_test\_results\\
+    \hline
+        RFF-8.02 & rename\_test\_results\\
+    \hline
+        RFF-8.03 & rename\_test\_results\\
+    \hline
+        RFF-14.04 & rename\_test\_results\\
+    \hline
+        RFF-15.04 & rename\_test\_results\\
+    \hline
+        RFF-9.01 & compare\_test\_results\\
+    \hline
+        RFF-9.02 & compare\_test\_results\\
+    \hline
+        RFF-10.01 & compare\_test\_results\\
+    \hline
+        RFF-10.02 & compare\_test\_results\\
+    \hline
+        RFF-20.01 & compare\_test\_results\\
+    \hline
+        RFF-20.02 & compare\_test\_results\\
+    \hline
+    \end{tabularx}
