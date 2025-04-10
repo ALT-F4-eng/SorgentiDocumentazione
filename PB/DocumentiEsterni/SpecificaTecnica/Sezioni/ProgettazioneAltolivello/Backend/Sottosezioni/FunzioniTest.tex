@@ -63,7 +63,7 @@ La funzione \textbf{get\_test\_results} consente di recuperare i risultati di un
 \label{subsubsec:savetestresults}
 
 \paragraph{Descrizione}
-La funzione \textbf{save\_test\_results} salva i risultati del test in un file JSON, consentendo di mantenere traccia delle valutazioni e dei punteggi ottenuti.
+La funzione \textbf{save\_test\_results} salva i risultati del test all'interno del database, consentendo di mantenere traccia delle valutazioni e dei punteggi ottenuti.
 
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
@@ -77,14 +77,14 @@ La funzione \textbf{save\_test\_results} salva i risultati del test in un file J
 \paragraph{Parametri di input}
 \begin{itemize}
     \item \textbf{results}: oggetto contenente i risultati del test da salvare;
-    \item \textbf{filename (str)} (opzionale): nome del file da assegnare al salvataggio.
+    \item \textbf{filename (str)} (opzionale): nome identificativo associato al salvataggio (utilizzato come metadato, non come nome file).
 \end{itemize}
 
 \paragraph{Funzionamento}
 \begin{itemize}
     \item Verifica la presenza dei dati nella richiesta e ne valida il formato;
-    \item Converte i risultati del test in formato JSON;
-    \item Salva i dati in un file, utilizzando il nome fornito o un nome generato automaticamente;
+    \item Converte i dati in un oggetto compatibile con il modello persistente;
+    \item Inserisce i dati nel database tramite il servizio;
     \item Restituisce un oggetto \texttt{SaveResponseDto} contenente l'esito del salvataggio e il percorso del file creato;
     \item Se il file esiste già, viene chiesta conferma all'utente per la sovrascrittura.
 \end{itemize}
