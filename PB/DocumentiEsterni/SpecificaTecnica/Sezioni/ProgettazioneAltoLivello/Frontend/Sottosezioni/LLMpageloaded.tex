@@ -1,0 +1,81 @@
+\subsubsection{LLMPage} 
+\label{sec:LLMPage}
+\paragraph{Descrizione}
+LLMPage è il componente che si occupa di rendere visibile le opzioni e informazioni necessarie creazione e modifica di un LLM  con le seguenti funzionalità:
+\begin{itemize}
+    \item comportamento modulabile in fase di routing a seconda della chiamata HTTP, consentendo comportamenti specifici a seconda della chiamata; ciò consente ad un componente di poter gestire leggere variazioni di comportamento conservando la stessa logica di fondo. Tale parametro consente la differenziazione tra la funzione di visualizzare gli LLM e quella di visualizzare gli LLM in fase di test.
+    \item Modifica del nome dell'LLM.
+    \item Modifica del URL dell'LLM.
+    \item Modifica della chiave associata alla domanda dell'LLM.
+    \item Modifica della chiave associata alla risposta dell'LLM.
+    \item Modifica di una coppia chiave-valore associata alla creazione dell'header dell'LLM.
+    \item Modifica di una coppia chiave-valore associata alla creazione del body dell'LLM.
+    \item Salvataggio del nome dell'LLM.
+    \item Salvataggio del URL dell'LLM.
+    \item Salvataggio della chiave associata alla domanda dell'LLM.
+    \item Salvataggio della chiave associata alla risposta dell'LLM.
+    \item Salvataggio di una coppia chiave-valore associata alla creazione dell'header dell'LLM.
+    \item Salvataggio di una coppia chiave-valore associata alla creazione del body dell'LLM.
+    \item Gestione per la conferma di azioni che comporteranno modifiche significative.
+\end{itemize}   
+\paragraph{SottoComponenti}
+LLMPage è composto dai seguenti sotto-componenti:
+\begin{itemize}        
+        \item \textbf{LLMFormComponent}: Componente che si occupa del form per la creazione e modifica degli LLM.
+        \item \textbf{FieldReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di salvataggio per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMPage.
+    \end{itemize}
+
+\paragraph{Tracciamento dei requisiti per LLMPage}
+\begin{tabularx}{\textwidth}{|c|c|}
+    \hline
+    \textbf{ID} & \textbf{componente} \\
+    \hline
+        RFF-4.01 & LLMFormComponent \\
+    \hline
+        RFF-4.02 & LLMFormComponent \\
+    \hline
+        RFF-4.03 & LLMFormComponent \\
+    \hline
+        RFF-4.04 & LLMFormComponent \\
+    \hline
+        RFF-4.05 & LLMFormComponent \\
+    \hline
+        RFF-4.06 & LLMFormComponent \\
+    \hline
+        RFF-4.07 & LLMFormComponent \\
+    \hline
+        RFF-4.08 & LLMFormComponent \\
+    \hline
+        RFF-4.09 & FieldReqComponent \\
+    \hline
+        RFF-4.10 & LLMFormComponent \\
+    \hline
+        RFF-4.11 & MessageComponent \\
+    \hline
+        RFF-4.12 & MessageComponent \\
+    \hline
+        RFF-4.13 & MessageComponent \\
+    \hline
+        RFF-5.01 & LLMFormComponent \\
+    \hline
+        RFF-5.02 & LLMFormComponent \\
+    \hline
+        RFF-5.03 & LLMFormComponent \\
+    \hline
+        RFF-5.04 & LLMFormComponent \\
+    \hline
+        RFF-5.05 & LLMFormComponent \\
+    \hline
+        RFF-5.06 & LLMFormComponent \\
+    \hline
+        RFF-5.07 & FieldReqComponent \\
+    \hline
+        RFF-5.08 & LLMFormComponent \\
+    \hline
+        RFF-5.09 & MessageComponent \\
+    \hline
+        RFF-5.10 & MessageComponent \\
+    \hline
+        RFF-5.11 & MessageComponent \\
+    \hline
+\end{tabularx} 
