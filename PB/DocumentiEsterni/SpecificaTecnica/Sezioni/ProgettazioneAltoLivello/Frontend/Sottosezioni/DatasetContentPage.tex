@@ -1,0 +1,95 @@
+\subsubsection{DatasetContentPage}
+\label{sec:DatasetContentPage}
+\paragraph{Descrizione}
+DatasetContentPage è il componente che permette di visualizzare le coppie di domande-risposte del dataset selezionato. Presenta le seguenti funzionalità:
+\begin{itemize}
+    \item Paginazione del dataset;
+    \item Scorrimento della lista di domande-risposte attese che compongono la pagina del dataset visualizzata;
+    \item Modifica delle domande e risposte;
+    \item Eliminazione di una coppia domanda-risposta;
+    \item Ricerca delle domande e risposte tramite parole chiave;
+    \item Aggiunta di una coppia domanda-risposta;
+    \item Esecuzione di un test con un LLM;
+    \item Visualizzazione delle informazioni generali del dataset.
+\end{itemize}
+\paragraph{SottoComponenti}
+DatasetContentPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+    \item \textbf{SearchBar}: barra di ricerca per le domande e le risposte;
+    \item \textbf{DatasetInfo}: visualizzazione delle informazioni generiche del dataset visualizzato;
+    \item \textbf{QAListView}: lista scorrevole che mostra tutte le coppie domande-risposte impaginate:
+    \item \textbf{QAForm}: form che permette all'utente di inserire o modificare elementi del dataset.
+\end{itemize}
+
+\paragraph{Tracciamento dei requisiti}
+\begin{tabularx}{\textwidth}{|c|c|}
+    \hline
+    \textbf{ID} & \textbf{Componente} \\
+    \hline
+        RF0-1.01 & DatasetNameText\\
+    \hline
+        RF0-1.02 & DatasetNameText\\
+    \hline
+        RF0-1.03 & QAListView\\
+    \hline
+        RF0-1.04 & QAListView\\
+    \hline
+        RF0-1.05 & QAListView\\
+    \hline
+        RF0-1.06 & SearchInfoBar\\
+    \hline
+        RF0-1.07 & CreateQABtn\\
+    \hline
+        RF0-1.08 & TestBtn\\
+    \hline
+        RF0-1.09 & QAIncompleteLink\\
+    \hline
+        RF0-1.10 & TestBtn, MessageComponent\\
+    \hline
+        RF0-1.11 & SaveDatasetBtn\\
+    \hline
+        RF0-1.12 & SaveDatasetBtn, MessageComponent\\
+    \hline
+        RF0-1.13 & SaveDatasetBtn, MessageComponent\\
+    \hline
+        RFF-1.01 & ConfigLLMBtn\\ %parte di matteo eghosa
+    \hline
+        RF0-2.01 & QAListView\\
+    \hline
+        RF0-2.02 & QAListView\\
+    \hline
+        RF0-2.03 & MessageComponent\\
+    \hline
+        RF0-3.01 & QAListView\\
+    \hline
+        RF0-3.02 & QAListView\\
+    \hline
+        RF0-3.03 & QAListView\\
+    \hline
+        RF0-3.04 & QAModificaBtn\\
+    \hline
+        RF0-3.05 & QADeleteBtn\\
+    \hline
+        RF0-3.06 & QADeleteBtn\\
+    \hline
+        RF0-4.01 & QAListView\\
+    \hline
+        RF0-4.02 & QAListView\\
+    \hline
+        RF0-4.03 & QAModificaBtn\\
+    \hline
+        RF0-4.04 & QAModificaBtn\\
+    \hline
+        RF0-4.05 & QAModificaBtn, MessageComponent\\
+    \hline
+        RF0-5.01 & QAIncompleteLink\\
+    \hline
+        RF0-5.02 & QAIncompleteLink\\
+    \hline
+        RF0-5.03 & MessageComponent\\
+    \hline
+        RF0-8.08 & ReturnBtn\\
+    \hline
+        RFF-13.01, RFF-13.02 & \\
+    \hline
+\end{tabularx}

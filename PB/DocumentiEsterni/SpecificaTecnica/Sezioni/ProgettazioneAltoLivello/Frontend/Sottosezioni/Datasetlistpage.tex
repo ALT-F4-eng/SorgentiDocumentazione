@@ -1,7 +1,7 @@
 \subsubsection{DatasetListPage}
 \label{sec:DatasetListPage}
 \paragraph{Descrizione}
-DatasetPage è il componete che mostra le informazioni riguardanti tutti i dataset, sia salvati che temporanei. Presenta le seguenti funzionalità:
+DatasetPage è il componete che mostra le informazioni riguardanti tutti i dataset salvati. Presenta le seguenti funzionalità:
 \begin{itemize}
     \item Caricamento di un dataset salvato;
     \item Rinominazione di un dataset salvato;
@@ -15,64 +15,23 @@ DatasetPage è il componete che mostra le informazioni riguardanti tutti i datas
 \paragraph{SottoComponenti}
 DatasetPage è composto dai seguenti sotto-componenti:
 \begin{itemize}
-    \item \textbf{CreaDatasetBtn}: pulsante per la creazione di un dataset temporaneo;
-    \item \textbf{UploadBtn}: pulsante per il caricamento di un dataset salvato in formato JSON;
-    \item \textbf{SearchDatasetBar}: barra per la ricerca dei dataset;
-    \item \textbf{DatasetListView}: lista scorrevole dei dataset sia salvati che temporanei, che comprende:
-    \begin{itemize}
-        \item \textbf{DatasetSelectBtn}: pulsante per selezionare un dataset presente nella lista;
-        \item \textbf{DatasetChangeBtn}: pulsante per modificare il nome del dataset selezionato;
-        \item \textbf{DatasetDeleteBtn}: pulsante per eliminare il dataset selezionato;
-        \item \textbf{DatasetCopiaBtn}: pulsante per creare una copia del dataset selezionato;
-        \item \textbf{DatasetInfoText}: pulsante per visualizzare le informazioni relative al dataset selezionato.
-    \end{itemize}
+    \item \textbf{SearchBar}: barra per la ricerca dei dataset;
+    \item \textbf{DatasetListView}: lista scorrevole dei dataset salvati. Contiene il sottocomponente: \textbf{DatasetElement}.
 \end{itemize}
 
 \paragraph{Tracciamento dei requisiti}
-\begin{tabularx}{\textwidth}{|c|c|}
+\begin{tabularx}{\textwidth}{|X|c|}
     \hline
     \textbf{ID} & \textbf{Componente} \\
     \hline
-        RFO-1.12 & CreaDatasetBtn\\
+        RFO-7.02 & DatasetListPage\\
     \hline
-        RFO-6.01 & DatasetSelectBtn\\
+        RFO-8.01, RFO-8.02, RFO-8.03, RFO-8.04, RFO-8.05, RFO-8.07 & DatasetElement\\
     \hline
-        RFO-6.02 & DatasetChangeBtn\\
+        RFO-8.06, RFO-8.08, RFO-8.09, RFF-13.03, RFF-13.04 & MessageComponent\\
     \hline
-        RFO-6.03 & DatasetChangeBtn\\
+        RFO-7.01, RFO-7.03 & DatasetListView\\
     \hline
-        RFO-6.04 & DatasetChangeBtn, MessageComponent\\
-    \hline
-        RFO-7.01 & DatasetListView\\
-    \hline
-        RFO-7.02 & CreaDatasetBtn\\
-    \hline
-        RFO-7.03 & DatasetListView\\
-    \hline
-        RFO-7.04 & SearchDatasetBar\\
-    \hline
-        RFO-8.01 & DatasetSelectBtn\\
-    \hline
-        RF0-8.02 & DatasetInfoText\\
-    \hline
-        RFO-8.03 & DatasetChangeBtn\\
-    \hline
-        RF0-8.04 & DatasetCopiaBtn\\
-    \hline
-        RF0-8.05 & DatasetDeleteBtn\\
-    \hline
-        RF0-8.06 & DatasetDeleteBtn\\
-    \hline
-        RF0-8.07 & DatasetSelectBtn\\
-    \hline
-        RF0-8.09 & MessageComponent\\
-    \hline
-        RFF-13.01 & UploadBtn\\
-    \hline
-        RFF-13.02 & UploadBtn\\
-    \hline
-        RFF-13.03 & UploadBtn, MessageComponent\\
-    \hline
-        RFF-13.04 & MessageComponent\\
+        RFO-7.04 & SearchBar\\
     \hline
 \end{tabularx}
