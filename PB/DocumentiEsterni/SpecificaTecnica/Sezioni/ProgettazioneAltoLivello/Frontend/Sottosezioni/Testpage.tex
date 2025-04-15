@@ -1,0 +1,39 @@
+\subsubsection{TestPage}
+\label{sec:TestPage}
+\paragraph{Descrizione}
+TestPage è il componete che mostra tutte le informazioni relative al test selezionato ed eseguito. Presenta le seguenti funzionalità:
+\begin{itemize}
+    \item Selezione di un test salvato per il confronto con il test corrente; 
+    \item Visualizzazione del nome del test;
+    \item Visualizzazione della data dell'esecuzione del test;
+    \item Visualizzazione del diagramma di dispersione;
+    \item Visualizzazione dell'indice riassuntivo;
+    \item Visualizzazione delle domande, delle risposte attese, delle risposte ricevute, valore di similarità, valore booleano di correttezza.
+\end{itemize}
+\paragraph{SottoComponenti}
+TestPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+    \item \textbf{ScatterDiagram}: diagramma di dispersione;
+    \item \textbf{CakeDiagram}: diagramma a torta;
+    \item \textbf{BarDiagram}: diagramma a barre;
+    \item \textbf{QATestListView}: lista scorrevole che mostra tutte le domande, le risposte attese, le risposte ricevute dal LLM, valore di similarità, valore booleano di correttezza.
+\end{itemize}
+
+\paragraph{Tracciamento dei requisiti}
+\begin{tabularx}{\textwidth}{|X|c|}
+    \hline
+    \textbf{ID} & \textbf{Componente} \\
+    \hline
+        RFO-9.01, RFO-9.02, RFO-9.06, RFO-10.01, RFO-10.02, RFO-10.03, RFF-9.01, RFF-9.02, RFF-10.01, RFF-10.02, RFF-14.05, RFF-20.01, RFF-20.02 & TestPage \\
+    \hline
+        RFO-11.01, RFO-13.01, RFO-13.02, RFO-13.03, RFO-13.04, RFO-13.05, RFF-11.02 & ScatterDiagram \\
+    \hline
+        RFO-10.04 & CakeDiagram \\
+    \hline
+        RFO-10.05 & BarDiagram \\
+    \hline
+        RFO-9.03, RFO-9.04, RFO-9.05, RFO-11.02, RFO-12.01, RFO-12.02, RFO-12.03, RFO-12.04, RFO-12.05, RFF-10.03, RFF-10.04, RFF-10.05, RFF-11.01, RFF-12.01, RFF-12.02, RFF-12.03, RFF-12.04  & QATestListView \\
+    \hline
+        RFO-10.06, RFO-11.03, RFO-11.04, RFF-11.03, RFF-11.04 & MessageComponent \\
+    \hline
+\end{tabularx}
