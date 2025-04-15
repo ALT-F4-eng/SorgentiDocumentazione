@@ -1,0 +1,30 @@
+\subsubsection{LLMPage} 
+\label{sec:LLMPage}
+\paragraph{Descrizione}
+LLMPage è il componente che si occupa di visualizzare le informazioni necessarie per la creazione e modifica di un LLM con le seguenti funzionalità:
+\begin{itemize}
+    \item Visualizzazione dei dettagli di un LLM;
+    \item Modifica del nome del LLM;
+    \item Modifica del URL del LLM;
+    \item Modifica delle chiavi associate del LLM;
+    \item Salvataggio di un LLM.
+\end{itemize}   
+\paragraph{SottoComponenti}
+LLMPage è composto dai seguenti sotto-componenti:
+\begin{itemize}        
+        \item \textbf{LLMFormComponent}: Componente che si occupa del form per la creazione e modifica degli LLM.
+        %\item \textbf{FieldReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di salvataggio per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMPage.
+    \end{itemize}
+
+\paragraph{Tracciamento dei requisiti per LLMPage}
+\begin{tabularx}{\textwidth}{|X|c|}
+    \hline
+    \textbf{ID} & \textbf{componente} \\
+    \hline
+        RFF-3.01, RFF-3.02, RFF-3.03, RFF-3.04, RFF-3.05, RFF-3.06, RFF-3.07, RFF-3.08, RFF-4.09, RFF-4.10, RFF-5.07, RFF-5.08 & LLMPage \\
+    \hline
+        RFF-4.01, RFF-4.02, RFF-4.03, RFF-4.04, RFF-4.05, RFF-4.06, RFF-4.07, RFF-4.08, RFF-5.01, RFF-5.02, RFF-5.03, RFF-5.04, RFF-5.05, RFF-5.06, RFF-17.04, RFF-17.05, RFF-17.06, RFF-17.07, RFF-17.08, RFF-18.02, RFF-18.03, RFF-18.04 & LLMFormComponent \\
+    \hline
+        RFF-4.11, RFF-4.12, RFF-4.13, RFF-5.09, RFF-5.10, RFF-5.11 & MessageComponent \\
+    \hline
+\end{tabularx} 
