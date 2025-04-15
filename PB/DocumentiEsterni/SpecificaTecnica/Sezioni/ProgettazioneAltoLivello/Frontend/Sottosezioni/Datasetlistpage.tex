@@ -9,15 +9,15 @@ DatasetPage è il componete che mostra le informazioni riguardanti tutti i datas
     \item Creazione di una copia di un dataset salvato;
     \item Ricerca di un dataset salvato;
     \item Creazione di un dataset temporaneo;
+    \item Creazione dataset da file JSON;
     \item Scorrimento della lista dei dataset salvati;
     \item Visualizzazione delle informazioni di un dataset.
 \end{itemize}
 \paragraph{SottoComponenti}
 DatasetPage è composto dai seguenti sotto-componenti:
 \begin{itemize}
-    \item \textbf{ListPage}: componente per la gestione della ricerca e della visualizzazione in lista. Contiene il sottocomponente: \textbf{DatasetElement}.
-    %\item \textbf{SearchBar}: barra per la ricerca dei dataset;
-    %\item \textbf{ListView}: lista scorrevole dei dataset salvati. Contiene il sottocomponente: \textbf{DatasetElement}.
+    \item \textbf{SearchBar}: barra per la ricerca dei dataset;
+    \item \textbf{DatasetListView}: lista scorrevole dei dataset salvati. Contiene il sottocomponente: \textbf{DatasetElement}.
 \end{itemize}
 
 \paragraph{Tracciamento dei requisiti}
@@ -25,10 +25,14 @@ DatasetPage è composto dai seguenti sotto-componenti:
     \hline
     \textbf{ID} & \textbf{Componente} \\
     \hline
-        RFO-7.02, RFO-16.01, RFO-16.02, RFO-16.03, RFO-16.04, RFO-16.05, RFO-16.06, RFO-17.01, RFO-17.02 & DatasetListPage\\
+        RFO-7.02, RFO-8.06, RFO-8.08 & DatasetListPage\\
     \hline
-        RFO-7.01, RFO-7.03 & ListView\\
+        RFO-7.01, RFO-7.03 & DatasetListView\\
     \hline
-        RFO-7.04, RFO-16.07 & SearchBar\\
+        RFO-8.01, RRFO-8.02, RFO-8.03, RFO-8.04, RFO-8.05, RFO-8.07 & DatasetElement\\
+    \hline
+        RFO-8.09 & MessageComponent\\
+    \hline
+        RFO-7.04 & SearchBar\\
     \hline
 \end{tabularx}
