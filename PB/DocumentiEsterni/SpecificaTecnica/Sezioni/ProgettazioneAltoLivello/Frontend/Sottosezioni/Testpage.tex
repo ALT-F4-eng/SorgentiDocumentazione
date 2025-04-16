@@ -4,19 +4,31 @@
 TestPage è il componete che mostra tutte le informazioni relative al test selezionato ed eseguito. Presenta le seguenti funzionalità:
 \begin{itemize}
     \item Selezione di un test salvato per il confronto con il test corrente; 
-    \item Visualizzazione del nome del test;
+    \item Visualizzazione delle nome del test;
     \item Visualizzazione della data dell'esecuzione del test;
     \item Visualizzazione del diagramma di dispersione;
     \item Visualizzazione dell'indice riassuntivo;
-    \item Visualizzazione delle domande, delle risposte attese, delle risposte ricevute, valore di similarità, valore booleano di correttezza.
+    \item Visualizzazione paginata dei risultati.
 \end{itemize}
 \paragraph{SottoComponenti}
 TestPage è composto dai seguenti sotto-componenti:
 \begin{itemize}
-    \item \textbf{ScatterDiagram}: diagramma di dispersione;
-    \item \textbf{CakeDiagram}: diagramma a torta;
-    \item \textbf{BarDiagram}: diagramma a barre;
-    \item \textbf{QATestListView}: lista scorrevole che mostra tutte le domande, le risposte attese, le risposte ricevute dal LLM, valore di similarità, valore booleano di correttezza.
+    \item \textbf{TestIndex}: indice riassuntivo del test che contiene i sotto-componenti:
+    \begin{itemize}
+        \item \textbf{CakeDiagram} diagramma a torta che rappresenta la percentuale di risposte corrette;
+        \item \textbf{BarDiagram} diagramma a barre sulla distribuzione di frequenza dei gradi di similarità.
+    \end{itemize}  
+    
+    \item \textbf{TestPageView}: contiene i seguenti sotto-componenti necessari a visualizzare in modo paginato i risultati del test:
+    \begin{itemize}
+        \item \textbf{ScatterDiagram}: diagramma di dispersione per i risultati appartenenti alla pagina visualizzata;
+        
+        \item \textbf{TestListView}: lista dei risultati del test appartenenti alla pagina visualizzata rappresentati da \textbf{ResultView};
+        
+        \textbf{PageNavigation}: permette la navigazione tra le pagine del test.
+    \end{itemize}
+    \item \textbf{TestNameForm}: form che permette di assegnare un nome al salvataggio del test caricato;
+    \item \textbf{TestSelectionComparison}: permette di selezionare un test salvato con cui eseguire il confronto con il test attualmente visualizzato.
 \end{itemize}
 
 \paragraph{Tracciamento dei requisiti}
@@ -24,16 +36,28 @@ TestPage è composto dai seguenti sotto-componenti:
     \hline
     \textbf{ID} & \textbf{Componente} \\
     \hline
-        RFO-9.01, RFO-9.02, RFO-9.06, RFO-10.01, RFO-10.02, RFO-10.03, RFF-9.01, RFF-9.02, RFF-10.01, RFF-10.02, RFF-14.05, RFF-20.01, RFF-20.02 & TestPage \\
+        RFO-9.01, RFO-9.06 & TestPage \\
     \hline
-        RFO-11.01, RFO-13.01, RFO-13.02, RFO-13.03, RFO-13.04, RFO-13.05, RFF-11.02 & ScatterDiagram \\
+        RFO-9.03, RFO-10.01, RFO-10.2, RFO-10.3 & TestIndex \\
     \hline
         RFO-10.04 & CakeDiagram \\
     \hline
         RFO-10.05 & BarDiagram \\
     \hline
-        RFO-9.03, RFO-9.04, RFO-9.05, RFO-11.02, RFO-12.01, RFO-12.02, RFO-12.03, RFO-12.04, RFO-12.05, RFF-10.03, RFF-10.04, RFF-10.05, RFF-11.01, RFF-12.01, RFF-12.02, RFF-12.03, RFF-12.04  & QATestListView \\
+        RFO-9.03, RFO-9.04  & TestPageView \\
     \hline
-        RFO-10.06, RFO-11.03, RFO-11.04, RFF-11.03, RFF-11.04 & MessageComponent \\
+        RFO-11.01, RFO-13.01, RFO-13.02, RFO-13.03, RFO-13.04, RFO-13.05  & ScatterDiagram \\
+    \hline
+        RFO-11.02 & TestListView \\
+    \hline
+        RFO-9.05 & PageNavigation \\
+    \hline
+        RFO-12.01, RFO-12.02, RFO-12.03, RFO-12.04, RFO-12.05 & ResultView\\
+    \hline
+        RFO-10.06, RFO-11.03, RFO-11.04 & MessageComponent \\
+    \hline
+        RFF-8.01, RFF-8.02, RFF-8.03, RFF-8.04 & TestNameForm \\
+    \hline
+        RFF-9.01, RFF-9.02 & TestSelectionComparison\\
     \hline
 \end{tabularx}

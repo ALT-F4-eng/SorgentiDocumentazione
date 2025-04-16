@@ -1,0 +1,47 @@
+\subsubsection{TestComparisonPage} 
+\label{sec:TestComparisonPage}
+\paragraph{Descrizione}
+TestComparisonPage è il componente che si occupa di visualizzare il confronto tra il test caricato e un test salvato tramite le seguenti funzionalità:
+\begin{itemize}
+    \item Visualizzazione delle informazioni dei test;
+    \item Visualizzazione dell'indice riassuntivo di confronto;
+    \item Visualizzazione del diagramma di dispersione;
+    \item Visualizzazione paginata dei confronti dei risultati dei due test.
+\end{itemize} 
+\paragraph{SottoComponenti}
+TestComparisonPage è composto dai seguenti sotto-componenti:
+\begin{itemize}
+    \item \textbf{ComparisonIndex}: visualizza indice di confronto composto dai seguenti sotto-componenti:
+    \begin{itemize}
+        \item \textbf{IndexTest}: visualizza l'indice riassuntivo del primo test;
+        \item \textbf{IndexTest}: visualizza l'indice riassuntivo del secondo test.
+    \end{itemize}
+    
+    \item \textbf{ComparisonPageView}: contiene i seguenti sotto-componenti necessari a visualizzare in modo paginato il confronto dei risultati dei due test:
+    \begin{itemize}
+        \item \textbf{ScatterDiagram}: diagramma di dispersione per i risultati appartenenti alla pagina di confronto visualizzata;
+        
+        \item \textbf{ComparisonListView}: la lista dei singoli confronti visualizzati tramite \textbf{ComparisonView};
+        
+        \textbf{PageNavigation}: che permette la navigazione tra le pagine del confronto tra i test.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Tracciamento dei requisiti per TestComparisonPage}
+\begin{tabularx}{\textwidth}{|X|c|}
+    \hline
+    \textbf{ID} & \textbf{componente} \\
+    \hline
+        RFO-9.03, RFO-10.01, RFO-10.2, RFO-10.3 & TestIndex \\
+    \hline
+        RFF-10.03, RFF-10.04, RFF-11.04 & ComparisonPageView\\
+    \hline
+        RFF-10.05 & PageNavigation \\
+    \hline 
+        RFF-11.01 & ComparisonListView \\
+    \hline
+        RFF-11.03 & MessageComponent \\
+    \hline
+        RFF-12.01, RFF-12.02, RFF-12.03, RFF-12.04 & ComparisonView \\
+    \hline 
+\end{tabularx}

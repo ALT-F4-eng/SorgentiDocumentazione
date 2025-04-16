@@ -3,21 +3,15 @@
 \paragraph{Descrizione}
 LLMListPage è il componente che si occupa di visualizzare la lista degli LLM salvati con le seguenti funzionalità:
 \begin{itemize}
-    \item Visualizzare la lista di tutti gli LLM salvati.
-    \item Eliminazione LLM salvato.
-    \item Aggiungere un LLM.
-    \item Rinominazione di un LLM salvato.
+    \item Visualizzare la lista di tutti gli LLM salvati;
+    \item Eliminare un LLM salvato;
+    \item Aggiungere un LLM;
+    \item Visualizzare un LLM salvato.
 \end{itemize} 
 \paragraph{SottoComponenti}
 LLMListPage è composto dai seguenti sotto-componenti:
 \begin{itemize}
-    \item \textbf{LLMList}: componente per la visualizzazione della lista. Contiene il sottocomponente: \textbf{LLMElement}.
-    %\item \textbf{LLMShowListComponent}: Componente che si occupa di mostrare la lista degli LLM salvati.
-    %\item \textbf{SenderReqComponent}: Componente che si occupa dell'esecuzione di chiamate HTTP.
-    %\item \textbf{LLMsReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di visualizzazione degli LLM salvati per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListPage.
-    %\item \textbf{SelectReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di selezione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListPage.
-    %\item \textbf{DeleteReqComponent}: Tale componente funge da wrapper per la chiamata HTTP di eliminazione per la conversione del tipo ritornato dalla chiamata, in un tipo consono alla logica del componente LLMListPage.
-    %\item \textbf{DialogComponent}: Il componente che consente la visualizzazione della finestra di dialog.
+    \item \textbf{LLMList}: componente per la visualizzazione della lista. Contiene il sotto-componente \textbf{LLMElement}.
 \end{itemize}
 
 \paragraph{Tracciamento dei requisiti per LLMListPage}
@@ -25,12 +19,12 @@ LLMListPage è composto dai seguenti sotto-componenti:
     \hline
     \textbf{ID} & \textbf{componente} \\
     \hline
-        RFF-2.06, RFF-16.01, RFF-16.05, RFF-17.01, RFF-17.02, RFF-17.03 & LLMListPage\\
+        RFF-2.01 & LLMList\\
     \hline
-        RFF-1.01, RFF-2.01 & LLMList\\
+        RFF-2.02, RFF-2.03, RFF-2.06  & LLMElement\\
     \hline
-        RFF-1.02, RFF-1.3, RFF-2.02, RFF-2.03, RFF-16.02 & LLMElement\\
+        RFF-2.07 & MessageComponent\\
     \hline
-        RFF-1.01, RFF-2.04, RFF-2.05,  RFF-2.07 & MessageComponent\\
-    \hline
+        RFF-2.04, RFF-2.05 & ConfirmComponent \\
+    \hline 
 \end{tabularx}

@@ -17,23 +17,40 @@ DatasetContentPage è il componente che permette di visualizzare le coppie di do
 DatasetContentPage è composto dai seguenti sotto-componenti:
 \begin{itemize}
     \item \textbf{SearchBar}: barra di ricerca per le domande e le risposte.
-    \item \textbf{QAListView}: lista scorrevole che mostra tutte le coppie domande-risposte impaginate che contiene \textbf{QAListElement}.
-    \item \textbf{QAForm}: form che permette all'utente di inserire o modificare elementi del dataset.
+    \item \textbf{DatasetPageView}: componente che contiene i seguenti sotto-componenti necessari a visualizzare in modo paginato il dataset:
+    \begin{itemize}
+        \item \textbf{QAListView} lista scorrevole che mostra tutte le coppie domande-risposte appartenenti alla pagina visualizzate usando il componente \textbf{QAListElement};
+        \item \textbf{PageNavigation} permette la navigazione tra le pagine del dataset.
+    \end{itemize}
+    \item \textbf{QAForm}: form che permette all'utente di inserire o modificare elementi del dataset;
+    \item \textbf{DatasetNameForm}: form che permette di assegnare un nome durante il salvataggio del dataset;
+    \item \textbf{LLMSelectionList}: permette la selezione dell'LLM salvato da utilizzare nel test.
 \end{itemize}
 
 \paragraph{Tracciamento dei requisiti}
+% RFO-1.12 
 \begin{tabularx}{\textwidth}{|X|c|}
     \hline
     \textbf{ID} & \textbf{Componente} \\
     \hline
-        RFO-1.01, RFO-1.02, RFO-1.03, RFO-1.04, RFO-1.05, RFO-1.07, RFO-1.08, RFO-1.09, RFO-1.11, RFO-2.01, RFO-2.02, RFO-2.03, RFO-6.01, RFO-6.02, RFO-6.03 & DatasetContentPage\\
+        RFO-1.01, RFO-1.02, RFO-1.08, RFO-1.11  & DatasetContentPage\\
     \hline
-        RFO-1.06, RFO-14.14 & SearchBar\\
+        RFO-1.06 & SearchBar\\
     \hline
-        RFO-1.10, RFO-1.12, RFO-1.13, RFO-3.06, RFO-4.05, RFO-5.01, RFO-5.02, RFO-5.03, RFO-6.04, RFO-8.06, RFO-8.08, RFO-8.09, RFF-13.03, RFF-13.04 & MessageComponent\\
+        RFO-1.09, RFO-1.10, RFO-1.13, RFO-4.05, RFO-5.01, RFO-5.02, RFO-5.03, RFO-2.02, RFO-2.03, RFO-6.04, RFF-1.04 & MessageComponent\\
     \hline
-        RFO-14.01, RFO-14.05, RFO-14.06, RFO-14.07, RFO-14.08, RFO-14.09, RFO-14.10, RFO-14.13, RFO-15.01, RFO-15.02 & QAListView\\
+        RFO-1.03, RFO-1.04 & DatasetPageView \\
     \hline
-        RFO-3.01, RFO-3.02, RFO-3.03, RFO-3.04, RFO-3.05, RFO-4.01, RFO-4.02, RFO-4.03, RFO-4.04, RFO-15.03, RFO-15.04, RFO-15.05, RFO-15.06 & QAListElement\\
+        RFO-1.05 & PageNavigation\\
+    \hline
+        RFO-2.01& QAListView\\
+    \hline
+        RFO-3.01, RFO-3.02, RFO-3.03, RFO-3.04 , RFO-3.05, RFO-3.06 & QAListElement\\
+    \hline
+        RFO-4.01, RFO-4.02, RFO-4.03, RFO-4.04& QAForm\\
+    \hline
+        RFO-6.01, RFO-6.02, RFO-6.03 & DatasetNameForm \\
+    \hline
+        RFF-1.01, RFF-1.02, RFF-1.03 & LLMSelectionList \\
     \hline
 \end{tabularx}
