@@ -1,0 +1,104 @@
+\subsection{Progettazione database}
+\label{subsec:database}
+Il diagramma E-R (entità-relazione) mostrato in \hyperref[fig:schema_concettuale]{Figura \ref{fig:schema_concettuale}} espone lo schema concettuale del database.
+\begin{figure}[H]
+    \centering
+    \resizebox{\textwidth}{!}{\includegraphics{Sezioni/ProgettazioneDettaglio/Immagini/schema_concettuale.png}}
+    \caption{Schema concettuale database.}
+    \label{fig:schema_concettuale}
+\end{figure}
+
+Lo schema concettuale è stato ristrutturato per facilitare la definizione dello schema logico ottenendo lo schema equivalente mostrato in \hyperref[fig:schema_concettuale_ristrutturato]{Figura \ref{fig:schema_concettuale_ristrutturato}}.
+\begin{figure}[H]
+    \centering
+    \resizebox{\textwidth}{!}{\includegraphics{Sezioni/ProgettazioneDettaglio/Immagini/schema_concettuale_ristrutturato.png}}
+    \caption{Schema concettuale ristrutturato.}
+    \label{fig:schema_concettuale_ristrutturato}
+\end{figure}
+Come si può notare dallo schema ristrutturato:
+\begin{enumerate}
+
+    \item Le generalizzazioni \lstinline|Dataset|, \lstinline|Test| e \lstinline|CoppiaChiaveValore| sono state sostituite accorpando le entità figlie nell'entità padre a cui è stato aggiunto un attributo per distinguere le occorrenze.
+    Così facendo per le entità \lstinline|Dataset|/\lstinline|Test| viene semplificato il passaggio da temporaneo a salvato.
+    Inoltre tutte e tre le generalizzazioni sono composte da entità figlie con pochi attributi propri, quindi il numero di attributi che possono assumere nulli è basso.
+
+    \item La relazione \lstinline|Testset| è stata mantenuta pur essendo derivabile a partire da un occorrenza dell'entità \lstinline|Test| perché riduce il numero di accessi necessari a identificare un testset senza comportare un eccessivo utilizzo di memoria. 
+\end{enumerate}
+
+Lo schema ristrutturato è stato utilizzato per produrre lo schema logico del database.
+\begin{itemize}
+    \item[] \textit{Dataset(\underline{ID}, IsTmp, Nome, DataCreazione, DataUltimaModifica)}
+    
+    \item[] \textit{Elemento(\underline{ID}, Domanda, Risposta)}
+    
+    \item[] \textit{ContenutoDataset(\underline{Dataset}, \underline{Elemento})} \\
+    \textit{ContenutoDataset.Dataset \textrightarrow Dataset.ID} \\
+    \textit{ContenutoDataset.Elemento \textrightarrow Elemento.ID}
+    
+    \item[] \textit{LLM(\underline{ID}, Nome, URL, ChiaveRichiesta, ChiaveRisposta, DataRegistrazione)}
+    
+    \item[] \textit{CoppiaChiaveValore(\underline{ID}, LLM, Chiave, Valore, IsHeader)}\\
+    \textit{CoppiaChiaveValore.LLM \textrightarrow LLM.ID}
+
+    \item[] \textit{Test(\underline{ID}, Testset, LLM, IsTmp, Nome, DataEsecuzione)} \\
+    \textit{Test.Testset \textrightarrow Dataset.ID} \\
+    \textit{Test.LLM \textrightarrow LLM.ID}
+    
+    \item[] \textit{Risultato(\underline{Test}, \underline{Elemento}, IsCorretto, GradoSimilarita, RispostaOttenuta)}\\
+    \textit{Risultato.Test \textrightarrow Test.ID} \\
+    \textit{Risultato.Elemento \textrightarrow Elemento.ID} 
+\end{itemize}
+Di seguito vengono analizzate singolarmente le relazioni definite nello schema logico indicando il dominio degli attributi ed eventuali vincoli aggiuntivi.
+
+\subsubsection{Dataset}
+\begin{itemize}
+    \item \textit{ID}: valore numerico che identifica univocamente un dataset;
+    \item \textit{IsTmp}: valore booleano che indica se il dataset è temporaneo o è stato salvato, non può quindi assumere valore nullo;
+    \item \textit{Nome}: stringa che identifica univocamente il dataset, se il dataset è temporaneo deve assumere valore nullo;
+    \item \textit{DataCreazione}: data di creazione del dataset, se il dataset è temporaneo deve assumere valore nullo;
+    \item \textit{DataUltimaModifica}: data di ultima modifica del dataset, se il dataset è temporaneo deve assumere valore nullo.
+\end{itemize}
+
+\subsubsection{Elemento}
+\begin{itemize}
+    \item \textit{ID}: valore numerico che identifica univocamente un elemento;
+    \item \textit{Domanda}: stringa che rappresenta la domanda da porre all'LLM da testare;
+    \item \textit{Risposta}: stringa che rappresenta la risposta attesa alla domanda.
+\end{itemize}
+\textit{Domanda} e \textit{Risposta} non possono entrambe assumere valori nulli.
+
+\subsubsection{LLM}
+\begin{itemize}
+    \item \textit{ID}: valore numerico che identifica univocamente un LLM registrato;
+    \item \textit{Nome}: stringa che identifica univocamente l'LLM, non può assumere valore nullo;
+    \item \textit{URL}: stringa che rappresenta l'URL da utilizzare per interagire con l'LLM da testare, non può assumere valore nullo;
+    \item \textit{ChiaveRichiesta}: chiave da utilizzare per passare all'LLM da testare la domanda relativa a un elemento, non può assumere valore nullo;
+    \item \textit{ChiaveRisposta}: chiave da utilizzare per estrarre la risposta data dall'LLM da testare, non può assumere valore nullo;
+    \item \textit{DataRegistrazione}: data in cui l'LLM è stato salvato nel sistema, non può assumere valore nullo.
+\end{itemize}
+
+\subsubsection{CoppiaChiaveValore}
+\begin{itemize}
+    \item \textit{ID}: valore numerico che identifica univocamente una coppia chiave-valore;
+    \item \textit{LLM}: ID dell'LLM per cui è necessario utilizzare le coppie chiave valore aggiuntive  
+    \item \textit{Chiave}: stringa che rappresenta la chiave, non può assumere valore nullo e deve essere univoca nel contesto di uno stesso LLM;
+    \item \textit{Valore}: stringa che rappresenta il valore, non può assumere valore nullo;
+    \item \textit{IsHeader}: valore booleano che indica se la coppia chiave-valore deve essere aggiunto all'header o al body delle richieste HTTP da porre all'LLM. 
+\end{itemize}
+
+\subsubsection{Test}
+\begin{itemize}
+    \item \textit{ID}: valore numerico che identifica univocamente un test;
+    \item \textit{IsTmp}: valore booleano che indica se il test è temporaneo o salvato, non può assumere valore nullo;
+    \item \textit{Nome}: stringa che identifica univocamente il test, se il test è temporaneo deve assumere valore nullo;
+    \item \textit{DataEsecuzione}: data di esecuzione del test, non può assumere valore nullo.
+\end{itemize}
+
+\subsubsection{Risultato}
+\begin{itemize}
+    \item \textit{Test}: identifica il test a cui appartiene il risultato;
+    \item \textit{Elemento}: identifica l'elemento relativo al risultato;
+    \item \textit{IsCorretto}: valore booleano che indica se la risposta ottenuta dall'LLM è stata valutata come corretta, non può assumere valore nullo;
+    \item \textit{GradoSimilarita}: valore reale tra 0 e 1 che indica il grado di similarità tra la risposta attesa e la risposta ottenuta dall'LLM, non può assumere valore nullo;
+    \item \textit{RispostaOttenuta}: stringa che rappresenta la risposta ottenuta dall'LLM alla domanda contenuta nell'elemento associato al risultato.
+\end{itemize}
