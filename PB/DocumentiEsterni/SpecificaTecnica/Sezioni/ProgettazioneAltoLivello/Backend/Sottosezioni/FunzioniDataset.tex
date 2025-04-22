@@ -1,47 +1,71 @@
 \label{subsubsec:funzioni_dataset}
 \subsubsection{get\_all\_datasets}
 \paragraph{Descrizione}
-La funzione \texttt{get\_all\_datasets} permette di recuperare tutti i dataset salvati nel sistema e restituisce una risposta strutturata.
+La funzione \texttt{get\_all\_datasets} permette di recuperare tutti i dataset salvati nel sistema che contengono la query nel proprio nome.
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP method}: GET;
     \item \textbf{Endpoint}: /datasets;
-    \item \textbf{Response Model}: \texttt{DatasetsListResponseDTO};
-    \item \textbf{Nome}: \texttt{getAllDatasets};
+    \item \textbf{Response Model}: \texttt{DatasetsListDTO};
     \item \textbf{Dependency Injection}: 
     \begin{itemize}
-    \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio.
+    \item \textbf{dataset\_service (DatasetUseCase)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio.
     \end{itemize}
+\end{itemize}
+\paragraph{Parametri}
+\begin{itemize}
+    \item \textbf{q (string: "")}: query per filtrare i dataset salvati.
 \end{itemize}
 \paragraph{Implementazione}
 \begin{itemize}
     \item Effettua una chiamata al servizio di gestione dei dataset per recuperare l'elenco completo dei dataset salvati;
-    \item Restituisce un oggetto \texttt{DatasetsListResponseDTO} con lo stato della risposta e, in caso di successo, la lista dei dataset.
+    \item Restituisce un JSON con lo stato della risposta e, in caso di successo, la lista dei dataset.
 \end{itemize}
 
 \subsubsection{get\_dataset}
 \paragraph{Descrizione}
-La funzione \texttt{get\_dataset} permette di recuperare i metadati e le coppie domanda-risposta di un dataset salvato tramite un identificatore (ID) fornito. Il dataset è restituito come una risposta strutturata.
+La funzione \texttt{get\_dataset} permette di recuperare i metadati di un dataset salvato tramite un identificatore (ID) fornito.
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP method}: GET;
     \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater;
-    \item \textbf{Response Model}: \texttt{DatasetResponseDTO};
-    \item \textbf{Nome}: \texttt{getsavedDataset};
+    \item \textbf{Response Model}: \texttt{DatasetDTO};
     \item \textbf{Dependency Injection}: 
     \begin{itemize}
-        \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+        \item \textbf{dataset\_service (DatasetUseCase)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
     \end{itemize}
 \end{itemize}
 \paragraph{Parametri}
 \begin{itemize}
     \item \textbf{dataset\_id (int)}: ID del dataset da recuperare.
-    \item \textbf{page (int: default 1)}: numero della pagina;
 \end{itemize}
 \paragraph{Implementazione}
 \begin{itemize}
     \item Effettua una chiamata al servizio di gestione dei dataset per recuperare i dettagli del dataset salvato specificato;
-    \item Restituisce un oggetto \texttt{DatasetResponseDTO} con lo stato della risposta e, in caso di successo, i dati richiesti.
+    \item Restituisce un JSON con lo stato della risposta e, in caso di successo, i dati richiesti.
+\end{itemize}
+
+\subsubsection{get\_dataset\_page}
+\paragraph{Descrizione}
+La funzione \texttt{get\_dataset\_page} permette di recuperare la pagina di un dataset salvato avente identificatore (ID) fornito.
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP method}: GET;
+    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater;
+    \item \textbf{Response Model}: \texttt{DatasetDTO};
+    \item \textbf{Dependency Injection}: 
+    \begin{itemize}
+        \item \textbf{dataset\_service (DatasetUseCase)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+    \end{itemize}
+\end{itemize}
+\paragraph{Parametri}
+\begin{itemize}
+    \item \textbf{dataset\_id (int)}: ID del dataset da recuperare.
+\end{itemize}
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Effettua una chiamata al servizio di gestione dei dataset per recuperare i dettagli del dataset salvato specificato;
+    \item Restituisce un JSON con lo stato della risposta e, in caso di successo, i dati richiesti.
 \end{itemize}
 
 \subsubsection{create\_dataset}
@@ -50,18 +74,21 @@ La funzione \texttt{create\_dataset} permette di creare un nuovo dataset nel sis
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP method}: POST;
-    \item \textbf{Endpoint}: /datasets/create;
-    \item \textbf{Response Model}: \texttt{DatasetResponseDTO};
-    \item \textbf{Nome}: \texttt{createDataset};
+    \item \textbf{Endpoint}: /datasets;
+    \item \textbf{Response Model}: \texttt{DatasetDTO};
     \item \textbf{Dependency Injection}: 
     \begin{itemize}
-    \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio.
+    \item \textbf{dataset\_service (DatasetUseCase)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio.
     \end{itemize}
+\end{itemize}
+\paragraph{Parametri}
+\begin{itemize}
+    \item \textbf{dataset (DatasetDTO)}: metadati del dataset;
 \end{itemize}
 \paragraph{Implementazione}
 \begin{itemize}
     \item Effettua una chiamata al servizio di gestione dei dataset per creare un nuovo dataset;
-    \item Restituisce un oggetto \texttt{DatasetResponseDTO} con lo stato della risposta e, in caso di successo, il dataset appena creato.
+    \item Restituisce un JSON con lo stato della risposta e, in caso di successo, il dataset appena creato.
 \end{itemize}
 
 \subsubsection{update\_dataset}
@@ -70,23 +97,22 @@ La funzione \texttt{update\_dataset} permette di salvare le modifiche apportate 
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP method}: PUT;
-    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater/update;
-    \item \textbf{Response Model}: \texttt{DatasetResponseDTO};
-    \item \textbf{Nome}: \texttt{updateDataset};
+    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater;
+    \item \textbf{Response Model}: \texttt{DatasetDTO};
     \item \textbf{Dependency Injection}: 
     \begin{itemize}
-        \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+        \item \textbf{dataset\_service (DatasetUseCase)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
     \end{itemize}
 \end{itemize}
 \paragraph{Parametri}
 \begin{itemize}
-    \item \textbf{dataset\_id (int)}: ID del dataset da aggiornare.
-    \item \textbf{page (int: default 1)}: numero della pagina;
+    \item \textbf{dataset\_id (int)}: ID del dataset da aggiornare;
+    \item \textbf{page (int: default 1)}: numero della pagina.
 \end{itemize}
 \paragraph{Implementazione}
 \begin{itemize}
     \item Effettua una chiamata al servizio di gestione dei dataset per aggiornare il dataset;
-    \item Restituisce il risultato della richiesta e, in caso di successo, il dataset aggiornato, in formato \texttt{DatasetResponseDTO}.
+    \item Restituisce un JSON contenente il risultato della richiesta e, in caso di successo il dataset aggiornato.
 \end{itemize}
 
 \subsubsection{delete\_dataset}
@@ -95,12 +121,10 @@ La funzione \texttt{delete\_dataset} permette di eliminare un dataset.
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP method}: DELETE;
-    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater/delete;
-    \item \textbf{Response Model}: \texttt{ResponseDTO};
-    \item \textbf{Nome}: \texttt{deleteDataset};
+    \item \textbf{Endpoint}: /datasets/\textless dataset\_id\textgreater;
     \item \textbf{Dependency Injection}: 
     \begin{itemize}
-        \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
+        \item \textbf{dataset\_service (DatasetUseCase)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
     \end{itemize}
 \end{itemize}
 
@@ -112,33 +136,7 @@ La funzione \texttt{delete\_dataset} permette di eliminare un dataset.
 \paragraph{Implementazione}
 \begin{itemize}
     \item Effettua una chiamata al servizio di gestione dei dataset per eliminare il dataset specificato;
-    \item Restituisce il risultato dell'operazione in formato \texttt{ResponseDTO}.
-\end{itemize}
-
-\subsubsection{get\_datasets\_by\_name}
-\paragraph{Descrizione}
-La funzione \texttt{get\_datasets\_by\_name} permette di ottenere tutti i dataset che contengono una determinata stringa nel nome.
-\paragraph{Dettagli dell'endpoint}
-\begin{itemize}
-    \item \textbf{HTTP method}: GET;
-    \item \textbf{Endpoint}: /datasets/search;
-    \item \textbf{Response Model}: \texttt{DatasetsListResponseDTO};
-    \item \textbf{Nome}: \texttt{searchDatasets};
-    \item \textbf{Dependency Injection}: 
-    \begin{itemize}
-        \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
-    \end{itemize}
-\end{itemize}
-
-\paragraph{Parametri}
-\begin{itemize}
-    \item \textbf{name (str)}: stringa da usare per la ricerca dei dataset per nome.
-\end{itemize}
-
-\paragraph{Implementazione}
-\begin{itemize}
-    \item Effettua una chiamata al servizio di gestione dei dataset per ricercare i dataset che contengono la stringa indicata da \texttt{name} nel nome;
-    \item Restituisce un oggetto \texttt{DatasetsListResponseDTO} con lo stato della risposta e, in caso di successo, la lista dei dataset.
+    \item Restituisce l'esisto dell'operazione.
 \end{itemize}
 
 \subsubsection{create\_dataset\_from\_json}
@@ -149,7 +147,6 @@ La funzione \texttt{create\_dataset\_from\_json} permette di creare un dataset d
     \item \textbf{HTTP method}: POST;
     \item \textbf{Endpoint}: /datasets/upload;
     \item \textbf{Response Model}: \texttt{DatasetResponseDTO};
-    \item \textbf{Nome}: \texttt{createDatasetFromJson};
     \item \textbf{Dependency Injection}: 
     \begin{itemize}
         \item \textbf{dataset\_service (DatasetService)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{DatasetService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio;
