@@ -1,17 +1,16 @@
-\subsubsection{get\_LLM\_datas}
+\subsubsection{get\_llm\_datas}
 \label{sec:get_LLM_datas}
 
 \paragraph{Descrizione}
-La funzione \texttt{get\_LLM\_datas} recupera le infomrazioni relative all'LLM.
+La funzione \texttt{get\_llm\_datas} recupera le infomrazioni relative all'LLM.
 
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP Method}: GET;
     \item \textbf{Endpoint}: /llm/\{id\};
-    \item \textbf{Tags}: [tag];
     \item \textbf{Response Model}: LLMDto;
-    \item \textbf{Nome}: getLLMDatas;
-    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_Sservice(LLMService)}: dipendenza risolta tramite Depends (get\_LLM\_service).
+    \item \textbf{Nome}: get\_llm\_datas;
+    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_service(LLMUseCase)}: dipendenza risolta tramite \textit{Dependency Injector}.
     \item \textbf{Parametri}:\\ \textbf{- id(int)}: ID dell'LLM di cui recuperare le informazioni.
 \end{itemize}
 
@@ -22,20 +21,19 @@ La funzione \texttt{get\_LLM\_datas} recupera le infomrazioni relative all'LLM.
 \end{itemize}
 
 
-\subsubsection{get\_all\_LLMs}
+\subsubsection{get\_all\_llms}
 \label{sec:get_all_LLMs}
 
 \paragraph{Descrizione}
-La funzione \texttt{get\_all\_LLMs} recupera la lista di tutti gli LLM salvati.
+La funzione \texttt{get\_all\_llms} recupera la lista di tutti gli LLM salvati.
 
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP Method}: GET;
     \item \textbf{Endpoint}: /llm;
-    \item \textbf{Tags}: [tag];
     \item \textbf{Response Model}: LLMDto;
-    \item \textbf{Nome}: getAllLLMs;
-    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_Sservice(LLMService)}: dipendenza risolta tramite Depends (get\_LLM\_service).
+    \item \textbf{Nome}: get\_all\_llms;
+    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_service(LLMUseCase)}: dipendenza risolta tramite \textit{Dependency Injector}.
 \end{itemize}
 
 \paragraph{Implementazione}
@@ -45,20 +43,19 @@ La funzione \texttt{get\_all\_LLMs} recupera la lista di tutti gli LLM salvati.
 \end{itemize}
 
 
-\subsubsection{delete\_LLM}
+\subsubsection{delete\_llm}
 \label{sec:delete_LLM}
 
 \paragraph{Descrizione}
-La funzione \texttt{delete\_LLM} elimina l'LLM salvato.
+La funzione \texttt{delete\_llm} elimina l'LLM salvato.
 
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP Method}: POST;
     \item \textbf{Endpoint}: /llm/delete;
-    \item \textbf{Tags}: [tag];
     \item \textbf{Response Model}: LLMDto;
-    \item \textbf{Nome}: deleteLLM;
-    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_Sservice(LLMService)}: dipendenza risolta tramite Depends (get\_LLM\_service).
+    \item \textbf{Nome}: delete\_llm;
+    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_service(LLMUseCase)}: dipendenza risolta tramite \textit{Dependency Injector}.
     \item \textbf{Parametri}:    
     \begin{itemize}
         \item \textbf{- id(int)}: ID dell'LLM di cui recuperare le informazioni.
@@ -72,20 +69,19 @@ La funzione \texttt{delete\_LLM} elimina l'LLM salvato.
 \end{itemize}
 
 
-\subsubsection{write\_LLM}
+\subsubsection{write\_llm}
 \label{sec:write_LLM}
 
 \paragraph{Descrizione}
-La funzione \texttt{write\_LLM} salva o modifica un LLM.
+La funzione \texttt{write\_llm} salva o modifica un LLM.
 
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP Method}: POST;
     \item \textbf{Endpoint}: /llm/write;
-    \item \textbf{Tags}: [tag];
     \item \textbf{Response Model}: LLMDto;
-    \item \textbf{Nome}: writeLLM;
-    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_Sservice(LLMService)}: dipendenza risolta tramite Depends (get\_LLM\_service).
+    \item \textbf{Nome}: write\_llm;
+    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_service(LLMUseCase)}: dipendenza risolta tramite \textit{Dependency Injector}.
     \item \textbf{Parametri}:
     \begin{itemize}
         \item \textbf{- nome(str)}: nome dell'LLM.
