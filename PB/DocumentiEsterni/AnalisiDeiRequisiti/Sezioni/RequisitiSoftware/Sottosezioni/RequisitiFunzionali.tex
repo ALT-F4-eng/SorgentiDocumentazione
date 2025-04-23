@@ -574,7 +574,7 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
 
     \subreq{RFO-16.01}{\hyperref[uc:UC-9]{UC-9}, \hyperref[uc:UC-10]{UC-10}}{Il sistema deve poter salvare un nuovo dataset}
 
-    \subreq{RFO-16.02}{\hyperref[uc:UC-12]{UC-12}}{Il sistema deve poter aggiornare un dataset salvato senza perdere le sue versioni precedenti}
+    \subreq{RFO-16.02}{\hyperref[uc:UC-12]{UC-12}}{Il sistema deve poter aggiornare il contenuto un dataset salvato}
 
     \subreq{RFO-16.03}{\hyperref[uc:UC-22]{UC-22}}{Il sistema deve poter eliminare un dataset salvato}
 
@@ -611,20 +611,18 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     ]
     {RFO-18}{Il sistema deve poter gestire il test caricato}
     \label{rf:RFO-18}%
-    
-    \subreq{RFO-18.01}{\hyperref[uc:UC-31]{UC-31}}{Il sistema deve poter determinare la versione del dataset su cui è stato eseguito il test caricato}
 
-    \subreq{RFO-18.02}{\hyperref[uc:UC-31]{UC-31}}{Il sistema deve poter determinare il nome del dataset su cui è stato eseguito il test caricato}
+    \subreq{RFO-18.01}{\hyperref[uc:UC-31]{UC-31}}{Il sistema deve poter determinare il nome del dataset su cui è stato eseguito il test caricato}
 
-    \subreq{RFO-18.03}{\hyperref[uc:UC-32]{UC-32}}{Il sistema deve poter calcolare il numero della pagina massima dei risultati del test caricato}
+    \subreq{RFO-18.01}{\hyperref[uc:UC-32]{UC-32}}{Il sistema deve poter calcolare il numero della pagina massima dei risultati del test caricato}
 
-    \subreq{RFO-18.04}{\hyperref[uc:UC-2]{UC-2}}{Il sistema, data una pagina, deve poter determinare se appartiene al range di pagine valide dei risultati del test caricato}  
+    \subreq{RFO-18.03}{\hyperref[uc:UC-2]{UC-2}}{Il sistema, data una pagina, deve poter determinare se appartiene al range di pagine valide dei risultati del test caricato}  
 
-    \subreq{RFO-18.05}{\hyperref[uc:UC-32]{UC-32}}{Il sistema deve poter risalire all'ultima pagina di risultati richiesta}    
+    \subreq{RFO-18.04}{\hyperref[uc:UC-32]{UC-32}}{Il sistema deve poter risalire all'ultima pagina di risultati richiesta}    
 
-    \subreq{RFO-18.06}{\hyperref[uc:UC-32]{UC-32}}{Il sistema deve poter determinare e ottenere i singoli risultati del test caricato che appartengono a una data pagina}
+    \subreq{RFO-18.05}{\hyperref[uc:UC-32]{UC-32}}{Il sistema deve poter determinare e ottenere i singoli risultati del test caricato che appartengono a una data pagina}
 
-    \subreq{RFO-18.07}{\hyperref[uc:UC-31]{UC-31}}{Il sistema deve poter ottenere le statistiche del test caricato \hyperref[rf:RFO-19]{RFO-19}}    
+    \subreq{RFO-18.06}{\hyperref[uc:UC-31]{UC-31}}{Il sistema deve poter ottenere le statistiche del test caricato \hyperref[rf:RFO-19]{RFO-19}}    
 \end{freq}
 
 \begin{freq}
@@ -762,7 +760,5 @@ I requisiti funzionali sono raggruppati usando una divisione ad alto livello del
     \label{rf:RFF-20}%
     
     \subreq{RFF-20.01}{\hyperref[uc:UC-42]{UC-42}}{Il sistema deve poter determinare quali test salvati possono essere confrontati con il test caricato, ovvero quelli che condividono il dataset o l'LLM utilizzato nel test}
-    
-    \subreq{RFF-20.02}{\hyperref[uc:UC-42]{UC-42}}{Il sistema deve poter determinare se il test caricato condivide con un dato test salvato la stessa versione di dataset utilizzato}
 
 \end{freq}
