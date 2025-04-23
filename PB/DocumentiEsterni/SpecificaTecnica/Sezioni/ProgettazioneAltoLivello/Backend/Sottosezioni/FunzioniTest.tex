@@ -12,7 +12,8 @@ La funzione \textbf{run\_test} utilizza le domande del dataset per valutare il m
 \begin{itemize}
     \item \textbf{HTTP Method}: POST
     \item \textbf{Endpoint}: \texttt{/test}
-    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Response Model}: TestResponseDto
+    \item \textbf{Nome}: \texttt{runTest}
     \item \textbf{Dependency Injection}: \texttt{dataset\_service (DatasetService)} risolto tramite il container delle dipendenze (\texttt{Container.api.dataset\_service}). 
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -41,7 +42,8 @@ La funzione \textbf{get\_test\_results} consente di recuperare i risultati di un
 \begin{itemize}
     \item \textbf{HTTP Method}: GET
     \item \textbf{Endpoint}: \texttt{/test}
-    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Response Model}: TestResponseDto
+    \item \textbf{Nome}: \texttt{getTestResults}
     \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -69,7 +71,8 @@ La funzione \textbf{save\_test\_results} salva i risultati del test all'interno 
 \begin{itemize}
     \item \textbf{HTTP Method}: POST
     \item \textbf{Endpoint}: \texttt{/test}
-    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Response Model}: TestResponseDto
+    \item \textbf{Nome}: \texttt{saveTestResults}
     \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -99,7 +102,8 @@ La funzione \textbf{compare\_test\_results} consente di confrontare i risultati 
 \begin{itemize}
     \item \textbf{HTTP Method}: POST
     \item \textbf{Endpoint}: \texttt{/test}
-    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Response Model}: TestResponseDto
+    \item \textbf{Nome}: \texttt{compareTestResults}
     \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -128,7 +132,8 @@ La funzione \textbf{rename\_test\_results} consente di rinominare un file di ris
 \begin{itemize}
     \item \textbf{HTTP Method}: POST
     \item \textbf{Endpoint}: \texttt{/test}
-    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Response Model}: TestResponseDto
+    \item \textbf{Nome}: \texttt{renameTestResults}
     \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -156,7 +161,8 @@ La funzione \textbf{delete\_test\_results} consente di eliminare i risultati di 
 \begin{itemize}
     \item \textbf{HTTP Method}: DELETE
     \item \textbf{Endpoint}: \texttt{/test}
-    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Response Model}: TestResponseDto
+    \item \textbf{Nome}: \texttt{deleteTestResults}
     \item \textbf{Dependency Injection}: \texttt{test\_service (TestService)} risolto tramite il container delle dipendenze (\texttt{Container.api.test\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
@@ -182,7 +188,8 @@ La funzione \textbf{get\_tests\_list} restituisce un elenco dei test relativi a 
 \begin{itemize}
     \item \textbf{HTTP Method}: GET
     \item \textbf{Endpoint}: \texttt{/test}
-    \item \textbf{Response Format}: TestResponseDto
+    \item \textbf{Response Model}: TestResponseDto
+    \item \textbf{Nome}: \texttt{getTestsList}
     \item \textbf{Dependency Injection}: \texttt{dataset\_service (DatasetService)} risolto tramite il container delle dipendenze (\texttt{Container.api.dataset\_service}).
     \item \textbf{Decoratori usati}: \texttt{@api.route}
 \end{itemize}
