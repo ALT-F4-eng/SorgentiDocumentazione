@@ -1,28 +1,33 @@
-\subsubsection{get\_llm\_datas}
-\label{sec:get_LLM_datas}
+\subsubsection{get\_llm}
+\label{sec:get_llm}
 
 \paragraph{Descrizione}
-La funzione \texttt{get\_llm\_datas} recupera le infomrazioni relative all'LLM.
+La funzione \texttt{get\_llm} recupera le infomrazioni relative a un LLM salvato.
 
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP Method}: GET;
-    \item \textbf{Endpoint}: /llm/\{id\};
-    \item \textbf{Response Model}: LLMDto;
-    \item \textbf{Nome}: get\_llm\_datas;
-    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_service(LLMUseCase)}: dipendenza risolta tramite \textit{Dependency Injector}.
-    \item \textbf{Parametri}:\\ \textbf{- id(int)}: ID dell'LLM di cui recuperare le informazioni.
+    \item \textbf{Endpoint}: /llms/\texttt{<id\_llm>};
+    \item \textbf{Response Model}: LLMDTO;
+    \item \textbf{Dependency Injection}:
+    \begin{itemize}
+        \item \textbf{llm\_service (LLMUseCase)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{LLMService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Parametri di input}
+\begin{itemize}
+    \item \textbf{id (int)}: ID dell'LLM salvato da ottenere.
 \end{itemize}
 
 \paragraph{Implementazione}
 \begin{itemize}
-    \item Effettua una chiamata HTTP per recuperare le informazioni relative ad un LLM nello specifico.
-    \item Restituisce un oggetto JSON con lo stato della risposta e, in caso di successo, i dati richiesti.
+    \item Restituisce lo stato dell'operazione e nel caso di successo un oggetto \texttt{LLMDTO} contenente i dati richiesti.
 \end{itemize}
 
 
 \subsubsection{get\_all\_llms}
-\label{sec:get_all_LLMs}
+\label{sec:get_all_llms}
 
 \paragraph{Descrizione}
 La funzione \texttt{get\_all\_llms} recupera la lista di tutti gli LLM salvati.
@@ -30,196 +35,115 @@ La funzione \texttt{get\_all\_llms} recupera la lista di tutti gli LLM salvati.
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP Method}: GET;
-    \item \textbf{Endpoint}: /llm;
-    \item \textbf{Response Model}: LLMDto;
-    \item \textbf{Nome}: get\_all\_llms;
-    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_service(LLMUseCase)}: dipendenza risolta tramite \textit{Dependency Injector}.
+    \item \textbf{Endpoint}: /llms;
+    \item \textbf{Response Model}: LLMListDto;
+    \item \textbf{Dependency Injection}:
+    \begin{itemize}
+        \item \textbf{llm\_service (LLMUseCase)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{LLMService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio.
+    \end{itemize}
 \end{itemize}
 
 \paragraph{Implementazione}
 \begin{itemize}
-    \item Effettua una chiamata HTTP per recuperare le informazioni principali degli LLM salvati.
-    \item Restituisce un oggetto JSON con lo stato della risposta e, in caso di successo, i dati richiesti.
+    \item Restituisce lo stato dell'operazione e nel caso di successo un oggetto \texttt{LLMListDTO} contenente i dati richiesti.
 \end{itemize}
 
 
+
 \subsubsection{delete\_llm}
-\label{sec:delete_LLM}
+\label{sec:delete_llm}
 
 \paragraph{Descrizione}
-La funzione \texttt{delete\_llm} elimina l'LLM salvato.
+La funzione \texttt{delete\_llm} elimina l'LLM salvato indicato.
 
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP Method}: DELETE;
-    \item \textbf{Endpoint}: /llm/delete;
-    \item \textbf{Response Model}: LLMDto;
-    \item \textbf{Nome}: delete\_llm;
-    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_service(LLMUseCase)}: dipendenza risolta tramite \textit{Dependency Injector}.
-    \item \textbf{Parametri}:    
+    \item \textbf{Endpoint}: /llms/\texttt{<id\_llm>};
+    \item \textbf{Dependency Injection}:
     \begin{itemize}
-        \item \textbf{- id(int)}: ID dell'LLM di cui recuperare le informazioni.
+        \item \textbf{llm\_service (LLMUseCase)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{LLMService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio.
     \end{itemize}
+\end{itemize}
+
+\paragraph{Parametri di input}
+\begin{itemize}
+    \item \textbf{id (int)}: ID dell'LLM salvato da eliminare.
 \end{itemize}
 
 \paragraph{Implementazione}
 \begin{itemize}
-    \item Effettua una chiamata HTTP per l'eliminazione dell'LLM salvato.
-    \item Restituisce un oggetto JSON con lo stato della risposta e, in caso di successo, l'id dell'LLM.
+    \item Restituisce lo stato dell'operazione.
 \end{itemize}
 
-
-\subsubsection{write\_llm}
-\label{sec:write_LLM}
+\subsubsection{create\_llm}
+\label{sec:create_llm}
 
 \paragraph{Descrizione}
-La funzione \texttt{write\_llm} salva o modifica un LLM.
+La funzione \texttt{create\_llm} salva un nuovo LLM.
+
+\paragraph{Dettagli dell'endpoint}
+\begin{itemize}
+    \item \textbf{HTTP Method}: POST;
+    \item \textbf{Endpoint}: \texttt{/llms};
+    \item \textbf{Response Model}: LLMDto;
+    \item \textbf{Dependency Injection}:
+    \begin{itemize}
+        \item \textbf{llm\_service (LLMUseCase)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{LLMService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio.
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Parametri di input}
+\begin{itemize}
+    \item \textbf{LLMDTO}: oggetto che rappresenta l'LLM da salvare.
+\end{itemize}
+
+\paragraph{Implementazione}
+\begin{itemize}
+    \item Restituisce lo stato dell'operazione e nel caso in cui sia andata a buon fine un oggetto \texttt{LLMDTO} che rappresenta LLM salvato.
+\end{itemize}
+
+\subsubsection{update\_llm}
+\label{sec:update_LLM}
+
+\paragraph{Descrizione}
+La funzione \texttt{update\_llm} aggiorna un LLM salvato.
 
 \paragraph{Dettagli dell'endpoint}
 \begin{itemize}
     \item \textbf{HTTP Method}: PUT;
-    \item \textbf{Endpoint}: /llm/write;
-    \item \textbf{Response Model}: LLMDto;
-    \item \textbf{Nome}: write\_llm;
-    \item \textbf{Dependency Injection}:\\ \textbf{- LLM\_service(LLMUseCase)}: dipendenza risolta tramite \textit{Dependency Injector}.
-    \item \textbf{Parametri}:
+    \item \textbf{Endpoint}: \texttt{/llms/<id\_llm>};
+    \item \textbf{Response Model}: LLMDTO;
+    \item \textbf{Dependency Injection}:
     \begin{itemize}
-        \item \textbf{- nome(str)}: nome dell'LLM.
-        \item \textbf{- url(str)}: url dell'LLM.
-        \item \textbf{- ka(str)}: chiave associata alla risposta dell'LLM.
-        \item \textbf{- kq(str)}: chiave associata alla domanda dell'LLM.
-        \item \textbf{- jh(dict)}: json di risposta alla creazione dell'header delle richieste HTTP verso l'LLM.
-        \item \textbf{- jb(dict)}:json di risposta alla creazione del body delle richieste HTTP verso l'LLM.
+        \item \textbf{llm\_service (LLMUseCase)}: la dipendenza viene risolta tramite \textit{Dependency Injector}. Questo permette di ottenere l'istanza del \texttt{LLMService} dal \texttt{Container}, che si occupa di tutte le configurazioni e inizializzazioni necessarie per il servizio.
     \end{itemize}
+\end{itemize}
+
+\paragraph{Parametri di input}
+\begin{itemize}
+    \item \textbf{id\_llm}: ID dell'LLM da aggiornare;
+    \item \textbf{LLMDTO}: oggetto che rappresenta l'LLM da utilizzare nell'aggiornamento.
 \end{itemize}
 
 \paragraph{Implementazione}
 \begin{itemize}
-    \item Effettua una chiamata HTTP per il salvataggio o la modifica dell'LLM.
-    \item Restituisce un oggetto JSON con lo stato della risposta e, in caso di successo, l'id dell'LLM.
+    \item Restituisce lo stato dell'operazione e nel caso in cui sia andata a buon fine un oggetto \texttt{LLMDTO} che rappresenta LLM aggiornato.
 \end{itemize}
 
 \paragraph{Tracciamento dei requisiti}
-\begin{tabularx}{\textwidth}{|c|c|}
+\begin{tabularx}{\textwidth}{|X|c|}
     \hline
     \textbf{ID} & \textbf{Funzione} \\
     \hline
-    RFF-1.01 & \texttt{get\_all\_llms}\\
-    \hline
-    %RFF-1.02 & \texttt{get\_all\_llms}\\
-    %\hline
-    %RFF-1.03 & \texttt{get\_all\_llms}\\
-    %\hline
-    %RFF-1.04 & \texttt{get\_all\_llms}\\
-    %\hline
-    %RFF-2.01 & \texttt{get\_all\_llms}\\
-    %\hline
-    %RFF-2.02 & \texttt{get\_all\_llms}\\
-    %\hline
-    %RFF-2.03 & \texttt{get\_all\_llms}\\
-    %\hline
-    %RFF-2.04 & \texttt{delete\_llm}\\
-    %\hline
-    %RFF-2.05 & \texttt{delete\_llm}\\
-    %\hline
-    %RFF-2.06 & \texttt{get\_all\_llms}\\
-    %\hline
-    %RFF-2.07 & \texttt{get\_all\_llms}\\
-    %\hline
-    %RFF-3.01 & \texttt{get\_llm\_datas}\\
-    %\hline
-    %RFF-3.02 & \texttt{get\_llm\_datas}\\
-    %\hline
-    %RFF-3.03 & \texttt{get\_llm\_datas}\\
-    %\hline
-    %RFF-3.04 & \texttt{get\_llm\_datas}\\
-    %\hline
-    %RFF-3.05 & \texttt{get\_llm\_datas}\\
-    %\hline
-    %RFF-3.06 & \texttt{get\_llm\_datas}\\
-    %\hline
-    %RFF-3.07 & \texttt{get\_llm\_datas}\\
-    %\hline
-    %RFF-3.08 & \texttt{get\_llm\_datas}\\
-    %\hline
-    %RFF-4.01 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.02 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.03 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.04 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.05 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.06 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.07 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.08 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.09 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.10 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.11 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.12 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-4.13 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-5.01 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-5.02 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-5.03 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-5.04 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-5.05 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-5.06 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-5.07 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-5.08 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-5.09 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-5.10 & \texttt{write\_llm}\\
-    %\hline
-    %RFF-5.11 & \texttt{write\_llm}\\
-    %\hline
-    RFF-16.01 & \texttt{get\_llm\_datas}\\
-    \hline
-    RFF-16.02 & \texttt{delete\_llm}\\
-    \hline
-    RFF-16.03 & \texttt{write\_llm}\\
-    \hline
-    RFF-16.04 & \texttt{write\_llm}\\
-    \hline
-    RFF-16.05 & \texttt{write\_llm}\\
-    \hline
-    RFF-17.01 & \texttt{get\_llm\_datas}, \texttt{write\_llm}\\
-    \hline
-    %RFF-17.02 & \texttt{write\_llm}\\
-    %\hline
-    RFF-17.03 & \texttt{get\_llm\_datas}\\
-    \hline
-    RFF-17.04 & \texttt{get\_llm\_datas}, \texttt{write\_llm}\\
-    \hline
-    %RFF-17.05 & \texttt{write\_llm}\\
-    %\hline
-    RFF-17.06 &  \texttt{get\_llm\_datas}, \texttt{write\_llm}\\
-    \hline
-    %RFF-17.07 & \texttt{write\_llm}\\
-    %\hline
-    RFF-17.08 & \texttt{write\_llm}\\
-    \hline
-    RFF-18.01 & \texttt{get\_llm\_datas}\\
-    \hline
-    RFF-18.02 & \texttt{write\_llm}\\
-    \hline
-    RFF-18.03 & \texttt{write\_llm}\\
-    \hline
+        RFF-17.01, RFF-17.03, RFF-17.04, RFF-17.06, RFF-18.01 & get\_llm\\
+   \hline
+        RFF-16.01, RFF-16.05 & get\_all\_llms\\
+   \hline
+        RFF-16.04, RFF-17.02, RFF-17.05, RFF-17.07, RFF-17.08, RFF-18.02, RFF-18.04  & create\_llm\\
+   \hline
+        RFF-16.03, RFF-17.01, RFF-17.02, RFF-17.04, RFF-17.05, RFF-17.06, RFF-17.07, RFF-17.08, RFF-18.02, RFF-18.03, RFF-18.04 & update\_llm\\
+   \hline
+        RFF-16.02 & delete\_llm\\
+   \hline
 \end{tabularx}
