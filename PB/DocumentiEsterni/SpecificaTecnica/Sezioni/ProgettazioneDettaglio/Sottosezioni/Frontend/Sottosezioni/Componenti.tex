@@ -1,0 +1,174 @@
+\subsubsection{Componenti}
+\label{sec:Componenti}
+
+\paragraph{PageNavigation}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{PreviousButton}: pulsante per navigare alla pagina precedente;
+    \item \textbf{NextButton}: pulsante per navigare alla pagina successiva;
+    \item \textbf{PageInput}: campo per inserire direttamente il numero di pagina;
+    \item \textbf{PageIndicator}: mostra la pagina corrente e il numero totale;
+\end{itemize}
+
+\paragraph{SearchBar}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{InputField}: campo di input per inserire parole chiave da cercare;
+    \item \textbf{SearchIcon}: icona cliccabile per avviare la ricerca;
+\end{itemize}
+
+\paragraph{TestNameForm}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{NewName}: campo di input per modificare il nome del test;
+    \item \textbf{ConfirmButton}: pulsante per confermare il nuovo nome;
+    \item \textbf{AbortButton}: pulsante per annullare la modifica;
+    \item \textbf{ValidationFeedback}: messaggi di errore per input vuoti o duplicati;
+\end{itemize}
+
+\paragraph{TestListPage}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{SearchBar}: barra per ricerca dei test salvati;
+    \item \textbf{TestListContainer}: contenitore per la lista dei test salvati;
+    \item \textbf{EmptyState}: messaggio e grafica quando non ci sono test disponibili;
+\end{itemize}
+\textbf{Servizio} \\
+\textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le operazioni per la gestione dell'elenco test.
+
+\paragraph{TestListView}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{TestItem}: elemento della lista dei test salvati;
+    \item \textbf{UploadButton}: pulsante per caricare un test effettuato precedentemente; 
+    \item \textbf{RenameButton}: pulsante per rinominare un test;
+    \item \textbf{RemoveTestButton}: pulsante per rimuovere un test selezionato;
+    \item \textbf{DoubleClickListener}: viene selezionato un test quando viene effettuato un doppio click su un elemento della lista;
+\end{itemize}
+
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{testList}: lista di test da visualizzare, fornito dal componente genitore;
+\end{itemize}
+
+\textbf{Output}:
+\begin{itemize}
+    \item \textbf{loadTest}: evento emesso al doppio click per richiedere il caricamento di un test;
+    \item \textbf{deleteTest}: evento emesso quando si clicca il pulsante di rimozione;
+    \item \textbf{renameTest}: evento per rinominare un test tramite `TestNameForm`;
+\end{itemize}
+
+\paragraph{TestPage}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{TestIndex}: riepilogo sintetico delle metriche del test;
+    \item \textbf{TestPageView}: sezione con risultati dettagliati del test;
+    \item \textbf{ComparisonButton}: pulsante per avviare il confronto tra test;
+    \item \textbf{SaveButton}: pulsante per salvare il test corrente;
+\end{itemize}
+\textbf{Servizio} \\
+\textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le funzionalità principali per la gestione dei test.
+
+\paragraph{TestPageView}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{ScatterDiagram}: visualizzazione grafica dei risultati tramite diagramma a dispersione;
+    \item \textbf{CakeDiagram}: diagramma a torta che mostra la percentuale di risposte corrette;
+    \item \textbf{BarDiagram}: diagramma a barre che mostra la distribuzione dei risultati per intervalli;
+    \item \textbf{ResultsView}: contenitore dei risultati;
+\end{itemize}
+
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{Results}: array dei risultati da visualizzare;
+\end{itemize}
+
+\textbf{Output}:
+\begin{itemize}
+    \item \textbf{ChangePage}: evento emesso quando l'utente interagisce con `PageNavigation`;
+\end{itemize}
+
+\paragraph{CakeDiagram}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{PieChart}: grafico a torta;
+    \item \textbf{PieElement}: sezioni del grafico a torta;
+    \item \textbf{Legend}: legenda che descrive i colori utilizzati;
+    \item \textbf{Tooltip}: messaggio informativo al passaggio del mouse;
+\end{itemize}
+
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{CorrectnessValue}: percentuale di risposte corrette;
+\end{itemize}
+
+\paragraph{BarDiagram}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{BarChart}: grafico a barre;
+    \item \textbf{BarElement}: gruppi di barre per ogni categoria valutata (0-0.2, 0.2-0.4, 0.4-0.6, 0.6-0.8, 0.8-1);
+    \item \textbf{BarLabel}: etichette per ogni barra;
+    \item \textbf{BarTooltip}: messaggio informativo al passaggio del mouse;
+\end{itemize}
+
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{distribution}: array con il numero di risultati per intervallo;
+\end{itemize}
+
+\paragraph{ScatterDiagram}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{Element}: distribuzione di punti XY per ogni risultato testato;
+    \item \textbf{ZoomTool}: strumento per ingrandire una zona specifica del grafico;
+\end{itemize}
+
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{ElementValues}: coordinate dei punti da rappresentare;
+\end{itemize}
+
+\paragraph{TestComparisonPage}  
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{ComparisonIndex}: confronto sintetico tra due test;
+    \item \textbf{ComparisonPageContainer}: contenitore della pagina di confronto;
+    \item \textbf{BackButton}: pulsante per tornare alla test base usato per il confronto;
+\end{itemize}
+\textbf{Servizio} \\
+\textbf{TestService}: servizio iniettato tramite `@Injectable`, espone i metodi per il confronto tra test.
+
+\paragraph{ComparisonIndex}  
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{MetricComparison}: confronto tra le metriche chiave dei due test;
+\end{itemize}
+
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{TestIndex1}: metriche del primo test;
+    \item \textbf{TestIndex2}: metriche del secondo test;
+\end{itemize}
+
+\paragraph{TestIndex}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{DataSummary}: indice riassuntivo del test;
+\end{itemize}
+
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{summaryData}: oggetto contenente i valori sintetici del test;
+\end{itemize}
+
+\paragraph{ComparisonPageView}  
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{ComparisonScatter}: diagramma XY comparativo tra i due test;
+    \item \textbf{DiffList}: lista dettagliata delle differenze tra risposte;
+\end{itemize}
+
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{comparisonData}: oggetto contenente le differenze per singola domanda;
+\end{itemize}
