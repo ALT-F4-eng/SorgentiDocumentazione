@@ -1,31 +1,65 @@
 \subsection{Componenti}
 \label{subsec:Componenti}
-\subsubsection{StandardPage}
+
+\paragraph{StandardPage}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item Menu: Permette di navigare tra le pagine diverse.
-    \item Footer: Consente di visualizzare informazioni critiche.
-    \item Loading Screen: Mostra il grafico di caricamento.
-    \item Message Dialog: Visualizzazione di un messagio di finestra.
-    \item Confirm Button: Permette di confermare le operazioni critiche.
+    \item \textbf{LogoIcon}: Un icona che rappresenta il logo del gruppo.
+    \item \textbf{Menu}: Un insieme di link disponibili che permette all'utente di navigare tra le pagine diverse.
+    \item \textbf{Footer}: Consente di visualizzare informazioni critiche.
+    \item \textbf{LoadingScreen}: Mostra il grafico di caricamento.
+    \item \textbf{MessageDialog}: Visualizzazione di un messaggio di finestra.
+    \item \textbf{ErrorListener}: Verrà attivata la finestra del messaggio di errore nel caso in cui si verificasse un errore nel sistema;
+    \item \textbf{ConfirmButton}: pulsante che permette di confermare le operazioni critiche.
 \end{itemize}
 
-\subsubsection{LLMListPage}
+\paragraph{LLMListPage}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item View LLMs: Contenitore che mostra i modelli LLM presenti nel sistema.
-    \item Scroll Bar: Permette di scorrere verticalmente la lista dei modelli.  
-    \item Select Button: Consente di selezionare un LLM dalla lista. 
-    \item Delete Button: Permette di cancellare il LLM corrispondente.
-    \item Link Button: Reindirizza alla pagina dedicata all'aggiunta di un nuovo LLM.
+    \item \textbf{LLMListContainer}: Contenitore che mostra i modelli LLM presenti nel sistema.
+    \item \textbf{EmptyState}:  messaggio e grafica quando non ci sono LLM disponibili
 \end{itemize}
 
-\subsubsection{LLMPage}
+\paragraph{LLMListView}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item View Details: Contenitore che mostra tutte le informazioni relative al LLM selezionato.
-    \item Config: Permette di accedere alla configurazione e modificare le impostazioni del LLM selezionato.
-    \item Form: Form in cui l’utente può inserire le informazioni necessarie.
-    \item Save Button: Consente di salvare le modifiche effettuate.
-    \item Add Button: Aggiunta di un nuovo LLM.
+    \item \textbf{LLMListItem}: elemento della lista dei LLM salvati
+    \item \textbf{AddButton}: pulsante per aggiungere un nuovo LLM; 
+    \item \textbf{DoubleClickListener}: viene selezionato un LLM quando viene effettuato un doppio click su un elemento della lista. 
+    \item \textbf{DeleteButton}: permette di cancellare il LLM corrispondente.
 \end{itemize}
+\textbf{Servizio} \\
+\textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le operazioni per la gestione dell'elenco LLM.
+
+\paragraph{LLMView}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{ViewDetails}: mostrerà il nome, la data dell'ultima modifica, l'URL, informazioni sui header e body, e infine chiave per la domanda e la risposta sull'LLM selezionato.
+    \item \textbf{ModifyButton}: pulsate per la modifica dell'LLM selezionato.
+\end{itemize}
+\textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le informazioni del LLM selezionato.
+
+\paragraph{LLMForm}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{NewNameLLM}: campo di input per modificare il nome dell'LLM;
+    \item \textbf{NewURL}: campo di input per modificare L'URL del LLM;
+    \item \textbf{NewKeyQuestion}: campo di input per modificare chiave associata alla domanda da porre all'LLM.
+    \item \textbf{NewKeyAnswer}: campo di input per modificare chiave associata alla risposta da porre all'LLM.
+    \item \textbf{NewKeyHeader} due campi di input per modificare ogni coppia chiave-valore associata alla creazione dell’header delle richieste HTTP verso l’LLM.
+    \item \textbf{AddHeaderButton}: pulsante per l'inserimento di una oppia chiave-valore associata alla creazione dell’header delle richieste HTTP verso l’LLM.
+    \item \textbf{NewKeyBody} due campi di input per modificare ogni coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l’LLM
+    \item \textbf{AddBodyButton}: pulsante per l'inserimento di una oppia chiave-valore associata alla creazione del body delle richieste HTTP verso l’LLM; 
+    \item \textbf{SaveButton}: pulsante per salvare le modifiche;
+    \item \textbf{AbortButton}: pulsante per annullare la modifica;
+    \item \textbf{ValidationFeedback}: messaggi di errore per input vuoti o duplicati;
+\end{itemize}
+\textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le informazioni del LLM selezionato.
+
+\paragraph{LLMPage}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{LLMContainer}: Contenitore che mostra le informazioni e le operazioni disponibili su LLM.
+    \item \textbf{EmptyState}:  messaggio e grafica quando avviene un errore di caricamento.
+\end{itemize}
+
