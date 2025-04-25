@@ -25,19 +25,19 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item Status Message: paragrafo contenente il messaggio che viene visualizzato dall'utente nel caso non ci siano dataset salvati nel sistema;
-    \item Dataset List: lista scorrevole dei dataset salvati nel sistema, permette la creazione di un sottocomponente \textbf{DatasetElement} per ogni dataset salvato (tramite la direttiva \texttt{*ngFor}).
+    \item \textbf{StatusMessage}: paragrafo contenente il messaggio che viene visualizzato dall'utente nel caso non ci siano dataset salvati nel sistema;
+    \item \textbf{DatasetList}: lista scorrevole dei dataset salvati nel sistema, permette la creazione di un sottocomponente \textbf{DatasetElement} per ogni dataset salvato (tramite la direttiva \texttt{*ngFor}).
 \end{itemize}
 \textbf{Input}
 \begin{itemize}
-    \item datasets: lista contenente tutti i dataset salvati e/o ricercati nel sistema.
+    \item data sets: lista contenente tutti i dataset salvati e/o ricercati nel sistema.
 \end{itemize}
 \textbf{Output}
 \begin{itemize}
-    \item renameDataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di rinonima di un dataset;
-    \item copyDataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di copia di un dataset;
-    \item deleteDataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di eliminazione di un dataset;
-    \item loadDataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di caricare un dataset.
+    \item rename Dataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di rinonima di un dataset;
+    \item copy Dataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di copia di un dataset;
+    \item delete Dataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di eliminazione di un dataset;
+    \item load Dataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di caricare un dataset.
 \end{itemize}
 
 \subsubsection{DatasetElement}
@@ -47,12 +47,12 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item Name Text: sezione testuale contenente il nome del dataset;
-    \item Last Update Text: sezione testuale contenente la data dell'ultima modifica del dataset;
-    \item Rename Button: pulsante per richiedere la rinominazione del dataset, questa viene poi realizzata tramite il sottocomponente \textbf{DatasetNameForm};
-    \item Copy Button: pulsante per richiedere la copia del dataset;
-    \item Delete Button: pulsante per richiedere l'eliminazione del dataset, questa viene poi confermata o annullata tramite il sottocomponente \textbf{ConfirmComponent};
-    \item Load Button: pulsante per richiedere il caricamento del dataset, se il dataset attualmente caricato presenta modifiche viene richiesta la conferma o l'annullamento della sovrascrittura tramite il sottocomponente \textbf{ConfirmComponent}.
+    \item \textbf{NameText}: sezione testuale contenente il nome del dataset;
+    \item \textbf{LastUpdateText}: sezione testuale contenente la data dell'ultima modifica del dataset;
+    \item \textbf{RenameButton}: pulsante per richiedere la rinominazione del dataset, questa viene poi realizzata tramite il sottocomponente \textbf{DatasetNameForm};
+    \item \textbf{CopyButton}: pulsante per richiedere la copia del dataset;
+    \item \textbf{DeleteButton}: pulsante per richiedere l'eliminazione del dataset, questa viene poi confermata o annullata tramite il sottocomponente \textbf{ConfirmComponent};
+    \item \textbf{LoadButton}: pulsante per richiedere il caricamento del dataset, se il dataset attualmente caricato presenta modifiche viene richiesta la conferma o l'annullamento della sovrascrittura tramite il sottocomponente \textbf{ConfirmComponent}.
 \end{itemize}
 \textbf{Input}
 \begin{itemize}
@@ -74,9 +74,9 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item New Name Label: label che permette di inserire il nuovo nome da assegnare al dataset;
-    \item Confirm Rename Button: pulsante che permette di confermare la richiesta di assegnazione o modifica del nome del dataset;
-    \item Cancel Rename Button: pulsante che permette di annullare la richiesta di assegnazione o modifica del nome del dataset.
+    \item \textbf{NewNameLabel}: label che permette di inserire il nuovo nome da assegnare al dataset;
+    \item \textbf{ConfirmRenameButton}: pulsante che permette di confermare la richiesta di assegnazione o modifica del nome del dataset;
+    \item \textbf{CancelRenameButton}: pulsante che permette di annullare la richiesta di assegnazione o modifica del nome del dataset.
 \end{itemize}
 \textbf{Input}
 \begin{itemize}
@@ -95,10 +95,10 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item Name Label: label che permette di assegnare un nome al nuovo dataset da creare;
-    \item JSON File Label: label che permette la selezione di un file \textit{.json} dal filesystem;
-    \item Confirm Create Button: pulsante che permette di confermare la richiesta di creazione del dataset a partire dal file \textit{.json} selezionato;
-    \item Cancel Create Button: pulsante che permette di annullare la richiesta di creazione del dataset. 
+    \item \textbf{NameLabel}: label che permette di assegnare un nome al nuovo dataset da creare;
+    \item \textbf{JSONFileLabel}: label che permette la selezione di un file \textit{.json} dal filesystem;
+    \item \textbf{ConfirmCreateButton}: pulsante che permette di confermare la richiesta di creazione del dataset a partire dal file \textit{.json} selezionato;
+    \item \textbf{CancelCreateButton}: pulsante che permette di annullare la richiesta di creazione del dataset. 
 \end{itemize}
 \textbf{Output}
 \begin{itemize}
@@ -113,10 +113,10 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item Name Text: sezione testuale che permette di visualizzare il nome del dataset caricato, nel caso non sia temporaneo;
-    \item Temporary Text: sezione testuale che indica se il dataset caricato è temporaneo;
-    \item Test Button: pulsante che permette l'esecuzione di un test sul dataset caricato (se non è vuoto), l'LLM da testare viene selezionato successivamente tramite il sottocomponente \textbf{LLMSelectionList};
-    \item Save Button: pulsante che permette il salvataggio delle modifiche non salvate realizzate sul dataset caricato, se il dataset caricato è temporaneo viene successivamente richiesto di assegnargli un nome tramite il sottocomponente \textbf{DatasetNameForm};
+    \item \textbf{NameText}: sezione testuale che permette di visualizzare il nome del dataset caricato, nel caso non sia temporaneo;
+    \item \textbf{TemporaryText}: sezione testuale che indica se il dataset caricato è temporaneo;
+    \item \textbf{TestButton}: pulsante che permette l'esecuzione di un test sul dataset caricato (se non è vuoto), l'LLM da testare viene selezionato successivamente tramite il sottocomponente \textbf{LLMSelectionList};
+    \item \textbf{SaveButton}: pulsante che permette il salvataggio delle modifiche non salvate realizzate sul dataset caricato, se il dataset caricato è temporaneo viene successivamente richiesto di assegnargli un nome tramite il sottocomponente \textbf{DatasetNameForm};
     \item barra per la ricerca di coppie di domanda e risposta nel dataset, realizzata tramite sottocomponente \textbf{SearchBar}; 
     \item sezione di visualizzazione delle coppie domanda e risposta del dataset caricato, realizzata dal sottocomponente \textbf{DatasetPageView}.
     \item form che permette l'inserimento e la modifica di una coppia domanda e risposta del dataset caricato, realizzato tramite il sottocomponente \textbf{QAForm};
@@ -158,7 +158,7 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item QA List: lista scorrevole delle coppie domanda e risposta del dataset caricato appartenenti ad una pagina, permette la creazione di un sottocomponente \textbf{QAListElement} per ogni coppia domanda e risposta della pagina (tramite la direttiva \texttt{*ngFor}).
+    \item \textbf{QAList}: lista scorrevole delle coppie domanda e risposta del dataset caricato appartenenti ad una pagina, permette la creazione di un sottocomponente \textbf{QAListElement} per ogni coppia domanda e risposta della pagina (tramite la direttiva \texttt{*ngFor}).
 \end{itemize}
 \textbf{Input}
 \begin{itemize}
@@ -177,12 +177,12 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item Question Text: sezione testuale che permette di visualizzare la domanda della coppia domanda e risposta associata al componente;
-    \item Answer Text: sezione testuale che permette di visualizzare la risposta della coppia domanda e risposta associata al componente;
-    \item Message Text: sezione testuale che indica se la domanda o la risposta sono vuote;
-    \item Edit Button: pulsante che permette di richiedere la modifica della coppia domanda e risposta associata al componente;
-    \item Delete Button: pulsante che permette di richiedere l'eliminazione della coppia domanda e risposta associata al componente;
-    \item Confirm Form: form che permette di confermare o annullare la richiesta di eliminazione della coppia domanda e risposta associata al componente.
+    \item \textbf{QuestionText}: sezione testuale che permette di visualizzare la domanda della coppia domanda e risposta associata al componente;
+    \item \textbf{AnswerText}: sezione testuale che permette di visualizzare la risposta della coppia domanda e risposta associata al componente;
+    \item \textbf{MessageText}: sezione testuale che indica se la domanda o la risposta sono vuote;
+    \item \textbf{EditButton}: pulsante che permette di richiedere la modifica della coppia domanda e risposta associata al componente;
+    \item \textbf{DeleteButton}: pulsante che permette di richiedere l'eliminazione della coppia domanda e risposta associata al componente;
+    \item \textbf{ConfirmForm}: form che permette di confermare o annullare la richiesta di eliminazione della coppia domanda e risposta associata al componente.
 \end{itemize}
 \textbf{Input}
 \begin{itemize}
@@ -201,10 +201,10 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item Question Label: label che permette di inserire la domanda per la nuova coppia domanda e risposta da aggiungere, o che permette di modificare la domanda della coppia che si vuole modificare;
-    \item Answer Label: label che permette di inserire la risposta per la nuova coppia domanda e risposta da aggiungere, o che permette di modificare la risposta della coppia che si vuole modificare;
-    \item Confirm Button: pulsante che permette di confermare l'inserimento o la modifica della coppia domanda e risposta;
-    \item Cancel Button: pulsante che permette di annullare l'inserimento o la modifica della coppia domanda e risposta; 
+    \item \textbf{QuestionLabel}: label che permette di inserire la domanda per la nuova coppia domanda e risposta da aggiungere, o che permette di modificare la domanda della coppia che si vuole modificare;
+    \item \textbf{AnswerLabel}: label che permette di inserire la risposta per la nuova coppia domanda e risposta da aggiungere, o che permette di modificare la risposta della coppia che si vuole modificare;
+    \item \textbf{ConfirmButton}: pulsante che permette di confermare l'inserimento o la modifica della coppia domanda e risposta;
+    \item \textbf{CancelButton}: pulsante che permette di annullare l'inserimento o la modifica della coppia domanda e risposta; 
 \end{itemize}
 \textbf{Input}
 \begin{itemize}
@@ -223,7 +223,7 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item lista di elementi rappresentanti LLM, ogni LLM è indicato con nome e data di ultima modifica, ogni LLM è cliccabile.
+    \item \textbf{SeletcLLM}: lista di elementi rappresentanti LLM, ogni LLM è indicato con nome e data di ultima modifica, ogni LLM è cliccabile.
 \end{itemize}
 \textbf{Output}
 \begin{itemize}
