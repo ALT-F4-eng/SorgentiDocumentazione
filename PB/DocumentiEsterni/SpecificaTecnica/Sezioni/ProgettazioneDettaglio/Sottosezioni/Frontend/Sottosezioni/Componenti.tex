@@ -1,7 +1,14 @@
 \subsubsection{Componenti}
 \label{sec:Componenti}
-
 \paragraph{PageNavigation}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item DatasetContentPage;
+    \item TestPage;
+    \item TestComparisonPage;
+    \item TestPageView;
+    \item ComparisonPageView
+\end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
     \item \textbf{PreviousButton}: pulsante per navigare alla pagina precedente;
@@ -9,166 +16,356 @@
     \item \textbf{PageInput}: campo per inserire direttamente il numero di pagina;
     \item \textbf{PageIndicator}: mostra la pagina corrente e il numero totale;
 \end{itemize}
-
+\textbf{Output}:
+\begin{itemize}
+    \item \textbf{next}: evento emesso quando si clicca il pulsante per la pagina successiva;
+    \item \textbf{previous}: evento emesso quando si clicca il pulsante per la pagina precedente;
+    \item \textbf{pageChange}: evento emesso quando si cambia pagina tramite il campo di input;
+\end{itemize}
 \paragraph{SearchBar}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestListPage;
+\end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
     \item \textbf{InputField}: campo di input per inserire parole chiave da cercare;
     \item \textbf{SearchIcon}: icona cliccabile per avviare la ricerca;
 \end{itemize}
-
-\paragraph{TestNameForm}
-\textbf{Elementi chiave}:
-\begin{itemize}
-    \item \textbf{NewName}: campo di input per modificare il nome del test;
-    \item \textbf{ConfirmButton}: pulsante per confermare il nuovo nome;
-    \item \textbf{AbortButton}: pulsante per annullare la modifica;
-    \item \textbf{ValidationFeedback}: messaggi di errore per input vuoti o duplicati;
-\end{itemize}
-
-\paragraph{TestListPage}
-\textbf{Elementi chiave}:
-\begin{itemize}
-    \item \textbf{SearchBar}: barra per ricerca dei test salvati;
-    \item \textbf{TestListContainer}: contenitore per la lista dei test salvati;
-    \item \textbf{EmptyState}: messaggio e grafica quando non ci sono test disponibili;
-\end{itemize}
-\textbf{Servizio} \\
-\textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le operazioni per la gestione dell'elenco test.
-
-\paragraph{TestListView}
-\textbf{Elementi chiave}:
-\begin{itemize}
-    \item \textbf{TestItem}: elemento della lista dei test salvati;
-    \item \textbf{UploadButton}: pulsante per caricare un test effettuato precedentemente; 
-    \item \textbf{RenameButton}: pulsante per rinominare un test;
-    \item \textbf{RemoveTestButton}: pulsante per rimuovere un test selezionato;
-    \item \textbf{DoubleClickListener}: viene selezionato un test quando viene effettuato un doppio click su un elemento della lista;
-\end{itemize}
-
 \textbf{Input}:
 \begin{itemize}
-    \item \textbf{testList}: lista di test da visualizzare, fornito dal componente genitore;
+    \item \textbf{keywords}: parole chiave su cui effettuare la ricerca;
 \end{itemize}
-
 \textbf{Output}:
 \begin{itemize}
-    \item \textbf{loadTest}: evento emesso al doppio click per richiedere il caricamento di un test;
-    \item \textbf{deleteTest}: evento emesso quando si clicca il pulsante di rimozione;
-    \item \textbf{renameTest}: evento per rinominare un test tramite `TestNameForm`;
+    \item \textbf{search}: evento emesso quando viene inviata la conferma della ricerca;
+    \item \textbf{clear}: evento emesso quando si clicca il pulsante di cancellazione;
+\end{itemize} 
+\paragraph{TestListPage}
+\textbf{Modulo}:
+\begin{itemize}
+    \item TestModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati all'esecuzione e gestione di test e alla visualizzazione dei risultati.    
 \end{itemize}
-
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{SearchTest}: barra di ricerca per filtrare i test salvati, realizzata tramite il sottocomponente \textbf{SearchBar};
+    \item \textbf{TestListContainer}: lista scorrevole dei test salvati, realizzata tramite il sottocomponente \textbf{TestListView};
+    \item \textbf{UploadButton}: pulsante che permette di richiedere il caricamento di un test a partire da un file JSON, il caricamento viene poi effettuato tramite il sottocomponente \textbf{TestUploadForm}; 
+\end{itemize}
+\textbf{Servizio}
+\begin{itemize}
+    \item \textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le operazioni per la gestione di un elemento della lista di test.
+\end{itemize}
+\paragraph{TestListView}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestListPage;
+    \item TestPageView;
+\end{itemize}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{StatusMessage}: sezione testuale contenente il messaggio che viene visualizzato dall'utente nel caso in cui non ci siano test salvati nel sistema;
+    \item \textbf{TestList}: lista scorrevole dei test salvati, permette la creazione di un sottocomponente \textbf{TestElement} per ogni test salvato (tramite la direttiva *\texttt{ngFor});
+\end{itemize}
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{tests}: lista di test salvati nel sistema;
+\end{itemize}
+\textbf{Output}:
+\begin{itemize}
+    \item \textbf{loadTest}: evento emesso quando riceve da \textbf{TestElement} la richiesta di caricare un test;
+    \item \textbf{deleteTest}: evento emesso quando riceve da \textbf{TestElement} la richiesta di rimuovere un test;
+    \item \textbf{renameTest}: evento emesso quando riceve da \textbf{TestElement} la richiesta di rinomina di un test;
+\end{itemize}
+\paragraph{TestElement}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestListView;
+\end{itemize}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{TestName}: sezione testuale contenente il nome del test;
+    \item \textbf{TestDate}: sezione testuale contenente la data di esecuzione del test;
+    \item \textbf{RenameButton}: pulsante per richiedere la rinominazione del test, questa viene poi effettuata tramite il sottocomponente \textbf{TestNameForm};
+    \item \textbf{DeleteButton}: pulsante per richiedere l'eliminazione del test, questa viene poi confermata o annullata tramite il sottocomponente \textbf{ConfirmComponent};
+    \item \textbf{LoadButton}: pulsante per richiedere il caricamento del test, se il test attualmente caricato presenta modifiche viene richiesta la conferma o l'annullamento della sovrascrittura tramite il sottocomponente \textbf{ConfirmComponent};
+\end{itemize}
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{dataset}: dataset associato al test;
+    \item \textbf{llm}: LLM associato al dataset;
+\end{itemize}
+\textbf{Output}:
+\begin{itemize}
+    \item rename: evento emesso quando viene premuto il pulsante per richiedere la rinominazione del test;
+    \item delete: evento emesso quando viene premuto il pulsante per richiedere l'eliminazione del test;
+    \item load: evento emesso quando viene premuto il pulsante per richiedere il caricamento del test;
+\end{itemize}
+\paragraph{TestNameForm}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestPage;
+    \item TestListPage;
+\end{itemize}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{New Name Label}: label che permette di inserire il nuovo nome da assegnare al test;
+    \item \textbf{ConfirmButton}: pulsante per confermare il nuovo nome;
+    \item \textbf{AbortButton}: pulsante per annullare la modifica;
+\end{itemize}
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{currentName}: gli viene passato il nome del test nel caso non sia temporaneo;
+\end{itemize}
+\textbf{Output}:
+\begin{itemize}
+    \item \textbf{confirmRename}: evento emesso quando viene premuto il pulsante per confermare l'assegnazione o modifica del nome del test;
+    \item \textbf{cancelRename}: evento emesso quando viene premuto il pulsante per annullare l'assegnazione o modifica del nome del test;
+\end{itemize}
 \paragraph{TestPage}
+\textbf{Modulo}:
+\begin{itemize}
+    \item TestModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati all'esecuzione e gestione di test e alla visualizzazione dei risultati.    
+\end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
-    \item \textbf{TestIndex}: riepilogo sintetico delle metriche del test;
-    \item \textbf{TestPageView}: sezione con risultati dettagliati del test;
-    \item \textbf{ComparisonButton}: pulsante per avviare il confronto tra test;
-    \item \textbf{SaveButton}: pulsante per salvare il test corrente;
+    \item \textbf{Name Text}: sezione testuale contenente il nome del test caricato, nel caso non sia temporaneo;
+    \item \textbf{Temporary Text}: sezione testuale contenente il messaggio che informa l'utente che il test caricato è temporaneo;
+    \item \textbf{Summary Section}: sezione di visualizzazione dei dati sintetici del test, realizzata tramite il sottocomponente \textbf{TestIndex};
+    \item \textbf{ComparisonButton}: pulsante che permette di richiedere il confronto tra il test corrente e un altro test salvato, il confronto viene poi effettuato tramite il sottocomponente \textbf{TestComparisonPage};
+    \item \textbf{SaveButton}: pulsante che permette il salvataggio delle modifiche non salvate realizzate sul test caricato; se il test caricato è temporaneo, viene successivamente richiesto di assegnargli un nome tramite il sottocomponente \textbf{TestNameForm};
+    \item \textbf{Graph Section}: sezione di visualizzazione dei vari tipi di grafico relativi ai risultati del test, realizzata tramite il sottocomponente \textbf{TestPageView};
+    \item \textbf{ErrorMessage}: messaggio di errore che viene visualizzato in seguito a un errore nell'ottenimento o nel salvataggio dei dati, realizzato tramite il sottocomponente \textbf{MessageComponent};
 \end{itemize}
-\textbf{Servizio} \\
-\textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le funzionalità principali per la gestione dei test.
-
+\textbf{Servizio}
+\begin{itemize}
+    \item \textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le funzionalità principali per la gestione di un test.
+\end{itemize}
 \paragraph{TestPageView}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestPage;
+\end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
-    \item \textbf{ScatterDiagram}: visualizzazione grafica dei risultati tramite diagramma a dispersione;
-    \item \textbf{CakeDiagram}: diagramma a torta che mostra la percentuale di risposte corrette;
-    \item \textbf{BarDiagram}: diagramma a barre che mostra la distribuzione dei risultati per intervalli;
-    \item \textbf{ResultsView}: contenitore dei risultati;
+    \item \textbf{NavBar}: sezione che permette la navigazione tra le pagine del test, realizzata tramite il sottocomponente \textbf{PageNavigation};
+    \item \textbf{Results}: pagina di visualizzazione dei risultati del test, realizzata tramite il sottocomponente \textbf{ResultListView};
+    \item \textbf{Graph}: sezione di visualizzazione del diagramma di dispersione, realizzata tramite il sottocomponente \textbf{ScatterDiagram};
+    \item \textbf{ErrorMessage}: messaggio di errore che viene visualizzato in seguito a un errore nell'ottenimento dei dati, realizzato tramite il sottocomponente \textbf{MessageComponent};
 \end{itemize}
-
 \textbf{Input}:
 \begin{itemize}
     \item \textbf{Results}: array dei risultati da visualizzare;
 \end{itemize}
-
 \textbf{Output}:
 \begin{itemize}
     \item \textbf{ChangePage}: evento emesso quando l'utente interagisce con `PageNavigation`;
 \end{itemize}
-
-\paragraph{CakeDiagram}
+\paragraph{TestIndex}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestPage;
+    \item ComparisonIndex;
+\end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
-    \item \textbf{PieChart}: grafico a torta;
-    \item \textbf{PieElement}: sezioni del grafico a torta;
-    \item \textbf{Legend}: legenda che descrive i colori utilizzati;
-    \item \textbf{Tooltip}: messaggio informativo al passaggio del mouse;
+    \item \textbf{DataSummary}: sezione di visualizzazione dei dati sintetici del test, realizzata tramite i sottocomponenti: \textbf{CakeDiagram} e \textbf{BarDiagram};
+    \item \textbf{ComparedSummary}: sezione di visualizzazione dei dati sintetici del test con cui si sta effettuando il confronto, realizzata tramite i sottocomponenti: \textbf{CakeDiagram} e \textbf{BarDiagram};
 \end{itemize}
-
+\paragraph{CakeDiagram}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestIndex;
+\end{itemize}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{PieChart}: sezione di visualizzazione del diagramma a torta;
+    \item \textbf{ComparedPieChart}: sezione di visualizzazione del diagramma a torta del test con cui si sta effettuando il confronto;
+    \item \textbf{PieElement}: singolo elemento del diagramma a torta che indica la percentuale di risposte corrette;
+    \item \textbf{Legend}: legenda che descrive il significato di ogni elemento del diagramma;
+\end{itemize}
 \textbf{Input}:
 \begin{itemize}
     \item \textbf{CorrectnessValue}: percentuale di risposte corrette;
 \end{itemize}
-
 \paragraph{BarDiagram}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestIndex;
+\end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
-    \item \textbf{BarChart}: grafico a barre;
-    \item \textbf{BarElement}: gruppi di barre per ogni categoria valutata (0-0.2, 0.2-0.4, 0.4-0.6, 0.6-0.8, 0.8-1);
-    \item \textbf{BarLabel}: etichette per ogni barra;
-    \item \textbf{BarTooltip}: messaggio informativo al passaggio del mouse;
+    \item \textbf{BarChart}: sezione di visualizzazione del diagramma a barre;
+    \item \textbf{ComparedBarChart}: sezione di visualizzazione del diagramma a barre del test con cui si sta effettuando il confronto;
+    \item \textbf{BarElement}: singolo elemento del diagramma a barre che indica il numero di risposte per ogni intervallo (0-0.2, 0.2-0.4, 0.4-0.6, 0.6-0.8, 0.8-1);
+    \item \textbf{BarLabel}: label che mostra l'intervallo che rappresenta l'elemento del diagramma;
 \end{itemize}
-
 \textbf{Input}:
 \begin{itemize}
     \item \textbf{distribution}: array con il numero di risultati per intervallo;
 \end{itemize}
-
 \paragraph{ScatterDiagram}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestPageView;
+    \item ComparisonPageView;
+\end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
-    \item \textbf{Element}: distribuzione di punti XY per ogni risultato testato;
-    \item \textbf{ZoomTool}: strumento per ingrandire una zona specifica del grafico;
+    \item \textbf{ScatterChart}: sezione di visualizzazione del diagramma di dispersione;
+    \item \textbf{ScatterElement}: singolo punto del diagramma di dispersione;
+    \item \textbf{ComparedScatterElement}: singolo punto del diagramma di dispersione che rappresenta il test con cui si sta effettuando il confronto;
+    \item \textbf{XLabel}: label che mostra il valore dell'asse X;
+    \item \textbf{YLabel}: label che mostra il valore dell'asse Y;
 \end{itemize}
-
 \textbf{Input}:
 \begin{itemize}
     \item \textbf{ElementValues}: coordinate dei punti da rappresentare;
+    \item \textbf{ComparedElementValues}: coordinate dei punti da rappresentare nel caso di confronto tra test;
 \end{itemize}
-
+\paragraph{ResultListView}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestPageView;
+\end{itemize}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{ResultList}: lista scorrevole dei risultati ottenuti dal test appartenenti a una pagina, permette la creazione di un sottocomponente \textbf{ResultElement} per ogni risultato (tramite la direttiva *\texttt{ngFor});
+\end{itemize}
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{results}: lista di risultati da visualizzare;
+\end{itemize}
+\paragraph{ResultElement}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item ResultListView;
+\end{itemize}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{Question}: sezione testuale contenente la domanda effettuata;
+    \item \textbf{GivenAnswer}: sezione testuale contenente la risposta fornita dal LLM;
+    \item \textbf{ExpectedAnswer}: sezione testuale contenente la risposta attesa;
+    \item \textbf{Similarity}: sezione testuale contenente il grado di similarità tra la risposta fornita e quella attesa;
+    \item \textbf{Correctness Label}: sezione testuale contenente il messaggio che indica se la risposta fornita è corretta o meno;
+\end{itemize}
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{question}: domanda effettuata;
+    \item \textbf{givenAnswer}: risposta fornita dal LLM;
+    \item \textbf{expectedAnswer}: risposta attesa;
+    \item \textbf{similarity}: grado di similarità tra la risposta fornita e quella attesa;
+    \item \textbf{correctness}: valore booleano che indica se la risposta fornita è corretta o meno;
+\end{itemize}
+\paragraph{TestSelectionComparison}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestPage;
+\end{itemize}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{SelectCompareButton}: pulsante per selezionare un test salvato con cui eseguire il confronto con il test attualmente visualizzato, la conferma o l'annullamento della selezione viene poi effettuata tramite il sottocomponente \textbf{ConfirmComponent};
+\end{itemize}
+    \textbf{Input}:
+\begin{itemize}
+    \item \textbf{dataset}: dataset associato al test;
+    \item \textbf{llm}: LLM associato al dataset;
+    \item \textbf{test}: test associato al dataset;
+    \item \textbf{testList}: lista di test salvati nel sistema;
+\end{itemize}
+\textbf{Output}:
+\begin{itemize}
+    \item \textbf{compare}: evento emesso quando viene premuto il pulsante per richiedere il confronto tra test;
+\end{itemize}
 \paragraph{TestComparisonPage}  
+\textbf{Modulo}:
+\begin{itemize}
+    \item TestModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati all'esecuzione e gestione di test e alla visualizzazione dei risultati.    
+\end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
-    \item \textbf{ComparisonIndex}: confronto sintetico tra due test;
-    \item \textbf{ComparisonPageContainer}: contenitore della pagina di confronto;
-    \item \textbf{BackButton}: pulsante per tornare alla test base usato per il confronto;
+    \item \textbf{Index}: sezione di visualizzazione dei dati sintetici del test, realizzata tramite il sottocomponente \textbf{ComparisonIndex};
+    \item \textbf{CompareGraphs}: sezione di visualizzazione del diagramma di dispersione, realizzata tramite il sottocomponente \textbf{ComparisonPageView};
+    \item \textbf{ErrorMessage}: messaggio di errore che viene visualizzato in seguito a un errore nell'ottenimento dei dati, realizzato tramite il sottocomponente \textbf{MessageComponent};
 \end{itemize}
-\textbf{Servizio} \\
-\textbf{TestService}: servizio iniettato tramite `@Injectable`, espone i metodi per il confronto tra test.
-
-\paragraph{ComparisonIndex}  
+\textbf{Servizio}
+\begin{itemize}
+    \item \textbf{TestService}: servizio iniettato tramite `@Injectable`, espone i metodi per il confronto tra test.
+\end{itemize}
+\paragraph{ComparisonIndex} 
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestComparisonPage;
+\end{itemize} 
 \textbf{Elementi chiave}:
 \begin{itemize}
-    \item \textbf{MetricComparison}: confronto tra le metriche chiave dei due test;
+    \item \textbf{MetricComparison}: sezione di visualizzazione delle metriche di confronto tra i due test, realizzata tramite il sottocomponente \textbf{TestIndex};
 \end{itemize}
-
 \textbf{Input}:
 \begin{itemize}
     \item \textbf{TestIndex1}: metriche del primo test;
     \item \textbf{TestIndex2}: metriche del secondo test;
 \end{itemize}
-
-\paragraph{TestIndex}
-\textbf{Elementi chiave}:
-\begin{itemize}
-    \item \textbf{DataSummary}: indice riassuntivo del test;
-\end{itemize}
-
-\textbf{Input}:
-\begin{itemize}
-    \item \textbf{summaryData}: oggetto contenente i valori sintetici del test;
-\end{itemize}
-
 \paragraph{ComparisonPageView}  
+\textbf{Componente padre}:
+\begin{itemize}
+    \item TestComparisonPage;
+\end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
-    \item \textbf{ComparisonScatter}: diagramma XY comparativo tra i due test;
-    \item \textbf{DiffList}: lista dettagliata delle differenze tra risposte;
+    \item \textbf{ComparisonScatter}: sezione di visualizzazione del diagramma di dispersione, realizzata tramite il sottocomponente \textbf{ScatterDiagram};
+     \item \textbf{ComparisonResults}: sezione di visualizzazione della lista dei risultati confrontati, realizzata tramite il sottocomponente \textbf{ComparisonListView};
+    \item \textbf{NavBar}: sezione che permette la navigazione tra le pagine del test, realizzata tramite il sottocomponente \textbf{PageNavigation};
+    \item \textbf{ErrorMessage}: messaggio di errore che viene visualizzato in seguito a un errore nell'ottenimento dei dati, realizzato tramite il sottocomponente \textbf{MessageComponent};
 \end{itemize}
-
 \textbf{Input}:
 \begin{itemize}
     \item \textbf{comparisonData}: oggetto contenente le differenze per singola domanda;
+\end{itemize}
+\textbf{Output}:
+\begin{itemize}
+    \item \textbf{ChangePage}: evento emesso quando l'utente interagisce con `PageNavigation`;
+\end{itemize}
+\paragraph{ComparisonListView}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item ComparisonPageView;
+\end{itemize}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{ComparisonList}: lista scorrevole dei risultati confrontati, permette la creazione di un sottocomponente \textbf{ComparisonElement} per ogni risultato (tramite la direttiva *\texttt{ngFor});
+\end{itemize}
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{results1}: lista di risultati del primo test;
+    \item \textbf{results2}: lista di risultati del secondo test;
+\end{itemize}
+\paragraph{ComparisonElement}
+\textbf{Componente padre}:
+\begin{itemize}
+    \item ComparisonListView;
+\end{itemize}
+\textbf{Elementi chiave}:
+\begin{itemize}
+    \item \textbf{Question}: sezione testuale contenente la domanda effettuata;
+    \item \textbf{GivenAnswer1}: sezione testuale contenente la risposta fornita dal LLM del primo test;
+    \item \textbf{GivenAnswer2}: sezione testuale contenente la risposta fornita dal LLM del secondo test;
+    \item \textbf{ExpectedAnswer1}: sezione testuale contenente la risposta attesa del primo test;
+    \item \textbf{ExpectedAnswer2}: sezione testuale contenente la risposta attesa del secondo test;
+    \item \textbf{Similarity1}: sezione testuale contenente il grado di similarità tra la risposta fornita e quella attesa del primo test;
+    \item \textbf{Similarity2}: sezione testuale contenente il grado di similarità tra la risposta fornita e quella attesa del secondo test;
+    \item \textbf{Correctness Label1}: sezione testuale contenente il messaggio che indica se la risposta fornita è corretta o meno del primo test;
+    \item \textbf{Correctness Label2}: sezione testuale contenente il messaggio che indica se la risposta fornita è corretta o meno del secondo test;
+\end{itemize}
+\textbf{Input}:
+\begin{itemize}
+    \item \textbf{question}: domanda effettuata;
+    \item \textbf{givenAnswer1}: risposta fornita dal LLM del primo test;
+    \item \textbf{givenAnswer2}: risposta fornita dal LLM del secondo test;
+    \item \textbf{expectedAnswer1}: risposta attesa del primo test;
+    \item \textbf{expectedAnswer2}: risposta attesa del secondo test;
+    \item \textbf{similarity1}: grado di similarità tra la risposta fornita e quella attesa del primo test;
+    \item \textbf{similarity2}: grado di similarità tra la risposta fornita e quella attesa del secondo test;
+    \item \textbf{correctness1}: valore booleano che indica se la risposta fornita è corretta o meno del primo test;
+    \item \textbf{correctness2}: valore booleano che indica se la risposta fornita è corretta o meno del secondo test;
 \end{itemize}
