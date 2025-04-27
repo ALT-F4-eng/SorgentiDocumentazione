@@ -12,7 +12,7 @@
     \item pulsante che permette la creazione di un dataset temporaneo;
     \item pulsante che permette di richiedere la creazione di un dataset a partire da un file JSON, la creazione viene poi realizzata tramite \textbf{DatasetJSONForm};
     \item popup di conferma di eliminazione di un dataset o di sovrascrittura del dataset caricato (se modificato), realizzato tramite sottocomponente \textbf{ConfirmComponent};
-    \item messaggio di errore visualizzato in seguito ad un errore nell'ottenimento o nel salvataggio dei dati, realizzato tramite sottocomponente \textbf{MessageComponent}.
+    \item messaggio di errore visualizzato in seguito a un errore nell'ottenimento o nel salvataggio dei dati, realizzato tramite sottocomponente \textbf{MessageComponent}.
 \end{itemize}
 \textbf{Servizio}
 \begin{itemize}
@@ -35,7 +35,7 @@
 \end{itemize}
 \textbf{Output}
 \begin{itemize}
-    \item rename Dataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di rinonima di un dataset;
+    \item rename Dataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di rinomina di un dataset;
     \item copy Dataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di copia di un dataset;
     \item delete Dataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di eliminazione di un dataset;
     \item load Dataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di caricare un dataset.
@@ -62,7 +62,7 @@
 \textbf{Output}
 \begin{itemize}
     \item rename: evento emesso quando viene premuto il pulsante per richiedere la rinominazione del dataset;
-    \item copy: evento emesso quando viene premutp il pulsante per richiedere la copia del dataset;
+    \item copy: evento emesso quando viene premuto il pulsante per richiedere la copia del dataset;
     \item delete: evento emesso quando viene premuto il pulsante per richiedere l'eliminazione del dataset;
     \item load: evento emesso quando viene premuto il pulsante per richiedere il caricamento del dataset.
 \end{itemize}
@@ -121,13 +121,13 @@
     \item barra per la ricerca di coppie di domanda e risposta nel dataset, realizzata tramite sottocomponente \textbf{SearchBar}; 
     \item sezione di visualizzazione delle coppie domanda e risposta del dataset caricato, realizzata dal sottocomponente \textbf{DatasetPageView}.
     \item form che permette l'inserimento e la modifica di una coppia domanda e risposta del dataset caricato, realizzato tramite il sottocomponente \textbf{QAForm};
-    \item messaggio di errore visualizzato in seguito ad un errore nell'ottenimento o nel salvataggio dei dati o nell'esecuzione di un test, realizzato tramite sottocomponente \textbf{MessageComponent};
+    \item messaggio di errore visualizzato in seguito a un errore nell'ottenimento o nel salvataggio dei dati o nell'esecuzione di un test, realizzato tramite sottocomponente \textbf{MessageComponent};
     \item messaggio di errore visualizzato nel caso si richieda un test su un dataset con elementi incompleti, indicati nel messaggio tramite link, realizzato tramite sottocomponente \textbf{MessageComponent}.
 \end{itemize}
 \textbf{Servizio}
 \begin{itemize}
     \item QAService, servizio che permette l'esecuzione di operazioni CRUD sulla lista delle coppie domanda e risposta di un dataset;
-    \item TestService, servizio che permette l'esecuzione del test sl dataset caricato.
+    \item TestService, servizio che permette l'esecuzione del test sul dataset caricato.
 \end{itemize}
 
 \paragraph{DatasetPageView}
@@ -159,7 +159,7 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item \textbf{QAList}: lista scorrevole delle coppie domanda e risposta del dataset caricato appartenenti ad una pagina, permette la creazione di un sottocomponente \textbf{QAListElement} per ogni coppia domanda e risposta della pagina (tramite la direttiva \texttt{*ngFor}).
+    \item \textbf{QAList}: lista scorrevole delle coppie domanda e risposta del dataset caricato appartenenti a una pagina, permette la creazione di un sottocomponente \textbf{QAListElement} per ogni coppia domanda e risposta della pagina (tramite la direttiva \texttt{*ngFor}).
 \end{itemize}
 \textbf{Input}
 \begin{itemize}
