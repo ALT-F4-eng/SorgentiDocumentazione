@@ -1,0 +1,120 @@
+\subsection{Test d'unita}
+\label{subsec:test_unita}
+Lo scopo dei test di unità è assicurarsi che le "unità software", ovvero singoli segmenti come funzioni, classi o componenti,
+funzionino correttamente quando testati in modo autonomo e isolato all'interno del sistema. Di seguito è presente un elenco dei test di unità:
+\begin{tabularx}{\textwidth}{|c|X|c|}
+    \hline
+    \textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\
+    \hline
+    \label{tu:tu1}T.U.1 
+    & Verificare che il componente "DatasetListPage" soddisfi le seguenti condizioni: %Descrizione
+    \begin{itemize}
+        \item viene visualizzata correttamente la barra di ricerca dei dataset;
+        \item viene visualizzato correttamente il pulsante di creazione di un dataset temporaneo;
+        \item viene chiamata correttamente la funzione di creazione di un dataset temporaneo quando si preme il pulsante "Crea nuovo dataset";
+        \item viene visualizzato correttamente il pulsante di caricamento di un dataset a partire da un file JSON;
+        \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di caricamento di un dataset a partire da un file JSON;
+        \item nel caso in cui l'operazione di caricamento dei dati vada a buon fine, viene visualizzato un messaggio di successo;
+        \item nel caso in cui l'operazione di caricamento dei dati fallisse, viene visualizzato un messaggio di errore;
+    \end{itemize} 
+    & - \\
+    \hline
+    \label{tu:tu2}T.U.2 
+    & Verificare che il componente "DatasetListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista di dataset salvati, se presenti;
+        \item viene visualizzata correttamente il messaggio che avverte dell'assenza di dataset salvati, se non presenti;
+    \end{itemize} 
+    & - \\
+    \hline
+    \label{tu:tu3}T.U.3 
+    & Verificare che il componente "DatasetElement" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il nome del dataset;
+        \item viene visualizzato correttamente la data dell'ultima modifica del dataset;
+        \item viene visualizzato correttamente il pulsante di rinominazione del dataset;
+        \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di rinominazione del dataset;
+        \item viene visualizzato correttamente il pulsante di clonazione del dataset;
+        \item viene chiamata correttamente la funzione di clonazione del dataset quando si preme il pulsante "Copia Dataset";
+        \item viene visualizzato correttamente il pulsante di eliminazione del dataset;
+        \item viene chiamata correttamente la funzione di eliminazione del dataset quando si preme il pulsante "Elimina Dataset";
+        \item viene visualizzato correttamente il pulsante di caricamento a schermo del dataset;
+        \item l'utente viene reindirizzato alla pagina del dataset caricato dopo aver premuto il pulsante di caricamento a schermo del dataset;
+    \end{itemize} 
+    & - \\
+    \hline
+    \label{tu:tu4}T.U.4 
+    & Verificare che il componente "DatasetNameForm" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente l'etichetta "Nome" del campo di inserimento del nuovo nome da assegnare al dataset;
+        \item viene visualizzato correttamente il campo di inserimento del nuovo nome da assegnare al dataset;
+        \item viene visualizzato correttamente il pulsante di salvataggio del nuovo nome;
+        \item viene chiamata correttamente la funzione di rinomina del nuovo nome quando si preme il pulsante "Salva";
+        \item viene visualizzato correttamente il pulsante di annullamento dell'operazione di rinominazione del dataset;
+        \item viene interrotta l'operazione quando l'utente preme il pulsante "Annulla" durante il processo di rinominazione del dataset;
+    \end{itemize} 
+    & - \\ 
+    \hline
+    \label{tu:tu5}T.U.5 
+    & Verificare che il componente "DatasetJSONForm" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente l'etichetta "Nome" del campo di inserimento del nome da assegnare al dataset;
+        \item viene visualizzato correttamente il campo di inserimento del nome da assegnare al dataset;
+        \item viene visualizzata correttamente l'etichetta ".JSON" che indica l'estensione del file;
+        \item viene chiamata correttamente la funzione di caricamento di un dataset a partire da un file JSON quando si preme il pulsante "Carica file";
+        \item viene visualizzato correttamente il pulsante di annullamento dell'operazione di rinominazione del dataset;
+        \item viene interrotta l'operazione quando l'utente preme il pulsante "Annulla" durante il caricamento di un dataset a partire da un file JSON.;
+    \end{itemize} 
+    & - \\
+    \hline
+    \label{tu:tu6}T.U.6 & Verificare che il componente "DatasetContentPage" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu7}T.U.7 & Verificare che il componente "DatasetPageView" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu8}T.U.8 & Verificare che il componente "QAListView" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu9}T.U.9 & Verificare che il componente "QAListElement" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu10}T.U.10 & Verificare che il componente "QAForm" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu11}T.U.11 & Verificare che il componente "LLMSelectionList" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu12}T.U.12 & Verificare che il componente "PageNavigation" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu13}T.U.13 & Verificare che il componente "SearchBar" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu14}T.U.14 & Verificare che il componente "TestListPage" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu15}T.U.15 & Verificare che il componente "TestListView" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu16}T.U.16 & Verificare che il componente "TestElement" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu17}T.U.17 & Verificare che il componente "TestNameForm" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu18}T.U.18 & Verificare che il componente "TestPage" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu19}T.U.19 & Verificare che il componente "TestPageView" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu20}T.U.20 & Verificare che il componente "TestIndex" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu21}T.U.21 & Verificare che il componente "CakeDiagram" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu22}T.U.22 & Verificare che il componente "BarDiagram" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu23}T.U.23 & Verificare che il componente "ScatterDiagram" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu24}T.U.24 & Verificare che il componente "ResultListView" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu25}T.U.25 & Verificare che il componente "ResultElement" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu26}T.U.26 & Verificare che il componente "TestSelectionComparison" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu27}T.U.27 & Verificare che il componente "TestComparisonPage" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu28}T.U.28 & Verificare che il componente "ComparisonSelectionBox" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu29}T.U.29 & Verificare che il componente "ComparisonPageView" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
+    \hline
+\end{tabularx}
