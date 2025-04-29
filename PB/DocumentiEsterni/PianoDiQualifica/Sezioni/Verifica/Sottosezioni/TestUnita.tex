@@ -14,6 +14,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
         \item viene chiamata correttamente la funzione di creazione di un dataset temporaneo quando si preme il pulsante "Crea nuovo dataset";
         \item viene visualizzato correttamente il pulsante di caricamento di un dataset a partire da un file JSON;
         \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di caricamento di un dataset a partire da un file JSON;
+        \item viene visualizzato correttamente il popup di conferma della sovrascrittura del dataset attuale; 
         \item nel caso in cui l'operazione di caricamento dei dati vada a buon fine, viene visualizzato un messaggio di successo;
         \item nel caso in cui l'operazione di caricamento dei dati fallisse, viene visualizzato un messaggio di errore;
     \end{itemize} 
@@ -48,6 +49,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \begin{itemize}
         \item viene visualizzata correttamente l'etichetta "Nome" del campo di inserimento del nuovo nome da assegnare al dataset;
         \item viene visualizzato correttamente il campo di inserimento del nuovo nome da assegnare al dataset;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento del nuovo nome da assegnare al dataset;
         \item viene visualizzato correttamente il pulsante di salvataggio del nuovo nome;
         \item viene chiamata correttamente la funzione di rinomina del nuovo nome quando si preme il pulsante "Salva";
         \item viene visualizzato correttamente il pulsante di annullamento dell'operazione di rinominazione del dataset;
@@ -60,6 +62,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \begin{itemize}
         \item viene visualizzata correttamente l'etichetta "Nome" del campo di inserimento del nome da assegnare al dataset;
         \item viene visualizzato correttamente il campo di inserimento del nome da assegnare al dataset;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento del nome da assegnare al dataset; 
         \item viene visualizzata correttamente l'etichetta ".JSON" che indica l'estensione del file;
         \item viene chiamata correttamente la funzione di caricamento di un dataset a partire da un file JSON quando si preme il pulsante "Carica file";
         \item viene visualizzato correttamente il pulsante di annullamento dell'operazione di rinominazione del dataset;
@@ -115,8 +118,10 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \begin{itemize}
         \item viene visualizzata correttamente l'etichetta della domanda;
         \item viene visualizzata correttamente l'etichetta della risposta;
-        \item viene visualizzato correttamente il campo di inserimento per la domanda;
+        \item viene visualizzato correttamente il campo di inserimento per la domanda;  
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento per la domande; 
         \item viene visualizzato correttamente il campo di inserimento per la risposta;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento per la domande; 
         \item viene visualizzato correttamente il pulsante di conferma dell'aggiunta;
         \item viene chiamata correttamente la funzione di aggiunta della coppia domanda e risposta quando viene premuto il pulsante "Conferma";
     \end{itemize}
@@ -131,51 +136,150 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline
     \label{tu:tu12}T.U.12 & Verificare che il componente "PageNavigation" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzato correttamente il pulsante per navigare alla pagina precedente;
+        \item viene visualizzato correttamente il pulsante per navigare alla pagina successiva;
+        \item viene visualizzato correttamente il campo di inserimento del numero di pagina;
+        \item viene chiamata correttamente la funzione di navigazione quando si preme il pulsante per navigare alla pagina precedente;
+        \item viene chiamata correttamente la funzione di navigazione quando si preme il pulsante per navigare alla pagina successiva;
+        \item è possibile inserire i numeri all'interno del campo di inserimento del numero di pagina;
+        \item viene chiamata correttamente la funzione di navigazione quando si preme il tasto "Invio" con focus sul campo di inserimento del numero di pagina;
+        \item viene visualizzata correttamente l'etichetta del numero della pagina corrente;
+        \item viene visualizzata correttamente l'etichetta del numero totale di pagine.
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu13}T.U.13 & Verificare che il componente "SearchBar" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzata correttamente il campo di inserimento dei dati della ricerca;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno della barra di ricerca;
+        \item viene visualizzata correttamente l'icona della lente d'ingrandimento per avviare la ricerca;
+        \item viene chiamata correttamente la funzione di ricerca quando viene compilato il campo di inserimento dei dati e premuto il tasto "Invio".
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu14}T.U.14 & Verificare che il componente "TestListPage" soddisfi le seguenti condizioni: 
     \begin{itemize}
+        \item viene visualizzata correttamente la barra di ricerca dei test salvati;
+        \item viene visualizzata correttamente la pagina contenente la lista dei test salvati;
+        \item viene visualizzato correttamente il pulsante di caricamento di un test a partire da un file JSON;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu15}T.U.15 & Verificare che il componente "TestListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista di test salvati, se presenti;
+        \item viene visualizzata correttamente il messaggio che avverte dell'assenza di test salvati, se non presenti;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu16}T.U.16 & Verificare che il componente "TestElement" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il nome del test;
+        \item viene visualizzato correttamente la data di esecuzione del test;
+        \item viene visualizzato correttamente il pulsante di rinominazione del test;
+        \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di rinominazione del test;
+        \item viene visualizzato correttamente il pulsante di eliminazione del test;
+        \item viene visualizzato correttamente il popup di conferma della eliminazione del test attuale; 
+        \item viene visualizzato correttamente il pulsante di caricamento a schermo del test;
+        \item viene visualizzato correttamente il popup di conferma della sovrascrittura del test attuale; 
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu17}T.U.17 & Verificare che il componente "TestNameForm" soddisfi le seguenti condizioni: 
+    \begin{itemize}
         \item 
     \end{itemize}
     & - \\
     \hline
-    \label{tu:tu15}T.U.15 & Verificare che il componente "TestListView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu18}T.U.18 & Verificare che il componente "TestPage" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu16}T.U.16 & Verificare che il componente "TestElement" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu19}T.U.19 & Verificare che il componente "TestPageView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu17}T.U.17 & Verificare che il componente "TestNameForm" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu20}T.U.20 & Verificare che il componente "TestIndex" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu18}T.U.18 & Verificare che il componente "TestPage" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu21}T.U.21 & Verificare che il componente "CakeDiagram" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu19}T.U.19 & Verificare che il componente "TestPageView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu22}T.U.22 & Verificare che il componente "BarDiagram" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu20}T.U.20 & Verificare che il componente "TestIndex" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu23}T.U.23 & Verificare che il componente "ScatterDiagram" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu21}T.U.21 & Verificare che il componente "CakeDiagram" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu24}T.U.24 & Verificare che il componente "ResultListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu22}T.U.22 & Verificare che il componente "BarDiagram" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu25}T.U.25 & Verificare che il componente "ResultElement" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu23}T.U.23 & Verificare che il componente "ScatterDiagram" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu26}T.U.26 & Verificare che il componente "TestSelectionComparison" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu24}T.U.24 & Verificare che il componente "ResultListView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu27}T.U.27 & Verificare che il componente "TestComparisonPage" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu25}T.U.25 & Verificare che il componente "ResultElement" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu28}T.U.28 & Verificare che il componente "ComparisonSelectionBox" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu26}T.U.26 & Verificare che il componente "TestSelectionComparison" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu29}T.U.29 & Verificare che il componente "ComparisonPageView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu27}T.U.27 & Verificare che il componente "TestComparisonPage" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu28}T.U.28 & Verificare che il componente "ComparisonSelectionBox" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
     \hline
-    \label{tu:tu29}T.U.29 & Verificare che il componente "ComparisonPageView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
+    \hline
+    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
     \hline
     \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
     \hline
