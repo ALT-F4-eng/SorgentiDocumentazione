@@ -67,23 +67,85 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \end{itemize} 
     & - \\
     \hline
-    \label{tu:tu6}T.U.6 & Verificare che il componente "DatasetContentPage" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu6}T.U.6 & Verificare che il componente "DatasetContentPage" soddisfi le seguenti condizioni:
+    \begin{itemize}
+        \item viene visualizzato correttamente il nome del dataset;
+        \item viene visualizzata correttamente l'etichetta che indica se il dataset caricato è temporaneo, nel caso di dataset temporanei;
+        \item viene visualizzato correttamente il pulsante che permette l'esecuzione del test sul dataset;
+        \item L'utente viene reindirizzato alla pagina della selezione degli LLM quando si preme il pulsante "Esegui test";
+        \item viene visualizzato correttamente il pulsante che permette salvataggio delle modifiche;
+        \item viene chiamata correttamente la funzione di salvataggio quando viene premuto il pulsante "Salva";
+        \item viene visualizzata correttamente la barra di ricerca di coppie di domanda e risposta nel dataset;
+        \item viene visualizzato correttamente il form che permette l'inserimento della coppia di domanda e risposta;
+        \item nel caso in cui l'operazione di ottenimento dei dati fallisse, viene visualizzato un messaggio di errore;
+        \item nel caso in cui l'operazione di salvataggio dei dati vada a buon fine, viene visualizzato un messaggio di successo;
+        \item nel caso in cui l'operazione di salvataggio dei dati fallisse, viene visualizzato un messaggio di errore;
+        \item nel caso in cui l'operazione di esecuzione del test fallisse a causa di elementi incompleti, viene visualizzato un messaggio di errore;
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu7}T.U.7 & Verificare che il componente "DatasetPageView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu7}T.U.7 & Verificare che il componente "DatasetPageView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la pagina contenente le coppie di domande e risposte;
+        \item viene visualizzata correttamente sezione per la navigazione tra le pagine del dataset;
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu8}T.U.8 & Verificare che il componente "QAListView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu8}T.U.8 & Verificare che il componente "QAListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista di coppie di domande e risposte;
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu9}T.U.9 & Verificare che il componente "QAListElement" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu9}T.U.9 & Verificare che il componente "QAListElement" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il testo della domanda;
+        \item viene visualizzato correttamente il testo della risposta;
+        \item viene visualizzato correttamente il messaggio di avvertimento nel caso in cui la domanda o la risposta sono vuote;
+        \item viene visualizzato correttamente il pulsante per la modifica della coppia domanda e risposta;
+        \item viene chiamata correttamente la funzione di modifica della coppia domanda e risposta quando viene premuto il pulsante "Modifica";
+        \item viene visualizzato correttamente il pulsante per l'eliminazione della coppia domanda e risposta;
+        \item viene visualizzata correttamente la finestra a comparsa per la conferma o l'annullamento dell'operazione di eliminazione;
+        \item viene chiamata correttamente la funzione di eliminazione della coppia domanda e risposta quando viene premuto il pulsante "Conferma eliminazione";
+        \item viene interrotta l'operazione quando l'utente preme il pulsante "Annulla" durante il processo di eliminazione della coppia domanda e risposta;
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu10}T.U.10 & Verificare che il componente "QAForm" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu10}T.U.10 & Verificare che il componente "QAForm" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente l'etichetta della domanda;
+        \item viene visualizzata correttamente l'etichetta della risposta;
+        \item viene visualizzato correttamente il campo di inserimento per la domanda;
+        \item viene visualizzato correttamente il campo di inserimento per la risposta;
+        \item viene visualizzato correttamente il pulsante di conferma dell'aggiunta;
+        \item viene chiamata correttamente la funzione di aggiunta della coppia domanda e risposta quando viene premuto il pulsante "Conferma";
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu11}T.U.11 & Verificare che il componente "LLMSelectionList" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu11}T.U.11 & Verificare che il componente "LLMSelectionList" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista di LLM selezionabili;
+        \item viene chiamata correttamente la funzione di esecuzione del test quando viene selezionato un LLM;
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu12}T.U.12 & Verificare che il componente "PageNavigation" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu12}T.U.12 & Verificare che il componente "PageNavigation" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu13}T.U.13 & Verificare che il componente "SearchBar" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu13}T.U.13 & Verificare che il componente "SearchBar" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu14}T.U.14 & Verificare che il componente "TestListPage" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu14}T.U.14 & Verificare che il componente "TestListPage" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    & - \\
     \hline
     \label{tu:tu15}T.U.15 & Verificare che il componente "TestListView" soddisfi le seguenti condizioni: & - \\
     \hline
