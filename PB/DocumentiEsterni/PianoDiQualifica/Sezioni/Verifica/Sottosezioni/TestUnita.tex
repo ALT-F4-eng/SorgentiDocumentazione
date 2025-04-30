@@ -51,7 +51,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
         \item viene visualizzato correttamente il campo di inserimento del nuovo nome da assegnare al dataset;
         \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento del nuovo nome da assegnare al dataset;
         \item viene visualizzato correttamente il pulsante di salvataggio del nuovo nome;
-        \item viene chiamata correttamente la funzione di rinomina del nuovo nome quando si preme il pulsante "Salva";
+        \item viene chiamata correttamente la funzione di rinomina del dateset quando si preme il pulsante "Salva";
         \item viene visualizzato correttamente il pulsante di annullamento dell'operazione di rinominazione del dataset;
         \item viene interrotta l'operazione quando l'utente preme il pulsante "Annulla" durante il processo di rinominazione del dataset;
     \end{itemize} 
@@ -73,8 +73,9 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \label{tu:tu6}T.U.6 & Verificare che il componente "DatasetContentPage" soddisfi le seguenti condizioni:
     \begin{itemize}
         \item viene visualizzato correttamente il nome del dataset;
-        \item viene visualizzata correttamente l'etichetta che indica se il dataset caricato è temporaneo, nel caso di dataset temporanei;
+        \item viene visualizzata correttamente l'etichetta che indica se il dataset caricato è temporaneo;
         \item viene visualizzato correttamente il pulsante che permette l'esecuzione del test sul dataset;
+        \item nel caso in cui il dataset sia vuoto viene disabilitato correttamente il pulsante per l'esecuzione del test sul dataset;
         \item L'utente viene reindirizzato alla pagina della selezione degli LLM quando si preme il pulsante "Esegui test";
         \item viene visualizzato correttamente il pulsante che permette salvataggio delle modifiche;
         \item viene chiamata correttamente la funzione di salvataggio quando viene premuto il pulsante "Salva";
@@ -187,67 +188,103 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline
     \label{tu:tu17}T.U.17 & Verificare che il componente "TestNameForm" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzata correttamente l'etichetta "Nome" del campo di inserimento del nome da assegnare al test;
+        \item viene visualizzato correttamente il campo di inserimento del nome da assegnare al test;
+        \item viene visualizzato correttamente il pulsante per confermare la modifica del nome del test;
+        \item viene chiamata correttamente la funzione di modifica del nome del test quando si preme il pulsante "Salva";
+        \item viene visualizzato correttamente il pulsante per annullare la modifica del nome del test;
+        \item viene interrotta l'operazione quando l'utente preme il pulsante "Annulla" durante il processo di rinominazione del test;
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu18}T.U.18 & Verificare che il componente "TestPage" soddisfi le seguenti condizioni: 
-    \begin{itemize}
-        \item 
+    \begin{itemize} 
+        \item viene visualizzato correttamente il nome del test;
+        \item viene visualizzata correttamente l'etichetta che indica se il test caricato è temporaneo;
+        \item viene visualizzata correttamente la sezione contenente i dati sintetici del test;
+        \item viene visualizzato correttamente il pulsante di confronto che permette di confrontare tra il test corrente e un altro test salvato;
+        \item viene chiamata correttamente la funzione di selezione del test da confrontare quando si preme il pulsante "Confronta";
+        \item viene visualizzato correttamente il pulsante di salvataggio che permette di salvare il test temporaneo;
+        \item viene visualizzata correttamente la sezione contenente i risultati del test;
+        \item nel caso in cui l'operazione di ottenimento dei dati fallisse, viene visualizzato un messaggio di errore;
+        \item nel caso in cui l'operazione di salvataggio del test temporaneo fallisse, viene visualizzato un messaggio di errore;
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu19}T.U.19 & Verificare che il componente "TestPageView" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzata correttamente la sezione per la navigazione tra le pagine dei risultati del test;
+        \item viene visualizzata correttamente la pagina contenente i risultati del test;
+        \item viene visualizzato correttamente la sezione contenente il diagramma di dispersione;
+        \item nel caso in cui l'operazione di ottenimento dei dati fallisse, viene visualizzato un messaggio di errore.
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu20}T.U.20 & Verificare che il componente "TestIndex" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzata correttamente la sezione contenente i diagrammi di sintesi dei dati del test;
+        \item in caso di confronto viene visualizzata correttamente la sezione contenente il confronto dei diagrammi di sintesi dei dati dei due test;
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu21}T.U.21 & Verificare che il componente "CakeDiagram" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzato correttamente il diagramma a torta indicante la quantità di risposte corrette;
+        \item in caso di confronto viene visualizzato correttamente il confronto tra i diagrammi a torta dei due test;
+        \item viene visualizzata correttamente la singola sezione del diagramma a torta;
+        \item viene visualizzata correttamente la legenda descrittiva dei diagramma a torta;  
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu22}T.U.22 & Verificare che il componente "BarDiagram" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzato correttamente diagramma a barre indicante la quantità di elementi per intervallo di correttezza;
+        \item in caso di confronto viene visualizzato correttamente il confronto tra i diagrammi a barre dei due test;
+        \item viene visualizzata correttamente la singola sezione del diagramma a barre;
+        \item viene visualizzata correttamente l'etichetta delle sezioni dei diagrammi a barre; 
+        \item viene visualizzata correttamente la legenda descrittiva dei diagramma a barre;
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu23}T.U.23 & Verificare che il componente "ScatterDiagram" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzato correttamente il diagramma di dispersione indicante la correttezza degli elementi del test;
+        \item viene visualizzato correttamente il singolo elemento del diagramma di dispersione;
+        \item in caso di confronto viene visualizzato correttamente il confronto tra i diagrammi di dispersione dei due test;
+        \item viene visualizzato correttamente l'etichetta dell'asse X del diagramma di dispersone;
+        \item viene visualizzato correttamente l'etichetta dell'asse Y del diagramma di dispersone;
+        \item viene visualizzata correttamente la legenda descrittiva dei diagramma di dispersone;
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu24}T.U.24 & Verificare che il componente "ResultListView" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzata correttamente la lista dei risultati del test;
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu25}T.U.25 & Verificare che il componente "ResultElement" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzato correttamente il testo della domanda fornita al LLM;
+        \item viene visualizzato correttamente il testo della risposta ottenuta dal LLM;
+        \item viene visualizzato correttamente il testo della risposta attesa dal LLM;
+        \item viene visualizzato correttamente il grado di similarità tra la risposta attesa e quella ottenuta;
+        \item viene visualizzata correttamente l'etichetta che indica se la risposta ottenuta sia corretta o meno;
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu26}T.U.26 & Verificare che il componente "TestSelectionComparison" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzata correttamente la lista di test selezionabili;
+        \item viene chiamata correttamente la funzione di confronto quando viene selezionato un test;
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu27}T.U.27 & Verificare che il componente "TestComparisonPage" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item 
+        \item viene visualizzata correttamente la sezione contenente il confronto dei dati sintetici dei test confrontati;
+        \item viene visualizzata correttamente la sezione contenente il confronto dei diagrammi dei test confrontati;
+        \item nel caso in cui l'operazione di ottenimento dei dati fallisse, viene visualizzato un messaggio di errore;
     \end{itemize}
     & - \\
     \hline
