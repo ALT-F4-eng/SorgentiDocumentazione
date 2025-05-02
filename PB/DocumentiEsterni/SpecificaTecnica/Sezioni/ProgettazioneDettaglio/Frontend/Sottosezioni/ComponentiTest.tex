@@ -23,16 +23,14 @@
 \paragraph{SearchBar}
 \textbf{Componente padre}:
 \begin{itemize}
+    \item DatasetListPage;
+    \item DatasetContentPage;
     \item TestListPage;
 \end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
     \item \textbf{InputField}: campo di input per inserire parole chiave da cercare;
     \item \textbf{SearchIcon}: icona cliccabile per avviare la ricerca;
-\end{itemize}
-\textbf{Input}:
-\begin{itemize}
-    \item \textbf{keywords}: parole chiave su cui effettuare la ricerca;
 \end{itemize}
 \textbf{Output}:
 \begin{itemize}
@@ -48,7 +46,6 @@
 \begin{itemize}
     \item \textbf{SearchTest}: barra di ricerca per filtrare i test salvati, realizzata tramite il sottocomponente \textbf{SearchBar};
     \item \textbf{TestListContainer}: lista scorrevole dei test salvati, realizzata tramite il sottocomponente \textbf{TestListView};
-    \item \textbf{UploadButton}: pulsante che permette di richiedere il caricamento di un test a partire da un file JSON, il caricamento viene poi effettuato tramite il sottocomponente \textbf{TestUploadForm}; 
 \end{itemize}
 \textbf{Servizio}
 \begin{itemize}
@@ -84,6 +81,7 @@
 \begin{itemize}
     \item \textbf{TestName}: sezione testuale contenente il nome del test;
     \item \textbf{TestDate}: sezione testuale contenente la data di esecuzione del test;
+    \item \textbf{TestDatasetName}: sezione testuale contenente il nome del dataset associato al test;
     \item \textbf{RenameButton}: pulsante per richiedere la rinominazione del test, questa viene poi effettuata tramite il sottocomponente \textbf{TestNameForm};
     \item \textbf{DeleteButton}: pulsante per richiedere l'eliminazione del test, questa viene poi confermata o annullata tramite il sottocomponente \textbf{ConfirmComponent};
     \item \textbf{LoadButton}: pulsante per richiedere il caricamento del test, se il test attualmente caricato presenta modifiche viene richiesta la conferma o l'annullamento della sovrascrittura tramite il sottocomponente \textbf{ConfirmComponent};
@@ -91,7 +89,6 @@
 \textbf{Input}:
 \begin{itemize}
     \item \textbf{dataset}: dataset associato al test;
-    \item \textbf{llm}: LLM associato al dataset;
 \end{itemize}
 \textbf{Output}:
 \begin{itemize}
@@ -119,7 +116,6 @@
 \textbf{Output}:
 \begin{itemize}
     \item \textbf{confirmRename}: evento emesso quando viene premuto il pulsante per confermare l'assegnazione o modifica del nome del test;
-    \item \textbf{cancelRename}: evento emesso quando viene premuto il pulsante per annullare l'assegnazione o modifica del nome del test;
 \end{itemize}
 \paragraph{TestPage}
 \textbf{Modulo}:
@@ -154,7 +150,7 @@
 \end{itemize}
 \textbf{Input}:
 \begin{itemize}
-    \item \textbf{Results}: array dei risultati da visualizzare;
+    \item \textbf{Results}: lista dei risultati da visualizzare;
 \end{itemize}
 \textbf{Output}:
 \begin{itemize}
@@ -213,7 +209,7 @@
 \textbf{Elementi chiave}:
 \begin{itemize}
     \item \textbf{ScatterChart}: sezione di visualizzazione del diagramma di dispersione;
-    \item \textbf{ScatterElement}: singolo punto del diagramma di dispersione;
+    \item \textbf{ScatterElement}: singolo punto del diagramma di dispersione interagibile, l'interazione viene gestita tramite il sottocomponente \textbf{ResultElement};
     \item \textbf{ComparedScatterElement}: singolo punto del diagramma di dispersione che rappresenta il test con cui si sta effettuando il confronto;
     \item \textbf{XLabel}: label che mostra il valore dell'asse X;
     \item \textbf{YLabel}: label che mostra il valore dell'asse Y;
@@ -221,8 +217,8 @@
 \end{itemize}
 \textbf{Input}:
 \begin{itemize}
-    \item \textbf{ElementValues}: coordinate dei punti da rappresentare;
-    \item \textbf{ComparedElementValues}: coordinate dei punti da rappresentare nel caso di confronto tra test;
+    \item \textbf{ElementValues}: lista delle coordinate dei punti da rappresentare;
+    \item \textbf{ComparedElementValues}: liste delle coordinate dei punti da rappresentare nel caso di confronto tra test;
 \end{itemize}
 \paragraph{ResultListView}
 \textbf{Componente padre}:
@@ -349,10 +345,9 @@
 \textbf{Elementi chiave}:
 \begin{itemize}
     \item \textbf{Question}: sezione testuale contenente la domanda effettuata;
+    \item \textbf{ExpectedAnswer}: sezione testuale contenente la risposta attesa dei test;
     \item \textbf{GivenAnswer1}: sezione testuale contenente la risposta fornita dal LLM del primo test;
     \item \textbf{GivenAnswer2}: sezione testuale contenente la risposta fornita dal LLM del secondo test;
-    \item \textbf{ExpectedAnswer1}: sezione testuale contenente la risposta attesa del primo test;
-    \item \textbf{ExpectedAnswer2}: sezione testuale contenente la risposta attesa del secondo test;
     \item \textbf{Similarity1}: sezione testuale contenente il grado di similarità tra la risposta fornita e quella attesa del primo test;
     \item \textbf{Similarity2}: sezione testuale contenente il grado di similarità tra la risposta fornita e quella attesa del secondo test;
     \item \textbf{Correctness Label1}: sezione testuale contenente il messaggio che indica se la risposta fornita è corretta o meno del primo test;
@@ -361,10 +356,9 @@
 \textbf{Input}:
 \begin{itemize}
     \item \textbf{question}: domanda effettuata;
+    \item \textbf{expectedAnswer}: risposta attesa dei test;
     \item \textbf{givenAnswer1}: risposta fornita dal LLM del primo test;
     \item \textbf{givenAnswer2}: risposta fornita dal LLM del secondo test;
-    \item \textbf{expectedAnswer1}: risposta attesa del primo test;
-    \item \textbf{expectedAnswer2}: risposta attesa del secondo test;
     \item \textbf{similarity1}: grado di similarità tra la risposta fornita e quella attesa del primo test;
     \item \textbf{similarity2}: grado di similarità tra la risposta fornita e quella attesa del secondo test;
     \item \textbf{correctness1}: valore booleano che indica se la risposta fornita è corretta o meno del primo test;
