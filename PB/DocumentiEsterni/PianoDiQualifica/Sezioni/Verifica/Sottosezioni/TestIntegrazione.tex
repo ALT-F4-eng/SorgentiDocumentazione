@@ -8,66 +8,92 @@ verificando che i diversi moduli o componenti del sistema interagiscano corretta
 \hline
 T.I.1 & Verificare che il componente "StandardPage" soddisfi le seguenti condizioni:
 \begin{itemize}%
-    \item deve restituire correttamente la lista dei Dataset salvati dall'interno del database tramite DatasetService;% sicuramente test di integrazione di back-end
-    \item deve restituire correttamente la lista dei Test salvati dall'interno del database tramite TestService;
-    \item deve restituire correttamente la lista dei LLM salvati dall'interno del database tramite LLMService;
+%  \item l'icona di caricamento deve apparire durante l'attesa del caricamento di un'operazione o una pagina;
+%  \item deve recuperare correttamente la lista dei Dataset salvati dall'interno del database tramite DatasetService;%  test di integrazione di back-end
+%  \item deve restituire correttamente la lista dei Test salvati dall'interno del database tramite TestService;%  test di integrazione di back-end
+%  \item deve restituire correttamente la lista dei LLM salvati dall'interno del database tramite LLMService;%  test di integrazione di back-end
+    \item l'utente deve poter accedere alla pagina Home;
+    \item l'utente deve poter accedere alla pagina Dataset;
+    \item l'utente deve poter accedere alla pagina LLM;
+    \item l'utente deve poter accedere alla pagina Test;
 \end{itemize}
 & -\\
 \hline
-T.I.2 & Verificare che il componente "HomePage" soddisfi le seguenti condizioni:
+T.I.2 & Verificare che il componente "DatasetListPage" soddisfi le seguenti condizioni:
 \begin{itemize}
-    \item 
-\end{itemize}
-& -\\
-\hline
-T.I.3 & Verificare che il componente "DatasetListPage" soddisfi le seguenti condizioni:
-\begin{itemize}
-    \item Deve restituire correttamente i risultati della ricerca sotto forma di elementi della lista  di dataset filtrati quando si effettua una ricerca;
+    \item controllare che venga recuperata correttamente la lista dei dataset salvati nel database tramite "DatasetService";%  comunicazione col database del back-end
+    \item controllare che "DatasetListView" ottenga correttamente la lista dei dataset salvati;% comunicazione col padre(dataset list page) e figlio(list container)
+    \item controllare che "DatasetListView" ottenga correttamente la lista filtrata dei dataset salvati dopo un operazione di ricerca;
+    \item controllare che "DatasetListView" ottenga correttamente la lista aggiornata dei dataset salvati dopo un operazione di eliminazione;%delete
+    \item controllare che "DatasetListView" ottenga correttamente la lista aggiornata dei dataset salvati dopo un operazione di creazione;%create
+    \item controllare che "DatasetListView" ottenga correttamente la lista aggiornata dei dataset salvati dopo un operazione di copia;%clone
+    % si ricorda che tutte le operazioni importanti tipo salvataggio e eliminazione bisognerebbe anche aggiornare il medesimo database;
+    \item controllare che "DatasetElement" ottenga correttamente i dati aggiornati del dataset salvato dopo un operazione di rinominazione;
+    \item deve restituire correttamente i risultati della ricerca sotto forma di elementi della lista di dataset filtrati quando si effettua una ricerca;
     \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di caricamento di un dataset a partire da un file JSON;
-    \item l'utente viene reindirizzato alla pagina del dataset caricato dopo aver premuto il pulsante di caricamento a schermo del dataset;
-    \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di rinominazione del dataset;
-    \item nel caso in cui l'operazione di caricamento dei dati vada a buon fine, viene visualizzato un messaggio di successo;
+    \item l'utente viene reindirizzato alla pagina del dataset caricato dopo aver premuto il pulsante di caricamento a schermo del dataset;%load
+    \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di rinominazione del dataset;%rename
+    \item nel caso in cui l'operazione di caricamento dei dati vada a buon fine, viene visualizzato un messaggio di successo;%
     \item nel caso in cui l'operazione di caricamento dei dati fallisse, viene visualizzato un messaggio di errore;
 \end{itemize}
 & -\\
 \hline
-T.I.4 & Verificare che il componente "DatasetContentPage" soddisfi le seguenti condizioni:
+T.I.3 & Verificare che il componente "DatasetContentPage" soddisfi le seguenti condizioni:
 \begin{itemize}
-    \item deve restituire correttamente la lista delle coppie di domande e risposte dall'interno del database tramite QAService;
+ %  \item deve restituire correttamente la lista delle coppie di domande e risposte dall'interno del database tramite QAService;%  test di integrazione di back-end
     \item L'utente viene reindirizzato alla pagina della selezione degli LLM quando si preme il pulsante "Esegui test";
-    \item viene visualizzato correttamente il form che permette l'inserimento della coppia di domanda e risposta;
+ % si ricorda che save button aggiorna database;
+    \item controllare che venga recuperata correttamente la lista delle coppie di domande e risposte salvati nel database tramite "QAService";%  comunicazione col database del back-end
+    \item controllare che "QAListView" ottenga correttamente la lista delle coppie di domande e risposte salvate;% comunicazione col padre(dataset list page) e figlio(list container)
+    \item controllare che "QAListView" ottenga correttamente la lista filtrata delle coppie di domande e risposte salvate dopo un operazione di ricerca;% ricerca
+    \item controllare che "QAListView" ottenga correttamente la lista aggiornata delle coppie di domande e risposte salvate dopo un operazione di eliminazione;%delete
+    \item controllare che "QAListView" ottenga correttamente la lista aggiornata delle coppie di domande e risposte salvate dopo un operazione di creazione;%form
+    \item controllare che "QAElement" ottenga correttamente i dati aggiornati della coppia domanda e risposta modificata dopo un operazione di modifica;
+% si ricorda che modifica comporta aggiornamento della lista
+    \item deve restituire correttamente i risultati della ricerca sotto forma di elementi della lista di coppie di domande e risposte filtrate quando si effettua una ricerca;
     \item nel caso in cui l'operazione di ottenimento dei dati fallisse, viene visualizzato un messaggio di errore;
     \item nel caso in cui l'operazione di salvataggio dei dati vada a buon fine, viene visualizzato un messaggio di successo;
     \item nel caso in cui l'operazione di esecuzione del test fallisse a causa di elementi incompleti, viene visualizzato un messaggio di errore;
 \end{itemize}
 & -\\
 \hline
-T.I.5 & Verificare che il componente "TestPage" soddisfi le seguenti condizioni:
+T.I.4 & Verificare che il componente "TestPage" soddisfi le seguenti condizioni:
 \begin{itemize}
+    \item controllare che venga recuperata correttamente la lista dei risultati ottenuti tramite "TestService";
+    \item controllare che "CakeDiagram" ottenga correttamente la percentuale di risposte corrette ottenute nel test;
+    \item controllare che "CakeDiagram" ottenga correttamente la percentuale di risposte corrette ottenute nel test confrontato;
+    \item controllare che "BarDiagram" ottenga correttamente l'array contenente 5 elementi (ciascun elemento rappresenta il numero di risultati per intervallo del test);
+    \item controllare che "BarDiagram" ottenga correttamente l'array contenente 5 elementi (ciascun elemento rappresenta il numero di risultati per intervallo del test confrontato);
+    \item controllare che "TestSelectionComparison" ottenga correttamente la lista dei test salvati compatibili per il confronto;
+    \item l'utente viene reindirizzato alla pagina del confronto tra test dopo aver selezionato uno dei test compatibili per il confronto;
+    \item controllare che "TestPage" ottenga correttamente i dati aggiornati del test salvato dopo un operazione di rinominazione;%il Savebutton prima di salvare richiede un assegnazione del nome del test temporaneo
+    \item controllare che "ResultListView" ottenga correttamente la lista dei risultati del test;
+    \item controllare che "ResultElement" ottenga correttamente una domanda, una risposta attesa, una risposta ricevuta, un float e un booleano;
+    \item controllare che "ScatterDiagram" ottenga correttamente la lista dei risultati del test;
     \item nel caso in cui l'operazione di ottenimento dei dati fallisse, viene visualizzato un messaggio di errore;
     \item nel caso in cui l'operazione di salvataggio del test temporaneo fallisse, viene visualizzato un messaggio di errore;
 \end{itemize}
 & -\\
 \hline
-T.I.6 & Verificare che il componente "TestListPage" soddisfi le seguenti condizioni:
+T.I.5 & Verificare che il componente "TestListPage" soddisfi le seguenti condizioni:
 \begin{itemize}
     \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di rinominazione del test;
 \end{itemize}
 & -\\
 \hline
-T.I.7 & Verificare che il componente "TestComparisonPage" soddisfi le seguenti condizioni:
+T.I.6 & Verificare che il componente "TestComparisonPage" soddisfi le seguenti condizioni:
 \begin{itemize}
     \item nel caso in cui l'operazione di ottenimento dei dati fallisse, viene visualizzato un messaggio di errore;
 \end{itemize}
 & -\\
 \hline
-T.I.8 & Verificare che il componente "LLMListPage" soddisfi le seguenti condizioni:
+T.I.7 & Verificare che il componente "LLMListPage" soddisfi le seguenti condizioni:
 \begin{itemize}
     \item 
 \end{itemize}
 & -\\
 \hline
-T.I.9 & Verificare che il componente "LLMPage" soddisfi le seguenti condizioni:
+T.I.8 & Verificare che il componente "LLMPage" soddisfi le seguenti condizioni:
 \begin{itemize}
     \item 
 \end{itemize}
