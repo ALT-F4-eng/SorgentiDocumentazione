@@ -27,13 +27,11 @@ Come si può notare dallo schema ristrutturato:
 
 Lo schema ristrutturato è stato utilizzato per produrre lo schema logico del database.
 \begin{itemize}
-    \item[] \textit{Dataset(\underline{ID}, IsTmp, Nome, DataCreazione, DataUltimaModifica)}
+    \item[] \textit{Dataset(\underline{ID}, IsTmp, Nome, DataCreazione, DataUltimaModifica, IDDatasetOriginario)} \\
+    \textit{Dataset.IDDatasetOriginario \textrightarrow Dataset.ID}
     
-    \item[] \textit{Elemento(\underline{ID}, Domanda, Risposta)}
-    
-    \item[] \textit{ContenutoDataset(\underline{Dataset}, \underline{Elemento})} \\
-    \textit{ContenutoDataset.Dataset \textrightarrow Dataset.ID} \\
-    \textit{ContenutoDataset.Elemento \textrightarrow Elemento.ID}
+    \item[] \textit{Elemento(\underline{ID}, Domanda, Risposta, IDDataset)}\\
+    \textit{Elemento.IDDataset \textrightarrow Dataset.ID}
     
     \item[] \textit{LLM(\underline{ID}, Nome, URL, ChiaveRichiesta, ChiaveRisposta, DataRegistrazione)}
     
@@ -56,14 +54,16 @@ Di seguito vengono analizzate singolarmente le relazioni definite nello schema l
     \item \textit{IsTmp}: valore booleano che indica se il dataset è temporaneo o è stato salvato, non può quindi assumere valore nullo;
     \item \textit{Nome}: stringa che identifica univocamente il dataset, se il dataset è temporaneo deve assumere valore nullo;
     \item \textit{DataCreazione}: data di creazione del dataset, se il dataset è temporaneo deve assumere valore nullo;
-    \item \textit{DataUltimaModifica}: data di ultima modifica del dataset, se il dataset è temporaneo deve assumere valore nullo.
+    \item \textit{DataUltimaModifica}: data di ultima modifica del dataset, se il dataset è temporaneo deve assumere valore nullo;
+    \item \textit{IDDatasetOriginario}: riferimento usato nei dataset temporanei per risalire al dataset originario salvato che modificano.
 \end{itemize}
 
 \subsubsection{Elemento}
 \begin{itemize}
     \item \textit{ID}: valore numerico che identifica univocamente un elemento;
     \item \textit{Domanda}: stringa che rappresenta la domanda da porre all'LLM da testare;
-    \item \textit{Risposta}: stringa che rappresenta la risposta attesa alla domanda.
+    \item \textit{Risposta}: stringa che rappresenta la risposta attesa alla domanda;
+    \item \textit{IDDataset}: riferimento al dataset a cui appartiene l'elemento.
 \end{itemize}
 \textit{Domanda} e \textit{Risposta} non possono entrambe assumere valori nulli.
 
