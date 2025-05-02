@@ -1,20 +1,113 @@
 \subsection{Componenti}
 \label{subsec:Componenti}
-
 \subsubsection{StandardPage}
 \textbf{Modulo}
 \begin{itemize}
-    \item StandardModule, modulo funzionale dell'applicazione, ogni pagina devono averla.
+    \item StandardModule, modulo funzionale dell'applicazione che gestisce i componenti, servizi e le risorse legate al layout e alle funzionalità generali delle pagine.
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item \textbf{LogoIcon}: Un icona che rappresenta il logo del gruppo.
-    \item \textbf{Menu}: Un insieme di link disponibili che permette all'utente di navigare tra le pagine diverse.
-    \item \textbf{Footer}: Consente di visualizzare informazioni critiche.
-    \item \textbf{LoadingScreen}: Mostra il grafico di caricamento.
-    \item \textbf{MessageDialog}: Visualizzazione di un messaggio di finestra.
-    \item \textbf{ErrorListener}: Verrà attivata la finestra del messaggio di errore nel caso in cui si verificasse un errore nel sistema;
-    \item \textbf{ConfirmButton}: pulsante che permette di confermare le operazioni critiche.
+    \item \textbf{Menu}: insieme di link disponibili che permette all'utente di navigare tra le diverse pagine della webapp, realizzata dal sottocomponente \textbf{MenuComponent}.
+    \item \textbf{Footer}: consente di visualizzare altre informazioni rilevanti al sito, realizzata dal sottocomponente \textbf{FooterComponent}.
+    \item \textbf{LoadingAnimation}: gestisce l'operazione di caricamento di un operazione o pagina, realizzata dal sottocomponente \textbf{LoadingComponent}.
+    \item \textbf{Message}: visualizzazione di un messaggio tramite finestra, realizzata dal sottocomponente \textbf{MessageComponent}.
+    \item \textbf{ConfirmButton}: finestra che permette di confermare o meno le operazioni critiche, realizzata dal sottocomponente \textbf{ConfirmButton}.
+\end{itemize}
+\subsubsection{MenuComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{LogoIcon}:  icona che rappresenta il logo del gruppo.
+    \item \textbf{HomeTextLink}: testo che rappresenta il link alla home page dell'applicazione;
+    \item \textbf{LLMTextLink}: testo che rappresenta il link alla pagina di gestione degli LLM;
+    \item \textbf{DatasetTextLink}: testo che rappresenta il link alla pagina di gestione dei dataset;
+    \item \textbf{TestTextLink}: testo che rappresenta il link alla pagina di gestione dei test;
+\end{itemize}
+
+\subsubsection{FooterComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{GroupContactText}: sezione testuale che contiene le informazioni di contatto del gruppo;
+    \item \textbf{CopyrightText}: sezione testuale contenente le informazioni relative al copyright, in conformità con la normativa italiana ed europea
+\end{itemize}
+
+\subsubsection{LoadingComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{LoadingIcon}: icona che rappresenta il caricameto delle pagina.
+\end{itemize}
+\textbf{Servizi}
+\begin{itemize}
+    \item
+\end{itemize}
+\textbf{Input}
+\begin{itemize}
+    \item
+\end{itemize}
+\textbf{Output}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{MessageComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
+\begin{itemize}
+    \item
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item 
+\end{itemize}
+\textbf{Servizi}
+\begin{itemize}
+    \item
+\end{itemize}
+\textbf{Input}
+\begin{itemize}
+    \item
+\end{itemize}
+\textbf{Output}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{ConfirmComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
+\begin{itemize}
+    \item
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item 
+\end{itemize}
+\textbf{Servizi}
+\begin{itemize}
+    \item
+\end{itemize}
+\textbf{Input}
+\begin{itemize}
+    \item
+\end{itemize}
+\textbf{Output}
+\begin{itemize}
+    \item
 \end{itemize}
 
 \subsubsection{HomePage}

@@ -1,4 +1,4 @@
-\paragraph{PageNavigation}
+\subsubsection{PageNavigation}
 \textbf{Componente padre}:
 \begin{itemize}
     \item DatasetContentPage;
@@ -20,7 +20,7 @@
     \item \textbf{previous}: evento emesso quando si clicca il pulsante per la pagina precedente;
     \item \textbf{pageChange}: evento emesso quando si cambia pagina tramite il campo di input;
 \end{itemize}
-\paragraph{SearchBar}
+\subsubsection{SearchBar}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestListPage;
@@ -39,7 +39,7 @@
     \item \textbf{search}: evento emesso quando viene inviata la conferma della ricerca;
     \item \textbf{clear}: evento emesso quando si clicca il pulsante di cancellazione;
 \end{itemize} 
-\paragraph{TestListPage}
+\subsubsection{TestListPage}
 \textbf{Modulo}:
 \begin{itemize}
     \item TestModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati all'esecuzione e gestione di test e alla visualizzazione dei risultati.    
@@ -54,7 +54,7 @@
 \begin{itemize}
     \item \textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le operazioni per la gestione di un elemento della lista di test.
 \end{itemize}
-\paragraph{TestListView}
+\subsubsection{TestListView}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestListPage;
@@ -75,7 +75,7 @@
     \item \textbf{deleteTest}: evento emesso quando riceve da \textbf{TestElement} la richiesta di rimuovere un test;
     \item \textbf{renameTest}: evento emesso quando riceve da \textbf{TestElement} la richiesta di rinomina di un test;
 \end{itemize}
-\paragraph{TestElement}
+\subsubsection{TestElement}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestListView;
@@ -99,7 +99,7 @@
     \item delete: evento emesso quando viene premuto il pulsante per richiedere l'eliminazione del test;
     \item load: evento emesso quando viene premuto il pulsante per richiedere il caricamento del test;
 \end{itemize}
-\paragraph{TestNameForm}
+\subsubsection{TestNameForm}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestPage;
@@ -120,7 +120,7 @@
     \item \textbf{confirmRename}: evento emesso quando viene premuto il pulsante per confermare l'assegnazione o modifica del nome del test;
     \item \textbf{cancelRename}: evento emesso quando viene premuto il pulsante per annullare l'assegnazione o modifica del nome del test;
 \end{itemize}
-\paragraph{TestPage}
+\subsubsection{TestPage}
 \textbf{Modulo}:
 \begin{itemize}
     \item TestModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati all'esecuzione e gestione di test e alla visualizzazione dei risultati.    
@@ -139,7 +139,7 @@
 \begin{itemize}
     \item \textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le funzionalità principali per la gestione di un test.
 \end{itemize}
-\paragraph{TestPageView}
+\subsubsection{TestPageView}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestPage;
@@ -159,7 +159,7 @@
 \begin{itemize}
     \item \textbf{ChangePage}: evento emesso quando l'utente interagisce con `PageNavigation`;
 \end{itemize}
-\paragraph{TestIndex}
+\subsubsection{TestIndex}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestPage;
@@ -170,7 +170,7 @@
     \item \textbf{DataSummary}: sezione di visualizzazione dei dati sintetici del test, realizzata tramite i sottocomponenti: \textbf{CakeDiagram} e \textbf{BarDiagram};
     \item \textbf{ComparedSummary}: sezione di visualizzazione dei dati sintetici del test con cui si sta effettuando il confronto, realizzata tramite i sottocomponenti: \textbf{CakeDiagram} e \textbf{BarDiagram};
 \end{itemize}
-\paragraph{CakeDiagram}
+\subsubsection{CakeDiagram}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestIndex;
@@ -186,7 +186,7 @@
 \begin{itemize}
     \item \textbf{CorrectnessValue}: percentuale di risposte corrette;
 \end{itemize}
-\paragraph{BarDiagram}
+\subsubsection{BarDiagram}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestIndex;
@@ -202,7 +202,7 @@
 \begin{itemize}
     \item \textbf{distribution}: array con il numero di risultati per intervallo;
 \end{itemize}
-\paragraph{ScatterDiagram}
+\subsubsection{ScatterDiagram}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestPageView;
@@ -221,7 +221,7 @@
     \item \textbf{ElementValues}: coordinate dei punti da rappresentare;
     \item \textbf{ComparedElementValues}: coordinate dei punti da rappresentare nel caso di confronto tra test;
 \end{itemize}
-\paragraph{ResultListView}
+\subsubsection{ResultListView}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestPageView;
@@ -234,7 +234,7 @@
 \begin{itemize}
     \item \textbf{results}: lista di risultati da visualizzare;
 \end{itemize}
-\paragraph{ResultElement}
+\subsubsection{ResultElement}
 \textbf{Componente padre}:
 \begin{itemize}
     \item ResultListView;
@@ -255,7 +255,7 @@
     \item \textbf{similarity}: grado di similarità tra la risposta fornita e quella attesa;
     \item \textbf{correctness}: valore booleano che indica se la risposta fornita è corretta o meno;
 \end{itemize}
-\paragraph{TestSelectionComparison}
+\subsubsection{TestSelectionComparison}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestPage;
@@ -275,7 +275,7 @@
 \begin{itemize}
     \item \textbf{compare}: evento emesso quando viene premuto il pulsante per richiedere il confronto tra test;
 \end{itemize}
-\paragraph{TestComparisonPage}  
+\subsubsection{TestComparisonPage}  
 \textbf{Modulo}:
 \begin{itemize}
     \item TestModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati all'esecuzione e gestione di test e alla visualizzazione dei risultati.    
@@ -290,7 +290,7 @@
 \begin{itemize}
     \item \textbf{TestService}: servizio iniettato tramite `@Injectable`, espone i metodi per il confronto tra test.
 \end{itemize}
-\paragraph{ComparisonIndex} 
+\subsubsection{ComparisonIndex} 
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestComparisonPage;
@@ -304,7 +304,7 @@
     \item \textbf{TestIndex1}: metriche del primo test;
     \item \textbf{TestIndex2}: metriche del secondo test;
 \end{itemize}
-\paragraph{ComparisonPageView}  
+\subsubsection{ComparisonPageView}  
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestComparisonPage;
@@ -324,7 +324,7 @@
 \begin{itemize}
     \item \textbf{ChangePage}: evento emesso quando l'utente interagisce con `PageNavigation`;
 \end{itemize}
-\paragraph{ComparisonListView}
+\subsubsection{ComparisonListView}
 \textbf{Componente padre}:
 \begin{itemize}
     \item ComparisonPageView;
@@ -338,7 +338,7 @@
     \item \textbf{results1}: lista di risultati del primo test;
     \item \textbf{results2}: lista di risultati del secondo test;
 \end{itemize}
-\paragraph{ComparisonElement}
+\subsubsection{ComparisonElement}
 \textbf{Componente padre}:
 \begin{itemize}
     \item ComparisonListView;

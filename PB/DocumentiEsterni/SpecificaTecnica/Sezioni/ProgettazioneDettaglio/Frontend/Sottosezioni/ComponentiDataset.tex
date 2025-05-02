@@ -1,6 +1,4 @@
-\subsubsection{Componenti}
-\label{subsubsec:componenti}
-\paragraph{DatasetListPage}
+\subsubsection{DatasetListPage}
 \textbf{Modulo}
 \begin{itemize}
     \item DatasetModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati alla creazione, visualizzazione e gestione di dataset.
@@ -19,7 +17,7 @@
     \item DatasetService, servizio che permette l'esecuzione di operazioni CRUD sulla lista dei dataset salvati.
 \end{itemize}
 
-\paragraph{DatasetListView}
+\subsubsection{DatasetListView}
 \textbf{Componente padre}
 \begin{itemize}
     \item DatasetListPage.
@@ -41,7 +39,7 @@
     \item load Dataset: evento emesso quando riceve da \textbf{DatasetElement} la richiesta di caricare un dataset.
 \end{itemize}
 
-\paragraph{DatasetElement}
+\subsubsection{DatasetElement}
 \textbf{Componente padre}
 \begin{itemize}
     \item DatasetListView.
@@ -67,7 +65,7 @@
     \item load: evento emesso quando viene premuto il pulsante per richiedere il caricamento del dataset.
 \end{itemize}
 
-\paragraph{DatasetNameForm}
+\subsubsection{DatasetNameForm}
 \textbf{Componente padre}
 \begin{itemize}
     \item DatasetListPage;
@@ -89,7 +87,7 @@
     \item cancelRename: evento emesso quando viene premuto il pulsante per annullare l'assegnazione o modifica del nome del dataset. 
 \end{itemize}
 
-\paragraph{DatasetJSONForm}
+\subsubsection{DatasetJSONForm}
 \textbf{Componente padre}
 \begin{itemize}
     \item DatasetListPage;
@@ -107,7 +105,7 @@
     \item cancelCreate: evento emesso quando viene premuto il pulsante per annullare la creazione del dataset.
 \end{itemize}
 
-\paragraph{DatasetContentPage}
+\subsubsection{DatasetContentPage}
 \textbf{Modulo}
 \begin{itemize}
     \item DatasetModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati alla creazione, visualizzazione e gestione di dataset.
@@ -130,7 +128,7 @@
     \item TestService, servizio che permette l'esecuzione del test sul dataset caricato.
 \end{itemize}
 
-\paragraph{DatasetPageView}
+\subsubsection{DatasetPageView}
 \textbf{Componente padre}
 \begin{itemize}
     \item DatasetContentPage.
@@ -152,7 +150,7 @@
     \item deleteQA: evento emesso quando riceve da \textbf{QAListView} la richiesta di eliminazione di una coppia domanda e risposta nella lista;
 \end{itemize}
 
-\paragraph{QAListView}
+\subsubsection{QAListView}
 \textbf{Componente padre}
 \begin{itemize}
     \item DatasetPageView.
@@ -171,7 +169,7 @@
     \item requestDeleteQAElement: evento emesso quando riceve da \textbf{QAListElement} la conferma dell'eliminazione della coppia domanda e risposta associata.
 \end{itemize}
 
-\paragraph{QAListElement}
+\subsubsection{QAListElement}
 \textbf{Componente padre}
 \begin{itemize}
     \item QAListView.
@@ -195,7 +193,7 @@
     \item deleteQAElement: evento emesso quando viene confermata la richiesta di eliminazione della coppia domanda e risposta.
 \end{itemize}
 
-\paragraph{QAForm}
+\subsubsection{QAForm}
 \textbf{Componente padre}
 \begin{itemize}
     \item DatasetContentPage.
@@ -217,7 +215,7 @@
     \item cancelEditQA: evento emesso quando viene premuto il pulsante per annullare l'inserimento o la modifica della coppia domanda e risposta.
 \end{itemize}
 
-\paragraph{LLMSelectionList}
+\subsubsection{LLMSelectionList}
 \textbf{Componente padre}
 \begin{itemize}
     \item DatasetContentPage.
