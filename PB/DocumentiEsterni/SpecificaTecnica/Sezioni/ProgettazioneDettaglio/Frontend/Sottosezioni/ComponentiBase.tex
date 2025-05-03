@@ -45,19 +45,7 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item \textbf{LoadingIcon}: icona che rappresenta il caricameto delle pagina.
-\end{itemize}
-\textbf{Servizi}
-\begin{itemize}
-    \item
-\end{itemize}
-\textbf{Input}
-\begin{itemize}
-    \item
-\end{itemize}
-\textbf{Output}
-\begin{itemize}
-    \item
+    \item \textbf{LoadingAnimatedIcon}: icona che rappresenta il caricamento della pagina o dell'operazione;
 \end{itemize}
 
 \subsubsection{MessageComponent}
@@ -65,24 +53,9 @@
 \begin{itemize}
     \item StandardPage.
 \end{itemize}
-\begin{itemize}
-    \item
-\end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item 
-\end{itemize}
-\textbf{Servizi}
-\begin{itemize}
-    \item
-\end{itemize}
-\textbf{Input}
-\begin{itemize}
-    \item
-\end{itemize}
-\textbf{Output}
-\begin{itemize}
-    \item
+    \item \textbf{MessageText}: sezione testuale che contiene il messaggio da visualizzare all'utente.
 \end{itemize}
 
 \subsubsection{ConfirmComponent}
@@ -90,24 +63,16 @@
 \begin{itemize}
     \item StandardPage.
 \end{itemize}
-\begin{itemize}
-    \item
-\end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item 
-\end{itemize}
-\textbf{Servizi}
-\begin{itemize}
-    \item
-\end{itemize}
-\textbf{Input}
-\begin{itemize}
-    \item
+    \item \textbf{ConfirmButton}: pulsante che permette di confermare l'operazione critica;
+    \item \textbf{CancelButton}: pulsante che permette di annullare l'operazione critica;
+    \item \textbf{OperationResultMessage}: messaggio che indica il risultato dell'operazione, realizzato dal sottocomponente \textbf{MessageComponent};
 \end{itemize}
 \textbf{Output}
 \begin{itemize}
-    \item
+    \item \textbf{ResultConfirmed}: evento che viene emesso quando l'utente conferma l'operazione critica;
+    \item \textbf{ResultCanceled}: evento che viene emesso quando l'utente annulla l'operazione critica;
 \end{itemize}
 
 \subsubsection{HomePage}
@@ -117,5 +82,15 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item \textbf{ContentText}:sezione testuale contenente le informazioni sull'applicazione.
+    \item \textbf{ContextContainer}: sezione che contiene i componenti principali della pagina, realizzata dal sottocomponente \textbf{ContentComponent};
+\end{itemize}
+
+\subsubsection{ContentComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item HomePage.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{ContentText}: sezione testuale contenente informazioni che riguardano lo scopo e il funzionamento della webapp;
 \end{itemize}
