@@ -1,4 +1,8 @@
 \subsubsection{DatasetListPage}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
 \textbf{Modulo}
 \begin{itemize}
     \item DatasetModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati alla creazione, visualizzazione e gestione di dataset.
@@ -14,7 +18,7 @@
 \end{itemize}
 \textbf{Servizio}
 \begin{itemize}
-    \item DatasetService, servizio che permette l'esecuzione di operazioni CRUD sulla lista dei dataset salvati.
+    \item \textbf{DatasetService}: servizio iniettato tramite `@Injectable`, fornisce le funzionalità principali per la gestione della lista di dataset.
 \end{itemize}
 
 \subsubsection{DatasetListView}
@@ -106,6 +110,10 @@
 \end{itemize}
 
 \subsubsection{DatasetContentPage}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
 \textbf{Modulo}
 \begin{itemize}
     \item DatasetModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati alla creazione, visualizzazione e gestione di dataset.
@@ -124,8 +132,8 @@
 \end{itemize}
 \textbf{Servizio}
 \begin{itemize}
-    \item QAService, servizio che permette l'esecuzione di operazioni CRUD sulla lista delle coppie domanda e risposta di un dataset;
-    \item TestService, servizio che permette l'esecuzione del test sul dataset caricato.
+    \item \textbf{QAService}: servizio iniettato tramite `@Injectable`, fornisce le funzionalità principali per la gestione delle coppie di domande e risposte.
+    \item \textbf{TestService}: servizio iniettato tramite `@Injectable`, fornisce le funzionalità principali per la gestione dell'esecuzione di un test.
 \end{itemize}
 
 \subsubsection{DatasetPageView}
@@ -230,5 +238,5 @@
 \end{itemize}
 \textbf{Servizio}
 \begin{itemize}
-    \item LLMService: servizio utilizzato per ottenere la lista degli LLM salvati sui quali è possibile effettuare il test.
+    \item \textbf{LLMService}: servizio iniettato tramite `@Injectable`, fornisce le funzionalità principali per la gestione della scelta del LLM per l'esecuzione di un test.
 \end{itemize}

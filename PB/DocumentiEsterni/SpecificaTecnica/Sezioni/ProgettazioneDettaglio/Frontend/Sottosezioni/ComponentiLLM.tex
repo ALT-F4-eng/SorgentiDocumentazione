@@ -1,19 +1,23 @@
 \subsubsection{LLMListPage}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
 \textbf{Modulo}
 \begin{itemize}
-    \item LLMListModule, modulo funzionale dell'applicazione che offre i servizi di collegamento legati alla creazione, visualizzazione e cancellazione degli LLM. 
+    \item LLMModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati alla creazione, visualizzazione e gestione degli LLM.
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item lista scorrevole degli LLM salvati, realizzata tramite sottocomponente \textbf{LLMListView};
-    \item popup di conferma di eliminazione di un LLM \textbf{ConfirmComponent};
-    \item messaggio di errore visualizzato in seguito ad'un errore nell'ottenimento o nel salvataggio dei dati, realizzato tramite sottocomponente \textbf{MessageComponent}.
+    \item \textbf{LLMListContainer}: lista scorrevole degli LLM salvati, realizzata tramite sottocomponente \textbf{LLMListView};
+    \item \textbf{AddButton}: pulsante che permette la creazione di un nuovo LLM, realizzata tramite sottocomponente \textbf{LLMForm};
+    \item \textbf{DeleteMessage}: popup di conferma di eliminazione di un LLM, realizzato tramite il sottocomponente \textbf{ConfirmComponent};
+    \item \textbf{ErrorMessage}: messaggio di errore visualizzato in seguito ad'un errore nell'ottenimento o nel salvataggio dei dati, realizzato tramite sottocomponente \textbf{MessageComponent}.
 \end{itemize}
-\textbf{Servizio} \\
+\textbf{Servizio}
 \begin{itemize}
-    \item LLMListService, servizio che permette l'esecuzione di operazioni CRUD sulla lista dei LLM salvati.
+    \item \textbf{LLMService}: servizio iniettato tramite `@Injectable`, fornisce le operazioni per la gestione di un elemento della lista di LLM.
 \end{itemize}
-
 \subsubsection{LLMListView}
 \textbf{Componente padre}
 \begin{itemize}
@@ -21,20 +25,18 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item \textbf{LLMList}: lista scorrevole degli LLM salvati nel sistema, per ogni LLM salvato esiste un suo \textbf{DatasetElement}.
+    \item \textbf{LLMList}: lista scorrevole degli LLM salvati, permette la creazione di un sottocomponente \textbf{LLMElement} per ogni LLM salvato (tramite la direttiva *\texttt{ngFor});
     \item \textbf{StatusMessage}: visualizzato un messaggio che indica all'utente nel caso non ci siano LLM salvati nel sistema;
 \end{itemize}
 \textbf{Input}
 \begin{itemize}
-    \item LLM: lista contenente tutti i LLM salvati nel sistema.
+    \item LLMs: lista contenente tutti i LLM salvati nel sistema.
 \end{itemize}
 \textbf{Output}
 \begin{itemize}
-    \item view LLM: evento emesso quando riceve da \textbf{LLMElement} la richiesta di visuazzazione di un LLM;
-    \item add LLM: evento emesso quando riceve da \textbf{LLMElement} la richiesta di aggiunta di un LLM;
-    \item delete LLM: evento emesso quando riceve da \textbf{LLMElement} la richiesta di eliminazione di un LLM;
+    \item viewLLM: evento emesso quando riceve da \textbf{LLMElement} la richiesta di visualizzare un LLM;
+    \item deleteLLM: evento emesso quando riceve da \textbf{LLMElement} la richiesta di eliminazione di un LLM;
 \end{itemize}
-
 \subsubsection{LLMElement}
 \textbf{Componente padre}
 \begin{itemize}
@@ -42,9 +44,10 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item \textbf{viewButton}: pulsante che porta nella pagina di \textbf{LLMPage} per visualizzare in dettaglio del LLM Selezionato.
-    \item \textbf{AddButton}: pulsante per aggiungere un nuovo LLM; 
-    \item \textbf{DeleteButton}: permette di cancellare il LLM corrispondente.
+    \item \textbf{LLMNameText}: sezione testuale contenente il nome dell'LLM;
+    \item \textbf{LLMDateText}: sezione testuale contenente la data dell'ultima modifica dell'LLM;
+    \item \textbf{loadButton}: pulsante per richiedere il caricamento della pagina di visualizzazione del LLM;
+    \item \textbf{DeleteButton}: pulsante per richiedere l'eliminazione dell'LLM, questa viene poi confermata o annullata tramite il sottocomponente \textbf{ConfirmComponent};
 \end{itemize}
 \textbf{Input}
 \begin{itemize}
@@ -52,27 +55,27 @@
 \end{itemize}
 \textbf{Output}
 \begin{itemize}
-    \item view: evento emesso quando viene premuto il pulsante per richiedere visualizzazione dell'LLM.
-    \item add: evento emesso quando viene premuto il pulsante per richiedere aggiunta di un nuovo LLM;
+    \item load: evento emesso quando viene premuto il pulsante per richiedere visualizzazione dell'LLM.
     \item delete: evento emesso quando viene premuto il pulsante per richiedere eliminazione dell'LLM;
 \end{itemize}
-
-
 \subsubsection{LLMPage}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
 \textbf{Modulo}
 \begin{itemize}
-    \item LLMModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i servizi e risorse legati alla creazione, visualizzazione e modifica di LLM. 
+    \item LLMModule, modulo funzionale dell'applicazione che raccoglie e organizza tutti i componenti, servizi e risorse legati alla creazione, visualizzazione e gestione degli LLM.
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item visualizza le informazioni dettagliate riguardo al LLM selezionato, realizzato tramite sottocomponente \textbf{LLMView} 
-    \item visualizza i campi dati da compilare/modificare in caso di una aggiunta LLM, realizzato tramite sottocomponente \textbf{LLMForm}  
-    \item messaggio di errore visualizzato in seguito ad'un errore nell'ottenimento o nel salvataggio dei dati, realizzato tramite sottocomponente \textbf{MessageComponent}.
+    \item \textbf{LLMContainer}: visualizza le informazioni dettagliate del LLM selezionato, realizzato tramite sottocomponente \textbf{LLMView} 
+    \item \textbf{ModifyButton}: pulsante per la modifica dei dettagli del LLM, la modifica viene realizzata tramite sottocomponente \textbf{LLMForm}  
+    \item \textbf{ErrorMessage}: messaggio di errore visualizzato in seguito a un errore durante l'ottenimento o il salvataggio dei dati, realizzato tramite sottocomponente \textbf{MessageComponent}.
 \end{itemize}
 \begin{itemize}
-    \item LLMService, servizio che permette l'esecuzione di operazioni CRUD sul LLM.
+    \item LLMService, servizio iniettato tramite `@Injectable`, fornisce le operazioni per la gestione di un LLM salvato.
 \end{itemize}
-
 \subsubsection{LLMView}
 \textbf{Componente padre}
 \begin{itemize}
@@ -82,46 +85,66 @@
 \begin{itemize}
     \item \textbf{NameText}: sezione testuale contenente il nome del LLM; 
     \item \textbf{LastUpdateText}: sezione testuale contenente la data dell'ultima modifica del LLM;
-    \item \textbf{URLText}: sezione testuale contenente l’URL usato per l’esecuzione delle chiamate HTTP all’API dell’LLM;
-    \item \textbf{HeaderText}: sezione testuale contenente le coppie chiave-valore per la costruzione dell’header delle chiamate;
+    \item \textbf{URLText}: sezione testuale contenente l'URL usato per l'esecuzione delle chiamate HTTP all'API dell'LLM;
+    \item \textbf{HeaderText}: sezione testuale contenente le coppie chiave-valore per la costruzione dell'header delle chiamate;
     \item \textbf{BodyText}: sezione testuale contenente le coppie chiave-valore per la costruzione del body delle chiamate;
-    \item \textbf{QuestionText}: sezione testuale contenente la chiave da utilizzare per specificare la domanda da porre all’LLM nel body delle richieste HTTP;
-    \item \textbf{AnswerText}: sezione testuale contenente la chiave da utilizzare per estrarre la risposta data dall’LLM contenuta nelle risposte HTTP;
+    \item \textbf{QuestionText}: sezione testuale contenente la chiave da utilizzare per specificare la domanda da porre all'LLM nel body delle richieste HTTP;
+    \item \textbf{AnswerText}: sezione testuale contenente la chiave da utilizzare per estrarre la risposta data dall'LLM contenuta nelle risposte HTTP;
     \item \textbf{ModifyButton}: pulsate per abilitare la modifica dell'LLM selezionato.
 \end{itemize}
 \textbf{input}
 \begin{itemize}
-    \item selected LLM: viene fornita le informazioni sul LLM selezionata.
+    \item name: riceve le informazioni del LLM selezionato.
+    \item date: data dell'ultima modifica del LLM;
+    \item url: URL usato per l'esecuzione delle chiamate HTTP all'API dell'LLM;
+    \item header: coppie chiave-valore per la costruzione dell'header delle chiamate;
+    \item body: coppie chiave-valore per la costruzione del body delle chiamate;
+    \item question: chiave da utilizzare per specificare la domanda da porre all'LLM nel body delle richieste HTTP;
+    \item answer: chiave da utilizzare per estrarre la risposta data dall'LLM contenuta nelle risposte HTTP;
 \end{itemize}
 \textbf{Output}
 \begin{itemize}
-    \item rename LLM: evento emesso quando viene premuto il pulsante di modificazione;
+    \item modifyLLM: evento emesso quando viene premuto il pulsante per richiedere la modifica dell'LLM;
 \end{itemize}
-
 \subsubsection{LLMForm}
 \textbf{Componente padre}
 \begin{itemize}
+    \item LLMListPage;
     \item LLMPage.
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item \textbf{NewNameLLM}: campo di input per modificare il nome dell'LLM;
-    \item \textbf{NewURL}: campo di input per modificare L'URL del LLM;
-    \item \textbf{NewKeyQuestion}: campo di input per modificare chiave associata alla domanda da porre all'LLM.
-    \item \textbf{NewKeyAnswer}: campo di input per modificare chiave associata alla risposta da porre all'LLM.
-    \item \textbf{NewKeyHeader} due campi di input per modificare ogni coppia chiave-valore associata alla creazione dell’header delle richieste HTTP verso l’LLM.
-    \item \textbf{AddHeaderButton}: pulsante per l'inserimento di una oppia chiave-valore associata alla creazione dell’header delle richieste HTTP verso l’LLM.
-    \item \textbf{NewKeyBody} due campi di input per modificare ogni coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l’LLM
-    \item \textbf{AddBodyButton}: pulsante per l'inserimento di una oppia chiave-valore associata alla creazione del body delle richieste HTTP verso l’LLM; 
+    \item \textbf{NameLabel}: etichetta associata al campo di inserimento del nome;
+    \item \textbf{NameInput}: campo di input per modificare il nome dell'LLM;
+    \item \textbf{URLLabel}: etichetta associata al campo di inserimento del URL;
+    \item \textbf{URLInput}: campo di input per modificare L'URL del LLM;
+    \item \textbf{NewKeyQuestionLabel}: etichetta associata al campo di inserimento della chiave associata alla domanda da porre all'LLM;
+    \item \textbf{NewKeyQuestionInput}: campo di input per modificare chiave associata alla domanda da porre all'LLM;
+    \item \textbf{NewKeyAnswerLabel}: etichetta associata al campo di inserimento del chiave associata alla risposta da porre all'LLM;
+    \item \textbf{NewKeyAnswerInput}: campo di input per modificare chiave associata alla risposta da porre all'LLM;
+    \item \textbf{NewKeyHeaderLabel}: due etichette associate ai campi di inserimento del coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM;
+    \item \textbf{NewKeyHeaderInput}: due campi di input per modificare ogni coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM;
+    \item \textbf{NewKeyBodyLabel}: due etichette associate ai campi di inserimento del coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM;
+    \item \textbf{NewKeyBodyInput}: due campi di input per modificare ogni coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM;
+    \item \textbf{AddHeaderButton}: pulsante per l'inserimento di una coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM;
+    \item \textbf{AddBodyButton}: pulsante per l'inserimento di una coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM; 
     \item \textbf{SaveButton}: pulsante per salvare le modifiche;
     \item \textbf{AbortButton}: pulsante per annullare la modifica;
-    \item \textbf{ValidationFeedback}: messaggi di errore per input vuoti o duplicati;
+    \item \textbf{MessageText}: messaggi di errore per input vuoti o duplicati;
 \end{itemize}
 \textbf{input}
 \begin{itemize}
-    \item selecte: viene fornita le informazioni sul LLM selezionata.
+    \item name: nome del LLM da modificare se presente; 
+    \item url: URL del LLM da modificare;
+    \item question: chiave da utilizzare per specificare la domanda da porre all'LLM nel body delle richieste HTTP;
+    \item answer: chiave da utilizzare per estrarre la risposta data dall'LLM contenuta nelle risposte HTTP;
+    \item headerKeys: chiavi associate all'header delle chiamate;
+    \item headerValues: valori associati all'header delle chiamate;
+    \item bodyKeys: chiavi associate al body delle chiamate;
+    \item bodyValues: valori associati al body delle chiamate;
 \end{itemize}
 \textbf{Output}
 \begin{itemize}
-    \item confirm: evento emesso quando viene premuto il pulsante di salvataggio;
+    \item addLLM: evento emesso quando viene confermata l'aggiunta di un LLM;
+    \item modifyLLM: evento emesso quando viene confermata la modifica di un LLM.
 \end{itemize}
