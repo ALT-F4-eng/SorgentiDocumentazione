@@ -34,6 +34,7 @@ T.I.2 & Verificare che il componente "DatasetListPage" soddisfi le seguenti cond
     \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di caricamento di un dataset a partire da un file JSON;
     \item l'utente viene reindirizzato alla pagina del dataset caricato dopo aver premuto il pulsante di caricamento a schermo del dataset;%load
     \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di rinominazione del dataset;%rename
+    \item nel caso in cui l'utente premesse il pulsante di caricamento di un dataset per la sua visualizzazione, viene reindirizzato alla schermata per la conferma dell'operazione;
     \item nel caso in cui l'operazione di caricamento dei dati vada a buon fine, viene visualizzato un messaggio di successo;%
     \item nel caso in cui l'operazione di caricamento dei dati fallisse, viene visualizzato un messaggio di errore;
 \end{itemize}
@@ -53,6 +54,7 @@ T.I.3 & Verificare che il componente "DatasetContentPage" soddisfi le seguenti c
     \item controllare che "QAElement" ottenga correttamente i dati aggiornati della coppia domanda e risposta modificata dopo un operazione di modifica;
 % si ricorda che modifica comporta aggiornamento della lista
     \item deve restituire correttamente i risultati della ricerca sotto forma di elementi della lista di coppie di domande e risposte filtrate quando si effettua una ricerca;
+    \item nel caso in cui l'utente premesse il pulsante di eliminazione di una coppia domanda e risposta, viene reindirizzato alla schermata per la conferma dell'operazione;
     \item nel caso in cui l'operazione di ottenimento dei dati fallisse, viene visualizzato un messaggio di errore;
     \item nel caso in cui l'operazione di salvataggio dei dati vada a buon fine, viene visualizzato un messaggio di successo;
     \item nel caso in cui l'operazione di esecuzione del test fallisse a causa di elementi incompleti, viene visualizzato un messaggio di errore;
@@ -85,6 +87,8 @@ T.I.5 & Verificare che il componente "TestListPage" soddisfi le seguenti condizi
     \item controllare che "TestListView" ottenga correttamente la lista aggiornata dei test salvati dopo un operazione di eliminazione;
     \item controllare che "TestListView" ottenga correttamente la lista dei test salvati dopo un operazione di cambio pagina;
     \item controllare che "TestElement" ottenga correttamente i dati del test;
+    \item nel caso in cui l'utente premesse il pulsante di eliminazione di un test, viene reindirizzato alla schermata per la conferma dell'operazione;
+    \item nel caso in cui l'utente premesse il pulsante di caricamento di un test per la sua visualizzazione, viene reindirizzato alla schermata per la conferma dell'operazione;
     \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di caricamento del test;
     \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di rinominazione del test;
 \end{itemize}
@@ -116,6 +120,8 @@ T.I.7 & Verificare che il componente "LLMListPage" soddisfi le seguenti condizio
     \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di eliminazione del LLM;%delete
     \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di creazione di un LLM;%add
     \item l'utente viene reindirizzato nella schermata di avvertimento dopo aver riscontrato un errore
+\end{itemize}
+& -\\
 \hline
 T.I.8 & Verificare che il componente "LLMPage" soddisfi le seguenti condizioni:
 \begin{itemize}
