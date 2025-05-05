@@ -121,8 +121,9 @@ T.I.8 & Verificare che il componente "LLMPage" soddisfi le seguenti condizioni:
 \begin{itemize}
     \item controllare che vengano recuperate correttamente le informazioni dell'LLM salvato tramite "LLMService";
     \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di modifica di un LLM;
-    \item controllare che "LLForm" ottenga correttamente i dati dell'LLM salvato;
-    \item 
+    \item nel caso in cui l'operazione di ottenimento dei dati fallisse, viene visualizzato un messaggio di errore;
+    \item nel caso in cui l'operazione di salvataggio dei dati fallisse, viene visualizzato un messaggio di errore;
+    \item nel caso in cui l'operazione di salvataggio dei dati vada a buon fine, viene visualizzato un messaggio di successo;
 \end{itemize}
 & -\\
 \hline
