@@ -69,14 +69,15 @@
 \end{itemize}
 \textbf{Elementi chiave}
 \begin{itemize}
-    \item \textbf{LLMContainer}: visualizza le informazioni dettagliate del LLM selezionato, realizzato tramite sottocomponente \textbf{LLMView} 
+    \item \textbf{LLMContainer}: visualizza le informazioni dettagliate del LLM selezionato, realizzato tramite sottocomponente \textbf{LLMPageView} 
     \item \textbf{ModifyButton}: pulsante per la modifica dei dettagli del LLM, la modifica viene realizzata tramite sottocomponente \textbf{LLMForm}  
     \item \textbf{ErrorMessage}: messaggio di errore visualizzato in seguito a un errore durante l'ottenimento o il salvataggio dei dati, realizzato tramite sottocomponente \textbf{MessageComponent}.
 \end{itemize}
+\textbf{Servizio}
 \begin{itemize}
     \item LLMService, servizio iniettato tramite `@Injectable`, fornisce le operazioni per la gestione di un LLM salvato.
 \end{itemize}
-\subsubsection{LLMView}
+\subsubsection{LLMPageView}
 \textbf{Componente padre}
 \begin{itemize}
     \item LLMPage.
@@ -118,26 +119,31 @@
     \item \textbf{NameInput}: campo di input per modificare il nome dell'LLM;
     \item \textbf{URLLabel}: etichetta associata al campo di inserimento del URL;
     \item \textbf{URLInput}: campo di input per modificare L'URL del LLM;
-    \item \textbf{NewKeyQuestionLabel}: etichetta associata al campo di inserimento della chiave associata alla domanda da porre all'LLM;
-    \item \textbf{NewKeyQuestionInput}: campo di input per modificare chiave associata alla domanda da porre all'LLM;
-    \item \textbf{NewKeyAnswerLabel}: etichetta associata al campo di inserimento del chiave associata alla risposta da porre all'LLM;
-    \item \textbf{NewKeyAnswerInput}: campo di input per modificare chiave associata alla risposta da porre all'LLM;
-    \item \textbf{NewKeyHeaderLabel}: due etichette associate ai campi di inserimento del coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM;
-    \item \textbf{NewKeyHeaderInput}: due campi di input per modificare ogni coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM;
-    \item \textbf{NewKeyBodyLabel}: due etichette associate ai campi di inserimento del coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM;
-    \item \textbf{NewKeyBodyInput}: due campi di input per modificare ogni coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM;
-    \item \textbf{AddHeaderButton}: pulsante per l'inserimento di una coppia chiave-valore associata alla creazione dell'header delle richieste HTTP verso l'LLM;
-    \item \textbf{AddBodyButton}: pulsante per l'inserimento di una coppia chiave-valore associata alla creazione del body delle richieste HTTP verso l'LLM; 
+    \item \textbf{KeyHeaderLabel}: etichetta associata al campo di inserimento della nuova chiave dell'header;
+    \item \textbf{KeyHeaderInput}: campo di input per modificare la nuova chiave dell'header;
+    \item \textbf{ValueHeaderLabel}: etichetta associata al campo di inserimento del nuovo valore dell'header;
+    \item \textbf{ValueHeaderInput}: campo di input per modificare il nuovo valore dell'header;
+    \item \textbf{AddHeaderButton}: pulsante per aggiungere la coppia chiave-valore all'header;
+    \item \textbf{KeyBodyLabel}: etichetta associata al campo di inserimento della nuova chiave del body;
+    \item \textbf{KeyBodyInput}: campo di input per modificare la nuova chiave del body;
+    \item \textbf{ValueBodyLabel}: etichetta associata al campo di inserimento del nuovo valore del body;
+    \item \textbf{ValueBodyInput}: campo di input per modificare il nuovo valore del body;
+    \item \textbf{AddBodyButton}: pulsante per aggiungere la coppia chiave-valore al body;
+    \item \textbf{QuestionKeyLabel}: etichetta associata al campo di inserimento della chiave da associare alle domande poste all'LLM;
+    \item \textbf{QuestionKeyInput}: campo di input per modificare la chiave da associare alle domande poste all'LLM;
+    \item \textbf{AnswerKeyLabel}: etichetta associata al campo di inserimento della chiave da associare alle risposte fornite dall'LLM;
+    \item \textbf{AnswerKeyInput}: campo di input per modificare la chiave da associare alle risposte fornite dall'LLM;
     \item \textbf{SaveButton}: pulsante per salvare le modifiche;
     \item \textbf{AbortButton}: pulsante per annullare la modifica;
-    \item \textbf{MessageText}: messaggi di errore per input vuoti o duplicati;
+    \item \textbf{ErrorMessage}: messaggio di errore visualizzato in seguito alla compilazione errata di una coppia chiave-valore, realizzato tramite sottocomponente \textbf{MessageComponent};
+    \item \textbf{StatusMessage}: popup di conferma di salvataggio delle modifiche, realizzato tramite sottocomponente \textbf{MessageComponent};
 \end{itemize}
 \textbf{input}
 \begin{itemize}
     \item name: nome del LLM da modificare se presente; 
     \item url: URL del LLM da modificare;
-    \item question: chiave da utilizzare per specificare la domanda da porre all'LLM nel body delle richieste HTTP;
-    \item answer: chiave da utilizzare per estrarre la risposta data dall'LLM contenuta nelle risposte HTTP;
+    \item question: chiave da associare alle domande poste all'LLM;
+    \item answer: chiave da associare alle risposte fornite dall'LLM;
     \item headerKeys: chiavi associate all'header delle chiamate;
     \item headerValues: valori associati all'header delle chiamate;
     \item bodyKeys: chiavi associate al body delle chiamate;

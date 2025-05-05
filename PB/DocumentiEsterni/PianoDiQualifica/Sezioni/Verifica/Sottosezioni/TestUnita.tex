@@ -15,6 +15,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
         \item viene chiamata correttamente la funzione di creazione di un dataset temporaneo quando si preme il pulsante "Crea nuovo dataset";
         \item viene visualizzato correttamente il pulsante di caricamento di un dataset a partire da un file JSON;
         \item viene visualizzato correttamente il popup di conferma della sovrascrittura del dataset attuale; 
+        \item viene visualizzata correttamente la pagina contenente la lista dei dataset salvati;
     \end{itemize} 
     & - \\
     \hline
@@ -22,7 +23,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     & Verificare che il componente "DatasetListView" soddisfi le seguenti condizioni: 
     \begin{itemize}
         \item viene visualizzata correttamente la lista di dataset salvati, se presenti;
-        \item viene visualizzata correttamente il messaggio che avverte dell'assenza di dataset salvati, se non presenti;
+        \item viene visualizzato correttamente il messaggio che avverte dell'assenza di dataset salvati, se non presenti;
     \end{itemize} 
     & - \\
     \hline
@@ -30,7 +31,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     & Verificare che il componente "DatasetElement" soddisfi le seguenti condizioni: 
     \begin{itemize}
         \item viene visualizzato correttamente il nome del dataset;
-        \item viene visualizzato correttamente la data dell'ultima modifica del dataset;
+        \item viene visualizzata correttamente la data dell'ultima modifica del dataset;
         \item viene visualizzato correttamente il pulsante di rinominazione del dataset;
         \item viene visualizzato correttamente il pulsante di clonazione del dataset;
         \item viene chiamata correttamente la funzione di clonazione del dataset quando si preme il pulsante "Copia Dataset";
@@ -82,7 +83,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \label{tu:tu7}T.U.7 & Verificare che il componente "DatasetPageView" soddisfi le seguenti condizioni: 
     \begin{itemize}
         \item viene visualizzata correttamente la pagina contenente le coppie di domande e risposte;
-        \item viene visualizzata correttamente sezione per la navigazione tra le pagine del dataset;
+        \item viene visualizzata correttamente la sezione per la navigazione tra le pagine del dataset;
     \end{itemize}
     & - \\
     \hline
@@ -100,7 +101,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
         \item viene visualizzato correttamente il pulsante per la modifica della coppia domanda e risposta;
         \item viene chiamata correttamente la funzione di modifica della coppia domanda e risposta quando viene premuto il pulsante "Modifica";
         \item viene visualizzato correttamente il pulsante per l'eliminazione della coppia domanda e risposta;
-        \item viene visualizzata correttamente la finestra a comparsa per la conferma o l'annullamento dell'operazione di eliminazione;
+        \item viene visualizzata correttamente il popup per la conferma o l'annullamento dell'operazione di eliminazione;
         \item viene chiamata correttamente la funzione di eliminazione della coppia domanda e risposta quando viene premuto il pulsante "Conferma eliminazione";
         \item viene interrotta l'operazione quando l'utente preme il pulsante "Annulla" durante il processo di eliminazione della coppia domanda e risposta;
     \end{itemize}
@@ -111,9 +112,9 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
         \item viene visualizzata correttamente l'etichetta della domanda;
         \item viene visualizzata correttamente l'etichetta della risposta;
         \item viene visualizzato correttamente il campo di inserimento per la domanda;  
-        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento per la domande; 
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento per la domanda; 
         \item viene visualizzato correttamente il campo di inserimento per la risposta;
-        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento per la domande; 
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento per la risposta; 
         \item viene visualizzato correttamente il pulsante di conferma dell'aggiunta;
         \item viene chiamata correttamente la funzione di aggiunta della coppia domanda e risposta quando viene premuto il pulsante "Conferma";
     \end{itemize}
@@ -142,7 +143,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline
     \label{tu:tu13}T.U.13 & Verificare che il componente "SearchBar" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item viene visualizzata correttamente il campo di inserimento dei dati della ricerca;
+        \item viene visualizzato correttamente il campo di inserimento dei dati della ricerca;
         \item è possibile inserire caratteri compresi da UTF-8 all'interno della barra di ricerca;
         \item viene visualizzata correttamente l'icona della lente d'ingrandimento per avviare la ricerca;
         \item viene chiamata correttamente la funzione di ricerca quando viene compilato il campo di inserimento dei dati e premuto il tasto "Invio".
@@ -160,14 +161,14 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \label{tu:tu15}T.U.15 & Verificare che il componente "TestListView" soddisfi le seguenti condizioni: 
     \begin{itemize}
         \item viene visualizzata correttamente la lista di test salvati, se presenti;
-        \item viene visualizzata correttamente il messaggio che avverte dell'assenza di test salvati, se non presenti;
+        \item viene visualizzato correttamente il messaggio che avverte dell'assenza di test salvati, se non presenti;
     \end{itemize}
     & - \\
     \hline
     \label{tu:tu16}T.U.16 & Verificare che il componente "TestElement" soddisfi le seguenti condizioni: 
     \begin{itemize}
         \item viene visualizzato correttamente il nome del test;
-        \item viene visualizzato correttamente la data di esecuzione del test;
+        \item viene visualizzata correttamente la data di esecuzione del test;
         \item viene visualizzato correttamente il pulsante di rinominazione del test;
         \item viene visualizzato correttamente il pulsante di eliminazione del test;
         \item viene visualizzato correttamente il popup di conferma della eliminazione del test attuale; 
@@ -203,7 +204,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \begin{itemize}
         \item viene visualizzata correttamente la sezione per la navigazione tra le pagine dei risultati del test;
         \item viene visualizzata correttamente la pagina contenente i risultati del test;
-        \item viene visualizzato correttamente la sezione contenente il diagramma di dispersione;
+        \item viene visualizzata correttamente la sezione contenente il diagramma di dispersione;
     \end{itemize}
     & - \\
     \hline
@@ -225,7 +226,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline
     \label{tu:tu22}T.U.22 & Verificare che il componente "BarDiagram" soddisfi le seguenti condizioni: 
     \begin{itemize}
-        \item viene visualizzato correttamente diagramma a barre indicante la quantità di elementi per intervallo di correttezza;
+        \item viene visualizzato correttamente il diagramma a barre indicante la quantità di elementi per intervallo di correttezza;
         \item in caso di confronto viene visualizzato correttamente il confronto tra i diagrammi a barre dei due test;
         \item viene visualizzata correttamente la singola sezione del diagramma a barre;
         \item viene visualizzata correttamente l'etichetta delle sezioni dei diagrammi a barre; 
@@ -238,8 +239,8 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
         \item viene visualizzato correttamente il diagramma di dispersione indicante la correttezza degli elementi del test;
         \item viene visualizzato correttamente il singolo elemento del diagramma di dispersione;
         \item in caso di confronto viene visualizzato correttamente il confronto tra i diagrammi di dispersione dei due test;
-        \item viene visualizzato correttamente l'etichetta dell'asse X del diagramma di dispersone;
-        \item viene visualizzato correttamente l'etichetta dell'asse Y del diagramma di dispersone;
+        \item viene visualizzata correttamente l'etichetta dell'asse X del diagramma di dispersone;
+        \item viene visualizzata correttamente l'etichetta dell'asse Y del diagramma di dispersone;
         \item viene visualizzata correttamente la legenda descrittiva dei diagramma di dispersone;
     \end{itemize}
     & - \\
@@ -284,7 +285,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \begin{itemize}
         \item viene visualizzata correttamente la sezione per la navigazione tra le pagine dei risultati confrontati dei test;
         \item viene visualizzata correttamente la pagina contenente i risultati confrontati dei test;
-        \item viene visualizzato correttamente la sezione contenente il diagramma di dispersione rappresentate il confronto dei risultati dei test;
+        \item viene visualizzata correttamente la sezione contenente il diagramma di dispersione rappresentate il confronto dei risultati dei test;
     \end{itemize}
     & - \\
     \hline
@@ -294,7 +295,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \end{itemize}
     & - \\
     \hline
-    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonElement" soddisfi le seguenti condizioni: 
+    \label{tu:tu31}T.U.31 & Verificare che il componente "ComparisonElement" soddisfi le seguenti condizioni: 
     \begin{itemize}
         \item viene visualizzato correttamente il testo della domanda fornita al LLM;
         \item viene visualizzato correttamente il testo della risposta ottenuta dal LLM nel test caricato;
@@ -308,16 +309,133 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \end{itemize}
     & - \\
     \hline
-    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu32}T.U.32 & Verificare che il componente "StandardPage" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il menu di navigazione;
+        \item viene visualizzato correttamente il footer della pagina;
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu33}T.U.33 & Verificare che il componente "MenuComponent" soddisfi le seguenti condizioni:
+    \begin{itemize}
+        \item viene visualizzato correttamente il logo;
+        \item viene visualizzato correttamente il link alla pagina home;
+        \item viene visualizzato correttamente il link alla pagina della gestione dei dataset;
+        \item viene visualizzato correttamente il link alla pagina della gestione dei test;
+        \item viene visualizzato correttamente il link alla pagina della gestione degli LLM;
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu34}T.U.34 & Verificare che il componente "FooterComponent" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il testo contenente le informazioni relative al copyright;
+        \item viene visualizzato correttamente il testo contenente le informazioni di contatto del gruppo; 
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu35}T.U.35 & Verificare che il componente "LoadingComponent" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente l'icona di caricamento;
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu36}T.U.36 & Verificare che il componente "MessageComponent" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il messaggio informativo che l'utente deve visualizzare;
+        \item viene visualizzato correttamente il messaggio di errore che l'utente deve visualizzare;
+    \end{itemize}
+    & - \\
     \hline
-    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: & - \\
+    \label{tu:tu37}T.U.37 & Verificare che il componente "ConfirmComponent" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il pulsante di conferma che permette di confermare un operazione;
+        \item viene visualizzato correttamente il pulsante di annullamento che permette di annullare un operazione;
+    \end{itemize}
+    & - \\
     \hline
+    \label{tu:tu38}T.U.38 & Verificare che il componente "LLMListPage" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la pagina contenente la lista degli LLM salvati;
+        \item viene visualizzato correttamente il pulsante che permette di creare un nuovo LLM;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu39}T.U.39 & Verificare che il componente "LLMListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista degli LLM salvati, se presenti;
+        \item viene visualizzato correttamente il messaggio che avverte dell'assenza di LLM salvati, se non presenti;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu40}T.U.40 & Verificare che il componente "LLMElement" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il nome del LLM;
+        \item viene visualizzata correttamente la data dell'ultima modifica del LLM;
+        \item viene visualizzato correttamente il pulsante di caricamento della pagina di visualizzazione del LLM;
+        \item viene visualizzato correttamente il pulsante di eliminazione del LLM;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu41}T.U.41 & Verificare che il componente "LLMPage" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la sezione che contenga tutte l'informazioni del LLM attuale;
+        \item viene visualizzato correttamente il pulsate che permette di modificare LLM attuale;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu42}T.U.42 & Verificare che il componente "LLMPageView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il nome del LLM;
+        \item viene visualizzata correttamente la data dell'ultima modifica del LLM;
+        \item viene visualizzato correttamente l'indirizzo l'URL del LLM ussato per l'esecuzione delle chiamate; 
+        \item vengono visualizzate correttamente le coppie chiave-valore per la costruzione dell'header delle chiamate;
+        \item vengono visualizzate correttamente le coppie chiave-valore per la costruzione del body delle chiamate;
+        \item viene visualizzata correttamente la chiave associata alle domande da porre all'LLM;
+        \item viene visualizzata correttamente la chiave da utilizzare per estrarre la risposte date dall'LLM;
+        \item viene visualizzato correttamente il pulsante che permette di modificare LLM attuale;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu43}T.U.43 & Verificare che il componente "LLMForm" soddisfi le seguenti condizioni:
+    \begin{itemize}
+        \item viene visualizzata correttamente l'etichetta "Nome" del campo di inserimento del nome da assegnare al LLM;
+        \item viene visualizzato correttamente il campo di inserimento del nome da assegnare al LLM;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento del nome da assegnare al LLM;
+        
+        \item viene visualizzato correttamente l'etichetta "URL" del campo di inserimento dell'URL del LLM;
+        \item viene visualizzato correttamente il campo di inserimento dell'URL del LLM;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento dell'URL del LLM;
+       
+        \item viene visualizzata correttamente l'etichetta "Header key" del campo di inserimento della nuova chiave dell'header;
+        \item viene visualizzato correttamente il campo di inserimento della nuova chiave dell'header;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della nuova chiave dell'header;
+        
+        \item viene visualizzata correttamente l'etichetta "Header Value" del campo di inserimento del nuovo valore dell'header;
+        \item viene visualizzato correttamente il campo di inserimento del nuovo valore dell'header;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento del nuovo valore dell'header;
+        
+        \item viene visualizzato correttamente il pulsante di aggiunta della nuova chiave-valore dell'header;
+        
+        \item viene visualizzata correttamente l'etichetta "Body Key" del campo di inserimento della nuova chiave del body;
+        \item viene visualizzato correttamente il campo di inserimento della nuova chiave del body;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della nuova chiave del body;
+        
+        \item viene visualizzata correttamente l'etichetta "Body Value" del campo di inserimento del nuovo valore del body;
+        \item viene visualizzato correttamente il campo di inserimento del nuovo valore del body;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento del nuovo valore del body;
+    
+        \item viene visualizzato correttamente il pulsante di aggiunta della nuova chiave-valore del body;
+        
+        \item viene visualizzata correttamente l'etichetta "Question Key" del campo di inserimento della chiave associata alle domande da porre all'LLM;
+        \item viene visualizzato correttamente il campo di inserimento della chiave associata alle domande da porre all'LLM;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della chiave associata alle domande da porre all'LLM;
+        
+        \item viene visualizzata correttamente l'etichetta "Answer Key" del campo di inserimento della chiave associata alla risposta fornita dall'LLM;
+        \item viene visualizzato correttamente il campo di inserimento della chiave associata alla risposta fornita dall'LLM;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della chiave associata alla risposta fornita dall'LLM;
+        
+        \item viene visualizzato correttamente il pulsante di salvataggio delle modifiche effettuate;
+        \item viene chiamata correttamente la funzione di salvataggio quando si preme il pulsante "Salva";
+        \item viene visualizzato correttamente il pulsante di annullamento delle modifiche effettuate;
+    \end{itemize}
 \end{tabularx}
