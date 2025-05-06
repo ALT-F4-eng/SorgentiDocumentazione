@@ -1,0 +1,113 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{custom}
+
+
+%--------------------VARIABILI--------------------
+\def\lastversion{v0.1}
+\def\title{Verbale interno}
+\def\date{6 Maggio 2025}
+%------------------------------------------------
+
+\begin{document}
+
+\primapagina
+
+\begin{registromodifiche}
+        \lastversion & 6 Maggio 2025 & Enrico Bianchi &  & Stesura verbale interno \\
+        \hline 
+\end{registromodifiche}
+
+\tableofcontents
+
+\newpage
+
+\section{Registro presenze}
+\begin{itemize}
+    \item[] \textbf{Data}: 6 Maggio 2025
+    \item[] \textbf{Ora inizio}:  10:00
+    \item[] \textbf{Ora fine}: 11:00
+    \item[] \textbf{Piattaforma}: Discord	
+\end{itemize}
+
+\begin{table}[H]
+\centering
+{\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{| X | X |}
+    \hline
+        \textbf{\large Componente} & 
+        \textbf{\large Presenza} \\ 
+    \hline 
+    \hline
+        Eghosa Matteo Igbinedion Osamwonyi&
+        Presente \\
+    \hline 
+        Guirong Lan&
+        Presente \\
+    \hline 
+        Enrico Bianchi&
+        Presente \\
+    \hline 
+        Francesco Savio&
+        Presente \\
+    \hline 
+        Marko Peric&
+        Presente \\
+    \hline 
+        Pedro Leoni&
+        Non presente \\
+    \hline 
+
+\end{tabularx}}
+\end{table}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Ordine del giorno}
+\begin{itemize}
+    \item Discussione sulle \glossario{issue} precedenti;
+    \item Pianificazione delle attività da svolgere durante lo \glossario{Sprint} 14;
+\end{itemize}    
+
+\subsection{Decisioni prese}
+    Il gruppo ha nominato Enrico Bianchi come responsabile per lo \glossario{sprint} 14.
+    Le decisioni prese per questo sprint sono:
+    \begin{itemize}
+        \item Effettuare la stesura dei test di unità del backend.
+        \item Effettuare la stesura dei test di integrazione del backend.
+        \item Iniziare con la codifica di alcune componenti del frontend.
+        \item Iniziare con la codifica della parte backend legata alle componenti frontend che si è deciso di implementare.
+    \end{itemize}
+    Per queste decisioni sono state pianificate le seguenti ore di lavoro:
+    \begin{itemize}  
+        \item 2 ore al responsabile
+        \item 30 ore al programmatore.
+        \item 16 ore al verificatore.
+    \end{itemize}
+
+\section{To Do/In progress}
+\begin{tabularx}{\textwidth}{|c|C|C|C|}
+    \hline
+        \textbf{Issue} & \textbf{Descrizione} & \textbf{Incaricato} & \textbf{Scadenza}\\
+    \hline 
+        \#423 & Stesura del verbale interno & Enrico Bianchi & 7 Maggio 2025\\
+    \hline
+        \#424 & Aggiornamento del Piano di Progetto & Enrico Bianchi & 7 Maggio 2025\\
+    \hline
+        \#425 & Aggiornamento del Piano di Qualifica & Enrico Bianchi & 7 Maggio 2025\\
+    \hline
+        \#426 & Test di unità back-end & Pedro Leoni, Francesco Savio & 9 Maggio 2025\\
+    \hline
+        \#427 & Test di integrazione back-end & Pedro Leoni, Francesco Savio & 9 Maggio 2025\\
+    \hline
+        \#428 & Implementazione componente StandardPage e sottocomponenti associati & Marko Peric & 9 Maggio 2025\\
+    \hline
+        \#429 & Implementazione componente DatasetListPage e sottocomponenti associati & Guirong Lan & 9 Maggio 2025\\
+    \hline
+        \#430 & Implementazione back-end legata a DatasetListPage & Eghosa Matteo Igbinedion Osamwonyi & 9 Maggio 2025\\
+    \hline
+    \end{tabularx}
+
+\end{document}
