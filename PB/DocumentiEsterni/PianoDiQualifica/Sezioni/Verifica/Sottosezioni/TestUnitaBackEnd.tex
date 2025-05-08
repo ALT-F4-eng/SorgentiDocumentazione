@@ -1,0 +1,173 @@
+\subsection{Test di unità}
+\label{subsec:test_unita}
+\begin{tabularx}{\textwidth}{|c|X|c|}
+    \hline
+    \textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\
+    \hline
+    \label{tu:tu44} T.U.44 & il metodo copy\_dataset della classe DatasetService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui il dataset da copiare non esiste deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item la copia creata deve avere nome che segue lo schema $nome_dataset_sorgente-copy-<n>$ dove $n$ è un numero crescente che indica l'ultima copia creata per il dataset;
+        \item nel caso in cui si verifichi un errore nella persistenza della nuova copia il metodo deve lanciare un eccezione di tipo PersistenceException;
+        \item la copia creata deve avere lo stesso numero di elementi del dataset da copiare;
+        \item la copia del dataset deve avere come data di ultimo salvataggio e data di primo salvataggio assegnate alla data attuale;
+        \item la copia del dataset non deve essere temporanea ovvero avere tmp a false.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu45} T.U.45 &  Il metodo create\_dataset\_tmp della classe DatasetService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui esista un dataset temporaneo deve sovrascriverlo;
+        \item il dataset temporaneo creato deve avere dimensione a zero, tmp a true e gli altri campi nulli;
+        \item nel caso in cui a creazione del nuovo dataset temporaneo generi un errore di persistenza il metodo deve lanciare un eccezione di tipo PersistenceException;
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu} T.U.46 & Il metodo delete\_dataset della classe DatasetUseCasedeve deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui il dataset da eliminare non esiste deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item insieme al dataset devono anche essere eliminati tutti i suoi elementi;
+        \item se il dataset da eliminare è associato a uno o più test essi devono essere eliminati.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu47} T.U.47 & Il metodo update\_dataset della classe DatasetUseCase deve soddisfare le seguenti condizioni:   
+    \begin{itemize}
+        \item se il dataset da aggiornare è temporaneo allora il metodo deve salvato;
+        \item se il dataset da aggiornare è salvato allora il metodo deve limitarsi ad aggiornarlo;
+        \item se il dataset da aggiornare è una working copy di un dataset salvato il metodo deve laciare un eccezione di tipo InvalidDatasetOperationException;
+        \item nel caso in cui l'aggiornamento/salvataggio del dataset generi un errore di persistenza il metodo deve lanciare un eccezione di tipo PersistenceException; 
+        \item se il nome ricevuto in input è vuoto il metodo deve lanciare un eccezione di tipo InvalidDatasetNameException;
+        \item se il dataset da salvare/aggiornare non esiste il metodo deve lanciare un errore di tipo DatasetNonExistentException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu48} T.U.48 & il metodo get\_all\_dataset della classe DatasetUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se la query string di input è vuota il metodo deve restituire tutti i dataset salvati;
+        \item il metodo deve restituire solo i dataset salvati che contengono nel proprio nome la query string;
+        \item se non esistono dataset salvati il metodo deve restituire una lista vuota.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu49} T.U.49 & il metodo get\_dataset\_by della classe DatasetUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il dataset richiesto non esiste il metodo deve lanciare un eccezione di tipo DatasetNonExistentException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu50} T.U.50 & il metodo save\_working\_copy della classe DatasetUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id fornito identifica un dataset che non è una working copy il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
+        \item se l'id fornito non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item il metodo deve eliminare il contenuto del dataset salvato da cui ha origine la working copy;
+        \item il metodo deve allocare gli elementi contenuti nella working copy al dataset da cui essa ha origine;
+        \item il metodo deve eliminare la working copy;
+        \item il metodo deve aggiornare la data di ultimo salvataggio del dataset di origine;
+        \item se durante le operazioni di persistenza avviene un errore il metodo deve lanciare un eccezione di tipo PersistenceException.  
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu51} T.U.51 & il metodo save\_working\_copy della classe DatasetUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item il metodo deve verificare che il file ricevuto rispetti il formato atteso, se non lo è deve lanciare un eccezione di tipo InvalidFileFormatException;
+        \item se il nome del dataset ricevuto in input è vuoto il metodo deve lanciare un eccezione di tipo InvalidDatasetNameException;
+        \item se avviene un errore di persistenza durante la creazione del nuovo dataset salvato il metodo deve lanciare un eccezione di tipo PersistenceException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu52} T.U.52 & il metodo create\_working\_copy della classe DatasetUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id ricevuto in input è associato a un dataset temporaneo o una working copy il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
+        \item se l'id ricevuto in input non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item se avviene un errore di persistenza durante la creazione della working copy il metodo deve lanciare un eccezione di tipo PersistenceException;
+        \item la working copy deve contenere gli stessi elementi del dataset di origine. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu53} T.U.53 & il metodo create\_qa della classe QaUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item  se esiste una coppia contenuta nel dataset che ha domanda e risposta uguali a quelle della coppia ricevuta in input deve lanciare un eccezione di tipo DuplicateQuestionAnswerException;
+        \item se il dataset identificato dall'id contenuto nella coppia domanda e risposta ricevuta in input non è temporaneo o non è una working copy di un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
+        \item se la domanda e la risposta contenute nella coppia ottenuta in input sono entrambe vuote o composte da soli spazi il metodo deve lanciare un eccezione di tipo InvalidQuestionAnswerException;
+        \item se l'id contenuto nella coppia ottenuta in input non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item se avviene un errore di persistenza durante la creazione della coppia domanda e risposta il metodo deve lanciare un errore di tipo DatasetNonExistentException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu54} T.U.54 & il metodo update\_qa della classe QaUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se non esiste nessuna coppia avente id uguale a quello della coppia ricevuta in input il metodo deve lanciare un eccezione di tipo QuestionAnswerNonExistentException;
+        \item se la coppia ricevuta in input contiene domanda e risposta vuote o composte da soli spazi il metodo deve lanciare un eccezione di tipo InvalidQuestionAnswerException;
+        \item se la coppia ricevuta in input condivide domanda e risposta con un altra coppia contenuta nello stesso dataset deve lanciare un eccezione di tipo DuplicateQuestionAnswerException;
+        \item se avviene un errore di persistenza durante l'aggiornamento della coppia il metodo deve lanciare un eccezione di tipo PersistenceException;
+        \item se il dataset identificato dall'id contenuto nella coppia domanda e risposta ricevuta in input non è temporaneo o non è una working copy di un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu55} T.U.55 & il metodo get\_qa\_page della classe QaUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id ricevuto in input non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item se il numero di pagina ricevuto in input è maggiore di zero o maggiore della pagina massima per il dataset il metodo deve lanciare un eccezione di tipo InvalidPageException;
+        \item se la query string non è vuota il metodo deve costruire le pagine di modo che contengano solo elementi la cui domanda e/o risposta la contiene.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu56} T.U.56 & il metodo get\_qa\_by\_id della classe QaUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se la coppia richiesta non esiste deve lanciare un eccezione di tipo QuestionAnswerNonExistentException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu} T.U.57 & il metodo delete\_qa della classe QaUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se la coppia richiesta non esiste deve lanciare un eccezione di tipo QuestionAnswerNonExistentException;
+        \item se il dataset identificato dall'id contenuto nella coppia domanda e risposta ricevuta in input non è temporaneo o non è una working copy di un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
+        \item se avviene un errore di persistenza durante l'aggiornamento della coppia il metodo deve lanciare un eccezione di tipo PersistenceException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu58} T.U.58 &  il metodo get\_result\_page della classe TestResultUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id ricevuto in input non è associato a nessun test il metodo deve lanciare un eccezione di tipo TestNonExistentException;
+        \item se il numero di pagina ricevuto in input è maggiore di zero o maggiore della pagina massima per il test il metodo deve lanciare un eccezione di tipo InvalidPageException;
+        \item se la query string non è vuota il metodo deve costruire le pagine di modo che siano  formate da risultati che la contengono.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu59} T.U.59 & il metodo run\_test della classe TestUseCase deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item a 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu} T.U. &
+    \begin{itemize}
+        \item a 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu} T.U. &
+    \begin{itemize}
+        \item a 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu} T.U. &
+    \begin{itemize}
+        \item a 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu} T.U. &
+    \begin{itemize}
+        \item a 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu} T.U. &
+    \begin{itemize}
+        \item a 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu} T.U. &
+    \begin{itemize}
+        \item a 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu} T.U. &
+    \begin{itemize}
+        \item a 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu} T.U. &
+    \begin{itemize}
+        \item a 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu} T.U. &
+    \begin{itemize}
+        \item a 
+    \end{itemize} & - \\
+    \hline 
+\end{tabularx}
