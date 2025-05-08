@@ -23,16 +23,14 @@
 \subsubsection{SearchBar}
 \textbf{Componente padre}:
 \begin{itemize}
+    \item DatasetListPage;
+    \item DatasetContentPage;
     \item TestListPage;
 \end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
     \item \textbf{InputField}: campo di input per inserire parole chiave da cercare;
     \item \textbf{SearchIcon}: icona cliccabile per avviare la ricerca;
-\end{itemize}
-\textbf{Input}:
-\begin{itemize}
-    \item \textbf{keywords}: parole chiave su cui effettuare la ricerca;
 \end{itemize}
 \textbf{Output}:
 \begin{itemize}
@@ -52,7 +50,6 @@
 \begin{itemize}
     \item \textbf{SearchTest}: barra di ricerca per filtrare i test salvati, realizzata tramite il sottocomponente \textbf{SearchBar};
     \item \textbf{TestListContainer}: lista scorrevole dei test salvati, realizzata tramite il sottocomponente \textbf{TestListView};
-    \item \textbf{UploadButton}: pulsante che permette di richiedere il caricamento di un test a partire da un file JSON, il caricamento viene poi effettuato tramite il sottocomponente \textbf{TestUploadForm}; 
 \end{itemize}
 \textbf{Servizio}
 \begin{itemize}
@@ -88,6 +85,7 @@
 \begin{itemize}
     \item \textbf{TestName}: sezione testuale contenente il nome del test;
     \item \textbf{TestDate}: sezione testuale contenente la data di esecuzione del test;
+    \item \textbf{TestDatasetName}: sezione testuale contenente il nome del dataset associato al test;
     \item \textbf{RenameButton}: pulsante per richiedere la rinominazione del test, questa viene poi effettuata tramite il sottocomponente \textbf{TestNameForm};
     \item \textbf{DeleteButton}: pulsante per richiedere l'eliminazione del test, questa viene poi confermata o annullata tramite il sottocomponente \textbf{ConfirmComponent};
     \item \textbf{LoadButton}: pulsante per richiedere il caricamento del test, se il test attualmente caricato presenta modifiche viene richiesta la conferma o l'annullamento della sovrascrittura tramite il sottocomponente \textbf{ConfirmComponent};
@@ -95,7 +93,6 @@
 \textbf{Input}:
 \begin{itemize}
     \item \textbf{dataset}: dataset associato al test;
-    \item \textbf{llm}: LLM associato al dataset;
 \end{itemize}
 \textbf{Output}:
 \begin{itemize}
@@ -111,7 +108,8 @@
 \end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
-    \item \textbf{New Name Label}: label che permette di inserire il nuovo nome da assegnare al test;
+    \item \textbf{NewNameLabel}: etichetta associata al campo di inserimento del nuovo nome;
+    \item \textbf{NewNameInput}: campo di inserimento del nuovo nome da assegnare al test;
     \item \textbf{ConfirmButton}: pulsante per confermare il nuovo nome;
     \item \textbf{AbortButton}: pulsante per annullare la modifica;
 \end{itemize}
@@ -122,7 +120,6 @@
 \textbf{Output}:
 \begin{itemize}
     \item \textbf{confirmRename}: evento emesso quando viene premuto il pulsante per confermare l'assegnazione o modifica del nome del test;
-    \item \textbf{cancelRename}: evento emesso quando viene premuto il pulsante per annullare l'assegnazione o modifica del nome del test;
 \end{itemize}
 \subsubsection{TestPage}
 \textbf{Componente padre}
@@ -135,12 +132,12 @@
 \end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
-    \item \textbf{Name Text}: sezione testuale contenente il nome del test caricato, nel caso non sia temporaneo;
-    \item \textbf{Temporary Text}: sezione testuale contenente il messaggio che informa l'utente che il test caricato è temporaneo;
-    \item \textbf{Summary Section}: sezione di visualizzazione dei dati sintetici del test, realizzata tramite il sottocomponente \textbf{TestIndex};
-    \item \textbf{ComparisonButton}: pulsante che permette di richiedere il confronto tra il test corrente e un altro test salvato, il confronto viene poi effettuato tramite il sottocomponente \textbf{TestComparisonPage};
-    \item \textbf{SaveButton}: pulsante che permette il salvataggio delle modifiche non salvate realizzate sul test caricato; se il test caricato è temporaneo, viene successivamente richiesto di assegnargli un nome tramite il sottocomponente \textbf{TestNameForm};
-    \item \textbf{Graph Section}: sezione di visualizzazione dei vari tipi di grafico relativi ai risultati del test, realizzata tramite il sottocomponente \textbf{TestPageView};
+    \item \textbf{NameText}: sezione testuale contenente il nome del test caricato;
+    \item \textbf{TemporaryLabel}: sezione testuale contenente il messaggio che informa l'utente che il test caricato è temporaneo;
+    \item \textbf{SummarySection}: sezione di visualizzazione dei dati sintetici del test, realizzata tramite il sottocomponente \textbf{TestIndex};
+    \item \textbf{ComparisonButton}: pulsante che permette di richiedere il confronto tra il test corrente e un altro test salvato, la selezione del test da confrontare viene poi effettuata tramite il sottocomponente \textbf{TestSelectionComparison};
+    \item \textbf{SaveButton}: pulsante che permette il salvataggio del test se è temporaneo, viene successivamente richiesto di assegnargli un nome tramite il sottocomponente \textbf{TestNameForm};
+    \item \textbf{ResultSection}: sezione di visualizzazione dei risultati del test e del grafico di rappresentazione, realizzata tramite il sottocomponente \textbf{TestPageView};
     \item \textbf{ErrorMessage}: messaggio di errore che viene visualizzato in seguito a un errore nell'ottenimento o nel salvataggio dei dati, realizzato tramite il sottocomponente \textbf{MessageComponent};
 \end{itemize}
 \textbf{Servizio}
@@ -161,7 +158,7 @@
 \end{itemize}
 \textbf{Input}:
 \begin{itemize}
-    \item \textbf{Results}: array dei risultati da visualizzare;
+    \item \textbf{Results}: lista dei risultati da visualizzare;
 \end{itemize}
 \textbf{Output}:
 \begin{itemize}
@@ -188,7 +185,7 @@
     \item \textbf{PieChart}: sezione di visualizzazione del diagramma a torta;
     \item \textbf{ComparedPieChart}: sezione di visualizzazione del diagramma a torta del test con cui si sta effettuando il confronto;
     \item \textbf{PieElement}: singolo elemento del diagramma a torta che indica la percentuale di risposte corrette;
-    \item \textbf{Legend}: legenda che descrive il significato di ogni elemento del diagramma;
+    \item \textbf{Legend}: legenda che descrive il significato di ogni colore usato nel diagramma;
 \end{itemize}
 \textbf{Input}:
 \begin{itemize}
@@ -205,6 +202,7 @@
     \item \textbf{ComparedBarChart}: sezione di visualizzazione del diagramma a barre del test con cui si sta effettuando il confronto;
     \item \textbf{BarElement}: singolo elemento del diagramma a barre che indica il numero di risposte per ogni intervallo (0-0.2, 0.2-0.4, 0.4-0.6, 0.6-0.8, 0.8-1);
     \item \textbf{BarLabel}: label che mostra l'intervallo che rappresenta l'elemento del diagramma;
+    \item \textbf{Legend}: legenda che descrive il significato di ogni colore usato nel diagramma;
 \end{itemize}
 \textbf{Input}:
 \begin{itemize}
@@ -219,15 +217,16 @@
 \textbf{Elementi chiave}:
 \begin{itemize}
     \item \textbf{ScatterChart}: sezione di visualizzazione del diagramma di dispersione;
-    \item \textbf{ScatterElement}: singolo punto del diagramma di dispersione;
+    \item \textbf{ScatterElement}: singolo punto del diagramma di dispersione interagibile, l'interazione viene gestita tramite il sottocomponente \textbf{ResultElement};
     \item \textbf{ComparedScatterElement}: singolo punto del diagramma di dispersione che rappresenta il test con cui si sta effettuando il confronto;
     \item \textbf{XLabel}: label che mostra il valore dell'asse X;
     \item \textbf{YLabel}: label che mostra il valore dell'asse Y;
+    \item \textbf{Legend}: legenda che descrive il significato di ogni colore usato nel diagramma;
 \end{itemize}
 \textbf{Input}:
 \begin{itemize}
-    \item \textbf{ElementValues}: coordinate dei punti da rappresentare;
-    \item \textbf{ComparedElementValues}: coordinate dei punti da rappresentare nel caso di confronto tra test;
+    \item \textbf{ElementValues}: lista delle coordinate dei punti da rappresentare;
+    \item \textbf{ComparedElementValues}: liste delle coordinate dei punti da rappresentare nel caso di confronto tra test;
 \end{itemize}
 \subsubsection{ResultListView}
 \textbf{Componente padre}:
@@ -270,7 +269,7 @@
 \end{itemize}
 \textbf{Elementi chiave}:
 \begin{itemize}
-    \item \textbf{SelectCompareButton}: pulsante per selezionare un test salvato con cui eseguire il confronto con il test attualmente visualizzato, la conferma o l'annullamento della selezione viene poi effettuata tramite il sottocomponente \textbf{ConfirmComponent};
+    \item \textbf{SelectCompareList}: lista di elementi selezionabili usata per scegliere un test salvato con cui eseguire il confronto con il test attualmente visualizzato, la conferma o l'annullamento della selezione viene poi effettuata tramite il sottocomponente \textbf{ConfirmComponent};
 \end{itemize}
     \textbf{Input}:
 \begin{itemize}
@@ -324,7 +323,7 @@
 \textbf{Elementi chiave}:
 \begin{itemize}
     \item \textbf{ComparisonScatter}: sezione di visualizzazione del diagramma di dispersione, realizzata tramite il sottocomponente \textbf{ScatterDiagram};
-     \item \textbf{ComparisonResults}: sezione di visualizzazione della lista dei risultati confrontati, realizzata tramite il sottocomponente \textbf{ComparisonListView};
+    \item \textbf{ComparisonResults}: sezione di visualizzazione della lista dei risultati confrontati, realizzata tramite il sottocomponente \textbf{ComparisonListView};
     \item \textbf{NavBar}: sezione che permette la navigazione tra le pagine del test, realizzata tramite il sottocomponente \textbf{PageNavigation};
     \item \textbf{ErrorMessage}: messaggio di errore che viene visualizzato in seguito a un errore nell'ottenimento dei dati, realizzato tramite il sottocomponente \textbf{MessageComponent};
 \end{itemize}
@@ -358,10 +357,9 @@
 \textbf{Elementi chiave}:
 \begin{itemize}
     \item \textbf{Question}: sezione testuale contenente la domanda effettuata;
+    \item \textbf{ExpectedAnswer}: sezione testuale contenente la risposta attesa dei test;
     \item \textbf{GivenAnswer1}: sezione testuale contenente la risposta fornita dal LLM del primo test;
     \item \textbf{GivenAnswer2}: sezione testuale contenente la risposta fornita dal LLM del secondo test;
-    \item \textbf{ExpectedAnswer1}: sezione testuale contenente la risposta attesa del primo test;
-    \item \textbf{ExpectedAnswer2}: sezione testuale contenente la risposta attesa del secondo test;
     \item \textbf{Similarity1}: sezione testuale contenente il grado di similarità tra la risposta fornita e quella attesa del primo test;
     \item \textbf{Similarity2}: sezione testuale contenente il grado di similarità tra la risposta fornita e quella attesa del secondo test;
     \item \textbf{Correctness Label1}: sezione testuale contenente il messaggio che indica se la risposta fornita è corretta o meno del primo test;
@@ -370,10 +368,9 @@
 \textbf{Input}:
 \begin{itemize}
     \item \textbf{question}: domanda effettuata;
+    \item \textbf{expectedAnswer}: risposta attesa dei test;
     \item \textbf{givenAnswer1}: risposta fornita dal LLM del primo test;
     \item \textbf{givenAnswer2}: risposta fornita dal LLM del secondo test;
-    \item \textbf{expectedAnswer1}: risposta attesa del primo test;
-    \item \textbf{expectedAnswer2}: risposta attesa del secondo test;
     \item \textbf{similarity1}: grado di similarità tra la risposta fornita e quella attesa del primo test;
     \item \textbf{similarity2}: grado di similarità tra la risposta fornita e quella attesa del secondo test;
     \item \textbf{correctness1}: valore booleano che indica se la risposta fornita è corretta o meno del primo test;
