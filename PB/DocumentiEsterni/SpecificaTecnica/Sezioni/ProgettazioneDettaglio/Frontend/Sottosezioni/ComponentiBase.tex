@@ -1,0 +1,89 @@
+\subsection{Componenti}
+\label{subsec:Componenti}
+\subsubsection{StandardPage}
+\textbf{Modulo}
+\begin{itemize}
+    \item StandardModule, modulo funzionale dell'applicazione che gestisce i componenti, servizi e le risorse legate al layout e alle funzionalità generali delle pagine.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{Menu}: insieme di link disponibili che permette all'utente di navigare tra le diverse pagine della webapp, realizzata dal sottocomponente \textbf{MenuComponent}.
+    \item \textbf{Footer}: consente di visualizzare altre informazioni rilevanti al sito, realizzata dal sottocomponente \textbf{FooterComponent}.
+    \item \textbf{LoadingAnimation}: gestisce l'operazione di caricamento di un operazione o pagina, realizzata dal sottocomponente \textbf{LoadingComponent}.
+    \item \textbf{Message}: visualizzazione di un messaggio tramite finestra, realizzata dal sottocomponente \textbf{MessageComponent}.
+    \item \textbf{ConfirmButton}: finestra che permette di confermare o meno le operazioni critiche, realizzata dal sottocomponente \textbf{ConfirmButton}.
+\end{itemize}
+\subsubsection{MenuComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{LogoIcon}:  icona che rappresenta il logo del gruppo.
+    \item \textbf{HomeTextLink}: testo che rappresenta il link alla home page dell'applicazione;
+    \item \textbf{LLMTextLink}: testo che rappresenta il link alla pagina di gestione degli LLM;
+    \item \textbf{DatasetTextLink}: testo che rappresenta il link alla pagina di gestione dei dataset;
+    \item \textbf{TestTextLink}: testo che rappresenta il link alla pagina di gestione dei test;
+\end{itemize}
+\subsubsection{FooterComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{GroupContactText}: sezione testuale che contiene le informazioni di contatto del gruppo;
+    \item \textbf{CopyrightText}: sezione testuale contenente le informazioni relative al copyright, in conformità con la normativa italiana ed europea
+\end{itemize}
+\subsubsection{LoadingComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{LoadingAnimatedIcon}: icona che rappresenta il caricamento della pagina o dell'operazione;
+\end{itemize}
+\subsubsection{MessageComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{MessageText}: sezione testuale che contiene il messaggio da visualizzare all'utente.
+\end{itemize}
+\subsubsection{ConfirmComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{ConfirmButton}: pulsante che permette di confermare l'operazione critica;
+    \item \textbf{CancelButton}: pulsante che permette di annullare l'operazione critica;
+    \item \textbf{OperationResultMessage}: messaggio che indica il risultato dell'operazione, realizzato dal sottocomponente \textbf{MessageComponent};
+\end{itemize}
+\subsubsection{HomePage}
+\textbf{Componente padre}
+\begin{itemize}
+    \item StandardPage.
+\end{itemize}
+\textbf{Modulo}
+\begin{itemize}
+    \item HomeModule, modulo funzionale dell'applicazione mostra le informazioni riguardo all'applicazione.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{ContextContainer}: sezione che contiene i componenti principali della pagina, realizzata dal sottocomponente \textbf{ContentComponent};
+\end{itemize}
+\subsubsection{ContentComponent}
+\textbf{Componente padre}
+\begin{itemize}
+    \item HomePage.
+\end{itemize}
+\textbf{Elementi chiave}
+\begin{itemize}
+    \item \textbf{ContentText}: sezione testuale contenente informazioni che riguardano lo scopo e il funzionamento della webapp;
+\end{itemize}
