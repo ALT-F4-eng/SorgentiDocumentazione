@@ -1,5 +1,5 @@
 \newpage
-\subsection{Test di intergrazione}
+\subsection{Test di integrazione}
 \label{subsec:test_integrazione}
 Lo scopo dei test di integrazione è individuare eventuali difetti di progettazione o lacune nei test unitari, 
 verificando che i diversi moduli o componenti del sistema interagiscano correttamente tra loro quando vengono integrati.
@@ -45,12 +45,11 @@ T.I.4 & Verificare che il componente "TestPage" soddisfi le seguenti condizioni:
 \hline
 T.I.5 & Verificare che il componente "TestListPage" soddisfi le seguenti condizioni:
 \begin{itemize}
-    \item controllare che venga recuperata correttamente la lista dei test salvati tramite "DatasetService";
+    \item controllare che venga recuperata correttamente la lista dei test salvati tramite "TestService";
     \item controllare che "TestListView" ottenga correttamente la lista dei test salvati;
     \item controllare che "TestListView" ottenga correttamente la lista filtrata dei test salvati;% ricerca
     \item controllare che "TestListView" ottenga correttamente la lista aggiornata dei test salvati dopo un operazione di rinominazione;%confirm rename
     \item controllare che "TestListView" ottenga correttamente la lista aggiornata dei test salvati dopo un operazione di eliminazione;
-    \item controllare che "TestListView" ottenga correttamente la lista dei test salvati dopo un operazione di cambio pagina;
     \item controllare che "TestElement" ottenga correttamente i dati del test;
     \item nel caso in cui l'utente premesse il pulsante di eliminazione di un test, viene reindirizzato alla schermata per la conferma dell'operazione;
     \item nel caso in cui l'utente premesse il pulsante di caricamento di un test per la sua visualizzazione, viene reindirizzato alla schermata per la conferma dell'operazione;
@@ -68,7 +67,7 @@ T.I.6 & Verificare che il componente "TestComparisonPage" soddisfi le seguenti c
     \item controllare che "ScatterDiagram" ottenga correttamente la lista dei risultati del test e del test confrontato;
     \item controllare che "ComparisonListView" ottenga correttamente la lista dei risultati confrontati dei test;
     \item controllare che "ComparisonListView" ottenga correttamente la lista dei risultati confrontati dei test dopo un operazione di cambio pagina;
-    \item controllare che "ComparisonElement" ottenga correttamente una domanda, una risposta attesa, due risposte ricevute, due float e due booleano;
+    \item controllare che "ComparisonElement" ottenga correttamente una domanda, una risposta attesa, due risposte ricevute, due float e due booleani;
     \item nel caso in cui l'operazione di ottenimento dei dati fallisse, viene visualizzato un messaggio di errore;
 \end{itemize}
 & -\\
@@ -84,7 +83,7 @@ T.I.7 & Verificare che il componente "LLMListPage" soddisfi le seguenti condizio
     \item l'utente viene reindirizzato alla pagina del LLM caricato dopo aver premuto il pulsante di caricamento a schermo del LLM;%load
     \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di eliminazione del LLM;%delete
     \item l'utente viene reindirizzato nella schermata apposita dopo aver premuto il pulsante di creazione di un LLM;%add
-    \item l'utente viene reindirizzato nella schermata di avvertimento dopo aver riscontrato un errore
+    \item nel caso in cui l'operazione di ottenimento dei dati fallisse, viene visualizzato un messaggio di errore;
 \end{itemize}
 & -\\
 \hline
@@ -112,7 +111,6 @@ Verificare che il componente "DatasetListPage" soddisfi le seguenti condizioni:
     \item controllare che "DatasetListView" ottenga correttamente la lista aggiornata dei dataset salvati dopo un operazione di eliminazione;%delete
     \item controllare che "DatasetListView" ottenga correttamente la lista aggiornata dei dataset salvati dopo un operazione di creazione;%create
     \item controllare che "DatasetListView" ottenga correttamente la lista aggiornata dei dataset salvati dopo un operazione di copia;%clone
-    \item controllare che "DatasetListView" ottenga correttamente la lista dei dataset salvati dopo un operazione di cambio pagina;
     % si ricorda che tutte le operazioni importanti tipo salvataggio e eliminazione bisognerebbe anche aggiornare il medesimo database;
     \item controllare che "DatasetElement" ottenga correttamente i dati aggiornati del dataset salvato dopo un operazione di rinominazione;
     \item deve restituire correttamente i risultati della ricerca sotto forma di elementi della lista di dataset filtrati quando si effettua una ricerca;
