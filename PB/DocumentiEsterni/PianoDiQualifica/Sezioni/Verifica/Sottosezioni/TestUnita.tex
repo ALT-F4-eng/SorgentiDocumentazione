@@ -1,0 +1,808 @@
+\newpage
+\subsection{Test d'unita}
+\label{subsec:test_unita}
+Lo scopo dei test di unità è assicurarsi che le "unità software", ovvero singoli segmenti come funzioni, classi o componenti,
+funzionino correttamente quando testati in modo autonomo e isolato all'interno del sistema. Di seguito è presente un elenco dei test di unità:
+\begin{tabularx}{\textwidth}{|c|X|c|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Front-end}} \\
+    \hline
+    \textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\
+    \hline
+    \label{tu:tu1}T.U.1 
+    & Verificare che il componente "DatasetListPage" soddisfi le seguenti condizioni: %Descrizione
+    \begin{itemize}
+        \item viene visualizzata correttamente la barra di ricerca dei dataset;
+        \item viene visualizzato correttamente il pulsante di creazione di un dataset temporaneo;
+        \item viene chiamata correttamente la funzione di creazione di un dataset temporaneo quando si preme il pulsante "Crea nuovo dataset";
+        \item viene visualizzato correttamente il pulsante di caricamento di un dataset a partire da un file JSON;
+        \item viene visualizzata correttamente la pagina contenente la lista dei dataset salvati;
+    \end{itemize} 
+    & - \\
+    \hline
+    \label{tu:tu2}T.U.2 
+    & Verificare che il componente "DatasetListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista di dataset salvati, se presenti;
+        \item viene visualizzato correttamente il messaggio che avverte dell'assenza di dataset salvati, se non presenti;
+    \end{itemize} 
+    & - \\
+    \hline
+    \label{tu:tu3}T.U.3 
+    & Verificare che il componente "DatasetElement" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il nome del dataset;
+        \item viene visualizzata correttamente la data dell'ultima modifica del dataset;
+        \item viene visualizzato correttamente il pulsante di rinominazione del dataset;
+        \item viene visualizzato correttamente il pulsante di clonazione del dataset;
+        \item viene chiamata correttamente la funzione di clonazione del dataset quando si preme il pulsante "Copia Dataset";
+        \item viene visualizzato correttamente il pulsante di eliminazione del dataset;
+        \item viene chiamata correttamente la funzione di eliminazione del dataset quando si preme il pulsante "Elimina Dataset";
+        \item viene visualizzato correttamente il pulsante di caricamento a schermo del dataset;
+    \end{itemize} 
+    & - \\
+    \hline
+    \label{tu:tu4}T.U.4 
+    & Verificare che il componente "DatasetNameForm" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente l'etichetta "Nome" del campo di inserimento del nuovo nome da assegnare al dataset;
+        \item viene visualizzato correttamente il campo di inserimento del nuovo nome da assegnare al dataset;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento del nuovo nome da assegnare al dataset;
+        \item viene visualizzato correttamente il pulsante di salvataggio del nuovo nome;
+        \item viene chiamata correttamente la funzione di rinomina del dateset quando si preme il pulsante "Salva";
+        \item viene visualizzato correttamente il pulsante di annullamento dell'operazione di rinominazione del dataset;
+        \item viene interrotta l'operazione quando l'utente preme il pulsante "Annulla" durante il processo di rinominazione del dataset;
+    \end{itemize} 
+    & - \\ 
+    \hline
+    \label{tu:tu5}T.U.5 
+    & Verificare che il componente "DatasetJSONForm" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente l'etichetta "Nome" del campo di inserimento del nome da assegnare al dataset;
+        \item viene visualizzato correttamente il campo di inserimento del nome da assegnare al dataset;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento del nome da assegnare al dataset; 
+        \item viene visualizzata correttamente l'etichetta ".JSON" che indica l'estensione del file;
+        \item viene chiamata correttamente la funzione di caricamento di un dataset a partire da un file JSON quando si preme il pulsante "Carica file";
+        \item viene visualizzato correttamente il pulsante di annullamento dell'operazione di rinominazione del dataset;
+        \item viene interrotta l'operazione quando l'utente preme il pulsante "Annulla" durante il caricamento di un dataset a partire da un file JSON.;
+    \end{itemize} 
+    & - \\
+    \hline
+    \label{tu:tu6}T.U.6 & Verificare che il componente "DatasetContentPage" soddisfi le seguenti condizioni:
+    \begin{itemize}
+        \item viene visualizzato correttamente il nome del dataset;
+        \item viene visualizzata correttamente l'etichetta che indica se il dataset caricato è temporaneo;
+        \item viene visualizzato correttamente il pulsante che permette l'esecuzione del test sul dataset;
+        \item nel caso in cui il dataset sia vuoto viene disabilitato correttamente il pulsante per l'esecuzione del test sul dataset;
+        \item viene visualizzato correttamente il pulsante che permette salvataggio delle modifiche;
+        \item viene chiamata correttamente la funzione di salvataggio quando viene premuto il pulsante "Salva";
+        \item viene visualizzata correttamente la barra di ricerca di coppie di domanda e risposta nel dataset;
+        \item viene visualizzato correttamente il form che permette l'inserimento della coppia di domanda e risposta;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu7}T.U.7 & Verificare che il componente "DatasetPageView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la pagina contenente le coppie di domande e risposte;
+        \item viene visualizzata correttamente la sezione per la navigazione tra le pagine del dataset;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu8}T.U.8 & Verificare che il componente "QAListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista di coppie di domande e risposte;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu9}T.U.9 & Verificare che il componente "QAListElement" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il testo della domanda;
+        \item viene visualizzato correttamente il testo della risposta;
+        \item viene visualizzato correttamente il messaggio di avvertimento nel caso in cui la domanda o la risposta sono vuote;
+        \item viene visualizzato correttamente il pulsante per la modifica della coppia domanda e risposta;
+        \item viene chiamata correttamente la funzione di modifica della coppia domanda e risposta quando viene premuto il pulsante "Modifica";
+        \item viene visualizzato correttamente il pulsante per l'eliminazione della coppia domanda e risposta;
+        \item viene chiamata correttamente la funzione di eliminazione della coppia domanda e risposta quando viene premuto il pulsante "Conferma eliminazione";
+        \item viene interrotta l'operazione quando l'utente preme il pulsante "Annulla" durante il processo di eliminazione della coppia domanda e risposta;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu10}T.U.10 & Verificare che il componente "QAForm" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente l'etichetta della domanda;
+        \item viene visualizzata correttamente l'etichetta della risposta;
+        \item viene visualizzato correttamente il campo di inserimento per la domanda;  
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento per la domanda; 
+        \item viene visualizzato correttamente il campo di inserimento per la risposta;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento per la risposta; 
+        \item viene visualizzato correttamente il pulsante di conferma dell'aggiunta;
+        \item viene chiamata correttamente la funzione di aggiunta della coppia domanda e risposta quando viene premuto il pulsante "Conferma";
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu11}T.U.11 & Verificare che il componente "LLMSelectionList" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista di LLM selezionabili;
+        \item viene chiamata correttamente la funzione di esecuzione del test quando viene selezionato un LLM;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu12}T.U.12 & Verificare che il componente "PageNavigation" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il pulsante per navigare alla pagina precedente;
+        \item viene visualizzato correttamente il pulsante per navigare alla pagina successiva;
+        \item viene visualizzato correttamente il campo di inserimento del numero di pagina;
+        \item viene chiamata correttamente la funzione di navigazione quando si preme il pulsante per navigare alla pagina precedente;
+        \item viene chiamata correttamente la funzione di navigazione quando si preme il pulsante per navigare alla pagina successiva;
+        \item è possibile inserire i numeri all'interno del campo di inserimento del numero di pagina;
+        \item viene chiamata correttamente la funzione di navigazione quando si preme il tasto "Invio" con focus sul campo di inserimento del numero di pagina;
+        \item viene visualizzata correttamente l'etichetta del numero della pagina corrente;
+        \item viene visualizzata correttamente l'etichetta del numero totale di pagine.
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu13}T.U.13 & Verificare che il componente "SearchBar" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il campo di inserimento dei dati della ricerca;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno della barra di ricerca;
+        \item viene visualizzata correttamente l'icona della lente d'ingrandimento per avviare la ricerca;
+        \item viene chiamata correttamente la funzione di ricerca quando viene compilato il campo di inserimento dei dati e premuto il tasto "Invio".
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu14}T.U.14 & Verificare che il componente "TestListPage" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la barra di ricerca dei test salvati;
+        \item viene visualizzata correttamente la pagina contenente la lista dei test salvati;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu15}T.U.15 & Verificare che il componente "TestListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista di test salvati, se presenti;
+        \item viene visualizzato correttamente il messaggio che avverte dell'assenza di test salvati, se non presenti;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu16}T.U.16 & Verificare che il componente "TestElement" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il nome del test;
+        \item viene visualizzata correttamente la data di esecuzione del test;
+        \item viene visualizzato correttamente il pulsante di rinominazione del test;
+        \item viene visualizzato correttamente il pulsante di eliminazione del test;
+        \item viene visualizzato correttamente il pulsante di caricamento a schermo del test;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu17}T.U.17 & Verificare che il componente "TestNameForm" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente l'etichetta "Nome" del campo di inserimento del nome da assegnare al test;
+        \item viene visualizzato correttamente il campo di inserimento del nome da assegnare al test;
+        \item viene visualizzato correttamente il pulsante per confermare la modifica del nome del test;
+        \item viene chiamata correttamente la funzione di modifica del nome del test quando si preme il pulsante "Salva";
+        \item viene visualizzato correttamente il pulsante per annullare la modifica del nome del test;
+        \item viene interrotta l'operazione quando l'utente preme il pulsante "Annulla" durante il processo di rinominazione del test;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu18}T.U.18 & Verificare che il componente "TestPage" soddisfi le seguenti condizioni: 
+    \begin{itemize} 
+        \item viene visualizzato correttamente il nome del test;
+        \item viene visualizzata correttamente l'etichetta che indica se il test caricato è temporaneo;
+        \item viene visualizzata correttamente la sezione contenente l'indice riassuntivo del test;
+        \item viene visualizzato correttamente il pulsante di confronto che permette di confrontare il test corrente e un altro test salvato;
+        \item viene chiamata correttamente la funzione di selezione del test da confrontare quando si preme il pulsante "Confronta";
+        \item viene visualizzato correttamente il pulsante di salvataggio che permette di salvare il test temporaneo;
+        \item viene visualizzata correttamente la sezione contenente i risultati del test;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu19}T.U.19 & Verificare che il componente "TestPageView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la sezione per la navigazione tra le pagine dei risultati del test;
+        \item viene visualizzata correttamente la pagina contenente i risultati del test;
+        \item viene visualizzata correttamente la sezione contenente il diagramma di dispersione;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu20}T.U.20 & Verificare che il componente "TestIndex" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la sezione contenente i diagrammi di sintesi dei dati del test;
+        \item in caso di confronto viene visualizzata correttamente la sezione contenente il confronto dei diagrammi di sintesi dei dati dei due test;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu21}T.U.21 & Verificare che il componente "CakeDiagram" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il diagramma a torta indicante la percentuale di risposte corrette;
+        \item in caso di confronto viene visualizzato correttamente il confronto tra i diagrammi a torta dei due test;
+        \item viene visualizzata correttamente la singola sezione del diagramma a torta;
+        \item viene visualizzata correttamente la legenda descrittiva dei diagramma a torta;  
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu22}T.U.22 & Verificare che il componente "BarDiagram" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il diagramma a barre indicante la quantità di elementi per intervallo di correttezza;
+        \item in caso di confronto viene visualizzato correttamente il confronto tra i diagrammi a barre dei due test;
+        \item viene visualizzata correttamente la singola sezione del diagramma a barre;
+        \item viene visualizzata correttamente l'etichetta delle sezioni dei diagrammi a barre; 
+        \item viene visualizzata correttamente la legenda descrittiva dei diagramma a barre;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu23}T.U.23 & Verificare che il componente "ScatterDiagram" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il diagramma di dispersione indicante la correttezza degli elementi del test;
+        \item viene visualizzato correttamente il singolo elemento del diagramma di dispersione;
+        \item in caso di confronto viene visualizzato correttamente il confronto tra i diagrammi di dispersione dei due test;
+        \item viene visualizzata correttamente l'etichetta dell'asse X del diagramma di dispersone;
+        \item viene visualizzata correttamente l'etichetta dell'asse Y del diagramma di dispersone;
+        \item viene visualizzata correttamente la legenda descrittiva dei diagramma di dispersone;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu24}T.U.24 & Verificare che il componente "ResultListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista dei risultati del test;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu25}T.U.25 & Verificare che il componente "ResultElement" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il testo della domanda fornita al LLM;
+        \item viene visualizzato correttamente il testo della risposta ottenuta dal LLM;
+        \item viene visualizzato correttamente il testo della risposta attesa dal LLM;
+        \item viene visualizzato correttamente il grado di similarità tra la risposta attesa e quella ottenuta;
+        \item viene visualizzata correttamente l'etichetta che indica se la risposta ottenuta sia corretta o meno;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu26}T.U.26 & Verificare che il componente "TestSelectionComparison" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista di test selezionabili;
+        \item viene chiamata correttamente la funzione di confronto quando viene selezionato un test;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu27}T.U.27 & Verificare che il componente "TestComparisonPage" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la sezione contenente il confronto dei dati sintetici dei test confrontati;
+        \item viene visualizzata correttamente la sezione contenente il confronto dei diagrammi dei test confrontati;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu28}T.U.28 & Verificare che il componente "ComparisonIndex" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la sezione contenente le metriche di confronto dei due test;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu29}T.U.29 & Verificare che il componente "ComparisonPageView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la sezione per la navigazione tra le pagine dei risultati confrontati dei test;
+        \item viene visualizzata correttamente la pagina contenente i risultati confrontati dei test;
+        \item viene visualizzata correttamente la sezione contenente il diagramma di dispersione rappresentate il confronto dei risultati dei test;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu30}T.U.30 & Verificare che il componente "ComparisonListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista contenente il confronto per elemento tra i risultati dei due test;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu31}T.U.31 & Verificare che il componente "ComparisonElement" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il testo della domanda fornita al LLM;
+        \item viene visualizzato correttamente il testo della risposta ottenuta dal LLM nel test caricato;
+        \item viene visualizzato correttamente il testo della risposta ottenuta dal LLM nel test di confronto;
+        \item viene visualizzato correttamente il testo della risposta attesa dal LLM nel test caricato;
+        \item viene visualizzato correttamente il testo della risposta attesa dal LLM nel test di confronto;
+        \item viene visualizzato correttamente il grado di similarità tra la risposta attesa e quella ottenuta dal LLM nel test caricato;
+        \item viene visualizzato correttamente il grado di similarità tra la risposta attesa e quella ottenuta dal LLM nel test di confronto;
+        \item viene visualizzata correttamente l'etichetta che indica se la risposta ottenuta nel test caricato sia corretta o meno;
+        \item viene visualizzata correttamente l'etichetta che indica se la risposta ottenuta nel test di confronto sia corretta o meno;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu32}T.U.32 & Verificare che il componente "StandardPage" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il menu di navigazione;
+        \item viene visualizzato correttamente il footer della pagina;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu33}T.U.33 & Verificare che il componente "MenuComponent" soddisfi le seguenti condizioni:
+    \begin{itemize}
+        \item viene visualizzato correttamente il logo;
+        \item viene visualizzato correttamente il link alla pagina home;
+        \item viene visualizzato correttamente il link alla pagina della gestione dei dataset;
+        \item viene visualizzato correttamente il link alla pagina della gestione dei test;
+        \item viene visualizzato correttamente il link alla pagina della gestione degli LLM;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu34}T.U.34 & Verificare che il componente "FooterComponent" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il testo contenente le informazioni relative al copyright;
+        \item viene visualizzato correttamente il testo contenente le informazioni di contatto del gruppo; 
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu35}T.U.35 & Verificare che il componente "LoadingComponent" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente l'icona di caricamento;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu36}T.U.36 & Verificare che il componente "MessageComponent" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il messaggio informativo che l'utente deve visualizzare;
+        \item viene visualizzato correttamente il messaggio di errore che l'utente deve visualizzare;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu37}T.U.37 & Verificare che il componente "ConfirmComponent" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il pulsante di conferma che permette di confermare un operazione;
+        \item viene visualizzato correttamente il pulsante di annullamento che permette di annullare un operazione;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu38}T.U.38 & Verificare che il componente "LLMListPage" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la pagina contenente la lista degli LLM salvati;
+        \item viene visualizzato correttamente il pulsante che permette di creare un nuovo LLM;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu39}T.U.39 & Verificare che il componente "LLMListView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la lista degli LLM salvati, se presenti;
+        \item viene visualizzato correttamente il messaggio che avverte dell'assenza di LLM salvati, se non presenti;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu40}T.U.40 & Verificare che il componente "LLMElement" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il nome del LLM;
+        \item viene visualizzata correttamente la data dell'ultima modifica del LLM;
+        \item viene visualizzato correttamente il pulsante di caricamento della pagina di visualizzazione del LLM;
+        \item viene visualizzato correttamente il pulsante di eliminazione del LLM;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu41}T.U.41 & Verificare che il componente "LLMPage" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzata correttamente la sezione che contenga tutte l'informazioni del LLM attuale;
+        \item viene visualizzato correttamente il pulsante che permette di modificare LLM attuale;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu42}T.U.42 & Verificare che il componente "LLMPageView" soddisfi le seguenti condizioni: 
+    \begin{itemize}
+        \item viene visualizzato correttamente il nome del LLM;
+        \item viene visualizzata correttamente la data dell'ultima modifica del LLM;
+        \item viene visualizzato correttamente l'indirizzo URL del LLM usato per l'esecuzione delle chiamate; 
+        \item vengono visualizzate correttamente le coppie chiave-valore per la costruzione dell'header delle chiamate;
+        \item vengono visualizzate correttamente le coppie chiave-valore per la costruzione del body delle chiamate;
+        \item viene visualizzata correttamente la chiave associata alle domande da porre all'LLM;
+        \item viene visualizzata correttamente la chiave da utilizzare per estrarre la risposte date dall'LLM;
+        \item viene visualizzato correttamente il pulsante che permette di modificare LLM attuale;
+    \end{itemize}
+    & - \\
+    \hline
+    \label{tu:tu43}T.U.43 & Vedi descrizione dettagliata nel paragrafo della \hyperref[tu:descr_tu43]{descrizione dettagliata}. & - \\
+    \hline
+        \multicolumn{3}{|c|}{\textbf{Back-end}} \\
+    \hline
+    \textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\
+    \hline
+    \label{tu:tu44} T.U.44 & il metodo copy\_dataset della classe DatasetService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui il dataset da copiare non esiste deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item la copia creata deve avere nome che segue lo schema $nome_dataset_sorgente-copy-<n>$ dove $n$ è un numero crescente che indica l'ultima copia creata per il dataset;
+        \item nel caso in cui si verifichi un errore nella persistenza della nuova copia il metodo deve lanciare un eccezione di tipo PersistenceException;
+        \item la copia creata deve avere lo stesso numero di elementi del dataset da copiare;
+        \item la copia del dataset deve avere come data di ultimo salvataggio e data di primo salvataggio assegnate alla data attuale;
+        \item la copia del dataset non deve essere temporanea ovvero avere tmp a false.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu45} T.U.45 &  Il metodo create\_dataset\_tmp della classe DatasetService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui esista un dataset temporaneo deve sovrascriverlo;
+        \item il dataset temporaneo creato deve avere dimensione a zero, tmp a true e gli altri campi nulli;
+        \item nel caso in cui a creazione del nuovo dataset temporaneo generi un errore di persistenza il metodo deve lanciare un eccezione di tipo PersistenceException;
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu46} T.U.46 & Il metodo delete\_dataset della classe DatasetService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui il dataset da eliminare non esiste deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item insieme al dataset devono anche essere eliminati tutti i suoi elementi;
+        \item se il dataset da eliminare è associato a uno o più test essi devono essere eliminati.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu47} T.U.47 & Il metodo update\_dataset della classe DatasetService deve soddisfare le seguenti condizioni:   
+    \begin{itemize}
+        \item se il dataset da aggiornare è temporaneo allora il metodo deve salvato;
+        \item se il dataset da aggiornare è salvato allora il metodo deve limitarsi ad aggiornarlo;
+        \item se il dataset da aggiornare è una working copy di un dataset salvato il metodo deve laciare un eccezione di tipo InvalidDatasetOperationException;
+        \item nel caso in cui l'aggiornamento/salvataggio del dataset generi un errore di persistenza il metodo deve lanciare un eccezione di tipo PersistenceException; 
+        \item se il nome ricevuto in input è vuoto il metodo deve lanciare un eccezione di tipo InvalidDatasetNameException;
+        \item se il dataset da salvare/aggiornare non esiste il metodo deve lanciare un errore di tipo DatasetNonExistentException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu48} T.U.48 & il metodo get\_all\_dataset della classe DatasetService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se la query string di input è vuota il metodo deve restituire tutti i dataset salvati;
+        \item il metodo deve restituire solo i dataset salvati che contengono nel proprio nome la query string;
+        \item se non esistono dataset salvati il metodo deve restituire una lista vuota.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu49} T.U.49 & il metodo get\_dataset\_by\_id della classe DatasetService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il dataset richiesto non esiste il metodo deve lanciare un eccezione di tipo DatasetNonExistentException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu50} T.U.50 & il metodo save\_working\_copy della classe DatasetService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id fornito identifica un dataset che non è una working copy il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
+        \item se l'id fornito non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item il metodo deve eliminare il contenuto del dataset salvato da cui ha origine la working copy;
+        \item il metodo deve allocare gli elementi contenuti nella working copy al dataset da cui essa ha origine;
+        \item il metodo deve eliminare la working copy;
+        \item il metodo deve aggiornare la data di ultimo salvataggio del dataset di origine;
+        \item se durante le operazioni di persistenza avviene un errore il metodo deve lanciare un eccezione di tipo PersistenceException.  
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu51} T.U.51 & il metodo save\_working\_copy della classe DatasetService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item il metodo deve verificare che il file ricevuto rispetti il formato atteso, se non lo è deve lanciare un eccezione di tipo InvalidFileFormatException;
+        \item se il nome del dataset ricevuto in input è vuoto il metodo deve lanciare un eccezione di tipo InvalidDatasetNameException;
+        \item se avviene un errore di persistenza durante la creazione del nuovo dataset salvato il metodo deve lanciare un eccezione di tipo PersistenceException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu52} T.U.52 & il metodo create\_working\_copy della classe DatasetService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id ricevuto in input è associato a un dataset temporaneo o una working copy il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
+        \item se l'id ricevuto in input non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item se avviene un errore di persistenza durante la creazione della working copy il metodo deve lanciare un eccezione di tipo PersistenceException;
+        \item la working copy deve contenere gli stessi elementi del dataset di origine. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu53} T.U.53 & il metodo create\_qa della classe QaService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se esiste una coppia contenuta nel dataset che ha domanda e risposta uguali a quelle della coppia ricevuta in input deve lanciare un eccezione di tipo DuplicateQuestionAnswerException;
+        \item se il dataset identificato dall'id contenuto nella coppia domanda e risposta ricevuta in input non è temporaneo o non è una working copy di un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
+        \item se l'id contenuto nella coppia ottenuta in input non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item se avviene un errore di persistenza durante la creazione della coppia domanda e risposta il metodo deve lanciare un errore di tipo DatasetNonExistentException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu54} T.U.54 & il metodo update\_qa della classe QaService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se non esiste nessuna coppia avente id uguale a quello della coppia ricevuta in input il metodo deve lanciare un eccezione di tipo QuestionAnswerNonExistentException;
+        \item se la coppia ricevuta in input condivide domanda e risposta con un altra coppia contenuta nello stesso dataset deve lanciare un eccezione di tipo DuplicateQuestionAnswerException;
+        \item se avviene un errore di persistenza durante l'aggiornamento della coppia il metodo deve lanciare un eccezione di tipo PersistenceException;
+        \item se il dataset identificato dall'id contenuto nella coppia domanda e risposta ricevuta in input non è temporaneo o non è una working copy di un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu55} T.U.55 & il metodo get\_qa\_page della classe QaService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id ricevuto in input non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item se il numero di pagina ricevuto in input è maggiore di zero o maggiore della pagina massima per il dataset il metodo deve lanciare un eccezione di tipo InvalidPageException;
+        \item se la query string non è vuota il metodo deve costruire le pagine di modo che contengano solo elementi la cui domanda e/o risposta la contiene.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu56} T.U.56 & la classe QuestionAnswerPair deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item non deve permettere l'assegnazione di domande e risposte entrambe vuote o composte da soli spazi, in tal caso deve lanciare un eccezione di tipo InvalidQuestionAnswerException; 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu57} T.U.57 & il metodo get\_qa\_by\_id della classe QaService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se la coppia richiesta non esiste deve lanciare un eccezione di tipo QuestionAnswerNonExistentException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu58} T.U.58 & il metodo delete\_qa della classe QaService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se la coppia richiesta non esiste deve lanciare un eccezione di tipo QuestionAnswerNonExistentException;
+        \item se il dataset identificato dall'id contenuto nella coppia domanda e risposta ricevuta in input non è temporaneo o non è una working copy di un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
+        \item se avviene un errore di persistenza durante l'aggiornamento della coppia il metodo deve lanciare un eccezione di tipo PersistenceException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu59} T.U.59 & il metodo get\_result\_page della classe TestResultService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id ricevuto in input non è associato a nessun test il metodo deve lanciare un eccezione di tipo TestNonExistentException;
+        \item se il numero di pagina ricevuto in input è maggiore di zero o maggiore della pagina massima per il test il metodo deve lanciare un eccezione di tipo InvalidPageException;
+        \item se la query string non è vuota il metodo deve costruire le pagine di modo che siano  formate da risultati che la contengono.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu60} T.U.60 & il metodo run\_test della classe TestService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id del dataset ricevuto in input non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
+        \item se l'id del llm ricevuto in input non è associato a nessun llm il metodo deve lanciare un eccezione di tipo LlmNonExistentException;
+        \item il metodo deve costruire correttamente un oggetto di tipo TestTemplateMethod;
+        \item il metodo deve recuperare una alla volta le pagine del dataset ed eseguire il test su di esse tramite l'oggetto sopra citato;
+        \item il metodo deve persistere ogni pagina di risultati ottenuta;
+        \item se avviene un errore di persistenza durante il salvataggio di una pagina di risultati il metodo deve lanciare un eccezione di tipo PersistenceException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu61} T.U.61 & il metodo test della classe TestTemplateMethod deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve ottenere la risposta dall'llm e se avviene un errore di comunicazione deve lanciare un eccezione di tipo LlmComunicationException. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu62} T.U.62 & il metodo similarity\_score della classe EmbeddingsLlmTestMethod deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire un numero reale compreso tra 0 e 1;
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu63} T.U.63 & il metodo is\_correct della classe EmbeddingsLlmTestMethod deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve ottenere il responso sulla correttezza interrogando llm esterno e nel caso in cui avvenga un errore di comunicazione deve lanciare un eccezione di tipo LlmComunicationException; 
+        \item deve restituire un valore booleano che specifica la correttezza della risposta ottenuta dall'LLM rispetto alla risposta attesa.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu64} T.U.64 & il metodo delete\_test della classe TestService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id ricevuto in input corrisponde a un test che non esiste il metodo deve lanciare un eccezione di tipo TestNonExistentException;
+        \item se avviene un errore di persistenza durante l'eliminazione del test il metodo deve lanciare un eccezione di tipo PersistenceException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu65} T.U.65 & il metodo update\_test della classe TestService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se la stringa ricevuta in input è vuota il metodo deve lanciare un'eccezione di tipo InvalidTestNameException;
+        \item se la stringa ricevuta in input è già associata a un test salvato il metodo deve lanciare un eccezione di tipo DuplicateTestException;
+        \item se avviene un errore di persistenza durante l'aggiornamento del test il metodo deve lanciare un eccezione di tipo PersistenceException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu66} T.U.66 & il metodo save\_test della classe TestService deve soddisfare le seguenti condizioni: 
+    \begin{itemize}
+        \item se l'id ricevuto in input corrisponde a un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidTestOperationException;
+        \item se l'id ricevuto in input non corrisponde a un dataset il metodo deve lanciare un eccezione di tipo TestNonExistentException;
+        \item se la stringa ricevuta in input è vuota il metodo deve lanciare un eccezione di tipo InvalidTestNameException;
+        \item se la stringa ricevuta in input è già associata a un test salvato il metodo deve lanciare un eccezione di tipo DuplicateTestException;
+        \item se avviene un errore di persistenza durante l'eliminazione del test il metodo deve lanciare un eccezione di tipo PersistenceException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu67} T.U.67 & il metodo get\_all\_tests della classe TestService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se la query string di input è vuota il metodo deve restituire tutti i test salvati;
+        \item se la query string di input non è vuota il metodo deve restituire solo i test salvati che contengono nel proprio nome la query string;
+        \item se non esistono test salvati il metodo deve restituire una lista vuota.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu68} T.U.68 & il metodo get\_test\_by\_id della classe TestService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il test richiesto non esiste il metodo deve lanciare un eccezione di tipo TestNonExistentException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu69} T.U.69 & il metodo get\_llm\_by\_id della classe LlmService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se llm richiesto non esiste il metodo deve lanciare un eccezione di tipo LlmNonExistentException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu70} T.U.70 & il metodo get\_all\_llms della classe LlmService deve soddisfare le seguenti condizioni: 
+    \begin{itemize}
+        \item se la query string di input è vuota il metodo deve restituire tutti gli llm salvati;
+        \item se la quesry string in input non è vuota il metodo deve restituire solo gli llm salvati che contengono nel proprio nome la query string;
+        \item se non esistono llm salvati il metodo deve restituire una lista vuota.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu71} T.U.71 & il metodo delete\_llm della classe LlmService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id ricevuto in input corrisponde a un llm che non esiste il metodo deve lanciare un eccezione di tipo LlmNonExistentException;
+        \item deve eliminare l'llm salvato indicato;
+        \item se avviene un errore di persistenza durante l'eliminazione del llm il metodo deve lanciare un eccezione di tipo PersistenceException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu72} T.U.72 & il metodo create\_llm della classe LlmService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il nome dell'llm è già utilizzato deve lanciare un eccezione di tipo DuplicateLlmException;
+        \item se avviene un errore di persistenza durante la creazione del llm il metodo deve lanciare un eccezione di tipo PersistenceException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu73} T.U.73 & la classe Llm deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se si tenta di assegnare un nome vuoto deve lanciare un eccezione di tipo InvalidLlmNameException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu74} T.U.74 & la classe HttpConfig deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item non deve permettere la registrazione di chiavi per la richiesta e la risposta vuote lanciando eventualmente una eccezione di tipo InvalidKeyException. 
+    \end{itemize} & - \\
+    \hline
+    \label{tu:tu75} T.U.75 & la classe Url deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item non deve permettere la registrazione di un URL invalido lanciando eventualmente una eccezione di tipo InvalidUrlException. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu76} T.U.76 & la classe HttpKeyValuePair deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item non deve permettere la registrazione di una chiave vuota eventualmente deve lanciare una eccezione di tipo InvalidKeyException; 
+    \end{itemize} & - \\
+    \hline
+    \label{tu:tu77} T.U.77 & il metodo update\_llm della classe LlmService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id ricevuto in input non appartiene a un llm il metodo deve lanciare un eccezione di tipo LlmNonExistentException;
+        \item se avviene un errore di persistenza durante l'eliminazione del llm il metodo deve lanciare un eccezione di tipo PersistenceException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu78} T.U.78 & il metodo delete\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire un optional vuoto se il dataset con id indicato non esiste o avviene un errore di persistenza; 
+        \item deve eliminare dal database il dataset identificato con l'id indicato, il suo contenuto, i test a esso associati e tutti i risultati dei test.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu79} T.U.79 & il metodo update\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire un optional vuoto se il dataset con id indicato non esiste o avviene un errore di persistenza; 
+        \item deve aggiornare il dataset indicato nel database. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu80} T.U.80 & il metodo create\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire un optional vuoto se la creazione non va a buon fine.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu81} T.U.81 & il metodo get\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire un optional a valore non se il dataset richiesto non esiste;
+        \item deve restituire il dataset con id uguale a quello indicato.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu82} T.U.82 & il metodo get\_all\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire la lista dei dataset salvati nel database che contengono nel proprio nome la stringa ricevuta. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu83} T.U.83 & il metodo update\_qa della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire un optional vuoto se la coppia con id indicato non esiste o avviene un errore di persistenza; 
+        \item deve aggiornare la coppia nel database.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu84} T.U.84 & il metodo create\_qa della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item  
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu85} T.U.85 & il metodo delete\_qa della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire un optional vuoto se avviene un errore di persistenza;
+        \item deve creare la nuova coppia nel database. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu86} T.U.86 & il metodo delete\_all\_from\_dataset della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il dataset indicato non esiste o avviene un errore di persistenza deve restituire un optional vuoto;
+        \item deve eliminare il contenuto del dataset indicato. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu87} T.U.87 & il metodo copy\_all\_from\_dataset della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve copiare tutte le domande appartenenti al dataset identificato dall'identificativo sorgente nel dataset identificato dall'identificativo destinazione;
+        \item se uno dei due dataset non esiste o avviene un errore di persistenza deve restituire un optional vuoto. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu88} T.U.88 & il metodo get\_qa\_set della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il dataset identificato dall'id indicato non esiste deve restituire un optional a valore null;
+        \item deve restituire le coppie associate al dataset indicato che contengono la query string nella propria domanda o risposta e che in ordine di salvataggio partono dallo start e terminano all'offset indicati.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu89} T.U.89 & il metodo save\_result della classe SqlAlchemyTestResultAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se avviene un errore durante il salvataggio dei risultati deve restituire false.  
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu90} T.U.90 & il metodo get\_results della classe SqlAlchemyTestResultAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il test indicato non esiste deve restituire un optional vuoto;
+        \item deve restituire i risultati associate al test indicato che contengono la query string nella propria domanda, risposta o risposta ottenuta e che in ordine di salvataggio partono dallo start e terminano all'offset indicati.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu91} T.U.91 & il metodo delete\_tests\_from\_dataset della classe SqlAlchemyTestAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il dataset non esiste deve restituire false;
+        \item se il dataset esiste deve eliminare tutti i test a esso associati compresi i risultati.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu92} T.U.92 & il metodo delete\_test della classe SqlAlchemyTestAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il test non esiste deve restituire un optional vuoto;
+        \item se il test esiste deve eliminare tutti i risultati a esso associati.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu93} T.U.93 & il metodo get\_all\_tests della classe SqlAlchemyTestAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il test non esiste deve restituire un optional vuoto.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu94} T.U.94 & il metodo update\_tests della classe SqlAlchemyTestAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire tutti i test salvati nel database che contengono nel proprio nome la query string ottenuta.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu95} T.U.95 & il metodo ask\_to\_llm della classe HttpLlmComunicationAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire la stringa ottenuta dall'llm interrogato;
+        \item se avviene un errore di comunicazione deve restituire un optional vuoto.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu96} T.U.96 & il metodo get\_llm\_by\_id della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'llm non esiste deve restituire un optional vuoto.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu97} T.U.97 & il metodo get\_all\_llms della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire la lista degli llm che contengono nel proprio nome la query string ricevuta in input. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu98} T.U.98 & il metodo delete\_llm della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'llm da eliminare non esiste o se avviene un errore di persistenza deve restituire un optional vuoto;
+        \item deve eliminare l'llm e tutti i test ad esso associati compresi i loro risultati. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu99} T.U.99 & il metodo create\_llm della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se avviene un errore di persistenza deve restituire un optional vuoto;
+        \item deve aggiungere llm ricevuto in input.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu100} T.U.100 & il metodo update\_llm della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se avviene un errore di persistenza deve restituire un optional vuoto;
+        \item deve aggiornare llm ricevuto in input.
+    \end{itemize} & - \\
+    \hline 
+\end{tabularx}
+
+\subsubsection{Descrizione dettagliata dei test}
+\textbf{T.U.43 - Descrizione dettagliata del test}\\
+\label{tu:descr_tu43}
+Verificare che il componente "LLMForm" soddisfi le seguenti condizioni:
+\begin{itemize}
+        \item viene visualizzata correttamente l'etichetta "Nome" del campo di inserimento del nome da assegnare al LLM;
+        \item viene visualizzato correttamente il campo di inserimento del nome da assegnare al LLM;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento del nome da assegnare al LLM;
+        
+        \item viene visualizzato correttamente l'etichetta "URL" del campo di inserimento dell'URL del LLM;
+        \item viene visualizzato correttamente il campo di inserimento dell'URL del LLM;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento dell'URL del LLM;
+       
+        \item viene visualizzata correttamente l'etichetta "Header key" del campo di inserimento della nuova chiave dell'header;
+        \item viene visualizzato correttamente il campo di inserimento della nuova chiave dell'header;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della nuova chiave dell'header;
+        
+        \item viene visualizzata correttamente l'etichetta "Header Value" del campo di inserimento del nuovo valore dell'header;
+        \item viene visualizzato correttamente il campo di inserimento del nuovo valore dell'header;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento del nuovo valore dell'header;
+        
+        \item viene visualizzato correttamente il pulsante di aggiunta della nuova chiave-valore dell'header;
+        
+        \item viene visualizzata correttamente l'etichetta "Body Key" del campo di inserimento della nuova chiave del body;
+        \item viene visualizzato correttamente il campo di inserimento della nuova chiave del body;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della nuova chiave del body;
+        
+        \item viene visualizzata correttamente l'etichetta "Body Value" del campo di inserimento del nuovo valore del body;
+        \item viene visualizzato correttamente il campo di inserimento del nuovo valore del body;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento del nuovo valore del body;
+    
+        \item viene visualizzato correttamente il pulsante di aggiunta della nuova chiave-valore del body;
+        
+        \item viene visualizzata correttamente l'etichetta "Question Key" del campo di inserimento della chiave associata alle domande da porre all'LLM;
+        \item viene visualizzato correttamente il campo di inserimento della chiave associata alle domande da porre all'LLM;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della chiave associata alle domande da porre all'LLM;
+        
+        \item viene visualizzata correttamente l'etichetta "Answer Key" del campo di inserimento della chiave associata alla risposta fornita dall'LLM;
+        \item viene visualizzato correttamente il campo di inserimento della chiave associata alla risposta fornita dall'LLM;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della chiave associata alla risposta fornita dall'LLM;
+        
+        \item viene visualizzato correttamente il pulsante di salvataggio delle modifiche effettuate;
+        \item viene chiamata correttamente la funzione di salvataggio quando si preme il pulsante "Salva";
+        \item viene visualizzato correttamente il pulsante di annullamento delle modifiche effettuate;
+\end{itemize}
