@@ -21,14 +21,14 @@
         \item nel caso in cui a creazione del nuovo dataset temporaneo generi un errore di persistenza il metodo deve lanciare un eccezione di tipo PersistenceException;
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu} T.U.46 & Il metodo delete\_dataset della classe DatasetUseCasedeve deve soddisfare le seguenti condizioni:
+    \label{tu:tu46} T.U.46 & Il metodo delete\_dataset della classe DatasetService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item nel caso in cui il dataset da eliminare non esiste deve lanciare un eccezione di tipo DatasetNonExistentException;
         \item insieme al dataset devono anche essere eliminati tutti i suoi elementi;
         \item se il dataset da eliminare è associato a uno o più test essi devono essere eliminati.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu47} T.U.47 & Il metodo update\_dataset della classe DatasetUseCase deve soddisfare le seguenti condizioni:   
+    \label{tu:tu47} T.U.47 & Il metodo update\_dataset della classe DatasetService deve soddisfare le seguenti condizioni:   
     \begin{itemize}
         \item se il dataset da aggiornare è temporaneo allora il metodo deve salvato;
         \item se il dataset da aggiornare è salvato allora il metodo deve limitarsi ad aggiornarlo;
@@ -38,19 +38,19 @@
         \item se il dataset da salvare/aggiornare non esiste il metodo deve lanciare un errore di tipo DatasetNonExistentException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu48} T.U.48 & il metodo get\_all\_dataset della classe DatasetUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu48} T.U.48 & il metodo get\_all\_dataset della classe DatasetService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se la query string di input è vuota il metodo deve restituire tutti i dataset salvati;
         \item il metodo deve restituire solo i dataset salvati che contengono nel proprio nome la query string;
         \item se non esistono dataset salvati il metodo deve restituire una lista vuota.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu49} T.U.49 & il metodo get\_dataset\_by\_id della classe DatasetUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu49} T.U.49 & il metodo get\_dataset\_by\_id della classe DatasetService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se il dataset richiesto non esiste il metodo deve lanciare un eccezione di tipo DatasetNonExistentException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu50} T.U.50 & il metodo save\_working\_copy della classe DatasetUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu50} T.U.50 & il metodo save\_working\_copy della classe DatasetService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se l'id fornito identifica un dataset che non è una working copy il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
         \item se l'id fornito non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
@@ -61,14 +61,14 @@
         \item se durante le operazioni di persistenza avviene un errore il metodo deve lanciare un eccezione di tipo PersistenceException.  
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu51} T.U.51 & il metodo save\_working\_copy della classe DatasetUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu51} T.U.51 & il metodo save\_working\_copy della classe DatasetService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item il metodo deve verificare che il file ricevuto rispetti il formato atteso, se non lo è deve lanciare un eccezione di tipo InvalidFileFormatException;
         \item se il nome del dataset ricevuto in input è vuoto il metodo deve lanciare un eccezione di tipo InvalidDatasetNameException;
         \item se avviene un errore di persistenza durante la creazione del nuovo dataset salvato il metodo deve lanciare un eccezione di tipo PersistenceException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu52} T.U.52 & il metodo create\_working\_copy della classe DatasetUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu52} T.U.52 & il metodo create\_working\_copy della classe DatasetService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se l'id ricevuto in input è associato a un dataset temporaneo o una working copy il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
         \item se l'id ricevuto in input non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
@@ -76,169 +76,292 @@
         \item la working copy deve contenere gli stessi elementi del dataset di origine. 
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu53} T.U.53 & il metodo create\_qa della classe QaUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu53} T.U.53 & il metodo create\_qa della classe QaService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se esiste una coppia contenuta nel dataset che ha domanda e risposta uguali a quelle della coppia ricevuta in input deve lanciare un eccezione di tipo DuplicateQuestionAnswerException;
         \item se il dataset identificato dall'id contenuto nella coppia domanda e risposta ricevuta in input non è temporaneo o non è una working copy di un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
-        \item se la domanda e la risposta contenute nella coppia ottenuta in input sono entrambe vuote o composte da soli spazi il metodo deve lanciare un eccezione di tipo InvalidQuestionAnswerException;
         \item se l'id contenuto nella coppia ottenuta in input non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
         \item se avviene un errore di persistenza durante la creazione della coppia domanda e risposta il metodo deve lanciare un errore di tipo DatasetNonExistentException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu54} T.U.54 & il metodo update\_qa della classe QaUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu54} T.U.54 & il metodo update\_qa della classe QaService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se non esiste nessuna coppia avente id uguale a quello della coppia ricevuta in input il metodo deve lanciare un eccezione di tipo QuestionAnswerNonExistentException;
-        \item se la coppia ricevuta in input contiene domanda e risposta vuote o composte da soli spazi il metodo deve lanciare un eccezione di tipo InvalidQuestionAnswerException;
         \item se la coppia ricevuta in input condivide domanda e risposta con un altra coppia contenuta nello stesso dataset deve lanciare un eccezione di tipo DuplicateQuestionAnswerException;
         \item se avviene un errore di persistenza durante l'aggiornamento della coppia il metodo deve lanciare un eccezione di tipo PersistenceException;
         \item se il dataset identificato dall'id contenuto nella coppia domanda e risposta ricevuta in input non è temporaneo o non è una working copy di un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu55} T.U.55 & il metodo get\_qa\_page della classe QaUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu55} T.U.55 & il metodo get\_qa\_page della classe QaService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se l'id ricevuto in input non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
         \item se il numero di pagina ricevuto in input è maggiore di zero o maggiore della pagina massima per il dataset il metodo deve lanciare un eccezione di tipo InvalidPageException;
         \item se la query string non è vuota il metodo deve costruire le pagine di modo che contengano solo elementi la cui domanda e/o risposta la contiene.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu56} T.U.56 & il metodo get\_qa\_by\_id della classe QaUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu56} T.U.56 & la classe QuestionAnswerPair deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item non deve permettere l'assegnazione di domande e risposte entrambe vuote o composte da soli spazi, in tal caso deve lanciare un eccezione di tipo InvalidQuestionAnswerException; 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu57} T.U.57 & il metodo get\_qa\_by\_id della classe QaService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se la coppia richiesta non esiste deve lanciare un eccezione di tipo QuestionAnswerNonExistentException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu} T.U.57 & il metodo delete\_qa della classe QaUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu58} T.U.58 & il metodo delete\_qa della classe QaService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se la coppia richiesta non esiste deve lanciare un eccezione di tipo QuestionAnswerNonExistentException;
         \item se il dataset identificato dall'id contenuto nella coppia domanda e risposta ricevuta in input non è temporaneo o non è una working copy di un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
         \item se avviene un errore di persistenza durante l'aggiornamento della coppia il metodo deve lanciare un eccezione di tipo PersistenceException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu58} T.U.58 &  il metodo get\_result\_page della classe TestResultUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu59} T.U.59 & il metodo get\_result\_page della classe TestResultService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se l'id ricevuto in input non è associato a nessun test il metodo deve lanciare un eccezione di tipo TestNonExistentException;
         \item se il numero di pagina ricevuto in input è maggiore di zero o maggiore della pagina massima per il test il metodo deve lanciare un eccezione di tipo InvalidPageException;
         \item se la query string non è vuota il metodo deve costruire le pagine di modo che siano  formate da risultati che la contengono.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu59} T.U.59 & il metodo run\_test della classe TestUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu60} T.U.60 & il metodo run\_test della classe TestService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se l'id del dataset ricevuto in input non è associato a nessun dataset il metodo deve lanciare un eccezione di tipo DatasetNonExistentException;
         \item se l'id del llm ricevuto in input non è associato a nessun llm il metodo deve lanciare un eccezione di tipo LlmNonExistentException;
-        \item il numero delle risposte fornite dal llm deve coincidere con il numero delle risposte fornite dall'utente;
-        \item il metodo per ogni risposta ottenuta dal llm deve calcolare il grado di similarità che deve essere sempre compreso tra il valore 0 e 1;
-        \item il metodo per ogni risposta ottenuta dal llm deve richiedere la correttezza all'oracolo;
-        \item verificare che il metodo dopo aver ottenuto tutte le risposte dal llm calcoli correttamente la media dei gradi di similarità;
-        \item verificare che il metodo dopo aver ottenuto tutte le risposte dal llm calcoli correttamente la deviazione standard dei gradi di similarità;
-        \item verificare che il metodo dopo aver ottenuto tutte le risposte dal llm divida correttamente i risultati nei 5 range da 0 a 1 gli elementi in base ai gradi di similarità;
-        \item verificare che il metodo dopo aver ottenuto tutte le risposte dal llm calcoli correttamente la percentuale delle risposte corrette;
+        \item il metodo deve costruire correttamente un oggetto di tipo TestTemplateMethod;
+        \item il metodo deve recuperare una alla volta le pagine del dataset ed eseguire il test su di esse tramite l'oggetto sopra citato;
+        \item il metodo deve persistere ogni pagina di risultati ottenuta;
+        \item se avviene un errore di persistenza durante il salvataggio di una pagina di risultati il metodo deve lanciare un eccezione di tipo PersistenceException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu60} T.U.60 & il metodo delete\_test della classe TestUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu61} T.U.61 & il metodo test della classe TestTemplateMethod deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve ottenere la risposta dall'llm e se avviene un errore di comunicazione deve lanciare un eccezione di tipo LlmComunicationException. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu62} T.U.62 & il metodo similarity\_score della classe EmbeddingsLlmTestMethod deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire un numero reale compreso tra 0 e 1;
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu63} T.U.63 & il metodo is\_correct della classe EmbeddingsLlmTestMethod deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve ottenere il responso sulla correttezza interrogando llm esterno e nel caso in cui avvenga un errore di comunicazione deve lanciare un eccezione di tipo LlmComunicationException; 
+        \item deve restituire un valore booleano che specifica la correttezza della risposta ottenuta dall'LLM rispetto alla risposta attesa.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu64} T.U.64 & il metodo delete\_test della classe TestService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se l'id ricevuto in input corrisponde a un test che non esiste il metodo deve lanciare un eccezione di tipo TestNonExistentException;
-        \item se l'id ricevuto in input corrisponde a un test presente nel database il test deve essere rimosso correttamente dal database e non deve più apparire nella lista dei test salvati;
         \item se avviene un errore di persistenza durante l'eliminazione del test il metodo deve lanciare un eccezione di tipo PersistenceException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu61} T.U.61 & il metodo update\_test della classe TestUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu65} T.U.65 & il metodo update\_test della classe TestService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se la stringa ricevuta in input è vuota il metodo deve lanciare un'eccezione di tipo InvalidTestNameException;
-        \item se la stringa ricevuta in input non è vuota il metodo deve aggiornare il nome del test nel database correttamente;
+        \item se la stringa ricevuta in input è già associata a un test salvato il metodo deve lanciare un eccezione di tipo DuplicateTestException;
         \item se avviene un errore di persistenza durante l'aggiornamento del test il metodo deve lanciare un eccezione di tipo PersistenceException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu62} T.U.62 & il metodo save\_test della classe TestUseCase deve soddisfare le seguenti condizioni: %qua ci vuole il nome del test e id del dataset da cui viene penso
+    \label{tu:tu66} T.U.66 & il metodo save\_test della classe TestService deve soddisfare le seguenti condizioni: 
     \begin{itemize}
-        \item se l'id ricevuto in input corrisponde a un dataset salvato, tmp o a una working-copy che non esiste il metodo deve lanciare un eccezione di tipo TestNonExistentException;
-        \item se l'id ricevuto in input corrisponde a un dataset salvato, tmp o a una working-copy presente nel database il test deve essere salvato correttamente dal database e deve apparire nella lista dei test salvati;
+        \item se l'id ricevuto in input corrisponde a un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidTestOperationException;
+        \item se l'id ricevuto in input non corrisponde a un dataset il metodo deve lanciare un eccezione di tipo TestNonExistentException;
+        \item se la stringa ricevuta in input è vuota il metodo deve lanciare un eccezione di tipo InvalidTestNameException;
+        \item se la stringa ricevuta in input è già associata a un test salvato il metodo deve lanciare un eccezione di tipo DuplicateTestException;
         \item se avviene un errore di persistenza durante l'eliminazione del test il metodo deve lanciare un eccezione di tipo PersistenceException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu63} T.U.63 & il metodo get\_all\_tests della classe TestUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu67} T.U.67 & il metodo get\_all\_tests della classe TestService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se la query string di input è vuota il metodo deve restituire tutti i test salvati;
-        \item il metodo deve restituire solo i test salvati che contengono nel proprio nome la query string;
+        \item se la query string di input non è vuota il metodo deve restituire solo i test salvati che contengono nel proprio nome la query string;
         \item se non esistono test salvati il metodo deve restituire una lista vuota.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu64} T.U.64 & il metodo get\_test\_by\_id della classe TestUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu68} T.U.68 & il metodo get\_test\_by\_id della classe TestService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se il test richiesto non esiste il metodo deve lanciare un eccezione di tipo TestNonExistentException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu65} T.U.65 & il metodo get\_llm\_by\_id della classe LlmUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu69} T.U.69 & il metodo get\_llm\_by\_id della classe LlmService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se llm richiesto non esiste il metodo deve lanciare un eccezione di tipo LlmNonExistentException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu66} T.U.66 & il metodo get\_all\_llms della classe LlmUseCase deve soddisfare le seguenti condizioni: %bisogna aggiungere il paramentro per la query nel diagramma delle classi
+    \label{tu:tu70} T.U.70 & il metodo get\_all\_llms della classe LlmService deve soddisfare le seguenti condizioni: 
     \begin{itemize}
         \item se la query string di input è vuota il metodo deve restituire tutti gli llm salvati;
-        \item il metodo deve restituire solo gli llm salvati che contengono nel proprio nome la query string;
+        \item se la quesry string in input non è vuota il metodo deve restituire solo gli llm salvati che contengono nel proprio nome la query string;
         \item se non esistono llm salvati il metodo deve restituire una lista vuota.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu67} T.U.67 & il metodo delete\_llm della classe LlmUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu71} T.U.71 & il metodo delete\_llm della classe LlmService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se l'id ricevuto in input corrisponde a un llm che non esiste il metodo deve lanciare un eccezione di tipo LlmNonExistentException;
-        \item se l'id ricevuto in input corrisponde a un llm presente nel database llm deve essere rimosso correttamente dal database e non deve più apparire nella lista degli llm salvati;
+        \item deve eliminare l'llm salvato indicato;
         \item se avviene un errore di persistenza durante l'eliminazione del llm il metodo deve lanciare un eccezione di tipo PersistenceException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu68} T.U.68 & il metodo create\_llm della classe LlmUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu72} T.U.72 & il metodo create\_llm della classe LlmService deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item se il nome da assegnare al llm è vuoto oppure appartiene già a un altro llm già salvato il metodo deve lanciare un eccezione di tipo InvalidLlmNameException;
-        \item se l'url da assegnare all'llm è vuoto o è in un formato non valido il metodo deve lanciare un eccezione di tipo InvalidLlmUrlException;
-        \item se le chiavi sono vuote o non valide il metodo deve lanciare un eccezione di tipo InvalidLlmKeyException;
-        \item se tutti i dati necessari per la creazione di un llm sono presenti il metodo deve creare un nuovo llm nel database e llm deve essere presente nella lista degli llm salvati;
+        \item se il nome dell'llm è già utilizzato deve lanciare un eccezione di tipo DuplicateLlmException;
         \item se avviene un errore di persistenza durante la creazione del llm il metodo deve lanciare un eccezione di tipo PersistenceException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu69} T.U.69 & il metodo update\_llm della classe LlmUseCase deve soddisfare le seguenti condizioni:
+    \label{tu:tu73} T.U.73 & la classe Llm deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item se l'id ricevuto in input è vuoto oppure appartiene a un llm che non esiste il metodo deve lanciare un eccezione di tipo LlmNonExistentException;
-        \item se l'id ricevuto in input corrisponde a un llm presente del datatbase llm deve essere aggiornato correttamente con i nuovi dati forniti;
+        \item se si tenta di assegnare un nome vuoto deve lanciare un eccezione di tipo InvalidLlmNameException.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu74} T.U.74 & la classe HttpConfig deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item non deve permettere la registrazione di chiavi per la richiesta e la risposta vuote lanciando eventualmente una eccezione di tipo InvalidKeyException. 
+    \end{itemize} & - \\
+    \hline
+    \label{tu:tu75} T.U.75 & la classe Url deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item non deve permettere la registrazione di un URL invalido lanciando eventualmente una eccezione di tipo InvalidUrlException. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu76} T.U.76 & la classe HttpKeyValuePair deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item non deve permettere la registrazione di una chiave vuota eventualmente deve lanciare una eccezione di tipo InvalidKeyException; 
+    \end{itemize} & - \\
+    \hline
+    \label{tu:tu77} T.U.77 & il metodo update\_llm della classe LlmService deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'id ricevuto in input non appartiene a un llm il metodo deve lanciare un eccezione di tipo LlmNonExistentException;
         \item se avviene un errore di persistenza durante l'eliminazione del llm il metodo deve lanciare un eccezione di tipo PersistenceException.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu70} T.U.70 & il metodo delete\_all\_from\_dataset della classe QuestionAnswarePairRepository deve soddisfare le seguenti condizioni:
+    \label{tu:tu78} T.U.78 & il metodo delete\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item se l'id ricevuto in input è vuoto oppure appartiene a un dataset che non esiste il metodo deve lanciare un eccezione di tipo QaNonExistentException;
-        \item se l'id ricevuto in input appartiene a un dataset presente nel databse il metodo deve eliminare correttamente tutte le qa presenti nel database associate all'id del dataset ricevuto in input;
-        \item se avviene un errore di persistenza durante l'eliminazione delle qa il metodo deve lanciare un eccezione di tipo PersistenceException.
+        \item deve restituire un optional vuoto se il dataset con id indicato non esiste o avviene un errore di persistenza; 
+        \item deve eliminare dal database il dataset identificato con l'id indicato, il suo contenuto, i test a esso associati e tutti i risultati dei test.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu71} T.U.71 & il metodo copy\_all\_from\_dataset della classe QuestionAnswarePairRepository deve soddisfare le seguenti condizioni:
+    \label{tu:tu79} T.U.79 & il metodo update\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item se l'id origin ricevuto in input è vuoto oppure appartiene a un dataset che non esiste il metodo deve lanciare un eccezione di tipo QaNonExistentException;
-        \item se l'id copy ricevuto in input è vuoto oppure appartiene a un dataset che non esiste il metodo deve lanciare un eccezione di tipo QaNonExistentException;
-        \item se l'id origin appartiene a un dataset salvato nel database e l'id copy appartiene a una working-copy il metodo devo copiare correttamente tutte le qa associate all'id origine e aggiungerle come qa associate all'id della working-copy;
-        \item se avviene un errore di persistenza durante la copia delle qa il metodo deve lanciare un eccezione di tipo PersistenceException.
+        \item deve restituire un optional vuoto se il dataset con id indicato non esiste o avviene un errore di persistenza; 
+        \item deve aggiornare il dataset indicato nel database. 
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu72} T.U.72 & il metodo get\_qa\_set della classe QuestionAnswarePairRepository deve soddisfare le seguenti condizioni:
+    \label{tu:tu80} T.U.80 & il metodo create\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item a 
+        \item deve restituire un optional vuoto se la creazione non va a buon fine.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu} T.U. &
+    \label{tu:tu81} T.U.81 & il metodo get\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item a 
+        \item deve restituire un optional a valore non se il dataset richiesto non esiste;
+        \item deve restituire il dataset con id uguale a quello indicato.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu} T.U. &
+    \label{tu:tu82} T.U.82 & il metodo get\_all\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item a 
+        \item deve restituire la lista dei dataset salvati nel database che contengono nel proprio nome la stringa ricevuta. 
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu} T.U. &
+    \label{tu:tu83} T.U.83 & il metodo update\_qa della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item a 
+        \item deve restituire un optional vuoto se la coppia con id indicato non esiste o avviene un errore di persistenza; 
+        \item deve aggiornare la coppia nel database.
     \end{itemize} & - \\
     \hline 
-    \label{tu:tu} T.U. &
+    \label{tu:tu84} T.U.84 & il metodo create\_qa della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item a 
+        \item  
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu85} T.U.85 & il metodo delete\_qa della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire un optional vuoto se avviene un errore di persistenza;
+        \item deve creare la nuova coppia nel database. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu86} T.U.86 & il metodo delete\_all\_from\_dataset della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il dataset indicato non esiste o avviene un errore di persistenza deve restituire un optional vuoto;
+        \item deve eliminare il contenuto del dataset indicato. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu87} T.U.87 & il metodo copy\_all\_from\_dataset della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve copiare tutte le domande appartenenti al dataset identificato dall'identificativo sorgente nel dataset identificato dall'identificativo destinazione;
+        \item se uno dei due dataset non esiste o avviene un errore di persistenza deve restituire un optional vuoto. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu88} T.U.88 & il metodo get\_qa\_set della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il dataset identificato dall'id indicato non esiste deve restituire un optional a valore null;
+        \item deve restituire le coppie associate al dataset indicato che contengono la query string nella propria domanda o risposta e che in ordine di salvataggio partono dallo start e terminano all'offset indicati.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu89} T.U.89 & il metodo save\_result della classe SqlAlchemyTestResultAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se avviene un errore durante il salvataggio dei risultati deve restituire false.  
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu90} T.U.90 & il metodo get\_results della classe SqlAlchemyTestResultAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il test indicato non esiste deve restituire un optional vuoto;
+        \item deve restituire i risultati associate al test indicato che contengono la query string nella propria domanda, risposta o risposta ottenuta e che in ordine di salvataggio partono dallo start e terminano all'offset indicati.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu91} T.U.91 & il metodo delete\_tests\_from\_dataset della classe SqlAlchemyTestAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il dataset non esiste deve restituire false;
+        \item se il dataset esiste deve eliminare tutti i test a esso associati compresi i risultati.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu92} T.U.92 & il metodo delete\_test della classe SqlAlchemyTestAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il test non esiste deve restituire un optional vuoto;
+        \item se il test esiste deve eliminare tutti i risultati a esso associati.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu93} T.U.93 & il metodo get\_all\_tests della classe SqlAlchemyTestAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se il test non esiste deve restituire un optional vuoto.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu94} T.U.94 & il metodo update\_tests della classe SqlAlchemyTestAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire tutti i test salvati nel database che contengono nel proprio nome la query string ottenuta.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu95} T.U.95 & il metodo ask\_to\_llm della classe HttpLlmComunicationAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire la stringa ottenuta dall'llm interrogato;
+        \item se avviene un errore di comunicazione deve restituire un optional vuoto.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu96} T.U.96 & il metodo get\_llm\_by\_id della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'llm non esiste deve restituire un optional vuoto.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu97} T.U.97 & il metodo get\_all\_llms della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item deve restituire la lista degli llm che contengono nel proprio nome la query string ricevuta in input. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu98} T.U.98 & il metodo delete\_llm della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se l'llm da eliminare non esiste o se avviene un errore di persistenza deve restituire un optional vuoto;
+        \item deve eliminare l'llm e tutti i test ad esso associati compresi i loro risultati. 
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu99} T.U.99 & il metodo create\_llm della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se avviene un errore di persistenza deve restituire un optional vuoto;
+        \item deve aggiungere llm ricevuto in input.
+    \end{itemize} & - \\
+    \hline 
+    \label{tu:tu100} T.U.100 & il metodo update\_llm della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
+    \begin{itemize}
+        \item se avviene un errore di persistenza deve restituire un optional vuoto;
+        \item deve aggiornare llm ricevuto in input.
     \end{itemize} & - \\
     \hline 
 \end{tabularx}
