@@ -1,0 +1,29 @@
+\subsection{Test di Integrazione backend}
+\label{subsec:test_integrazione_backend}
+\begin{tabularx}{\textwidth}{|c|X|c|}
+    \hline
+    \textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\
+    \hline
+    \label{ti:ti9} T.I.9 & verificare che quando viene eseguita la GET dei dataset accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una get nell'endpoint /dataset verificare che il metodo risponda con un DatasetListDTO che contiene la lista di tutti i dataset salvati;
+        \item nel caso in cui viene chiamata una get nell'endpoint /dataset e il parametro q contiene una stringa verificare che il metodo risponda con un DatasetListDTO che contiene la lista di solo i dataset salvati che contengono la stringa q nel nome;
+        \item nel caso in cui viene chiamata una get nell'endpoint /dataset/<dataset_id> verificare che il metodo risponda con un DatasetDTO che contiene i metadati di un dataset salvato.
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti10} T.I.10 & verificare che quando viene eseguita la POST dei dataset accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una post nell'endpoint /dataset verificare che il metodo risponda con un DatasetDTO che contiene i metadati del dataset appena creato in base al parametro scelto (dataset, file o copy).
+    \end{itemize} & - \\
+    \hline
+    \label{ti:ti11} T.I.11 & verificare che quando viene eseguita la PUT dei dataset accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una put nell'endpoint /dataset/<dataset_id> verificare che il metodo risponda con un DatasetDTO che contiene i metadati del dataset appena aggiornato.
+    \end{itemize} & - \\
+    \hline  
+    \label{ti:ti12} T.I.12 & verificare che quando viene eseguita la DELETE dei dataset accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una delete nell'endpoint /dataset/<dataset_id> verificare che il metodo risponda con uno stato in base al risultato dell'operazione di cancellazione del dataset selezionato dal database.
+    \end{itemize} & - \\
+    \hline  
+\end{tabularx}
