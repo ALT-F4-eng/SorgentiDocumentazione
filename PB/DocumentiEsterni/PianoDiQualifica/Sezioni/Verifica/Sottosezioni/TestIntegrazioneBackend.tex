@@ -1,0 +1,97 @@
+\subsubsection{Test di Integrazione backend}
+\label{subsec:test_integrazione_backend}
+\begin{tabularx}{\textwidth}{|c|X|c|}
+    \hline
+    \textbf{ID} & \textbf{Descrizione} & \textbf{Stato} \\
+    \hline
+    \label{ti:ti9} T.I.9 & verificare che quando viene eseguita la GET dei dataset accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una get nell'endpoint \texttt{/datasets} verificare che il SqlAlchemyDatasetAdapter esegua il metodo corretto e che il backend risponda con un DatasetListDTO che contiene la lista di tutti i dataset salvati;
+        \item nel caso in cui viene chiamata una get nell'endpoint \texttt{/datasets} e il parametro q contiene una stringa verificare che il SqlAlchemyDatasetAdapter esegua il metodo corretto e che il backend risponda con un DatasetListDTO che contiene la lista di solo i dataset salvati che contengono la stringa q nel nome;
+        \item nel caso in cui viene chiamata una get nell'endpoint \texttt{/datasets/<dataset\_id>} verificare che il SqlAlchemyDatasetAdapter esegua il metodo corretto e che il backend risponda con un DatasetDTO che contiene i metadati di un dataset salvato.
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti10} T.I.10 & verificare che quando viene eseguita la POST dei dataset accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una post nell'endpoint \texttt{/datasets} verificare che il SqlAlchemyDatasetAdapter esegua il metodo corretto e che il backend risponda con un DatasetDTO che contiene i metadati del dataset appena creato in base al parametro scelto (dataset, file o copy).
+    \end{itemize} & - \\
+    \hline
+    \label{ti:ti11} T.I.11 & verificare che quando viene eseguita la PUT dei dataset accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una put nell'endpoint \texttt{/datasets/<dataset\_id>} verificare che il SqlAlchemyDatasetAdapter esegua il metodo corretto e che il backend risponda con un DatasetDTO che contiene i metadati del dataset appena aggiornato.
+    \end{itemize} & - \\
+    \hline  
+    \label{ti:ti12} T.I.12 & verificare che quando viene eseguita la DELETE dei dataset accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una delete nell'endpoint \texttt{/datasets/<dataset\_id>} verificare che il SqlAlchemyDatasetAdapter esegua il metodo corretto e che il backend risponda con uno stato in base al risultato dell'operazione di cancellazione del dataset selezionato dal database.
+    \end{itemize} & - \\
+    \hline  
+    \label{ti:ti13} T.I.13 & verificare che quando viene eseguita la GET delle qa accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una get nell'endpoint \texttt{/datasets/<dataset\_id>/qas} verificare che il SqlAlchemyQuestionAnswerPairAdapter esegua il metodo corretto e che il backend risponda con un DatasetPageDTO che contiene la pagina indicata di uno specifico dataset;
+        \item nel caso in cui viene chiamata una get nell'endpoint \texttt{/datasets} e il parametro q contiene una stringa verificare che il SqlAlchemyQuestionAnswerPairAdapter esegua il metodo corretto e che il backend risponda con un DatasetPageDTO che contiene la pagina indicata di uno specifico dataset contenente qa che contendono la stringa q.
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti14} T.I.14 & verificare che quando viene eseguita la POST delle qa accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una post nell'endpoint \texttt{/datasets/<dataset\_id>/qas} verificare che il SqlAlchemyQuestionAnswerPairAdapter esegua il metodo corretto e che il backend risponda con un QaDTO che contiene la qa appena creata.
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti15} T.I.15 & verificare che quando viene eseguita la PUT delle qa accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una put nell'endpoint \texttt{/datasets/<dataset\_id>/qas/<qa\_id>} verificare che il SqlAlchemyQuestionAnswerPairAdapter esegua il metodo corretto e che il backend risponda con un QaDTO che contiene la qa appena aggiornata.
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti16} T.I.16 & verificare che quando viene eseguita la DELETE delle qa accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una delete nell'endpoint \texttt{/datasets/<dataset\_id>/qas/<qa\_id>} verificare che il SqlAlchemyQuestionAnswerPairAdapter esegua il metodo corretto e che il backend risponda con uno stato in base al risultato dell'operazione di cancellazione della qa selezionata dal database.
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti17} T.I.17 & verificare che quando viene eseguita la POST del test accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una post nell'endpoint \texttt{/tests} verificare che il backend risponda con un TestDTO che contiene i risultati e le statistiche del test;
+        \item nel caso in cui viene chiamata una post nell'endpoint \texttt{/tests} verificare che non ci siano errori nell'utilizzo delle API per ottenere le risposte da parte del LLM da testare;
+        \item nel caso in cui viene chiamata una post nell'endpoint \texttt{/tests} verificare che non ci siano errori nell'utilizzo delle API per ottenere la similarità tra le risposte;
+        \item nel caso in cui viene chiamata una post nell'endpoint \texttt{/tests} e ci sono qa incomplete verificare che il backend risponda con una QaIncompleteListDTO che contiene la lista delle qa non valide per eseguire il test. 
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti18} T.I.18 & verificare che quando viene eseguita la GET del test accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una get nell'endpoint \texttt{/tests/<test\_id>/results} verificare che il SqlAlchemyTestResultAdapter esegua il metodo corretto e che il backend risponda con un TestPageDTO che contiene la pagina di un test;
+        \item nel caso in cui viene chiamata una get nell'endpoint \texttt{/tests} verificare che il SqlAlchemyTestAdapter esegua il metodo corretto e che il backend risponda con un TestListDTO che contiene la lista dei test salvati nel database;
+        \item nel caso in cui viene chiamata una get nell'endpoint \texttt{/tests} e sono presenti dei parametri non nulli verificare che il SqlAlchemyTestAdapter esegua il metodo corretto e che il backend risponda con un TestListDTO che contiene la lista di solo i test che soddisfano i parametri della richiesta.
+        \item nel caso in cui viene chiamata una get nell'endpoint \texttt{/tests/<id\_test>} verificare che il SqlAlchemyTestAdapter esegua il metodo corretto e che il backend risponda con un TestDTO che contiene le informazioni del test selezionato.
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti19} T.I.19 & verificare che quando viene eseguita la PUT del test accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una put nell'endpoint \texttt{/tests/<test\_id>} verificare che il SqlAlchemyTestAdapter esegua il metodo corretto e che il backend risponda con un TestDTO che contiene il test appena aggiornato.
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti20} T.I.20 & verificare che quando viene eseguita la DELETE del test accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una delete nell'endpoint \texttt{/tests/<test\_id>} verificare che il SqlAlchemyTestAdapter esegua il metodo corretto e che il backend risponda con uno stato in base al risultato dell'operazione di cancellazione del test selezionato dal database.
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti21} T.I.21 & verificare che quando viene eseguita la GET del llm accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una get nell'endpoint \texttt{/llms/<id\_llm>} verificare che il SqlAlchemyLlmAdapter esegua il metodo corretto e che il backend risponda con un LLMDTO che contiene le informazioni relative a un llm salvato nel database;
+        \item nel caso in cui viene chiamata una get nell'endpoint \texttt{/llms} verificare che il SqlAlchemyLlmAdapter esegua il metodo corretto e che il backend risponda con un LLMListDTO che contiene la lista di tutti gli llm salvati nel database. 
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti22} T.I.22 & verificare che quando viene eseguita la DELETE del llm accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una delete nell'endpoint \texttt{/llms/<id\_llm>} verificare che il SqlAlchemyLlmAdapter esegua il metodo corretto e che il backend risponda con uno stato in base al risultato dell'operazione di cancellazione del llm selezionato dal database;
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti23} T.I.23 & verificare che quando viene eseguita la POST del llm accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una post nell'endpoint \texttt{/llms} verificare che il SqlAlchemyLlmAdapter esegua il metodo corretto e che il backend risponda con un LLMDTO che contiene le informazioni relative al llm appena creato;
+    \end{itemize} & - \\
+    \hline 
+    \label{ti:ti24} T.I.24 & verificare che quando viene eseguita la PUT del llm accadano le seguenti condizioni:
+    \begin{itemize}
+        \item nel caso in cui viene chiamata una put nell'endpoint \texttt{/llms/<id\_llm>} verificare che il SqlAlchemyLlmAdapter esegua il metodo corretto e che il backend risponda con un LLMDTO che contiene le informazioni relative al llm appena aggiornato;
+    \end{itemize} & - \\
+    \hline 
+\end{tabularx}
