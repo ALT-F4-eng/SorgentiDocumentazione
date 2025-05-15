@@ -387,8 +387,8 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
         \item viene visualizzato correttamente l'indirizzo URL del LLM usato per l'esecuzione delle chiamate; 
         \item vengono visualizzate correttamente le coppie chiave-valore per la costruzione dell'header delle chiamate;
         \item vengono visualizzate correttamente le coppie chiave-valore per la costruzione del body delle chiamate;
-        \item viene visualizzata correttamente la chiave associata alle domande da porre all'LLM;
-        \item viene visualizzata correttamente la chiave da utilizzare per estrarre la risposte date dall'LLM;
+        \item viene visualizzata correttamente la chiave associata alle domande da porre al LLM;
+        \item viene visualizzata correttamente la chiave da utilizzare per estrarre la risposte date dal LLM;
         \item viene visualizzato correttamente il pulsante che permette di modificare LLM attuale;
     \end{itemize}
     & - \\
@@ -402,7 +402,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \label{tu:tu44} T.U.44 & il metodo copy\_dataset della classe DatasetService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item nel caso in cui il dataset da copiare non esiste deve lanciare un eccezione di tipo DatasetNonExistentException;
-        \item la copia creata deve avere nome che segue lo schema $nome_dataset_sorgente-copy-<n>$ dove $n$ è un numero crescente che indica l'ultima copia creata per il dataset;
+        \item la copia creata deve avere nome che segue lo schema $nome\_dataset\_sorgente-copy-<n>$ dove $n$ è un numero crescente che indica l'ultima copia creata per il dataset;
         \item nel caso in cui si verifichi un errore nella persistenza della nuova copia il metodo deve lanciare un eccezione di tipo PersistenceException;
         \item la copia creata deve avere lo stesso numero di elementi del dataset da copiare;
         \item la copia del dataset deve avere come data di ultimo salvataggio e data di primo salvataggio assegnate alla data attuale;
@@ -413,7 +413,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \begin{itemize}
         \item nel caso in cui esista un dataset temporaneo deve sovrascriverlo;
         \item il dataset temporaneo creato deve avere dimensione a zero, tmp a true e gli altri campi nulli;
-        \item nel caso in cui a creazione del nuovo dataset temporaneo generi un errore di persistenza il metodo deve lanciare un eccezione di tipo PersistenceException;
+        \item nel caso in cui la creazione del nuovo dataset temporaneo generi un errore di persistenza il metodo deve lanciare un eccezione di tipo PersistenceException;
     \end{itemize} & - \\
     \hline 
     \label{tu:tu46} T.U.46 & Il metodo delete\_dataset della classe DatasetService deve soddisfare le seguenti condizioni:
@@ -425,9 +425,9 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline 
     \label{tu:tu47} T.U.47 & Il metodo update\_dataset della classe DatasetService deve soddisfare le seguenti condizioni:   
     \begin{itemize}
-        \item se il dataset da aggiornare è temporaneo allora il metodo deve salvato;
+        \item se il dataset da aggiornare è temporaneo allora il metodo deve salvarlo;
         \item se il dataset da aggiornare è salvato allora il metodo deve limitarsi ad aggiornarlo;
-        \item se il dataset da aggiornare è una working copy di un dataset salvato il metodo deve laciare un eccezione di tipo InvalidDatasetOperationException;
+        \item se il dataset da aggiornare è una working copy di un dataset salvato il metodo deve lanciare un eccezione di tipo InvalidDatasetOperationException;
         \item nel caso in cui l'aggiornamento/salvataggio del dataset generi un errore di persistenza il metodo deve lanciare un eccezione di tipo PersistenceException; 
         \item se il nome ricevuto in input è vuoto il metodo deve lanciare un eccezione di tipo InvalidDatasetNameException;
         \item se il dataset da salvare/aggiornare non esiste il metodo deve lanciare un errore di tipo DatasetNonExistentException.
@@ -530,7 +530,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline 
     \label{tu:tu61} T.U.61 & il metodo test della classe TestTemplateMethod deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item deve ottenere la risposta dall'llm e se avviene un errore di comunicazione deve lanciare un eccezione di tipo LlmComunicationException. 
+        \item deve ottenere la risposta dal llm e se avviene un errore di comunicazione deve lanciare un eccezione di tipo LlmComunicationException. 
     \end{itemize} & - \\
     \hline 
     \label{tu:tu62} T.U.62 & il metodo similarity\_score della classe EmbeddingsLlmTestMethod deve soddisfare le seguenti condizioni:
@@ -540,8 +540,8 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline 
     \label{tu:tu63} T.U.63 & il metodo is\_correct della classe EmbeddingsLlmTestMethod deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item deve ottenere il responso sulla correttezza interrogando llm esterno e nel caso in cui avvenga un errore di comunicazione deve lanciare un eccezione di tipo LlmComunicationException; 
-        \item deve restituire un valore booleano che specifica la correttezza della risposta ottenuta dall'LLM rispetto alla risposta attesa.
+        \item deve ottenere il responso sulla correttezza interrogando il llm esterno e nel caso in cui avvenga un errore di comunicazione deve lanciare un eccezione di tipo LlmComunicationException; 
+        \item deve restituire un valore booleano che specifica la correttezza della risposta ottenuta dal LLM rispetto alla risposta attesa.
     \end{itemize} & - \\
     \hline 
     \label{tu:tu64} T.U.64 & il metodo delete\_test della classe TestService deve soddisfare le seguenti condizioni:
@@ -586,20 +586,20 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \label{tu:tu70} T.U.70 & il metodo get\_all\_llms della classe LlmService deve soddisfare le seguenti condizioni: 
     \begin{itemize}
         \item se la query string di input è vuota il metodo deve restituire tutti gli llm salvati;
-        \item se la quesry string in input non è vuota il metodo deve restituire solo gli llm salvati che contengono nel proprio nome la query string;
+        \item se la query string in input non è vuota il metodo deve restituire solo gli llm salvati che contengono nel proprio nome la query string;
         \item se non esistono llm salvati il metodo deve restituire una lista vuota.
     \end{itemize} & - \\
     \hline 
     \label{tu:tu71} T.U.71 & il metodo delete\_llm della classe LlmService deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se l'id ricevuto in input corrisponde a un llm che non esiste il metodo deve lanciare un eccezione di tipo LlmNonExistentException;
-        \item deve eliminare l'llm salvato indicato;
+        \item deve eliminare il LLM salvato indicato;
         \item se avviene un errore di persistenza durante l'eliminazione del llm il metodo deve lanciare un eccezione di tipo PersistenceException.
     \end{itemize} & - \\
     \hline 
     \label{tu:tu72} T.U.72 & il metodo create\_llm della classe LlmService deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item se il nome dell'llm è già utilizzato deve lanciare un eccezione di tipo DuplicateLlmException;
+        \item se il nome del LLM è già utilizzato deve lanciare un eccezione di tipo DuplicateLlmException;
         \item se avviene un errore di persistenza durante la creazione del llm il metodo deve lanciare un eccezione di tipo PersistenceException.
     \end{itemize} & - \\
     \hline 
@@ -631,13 +631,13 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline 
     \label{tu:tu78} T.U.78 & il metodo delete\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item deve restituire un optional vuoto se il dataset con id indicato non esiste o avviene un errore di persistenza; 
+        \item deve restituire un optional vuoto se il dataset con l'id indicato non esiste o avviene un errore di persistenza; 
         \item deve eliminare dal database il dataset identificato con l'id indicato, il suo contenuto, i test a esso associati e tutti i risultati dei test.
     \end{itemize} & - \\
     \hline 
     \label{tu:tu79} T.U.79 & il metodo update\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item deve restituire un optional vuoto se il dataset con id indicato non esiste o avviene un errore di persistenza; 
+        \item deve restituire un optional vuoto se il dataset con l'id indicato non esiste o avviene un errore di persistenza; 
         \item deve aggiornare il dataset indicato nel database. 
     \end{itemize} & - \\
     \hline 
@@ -648,7 +648,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline 
     \label{tu:tu81} T.U.81 & il metodo get\_dataset della classe SqlAlchemyDatasetAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item deve restituire un optional a valore non se il dataset richiesto non esiste;
+        \item deve restituire un optional a valore null se il dataset richiesto non esiste;
         \item deve restituire il dataset con id uguale a quello indicato.
     \end{itemize} & - \\
     \hline 
@@ -659,7 +659,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline 
     \label{tu:tu83} T.U.83 & il metodo update\_qa della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item deve restituire un optional vuoto se la coppia con id indicato non esiste o avviene un errore di persistenza; 
+        \item deve restituire un optional vuoto se la coppia con l'id indicato non esiste o avviene un errore di persistenza; 
         \item deve aggiornare la coppia nel database.
     \end{itemize} & - \\
     \hline 
@@ -682,7 +682,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline 
     \label{tu:tu87} T.U.87 & il metodo copy\_all\_from\_dataset della classe SqlAlchemyQuestionAnswerPairAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item deve copiare tutte le domande appartenenti al dataset identificato dall'identificativo sorgente nel dataset identificato dall'identificativo destinazione;
+        \item deve copiare tutte le domande contenute nel dataset indicato come sorgente all'interno del dataset indicato come destinazione;
         \item se uno dei due dataset non esiste o avviene un errore di persistenza deve restituire un optional vuoto. 
     \end{itemize} & - \\
     \hline 
@@ -700,7 +700,7 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \label{tu:tu90} T.U.90 & il metodo get\_results della classe SqlAlchemyTestResultAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se il test indicato non esiste deve restituire un optional vuoto;
-        \item deve restituire i risultati associate al test indicato che contengono la query string nella propria domanda, risposta o risposta ottenuta e che in ordine di salvataggio partono dallo start e terminano all'offset indicati.
+        \item deve restituire i risultati associati al test indicato che contengono la query string nella propria domanda, risposta o risposta ottenuta e che in ordine di salvataggio partono dallo start e terminano all'offset indicati.
     \end{itemize} & - \\
     \hline 
     \label{tu:tu91} T.U.91 & il metodo delete\_tests\_from\_dataset della classe SqlAlchemyTestAdapter deve soddisfare le seguenti condizioni:
@@ -727,13 +727,13 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline 
     \label{tu:tu95} T.U.95 & il metodo ask\_to\_llm della classe HttpLlmComunicationAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item deve restituire la stringa ottenuta dall'llm interrogato;
+        \item deve restituire la stringa ottenuta dal LLM interrogato;
         \item se avviene un errore di comunicazione deve restituire un optional vuoto.
     \end{itemize} & - \\
     \hline 
     \label{tu:tu96} T.U.96 & il metodo get\_llm\_by\_id della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item se l'llm non esiste deve restituire un optional vuoto.
+        \item se il LLM non esiste deve restituire un optional vuoto.
     \end{itemize} & - \\
     \hline 
     \label{tu:tu97} T.U.97 & il metodo get\_all\_llms della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
@@ -743,20 +743,20 @@ funzionino correttamente quando testati in modo autonomo e isolato all'interno d
     \hline 
     \label{tu:tu98} T.U.98 & il metodo delete\_llm della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
-        \item se l'llm da eliminare non esiste o se avviene un errore di persistenza deve restituire un optional vuoto;
-        \item deve eliminare l'llm e tutti i test ad esso associati compresi i loro risultati. 
+        \item se il LLM da eliminare non esiste o se avviene un errore di persistenza deve restituire un optional vuoto;
+        \item deve eliminare il LLM e tutti i test ad esso associati compresi i loro risultati. 
     \end{itemize} & - \\
     \hline 
     \label{tu:tu99} T.U.99 & il metodo create\_llm della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se avviene un errore di persistenza deve restituire un optional vuoto;
-        \item deve aggiungere llm ricevuto in input.
+        \item deve aggiungere il llm ricevuto in input.
     \end{itemize} & - \\
     \hline 
     \label{tu:tu100} T.U.100 & il metodo update\_llm della classe SqlAlchemyLlmAdapter deve soddisfare le seguenti condizioni:
     \begin{itemize}
         \item se avviene un errore di persistenza deve restituire un optional vuoto;
-        \item deve aggiornare llm ricevuto in input.
+        \item deve aggiornare il llm ricevuto in input.
     \end{itemize} & - \\
     \hline 
 \end{tabularx}
@@ -794,13 +794,13 @@ Verificare che il componente "LLMForm" soddisfi le seguenti condizioni:
     
         \item viene visualizzato correttamente il pulsante di aggiunta della nuova chiave-valore del body;
         
-        \item viene visualizzata correttamente l'etichetta "Question Key" del campo di inserimento della chiave associata alle domande da porre all'LLM;
-        \item viene visualizzato correttamente il campo di inserimento della chiave associata alle domande da porre all'LLM;
-        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della chiave associata alle domande da porre all'LLM;
+        \item viene visualizzata correttamente l'etichetta "Question Key" del campo di inserimento della chiave associata alle domande da porre al LLM;
+        \item viene visualizzato correttamente il campo di inserimento della chiave associata alle domande da porre al LLM;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della chiave associata alle domande da porre al LLM;
         
-        \item viene visualizzata correttamente l'etichetta "Answer Key" del campo di inserimento della chiave associata alla risposta fornita dall'LLM;
-        \item viene visualizzato correttamente il campo di inserimento della chiave associata alla risposta fornita dall'LLM;
-        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della chiave associata alla risposta fornita dall'LLM;
+        \item viene visualizzata correttamente l'etichetta "Answer Key" del campo di inserimento della chiave associata alla risposta fornita dal LLM;
+        \item viene visualizzato correttamente il campo di inserimento della chiave associata alla risposta fornita dal LLM;
+        \item è possibile inserire caratteri compresi da UTF-8 all'interno del campo di inserimento della chiave associata alla risposta fornita dal LLM;
         
         \item viene visualizzato correttamente il pulsante di salvataggio delle modifiche effettuate;
         \item viene chiamata correttamente la funzione di salvataggio quando si preme il pulsante "Salva";
