@@ -87,7 +87,7 @@
     \item \textbf{TestName}: sezione testuale contenente il nome del test;
     \item \textbf{TestDate}: sezione testuale contenente la data di esecuzione del test;
     \item \textbf{TestDatasetName}: sezione testuale contenente il nome del dataset associato al test;
-    \item \textbf{RenameButton}: pulsante per richiedere la rinominazione del test, questa viene poi effettuata tramite il sottocomponente \textbf{TestNameForm};
+    \item \textbf{RenameButton}: pulsante per richiedere la rinominazione del test, questa viene poi effettuata tramite il sottocomponente \textbf{TestNameDialog};
     \item \textbf{DeleteButton}: pulsante per richiedere l'eliminazione del test, questa viene poi confermata o annullata tramite il sottocomponente \textbf{ConfirmComponent};
     \item \textbf{LoadButton}: pulsante per richiedere il caricamento del test, se il test attualmente caricato presenta modifiche viene richiesta la conferma o l'annullamento della sovrascrittura tramite il sottocomponente \textbf{ConfirmComponent};
 \end{itemize}
@@ -101,7 +101,7 @@
     \item delete: evento emesso quando viene premuto il pulsante per richiedere l'eliminazione del test;
     \item load: evento emesso quando viene premuto il pulsante per richiedere il caricamento del test;
 \end{itemize}
-\subsubsection{TestNameForm}
+\subsubsection{TestNameDialog}
 \textbf{Componente padre}:
 \begin{itemize}
     \item TestPage;
@@ -137,7 +137,7 @@
     \item \textbf{TemporaryLabel}: sezione testuale contenente il messaggio che informa l'utente che il test caricato è temporaneo;
     \item \textbf{SummarySection}: sezione di visualizzazione dei dati sintetici del test, realizzata tramite il sottocomponente \textbf{TestIndex};
     \item \textbf{ComparisonButton}: pulsante che permette di richiedere il confronto tra il test corrente e un altro test salvato, la selezione del test da confrontare viene poi effettuata tramite il sottocomponente \textbf{TestSelectionComparison};
-    \item \textbf{SaveButton}: pulsante che permette il salvataggio del test se è temporaneo, viene successivamente richiesto di assegnargli un nome tramite il sottocomponente \textbf{TestNameForm};
+    \item \textbf{SaveButton}: pulsante che permette il salvataggio del test se è temporaneo, viene successivamente richiesto di assegnargli un nome tramite il sottocomponente \textbf{TestNameDialog};
     \item \textbf{ResultSection}: sezione di visualizzazione dei risultati del test e del grafico di rappresentazione, realizzata tramite il sottocomponente \textbf{TestPageView};
     \item \textbf{ErrorMessage}: messaggio di errore che viene visualizzato in seguito a un errore nell'ottenimento o nel salvataggio dei dati, realizzato tramite il sottocomponente \textbf{MessageComponent};
 \end{itemize}
