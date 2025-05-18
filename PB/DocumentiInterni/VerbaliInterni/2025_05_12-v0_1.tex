@@ -1,0 +1,123 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{custom}
+
+
+%--------------------VARIABILI--------------------
+\def\lastversion{v0.1}
+\def\title{Verbale interno}
+\def\date{12 Maggio 2025}
+%------------------------------------------------
+
+\begin{document}
+
+\primapagina
+
+\begin{registromodifiche}
+        \lastversion & 12 Maggio 2025 & Francesco Savio & Marko Peric & Stesura verbale interno \\
+        \hline 
+\end{registromodifiche}
+
+\tableofcontents
+
+\newpage
+
+\section{Registro presenze}
+\begin{itemize}
+    \item[] \textbf{Data}: 12 Maggio 2025
+    \item[] \textbf{Ora inizio}:  10:00
+    \item[] \textbf{Ora fine}: 11:30
+    \item[] \textbf{Piattaforma}: Discord	
+\end{itemize}
+
+\begin{table}[H]
+\centering
+{\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{| X | X |}
+    \hline
+        \textbf{\large Componente} & 
+        \textbf{\large Presenza} \\ 
+    \hline 
+    \hline
+        Eghosa Matteo Igbinedion Osamwonyi&
+        Presente \\
+    \hline 
+        Guirong Lan&
+        Presente \\
+    \hline 
+        Enrico Bianchi&
+        Presente \\
+    \hline 
+        Francesco Savio&
+        Presente \\
+    \hline 
+        Marko Peric&
+        Presente \\
+    \hline 
+        Pedro Leoni&
+        Presente \\
+    \hline 
+
+\end{tabularx}}
+\end{table}
+
+\newpage
+
+\section{Verbale}
+
+\subsection{Ordine del giorno}
+\begin{itemize}
+    \item Discussione sulle \glossario{issue} precedenti;
+    \item Pianificazione delle attività da svolgere durante lo \glossario{Sprint} 15.
+\end{itemize}    
+
+\subsection{Decisioni prese}
+    Il gruppo ha nominato Francesco Savio come responsabile per lo \glossario{sprint} 15.
+    Le decisioni prese per questo sprint sono:
+    \begin{itemize}
+        \item Realizzare nel backend il codice che gestisce QA, TEST e LLM seguendo la specifica tecnica;
+        \item Realizzare nel frontend i componenti DatasetContentPage, TestListpage, TestPage, TestComparisonPage, LLMListPage, LLMPage e loro sottocomponenti;
+        \item Realizzare il database.
+    \end{itemize}
+    Per queste decisioni sono state pianificate le seguenti ore di lavoro:
+    \begin{itemize}  
+        \item 2 ore al responsabile;
+        \item 51 ore al programmatore;
+        \item 15 ore al verificatore.
+    \end{itemize}
+
+\section{To Do/In progress}
+\begin{tabularx}{\textwidth}{|c|C|C|C|}
+    \hline
+        \textbf{Issue} & \textbf{Descrizione} & \textbf{Incaricato} & \textbf{Scadenza}\\
+    \hline    
+        \#434 & Aggiornamento del Piano di Progetto & Francesco Savio & 15 Maggio 2025\\
+    \hline 
+        \#435 & Stesura del verbale interno & Francesco Savio & 14 Maggio 2025\\
+    \hline
+        \#436 & Aggiornamento del Piano di Qualifica & Francesco Savio & 15 Maggio 2025\\
+    \hline
+        \#3 & Implementazione componente DatasetContentPage e sottocomponenti associati & Guirong Lan, Marko Peric, Enrico Bianchi & 15 Maggio 2025\\
+    \hline
+        \#4 & Implementazione componente TestListpage e sottocomponenti associati & Guirong Lan, Marko Peric, Enrico Bianchi & 15 Maggio 2025\\
+    \hline
+        \#5 & Implementazione componente TestPage e sottocomponenti associati & Guirong Lan, Marko Peric, Enrico Bianchi & 16 Maggio 2025\\
+    \hline
+        \#6 & Implementazione componente TestComparisonPage e sottocomponenti associati & Guirong Lan, Marko Peric, Enrico Bianchi & 16 Maggio 2025\\
+    \hline
+        \#7 & Implementazione componente LLMListPage e sottocomponenti associati & Guirong Lan, Marko Peric, Enrico Bianchi & 17 Maggio 2025\\
+    \hline
+        \#8 & Implementazione componente LLMPage e sottocomponenti associati & Guirong Lan, Marko Peric, Enrico Bianchi & 17 Maggio 2025\\
+    \hline    
+        \#9 & realizzazione database & Eghosa Matteo Igbinedion Osamwonyi & 15 Maggio 2025\\
+    \hline  
+        \#11 & QA lato backend & Eghosa Matteo Igbinedion Osamwonyi, Pedro Leoni & 15 Maggio 2025\\
+    \hline
+        \#12 & TEST lato backend & Eghosa Matteo Igbinedion Osamwonyi, Pedro Leoni & 17 Maggio 2025\\
+    \hline
+        \#13 & LLM lato backend & Eghosa Matteo Igbinedion Osamwonyi, Pedro Leoni & 17 Maggio 2025\\
+    \hline
+    \end{tabularx}
+
+\end{document}
+
