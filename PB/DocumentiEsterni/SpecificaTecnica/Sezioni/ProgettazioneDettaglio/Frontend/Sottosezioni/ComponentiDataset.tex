@@ -128,7 +128,7 @@
     \item \textbf{SaveButton}: pulsante che permette il salvataggio delle modifiche non salvate realizzate sul dataset caricato, se il dataset caricato è temporaneo viene successivamente richiesto di assegnargli un nome tramite il sottocomponente \textbf{DatasetNameDialog};
     \item \textbf{SearchQA}: barra per la ricerca di coppie di domanda e risposta nel dataset, realizzata tramite sottocomponente \textbf{SearchBar}; 
     \item \textbf{DatasetContainer}: sezione di visualizzazione delle coppie domanda e risposta del dataset caricato, realizzata dal sottocomponente \textbf{DatasetPageView}.
-    \item \textbf{QAForm}: form che permette l'inserimento e la modifica di una coppia domanda e risposta del dataset caricato, realizzato tramite il sottocomponente \textbf{QAForm};
+    \item \textbf{AddButton}: pulsante che permette l'inserimento di una coppia domanda e risposta del dataset, realizzato tramite il sottocomponente \textbf{QADialog};
     \item \textbf{ErrorMessage}: messaggio di errore visualizzato in seguito a un errore nell'ottenimento o nel salvataggio dei dati o nell'esecuzione di un test, realizzato tramite sottocomponente \textbf{MessageComponent};
     \item \textbf{UnfilledErrorMessage}: messaggio di errore visualizzato nel caso si richieda un test su un dataset con elementi incompleti, indicati nel messaggio tramite link, realizzato tramite sottocomponente \textbf{MessageComponent}.
 \end{itemize}
@@ -147,10 +147,10 @@
 \begin{itemize}
     \item \textbf{QAListContainer}: pagina delle coppie domanda e risposta del dataset caricato, realizzata tramite il sottocomponente \textbf{QAListView}.
     \item \textbf{QANavBar}: sezione che permette la navigazione tra le pagine del dataset, realizzata tramite sottocomponente \textbf{PageNavigation}.
+    \item \textbf{StatusMessage}: popup di conferma di eliminazione di una coppia di domande e risposta realizzato tramite sottocomponente \textbf{ConfirmComponent}. 
 \end{itemize}
 \textbf{Input}
 \begin{itemize}
-    \item dataset: dataset associato al componente;
     \item QAlist: elenco di coppie domanda e risposta relative alla pagina di visualizzazione del dataset associato.
 \end{itemize}
 \textbf{Output}
@@ -203,7 +203,7 @@
     \item deleteQAElement: evento emesso quando viene confermata la richiesta di eliminazione della coppia domanda e risposta.
 \end{itemize}
 
-\subsubsection{QAForm}
+\subsubsection{QADialog}
 \textbf{Componente padre}
 \begin{itemize}
     \item DatasetContentPage.
