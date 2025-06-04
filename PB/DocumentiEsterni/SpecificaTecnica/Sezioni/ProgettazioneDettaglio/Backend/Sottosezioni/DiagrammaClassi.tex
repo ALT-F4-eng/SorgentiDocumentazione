@@ -124,7 +124,7 @@ Nel progetto sono stati adottati diversi pattern architetturali per garantire mo
     Il componente \texttt{SqlAlchemyDatasetAdapter} funge da adattatore tra l'interfaccia DatasetRepository e il sistema di persistenza. Come mostrato: da fare  
     \item \textbf{Entrypoint}
     Il componente \texttt{DatasetEntrypoint} funge da porta di ingresso e gestisce l'input esterno invocando i casi d'uso appropriati.
-    \item \textbf{DTO (Data Transfer Object)}
+    \item \hyperref[subsubsec:DTO]{\textbf{Data Transfer Object (DTO)}} \\
     \item \textbf{Dependency Injection} \\
     Il componente  \texttt{DatasetEntrypoint} utilizza il componente DatasetUseCase come parametro nei metodi, permettendo quindi di mantenere il core del dominio indipendente dalle implementazioni concrete delle classi.
 \end{itemize}
