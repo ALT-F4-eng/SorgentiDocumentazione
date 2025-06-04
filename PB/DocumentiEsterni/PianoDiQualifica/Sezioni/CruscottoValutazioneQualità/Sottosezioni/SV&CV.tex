@@ -5,18 +5,18 @@
     \begin{axis}[
         width=15cm, height=10cm,
         ymin=-200, ymax=30,
-        xmin=0, xmax=17,
-        xtick={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18},
-        xticklabels={PP, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18},
+        xmin=0, xmax=16,
+        xtick={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16},
+        xticklabels={PP, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16},
         xlabel={},
         ylabel={},
         grid=major,
         scaled ticks=false,
         legend style={at={(0.5,1.1)}, anchor=south, legend columns=-1},
     ]
-    \addplot[color=blue, thick,dashed] coordinates {(0, 0) (1, -47.5) (2, -64) (3, -92) (4, -51) (5, -65) (6, -64) (7, -24) (8, 0) (9, 0) (10, 0) (11, -3.8) (12, -3.4) (13, 0) (14, 0) (15, -2.15)};
+    \addplot[color=blue, thick,dashed] coordinates {(0, 0) (1, -47.5) (2, -64) (3, -92) (4, -51) (5, -65) (6, -64) (7, -24) (8, 0) (9, 0) (10, 0) (11, -3.8) (12, -3.4) (13, 0) (14, 0) (15, -2.15) (16, -9.47)};
     \addlegendentry{SV}
-    \addplot[color=green] coordinates {(0, -147) (1, -140) (2, -98) (3, -123) (4, -97) (5, -35) (6, -49) (7, -14) (8, -9) (9, -5.2) (10, -4.5) (11, -4.1) (12, -3.5) (13, -1.25) (14, 0.35) (15, 2.6)};
+    \addplot[color=green] coordinates {(0, -147) (1, -140) (2, -98) (3, -123) (4, -97) (5, -35) (6, -49) (7, -14) (8, -9) (9, -5.2) (10, -4.5) (11, -4.1) (12, -3.5) (13, -1.25) (14, 0.35) (15, 2.6) (16, -9.87)};
     \addlegendentry{CV}
     \addplot[red, thick] coordinates {(0, -15) (17, -15)};
     \addlegendentry{Valore ammissibile}
@@ -63,3 +63,8 @@ La \glossario{Cost Variance} (CV) è di +0.35\%, il che indica che il costo real
 \paragraph{Sprint 15}
 La \glossario{Schedule Variance} (SV) è di -2.15\%, il che indica che il lavoro non procede esattamente secondo la pianificazione attuale e che si è verificato un ritardo, accettato però dai limiti previsti dal valore ammissibile.
 La \glossario{Cost Variance} (CV) è di +2.6\%, il che indica che il costo reale è leggermente inferiore al valore pianificato, mostrando un miglioramento rispetto agli \glossario{sprint} precedenti.
+
+\paragraph{Sprint 16}
+La \glossario{Schedule Variance} (SV) è di -9.47\%, il che indica che il lavoro non procede esattamente secondo la pianificazione attuale e che si è verificato un ritardo significativo, accettato però dai limiti previsti dal valore ammissibile.
+La \glossario{Cost Variance} (CV) è di -9.87\%, il che indica che il costo reale è significativamente superiore al valore pianificato, mostrando un peggioramento rispetto agli \glossario{sprint} precedenti.
+Questo peggioramento è dovuto al fatto che le risorse disponibili sono terminate e il completamento del progetto necessiterebbe di budget non disponibile per il completamento delle attività rimanenti.
