@@ -11,6 +11,59 @@
 
 Il seguente diagramma rappresenta l'architettura software per la gestione dei \textit{Dataset}. Ogni componente ha un ruolo ben definito per garantire separazione delle responsabilità, scalabilità e manutenibilità.
 
+\subsection{Descrizione delle classi}
+
+La seguente sezione descrive le classi utilizzate per la gestione dei \textit{Dataset} nel \textit{back-end}.
+Vengono descritti gli attributi e i metodi appartenenti a ciascuna classe, le interfacce che sono state implementate e le dipendenze tra le classi del sistema.
+Le descrizioni sono suddivise in due sezioni:
+\begin{itemize}
+    \item \textbf{incoming}: classi che permettono ai livelli esterni di invocare operazioni di business, vengono fornite delle interfacce chiare per l'implementazione dei casi d'uso definiti.
+    \item \textbf{outcoming}: classi che permettono l'interazione con servizi esterni, vengono fornite delle interfacce che permettono di realizzare operazioni tecniche mantenendo il dominio indipendente da tacnologie specifiche.
+\end{itemize}
+Le seguenti sezioni contengono la descrizione di \textit{ports} e \textit{adapters} implementati.
+
+\subsection{Incoming}
+\subsubsection{Ports}
+\paragraph{DatasetUseCase} 
+\begin{itemize}
+    \item \textbf{Descrizione}: definisce il contratto per i casi d'uso relativi alla gestione dei dataset;
+    \item \textbf{Operazioni}:
+    \begin{itemize}
+        \item Creazione di un nuovo dataset;
+        \item Eliminazione di un dataset;
+        \item Aggiornamento dei metadati di un dataset;
+        \item Recupero della lista di dataset salvati nel sistema.
+    \end{itemize}
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nella classe concreta.
+\end{itemize} 
+\subsubsection{Adapter}
+\paragraph{DatasetService}
+\begin{itemize}
+    \item \textbf{Descrizione}: è responsabile della gestione dei dataset;
+    \item \textbf{Interfaccia implementata}: DatasetUseCase;
+    \item \textbf{Attributi}: \lstinline|_dataset_repo|: istanza della classe \lstinline|DatasetRepository| utilizzata per gestire i dataset nel sistema;
+    \item \textbf{Metodi}:
+    \begin{itemize}
+        \item \lstinline|__init__(self, dataset_repo: DatasetRepository)|: costruttore della classe;
+        \item \lstinline|+ create(self, name: str)|: crea un nuovo dataset con il nome fornito.
+        Se è già presente un dataset con lo stesso nome del sistema viene alzata un'eccezione di tipo \lstinline|DuplicateNameDatasetError(name)|,
+        se ci sono problemi con la creazione del dataset da parte di \lstinline|_dataset_repo| viene alzata un'eccezione di tipo \lstinline|PersistenceError|,
+        se l'operazione ha buon fine viene restituito il dataset creato.
+    \end{itemize}
+    \item \textbf{Dipendenze}: DatasetRepository;
+\end{itemize}
+
+\subsection{Outcoming}
+\subsubsection{Ports}
+\paragraph{DatasetRepository}
+\begin{itemize}
+    \item \textbf{Descrizione}: definisce un contratto per la gestione dei dataset all'interno del sistema;
+    \item \textbf{Operazioni}:
+    \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nella classe concreta.
+\end{itemize}
+
+
+
 \begin{itemize}
     \item \textbf{Dataset}: entità principale che rappresenta un dataset. Contiene i seguenti attributi:
     \begin{itemize}
@@ -83,6 +136,3 @@ Nel progetto sono stati adottati diversi pattern architetturali per garantire mo
     \item \textbf{Dependency Injection} \\
     Il componente  \texttt{DatasetEntrypoint} utilizza il componente DatasetUseCase come parametro nei metodi, permettendo quindi di mantenere il core del dominio indipendente dalle implementazioni concrete delle classi.
 \end{itemize}
-
-
-\subsubsection{Descrizione delle funzioni e i metodi utilizzati}
