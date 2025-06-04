@@ -5,16 +5,16 @@
     \begin{axis}[
         width=15cm, height=10cm,
         ymin=0, ymax=100,
-        xmin=0, xmax=17,
-        xtick={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18},
-        xticklabels={PP, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18},
+        xmin=0, xmax=16,
+        xtick={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16},
+        xticklabels={PP, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16},
         xlabel={},
         ylabel={},
         grid=major,
         scaled ticks=false,
         legend style={at={(0.5,1.1)}, anchor=south, legend columns=-1},
     ]
-    \addplot[color=blue] coordinates {(0, 0) (1, 47.5) (2, 64) (3, 92) (4, 51) (5, 65) (6, 64) (7, 24) (8, 0) (9, 0) (10, 0) (11, 3.8) (12, 3.4) (13, 0) (14, 0) (15, 2.15)};
+    \addplot[color=blue] coordinates {(0, 0) (1, 47.5) (2, 64) (3, 92) (4, 51) (5, 65) (6, 64) (7, 24) (8, 0) (9, 0) (10, 0) (11, 3.8) (12, 3.4) (13, 0) (14, 0) (15, 2.15) (16, 9.47)};
     \addlegendentry{VP}
     \addplot[orange, thick] coordinates {(0, 5) (17, 5)};
     \addlegendentry{Valore ottimo}
@@ -50,3 +50,6 @@ Il lavoro durante lo \glossario{sprint} è stato completato in maniera efficient
 
 \paragraph{Sprint 15}
 Il lavoro durante lo \glossario{sprint} è stato completato in maniera efficiente, ciò ha portato il valore del \glossario{VP} a 2.15\%, che si cercherà di recuperare durante il prossimo \glossario{sprint} per evitare di superare il valore ammissibile.
+
+\paragraph{Sprint 16}
+Il lavoro durante lo \glossario{sprint} non è stato completato in maniera efficiente, ciò ha portato il valore del \glossario{VP} a 9.47\% che non è accettabile e non si riuscirà a recuperare a causa della mancanza di risorse disponibili.
