@@ -149,3 +149,36 @@ Nella seguente sezione vengono descritti i \textit{design pattern} utilizzati, i
         In questo modo l’applicazione rimane indipendente dai dettagli tecnici esterni, rendendo il sistema più  testabile e facilmente manutenibile.
     \end{itemize}
 \end{itemize}
+
+\subsubsection{DTO (Data Transfer Object)}
+\label{subsubsec:DTO}
+Qui vengono descritti i DTO utilizzati per il trasferimento dei dati tra gli strati dell'applicazione.
+I DTO sono dei contenitori semplici di dati non contenenti logica di business, progettati per aggregare dati e facilitare la comunicazione tra i vari livelli dell'applicazione.
+\begin{itemize}
+    \item \textbf{DatasetCreateDto}:\\
+    DTO utilizzato per rappresentare i dati necessari alla creazione di un nuovo dataset nel sistema.
+    \begin{itemize}
+        \item \texttt{name: str}, nome del dataset da creare.
+    \end{itemize}
+
+    \item \textbf{DatasetUpdateDto}:\\
+    DTO utilizzato per rinominare un dataset esistente nel sistema.
+    \begin{itemize}
+        \item \texttt{id: UUID}, identificatore univoco del dataset da aggiornare;
+        \item \texttt{name: str}, nuovo nome da assegnare al dataset.
+    \end{itemize}
+
+    \item \textbf{DatasetResponseDto}:\\
+    DTO utilizzato per rappresentare un singolo dataset restituito dal sistema.
+    \begin{itemize}
+        \item \texttt{id: UUID}, identificatore univoco del dataset;
+        \item \texttt{name: str}, nome del dataset;
+        \item \texttt{creation\_date: date}, data di creazione del dataset.
+    \end{itemize}
+
+    \item \textbf{DatasetResponseListDto}:\\
+    DTO utilizzato per rappresentare una lista di dataset presenti nel sistema.
+    \begin{itemize}
+        \item \texttt{datasets: DatasetResponseDto[*]}, elenco di oggetti \texttt{DatasetResponseDto} che rappresentano i dataset disponibili.
+    \end{itemize}
+\end{itemize}
