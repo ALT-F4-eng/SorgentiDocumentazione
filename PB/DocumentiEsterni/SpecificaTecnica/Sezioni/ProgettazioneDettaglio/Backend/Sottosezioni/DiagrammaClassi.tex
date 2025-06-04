@@ -124,15 +124,40 @@ Nel progetto sono stati adottati diversi pattern architetturali per garantire mo
     Il componente \texttt{SqlAlchemyDatasetAdapter} funge da adattatore tra l'interfaccia DatasetRepository e il sistema di persistenza. Come mostrato: da fare  
     \item \textbf{Entrypoint}
     Il componente \texttt{DatasetEntrypoint} funge da porta di ingresso e gestisce l'input esterno invocando i casi d'uso appropriati.
-
-    \item \textbf{DTO (Data Transfer Object)} \\
-    I DTO vengono utilizzati per trasferire dati tra i vari livelli dell'applicazione. Esempi sono:
-    \begin{itemize}
-        \item \texttt{DatasetCreateDto}, contenente i dati necessari alla creazione di un dataset;
-        \item \texttt{DatasetUpdateDto}, per la modifica di un dataset;
-        \item \texttt{DatasetResponseDto}, per il ritorno dei dati verso l'esterno.
-    \end{itemize}
-
+    \item \textbf{DTO (Data Transfer Object)}
     \item \textbf{Dependency Injection} \\
     Il componente  \texttt{DatasetEntrypoint} utilizza il componente DatasetUseCase come parametro nei metodi, permettendo quindi di mantenere il core del dominio indipendente dalle implementazioni concrete delle classi.
+\end{itemize}
+
+\subsubsection{DTO (Data Transfer Object)}
+\label{subsubsec:DTO}
+Qui vengono descritti i DTO utilizzati per il trasferimento dei dati tra gli strati dell'applicazione.
+I DTO sono dei contenitori semplici di dati non contenenti logica di business, progettati per aggregare dati e facilitare la comunicazione tra i vari livelli dell'applicazione.
+\begin{itemize}
+    \item \textbf{DatasetCreateDto}:\\
+    DTO utilizzato per rappresentare i dati necessari alla creazione di un nuovo dataset nel sistema.
+    \begin{itemize}
+        \item \texttt{name: str}, nome del dataset da creare.
+    \end{itemize}
+
+    \item \textbf{DatasetUpdateDto}:\\
+    DTO utilizzato per rinominare un dataset esistente nel sistema.
+    \begin{itemize}
+        \item \texttt{id: UUID}, identificatore univoco del dataset da aggiornare;
+        \item \texttt{name: str}, nuovo nome da assegnare al dataset.
+    \end{itemize}
+
+    \item \textbf{DatasetResponseDto}:\\
+    DTO utilizzato per rappresentare un singolo dataset restituito dal sistema.
+    \begin{itemize}
+        \item \texttt{id: UUID}, identificatore univoco del dataset;
+        \item \texttt{name: str}, nome del dataset;
+        \item \texttt{creation\_date: date}, data di creazione del dataset.
+    \end{itemize}
+
+    \item \textbf{DatasetResponseListDto}:\\
+    DTO utilizzato per rappresentare una lista di dataset presenti nel sistema.
+    \begin{itemize}
+        \item \texttt{datasets: DatasetResponseDto[*]}, elenco di oggetti \texttt{DatasetResponseDto} che rappresentano i dataset disponibili.
+    \end{itemize}
 \end{itemize}
