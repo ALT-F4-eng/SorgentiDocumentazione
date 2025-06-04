@@ -1,0 +1,55 @@
+\subsubsection{Aggiornamento Risorse Rimaste}
+\label{sec:AggiornamentoRisorse_Sprint15}
+Al termine dello \textbf{\glossario{Sprint} 15} rimangono le seguenti ore per ruolo: \hyperref[tab:sprint15_ore_rimanenti]{In tabella \ref{tab:sprint15_ore_rimanenti}} vengono mostrate le ore rimanenti per ruolo al termine dello \textit{\glossario{Sprint} 15}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| l | l | l|}
+    \hline
+    \textbf{Ruolo} & \textbf{Ore preventivate fino al PB} & \textbf{Ore rimanenti fino al PB}\\
+    \hline
+        Responsabile & 23.75 & 0 \\
+    \hline
+        Amministratore & 22 & 0 \\
+    \hline
+        Programmatore & 90 & 0 \\
+    \hline
+        Analista & 0 & 0 \\
+    \hline
+        Verificatore & 109.75 & 0 \\
+    \hline
+        Progettista & 105 & 0 \\
+    \hline
+    \end{tabular}
+    \caption{Ore rimanenti per ruolo.}
+    \label{tab:sprint15_ore_rimanenti} 
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            symbolic x coords={Responsabile, Amministratore, Analista, Progettista, Programmatore, Verificatore},
+            xtick=data,
+            nodes near coords,
+            ymin=0,
+            ylabel={Ore},
+            enlarge x limits=0.35,
+            bar width=25pt,
+            xticklabel style={rotate=45, anchor=east},
+            x=2cm,
+            legend style={at={(0,1)}, anchor=south west, legend columns=1}
+        ]
+
+            \addplot coordinates {(Amministratore,22) (Responsabile,23.75) (Analista,0) (Progettista, 105) (Programmatore, 90) (Verificatore, 109.75)};
+            \addplot coordinates {(Amministratore,0) (Responsabile,0) (Analista, 0) (Progettista, 0) (Programmatore,0) (Verificatore, 0)};
+
+            \legend{Preventivo PB, Rimenente PB}
+
+        \end{axis}
+    \end{tikzpicture}}
+    \caption{Grafico di confronto tra le risorse preventivate e rimanenti.}
+    \label{fig:sprint15_risorse_rimanenti}
+\end{figure}
