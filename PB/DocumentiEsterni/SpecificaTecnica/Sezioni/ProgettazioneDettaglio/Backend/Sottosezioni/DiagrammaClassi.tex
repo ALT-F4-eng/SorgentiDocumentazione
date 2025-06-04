@@ -3,10 +3,11 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.8\textwidth]{Sezioni/ProgettazioneDettaglio/Immagini/Diagrammadataset.pdf}
-    \caption{Diagramma delle classi relativo alla gestione dei Dataset}
-    \label{fig:dataset_class_diagram}
+    \resizebox{0.3\textwidth}{!}{\includegraphics{Sezioni/ProgettazioneDettaglio/Immagini/diagrammiclassi.png}}
+    \caption{Diagramma delle classi legate alla gestione dei dataset}
+    \label{fig:diagramma_classi_dataset}
 \end{figure}
+
 
 
 Il seguente diagramma rappresenta l'architettura software per la gestione dei \textit{Dataset}. Ogni componente ha un ruolo ben definito per garantire separazione delle responsabilità, scalabilità e manutenibilità.
@@ -36,7 +37,7 @@ Le seguenti sezioni contengono la descrizione di \textit{ports} e \textit{adapte
     \end{itemize}
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nella classe concreta.
 \end{itemize} 
-\subsubsection{Adapter}
+\subsubsection{Adapters}
 \paragraph{DatasetService}
 \begin{itemize}
     \item \textbf{Descrizione}: è responsabile della gestione dei dataset;
@@ -49,6 +50,18 @@ Le seguenti sezioni contengono la descrizione di \textit{ports} e \textit{adapte
         Se è già presente un dataset con lo stesso nome del sistema viene alzata un'eccezione di tipo \lstinline|DuplicateNameDatasetError(name)|,
         se ci sono problemi con la creazione del dataset da parte di \lstinline|_dataset_repo| viene alzata un'eccezione di tipo \lstinline|PersistenceError|,
         se l'operazione ha buon fine viene restituito il dataset creato.
+        \item \lstinline|+ delete(self, id: UUID)|: elimina il dataset con l'id fornito.
+        Se \lstinline|_dataset_repo| non riesce a ottenere il dataset con l'id fornito viene alzata un'eccezione di tipo \lstinline|DatasetNonExsistentError(id)|,
+        se ci sono problemi con l'eliminazione del dataset da parte di \lstinline|_dataset_repo| viene alzata un'eccezione di tipo \lstinline|PersistenceError|,
+        se l'operazione ha buon fine viene restituito l'id del dataset eliminato.
+        \item \lstinline|+ update(self, dataset: Dataset)|: viene rinominato il dataset con i dati ricevuti da \lstinline|dataset|.
+        Se \lstinline|_dataset_repo| non riesce a ottenere il dataset tramite id viene alzata un'eccezione di tipo \lstinline|DatasetNonExsistentError(id)|,
+        se ci sono problemi con l'aggiornamento del dataset da parte di \lstinline|_dataset_repo| viene alzata un'eccezione di tipo \lstinline|PersistenceError|,
+        se l'operazione ha buon fine viene restituito il dataset aggiornato.
+        \item \lstinline|+ get_all(self)|: si ottengono tutti i dataset salvati nel sistema.
+        Se ci sono problemi con l'ottenimento dei dati da parte di \lstinline|_dataset_repo| viene alzata un'eccezione di tipo \lstinline|PersistenceError|,
+        se l'operazione ha buon fine viene restituita una lista contenente tutti i dataset salvati.
+        
     \end{itemize}
     \item \textbf{Dipendenze}: DatasetRepository;
 \end{itemize}
@@ -59,80 +72,80 @@ Le seguenti sezioni contengono la descrizione di \textit{ports} e \textit{adapte
 \begin{itemize}
     \item \textbf{Descrizione}: definisce un contratto per la gestione dei dataset all'interno del sistema;
     \item \textbf{Operazioni}:
+    \begin{itemize}
+        \item Creazione di un nuovo dataset;
+        \item Eliminazione di un dataset;
+        \item Aggiornamento dei metadati di un dataset;
+        \item Recupero della lista di dataset salvati nel sistema;
+        \item Recupero di un dataset tramite il suo id;
+        \item Recupero di un dataset tramite il suo nome.
+    \end{itemize}
     \item \textbf{Implementazione}: i dettagli dell'implementazione sono riportati nella classe concreta.
 \end{itemize}
 
-
-
+\subsubsection{Adapters}
+\paragraph{SqlAlchemyDatasetAdapter}
 \begin{itemize}
-    \item \textbf{Dataset}: entità principale che rappresenta un dataset. Contiene i seguenti attributi:
+    \item \textbf{Descrizione}: interagisce con un database utilizzando \textit{SqlAlchemy} per la gestione dei dataset;
+    \item \textbf{Interfaccia implementata}: DatasetRepository;
+    \item \textbf{Attributi}: \lstinline|_session|: istanza della classe \lstinline|Session|, creata tramite la factory \lstinline|session_factory|, utilizzata per eseguire operazioni di lettura e scrittura sul database attraverso SQLAlchemy;
+    \item \textbf{Metodi}:
     \begin{itemize}
-        \item \texttt{id: UUID}, identificatore univoco del dataset.
-        \item \texttt{name: str}, nome del dataset.
-        \item \texttt{creation\_date: date}, data di creazione.
+        \item \lstinline|__init__(self, session_factory: Callable[[], Session])|: costruttore della classe;
+        \item \lstinline|+ create(self, dataset: Dataset)|: salva il dataset fornito all'interno del database.
+        A partire dal \lstinline|dataset|, tramite \lstinline|DatasetSqlAlchemyMapper| viene convertito l'oggetto di dominio \lstinline|Dataset| in un oggetto ORM \lstinline|DatasetSqlAlchemyModel|, utilizzato in seguito per il salvataggio del dataset nel database.
+        Se l'operazione ha buon fine viene restituito il dataset creato, altrimenti viene restituito \lstinline|None|.
+        \item \lstinline|+ delete(self, id: UUID)|: elimina il dataset con l'id fornito.
+        Tramite \lstinline|DatasetSqlAlchemyModel| viene eliminato nel database il dataset che ha come id l'id ottenuto.
+        Se l'operazione ha buon fine viene restituito l'id del dataset eliminato, altrimenti viene restituito \lstinline|None|.
+        \item \lstinline|+ update(self, dataset: Dataset)|: viene rinominato nel database il dataset.
+        Tramite \lstinline|DatasetSqlAlchemyModel| viene rinominato il dataset con il nuovo nome ottenuto da \lstinline|dataset|.
+        Se l'operazione ha buon fine viene restituito il dataset rinominato, altrimenti viene restituito \lstinline|None|.
+        \item \lstinline|+ get_all(self)|: si ottengono tutti i dataset salvati nel database.
+        Tramite \lstinline|DatasetSqlAlchemyMapper| e \lstinline|DatasetSqlAlchemyModel| si ottiene la lista completa di tutti i dataset salvati nel database.
+        Se l'operazione ha buon fine viene restituita la lista dei dataset, altrimenti viene restituito \lstinline|None|.
+        \item \lstinline|+ find_by_name(self, name: str)|: si ottiene il dataset salvato con il nome fornito.
+        Tramite \lstinline|DatasetSqlAlchemyMapper| e \lstinline|DatasetSqlAlchemyModel| si ottiene il dataset salvato nel database che ha come campo nome \lstinline|name|.
+        Se l'operazione ha buon fine viene restituito il dataset ottenuto, altrimento viene restituito \lstinline|None|.
+        \item \lstinline|+ get_by_id(self, id: UUID)|: si ottiene il dataset salvato con l'id fornito.
+        Tramite \lstinline|DatasetSqlAlchemyMapper| e \lstinline|DatasetSqlAlchemyModel| si ottiene il dataset salvato nel database che ha come campo id l'\lstinline|id| ricevuto. 
+        Se l'operazione ha buon fine viene restituito il dataset ottenuto, altrimento viene restituito \lstinline|None|.
     \end{itemize}
+    \item \textbf{Dipendenze}: DatasetRepository;
+\end{itemize}
 
-    \item \textbf{DatasetRepository}: interfaccia che definisce le operazioni CRUD:
+\subsection{Design Pattern}
+Nella seguente sezione vengono descritti i \textit{design pattern} utilizzati, indicando le motivazioni per cui sono stati utilizzati e in quali parti di codice.
+
+\subsubsection{Dependency Injection}
+\begin{itemize}
+    \item \textbf{Descrizione}: La Dependency Injection (DI) è un \textit{design pattern} che facilita la gestione delle dipendenze tra componenti di un'applicazione, rendendole più flessibili, testabili e manutenibili.
+    È una tecnica per fornire oggetti (dipendenze) a una classe dall’esterno, piuttosto che crearli al suo interno, l’oggetto riceve (viene "iniettato" con) le dipendenze di cui ha bisogno.
+    L'obiettivo è quello di separare la creazione delle dipendenze dal loro utilizzo, rispettando il principio Inversion of Control (IoC): non è più l’oggetto a controllare come ottenere le sue dipendenze, ma qualcun altro gliele fornisce.
+    \item \textbf{Utilizzo}: 
     \begin{itemize}
-        \item \texttt{create(dataset: Dataset): Optional<Dataset>}
-        \item \texttt{delete(id: UUID): Optional<UUID>}
-        \item \texttt{update(dataset: Dataset): Optional<Dataset>}
-        \item \texttt{get\_all(): Optional<list<Dataset>>}
-    \end{itemize}
-
-    \item \textbf{SqlAlchemyDatasetAdapter}: implementazione concreta del repository, basata su SQLAlchemy. Contiene:
-    \begin{itemize}
-        \item \texttt{session: Session}, sessione attiva con il database.
-    \end{itemize}
-
-    \item \textbf{DatasetSqlAlchemyModel}: modello ORM utilizzato da SQLAlchemy per mappare la classe \texttt{Dataset} sul database relazionale.
-
-    \item \textbf{DatasetUseCase}: contiene la logica di business relativa ai dataset. I metodi esposti sono:
-    \begin{itemize}
-        \item \texttt{create(name: str): Dataset}
-        \item \texttt{delete(id: UUID): UUID}
-        \item \texttt{update(dataset: Dataset): Dataset}
-        \item \texttt{get\_all(): list<Dataset>}
-    \end{itemize}
-
-    \item \textbf{DatasetService}: funge da intermediario e coordina il flusso delle richieste e delle risposte tra la DatasetRepository e la logica di business.
-
-    \item \textbf{DTO (Data Transfer Object)}:
-    \begin{itemize}
-        \item \texttt{DatasetCreateDto} contiene \texttt{name: str}
-        \item \texttt{DatasetDeleteDto} contiene \texttt{id: UUID}
-        \item \texttt{DatasetUpdateDto} contiene \texttt{id: UUID}, \texttt{name: str}
-        \item \texttt{DatasetResponseDto} contiene \texttt{id: UUID}, \texttt{name: str}, \texttt{creation\_date: date}
-    \end{itemize}
-
-    \item \textbf{DatasetEntrypoint}: rappresenta l'interfaccia esterna che permette di eseguire le operazioni sui dataset attraverso i casi d'uso. Metodi:
-    \begin{itemize}
-        \item \texttt{get\_all(service: DatasetUseCase): list<DatasetResponseDto>}
-        \item \texttt{create(service: DatasetUseCase): DatasetResponseDto}
-        \item \texttt{delete(service: DatasetUseCase): DatasetResponseDto}
-        \item \texttt{update(service: DatasetUseCase): DatasetResponseDto}
+        \item \textbf{backend}: nel backend è stato utilizzato il \glossario{framework} \textit{Dependency Injector}.
+        Questo \glossario{framework} fornisce un \textit{container} esplicito delle dipendenze, che può essere configurato per creare, gestire e risolvere oggetti e relazioni tra oggetti in maniera centralizzata.
+        È stato definito un contenitore delle dipendenze, una classe centrale che si occupa di dichiarare e configurare tutti i servizi e componenti di cui l’applicazione ha bisogno.
+        All'interno di questo contenitore sono stati specificati diversi provider, ognuno con un ruolo preciso: ad esempio, uno per leggere i parametri di configurazione esterni, uno per istanziare l’engine di connessione al database in modalità singleton (quindi condiviso), e altri per la creazione del gestore delle sessioni e dei servizi dell’applicazione.
+        Nelle \textit{route} di \textit{Flask} realizzate, grazie al decoratore \lstinline|@Inject|, viene fornita automaticamente la dipendenza \lstinline|DatasetUseCase| (interfaccia implementata da \lstinline|DatasetService|),
+        \lstinline|Provide[AppContainer.dataset\_service]| fornisce l'oggetto \lstinline|dataset\_service| che è stato registrato nel contenitore.
+        In questo modo, non viene istanziato manualmente \lstinline|DatasetUseCase| ma lo si riceve dal contenitore già configurato.
+        \item \textbf{frontend}: nel frontend è stata utilizzata la gestione della dependency injection nativa del \glossario{framework} \textit{Angular}.
+        Il \lstinline|DatasetService| definito in \textit{Angular} è stato annotato con \lstinline|@Injectable| e definito come \textit{Singleton} tramite \lstinline|provideIn: root|, in questo modo può essere iniettato automaticamente nei componenti o in altri servizi. 
+        Questo ha permesso una gestione centralizzata della logica di business lato client e un’integrazione efficace con l’\glossario{API REST} del backend. 
     \end{itemize}
 \end{itemize}
 
-\subsubsection{Pattern architetturali utilizzati}
-\label{subsubsec:pattern_architetturali}
-
-Nel progetto sono stati adottati diversi pattern architetturali per garantire modularità, manutenibilità e facilità di test. Di seguito sono descritti i principali:
-
+\subsubsection{Port e Adapter}
 \begin{itemize}
-    \item \textbf{Adapter Pattern} \\
-    Il componente \texttt{SqlAlchemyDatasetAdapter} funge da adattatore tra l'interfaccia DatasetRepository e il sistema di persistenza. Come mostrato: da fare  
-    \item \textbf{Entrypoint}
-    Il componente \texttt{DatasetEntrypoint} funge da porta di ingresso e gestisce l'input esterno invocando i casi d'uso appropriati.
-
-    \item \textbf{DTO (Data Transfer Object)} \\
-    I DTO vengono utilizzati per trasferire dati tra i vari livelli dell'applicazione. Esempi sono:
+    \item \textbf{Descrizione}: \textit{Port e Adapter}, noto anche come \textit{Hexagonal Architecture}, è un design pattern architetturale 
+    che realizza la separazione tra il \textit{core} e le interfacce di input e otuput dell'applicazione.
+    Questo pattern permette la separazione delle responsabilità mantenendo il \textit{core} isolato, agevolando la manutenzione del sistema e la fase di testing;
+    \item \textbf{Utilizzo}: vi è la separazione in:
     \begin{itemize}
-        \item \texttt{DatasetCreateDto}, contenente i dati necessari alla creazione di un dataset;
-        \item \texttt{DatasetUpdateDto}, per la modifica di un dataset;
-        \item \texttt{DatasetResponseDto}, per il ritorno dei dati verso l'esterno.
+        \item \textbf{incoming}: la porta \lstinline|DatasetUseCase| rappresenta le operazioni (gli \textit{use case}) che l'applicazione espone al mondo esterno, consiste in un interfaccia che fornisce i metodi necessari per gestire i dati in ingresso ed è implementata dall'adapter \lstinline|DatasetService|.
+        \item \textbf{outcoming}: la porta \lstinline|DatasetRepository| rappresenta i punti attraverso cui la logica applicativa delega operazioni a sistemi esterni, viene realizzata tramite un'interfaccia ed è implementata dall'adapter \lstinline|SqlAlchemyDatasetAdapter|.
+        In questo modo l’applicazione rimane indipendente dai dettagli tecnici esterni, rendendo il sistema più  testabile e facilmente manutenibile.
     \end{itemize}
-
-    \item \textbf{Dependency Injection} \\
-    Il componente  \texttt{DatasetEntrypoint} utilizza il componente DatasetUseCase come parametro nei metodi, permettendo quindi di mantenere il core del dominio indipendente dalle implementazioni concrete delle classi.
 \end{itemize}
