@@ -1,0 +1,35 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{custom}
+\usepackage{graphicx}
+\usepackage{float}
+
+%--------------------VARIABILI--------------------
+\def\lastversion{v0.1}
+\def\title{Manuale Utente}
+\def\date{04 Giugno 2025}
+%------------------------------------------------
+
+\begin{document}
+
+\primapagina
+
+
+\begin{registromodifiche}
+    \lastversion & 04 Giugno 2025 & Francesco Savio & Guirong Lan & Realizzazione manuale utente \\
+    \hline
+\end{registromodifiche}
+
+\tableofcontents
+
+\newpage
+
+\input{Sezioni/Introduzione/Introduzione.tex}
+
+\input{Sezioni/Requisiti/Requisiti.tex}
+
+\input{Sezioni/Requisiti/Sottosezioni/Installazione.tex}
+
+%\input{Sezioni/IstruzioniUtilizzo/IstruzioniUtilizzo.tex}
+
+\end{document}
