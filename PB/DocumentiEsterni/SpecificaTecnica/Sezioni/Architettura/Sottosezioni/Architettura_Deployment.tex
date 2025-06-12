@@ -1,0 +1,117 @@
+\subsection{Deplopyment}
+\label{subsec:deplopyment}
+
+\subsubsection{Nota preliminare}
+Assicurarsi che \textbf{Docker Desktop sia correttamente avviato e in esecuzione} prima di eseguire qualsiasi comando.
+\noindent
+Nel caso in cui, durante l'esecuzione dei comandi in un terminale Windows, venga restituito un errore simile a:
+
+\begin{quote}
+\texttt{SecurityError: (:) [], PSSecurityException}
+\end{quote}
+\noindent
+è possibile risolvere temporaneamente il problema eseguendo il seguente comando PowerShell:
+
+
+\begin{center}
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+\end{center}
+\noindent
+Per effettuare il deployment del \textbf{frontend} e del \textbf{backend} sviluppati, è necessario avere installato e in esecuzione l'applicazione \textbf{Docker Desktop}.
+
+\subsubsection{Fase 1: Build delle immagini Docker}
+
+Aprire una console qualsiasi e digitare il seguente comando:
+
+\begin{center}
+docker compose build
+\end{center}
+\noindent
+Questo comando genererà tre immagini Docker denominate:
+
+\begin{itemize}
+  \item \texttt{angularclient} \quad (frontend sviluppato in Angular)
+  \item \texttt{flaskapi} \quad (backend sviluppato in Flask)
+  \item \texttt{postgres} \quad (database PostgreSQL)
+\end{itemize}
+
+\subsubsection{Fase 2: Avvio del contenitore}
+
+Per avviare l'intera applicazione, digitare:
+
+\begin{center}
+docker compose up
+\end{center}
+\noindent
+Questo comando creerà e avvierà un ambiente composto dai tre servizi sopra elencati.
+
+\subsubsection{Fase 3: Accesso all'applicazione}
+
+Una volta che il sistema è correttamente avviato, l'utente potrà accedere all'interfaccia dell'applicazione tramite il seguente indirizzo nel browser:
+
+\begin{center}
+\url{http://localhost:4200}
+\end{center}
+
+\subsubsection{Immagini Docker}
+\label{subsubsec:immagini_docker}
+\begin{itemize}
+  \item \textbf{PostgreSQL DB}
+  \begin{itemize}
+    \item Immagine: \texttt{postgres:15.1-alpine};
+    \item Ambiente: local, sviluppo;
+    \item Porte:
+    \begin{itemize}
+      \item 5432:5432: database PostgreSQL.
+    \end{itemize}
+    \item Volume:
+    \begin{itemize}
+      \item \texttt{pgdata} per la persistenza dei dati;
+      \item \texttt{./db/init.sql} per l'inizializzazione automatica del database.
+    \end{itemize}
+  \end{itemize}
+
+  \item \textbf{Flask API}
+  \begin{itemize}
+    \item Immagine: \texttt{flaskapi:latest}, basata su \texttt{python:3.12.10-slim};
+    \item Ambiente: local, sviluppo;
+    \item Porte:
+    \begin{itemize}
+      \item 5000:5000: interfaccia REST API Flask.
+    \end{itemize}
+    \item Volume:
+    \begin{itemize}
+      \item \texttt{./back-end/ArtificialQI} montato in \texttt{/usr/src/ArtificialQI}.
+    \end{itemize}
+    \item Comando di avvio:
+    \begin{itemize}
+      \item \texttt{flask run --debug --host 0.0.0.0}
+    \end{itemize}
+    \item Dipendenze:
+    \begin{itemize}
+      \item \texttt{postgres} (connessione al database tramite variabile \texttt{DB\_URL}).
+    \end{itemize}
+  \end{itemize}
+
+  \item \textbf{Angular Client}
+  \begin{itemize}
+    \item Immagine: \texttt{angularclient:latest}, basata su \texttt{node:22.15.0-alpine};
+    \item Ambiente: local, sviluppo;
+    \item Porte:
+    \begin{itemize}
+      \item 4200:4200: interfaccia utente Angular.
+    \end{itemize}
+    \item Volume:
+    \begin{itemize}
+      \item \texttt{./front-end/ArtificialQI/src} montato in \texttt{/usr/src/ArtificialQI/src}.
+    \end{itemize}
+    \item Comando di avvio:
+    \begin{itemize}
+      \item \texttt{ng serve --poll 2000 --host 0.0.0.0}
+    \end{itemize}
+    \item Dipendenze:
+    \begin{itemize}
+      \item \texttt{flaskapi} (consumo dei servizi esposti dall’API).
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
